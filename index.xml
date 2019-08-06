@@ -12,12 +12,21 @@
     
     
     <item>
-      <title></title>
-      <link>http://changcui.cc/posts/my-first-post/</link>
+      <title>hello world</title>
+      <link>http://changcui.cc/about/-whats-is/</link>
       <pubDate>Tue, 06 Aug 2019 13:11:53 +0800</pubDate>
       
-      <guid>http://changcui.cc/posts/my-first-post/</guid>
-      <description>Hello, World!</description>
+      <guid>http://changcui.cc/about/-whats-is/</guid>
+      <description>可以打中文吗？</description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>http://changcui.cc/posts/-whats-is/</link>
+      <pubDate>Tue, 06 Aug 2019 13:11:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/-whats-is/</guid>
+      <description>可以打中文吗？</description>
     </item>
     
   </channel>

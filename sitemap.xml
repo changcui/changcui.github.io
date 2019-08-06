@@ -3,8 +3,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://changcui.cc/posts/my-first-post/</loc>
+    <loc>http://changcui.cc/about/</loc>
     <lastmod>2019-08-06T13:11:53+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -17,6 +18,16 @@
     <loc>http://changcui.cc/</loc>
     <lastmod>2019-08-06T13:11:53+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/about/-whats-is/</loc>
+    <lastmod>2019-08-06T13:11:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/-whats-is/</loc>
+    <lastmod>2019-08-06T13:11:53+08:00</lastmod>
   </url>
   
   <url>

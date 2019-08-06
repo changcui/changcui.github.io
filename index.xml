@@ -6,27 +6,27 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Aug 2019 13:11:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 16:26:19 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>hello world</title>
-      <link>http://changcui.cc/about/-whats-is/</link>
-      <pubDate>Tue, 06 Aug 2019 13:11:53 +0800</pubDate>
+      <title>About</title>
+      <link>http://changcui.cc/about/</link>
+      <pubDate>Tue, 06 Aug 2019 16:26:19 +0800</pubDate>
       
-      <guid>http://changcui.cc/about/-whats-is/</guid>
-      <description>可以打中文吗？</description>
+      <guid>http://changcui.cc/about/</guid>
+      <description>how to do it ?</description>
     </item>
     
     <item>
-      <title>hello world</title>
-      <link>http://changcui.cc/posts/-whats-is/</link>
-      <pubDate>Tue, 06 Aug 2019 13:11:53 +0800</pubDate>
+      <title>最近</title>
+      <link>http://changcui.cc/posts/recently/</link>
+      <pubDate>Tue, 06 Aug 2019 15:57:49 +0800</pubDate>
       
-      <guid>http://changcui.cc/posts/-whats-is/</guid>
-      <description>可以打中文吗？</description>
+      <guid>http://changcui.cc/posts/recently/</guid>
+      <description>最近在实习了。</description>
     </item>
     
   </channel>

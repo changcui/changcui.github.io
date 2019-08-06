@@ -6,27 +6,43 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Aug 2019 16:26:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 16:49:21 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
+      <title>可爱的小柯基</title>
+      <link>http://changcui.cc/posts/lovely-corgi/</link>
+      <pubDate>Tue, 06 Aug 2019 16:49:21 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/lovely-corgi/</guid>
+      <description>我和女票都很喜欢小柯基，分享一下我们在 Instagram 等平台收集的一些可爱的小柯基。
+Cobee cobee 是我的头像，这个小柯基的特点是很厚实，女票说他很傻。。我们收藏了很多他的图片，这里放一个比较有代表性的吧。</description>
+    </item>
+    
+    <item>
+      <title>重启</title>
+      <link>http://changcui.cc/posts/restart/</link>
+      <pubDate>Tue, 06 Aug 2019 16:40:41 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/restart/</guid>
+      <description>为什么暂停博客？ 上次写个人博客应该是大四的时候，觉得很新鲜，用的是 hexo 的主题，现在看来大概烂大街了吧。之所以暂停，是因为我觉得自己知之甚少，分享一些无用的知识并无益处。
+为什么重启博客？ 前一段时间，看到一篇文章讲计算机的学生应该懂得什么知识，其中第一条就是要拥有自己的 portfolio，分享一些自己的项目经验之类的东西。
+我之前对个人博客的理解可能不太正确，总想分享一些教程之类的东西，让更多的人看到，不过现在看来，写教程的 motivation 确实不太够，可能确实没有人看吧，我自己写的也不好。
+这次重启博客的主要目的是记录生活，总结一下自己学到的东西，如果说白天是用来工作、学习的，那么晚上就是用来总结的。希望能够通过总结，让自己学到更多的东西吧。</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
       <link>http://changcui.cc/about/</link>
       <pubDate>Tue, 06 Aug 2019 16:26:19 +0800</pubDate>
       
       <guid>http://changcui.cc/about/</guid>
-      <description>how to do it ?</description>
-    </item>
-    
-    <item>
-      <title>最近</title>
-      <link>http://changcui.cc/posts/recently/</link>
-      <pubDate>Tue, 06 Aug 2019 15:57:49 +0800</pubDate>
-      
-      <guid>http://changcui.cc/posts/recently/</guid>
-      <description>最近在实习了。</description>
+      <description>他是 研二再读的研究僧，计算机软件导向，目前在做神经网络压缩，并行数据结构、算法相关。
+他喜欢 科技产品，计算机软硬件，电子游戏，足球，棒球，文学，政治，音乐，电影等等
+他不喜欢 无用的社交，繁杂的人情，偏执的观点
+他擅长 写代码，打慢垒</description>
     </item>
     
   </channel>

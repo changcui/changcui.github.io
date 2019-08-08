@@ -6,10 +6,24 @@
     <description>Recent content in 杂感 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Aug 2019 22:37:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Aug 2019 22:13:37 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%9D%82%E6%84%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 08 08</title>
+      <link>http://changcui.cc/posts/2019-08-08/</link>
+      <pubDate>Thu, 08 Aug 2019 22:13:37 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/2019-08-08/</guid>
+      <description>今日 今天是8月8号，是我侄女的生日，祝她生日快乐。我还记得奥运宝宝的她，08年才刚出生，现在就已经开始搞奥数了，我还帮她做了一道简单的题。How time flies！
+划水 今天问了一下 mentor，确认我的算子基本上已经写完了，估计剩下一些修修补补的工作了吧。所以今天大部分时间都在划水，但 feedly 似乎也没什么好看的，看了几篇讲硬件的文，也没太大的耐心看下去。中午吃完饭和一个隔壁公司的同学聊了一会，同样感到来自内心的焦虑，焦虑开学怎么在组里生存，怎么给老板汇报工作，怎么毕业，这种焦虑一直伴随着我，so does she。。
+北大退档 这个事好像成为了一个热议的话题，值得怀疑的是当事人好像根本没有站出来说话，反而大众讨论的热火朝天，当然大部分人都是站考生啦。北大要退档不是不可以，程序上经过考试院的允许也算过得去，但是给的理由未免太伤人了，“成绩不好容易退学”，来贵校的人成绩不好的真的多了去了，留学生暂且不说，一些体特、艺特成绩能好到哪里去，被退档的同学至少也是一个一本上线的学生，去一个不那么硬核的院绝不至于被退学吧。就算真的被退学，也不能以如此的假设来拒绝人家吧，这和“长林之罪，罪在将来”，“可能扰乱南京治安”有什么区别？
+明日方舟夏活 明日方舟这个游戏火得程度超过了我的想象，以其微博的关注，点赞来看，早就超过了碧蓝航线，今天应该是开服100天，很多人在微博上催官方开夏活，nga 论坛里大家都十分焦急，甚至有“列文虎克”们随时盯着微博的数目，看鹰角有没有发定时微博。
+Git 我又开始学 git 了，不知道这是第几遍了，git 的命令实在是太多了，今天看了大概三章，可能因为划水没有活干吧，学一些自己觉得一定有用的东西一定没错，这次就没必要从最基础的总结了，总结一下自己觉得比较有用的吧。
+ git 直接记录数据的快照，而不是记录其差异 git 有三种状态，已提交，已修改，已暂存 git config --global user.name &amp;quot;John Doe&amp;quot; git config --global user.email johndoe@example.com git config --global core.editor emacs 检查配置信息：git config --list 获取帮助：git help &amp;lt;verb&amp;gt; 状态简览：git status --short 比较已修改文件和原文件的差异：git diff 比较暂存文件和原文件的差异：git diff --staged 从 git 中删除，而不删除原文件（取消追踪）：git rm --cached foo git log -p git log -2 git log --pretty=oneline --graph 提交信息写错，文件忘记添加：git commit --amend 取消暂存：git reset HEAD &amp;lt;file&amp;gt; 撤销修改（不可恢复）:git checkout -- &amp;lt;file&amp;gt; 添加远程仓库：git remote add &amp;lt;shortname&amp;gt; &amp;lt;url&amp;gt; 拉取信息（拉群所有信息，但不会创建分支）:git fetch &amp;lt;remote-name&amp;gt; 远程仓库重命名、删除:git remote rename, rm 添加别名：git config --global alias.</description>
+    </item>
     
     <item>
       <title>2019 08 07</title>

@@ -6,10 +6,29 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Aug 2019 21:46:39 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 00:07:26 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>理解 Linux 的硬链接与软链接</title>
+      <link>http://changcui.cc/posts/linux-link/</link>
+      <pubDate>Sun, 18 Aug 2019 00:07:26 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/linux-link/</guid>
+      <description>Linux 的文件与目录 UNIX 系统除进程以外的一切都是文件。Linux 保持了这个特性，并引入了目录来方便管理。
+Linux 与其他类 UNIX 系统一样并不区分文件与目录：目录是记录了其他文件名的文件。
+Linux 将设备当做文件进行处理。
+硬链接与软链接的联系与区别 文件都有文件名与数据，这在 Linux 上被分成两个部分：用户数据 (user data) 与元数据 (metadata)。
+用户数据，即文件数据块 (data block)，数据块是记录文件真实内容的地方；而元数据则是文件的附加属性，如文件大小、创建时间、所有者等信息。
+在 Linux 中，元数据中的 inode 号（inode 是文件元数据的一部分但其并不包含文件名，inode 号即索引节点号）才是文件的唯一标识而非文件名。文件名仅是为了方便人们的记忆和使用，系统或程序通过 inode 号寻找正确的文件数据块。
+在 Linux 系统中查看 inode 号可使用命令 stat 或 ls -i.
+使用命令 mv 移动并重命名文件，其结果不影响文件的用户数据及 inode 号。
+为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic link）。
+硬链接 若一个 inode 号对应多个文件名，则称这些文件为硬链接。硬链接可由命令 link 或 ln 创建。
+link oldfile newfile ln oldfile newfile 由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</description>
+    </item>
     
     <item>
       <title>2019 08 17</title>

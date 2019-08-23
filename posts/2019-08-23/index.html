@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="changcui">
+    <meta name="description" content="http://changcui.cc">
+    <meta name="keywords" content="blog, personal">
+    
+    <meta property="og:site_name" content="changcui">
+    <meta property="og:title" content="
+  2019 08 23 - changcui
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://changcui.cc/posts/2019-08-23/">
+    <meta property="og:image" content="http://changcui.cc">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-23/">
+    <meta name="twitter:image" content="http://changcui.cc">
+
+    <base href="http://changcui.cc/posts/2019-08-23/">
+    <title>
+  2019 08 23 - changcui
+</title>
+
+    <link rel="canonical" href="http://changcui.cc/posts/2019-08-23/">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
+    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
+      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
+    
+
+    <meta name="generator" content="Hugo 0.56.3" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">changcui</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/about">About</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">2019 08 23</h1>
+      <h2 class="date">August 23, 2019</h2>
+
+      
+    </header>
+
+    
+
+<h3 id="a-moment-of-eternity">A Moment of Eternity</h3>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1333368243&auto=1&height=66"></iframe>
+
+<h3 id="工作">工作</h3>
+
+<p>到了公司发现我的网络跑好了，还是非常激动的，然后发现只有 80% 的 accuracy，后面降低两次学习率根本没有对模型有提升。我就拿着结果找 mentor 报告了，mentor 认为还可以，虽然不想 deconv 加上精心设计的超参数可以跑到 88%，我们跑到 80% 也不是不能用，毕竟我们追求的不是精度。</p>
+
+<p>于是开始了第二个步骤，这个步骤我本来认为是很简单的，但是做的时候遇到了很多的问题。</p>
+
+<p>问题一，加上量化框架之后的 fine-tune 比原本训练慢了特别多，其实我想不明白原因在哪，因为量化框架说到底也只做了更新 max, min 等一些小的操作，大头应该还是在网络那里，但结果就是如此，而且在用 docker 封装在 k8s 上跑，调试起来也相当麻烦，最后也是不了了之。</p>
+
+<p>问题二，公司的量化框架对多 GPU 支持不好。我使用公司的量化框架之后，再用多 GPU 就会报错，我是能理解这个错误的原因的，但是改动起来比较麻烦，如果要修改源码的话，如何打包进 docker 又是一个问题，最后 mentor 说等负责的人回来再当面说说。</p>
+
+<p>问题三，两种量化环境无法共用一套代码，这次的 task 要测试两种量化环境，我本来设想的是通过 config 文件来配置量化参数，但是后来发现做不到，量化框架把这部分给写死了，我是传不进去参数的，最后只能手动改代码，这个工作真的是太令人烦躁了。</p>
+
+<p>虽然问题很多，而且大部分都没法解决，但我还是把网络给跑上了，先看看结果如何吧，今天 mentor 还给我讲了一些新的设想，以及要完成老大的设想需要做什么什么工作，听起来很复杂的样子，但我还是挺愿意去了解这些东西的，我一直觉得我对公司在做的事情没有一个总体的上的概念，希望将来通过工作能多多学习吧。</p>
+
+<h3 id="不适">不适</h3>
+
+<p>今天不知为何，可能是昨天没有休息好，早上睡得很死，上午没去上班。下午去上班了，发现自己状态也不怎么好，下午正写着代码，突然头一晕，感觉眼前的世界晃来晃去的，大概持续了3秒，我扶着桌子休息了一会，感觉好多啦。</p>
+
+<p>吃完晚饭送女票坐公交之后，我回到公司划水，没有任何事情干，旁边的人都走了。大概到8点左右，我感觉自己的头开始疼起来，身上开始冒虚汗，心开始慌，我背上书包，戴上耳机就赶紧离开了公司，回到宿舍的床上躺了一会，感觉好了不少。</p>
+
+<h3 id="理想">理想</h3>
+
+<p>大概每个人都有自己的理想，女票的理想大概是出书，希望自己的天赋能够有一天得到兑现，我的理想是什么呢，我想做很多东西，想读 phd，想赚钱，想从政，想学很多知识，如果说一个最大的理想的话，大概还是能为社会做一些贡献吧，具体一点，能为教育资源的公平分配做一些贡献。</p>
+
+<h3 id="pytorch">Pytorch</h3>
+
+<p>逐渐用起来 pytorch 发现，pytorch 也是有很多坑的，今天就遇到了一个。</p>
+
+<p>就是当你训练网络使用 dataparallel 的时候，如果要 save state_dict，最好 save model.module.state_dict，不然保存的时候会在 layer name 之前加一个 module 的前缀。</p>
+
+<p>加个前缀看上去没有问题，如果你 load 的时候，先对 model 做 dataparallel 确实没有问题，但如果你先 load，再 dataparallel 就会报错了，解决办法也很简单，可以把 state_dict 的每个 key-value 对都修改一下 key，去掉 module 的前缀，就可以正确 load 了。</p>
+
+<p>主要参考了这个<a href="http://www.pkumonk.me/2019/02/22/Load-pytorch-model-trained-with-nn-DataParalell/">博文</a>，写的很好，列出了两种解决方法。</p>
+
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+      
+        <footer class="footer">
+  <section class="container">
+    
+      <div class="sns-shares sp-sns-shares">
+        
+        
+        
+        
+      </div>
+    
+    
+      <p>Softball, Science, Xian</p>
+    
+     © 2019    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
+  </section>
+</footer>
+
+      
+    </main>
+
+    
+
+  <script src="http://changcui.cc/js/app.js"></script>
+  
+  </body>
+</html>

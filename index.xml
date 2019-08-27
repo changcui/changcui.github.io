@@ -6,10 +6,28 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 22:33:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:51:14 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1103. Distribute Candies to People</title>
+      <link>http://changcui.cc/posts/leetcode-1103/</link>
+      <pubDate>Wed, 28 Aug 2019 00:51:14 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1103/</guid>
+      <description> math classSolution { public: vector&amp;lt;int&amp;gt; distributeCandies(int candies, int num_people) { int epoch = 0; for (; ; epoch++) { int needed = (epoch + 1) * num_people * ((epoch + 1) * num_people + 1) / 2; if (candies &amp;lt;= needed) break; } vector&amp;lt;int&amp;gt; result(num_people, 0); for (int i = 1; i &amp;lt;= num_people; i++) { result[i - 1] += epoch * i + num_people * epoch * (epoch - 1) / 2; } candies -= epoch * num_people * (epoch * num_people + 1) / 2; for (int i = 1; i &amp;lt;= num_people; i++) { int needed = i + epoch * num_people; if (candies &amp;lt;= needed) { result[i - 1] += candies; break; } else { result[i - 1] += needed; candies -= needed; } } return result; } }; </description>
+    </item>
+    
+    <item>
+      <title>1089. Duplicate Zeros</title>
+      <link>http://changcui.cc/posts/leetcode-1089/</link>
+      <pubDate>Wed, 28 Aug 2019 00:04:26 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1089/</guid>
+      <description>if (i + 1 &amp;lt; len) classSolution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.size(); for (int i = 0; i &amp;lt; len; i++) { if (arr[i] == 0) { for (int j = len - 2; j &amp;gt;= i + 1; j--) { arr[j + 1] = arr[j]; } if (i + 1 &amp;lt; len) arr[i + 1] = 0; i += 1; } } } };  vector classSolution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.</description>
+    </item>
     
     <item>
       <title>2019 08 27</title>

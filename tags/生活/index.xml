@@ -6,10 +6,27 @@
     <description>Recent content in 生活 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2019 22:11:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 22:33:36 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 08 27</title>
+      <link>http://changcui.cc/posts/2019-08-27/</link>
+      <pubDate>Tue, 27 Aug 2019 22:33:36 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/2019-08-27/</guid>
+      <description>Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace  新室友 马上就要开学了，意味着我的独居生活开始倒计时了，我还是挺喜欢一个人住的，毕竟很安静，将来租了房子我大概会很喜欢吧。
+新的室友还没见到，竟然在论坛发帖想和我们提前认识一下，想必是个不难相处的人吧，接下来还有两年，我们宿舍终于变成了四人寝。
+研究生的宿舍的重要性和本科时相比弱了很多，白天基本上很少在宿舍了，对我来说，宿舍只是一个睡觉的地方，想起来本科的时候，整个学院的同学住在一栋楼里，互相串门还是非常方便的，女票也经常跑到我宿舍来玩，我们宿舍有一段时间经常性保持三男三女的六人寝，好怀念。
+明日方舟 明日方舟终于更新夏活了，等了快一个世纪了，不过看起来没这么好玩，我的练度已经远远超过了副本的要求了，新六星也没能抽到，但好在搞到了五星，ios 的大佬们也把方舟氪到了第一名，顺利地拿到了十连券，攒着抽老爷子吧。
+工作 今天还是要训网络呗，但是 maxwell 架构的显卡不支持 int8，我也无能为力啊。
+于是我的任务变成了显卡采购建议收集，我收集了各个显卡的数据，给出显卡采购的方案，虽然我们组比较菜，只能用别人用剩下的显卡，可总比我本机的 1060 要强一些吧。
+昨天遇到的 hang 的问题，今天看了个 pytorch 的 issue，起码有点感性的认识了。这个问题的原因是 pytorch 的 dataloader 当 num_workers 不为0的时候，会调用 multiprocessing 来生成多个进程并行地处理数据，之所以需要多个进程而不是多个进程，是因为 python 的 interpreter 不允许多线程并行，有一个叫 GIL (global interpreter lock) 的机制在，该机制的目的是保护线程安全，比如引用计数等，multiprocessing 产生多个进程默认是调用的 fork 方法，fork 是在当前进程的基础上复制出一个相同的进程，当与一些第三方库，比如 numpy，opencv 混用的时候，第三方库会使用多线程来处理数据，fork 的时候会将多线程的信息也复制一遍，导致死锁。
+解决方案一，让 num_workers = 0，不使用多进程，自然会比较慢，但不会死锁。
+解决方案二，让 multiprocessing 的默认产生进程的方法是 spawn，和 fork 的差别在于， spawn 是从头产生一个新的进程，比 fork 效率要低。</description>
+    </item>
     
     <item>
       <title>2019 08 26</title>

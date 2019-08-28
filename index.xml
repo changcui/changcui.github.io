@@ -6,10 +6,46 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Aug 2019 22:13:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 01:13:51 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1128. Number of Equivalent Domino Pairs</title>
+      <link>http://changcui.cc/posts/leetcode-1128/</link>
+      <pubDate>Thu, 29 Aug 2019 01:13:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1128/</guid>
+      <description>classSolution { public: int numEquivDominoPairs(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] += 1; } int rtn = 0; for (int i = 1; i &amp;lt;= 9; i++) { for (int j = i; j &amp;lt;= 9; j++) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] + cnt[j][i]); if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) /2; } } } } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>1122. Relative Sort Array</title>
+      <link>http://changcui.cc/posts/leetcode-1122/</link>
+      <pubDate>Thu, 29 Aug 2019 00:43:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1122/</guid>
+      <description>classSolution { public: vector&amp;lt;int&amp;gt; relativeSortArray(vector&amp;lt;int&amp;gt;&amp;amp; arr1, vector&amp;lt;int&amp;gt;&amp;amp; arr2) { vector&amp;lt;bool&amp;gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &amp;lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() + i); len -= 1; } else { i += 1; } } sort(arr1.</description>
+    </item>
+    
+    <item>
+      <title>1114. Print in Order</title>
+      <link>http://changcui.cc/posts/leetcode-1114/</link>
+      <pubDate>Thu, 29 Aug 2019 00:10:23 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1114/</guid>
+      <description>classFoo { public: bool mutex1, mutex2; Foo() { mutex1 = true; mutex2 = true; } void first(function&amp;lt;void()&amp;gt; printFirst) { // printFirst() outputs &amp;#34;first&amp;#34;. Do not change or remove this line.  printFirst(); this-&amp;gt;mutex1 = false; } void second(function&amp;lt;void()&amp;gt; printSecond) { while (this-&amp;gt;mutex1) {} // printSecond() outputs &amp;#34;second&amp;#34;. Do not change or remove this line.  printSecond(); this-&amp;gt;mutex2 = false; } void third(function&amp;lt;void()&amp;gt; printThird) { while (this-&amp;gt;mutex1 | this-&amp;gt;mutex2) {} // printThird() outputs &amp;#34;third&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>1108. Defanging an IP Address</title>
+      <link>http://changcui.cc/posts/leetcode-1108/</link>
+      <pubDate>Wed, 28 Aug 2019 23:59:25 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1108/</guid>
+      <description> insert classSolution { public: string defangIPaddr(string address) { for (int i = 0; i &amp;lt; address.size(); i++) { if (address[i] == &amp;#39;.&amp;#39;) { address.insert(address.begin() + i, &amp;#39;[&amp;#39;); address.insert(address.begin() + i + 2, &amp;#39;]&amp;#39;); i += 2; } } return address; } }; </description>
+    </item>
     
     <item>
       <title>2019 08 28</title>

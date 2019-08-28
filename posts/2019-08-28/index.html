@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="changcui">
+    <meta name="description" content="http://changcui.cc">
+    <meta name="keywords" content="blog, personal">
+    
+    <meta property="og:site_name" content="changcui">
+    <meta property="og:title" content="
+  2019 08 28 - changcui
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://changcui.cc/posts/2019-08-28/">
+    <meta property="og:image" content="http://changcui.cc">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-28/">
+    <meta name="twitter:image" content="http://changcui.cc">
+
+    <base href="http://changcui.cc/posts/2019-08-28/">
+    <title>
+  2019 08 28 - changcui
+</title>
+
+    <link rel="canonical" href="http://changcui.cc/posts/2019-08-28/">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
+    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
+      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
+    
+
+    <meta name="generator" content="Hugo 0.56.3" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">changcui</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/about">About</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">2019 08 28</h1>
+      <h2 class="date">August 28, 2019</h2>
+
+      
+    </header>
+
+    
+
+<h3 id="聚餐">聚餐</h3>
+
+<p>今天有次七个人的聚餐，其实聚餐的人员还是蛮奇怪的，有马上回美帝的，有正在申请美帝的，有要去大英的，有在做科研的，有在实习的，有在玩的，我们七个一起吃饭，我印象中应该是第一次。</p>
+
+<p>大部分时间大家都在聊聊过去，聊聊现在，聊聊未来，聊聊同学，聊聊自己，可能因为人比较多，偶尔也会出现尴尬大家都没话的时候，但总体的氛围还是不错吧。</p>
+
+<p>我对一个小哥的一句话比较印象深刻，他说看见大家开心的笑容自己也很开心。我是说不出这种话的，不知道为何就觉得很难为情，小哥要去辞职去读“创意写作”了，大概“创意写作”需要你想大家想不到的事，或者至少说大家觉得难为情的话吧，要更 real 一点。</p>
+
+<h3 id="工作">工作</h3>
+
+<p>今天工作的任务相当重，主要是三个问题需要解决，第一个是多卡训练的问题，第二个是分类网络训练的问题，第三个是卷积算子的接口问题。</p>
+
+<p>首先是第一个问题，多卡训练错误的点在于公司的框架在执行 dataparallel 的时候，没有把所有的 tensor 都分发到各个 GPU，导致 forward 之前的一些运算会产生不在同一个 GPU 的错误，解决方案就是要实现一个新的 dataparallel 的 module，在 forward 里面把剩余的 tensor 也分发到各个 GPU。我虽然想到了怎么修改，但是并没有解决这个问题，主要原因是我本地没有多卡环境，使用集群进行调试过于麻烦，这个问题是两方面解决的，第一，我申请了一张新的卡，和我本机的卡组一个多卡环境，审批已经完成了，不知道什么时候才能拿到，第二，我申请了服务器的账号，希望使用服务器来调试，但是服务器由于权限问题，我不能修改一些环境，比如我只能用 CUDA 8，至于会不会出现问题，明天试一试才会知道。</p>
+
+<p>第二个问题，上次经过讨论之后，确定还是用分类网络重训，放弃了之前的 pose estimation 网络，我选择了比较简单的 resnet18 作为分类网络，在写的时候遇到了一些困难，比如我要想办法把量化框架集成进去，要想办法把训练，重训练等参数的确定下来，由于使用 imagenet 数据集，我本地并没有这个数据集，我无法进行调试，只能检查一下是否有语法的错误。</p>
+
+<p>当我检查好，打包好，想放到 k8s 上跑的时候，才发现我们换了集群环境，之前的 imagenet 的数据集没有了，于是又联系运维组的人要数据集，我才第一次知道原来 imagenet 完整的数据集有 500G 之大。即使我代码写对了，怎么训练对我来说挑战也是很大。</p>
+
+<p>第三个问题，我跟 mentor 讨论了一下，确定了卷积算子的接口，但这个问题好像不是很着急，我其实每次讨论的时候，脑子都挺懵的，不记得之前讨论的结果，mentor 还要重新给我讲一遍，不过 mentor 给我讲的时候似乎自己也有收获，他原本也有一些地方没有想清楚，今天讨论的时候得到了我们相同的答案。</p>
+
+<p>我们组的人最近走的走，有事的不来，做算法的人好少，上次开会的时候，对面团队的人还说我们部这么多人，做这个关键工作的怎么没人，我今天收到了会议纪要，才发现我们做的工作还挺重要的，我发现自己的活变得多了起来，前几天明明闲得很，我给 mentor 建议再招一些人，不过 mentor 说招不到人，校招也还没开始。</p>
+
+<h3 id="curl">curl</h3>
+
+<p>今天上午摸鱼的时候顺便学习了一下 curl，看的是这个<a href="https://jvns.ca/blog/2019/08/27/curl-exercises/">链接</a>，简单总结一下用法吧。</p>
+
+<p>在我的理解下， curl 不是一个专门的下载工具，我之前一直以为 curl 和 wget 差不多，都是个下载工具，不过现在看来 curl 更像 python3 里面的 requests module 可以用来构建请求，下载本身也是发送一个请求嘛，所以也可以作为下载工具来用。</p>
+
+<ul>
+<li>curl -X 可以指定 request 的类型，比如 post, get, put, delete, 默认的是 get</li>
+<li>curl -H 可以指定 head 的内容，比如 User-Agent, Content-Type 等</li>
+<li>curl -d 可以 post data，至于 data 怎么使用，需要在 head 里面定义一下
+
+<ul>
+<li>数据可以用多种形式，比如 -d “value=1” 或者 -d `{“value”: “1”}`</li>
+<li>也可以传入 json 文件作为数据，-d @foo.json</li>
+<li>使用后两种格式的时候，要在 head 里面指定，Content-Type: application/json，才会被正确地解析为 data，否则会在 form field</li>
+</ul></li>
+<li>curl -u username:password 可以 post 用户名和密码</li>
+</ul>
+
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+      
+        <footer class="footer">
+  <section class="container">
+    
+      <div class="sns-shares sp-sns-shares">
+        
+        
+        
+        
+      </div>
+    
+    
+      <p>Softball, Science, Xian</p>
+    
+     © 2019    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
+  </section>
+</footer>
+
+      
+    </main>
+
+    
+
+  <script src="http://changcui.cc/js/app.js"></script>
+  
+  </body>
+</html>

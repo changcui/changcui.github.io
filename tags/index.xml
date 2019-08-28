@@ -6,10 +6,19 @@
     <description>Recent content in Tags on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:51:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 22:13:39 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>生活</title>
+      <link>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Wed, 28 Aug 2019 22:13:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>leetcode</title>
@@ -17,15 +26,6 @@
       <pubDate>Wed, 28 Aug 2019 00:51:14 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Tue, 27 Aug 2019 22:33:36 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     

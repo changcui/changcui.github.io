@@ -6,10 +6,100 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Aug 2019 23:48:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Aug 2019 01:37:04 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>387. First Unique Character in a String</title>
+      <link>http://changcui.cc/posts/leetcode-387/</link>
+      <pubDate>Sat, 31 Aug 2019 01:37:04 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-387/</guid>
+      <description>classSolution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &amp;lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &amp;lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>1025. Divisor Game</title>
+      <link>http://changcui.cc/posts/leetcode-1025/</link>
+      <pubDate>Sat, 31 Aug 2019 01:35:15 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1025/</guid>
+      <description>dp classSolution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&amp;lt;bool&amp;gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &amp;lt;= N; i++) { bool res = false; for (int j = 1; j * j &amp;lt; i; j++) { if (i % j == 0 &amp;amp;&amp;amp; !saved[i - j - 1]) { res = true; break; } } saved.</description>
+    </item>
+    
+    <item>
+      <title>100. Same Tree</title>
+      <link>http://changcui.cc/posts/leetcode-100/</link>
+      <pubDate>Sat, 31 Aug 2019 01:33:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-100/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;amp;&amp;amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&amp;gt;val == q-&amp;gt;val) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;left, q-&amp;gt;left) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;right, q-&amp;gt;right); } }; </description>
+    </item>
+    
+    <item>
+      <title>455. Assign Cookies</title>
+      <link>http://changcui.cc/posts/leetcode-455/</link>
+      <pubDate>Sat, 31 Aug 2019 01:32:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-455/</guid>
+      <description>classSolution { public: int findContentChildren(vector&amp;lt;int&amp;gt;&amp;amp; g, vector&amp;lt;int&amp;gt;&amp;amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &amp;lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>350. Intersection of Two Arrays II</title>
+      <link>http://changcui.cc/posts/leetcode-350/</link>
+      <pubDate>Sat, 31 Aug 2019 01:20:41 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-350/</guid>
+      <description>classSolution { public: vector&amp;lt;int&amp;gt; intersect(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { map&amp;lt;int, int&amp;gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&amp;lt;int&amp;gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&amp;gt; second == 0) continue; rtn.push_back(num); it -&amp;gt; second -= 1; } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>326. Power of Three</title>
+      <link>http://changcui.cc/posts/leetcode-326/</link>
+      <pubDate>Sat, 31 Aug 2019 01:13:06 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-326/</guid>
+      <description>classSolution { public: bool isPowerOfThree(int n) { return n &amp;gt; 0 ? !(1162261467 % n) : 0; } }; </description>
+    </item>
+    
+    <item>
+      <title>268. Missing Number</title>
+      <link>http://changcui.cc/posts/leetcode-268/</link>
+      <pubDate>Sat, 31 Aug 2019 01:06:52 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-268/</guid>
+      <description>classSolution { public: int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; </description>
+    </item>
+    
+    <item>
+      <title>242. Valid Anagram</title>
+      <link>http://changcui.cc/posts/leetcode-242/</link>
+      <pubDate>Sat, 31 Aug 2019 00:53:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-242/</guid>
+      <description>classSolution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; </description>
+    </item>
+    
+    <item>
+      <title>237. Delete Node in a Linked List</title>
+      <link>http://changcui.cc/posts/leetcode-237/</link>
+      <pubDate>Sat, 31 Aug 2019 00:46:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-237/</guid>
+      <description> stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: void deleteNode(ListNode* node) { *node = *node -&amp;gt; next; } }; </description>
+    </item>
+    
+    <item>
+      <title>234. Palindrome Linked List</title>
+      <link>http://changcui.cc/posts/leetcode-234/</link>
+      <pubDate>Sat, 31 Aug 2019 00:30:34 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-234/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&amp;gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&amp;gt;next !</description>
+    </item>
     
     <item>
       <title>206. Reverse Linked List</title>

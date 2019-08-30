@@ -11,22 +11,22 @@
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  c&#43;&#43; - changcui
+  1078. Occurrences After Bigram - changcui
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/c&#43;&#43;/">
+    <meta property="og:url" content="http://changcui.cc/posts/leetcode-1078/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/c&#43;&#43;/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-1078/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/posts/c&#43;&#43;/">
+    <base href="http://changcui.cc/posts/leetcode-1078/">
     <title>
-  c&#43;&#43; - changcui
+  1078. Occurrences After Bigram - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/posts/c&#43;&#43;/">
+    <link rel="canonical" href="http://changcui.cc/posts/leetcode-1078/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -85,20 +85,32 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">c&#43;&#43;</h1>
-      <h2 class="date">August 26, 2019</h2>
+      <h1 class="title">1078. Occurrences After Bigram</h1>
+      <h2 class="date">August 30, 2019</h2>
 
       
     </header>
 
-    <ul>
-<li>string 也用容器实现的， 可以用 empty(), push_back, pop_back() 等方法。</li>
-<li>std::reverse 定义在 algorithm，可以将容器中的元素反向，传入参数是迭代器。</li>
-<li>std::sort 定义在 algorithm，可以将容器中的元素排序，默认是从小到大，传入参数是迭代器和排序函数指针或重载操作符()后的对象，函数或者重载函数返回值为 true 表示需要交换。</li>
-<li>std::stoi 可以将 string 转换成 int</li>
-<li>string::substr 的两个参数，第一个参数是 index，第二个是长度，两个参数都是 size_t 类型，不是迭代器类型。</li>
-</ul>
+    
 
+<h3 id="c-does-not-have-split">c++ does not have split</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">findOcurrences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        :type text: str
+</span><span class="s2">        :type first: str
+</span><span class="s2">        :type second: str
+</span><span class="s2">        :rtype: List[str]
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">second</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">rtn</span>
+            
+        </code></pre></div>
   </article>
 
   <br/>

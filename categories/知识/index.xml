@@ -17,7 +17,7 @@
       <pubDate>Mon, 26 Aug 2019 23:27:06 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/c&#43;&#43;/</guid>
-      <description> string 也用容器实现的， 可以用 empty(), push_back, pop_back() 等方法。 std::reverse 定义在 algorithm，可以将容器中的元素反向，传入参数是迭代器。 std::sort 定义在 algorithm，可以将容器中的元素排序，默认是从小到大，传入参数是迭代器和排序函数指针或重载操作符()后的对象，函数或者重载函数返回值为 true 表示需要交换。  </description>
+      <description> string 也用容器实现的， 可以用 empty(), push_back, pop_back() 等方法。 std::reverse 定义在 algorithm，可以将容器中的元素反向，传入参数是迭代器。 std::sort 定义在 algorithm，可以将容器中的元素排序，默认是从小到大，传入参数是迭代器和排序函数指针或重载操作符()后的对象，函数或者重载函数返回值为 true 表示需要交换。 std::stoi 可以将 string 转换成 int string::substr 的两个参数，第一个参数是 index，第二个是长度，两个参数都是 size_t 类型，不是迭代器类型。  </description>
     </item>
     
     <item>

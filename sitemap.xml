@@ -114,6 +114,23 @@
   </url>
   
   <url>
+    <loc>http://changcui.cc/posts/2019-08-30/</loc>
+    <lastmod>2019-08-30T22:18:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
+    <lastmod>2019-08-30T22:18:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2019-08-30T22:18:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://changcui.cc/posts/leetcode-1137/</loc>
     <lastmod>2019-08-30T22:11:27+08:00</lastmod>
   </url>
@@ -141,18 +158,6 @@
   <url>
     <loc>http://changcui.cc/posts/2019-08-28/</loc>
     <lastmod>2019-08-28T22:13:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
-    <lastmod>2019-08-28T22:13:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2019-08-28T22:13:39+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

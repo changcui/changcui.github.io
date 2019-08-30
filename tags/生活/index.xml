@@ -6,10 +6,26 @@
     <description>Recent content in 生活 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Aug 2019 22:13:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 22:18:53 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 08 30</title>
+      <link>http://changcui.cc/posts/2019-08-30/</link>
+      <pubDate>Fri, 30 Aug 2019 22:18:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/2019-08-30/</guid>
+      <description>工资 等了一个月终于发工资了，这次的工资算是正常了。上个月因为没有满10天，结果没有绩效工资，导致我的工资大缩水。
+不知道我 mentor 是出于上个月没有绩效的同情，还是我这个月表现得确实不错，他好像给我打了一个蛮高的绩效，我感到十分的开心，我恢复了对公司的喜爱，下决心更努力的干活了。
+工作 说到工作，今天干得活其实并不到，充其量是给 mentor 找了个处理 imagenet 数据的脚本，然后他处理完了之后，我在服务器上测试了一下自己写的 resnet 跑起来是不是正确的。
+令人意外的是，今天跑得格外的顺利，代码一次就跑起来了，也没有报错。validation 的 accuracy 也和官方文档上写的一样。但是我依旧只能随便试试，并开始不了工作，还是多卡的问题解决不了，只能等到下周啦。
+临近下班的时候，我和 mentor 讨论了一下下周的工作内容，基本上确定了有五个任务要做，但当我问到 ddl 的时候，他又说没有 ddl，其实我的岗压力并不是很大，虽然我们组已经没什么人了。聊完工作，又聊了点别的， mentor 作为长者给我传授了点人生的经验，希望对我有所帮助。
+cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明显就是显卡驱动的原因。呼叫 IT 一顿操作帮我搞定了，然后我发现了一件很奇怪的事。
+就是 nvcc -V 输出的 cuda 版本是 9.0，而 nvidia-smi 输出的 cuda 版本是 10.0，我一台电脑竟然能有两个 cuda 版本。
+经过查询后发现，cuda 有两种存在形式，一个是 runtime 形式，一个是 driver 形式，分别是 cuda-toolkit 和 driver 安装的。彼此不冲突，所以才会出现这种情况。我写的扩展应该是用 nvcc 的编译的，所以我认为应该是 runtime 更为重要一些，起码对我来说是这样。</description>
+    </item>
     
     <item>
       <title>2019 08 28</title>

@@ -17,7 +17,7 @@
       <pubDate>Fri, 30 Aug 2019 23:48:42 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-206/</guid>
-      <description> iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively </description>
+      <description> iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively classSolution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&amp;gt; next == NULL) return head; auto tmp = reverseList(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return tmp; } }; </description>
     </item>
     
     <item>

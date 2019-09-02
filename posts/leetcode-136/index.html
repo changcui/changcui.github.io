@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  Categories - changcui
+  136. Single Number - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/categories/">
+    <meta property="og:url" content="http://changcui.cc/posts/leetcode-136/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/categories/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-136/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/categories/">
+    <base href="http://changcui.cc/posts/leetcode-136/">
     <title>
-  Categories - changcui
+  136. Single Number - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/categories/">
+    <link rel="canonical" href="http://changcui.cc/posts/leetcode-136/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,32 +82,33 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Categories</h1>
-  <ul>
-    
-    <li>
-      <span>September 3, 2019</span><a href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/">成长</a>
-    </li>
-    
-    <li>
-      <span>September 1, 2019</span><a href="http://changcui.cc/categories/%E6%9D%82%E6%84%9F/">杂感</a>
-    </li>
-    
-    <li>
-      <span>August 26, 2019</span><a href="http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/">知识</a>
-    </li>
-    
-  </ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">136. Single Number</h1>
+      <h2 class="date">September 3, 2019</h2>
+
+      
+    </header>
+
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">singleNumber</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">rtn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">rtn</span> <span class="o">^=</span> <span class="n">num</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+  
 </section>
-
 
       </div>
       

@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Sep 2019 23:02:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2019 00:13:08 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>136. Single Number</title>
+      <link>http://changcui.cc/posts/leetcode-136/</link>
+      <pubDate>Tue, 03 Sep 2019 00:13:08 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-136/</guid>
+      <description>classSolution { public: int singleNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int rtn = 0; for (auto num : nums) { rtn ^= num; } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>121. Best Time to Buy and Sell Stock</title>
+      <link>http://changcui.cc/posts/leetcode-121/</link>
+      <pubDate>Tue, 03 Sep 2019 00:07:21 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-121/</guid>
+      <description>classSolution { public: int maxProfit(vector&amp;lt;int&amp;gt;&amp;amp; prices) { if (prices.size() == 0) { return 0; } int maxp = 0, minp = prices[0]; for (int i = 1; i &amp;lt; prices.size(); i++) { maxp = max(maxp, prices[i] - minp); minp = min(minp, prices[i]); } return maxp; } }; </description>
+    </item>
+    
+    <item>
+      <title>118. Pascal&#39;s Triangle</title>
+      <link>http://changcui.cc/posts/leetcode-118/</link>
+      <pubDate>Mon, 02 Sep 2019 23:48:35 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-118/</guid>
+      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; generate(int numRows) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; for (int i = 1; i &amp;lt;= numRows; i++) { vector&amp;lt;int&amp;gt; cur(i, 1); if (i &amp;gt;= 3) { auto tmp = result.back(); for (int j = 1; j &amp;lt;= i - 2; j++) { cur[j] = tmp[j - 1] + tmp[j]; } } result.push_back(cur); } return result; } }; </description>
+    </item>
+    
+    <item>
+      <title>108. Convert Sorted Array to Binary Search Tree</title>
+      <link>http://changcui.cc/posts/leetcode-108/</link>
+      <pubDate>Mon, 02 Sep 2019 23:41:35 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-108/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; nums, int left, int right) { if (left &amp;gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&amp;gt;left = helper(nums, left, mid - 1); root-&amp;gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&amp;lt;int&amp;gt;&amp;amp; nums) { return helper(nums, 0, nums.</description>
+    </item>
+    
+    <item>
+      <title>104. Maximum Depth of Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-104/</link>
+      <pubDate>Mon, 02 Sep 2019 23:27:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-104/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: int helper(TreeNode* root, int depth) { if (root == NULL) { return depth; } return max(helper(root-&amp;gt;left, depth+1), helper(root-&amp;gt;right, depth+1)); } int maxDepth(TreeNode* root) { return helper(root, 0); } }; </description>
+    </item>
+    
+    <item>
+      <title>101. Symmetric Tree</title>
+      <link>http://changcui.cc/posts/leetcode-101/</link>
+      <pubDate>Mon, 02 Sep 2019 23:20:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-101/</guid>
+      <description> recursively /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: bool helper(TreeNode* left, TreeNode* right) { if (left == NULL &amp;amp;&amp;amp; right == NULL) { return true; } else if (left == NULL || right == NULL) { return false; } return left-&amp;gt;val == right-&amp;gt;val &amp;amp;&amp;amp; helper(left-&amp;gt;left, right-&amp;gt;right) &amp;amp;&amp;amp; helper(left-&amp;gt;right, right-&amp;gt;left); } bool isSymmetric(TreeNode* root) { if (root == NULL) { return true; } else return helper(root-&amp;gt;left, root-&amp;gt;right); } }; </description>
+    </item>
     
     <item>
       <title>2019 09 01</title>

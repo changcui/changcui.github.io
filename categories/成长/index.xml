@@ -6,10 +6,64 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Sep 2019 00:13:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Sep 2019 22:12:59 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>204. Count Primes</title>
+      <link>http://changcui.cc/posts/leetcode-204/</link>
+      <pubDate>Wed, 04 Sep 2019 22:12:59 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-204/</guid>
+      <description>classSolution { public: int countPrimes(int n) { if (n &amp;lt;= 2) { return 0; } vector&amp;lt;bool&amp;gt; nums(n, true); auto rtn = 1; for (int i = 2;;) { for (int j = 2 * i; j &amp;lt; n; j += i) { nums[j] = false; } while (!nums[++i] &amp;amp;&amp;amp; i &amp;lt; n) { } if (i &amp;gt;= n) break; rtn += 1; } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>189. Rotate Array</title>
+      <link>http://changcui.cc/posts/leetcode-189/</link>
+      <pubDate>Wed, 04 Sep 2019 21:50:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-189/</guid>
+      <description>classSolution { public: void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { for (int i = 0; i &amp;lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; </description>
+    </item>
+    
+    <item>
+      <title>190. Reverse Bits</title>
+      <link>http://changcui.cc/posts/leetcode-190/</link>
+      <pubDate>Wed, 04 Sep 2019 21:35:49 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-190/</guid>
+      <description>classSolution { public: uint32_t reverseBits(uint32_t n) { uint32_t rtn = 0; for (int i = 0; i &amp;lt; 32; i++) { rtn &amp;lt;&amp;lt;= 1; rtn |= (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>191. Number of 1 Bits</title>
+      <link>http://changcui.cc/posts/leetcode-191/</link>
+      <pubDate>Wed, 04 Sep 2019 21:23:25 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-191/</guid>
+      <description>classSolution { public: int hammingWeight(uint32_t n) { int rtn = 0; for (int i = 0; i &amp;lt;= 31; i++) { rtn += (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
+    </item>
+    
+    <item>
+      <title>198. House Robber</title>
+      <link>http://changcui.cc/posts/leetcode-198/</link>
+      <pubDate>Wed, 04 Sep 2019 21:19:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-198/</guid>
+      <description> dp classSolution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } vector&amp;lt;int&amp;gt; rob(nums.size() + 1, 0); rob[0] = 0, rob[1] = nums[0]; for (int i = 2; i &amp;lt;= nums.size(); i++) { rob[i] = max(rob[i - 2] + nums[i - 1], rob[i - 1]); } return rob[nums.size()]; } }; </description>
+    </item>
+    
+    <item>
+      <title>141. Linked List Cycle</title>
+      <link>http://changcui.cc/posts/leetcode-141/</link>
+      <pubDate>Wed, 04 Sep 2019 20:54:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-141/</guid>
+      <description> fast slow ptr /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: bool hasCycle(ListNode *head) { if (head == NULL) { return false; } auto slow = head; auto fast = head; while (fast -&amp;gt; next != NULL &amp;amp;&amp;amp; fast -&amp;gt; next -&amp;gt; next != NULL) { slow = slow -&amp;gt; next; fast = fast -&amp;gt; next -&amp;gt; next; if (slow == fast) { return true; } } return false; } }; </description>
+    </item>
     
     <item>
       <title>136. Single Number</title>

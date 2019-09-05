@@ -6,10 +6,75 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Sep 2019 22:12:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 23:42:28 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 09 05</title>
+      <link>http://changcui.cc/posts/2019-09-05/</link>
+      <pubDate>Thu, 05 Sep 2019 23:42:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/2019-09-05/</guid>
+      <description>工作 早上差点没起来，忍了忍还是起来去上班了。今天的工作还是承接昨天，上午按照惯例玩了一会，然后就开始愉快地工作了。我这几天第一次感觉到组里是有多么的缺人，之前总觉得自己没事情做，分配的活很快就做完了，然而这几天的活基本上处于一个源源不断的状态。今天的工作其实没有什么技术含量，基本上就是带上耳机，然后听听歌，就可以完成的东西。比较有收获的是，我给 hpc 组的同事打了电话，向他咨询了一些关于 cuda 优化的问题，他给我指出了问题所在，我按照他的方法，把速度提升了十多倍。真的速度提升是一方面，另一方面是我发现自己对做的东西足够了解，我可以单独与别的组的同事沟通，获得他们的帮助。最终敲定的方案终于写完了，我把模型和数据都 dump 出来，但是 mentor 似乎太忙了，没有时间弄这个事情，于是这个事又落在了我的身上。mentor 教了我框架的基本用法，我便开始修改数据来适应这个框架，这部分工作估计要等明天才能完成了，希望结果是好的，不然所有的工作又要从来一遍。
+疲惫 和昨天一样，今日疲惫的点也是在刚下班的时候，仿佛上班时大的鸡血都失效了，猛得一放松，整个人变得非常无力，给我找个床我就能躺下睡着的感觉。不知道是不是和我中午喝咖啡有关系，也许咖啡的作用只能持续到晚饭？然后会带来更加强烈的疲惫，相当于预支了晚上的精力。
+airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的，之前她问我耳机还用不用，再加上之前用的她信用卡海淘，一直都没机会还她钱，好像也很久没有给她买过生日礼物了，今年趁着姐夫送了一个 mbp，我干脆也送给 airpods 吧，凑齐苹果一套，大概她会比较开心吧，毕竟她最近也太累了，嗓子一直处于哑的状态。</description>
+    </item>
+    
+    <item>
+      <title>53. Maximum Subarray</title>
+      <link>http://changcui.cc/posts/leetcode-53/</link>
+      <pubDate>Thu, 05 Sep 2019 21:54:59 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-53/</guid>
+      <description>classSolution { public: int maxSubArray(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&amp;lt;int&amp;gt; sum; sum.push_back(nums[0]); for (int i = 1; i &amp;lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &amp;gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; </description>
+    </item>
+    
+    <item>
+      <title>14. Longest Common Prefix</title>
+      <link>http://changcui.cc/posts/leetcode-14/</link>
+      <pubDate>Thu, 05 Sep 2019 21:39:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-14/</guid>
+      <description>classSolution { public: string longestCommonPrefix(vector&amp;lt;string&amp;gt;&amp;amp; strs) { if (strs.size() == 0) return &amp;#34;&amp;#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &amp;lt;&amp;lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &amp;gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &amp;lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.</description>
+    </item>
+    
+    <item>
+      <title>28. Implement strStr()</title>
+      <link>http://changcui.cc/posts/leetcode-28/</link>
+      <pubDate>Thu, 05 Sep 2019 21:24:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-28/</guid>
+      <description> KMP? classSolution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &amp;lt; needle.size()) return -1; for (int i = 0; i &amp;lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &amp;lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>169. Majority Element</title>
+      <link>http://changcui.cc/posts/leetcode-169/</link>
+      <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-169/</guid>
+      <description>classSolution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, int&amp;gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &amp;gt; nums.size() / 2) { return num; } } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>202. Happy Number</title>
+      <link>http://changcui.cc/posts/leetcode-202/</link>
+      <pubDate>Thu, 05 Sep 2019 21:11:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-202/</guid>
+      <description>classSolution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&amp;lt;int&amp;gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; </description>
+    </item>
+    
+    <item>
+      <title>217. Contains Duplicate</title>
+      <link>http://changcui.cc/posts/leetcode-217/</link>
+      <pubDate>Thu, 05 Sep 2019 20:36:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-217/</guid>
+      <description>classSolution { public: bool containsDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, bool&amp;gt; n; for (auto num: nums) { if (n[num]) { return true; } n[num] = true; } return false; } }; </description>
+    </item>
     
     <item>
       <title>204. Count Primes</title>

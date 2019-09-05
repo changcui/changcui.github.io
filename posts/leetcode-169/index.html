@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  Posts - changcui
+  169. Majority Element - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/">
+    <meta property="og:url" content="http://changcui.cc/posts/leetcode-169/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-169/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/posts/">
+    <base href="http://changcui.cc/posts/leetcode-169/">
     <title>
-  Posts - changcui
+  169. Majority Element - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/posts/">
+    <link rel="canonical" href="http://changcui.cc/posts/leetcode-169/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,123 +82,36 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Posts</h1>
-  <ul>
-    
-    <li>
-      <span>August 18, 2019</span><a href="http://changcui.cc/posts/linux-link/">理解 Linux 的硬链接与软链接</a>
-    </li>
-    
-    <li>
-      <span>August 17, 2019</span><a href="http://changcui.cc/posts/2019-08-17/">2019 08 17</a>
-    </li>
-    
-    <li>
-      <span>August 16, 2019</span><a href="http://changcui.cc/posts/2019-08-16/">2019 08 16</a>
-    </li>
-    
-    <li>
-      <span>August 15, 2019</span><a href="http://changcui.cc/posts/2019-08-15/">2019 08 15</a>
-    </li>
-    
-    <li>
-      <span>August 14, 2019</span><a href="http://changcui.cc/posts/2019-08-14/">2019 08 14</a>
-    </li>
-    
-    <li>
-      <span>August 13, 2019</span><a href="http://changcui.cc/posts/2019-08-13/">2019 08 13</a>
-    </li>
-    
-    <li>
-      <span>August 12, 2019</span><a href="http://changcui.cc/posts/2019-08-12/">2019 08 12</a>
-    </li>
-    
-    <li>
-      <span>August 11, 2019</span><a href="http://changcui.cc/posts/2019-08-11/">2019 08 11</a>
-    </li>
-    
-    <li>
-      <span>August 9, 2019</span><a href="http://changcui.cc/posts/2019-08-09/">2019 08 09</a>
-    </li>
-    
-    <li>
-      <span>August 8, 2019</span><a href="http://changcui.cc/posts/2019-08-08/">2019 08 08</a>
-    </li>
-    
-    <li>
-      <span>August 7, 2019</span><a href="http://changcui.cc/posts/2019-08-07/">2019 08 07</a>
-    </li>
-    
-    <li>
-      <span>August 6, 2019</span><a href="http://changcui.cc/posts/lovely-corgi/">可爱的小柯基</a>
-    </li>
-    
-    <li>
-      <span>August 6, 2019</span><a href="http://changcui.cc/posts/restart/">重启</a>
-    </li>
-    
-  </ul>
-  
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">169. Majority Element</h1>
+      <h2 class="date">September 5, 2019</h2>
 
+      
+    </header>
 
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">majorityElement</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">cnt</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cnt</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+  </article>
 
+  <br/>
 
-
-<ul class="pagination">
-  
-    
-    <li><a href="/posts/">&laquo;</a></li>
-    
-    <li class="hidden"><a href="/posts/page/3/">&lsaquo;</a></li>
   
   
-    
-    
-      
-    
-    
-      
-      <li><a href="/posts/">1</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="/posts/page/2/">2</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="/posts/page/3/">3</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li>4</li>
-      
-    
-  
-  
-</ul>
-
-
 </section>
-
 
       </div>
       

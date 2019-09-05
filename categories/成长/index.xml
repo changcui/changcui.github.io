@@ -6,10 +6,64 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Sep 2019 22:12:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 21:54:59 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>53. Maximum Subarray</title>
+      <link>http://changcui.cc/posts/leetcode-53/</link>
+      <pubDate>Thu, 05 Sep 2019 21:54:59 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-53/</guid>
+      <description>classSolution { public: int maxSubArray(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&amp;lt;int&amp;gt; sum; sum.push_back(nums[0]); for (int i = 1; i &amp;lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &amp;gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; </description>
+    </item>
+    
+    <item>
+      <title>14. Longest Common Prefix</title>
+      <link>http://changcui.cc/posts/leetcode-14/</link>
+      <pubDate>Thu, 05 Sep 2019 21:39:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-14/</guid>
+      <description>classSolution { public: string longestCommonPrefix(vector&amp;lt;string&amp;gt;&amp;amp; strs) { if (strs.size() == 0) return &amp;#34;&amp;#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &amp;lt;&amp;lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &amp;gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &amp;lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.</description>
+    </item>
+    
+    <item>
+      <title>28. Implement strStr()</title>
+      <link>http://changcui.cc/posts/leetcode-28/</link>
+      <pubDate>Thu, 05 Sep 2019 21:24:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-28/</guid>
+      <description> KMP? classSolution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &amp;lt; needle.size()) return -1; for (int i = 0; i &amp;lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &amp;lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>169. Majority Element</title>
+      <link>http://changcui.cc/posts/leetcode-169/</link>
+      <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-169/</guid>
+      <description>classSolution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, int&amp;gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &amp;gt; nums.size() / 2) { return num; } } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>202. Happy Number</title>
+      <link>http://changcui.cc/posts/leetcode-202/</link>
+      <pubDate>Thu, 05 Sep 2019 21:11:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-202/</guid>
+      <description>classSolution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&amp;lt;int&amp;gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; </description>
+    </item>
+    
+    <item>
+      <title>217. Contains Duplicate</title>
+      <link>http://changcui.cc/posts/leetcode-217/</link>
+      <pubDate>Thu, 05 Sep 2019 20:36:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-217/</guid>
+      <description>classSolution { public: bool containsDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, bool&amp;gt; n; for (auto num: nums) { if (n[num]) { return true; } n[num] = true; } return false; } }; </description>
+    </item>
     
     <item>
       <title>204. Count Primes</title>

@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Sep 2019 22:21:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 22:54:42 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>990. Satisfiability of Equality Equations</title>
+      <link>http://changcui.cc/posts/leetcode-990/</link>
+      <pubDate>Sat, 21 Sep 2019 22:54:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-990/</guid>
+      <description>classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } bool equationsPossible(vector&amp;lt;string&amp;gt;&amp;amp; equations) { fa.resize(255); for (int i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) fa[i] = i; for (auto e : equations) { auto f = e[0]; auto l = e[3]; if (e[1] == &amp;#39;=&amp;#39;) fa[find(f)] = find(l); } for (auto e : equations) { if (e[1] == &amp;#39;!&amp;#39; &amp;amp;&amp;amp; find(e[0]) == find(e[3])) return false; } return true; } }; </description>
+    </item>
+    
+    <item>
+      <title>684. Redundant Connection</title>
+      <link>http://changcui.cc/posts/leetcode-684/</link>
+      <pubDate>Sat, 21 Sep 2019 22:13:45 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-684/</guid>
+      <description>classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int a) { return a == fa[a] ? a : a = find(fa[a]); } vector&amp;lt;int&amp;gt; findRedundantConnection(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; edges) { auto N = edges.size(); fa.resize(N + 1); for (auto i = 1; i &amp;lt; N + 1; i++) { fa[i] = i; } int l, r; for (auto e : edges) { auto i_f = find(e[0]); auto j_f = find(e[1]); if (i_f != j_f) { fa[i_f] = j_f; } else { l = e[0]; r = e[1]; } } return vector&amp;lt;int&amp;gt;{l, r}; } }; </description>
+    </item>
+    
+    <item>
+      <title>547. Friend Circles</title>
+      <link>http://changcui.cc/posts/leetcode-547/</link>
+      <pubDate>Sat, 21 Sep 2019 17:11:23 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-547/</guid>
+      <description>union-find classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } int findCircleNum(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; M) { if (M.size() == 1) return 1; auto n = M.size(); auto ncircle = n; fa.resize(n); for (int i = 0; i &amp;lt; n; i++) { fa[i] = i; } for (int i = 0; i &amp;lt; n; i++) for (int j = i; j &amp;lt; n; j++) { if (M[i][j] == 1) { auto i_f = find(i); auto j_f = find(j); if (i_f !</description>
+    </item>
+    
+    <item>
+      <title>435. Non-overlapping Intervals</title>
+      <link>http://changcui.cc/posts/leetcode-435/</link>
+      <pubDate>Sat, 21 Sep 2019 16:18:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-435/</guid>
+      <description> greedy classSolution { public: int eraseOverlapIntervals(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &amp;lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&amp;lt; intervals.size(); i++) { if (r &amp;gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; </description>
+    </item>
+    
+    <item>
+      <title>56. Merge Intervals</title>
+      <link>http://changcui.cc/posts/leetcode-56/</link>
+      <pubDate>Sat, 21 Sep 2019 16:04:04 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-56/</guid>
+      <description> greedy classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; merge(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &amp;lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &amp;lt; intervals.size(); i++) { if (intervals[i][0] &amp;lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); return result; } }; </description>
+    </item>
+    
+    <item>
+      <title>452. Minimum Number of Arrows to Burst Balloons</title>
+      <link>http://changcui.cc/posts/leetcode-452/</link>
+      <pubDate>Sat, 21 Sep 2019 15:50:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-452/</guid>
+      <description> greedy classSolution { public: int findMinArrowShots(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &amp;lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &amp;lt; len; i++) { if (points[i][0] &amp;lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; </description>
+    </item>
     
     <item>
       <title>2019 09 20</title>

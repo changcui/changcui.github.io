@@ -6,10 +6,28 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Oct 2019 00:00:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 00:27:18 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>107. Binary Tree Level Order Traversal II</title>
+      <link>http://changcui.cc/posts/leetcode-107/</link>
+      <pubDate>Thu, 10 Oct 2019 00:27:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-107/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrderBottom(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
+    </item>
+    
+    <item>
+      <title>103. Binary Tree Zigzag Level Order Traversal</title>
+      <link>http://changcui.cc/posts/leetcode-103/</link>
+      <pubDate>Thu, 10 Oct 2019 00:19:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-103/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp;amp; 1) res[level].insert(res[level].begin(), root-&amp;gt;val); else res[level].</description>
+    </item>
     
     <item>
       <title>145. Binary Tree Postorder Traversal</title>
@@ -27,6 +45,15 @@
       
       <guid>http://changcui.cc/posts/leetcode-144/</guid>
       <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;int&amp;gt; preorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&amp;gt;val); s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); p = p-&amp;gt;right; } } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>94. Binary Tree Inorder Traversal</title>
+      <link>http://changcui.cc/posts/leetcode-94/</link>
+      <pubDate>Wed, 09 Oct 2019 23:51:25 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-94/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;int&amp;gt; inorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); res.push_back(p-&amp;gt;val); p = p-&amp;gt;right; } } return res; } }; </description>
     </item>
     
     <item>

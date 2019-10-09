@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>102. Binary Tree Level Order Traversal</title>
+      <link>http://changcui.cc/posts/leetcode-102/</link>
+      <pubDate>Thu, 10 Oct 2019 00:16:27 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-102/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
+    </item>
+    
+    <item>
       <title>145. Binary Tree Postorder Traversal</title>
       <link>http://changcui.cc/posts/leetcode-145/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:12 +0800</pubDate>

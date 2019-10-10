@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  Tags - changcui
+  153. Find Minimum in Rotated Sorted Array - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/tags/">
+    <meta property="og:url" content="http://changcui.cc/posts/leetcode-153/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/tags/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-153/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/tags/">
+    <base href="http://changcui.cc/posts/leetcode-153/">
     <title>
-  Tags - changcui
+  153. Find Minimum in Rotated Sorted Array - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/tags/">
+    <link rel="canonical" href="http://changcui.cc/posts/leetcode-153/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,36 +82,35 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Tags</h1>
-  <ul>
-    
-    <li>
-      <span>October 11, 2019</span><a href="http://changcui.cc/tags/leetcode/">leetcode</a>
-    </li>
-    
-    <li>
-      <span>September 20, 2019</span><a href="http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-    </li>
-    
-    <li>
-      <span>August 26, 2019</span><a href="http://changcui.cc/tags/c&#43;&#43;/">c&#43;&#43;</a>
-    </li>
-    
-    <li>
-      <span>August 18, 2019</span><a href="http://changcui.cc/tags/linux/">Linux</a>
-    </li>
-    
-  </ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">153. Find Minimum in Rotated Sorted Array</h1>
+      <h2 class="date">October 10, 2019</h2>
+
+      
+    </header>
+
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">findMin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">])</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+  
 </section>
-
 
       </div>
       

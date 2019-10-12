@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Oct 2019 00:19:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 17:42:13 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>84. Largest Rectangle in Histogram</title>
+      <link>http://changcui.cc/posts/leetcode-84/</link>
+      <pubDate>Sat, 12 Oct 2019 17:42:13 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-84/</guid>
+      <description>classSolution { public: int largestRectangleArea(vector&amp;lt;int&amp;gt;&amp;amp; heights) { int max_ = 0; for (int i = 0; i &amp;lt; heights.size(); i++) { if (i + 1 &amp;lt; heights.size() &amp;amp;&amp;amp; heights[i] &amp;lt;= heights[i + 1]) continue; for (int j = i, h = heights[i]; j &amp;gt;= 0; j--) { h = min(h, heights[j]); auto area = h * (i - j + 1); max_ = max(max_, area); } } return max_; } }; </description>
+    </item>
+    
+    <item>
+      <title>224. Basic Calculator</title>
+      <link>http://changcui.cc/posts/leetcode-224/</link>
+      <pubDate>Sat, 12 Oct 2019 17:09:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-224/</guid>
+      <description>classSolution { public: int calculate(string s) { int rtn = 0; queue&amp;lt;char&amp;gt; op; queue&amp;lt;int&amp;gt; num; for (int i = 0; i &amp;lt; s.size();) { if (s[i] == &amp;#39;(&amp;#39;) { int cnt = 1, start = i; while (cnt != 0) { i += 1; if (s[i] == &amp;#39;(&amp;#39;) cnt += 1; else if (s[i] == &amp;#39;)&amp;#39;) cnt -= 1; } num.push(calculate(s.substr(start + 1, i - start))); } else if (isdigit(s[i])) { int tmp = s[i] - &amp;#39;0&amp;#39;; while (isdigit(s[++i])) { tmp *= 10; tmp += s[i] - &amp;#39;0&amp;#39;; } num.</description>
+    </item>
+    
+    <item>
+      <title>394. Decode String</title>
+      <link>http://changcui.cc/posts/leetcode-394/</link>
+      <pubDate>Sat, 12 Oct 2019 16:37:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-394/</guid>
+      <description>classSolution { public: string decodeString(string s) { string rtn = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; s.size();) { if (isdigit(s[i])) { auto start = i; auto end = i; while (isdigit(s[++end])); auto n = stoi(s.substr(start, end-start+1)); start = end + 1; auto cnt = 1; while (cnt != 0) { end += 1; if (s[end] == &amp;#39;[&amp;#39;) ++cnt; else if (s[end] == &amp;#39;]&amp;#39;) --cnt; } auto con = decodeString(s.</description>
+    </item>
+    
+    <item>
+      <title>150. Evaluate Reverse Polish Notation</title>
+      <link>http://changcui.cc/posts/leetcode-150/</link>
+      <pubDate>Sat, 12 Oct 2019 15:46:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-150/</guid>
+      <description>classSolution { public: int evalRPN(vector&amp;lt;string&amp;gt;&amp;amp; tokens) { stack&amp;lt;int&amp;gt; t; for (auto s : tokens) { if (isdigit(s[s.size()-1])) { t.push(stoi(s)); } else { auto num1 = t.top(); t.pop(); auto num2 = t.top(); t.pop(); if (s == &amp;#34;+&amp;#34;) t.push(num2 + num1); else if (s == &amp;#34;*&amp;#34;) t.push(num2 * num1); else if (s == &amp;#34;-&amp;#34;) t.push(num2 - num1); else if (s == &amp;#34;/&amp;#34;) t.push(num2 / num1); } } return t.top(); } }; </description>
+    </item>
+    
+    <item>
+      <title>225. Implement Stack using Queues</title>
+      <link>http://changcui.cc/posts/leetcode-225/</link>
+      <pubDate>Sat, 12 Oct 2019 15:33:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-225/</guid>
+      <description>classMyStack { public: /** Initialize your data structure here. */ MyStack() { } /** Push element x onto stack. */ void push(int x) { q.push(x); for (int i = 0; i &amp;lt; (int)q.size() - 1; i++) q.push(q.front()), q.pop(); } /** Removes the element on top of the stack and returns that element. */ int pop() { auto rtn = q.front(); q.pop(); return rtn; } /** Get the top element. */ int top() { auto rtn = q.</description>
+    </item>
+    
+    <item>
+      <title>232. Implement Queue using Stacks</title>
+      <link>http://changcui.cc/posts/leetcode-232/</link>
+      <pubDate>Sat, 12 Oct 2019 15:20:29 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-232/</guid>
+      <description>classMyQueue { public: /** Initialize your data structure here. */ MyQueue() { } /** Push element x to the back of queue. */ void push(int x) { s1.push(x); } /** Removes the element from in front of queue and returns that element. */ int pop() { if (s2.empty()) { while (!s1.empty()) s2.push(s1.top()), s1.pop(); } auto rtn = s2.top(); s2.pop(); return rtn; } /** Get the front element. */ int peek() { if (s2.</description>
+    </item>
     
     <item>
       <title>315. Count of Smaller Numbers After Self</title>

@@ -6,10 +6,25 @@
     <description>Recent content in 杂感 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Sep 2019 22:21:25 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 22:46:18 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%9D%82%E6%84%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 10 15</title>
+      <link>http://changcui.cc/posts/2019-10-15/</link>
+      <pubDate>Tue, 15 Oct 2019 22:46:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/2019-10-15/</guid>
+      <description>聚餐 今天开组会的时候，一个毕业的师兄回来了，参加了我们的组会，和我们老师相谈甚欢，看着颇有一分衣锦还乡的感觉。
+开完组会师兄请我们吃了饭，聊了聊师兄现在的境遇，组内大家的情况，感觉我们组虽然人比较少，大家的平均学术水平也不是很高，可是相处起来还是不错的，一次久违的聚餐竟然有一些温馨的感觉。
+Dorefa 最近公司的事情处理完了，日常在公司并没有什么事情可以做，mentor 就让我读一些 paper 拓展一下思路，今天读的是 face++ 的大作 dorefa-net，说实话我是不明白这个网络的名字为啥这么起？
+这片文章的结构非常鲜明，行文也非常流畅，读起来可谓毫不费力。
+我认为主要的贡献在于对梯度的量化，之前的一些量化模型并没有量化梯度，因为没有这个必要，在推理的时候不需要梯度，何必要量化呢？
+本文量化梯度的目标就是让神经网络可以在类似于 FPGA 的硬件上参与训练，但是我不认为这种场景有任何实际的意义，如果训练追求的目标是 accuracy，量化训练显然不合适，更低的 bit width 意味着收敛得更慢，以及上限更低，如果目标是推理的话，本文似乎也没有提出一些新的想法。所以，我觉得这篇 paper 有一种四不像的感觉，提出了一个无人提出的领域，但却没有实际应用的场景。
+冷 最近帝都真的好冷啊，冷空气像是一瞬间就席卷了整个北京城，让我根本不想从被窝里面起来，洗漱，然后骑车，步行去公司上班，虽然这整个过程也就15分钟左右。</description>
+    </item>
     
     <item>
       <title>2019 09 20</title>

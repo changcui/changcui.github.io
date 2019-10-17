@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Oct 2019 22:46:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2019 01:05:04 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>130. Surrounded Regions</title>
+      <link>http://changcui.cc/posts/leetcode-130/</link>
+      <pubDate>Fri, 18 Oct 2019 01:05:04 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-130/</guid>
+      <description>classSolution { public: void solve(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board) { if (board.empty() || board[0].empty()) return; int m = board.size(), n = board[0].size(); for (int j = 0; j &amp;lt; n; j++) { if (board[0][j] == &amp;#39;O&amp;#39;) dfs(board, 0, j); if (board[m-1][j] == &amp;#39;O&amp;#39;) dfs(board, m-1, j); } for (int i = 1; i &amp;lt; m-1; i++) { if (board[i][0] == &amp;#39;O&amp;#39;) dfs(board, i, 0); if ( board[i][n-1] == &amp;#39;O&amp;#39;) dfs(board, i, n-1); } for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (board[i][j] == &amp;#39;O&amp;#39;) board[i][j] = &amp;#39;X&amp;#39;; if (board[i][j] == &amp;#39;$&amp;#39;) board[i][j] = &amp;#39;O&amp;#39;; } } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board, int i, int j) { int m = board.</description>
+    </item>
+    
+    <item>
+      <title>200. Number of Islands</title>
+      <link>http://changcui.cc/posts/leetcode-200/</link>
+      <pubDate>Fri, 18 Oct 2019 00:35:09 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-200/</guid>
+      <description>classSolution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.empty() || grid[0].empty()) return 0; int m = grid.size(), n = grid[0].size(); int cnt = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt; visited(m, vector&amp;lt;bool&amp;gt;(n, false)); for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (visited[i][j] || grid[i][j] == &amp;#39;0&amp;#39;) continue; dfs(grid, visited, i, j); cnt += 1; } return cnt; } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt;&amp;amp; visited, int i, int j) { if (i &amp;lt; 0 || i &amp;gt;= grid.</description>
+    </item>
+    
+    <item>
+      <title>52. N-Queens II</title>
+      <link>http://changcui.cc/posts/leetcode-52/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:57 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-52/</guid>
+      <description>classSolution { public: int totalNQueens(int n) { int cnt = 0; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp;amp; cnt, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(cnt, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
+    </item>
+    
+    <item>
+      <title>51. N-Queens</title>
+      <link>http://changcui.cc/posts/leetcode-51/</link>
+      <pubDate>Thu, 17 Oct 2019 23:58:00 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-51/</guid>
+      <description>classSolution { public: vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; solveNQueens(int n) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; res; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(res, out, 0); return res; } void helper(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; res, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(res, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
+    </item>
+    
+    <item>
+      <title>47. Permutations II</title>
+      <link>http://changcui.cc/posts/leetcode-47/</link>
+      <pubDate>Thu, 17 Oct 2019 23:39:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-47/</guid>
+      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permuteUnique(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); sort(nums.begin(), nums.end()); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 1) continue; if (i &amp;gt; 0 &amp;amp;&amp;amp; nums[i] == nums[i-1] &amp;amp;&amp;amp; visited[i-1] == 0) continue; visited[i] = 1; out.</description>
+    </item>
+    
+    <item>
+      <title>46. Permutations</title>
+      <link>http://changcui.cc/posts/leetcode-46/</link>
+      <pubDate>Thu, 17 Oct 2019 23:24:45 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-46/</guid>
+      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permute(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res){ if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 0) { visited[i] = 1; out.push_back(nums[i]); dfs(nums, out, visited, level + 1, res); out.pop_back(); visited[i] = 0; } } } }; </description>
+    </item>
     
     <item>
       <title>2019 10 15</title>

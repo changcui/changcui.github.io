@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  leetcode - changcui
+  26. Remove Duplicates from Sorted Array - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/tags/leetcode/">
+    <meta property="og:url" content="http://changcui.cc/posts/leetcode-26/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/tags/leetcode/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-26/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/tags/leetcode/">
+    <base href="http://changcui.cc/posts/leetcode-26/">
     <title>
-  leetcode - changcui
+  26. Remove Duplicates from Sorted Array - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/tags/leetcode/">
+    <link rel="canonical" href="http://changcui.cc/posts/leetcode-26/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,125 +82,35 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">leetcode</h1>
-  <ul>
-    
-    <li>
-      <span>August 30, 2019</span><a href="http://changcui.cc/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a>
-    </li>
-    
-    <li>
-      <span>August 30, 2019</span><a href="http://changcui.cc/posts/leetcode-1154/">1154. Day of the Year</a>
-    </li>
-    
-    <li>
-      <span>August 30, 2019</span><a href="http://changcui.cc/posts/leetcode-1137/">1137. N-th Tribonacci Number</a>
-    </li>
-    
-    <li>
-      <span>August 29, 2019</span><a href="http://changcui.cc/posts/leetcode-1128/">1128. Number of Equivalent Domino Pairs</a>
-    </li>
-    
-    <li>
-      <span>August 29, 2019</span><a href="http://changcui.cc/posts/leetcode-1122/">1122. Relative Sort Array</a>
-    </li>
-    
-    <li>
-      <span>August 29, 2019</span><a href="http://changcui.cc/posts/leetcode-1114/">1114. Print in Order</a>
-    </li>
-    
-    <li>
-      <span>August 28, 2019</span><a href="http://changcui.cc/posts/leetcode-1108/">1108. Defanging an IP Address</a>
-    </li>
-    
-    <li>
-      <span>August 28, 2019</span><a href="http://changcui.cc/posts/leetcode-1103/">1103. Distribute Candies to People</a>
-    </li>
-    
-    <li>
-      <span>August 28, 2019</span><a href="http://changcui.cc/posts/leetcode-1089/">1089. Duplicate Zeros</a>
-    </li>
-    
-    <li>
-      <span>August 26, 2019</span><a href="http://changcui.cc/posts/leetcode-1051/">1051. Height Checker</a>
-    </li>
-    
-    <li>
-      <span>August 26, 2019</span><a href="http://changcui.cc/posts/leetcode-1047/">1047. Remove All Adjacent Duplicates In String</a>
-    </li>
-    
-  </ul>
-  
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">26. Remove Duplicates from Sorted Array</h1>
+      <h2 class="date">October 18, 2019</h2>
 
+      
+    </header>
 
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">res</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+  </article>
 
+  <br/>
 
-
-<ul class="pagination">
-  
-    
-    <li><a href="/tags/leetcode/">&laquo;</a></li>
-    
-    <li class="hidden"><a href="/tags/leetcode/page/4/">&lsaquo;</a></li>
   
   
-    
-    
-      
-    
-    
-      
-      <li><a href="/tags/leetcode/">1</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="/tags/leetcode/page/2/">2</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="/tags/leetcode/page/3/">3</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="/tags/leetcode/page/4/">4</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li>5</li>
-      
-    
-  
-  
-</ul>
-
-
 </section>
-
 
       </div>
       

@@ -6,10 +6,55 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Oct 2019 01:05:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2019 23:49:57 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>41. First Missing Positive</title>
+      <link>http://changcui.cc/posts/leetcode-41/</link>
+      <pubDate>Fri, 18 Oct 2019 23:49:57 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-41/</guid>
+      <description>classSolution { public: int firstMissingPositive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { for (int i = 0; i &amp;lt; nums.size(); i++) while (nums[i] &amp;gt; 0 &amp;amp;&amp;amp; nums[i] &amp;lt;= nums.size() &amp;amp;&amp;amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; </description>
+    </item>
+    
+    <item>
+      <title>80. Remove Duplicates from Sorted Array II</title>
+      <link>http://changcui.cc/posts/leetcode-80/</link>
+      <pubDate>Fri, 18 Oct 2019 23:32:13 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-80/</guid>
+      <description>classSolution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() &amp;lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &amp;lt; nums.size(); i++) { if (nums[i] &amp;gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>26. Remove Duplicates from Sorted Array</title>
+      <link>http://changcui.cc/posts/leetcode-26/</link>
+      <pubDate>Fri, 18 Oct 2019 23:17:23 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-26/</guid>
+      <description>classSolution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &amp;lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>27. Remove Element</title>
+      <link>http://changcui.cc/posts/leetcode-27/</link>
+      <pubDate>Fri, 18 Oct 2019 23:11:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-27/</guid>
+      <description>classSolution { public: int removeElement(vector&amp;lt;int&amp;gt;&amp;amp; nums, int val) { int res = 0; for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>127. Word Ladder</title>
+      <link>http://changcui.cc/posts/leetcode-127/</link>
+      <pubDate>Fri, 18 Oct 2019 23:00:43 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-127/</guid>
+      <description>classSolution { public: int ladderLength(string beginWord, string endWord, vector&amp;lt;string&amp;gt;&amp;amp; wordList) { unordered_set&amp;lt;string&amp;gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&amp;lt;string&amp;gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &amp;gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res+1; for (int i = 0; i &amp;lt; word.size(); i++) { string newword = word; for (char j = &amp;#39;a&amp;#39;; j &amp;lt;= &amp;#39;z&amp;#39;; j++) { newword[i] = j; if (s.</description>
+    </item>
     
     <item>
       <title>130. Surrounded Regions</title>

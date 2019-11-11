@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python3 on changcui</title>
+    <link>http://changcui.cc/tags/python3/</link>
+    <description>Recent content in python3 on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Nov 2019 20:43:51 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/python3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python3</title>
+      <link>http://changcui.cc/posts/python3/</link>
+      <pubDate>Sat, 02 Nov 2019 20:43:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/python3/</guid>
+      <description> 在交互模式下，上一次打印出来的表达式被赋值给变量 _   </description>
+    </item>
+    
+  </channel>
+</rss>

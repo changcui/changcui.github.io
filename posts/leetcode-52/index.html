@@ -46,7 +46,7 @@
       <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
     
 
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.59.1" />
   </head>
 
   <body class="">
@@ -91,7 +91,7 @@
       
     </header>
 
-    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">totalNQueens</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -100,7 +100,7 @@
         <span class="k">return</span> <span class="n">cnt</span><span class="p">;</span>
     <span class="p">}</span>
     
-    <span class="kt">void</span> <span class="n">helper</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">helper</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">out</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span><span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="k">return</span><span class="p">;}</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">out</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">isValid</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
@@ -110,7 +110,7 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="kt">bool</span> <span class="n">isValid</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="nf">isValid</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;Q&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">col</span><span class="o">-</span><span class="n">row</span><span class="o">+</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col</span><span class="o">-</span><span class="n">row</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;Q&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>

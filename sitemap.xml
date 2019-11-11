@@ -1,46 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://changcui.cc/posts/leetcode-41/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
+    <loc>http://changcui.cc/posts/leetcode-5/</loc>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/categories/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/posts/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/tags/leetcode/</loc>
-    <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/</loc>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/</loc>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</loc>
+    <lastmod>2019-11-12T01:18:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/leetcode-3/</loc>
+    <lastmod>2019-11-12T00:58:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/python3/</loc>
+    <lastmod>2019-11-02T20:43:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/python3/</loc>
+    <lastmod>2019-11-02T20:43:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2019-11-02T20:43:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/leetcode-41/</loc>
     <lastmod>2019-10-18T23:49:57+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -101,13 +120,11 @@
   <url>
     <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
     <lastmod>2019-10-15T22:46:18+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2019-10-15T22:46:18+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -568,18 +585,11 @@
   <url>
     <loc>http://changcui.cc/tags/c&#43;&#43;/</loc>
     <lastmod>2019-08-26T23:27:06+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://changcui.cc/posts/c&#43;&#43;/</loc>
     <lastmod>2019-08-26T23:27:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2019-08-26T23:27:06+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -630,7 +640,6 @@
   <url>
     <loc>http://changcui.cc/tags/linux/</loc>
     <lastmod>2019-08-18T00:07:26+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

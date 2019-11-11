@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>leetcode on changcui</title>
@@ -6,10 +6,28 @@
     <description>Recent content in leetcode on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Oct 2019 23:49:57 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 01:18:58 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>5. Longest Palindromic Substring</title>
+      <link>http://changcui.cc/posts/leetcode-5/</link>
+      <pubDate>Tue, 12 Nov 2019 01:18:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-5/</guid>
+      <description>class Solution { public: string longestPalindrome(string s) { if (s.size() &amp;lt; 2) return s; int left = 0, right = 0, start = 0, maxlen = 0, n = s.size(); for (int i = 0; i &amp;lt; n - 1; i++) { helper(i, i, start, maxlen, s); helper(i, i + 1, start, maxlen, s); } return s.substr(start, maxlen); } void helper(int left, int right, int&amp;amp; start, int&amp;amp; maxlen, const string&amp;amp; s) { while (left &amp;gt;= 0 &amp;amp;&amp;amp; right &amp;lt; s.</description>
+    </item>
+    
+    <item>
+      <title>3. Longest Substring Without Repeating Characters</title>
+      <link>http://changcui.cc/posts/leetcode-3/</link>
+      <pubDate>Tue, 12 Nov 2019 00:58:55 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-3/</guid>
+      <description>class Solution { public: int lengthOfLongestSubstring(string s) { int left = -1, res = 0, n = s.size(); unordered_map&amp;lt;int, int&amp;gt; visited; for (int i = 0; i &amp;lt; n; i++) { if (visited.count(s[i]) &amp;amp;&amp;amp; visited[s[i]] &amp;gt; left) { left = visited[s[i]]; } visited[s[i]] = i; res = max(res, i - left); } return res; } }; </description>
+    </item>
     
     <item>
       <title>41. First Missing Positive</title>
@@ -17,7 +35,7 @@
       <pubDate>Fri, 18 Oct 2019 23:49:57 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-41/</guid>
-      <description>classSolution { public: int firstMissingPositive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { for (int i = 0; i &amp;lt; nums.size(); i++) while (nums[i] &amp;gt; 0 &amp;amp;&amp;amp; nums[i] &amp;lt;= nums.size() &amp;amp;&amp;amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; </description>
+      <description>class Solution { public: int firstMissingPositive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { for (int i = 0; i &amp;lt; nums.size(); i++) while (nums[i] &amp;gt; 0 &amp;amp;&amp;amp; nums[i] &amp;lt;= nums.size() &amp;amp;&amp;amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; </description>
     </item>
     
     <item>
@@ -26,7 +44,7 @@
       <pubDate>Fri, 18 Oct 2019 23:32:13 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-80/</guid>
-      <description>classSolution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() &amp;lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &amp;lt; nums.size(); i++) { if (nums[i] &amp;gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; </description>
+      <description>class Solution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() &amp;lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &amp;lt; nums.size(); i++) { if (nums[i] &amp;gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; </description>
     </item>
     
     <item>
@@ -35,7 +53,7 @@
       <pubDate>Fri, 18 Oct 2019 23:17:23 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-26/</guid>
-      <description>classSolution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &amp;lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; </description>
+      <description>class Solution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &amp;lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; </description>
     </item>
     
     <item>
@@ -44,7 +62,7 @@
       <pubDate>Fri, 18 Oct 2019 23:11:39 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-27/</guid>
-      <description>classSolution { public: int removeElement(vector&amp;lt;int&amp;gt;&amp;amp; nums, int val) { int res = 0; for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; </description>
+      <description>class Solution { public: int removeElement(vector&amp;lt;int&amp;gt;&amp;amp; nums, int val) { int res = 0; for (int i = 0; i &amp;lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; </description>
     </item>
     
     <item>
@@ -53,7 +71,7 @@
       <pubDate>Fri, 18 Oct 2019 23:00:43 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-127/</guid>
-      <description>classSolution { public: int ladderLength(string beginWord, string endWord, vector&amp;lt;string&amp;gt;&amp;amp; wordList) { unordered_set&amp;lt;string&amp;gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&amp;lt;string&amp;gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &amp;gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res+1; for (int i = 0; i &amp;lt; word.size(); i++) { string newword = word; for (char j = &amp;#39;a&amp;#39;; j &amp;lt;= &amp;#39;z&amp;#39;; j++) { newword[i] = j; if (s.</description>
+      <description>class Solution { public: int ladderLength(string beginWord, string endWord, vector&amp;lt;string&amp;gt;&amp;amp; wordList) { unordered_set&amp;lt;string&amp;gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&amp;lt;string&amp;gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &amp;gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res+1; for (int i = 0; i &amp;lt; word.size(); i++) { string newword = word; for (char j = &amp;#39;a&amp;#39;; j &amp;lt;= &amp;#39;z&amp;#39;; j++) { newword[i] = j; if (s.</description>
     </item>
     
     <item>
@@ -62,7 +80,7 @@
       <pubDate>Fri, 18 Oct 2019 01:05:04 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-130/</guid>
-      <description>classSolution { public: void solve(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board) { if (board.empty() || board[0].empty()) return; int m = board.size(), n = board[0].size(); for (int j = 0; j &amp;lt; n; j++) { if (board[0][j] == &amp;#39;O&amp;#39;) dfs(board, 0, j); if (board[m-1][j] == &amp;#39;O&amp;#39;) dfs(board, m-1, j); } for (int i = 1; i &amp;lt; m-1; i++) { if (board[i][0] == &amp;#39;O&amp;#39;) dfs(board, i, 0); if ( board[i][n-1] == &amp;#39;O&amp;#39;) dfs(board, i, n-1); } for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (board[i][j] == &amp;#39;O&amp;#39;) board[i][j] = &amp;#39;X&amp;#39;; if (board[i][j] == &amp;#39;$&amp;#39;) board[i][j] = &amp;#39;O&amp;#39;; } } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board, int i, int j) { int m = board.</description>
+      <description>class Solution { public: void solve(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board) { if (board.empty() || board[0].empty()) return; int m = board.size(), n = board[0].size(); for (int j = 0; j &amp;lt; n; j++) { if (board[0][j] == &amp;#39;O&amp;#39;) dfs(board, 0, j); if (board[m-1][j] == &amp;#39;O&amp;#39;) dfs(board, m-1, j); } for (int i = 1; i &amp;lt; m-1; i++) { if (board[i][0] == &amp;#39;O&amp;#39;) dfs(board, i, 0); if ( board[i][n-1] == &amp;#39;O&amp;#39;) dfs(board, i, n-1); } for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (board[i][j] == &amp;#39;O&amp;#39;) board[i][j] = &amp;#39;X&amp;#39;; if (board[i][j] == &amp;#39;$&amp;#39;) board[i][j] = &amp;#39;O&amp;#39;; } } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board, int i, int j) { int m = board.</description>
     </item>
     
     <item>
@@ -71,7 +89,7 @@
       <pubDate>Fri, 18 Oct 2019 00:35:09 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-200/</guid>
-      <description>classSolution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.empty() || grid[0].empty()) return 0; int m = grid.size(), n = grid[0].size(); int cnt = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt; visited(m, vector&amp;lt;bool&amp;gt;(n, false)); for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (visited[i][j] || grid[i][j] == &amp;#39;0&amp;#39;) continue; dfs(grid, visited, i, j); cnt += 1; } return cnt; } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt;&amp;amp; visited, int i, int j) { if (i &amp;lt; 0 || i &amp;gt;= grid.</description>
+      <description>class Solution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.empty() || grid[0].empty()) return 0; int m = grid.size(), n = grid[0].size(); int cnt = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt; visited(m, vector&amp;lt;bool&amp;gt;(n, false)); for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (visited[i][j] || grid[i][j] == &amp;#39;0&amp;#39;) continue; dfs(grid, visited, i, j); cnt += 1; } return cnt; } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt;&amp;amp; visited, int i, int j) { if (i &amp;lt; 0 || i &amp;gt;= grid.</description>
     </item>
     
     <item>
@@ -80,7 +98,7 @@
       <pubDate>Fri, 18 Oct 2019 00:00:57 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-52/</guid>
-      <description>classSolution { public: int totalNQueens(int n) { int cnt = 0; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp;amp; cnt, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(cnt, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
+      <description>class Solution { public: int totalNQueens(int n) { int cnt = 0; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp;amp; cnt, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(cnt, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
     </item>
     
     <item>
@@ -89,7 +107,7 @@
       <pubDate>Thu, 17 Oct 2019 23:58:00 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-51/</guid>
-      <description>classSolution { public: vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; solveNQueens(int n) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; res; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(res, out, 0); return res; } void helper(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; res, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(res, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; solveNQueens(int n) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; res; vector&amp;lt;string&amp;gt; out(n, string(n, &amp;#39;.&amp;#39;)); helper(res, out, 0); return res; } void helper(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; res, vector&amp;lt;string&amp;gt;&amp;amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &amp;#39;Q&amp;#39;; helper(res, out, row+1); out[row][i] = &amp;#39;.&amp;#39;; } } } bool isValid(const vector&amp;lt;string&amp;gt;&amp;amp; out, int row, int col) { for (int i = row - 1; i &amp;gt;= 0; i--) { if (out[i][col] == &amp;#39;Q&amp;#39;) return false; if (col-row+i &amp;gt;= 0 &amp;amp;&amp;amp; out[i][col-row+i] == &amp;#39;Q&amp;#39;) return false; if (col+row-i &amp;lt; out.</description>
     </item>
     
     <item>
@@ -98,7 +116,7 @@
       <pubDate>Thu, 17 Oct 2019 23:39:19 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-47/</guid>
-      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permuteUnique(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); sort(nums.begin(), nums.end()); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 1) continue; if (i &amp;gt; 0 &amp;amp;&amp;amp; nums[i] == nums[i-1] &amp;amp;&amp;amp; visited[i-1] == 0) continue; visited[i] = 1; out.</description>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permuteUnique(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); sort(nums.begin(), nums.end()); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 1) continue; if (i &amp;gt; 0 &amp;amp;&amp;amp; nums[i] == nums[i-1] &amp;amp;&amp;amp; visited[i-1] == 0) continue; visited[i] = 1; out.</description>
     </item>
     
     <item>
@@ -107,7 +125,7 @@
       <pubDate>Thu, 17 Oct 2019 23:24:45 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-46/</guid>
-      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permute(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res){ if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 0) { visited[i] = 1; out.push_back(nums[i]); dfs(nums, out, visited, level + 1, res); out.pop_back(); visited[i] = 0; } } } }; </description>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; permute(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; vector&amp;lt;int&amp;gt; out, visited(nums.size(), 0); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;int&amp;gt;&amp;amp; visited, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res){ if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &amp;lt; nums.size(); i++) { if (visited[i] == 0) { visited[i] = 1; out.push_back(nums[i]); dfs(nums, out, visited, level + 1, res); out.pop_back(); visited[i] = 0; } } } }; </description>
     </item>
     
     <item>
@@ -116,7 +134,7 @@
       <pubDate>Sat, 12 Oct 2019 17:42:13 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-84/</guid>
-      <description>classSolution { public: int largestRectangleArea(vector&amp;lt;int&amp;gt;&amp;amp; heights) { int max_ = 0; for (int i = 0; i &amp;lt; heights.size(); i++) { if (i + 1 &amp;lt; heights.size() &amp;amp;&amp;amp; heights[i] &amp;lt;= heights[i + 1]) continue; for (int j = i, h = heights[i]; j &amp;gt;= 0; j--) { h = min(h, heights[j]); auto area = h * (i - j + 1); max_ = max(max_, area); } } return max_; } }; </description>
+      <description>class Solution { public: int largestRectangleArea(vector&amp;lt;int&amp;gt;&amp;amp; heights) { int max_ = 0; for (int i = 0; i &amp;lt; heights.size(); i++) { if (i + 1 &amp;lt; heights.size() &amp;amp;&amp;amp; heights[i] &amp;lt;= heights[i + 1]) continue; for (int j = i, h = heights[i]; j &amp;gt;= 0; j--) { h = min(h, heights[j]); auto area = h * (i - j + 1); max_ = max(max_, area); } } return max_; } }; </description>
     </item>
     
     <item>
@@ -125,7 +143,7 @@
       <pubDate>Sat, 12 Oct 2019 17:09:32 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-224/</guid>
-      <description>classSolution { public: int calculate(string s) { int rtn = 0; queue&amp;lt;char&amp;gt; op; queue&amp;lt;int&amp;gt; num; for (int i = 0; i &amp;lt; s.size();) { if (s[i] == &amp;#39;(&amp;#39;) { int cnt = 1, start = i; while (cnt != 0) { i += 1; if (s[i] == &amp;#39;(&amp;#39;) cnt += 1; else if (s[i] == &amp;#39;)&amp;#39;) cnt -= 1; } num.push(calculate(s.substr(start + 1, i - start))); } else if (isdigit(s[i])) { int tmp = s[i] - &amp;#39;0&amp;#39;; while (isdigit(s[++i])) { tmp *= 10; tmp += s[i] - &amp;#39;0&amp;#39;; } num.</description>
+      <description>class Solution { public: int calculate(string s) { int rtn = 0; queue&amp;lt;char&amp;gt; op; queue&amp;lt;int&amp;gt; num; for (int i = 0; i &amp;lt; s.size();) { if (s[i] == &amp;#39;(&amp;#39;) { int cnt = 1, start = i; while (cnt != 0) { i += 1; if (s[i] == &amp;#39;(&amp;#39;) cnt += 1; else if (s[i] == &amp;#39;)&amp;#39;) cnt -= 1; } num.push(calculate(s.substr(start + 1, i - start))); } else if (isdigit(s[i])) { int tmp = s[i] - &amp;#39;0&amp;#39;; while (isdigit(s[++i])) { tmp *= 10; tmp += s[i] - &amp;#39;0&amp;#39;; } num.</description>
     </item>
     
     <item>
@@ -134,7 +152,7 @@
       <pubDate>Sat, 12 Oct 2019 16:37:18 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-394/</guid>
-      <description>classSolution { public: string decodeString(string s) { string rtn = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; s.size();) { if (isdigit(s[i])) { auto start = i; auto end = i; while (isdigit(s[++end])); auto n = stoi(s.substr(start, end-start+1)); start = end + 1; auto cnt = 1; while (cnt != 0) { end += 1; if (s[end] == &amp;#39;[&amp;#39;) ++cnt; else if (s[end] == &amp;#39;]&amp;#39;) --cnt; } auto con = decodeString(s.</description>
+      <description>class Solution { public: string decodeString(string s) { string rtn = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; s.size();) { if (isdigit(s[i])) { auto start = i; auto end = i; while (isdigit(s[++end])); auto n = stoi(s.substr(start, end-start+1)); start = end + 1; auto cnt = 1; while (cnt != 0) { end += 1; if (s[end] == &amp;#39;[&amp;#39;) ++cnt; else if (s[end] == &amp;#39;]&amp;#39;) --cnt; } auto con = decodeString(s.</description>
     </item>
     
     <item>
@@ -143,7 +161,7 @@
       <pubDate>Sat, 12 Oct 2019 15:46:38 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-150/</guid>
-      <description>classSolution { public: int evalRPN(vector&amp;lt;string&amp;gt;&amp;amp; tokens) { stack&amp;lt;int&amp;gt; t; for (auto s : tokens) { if (isdigit(s[s.size()-1])) { t.push(stoi(s)); } else { auto num1 = t.top(); t.pop(); auto num2 = t.top(); t.pop(); if (s == &amp;#34;+&amp;#34;) t.push(num2 + num1); else if (s == &amp;#34;*&amp;#34;) t.push(num2 * num1); else if (s == &amp;#34;-&amp;#34;) t.push(num2 - num1); else if (s == &amp;#34;/&amp;#34;) t.push(num2 / num1); } } return t.top(); } }; </description>
+      <description>class Solution { public: int evalRPN(vector&amp;lt;string&amp;gt;&amp;amp; tokens) { stack&amp;lt;int&amp;gt; t; for (auto s : tokens) { if (isdigit(s[s.size()-1])) { t.push(stoi(s)); } else { auto num1 = t.top(); t.pop(); auto num2 = t.top(); t.pop(); if (s == &amp;#34;+&amp;#34;) t.push(num2 + num1); else if (s == &amp;#34;*&amp;#34;) t.push(num2 * num1); else if (s == &amp;#34;-&amp;#34;) t.push(num2 - num1); else if (s == &amp;#34;/&amp;#34;) t.push(num2 / num1); } } return t.top(); } }; </description>
     </item>
     
     <item>
@@ -152,7 +170,7 @@
       <pubDate>Sat, 12 Oct 2019 15:33:10 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-225/</guid>
-      <description>classMyStack { public: /** Initialize your data structure here. */ MyStack() { } /** Push element x onto stack. */ void push(int x) { q.push(x); for (int i = 0; i &amp;lt; (int)q.size() - 1; i++) q.push(q.front()), q.pop(); } /** Removes the element on top of the stack and returns that element. */ int pop() { auto rtn = q.front(); q.pop(); return rtn; } /** Get the top element. */ int top() { auto rtn = q.</description>
+      <description>class MyStack { public: /** Initialize your data structure here. */ MyStack() { } /** Push element x onto stack. */ void push(int x) { q.push(x); for (int i = 0; i &amp;lt; (int)q.size() - 1; i++) q.push(q.front()), q.pop(); } /** Removes the element on top of the stack and returns that element. */ int pop() { auto rtn = q.front(); q.pop(); return rtn; } /** Get the top element. */ int top() { auto rtn = q.</description>
     </item>
     
     <item>
@@ -161,7 +179,7 @@
       <pubDate>Sat, 12 Oct 2019 15:20:29 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-232/</guid>
-      <description>classMyQueue { public: /** Initialize your data structure here. */ MyQueue() { } /** Push element x to the back of queue. */ void push(int x) { s1.push(x); } /** Removes the element from in front of queue and returns that element. */ int pop() { if (s2.empty()) { while (!s1.empty()) s2.push(s1.top()), s1.pop(); } auto rtn = s2.top(); s2.pop(); return rtn; } /** Get the front element. */ int peek() { if (s2.</description>
+      <description>class MyQueue { public: /** Initialize your data structure here. */ MyQueue() { } /** Push element x to the back of queue. */ void push(int x) { s1.push(x); } /** Removes the element from in front of queue and returns that element. */ int pop() { if (s2.empty()) { while (!s1.empty()) s2.push(s1.top()), s1.pop(); } auto rtn = s2.top(); s2.pop(); return rtn; } /** Get the front element. */ int peek() { if (s2.</description>
     </item>
     
     <item>
@@ -170,7 +188,7 @@
       <pubDate>Fri, 11 Oct 2019 00:19:36 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-315/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; countSmaller(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;int&amp;gt; t, res(nums.size()); for (int i = nums.size() - 1; i &amp;gt;= 0; i--) { int left = 0, right = t.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (t[mid] &amp;lt; nums[i]) left = mid + 1; else right = mid; } res[i] = right; t.insert(t.begin() + right, nums[i]); } return res; } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; countSmaller(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;int&amp;gt; t, res(nums.size()); for (int i = nums.size() - 1; i &amp;gt;= 0; i--) { int left = 0, right = t.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (t[mid] &amp;lt; nums[i]) left = mid + 1; else right = mid; } res[i] = right; t.insert(t.begin() + right, nums[i]); } return res; } }; </description>
     </item>
     
     <item>
@@ -179,7 +197,7 @@
       <pubDate>Thu, 10 Oct 2019 23:52:03 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-349/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; intersection(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { unordered_set&amp;lt;int&amp;gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) if (n1.count(n)) res.insert(n); return vector&amp;lt;int&amp;gt;(res.begin(), res.end()); } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; intersection(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { unordered_set&amp;lt;int&amp;gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) if (n1.count(n)) res.insert(n); return vector&amp;lt;int&amp;gt;(res.begin(), res.end()); } }; </description>
     </item>
     
     <item>
@@ -188,7 +206,7 @@
       <pubDate>Thu, 10 Oct 2019 23:46:18 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-374/</guid>
-      <description>// Forward declaration of guess API. // @param num, your guess // @return -1 if my number is lower, 1 if my number is higher, otherwise return 0 int guess(int num); classSolution { public: int guessNumber(int n) { int left = 1, right = n; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; auto g = guess(mid); if (g == 0) return mid; else if (g == 1) left = mid + 1; else right = mid; } return -1; } }; </description>
+      <description>// Forward declaration of guess API. // @param num, your guess // @return -1 if my number is lower, 1 if my number is higher, otherwise return 0 int guess(int num); class Solution { public: int guessNumber(int n) { int left = 1, right = n; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; auto g = guess(mid); if (g == 0) return mid; else if (g == 1) left = mid + 1; else right = mid; } return -1; } }; </description>
     </item>
     
     <item>
@@ -197,7 +215,7 @@
       <pubDate>Thu, 10 Oct 2019 23:40:43 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-278/</guid>
-      <description>// Forward declaration of isBadVersion API. bool isBadVersion(int version); classSolution { public: int firstBadVersion(int n) { int left = 1, right = n; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (isBadVersion(mid)) right = mid; else left = mid + 1; } return right; } }; </description>
+      <description>// Forward declaration of isBadVersion API. bool isBadVersion(int version); class Solution { public: int firstBadVersion(int n) { int left = 1, right = n; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (isBadVersion(mid)) right = mid; else left = mid + 1; } return right; } }; </description>
     </item>
     
     <item>
@@ -206,7 +224,7 @@
       <pubDate>Thu, 10 Oct 2019 23:35:38 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-34/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; searchRange(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; target) left = mid + 1; else right = mid; } if (right == nums.size() || nums[right] != target) return {-1, -1}; int l = right; left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt;= target) left = mid + 1; else right = mid; } return {l, right - 1}; } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; searchRange(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; target) left = mid + 1; else right = mid; } if (right == nums.size() || nums[right] != target) return {-1, -1}; int l = right; left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt;= target) left = mid + 1; else right = mid; } return {l, right - 1}; } }; </description>
     </item>
     
     <item>
@@ -215,7 +233,7 @@
       <pubDate>Thu, 10 Oct 2019 23:14:45 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-162/</guid>
-      <description>classSolution { public: int findPeakElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; nums[mid + 1]) left = mid + 1; else right = mid; } return right; } }; </description>
+      <description>class Solution { public: int findPeakElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; nums[mid + 1]) left = mid + 1; else right = mid; } return right; } }; </description>
     </item>
     
     <item>
@@ -224,7 +242,7 @@
       <pubDate>Thu, 10 Oct 2019 23:06:23 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-154/</guid>
-      <description>classSolution { public: int findMin(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;gt; nums[right]) left = mid + 1; else if (nums[mid] &amp;lt; nums[right]) right = mid; else right -= 1; } return nums[right]; } }; </description>
+      <description>class Solution { public: int findMin(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;gt; nums[right]) left = mid + 1; else if (nums[mid] &amp;lt; nums[right]) right = mid; else right -= 1; } return nums[right]; } }; </description>
     </item>
     
     <item>
@@ -233,7 +251,7 @@
       <pubDate>Thu, 10 Oct 2019 22:59:15 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-153/</guid>
-      <description>classSolution { public: int findMin(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;gt; nums[right]) left = mid + 1; else right = mid; } return nums[right]; } }; </description>
+      <description>class Solution { public: int findMin(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int left = 0, right = nums.size() - 1; while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;gt; nums[right]) left = mid + 1; else right = mid; } return nums[right]; } }; </description>
     </item>
     
     <item>
@@ -242,7 +260,7 @@
       <pubDate>Thu, 10 Oct 2019 22:49:37 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-81/</guid>
-      <description>classSolution { public: bool search(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; if (target == nums[mid]) return true; if (nums[mid] &amp;lt; nums[right]) { if (target &amp;gt; nums[mid] &amp;amp;&amp;amp; target &amp;lt;= nums[right]) left = mid + 1; else right = mid - 1; } else if (nums[mid] &amp;gt; nums[right]) { if (target &amp;gt;= nums[left] &amp;amp;&amp;amp; target &amp;lt; nums[mid]) right = mid - 1; else left = mid + 1; } else right -= 1; } return false; } }; </description>
+      <description>class Solution { public: bool search(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; if (target == nums[mid]) return true; if (nums[mid] &amp;lt; nums[right]) { if (target &amp;gt; nums[mid] &amp;amp;&amp;amp; target &amp;lt;= nums[right]) left = mid + 1; else right = mid - 1; } else if (nums[mid] &amp;gt; nums[right]) { if (target &amp;gt;= nums[left] &amp;amp;&amp;amp; target &amp;lt; nums[mid]) right = mid - 1; else left = mid + 1; } else right -= 1; } return false; } }; </description>
     </item>
     
     <item>
@@ -251,7 +269,7 @@
       <pubDate>Thu, 10 Oct 2019 22:38:31 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-33/</guid>
-      <description>classSolution { public: int search(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; if (nums[mid] == target) return mid; else if (nums[mid] &amp;lt; nums[right]) { if (target &amp;gt; nums[mid] &amp;amp;&amp;amp; target &amp;lt;= nums[right]) left = mid + 1; else right = mid - 1; } else { if (target &amp;gt;= nums[left] &amp;amp;&amp;amp; target &amp;lt; nums[mid]) right = mid - 1; else left = mid + 1; } } return -1; } }; </description>
+      <description>class Solution { public: int search(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &amp;lt;= right) { int mid = left + (right - left) / 2; if (nums[mid] == target) return mid; else if (nums[mid] &amp;lt; nums[right]) { if (target &amp;gt; nums[mid] &amp;amp;&amp;amp; target &amp;lt;= nums[right]) left = mid + 1; else right = mid - 1; } else { if (target &amp;gt;= nums[left] &amp;amp;&amp;amp; target &amp;lt; nums[mid]) right = mid - 1; else left = mid + 1; } } return -1; } }; </description>
     </item>
     
     <item>
@@ -260,7 +278,7 @@
       <pubDate>Thu, 10 Oct 2019 22:15:15 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-35/</guid>
-      <description>classSolution { public: int searchInsert(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; target) left = mid + 1; else right = mid; } return right; } }; </description>
+      <description>class Solution { public: int searchInsert(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int left = 0, right = nums.size(); while (left &amp;lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &amp;lt; target) left = mid + 1; else right = mid; } return right; } }; </description>
     </item>
     
     <item>
@@ -269,7 +287,7 @@
       <pubDate>Thu, 10 Oct 2019 00:27:18 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-107/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrderBottom(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrderBottom(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
     </item>
     
     <item>
@@ -278,7 +296,7 @@
       <pubDate>Thu, 10 Oct 2019 00:19:38 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-103/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp;amp; 1) res[level].insert(res[level].begin(), root-&amp;gt;val); else res[level].</description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp;amp; 1) res[level].insert(res[level].begin(), root-&amp;gt;val); else res[level].</description>
     </item>
     
     <item>
@@ -287,7 +305,7 @@
       <pubDate>Thu, 10 Oct 2019 00:16:27 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-102/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrder(TreeNode* root) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&amp;gt;val); if (root-&amp;gt;left) helper(root-&amp;gt;left, level+1, res); if (root-&amp;gt;right) helper(root-&amp;gt;right, level+1, res); } }; </description>
     </item>
     
     <item>
@@ -296,7 +314,7 @@
       <pubDate>Thu, 10 Oct 2019 00:00:12 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-145/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;int&amp;gt; postorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&amp;gt;val); s.push(p); p = p-&amp;gt;right; } else { p = s.top(); s.pop(); p = p-&amp;gt;left; } } return res; } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;int&amp;gt; postorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&amp;gt;val); s.push(p); p = p-&amp;gt;right; } else { p = s.top(); s.pop(); p = p-&amp;gt;left; } } return res; } }; </description>
     </item>
     
     <item>
@@ -305,7 +323,7 @@
       <pubDate>Wed, 09 Oct 2019 23:54:01 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-144/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;int&amp;gt; preorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&amp;gt;val); s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); p = p-&amp;gt;right; } } return res; } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;int&amp;gt; preorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&amp;gt;val); s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); p = p-&amp;gt;right; } } return res; } }; </description>
     </item>
     
     <item>
@@ -314,7 +332,7 @@
       <pubDate>Wed, 09 Oct 2019 23:51:25 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-94/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: vector&amp;lt;int&amp;gt; inorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); res.push_back(p-&amp;gt;val); p = p-&amp;gt;right; } } return res; } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;int&amp;gt; inorderTraversal(TreeNode* root) { vector&amp;lt;int&amp;gt; res; stack&amp;lt;TreeNode*&amp;gt; s; auto p = root; while (!s.empty() || p) { if (p) { s.push(p); p = p-&amp;gt;left; } else { p = s.top(); s.pop(); res.push_back(p-&amp;gt;val); p = p-&amp;gt;right; } } return res; } }; </description>
     </item>
     
     <item>
@@ -323,7 +341,7 @@
       <pubDate>Sat, 21 Sep 2019 22:54:42 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-990/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } bool equationsPossible(vector&amp;lt;string&amp;gt;&amp;amp; equations) { fa.resize(255); for (int i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) fa[i] = i; for (auto e : equations) { auto f = e[0]; auto l = e[3]; if (e[1] == &amp;#39;=&amp;#39;) fa[find(f)] = find(l); } for (auto e : equations) { if (e[1] == &amp;#39;!&amp;#39; &amp;amp;&amp;amp; find(e[0]) == find(e[3])) return false; } return true; } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } bool equationsPossible(vector&amp;lt;string&amp;gt;&amp;amp; equations) { fa.resize(255); for (int i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) fa[i] = i; for (auto e : equations) { auto f = e[0]; auto l = e[3]; if (e[1] == &amp;#39;=&amp;#39;) fa[find(f)] = find(l); } for (auto e : equations) { if (e[1] == &amp;#39;!&amp;#39; &amp;amp;&amp;amp; find(e[0]) == find(e[3])) return false; } return true; } }; </description>
     </item>
     
     <item>
@@ -332,7 +350,7 @@
       <pubDate>Sat, 21 Sep 2019 22:13:45 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-684/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int a) { return a == fa[a] ? a : a = find(fa[a]); } vector&amp;lt;int&amp;gt; findRedundantConnection(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; edges) { auto N = edges.size(); fa.resize(N + 1); for (auto i = 1; i &amp;lt; N + 1; i++) { fa[i] = i; } int l, r; for (auto e : edges) { auto i_f = find(e[0]); auto j_f = find(e[1]); if (i_f != j_f) { fa[i_f] = j_f; } else { l = e[0]; r = e[1]; } } return vector&amp;lt;int&amp;gt;{l, r}; } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; fa; int find(int a) { return a == fa[a] ? a : a = find(fa[a]); } vector&amp;lt;int&amp;gt; findRedundantConnection(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; edges) { auto N = edges.size(); fa.resize(N + 1); for (auto i = 1; i &amp;lt; N + 1; i++) { fa[i] = i; } int l, r; for (auto e : edges) { auto i_f = find(e[0]); auto j_f = find(e[1]); if (i_f != j_f) { fa[i_f] = j_f; } else { l = e[0]; r = e[1]; } } return vector&amp;lt;int&amp;gt;{l, r}; } }; </description>
     </item>
     
     <item>
@@ -341,7 +359,7 @@
       <pubDate>Sat, 21 Sep 2019 17:11:23 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-547/</guid>
-      <description>union-find classSolution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } int findCircleNum(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; M) { if (M.size() == 1) return 1; auto n = M.size(); auto ncircle = n; fa.resize(n); for (int i = 0; i &amp;lt; n; i++) { fa[i] = i; } for (int i = 0; i &amp;lt; n; i++) for (int j = i; j &amp;lt; n; j++) { if (M[i][j] == 1) { auto i_f = find(i); auto j_f = find(j); if (i_f !</description>
+      <description>union-find class Solution { public: vector&amp;lt;int&amp;gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } int findCircleNum(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; M) { if (M.size() == 1) return 1; auto n = M.size(); auto ncircle = n; fa.resize(n); for (int i = 0; i &amp;lt; n; i++) { fa[i] = i; } for (int i = 0; i &amp;lt; n; i++) for (int j = i; j &amp;lt; n; j++) { if (M[i][j] == 1) { auto i_f = find(i); auto j_f = find(j); if (i_f !</description>
     </item>
     
     <item>
@@ -350,7 +368,7 @@
       <pubDate>Sat, 21 Sep 2019 16:18:42 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-435/</guid>
-      <description> greedy classSolution { public: int eraseOverlapIntervals(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &amp;lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&amp;lt; intervals.size(); i++) { if (r &amp;gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; </description>
+      <description> greedy class Solution { public: int eraseOverlapIntervals(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &amp;lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&amp;lt; intervals.size(); i++) { if (r &amp;gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; </description>
     </item>
     
     <item>
@@ -359,7 +377,7 @@
       <pubDate>Sat, 21 Sep 2019 16:04:04 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-56/</guid>
-      <description> greedy classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; merge(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &amp;lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &amp;lt; intervals.size(); i++) { if (intervals[i][0] &amp;lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); return result; } }; </description>
+      <description> greedy class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; merge(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; intervals) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &amp;lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &amp;lt; intervals.size(); i++) { if (intervals[i][0] &amp;lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&amp;lt;int&amp;gt;{left, right}); return result; } }; </description>
     </item>
     
     <item>
@@ -368,7 +386,7 @@
       <pubDate>Sat, 21 Sep 2019 15:50:19 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-452/</guid>
-      <description> greedy classSolution { public: int findMinArrowShots(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &amp;lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &amp;lt; len; i++) { if (points[i][0] &amp;lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; </description>
+      <description> greedy class Solution { public: int findMinArrowShots(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &amp;lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &amp;lt; len; i++) { if (points[i][0] &amp;lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; </description>
     </item>
     
     <item>
@@ -377,7 +395,7 @@
       <pubDate>Sun, 08 Sep 2019 00:10:14 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-75/</guid>
-      <description>classSolution { public: void sortColors(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &amp;lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &amp;lt; len &amp;amp;&amp;amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; </description>
+      <description>class Solution { public: void sortColors(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &amp;lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &amp;lt; len &amp;amp;&amp;amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; </description>
     </item>
     
     <item>
@@ -386,7 +404,7 @@
       <pubDate>Fri, 06 Sep 2019 23:50:28 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-155/</guid>
-      <description>priority_queue, stack classMinStack { public: /** initialize your data structure here. */ stack&amp;lt;int&amp;gt; s; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; MinStack() { } void push(int x) { s.push(x); p.push(x); } void pop() { auto e = s.top(); s.pop(); vector&amp;lt;int&amp;gt; tmp; while (!p.empty()) { auto t = p.top(); p.pop(); if (t == e) break; tmp.push_back(t); } for (auto i : tmp) { p.push(i); } } int top() { return s.top(); } int getMin() { return p.</description>
+      <description>priority_queue, stack class MinStack { public: /** initialize your data structure here. */ stack&amp;lt;int&amp;gt; s; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; MinStack() { } void push(int x) { s.push(x); p.push(x); } void pop() { auto e = s.top(); s.pop(); vector&amp;lt;int&amp;gt; tmp; while (!p.empty()) { auto t = p.top(); p.pop(); if (t == e) break; tmp.push_back(t); } for (auto i : tmp) { p.push(i); } } int top() { return s.top(); } int getMin() { return p.</description>
     </item>
     
     <item>
@@ -395,7 +413,7 @@
       <pubDate>Fri, 06 Sep 2019 23:19:44 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-171/</guid>
-      <description> long long classSolution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &amp;#39;A&amp;#39; + 1; } return rtn; } }; </description>
+      <description> long long class Solution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &amp;#39;A&amp;#39; + 1; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -404,7 +422,7 @@
       <pubDate>Fri, 06 Sep 2019 23:05:29 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-13/</guid>
-      <description>classSolution { public: int romanToInt(string s) { auto rtn = 0; auto l = s.size(); for (int i = 0; i &amp;lt; l;) { if (s[i] == &amp;#39;I&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;V&amp;#39;) { rtn += 4; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;X&amp;#39;) { rtn += 9; i += 1; } else { rtn += 1; } } else if (s[i] == &amp;#39;X&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;L&amp;#39;) { rtn += 40; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;C&amp;#39;) { rtn += 90; i += 1; } else { rtn += 10; } } else if (s[i] == &amp;#39;C&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;D&amp;#39;) { rtn += 400; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;M&amp;#39;) { rtn += 900; i += 1; } else { rtn += 100; } } else if (s[i] == &amp;#39;V&amp;#39;) { rtn += 5; } else if (s[i] == &amp;#39;L&amp;#39;) { rtn += 50; } else if (s[i] == &amp;#39;D&amp;#39;) { rtn += 500; } else { rtn += 1000; } i += 1; } return rtn; } }; </description>
+      <description>class Solution { public: int romanToInt(string s) { auto rtn = 0; auto l = s.size(); for (int i = 0; i &amp;lt; l;) { if (s[i] == &amp;#39;I&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;V&amp;#39;) { rtn += 4; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;X&amp;#39;) { rtn += 9; i += 1; } else { rtn += 1; } } else if (s[i] == &amp;#39;X&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;L&amp;#39;) { rtn += 40; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;C&amp;#39;) { rtn += 90; i += 1; } else { rtn += 10; } } else if (s[i] == &amp;#39;C&amp;#39;) { if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;D&amp;#39;) { rtn += 400; i += 1; } else if (i + 1 &amp;lt; l &amp;amp;&amp;amp; s[i + 1] == &amp;#39;M&amp;#39;) { rtn += 900; i += 1; } else { rtn += 100; } } else if (s[i] == &amp;#39;V&amp;#39;) { rtn += 5; } else if (s[i] == &amp;#39;L&amp;#39;) { rtn += 50; } else if (s[i] == &amp;#39;D&amp;#39;) { rtn += 500; } else { rtn += 1000; } i += 1; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -413,7 +431,7 @@
       <pubDate>Fri, 06 Sep 2019 22:51:02 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-69/</guid>
-      <description>classSolution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; </description>
+      <description>class Solution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; </description>
     </item>
     
     <item>
@@ -422,7 +440,7 @@
       <pubDate>Fri, 06 Sep 2019 22:48:35 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-125/</guid>
-      <description>classSolution { public: bool isPalindrome(string s) { string x = &amp;#34;&amp;#34;; for (auto i : s) { if (isalnum(i)) { x.push_back(tolower(i)); } } auto l = x.size(); if (l == 0) return true; for (int i = 0; i &amp;lt; l/2; i++) { if (x[i] != x[x.size() - 1 - i]) { return false; } } return true; } }; </description>
+      <description>class Solution { public: bool isPalindrome(string s) { string x = &amp;#34;&amp;#34;; for (auto i : s) { if (isalnum(i)) { x.push_back(tolower(i)); } } auto l = x.size(); if (l == 0) return true; for (int i = 0; i &amp;lt; l/2; i++) { if (x[i] != x[x.size() - 1 - i]) { return false; } } return true; } }; </description>
     </item>
     
     <item>
@@ -431,7 +449,7 @@
       <pubDate>Fri, 06 Sep 2019 22:36:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-20/</guid>
-      <description>stack.empty() classSolution { public: bool isValid(string s) { if (s.size() == 0) return true; stack&amp;lt;char&amp;gt; brs; brs.push(s[0]); for (int i = 1; i &amp;lt; s.size(); i++) { switch(s[i]) { case &amp;#39;)&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;(&amp;#39;) { return false; } brs.pop(); break; case &amp;#39;}&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;{&amp;#39;) { return false; } brs.pop(); break; case &amp;#39;]&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;[&amp;#39;) { return false; } brs.</description>
+      <description>stack.empty() class Solution { public: bool isValid(string s) { if (s.size() == 0) return true; stack&amp;lt;char&amp;gt; brs; brs.push(s[0]); for (int i = 1; i &amp;lt; s.size(); i++) { switch(s[i]) { case &amp;#39;)&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;(&amp;#39;) { return false; } brs.pop(); break; case &amp;#39;}&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;{&amp;#39;) { return false; } brs.pop(); break; case &amp;#39;]&amp;#39;: if (brs.empty() || brs.top() != &amp;#39;[&amp;#39;) { return false; } brs.</description>
     </item>
     
     <item>
@@ -440,7 +458,7 @@
       <pubDate>Fri, 06 Sep 2019 22:15:52 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-66/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; plusOne(vector&amp;lt;int&amp;gt;&amp;amp; digits) { auto carry = 1; for (int i = digits.size() - 1; i &amp;gt;= 0; i--) { digits[i] += carry; carry = digits[i] == 10 ? 1 : 0; digits[i] %= 10; } if (carry) digits.insert(digits.begin(), carry); return digits; } }; </description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; plusOne(vector&amp;lt;int&amp;gt;&amp;amp; digits) { auto carry = 1; for (int i = digits.size() - 1; i &amp;gt;= 0; i--) { digits[i] += carry; carry = digits[i] == 10 ? 1 : 0; digits[i] %= 10; } if (carry) digits.insert(digits.begin(), carry); return digits; } }; </description>
     </item>
     
     <item>
@@ -449,7 +467,7 @@
       <pubDate>Fri, 06 Sep 2019 22:08:03 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-160/</guid>
-      <description> nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&amp;gt; next; q = q -&amp;gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; </description>
+      <description> nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&amp;gt; next; q = q -&amp;gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; </description>
     </item>
     
     <item>
@@ -458,7 +476,7 @@
       <pubDate>Thu, 05 Sep 2019 21:54:59 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-53/</guid>
-      <description>classSolution { public: int maxSubArray(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&amp;lt;int&amp;gt; sum; sum.push_back(nums[0]); for (int i = 1; i &amp;lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &amp;gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; </description>
+      <description>class Solution { public: int maxSubArray(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&amp;lt;int&amp;gt; sum; sum.push_back(nums[0]); for (int i = 1; i &amp;lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &amp;gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; </description>
     </item>
     
     <item>
@@ -467,7 +485,7 @@
       <pubDate>Thu, 05 Sep 2019 21:39:19 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-14/</guid>
-      <description>classSolution { public: string longestCommonPrefix(vector&amp;lt;string&amp;gt;&amp;amp; strs) { if (strs.size() == 0) return &amp;#34;&amp;#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &amp;lt;&amp;lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &amp;gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &amp;lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.</description>
+      <description>class Solution { public: string longestCommonPrefix(vector&amp;lt;string&amp;gt;&amp;amp; strs) { if (strs.size() == 0) return &amp;#34;&amp;#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &amp;lt;&amp;lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &amp;gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &amp;lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.</description>
     </item>
     
     <item>
@@ -476,7 +494,7 @@
       <pubDate>Thu, 05 Sep 2019 21:24:28 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-28/</guid>
-      <description> KMP? classSolution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &amp;lt; needle.size()) return -1; for (int i = 0; i &amp;lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &amp;lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; </description>
+      <description> KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &amp;lt; needle.size()) return -1; for (int i = 0; i &amp;lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &amp;lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; </description>
     </item>
     
     <item>
@@ -485,7 +503,7 @@
       <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-169/</guid>
-      <description>classSolution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, int&amp;gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &amp;gt; nums.size() / 2) { return num; } } return -1; } }; </description>
+      <description>class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, int&amp;gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &amp;gt; nums.size() / 2) { return num; } } return -1; } }; </description>
     </item>
     
     <item>
@@ -494,7 +512,7 @@
       <pubDate>Thu, 05 Sep 2019 21:11:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-202/</guid>
-      <description>classSolution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&amp;lt;int&amp;gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; </description>
+      <description>class Solution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&amp;lt;int&amp;gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; </description>
     </item>
     
     <item>
@@ -503,7 +521,7 @@
       <pubDate>Thu, 05 Sep 2019 20:36:20 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-217/</guid>
-      <description>classSolution { public: bool containsDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, bool&amp;gt; n; for (auto num: nums) { if (n[num]) { return true; } n[num] = true; } return false; } }; </description>
+      <description>class Solution { public: bool containsDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, bool&amp;gt; n; for (auto num: nums) { if (n[num]) { return true; } n[num] = true; } return false; } }; </description>
     </item>
     
     <item>
@@ -512,7 +530,7 @@
       <pubDate>Wed, 04 Sep 2019 22:12:59 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-204/</guid>
-      <description>classSolution { public: int countPrimes(int n) { if (n &amp;lt;= 2) { return 0; } vector&amp;lt;bool&amp;gt; nums(n, true); auto rtn = 1; for (int i = 2;;) { for (int j = 2 * i; j &amp;lt; n; j += i) { nums[j] = false; } while (!nums[++i] &amp;amp;&amp;amp; i &amp;lt; n) { } if (i &amp;gt;= n) break; rtn += 1; } return rtn; } }; </description>
+      <description>class Solution { public: int countPrimes(int n) { if (n &amp;lt;= 2) { return 0; } vector&amp;lt;bool&amp;gt; nums(n, true); auto rtn = 1; for (int i = 2;;) { for (int j = 2 * i; j &amp;lt; n; j += i) { nums[j] = false; } while (!nums[++i] &amp;amp;&amp;amp; i &amp;lt; n) { } if (i &amp;gt;= n) break; rtn += 1; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -521,7 +539,7 @@
       <pubDate>Wed, 04 Sep 2019 21:50:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-189/</guid>
-      <description>classSolution { public: void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { for (int i = 0; i &amp;lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; </description>
+      <description>class Solution { public: void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { for (int i = 0; i &amp;lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; </description>
     </item>
     
     <item>
@@ -530,7 +548,7 @@
       <pubDate>Wed, 04 Sep 2019 21:35:49 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-190/</guid>
-      <description>classSolution { public: uint32_t reverseBits(uint32_t n) { uint32_t rtn = 0; for (int i = 0; i &amp;lt; 32; i++) { rtn &amp;lt;&amp;lt;= 1; rtn |= (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
+      <description>class Solution { public: uint32_t reverseBits(uint32_t n) { uint32_t rtn = 0; for (int i = 0; i &amp;lt; 32; i++) { rtn &amp;lt;&amp;lt;= 1; rtn |= (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -539,7 +557,7 @@
       <pubDate>Wed, 04 Sep 2019 21:23:25 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-191/</guid>
-      <description>classSolution { public: int hammingWeight(uint32_t n) { int rtn = 0; for (int i = 0; i &amp;lt;= 31; i++) { rtn += (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
+      <description>class Solution { public: int hammingWeight(uint32_t n) { int rtn = 0; for (int i = 0; i &amp;lt;= 31; i++) { rtn += (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -548,7 +566,7 @@
       <pubDate>Wed, 04 Sep 2019 21:19:32 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-198/</guid>
-      <description> dp classSolution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } vector&amp;lt;int&amp;gt; rob(nums.size() + 1, 0); rob[0] = 0, rob[1] = nums[0]; for (int i = 2; i &amp;lt;= nums.size(); i++) { rob[i] = max(rob[i - 2] + nums[i - 1], rob[i - 1]); } return rob[nums.size()]; } }; </description>
+      <description> dp class Solution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } vector&amp;lt;int&amp;gt; rob(nums.size() + 1, 0); rob[0] = 0, rob[1] = nums[0]; for (int i = 2; i &amp;lt;= nums.size(); i++) { rob[i] = max(rob[i - 2] + nums[i - 1], rob[i - 1]); } return rob[nums.size()]; } }; </description>
     </item>
     
     <item>
@@ -557,7 +575,7 @@
       <pubDate>Wed, 04 Sep 2019 20:54:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-141/</guid>
-      <description> fast slow ptr /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: bool hasCycle(ListNode *head) { if (head == NULL) { return false; } auto slow = head; auto fast = head; while (fast -&amp;gt; next != NULL &amp;amp;&amp;amp; fast -&amp;gt; next -&amp;gt; next != NULL) { slow = slow -&amp;gt; next; fast = fast -&amp;gt; next -&amp;gt; next; if (slow == fast) { return true; } } return false; } }; </description>
+      <description> fast slow ptr /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: bool hasCycle(ListNode *head) { if (head == NULL) { return false; } auto slow = head; auto fast = head; while (fast -&amp;gt; next != NULL &amp;amp;&amp;amp; fast -&amp;gt; next -&amp;gt; next != NULL) { slow = slow -&amp;gt; next; fast = fast -&amp;gt; next -&amp;gt; next; if (slow == fast) { return true; } } return false; } }; </description>
     </item>
     
     <item>
@@ -566,7 +584,7 @@
       <pubDate>Tue, 03 Sep 2019 00:13:08 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-136/</guid>
-      <description>classSolution { public: int singleNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int rtn = 0; for (auto num : nums) { rtn ^= num; } return rtn; } }; </description>
+      <description>class Solution { public: int singleNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int rtn = 0; for (auto num : nums) { rtn ^= num; } return rtn; } }; </description>
     </item>
     
     <item>
@@ -575,7 +593,7 @@
       <pubDate>Tue, 03 Sep 2019 00:07:21 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-121/</guid>
-      <description>classSolution { public: int maxProfit(vector&amp;lt;int&amp;gt;&amp;amp; prices) { if (prices.size() == 0) { return 0; } int maxp = 0, minp = prices[0]; for (int i = 1; i &amp;lt; prices.size(); i++) { maxp = max(maxp, prices[i] - minp); minp = min(minp, prices[i]); } return maxp; } }; </description>
+      <description>class Solution { public: int maxProfit(vector&amp;lt;int&amp;gt;&amp;amp; prices) { if (prices.size() == 0) { return 0; } int maxp = 0, minp = prices[0]; for (int i = 1; i &amp;lt; prices.size(); i++) { maxp = max(maxp, prices[i] - minp); minp = min(minp, prices[i]); } return maxp; } }; </description>
     </item>
     
     <item>
@@ -584,7 +602,7 @@
       <pubDate>Mon, 02 Sep 2019 23:48:35 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-118/</guid>
-      <description>classSolution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; generate(int numRows) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; for (int i = 1; i &amp;lt;= numRows; i++) { vector&amp;lt;int&amp;gt; cur(i, 1); if (i &amp;gt;= 3) { auto tmp = result.back(); for (int j = 1; j &amp;lt;= i - 2; j++) { cur[j] = tmp[j - 1] + tmp[j]; } } result.push_back(cur); } return result; } }; </description>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; generate(int numRows) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; for (int i = 1; i &amp;lt;= numRows; i++) { vector&amp;lt;int&amp;gt; cur(i, 1); if (i &amp;gt;= 3) { auto tmp = result.back(); for (int j = 1; j &amp;lt;= i - 2; j++) { cur[j] = tmp[j - 1] + tmp[j]; } } result.push_back(cur); } return result; } }; </description>
     </item>
     
     <item>
@@ -593,7 +611,7 @@
       <pubDate>Mon, 02 Sep 2019 23:41:35 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-108/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; nums, int left, int right) { if (left &amp;gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&amp;gt;left = helper(nums, left, mid - 1); root-&amp;gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&amp;lt;int&amp;gt;&amp;amp; nums) { return helper(nums, 0, nums.</description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; nums, int left, int right) { if (left &amp;gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&amp;gt;left = helper(nums, left, mid - 1); root-&amp;gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&amp;lt;int&amp;gt;&amp;amp; nums) { return helper(nums, 0, nums.</description>
     </item>
     
     <item>
@@ -602,7 +620,7 @@
       <pubDate>Mon, 02 Sep 2019 23:27:20 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-104/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: int helper(TreeNode* root, int depth) { if (root == NULL) { return depth; } return max(helper(root-&amp;gt;left, depth+1), helper(root-&amp;gt;right, depth+1)); } int maxDepth(TreeNode* root) { return helper(root, 0); } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int helper(TreeNode* root, int depth) { if (root == NULL) { return depth; } return max(helper(root-&amp;gt;left, depth+1), helper(root-&amp;gt;right, depth+1)); } int maxDepth(TreeNode* root) { return helper(root, 0); } }; </description>
     </item>
     
     <item>
@@ -611,7 +629,7 @@
       <pubDate>Mon, 02 Sep 2019 23:20:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-101/</guid>
-      <description> recursively /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: bool helper(TreeNode* left, TreeNode* right) { if (left == NULL &amp;amp;&amp;amp; right == NULL) { return true; } else if (left == NULL || right == NULL) { return false; } return left-&amp;gt;val == right-&amp;gt;val &amp;amp;&amp;amp; helper(left-&amp;gt;left, right-&amp;gt;right) &amp;amp;&amp;amp; helper(left-&amp;gt;right, right-&amp;gt;left); } bool isSymmetric(TreeNode* root) { if (root == NULL) { return true; } else return helper(root-&amp;gt;left, root-&amp;gt;right); } }; </description>
+      <description> recursively /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool helper(TreeNode* left, TreeNode* right) { if (left == NULL &amp;amp;&amp;amp; right == NULL) { return true; } else if (left == NULL || right == NULL) { return false; } return left-&amp;gt;val == right-&amp;gt;val &amp;amp;&amp;amp; helper(left-&amp;gt;left, right-&amp;gt;right) &amp;amp;&amp;amp; helper(left-&amp;gt;right, right-&amp;gt;left); } bool isSymmetric(TreeNode* root) { if (root == NULL) { return true; } else return helper(root-&amp;gt;left, root-&amp;gt;right); } }; </description>
     </item>
     
     <item>
@@ -620,7 +638,7 @@
       <pubDate>Sat, 31 Aug 2019 01:37:04 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-387/</guid>
-      <description>classSolution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &amp;lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &amp;lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; </description>
+      <description>class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &amp;lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &amp;lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; </description>
     </item>
     
     <item>
@@ -629,7 +647,7 @@
       <pubDate>Sat, 31 Aug 2019 01:35:15 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1025/</guid>
-      <description>dp classSolution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&amp;lt;bool&amp;gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &amp;lt;= N; i++) { bool res = false; for (int j = 1; j * j &amp;lt; i; j++) { if (i % j == 0 &amp;amp;&amp;amp; !saved[i - j - 1]) { res = true; break; } } saved.</description>
+      <description>dp class Solution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&amp;lt;bool&amp;gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &amp;lt;= N; i++) { bool res = false; for (int j = 1; j * j &amp;lt; i; j++) { if (i % j == 0 &amp;amp;&amp;amp; !saved[i - j - 1]) { res = true; break; } } saved.</description>
     </item>
     
     <item>
@@ -638,7 +656,7 @@
       <pubDate>Sat, 31 Aug 2019 01:33:54 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-100/</guid>
-      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ classSolution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;amp;&amp;amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&amp;gt;val == q-&amp;gt;val) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;left, q-&amp;gt;left) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;right, q-&amp;gt;right); } }; </description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;amp;&amp;amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&amp;gt;val == q-&amp;gt;val) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;left, q-&amp;gt;left) &amp;amp;&amp;amp; isSameTree(p-&amp;gt;right, q-&amp;gt;right); } }; </description>
     </item>
     
     <item>
@@ -647,7 +665,7 @@
       <pubDate>Sat, 31 Aug 2019 01:32:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-455/</guid>
-      <description>classSolution { public: int findContentChildren(vector&amp;lt;int&amp;gt;&amp;amp; g, vector&amp;lt;int&amp;gt;&amp;amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &amp;lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; </description>
+      <description>class Solution { public: int findContentChildren(vector&amp;lt;int&amp;gt;&amp;amp; g, vector&amp;lt;int&amp;gt;&amp;amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &amp;lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; </description>
     </item>
     
     <item>
@@ -656,7 +674,7 @@
       <pubDate>Sat, 31 Aug 2019 01:20:41 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-350/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; intersect(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { map&amp;lt;int, int&amp;gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&amp;lt;int&amp;gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&amp;gt; second == 0) continue; rtn.push_back(num); it -&amp;gt; second -= 1; } return rtn; } }; classSolution { public: vector&amp;lt;int&amp;gt; intersect(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { multiset&amp;lt;int&amp;gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.</description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; intersect(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { map&amp;lt;int, int&amp;gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&amp;lt;int&amp;gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&amp;gt; second == 0) continue; rtn.push_back(num); it -&amp;gt; second -= 1; } return rtn; } }; class Solution { public: vector&amp;lt;int&amp;gt; intersect(vector&amp;lt;int&amp;gt;&amp;amp; nums1, vector&amp;lt;int&amp;gt;&amp;amp; nums2) { multiset&amp;lt;int&amp;gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.</description>
     </item>
     
     <item>
@@ -665,7 +683,7 @@
       <pubDate>Sat, 31 Aug 2019 01:13:06 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-326/</guid>
-      <description>classSolution { public: bool isPowerOfThree(int n) { return n &amp;gt; 0 ? !(1162261467 % n) : 0; } }; </description>
+      <description>class Solution { public: bool isPowerOfThree(int n) { return n &amp;gt; 0 ? !(1162261467 % n) : 0; } }; </description>
     </item>
     
     <item>
@@ -674,7 +692,7 @@
       <pubDate>Sat, 31 Aug 2019 01:06:52 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-268/</guid>
-      <description>classSolution { public: int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; </description>
+      <description>class Solution { public: int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; </description>
     </item>
     
     <item>
@@ -683,7 +701,7 @@
       <pubDate>Sat, 31 Aug 2019 00:53:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-242/</guid>
-      <description>classSolution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; </description>
+      <description>class Solution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &amp;#39;a&amp;#39;; i &amp;lt;= &amp;#39;z&amp;#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; </description>
     </item>
     
     <item>
@@ -692,7 +710,7 @@
       <pubDate>Sat, 31 Aug 2019 00:46:07 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-237/</guid>
-      <description> stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: void deleteNode(ListNode* node) { *node = *node -&amp;gt; next; } }; </description>
+      <description> stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&amp;gt; next; } }; </description>
     </item>
     
     <item>
@@ -701,7 +719,7 @@
       <pubDate>Sat, 31 Aug 2019 00:30:34 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-234/</guid>
-      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&amp;gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&amp;gt;next !</description>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&amp;gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&amp;gt;next !</description>
     </item>
     
     <item>
@@ -710,7 +728,7 @@
       <pubDate>Fri, 30 Aug 2019 23:48:42 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-206/</guid>
-      <description> iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ classSolution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively classSolution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&amp;gt; next == NULL) return head; auto tmp = reverseList(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return tmp; } }; </description>
+      <description> iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively class Solution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&amp;gt; next == NULL) return head; auto tmp = reverseList(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return tmp; } }; </description>
     </item>
     
     <item>
@@ -728,7 +746,7 @@
       <pubDate>Fri, 30 Aug 2019 22:58:54 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1170/</guid>
-      <description>classSolution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &amp;lt; s.size(); i++) { if (s[i] &amp;lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&amp;lt;int&amp;gt; numSmallerByFrequency(vector&amp;lt;string&amp;gt;&amp;amp; queries, vector&amp;lt;string&amp;gt;&amp;amp; words) { vector&amp;lt;int&amp;gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&amp;lt;int&amp;gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &amp;lt;= 10; i++) tmp += wa[i]; rtn.</description>
+      <description>class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &amp;lt; s.size(); i++) { if (s[i] &amp;lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&amp;lt;int&amp;gt; numSmallerByFrequency(vector&amp;lt;string&amp;gt;&amp;amp; queries, vector&amp;lt;string&amp;gt;&amp;amp; words) { vector&amp;lt;int&amp;gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&amp;lt;int&amp;gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &amp;lt;= 10; i++) tmp += wa[i]; rtn.</description>
     </item>
     
     <item>
@@ -737,7 +755,7 @@
       <pubDate>Fri, 30 Aug 2019 22:43:35 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1160/</guid>
-      <description>vector faster than map classSolution { public: int countCharacters(vector&amp;lt;string&amp;gt;&amp;amp; words, string chars) { vector&amp;lt;int&amp;gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ? word.</description>
+      <description>vector faster than map class Solution { public: int countCharacters(vector&amp;lt;string&amp;gt;&amp;amp; words, string chars) { vector&amp;lt;int&amp;gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?</description>
     </item>
     
     <item>
@@ -746,7 +764,7 @@
       <pubDate>Fri, 30 Aug 2019 22:26:41 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1154/</guid>
-      <description>classSolution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&amp;lt;int&amp;gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &amp;lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; </description>
+      <description>class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&amp;lt;int&amp;gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &amp;lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; </description>
     </item>
     
     <item>
@@ -755,7 +773,7 @@
       <pubDate>Fri, 30 Aug 2019 22:11:27 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1137/</guid>
-      <description>classSolution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &amp;lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; </description>
+      <description>class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &amp;lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; </description>
     </item>
     
     <item>
@@ -764,7 +782,7 @@
       <pubDate>Thu, 29 Aug 2019 01:13:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1128/</guid>
-      <description>classSolution { public: int numEquivDominoPairs(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] += 1; } int rtn = 0; for (int i = 1; i &amp;lt;= 9; i++) { for (int j = i; j &amp;lt;= 9; j++) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] + cnt[j][i]); if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) /2; } } } } return rtn; } }; </description>
+      <description>class Solution { public: int numEquivDominoPairs(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] += 1; } int rtn = 0; for (int i = 1; i &amp;lt;= 9; i++) { for (int j = i; j &amp;lt;= 9; j++) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] + cnt[j][i]); if (tmp &amp;gt;= 2) { rtn += tmp * (tmp - 1) /2; } } } } return rtn; } }; </description>
     </item>
     
     <item>
@@ -773,7 +791,7 @@
       <pubDate>Thu, 29 Aug 2019 00:43:07 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1122/</guid>
-      <description>classSolution { public: vector&amp;lt;int&amp;gt; relativeSortArray(vector&amp;lt;int&amp;gt;&amp;amp; arr1, vector&amp;lt;int&amp;gt;&amp;amp; arr2) { vector&amp;lt;bool&amp;gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &amp;lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() + i); len -= 1; } else { i += 1; } } sort(arr1.</description>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; relativeSortArray(vector&amp;lt;int&amp;gt;&amp;amp; arr1, vector&amp;lt;int&amp;gt;&amp;amp; arr2) { vector&amp;lt;bool&amp;gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &amp;lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() + i); len -= 1; } else { i += 1; } } sort(arr1.</description>
     </item>
     
     <item>
@@ -782,7 +800,7 @@
       <pubDate>Thu, 29 Aug 2019 00:10:23 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1114/</guid>
-      <description>classFoo { public: bool mutex1, mutex2; Foo() { mutex1 = true; mutex2 = true; } void first(function&amp;lt;void()&amp;gt; printFirst) { // printFirst() outputs &amp;#34;first&amp;#34;. Do not change or remove this line.  printFirst(); this-&amp;gt;mutex1 = false; } void second(function&amp;lt;void()&amp;gt; printSecond) { while (this-&amp;gt;mutex1) {} // printSecond() outputs &amp;#34;second&amp;#34;. Do not change or remove this line.  printSecond(); this-&amp;gt;mutex2 = false; } void third(function&amp;lt;void()&amp;gt; printThird) { while (this-&amp;gt;mutex1 | this-&amp;gt;mutex2) {} // printThird() outputs &amp;#34;third&amp;#34;.</description>
+      <description>class Foo { public: bool mutex1, mutex2; Foo() { mutex1 = true; mutex2 = true; } void first(function&amp;lt;void()&amp;gt; printFirst) { // printFirst() outputs &amp;#34;first&amp;#34;. Do not change or remove this line.  printFirst(); this-&amp;gt;mutex1 = false; } void second(function&amp;lt;void()&amp;gt; printSecond) { while (this-&amp;gt;mutex1) {} // printSecond() outputs &amp;#34;second&amp;#34;. Do not change or remove this line.  printSecond(); this-&amp;gt;mutex2 = false; } void third(function&amp;lt;void()&amp;gt; printThird) { while (this-&amp;gt;mutex1 | this-&amp;gt;mutex2) {} // printThird() outputs &amp;#34;third&amp;#34;.</description>
     </item>
     
     <item>
@@ -791,7 +809,7 @@
       <pubDate>Wed, 28 Aug 2019 23:59:25 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1108/</guid>
-      <description> insert classSolution { public: string defangIPaddr(string address) { for (int i = 0; i &amp;lt; address.size(); i++) { if (address[i] == &amp;#39;.&amp;#39;) { address.insert(address.begin() + i, &amp;#39;[&amp;#39;); address.insert(address.begin() + i + 2, &amp;#39;]&amp;#39;); i += 2; } } return address; } }; </description>
+      <description> insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &amp;lt; address.size(); i++) { if (address[i] == &amp;#39;.&amp;#39;) { address.insert(address.begin() + i, &amp;#39;[&amp;#39;); address.insert(address.begin() + i + 2, &amp;#39;]&amp;#39;); i += 2; } } return address; } }; </description>
     </item>
     
     <item>
@@ -800,7 +818,7 @@
       <pubDate>Wed, 28 Aug 2019 00:51:14 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1103/</guid>
-      <description> math classSolution { public: vector&amp;lt;int&amp;gt; distributeCandies(int candies, int num_people) { int epoch = 0; for (; ; epoch++) { int needed = (epoch + 1) * num_people * ((epoch + 1) * num_people + 1) / 2; if (candies &amp;lt;= needed) break; } vector&amp;lt;int&amp;gt; result(num_people, 0); for (int i = 1; i &amp;lt;= num_people; i++) { result[i - 1] += epoch * i + num_people * epoch * (epoch - 1) / 2; } candies -= epoch * num_people * (epoch * num_people + 1) / 2; for (int i = 1; i &amp;lt;= num_people; i++) { int needed = i + epoch * num_people; if (candies &amp;lt;= needed) { result[i - 1] += candies; break; } else { result[i - 1] += needed; candies -= needed; } } return result; } }; </description>
+      <description> math class Solution { public: vector&amp;lt;int&amp;gt; distributeCandies(int candies, int num_people) { int epoch = 0; for (; ; epoch++) { int needed = (epoch + 1) * num_people * ((epoch + 1) * num_people + 1) / 2; if (candies &amp;lt;= needed) break; } vector&amp;lt;int&amp;gt; result(num_people, 0); for (int i = 1; i &amp;lt;= num_people; i++) { result[i - 1] += epoch * i + num_people * epoch * (epoch - 1) / 2; } candies -= epoch * num_people * (epoch * num_people + 1) / 2; for (int i = 1; i &amp;lt;= num_people; i++) { int needed = i + epoch * num_people; if (candies &amp;lt;= needed) { result[i - 1] += candies; break; } else { result[i - 1] += needed; candies -= needed; } } return result; } }; </description>
     </item>
     
     <item>
@@ -809,7 +827,7 @@
       <pubDate>Wed, 28 Aug 2019 00:04:26 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1089/</guid>
-      <description>if (i + 1 &amp;lt; len) classSolution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.size(); for (int i = 0; i &amp;lt; len; i++) { if (arr[i] == 0) { for (int j = len - 2; j &amp;gt;= i + 1; j--) { arr[j + 1] = arr[j]; } if (i + 1 &amp;lt; len) arr[i + 1] = 0; i += 1; } } } };  vector classSolution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.</description>
+      <description>if (i + 1 &amp;lt; len) class Solution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.size(); for (int i = 0; i &amp;lt; len; i++) { if (arr[i] == 0) { for (int j = len - 2; j &amp;gt;= i + 1; j--) { arr[j + 1] = arr[j]; } if (i + 1 &amp;lt; len) arr[i + 1] = 0; i += 1; } } } };  vector class Solution { public: void duplicateZeros(vector&amp;lt;int&amp;gt;&amp;amp; arr) { auto len = arr.</description>
     </item>
     
     <item>
@@ -818,7 +836,7 @@
       <pubDate>Mon, 26 Aug 2019 23:42:05 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1051/</guid>
-      <description> sort classSolution { public: int heightChecker(vector&amp;lt;int&amp;gt;&amp;amp; heights) { auto sorted = heights; sort(sorted.begin(), sorted.end()); auto result = 0; for (int i = 0; i &amp;lt; heights.size(); i++) { if (sorted[i] != heights[i]) { result++; } } return result; } }; </description>
+      <description> sort class Solution { public: int heightChecker(vector&amp;lt;int&amp;gt;&amp;amp; heights) { auto sorted = heights; sort(sorted.begin(), sorted.end()); auto result = 0; for (int i = 0; i &amp;lt; heights.size(); i++) { if (sorted[i] != heights[i]) { result++; } } return result; } }; </description>
     </item>
     
     <item>
@@ -827,7 +845,7 @@
       <pubDate>Mon, 26 Aug 2019 23:22:40 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-1047/</guid>
-      <description>stack: classSolution { public: string removeDuplicates(string S) { string result = &amp;#34;&amp;#34;; stack&amp;lt;char&amp;gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result += chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } };  string(faster): classSolution { public: string removeDuplicates(string S) { string result = &amp;#34;&amp;#34;; for (auto c : S) { if (result.empty() || result.</description>
+      <description>stack: class Solution { public: string removeDuplicates(string S) { string result = &amp;#34;&amp;#34;; stack&amp;lt;char&amp;gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result += chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } };  string(faster): class Solution { public: string removeDuplicates(string S) { string result = &amp;#34;&amp;#34;; for (auto c : S) { if (result.</description>
     </item>
     
   </channel>

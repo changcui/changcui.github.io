@@ -46,7 +46,7 @@
       <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
     
 
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.59.1" />
   </head>
 
   <body class="">
@@ -91,7 +91,7 @@
       
     </header>
 
-    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">MyQueue</span> <span class="p">{</span>
+    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">MyQueue</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="cm">/** Initialize your data structure here. */</span>
     <span class="n">MyQueue</span><span class="p">()</span> <span class="p">{</span>
@@ -99,12 +99,12 @@
     <span class="p">}</span>
     
     <span class="cm">/** Push element x to the back of queue. */</span>
-    <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">s1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
     <span class="p">}</span>
     
     <span class="cm">/** Removes the element from in front of queue and returns that element. */</span>
-    <span class="kt">int</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">s1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">s2</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">s1</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
         <span class="p">}</span>
@@ -114,7 +114,7 @@
     <span class="p">}</span>
     
     <span class="cm">/** Get the front element. */</span>
-    <span class="kt">int</span> <span class="n">peek</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">peek</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">s1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">s2</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">s1</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
         <span class="p">}</span>
@@ -122,7 +122,7 @@
     <span class="p">}</span>
     
     <span class="cm">/** Returns whether the queue is empty. */</span>
-    <span class="kt">bool</span> <span class="n">empty</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="nf">empty</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">s1</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">s2</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>

@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Nov 2019 01:18:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 00:43:32 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>16. 3Sum Closest</title>
+      <link>http://changcui.cc/posts/leetcode-16/</link>
+      <pubDate>Wed, 13 Nov 2019 00:43:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-16/</guid>
+      <description>class Solution { public: int threeSumClosest(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &amp;lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &amp;lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &amp;lt; close) { res = tmp; close = abs(res - target); } if (tmp &amp;lt; target) i++; else if (tmp &amp;gt; target) j--; } } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>15. 3Sum</title>
+      <link>http://changcui.cc/posts/leetcode-15/</link>
+      <pubDate>Wed, 13 Nov 2019 00:23:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-15/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; threeSum(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; sort(nums.begin(), nums.end()); if (nums.size() &amp;lt; 3 || nums.back() &amp;lt; 0 || nums.front() &amp;gt; 0) return {}; for (int k = 0; k &amp;lt; (int)nums.size() - 2; k++) { if (nums[k] &amp;gt; 0) break; if (k &amp;gt; 0 &amp;amp;&amp;amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &amp;lt; j) { if (nums[i] + nums[j] == target) { res.</description>
+    </item>
+    
+    <item>
+      <title>1. Two Sum</title>
+      <link>http://changcui.cc/posts/leetcode-1/</link>
+      <pubDate>Wed, 13 Nov 2019 00:05:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-1/</guid>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; twoSum(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { unordered_map&amp;lt;int, int&amp;gt; cnt; int n = nums.size(); for (int i = 0; i &amp;lt; n; i++) { if (cnt.count(target - nums[i])) return {cnt[target - nums[i]], i}; cnt[nums[i]] = i; } return {}; } }; </description>
+    </item>
+    
+    <item>
+      <title>11. Container With Most Water</title>
+      <link>http://changcui.cc/posts/leetcode-11/</link>
+      <pubDate>Tue, 12 Nov 2019 23:59:45 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-11/</guid>
+      <description>class Solution { public: int maxArea(vector&amp;lt;int&amp;gt;&amp;amp; height) { int res = 0, i = 0, j = height.size() - 1; while (i &amp;lt; j) { res = max(res, (j - i) * min(height[i], height[j])); height[i] &amp;lt; height[j] ? i++ : j--; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>9. Palindrome Number</title>
+      <link>http://changcui.cc/posts/leetcode-9/</link>
+      <pubDate>Tue, 12 Nov 2019 23:46:09 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-9/</guid>
+      <description>class Solution { public: bool isPalindrome(int x) { if (x &amp;lt; 0 || (x % 10 == 0 &amp;amp;&amp;amp; x != 0)) return false; return x == reverse(x); } int reverse(int x) { int res = 0; while (x != 0) { if (res &amp;gt; INT_MAX / 10) return -1; res = res * 10 + x % 10; x = x / 10; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>7. Reverse Integer</title>
+      <link>http://changcui.cc/posts/leetcode-7/</link>
+      <pubDate>Tue, 12 Nov 2019 23:39:35 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-7/</guid>
+      <description>class Solution { public: int reverse(int x) { int res = 0; while (x != 0) { if (abs(res) &amp;gt; INT_MAX / 10) return 0; res = res * 10 + x % 10; x = x / 10; } return res; } }; </description>
+    </item>
     
     <item>
       <title>5. Longest Palindromic Substring</title>

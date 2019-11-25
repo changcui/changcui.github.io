@@ -6,10 +6,37 @@
     <description>Recent content in leetcode on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Nov 2019 00:43:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 23:29:23 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>414. Third Maximum Number</title>
+      <link>http://changcui.cc/posts/leetcode-414/</link>
+      <pubDate>Mon, 25 Nov 2019 23:29:23 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-414/</guid>
+      <description>class Solution { public: int thirdMax(vector&amp;lt;int&amp;gt;&amp;amp; nums) { long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN; for (auto num : nums) { if (num &amp;gt; first) { third = second; second = first; first = num; } else if (num &amp;lt; first &amp;amp;&amp;amp; num &amp;gt; second) { third = second; second = num; } else if (num &amp;lt; second &amp;amp;&amp;amp; num &amp;gt; third) { third = num; } } return (third == LONG_MIN || third == second) ?</description>
+    </item>
+    
+    <item>
+      <title>21. Merge Two Sorted Lists</title>
+      <link>http://changcui.cc/posts/leetcode-21/</link>
+      <pubDate>Mon, 25 Nov 2019 23:18:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-21/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) { if (!l1) return l2; if (!l2) return l1; if (l1 -&amp;gt; val &amp;lt; l2 -&amp;gt; val) { l1 -&amp;gt; next = mergeTwoLists(l1 -&amp;gt; next, l2); return l1; } else { l2 -&amp;gt; next = mergeTwoLists(l1, l2 -&amp;gt; next); return l2; } } }; </description>
+    </item>
+    
+    <item>
+      <title>19. Remove Nth Node From End of List</title>
+      <link>http://changcui.cc/posts/leetcode-19/</link>
+      <pubDate>Mon, 25 Nov 2019 23:13:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-19/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { auto cur = head, pre = head; for (int i = 0; i &amp;lt; n; i++) cur = cur -&amp;gt; next; if (!cur) return head -&amp;gt; next; while (cur -&amp;gt; next) { cur = cur -&amp;gt; next; pre = pre -&amp;gt; next; } pre -&amp;gt; next = pre -&amp;gt; next -&amp;gt; next; return head; } }; </description>
+    </item>
     
     <item>
       <title>16. 3Sum Closest</title>

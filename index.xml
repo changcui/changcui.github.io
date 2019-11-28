@@ -6,10 +6,37 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Nov 2019 17:23:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2019 11:59:25 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>40. Combination Sum II</title>
+      <link>http://changcui.cc/posts/leetcode-40/</link>
+      <pubDate>Thu, 28 Nov 2019 11:59:25 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-40/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum2(vector&amp;lt;int&amp;gt;&amp;amp; candidates, int target) { vector&amp;lt;int&amp;gt; out; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; sort(candidates.begin(), candidates.end()); DFS(candidates, out, result, 0, target); return result; } void DFS(vector&amp;lt;int&amp;gt;&amp;amp; candidates, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result, int start, int target) { if (target &amp;lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &amp;lt; candidates.size(); i++) { if (i &amp;gt; start &amp;amp;&amp;amp; candidates[i] == candidates[i-1]) continue; out.push_back(candidates[i]); DFS(candidates, out, result, i+1, target - candidates[i]); out.</description>
+    </item>
+    
+    <item>
+      <title>39. Combination Sum</title>
+      <link>http://changcui.cc/posts/leetcode-39/</link>
+      <pubDate>Thu, 28 Nov 2019 11:50:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-39/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum(vector&amp;lt;int&amp;gt;&amp;amp; candidates, int target) { vector&amp;lt;int&amp;gt; out; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; DFS(candidates, out, result, 0, target); return result; } void DFS(vector&amp;lt;int&amp;gt;&amp;amp; candidates, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result, int start, int target) { if (target &amp;lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &amp;lt; candidates.size(); i++) { out.push_back(candidates[i]); DFS(candidates, out, result, i, target - candidates[i]); out.pop_back(); } } }; </description>
+    </item>
+    
+    <item>
+      <title>24. Swap Nodes in Pairs</title>
+      <link>http://changcui.cc/posts/leetcode-24/</link>
+      <pubDate>Thu, 28 Nov 2019 11:39:55 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-24/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { if (!head || !head -&amp;gt; next) return head; auto nxt = head -&amp;gt; next -&amp;gt; next; auto h = head; head = head -&amp;gt; next; head -&amp;gt; next = h; h -&amp;gt; next = swapPairs(nxt); return head; } }; </description>
+    </item>
     
     <item>
       <title>856. Score of Parentheses</title>

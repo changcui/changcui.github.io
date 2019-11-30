@@ -6,10 +6,82 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Nov 2019 11:59:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 01:01:36 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>90. Subsets II</title>
+      <link>http://changcui.cc/posts/leetcode-90/</link>
+      <pubDate>Sun, 01 Dec 2019 01:01:36 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-90/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; subsetsWithDup(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; vector&amp;lt;int&amp;gt; out; sort(nums.begin(), nums.end()); DFS(0, out, nums, result); return result; } void DFS(int cur, vector&amp;lt;int&amp;gt; out, vector&amp;lt;int&amp;gt;&amp;amp; nums, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result) { result.push_back(out); for (int i = cur; i &amp;lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, nums, result); out.pop_back(); while (i + 1 &amp;lt; nums.size() &amp;amp;&amp;amp; nums[i] == nums[i + 1]) i++; } } }; </description>
+    </item>
+    
+    <item>
+      <title>88. Merge Sorted Array</title>
+      <link>http://changcui.cc/posts/leetcode-88/</link>
+      <pubDate>Sun, 01 Dec 2019 00:46:15 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-88/</guid>
+      <description>class Solution { public: void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) { int cur = m + n - 1, i = m - 1, j = n - 1; while (i &amp;gt;= 0 &amp;amp;&amp;amp; j &amp;gt;= 0) { if (nums1[i] &amp;gt;= nums2[j]) nums1[cur--] = nums1[i--]; else nums1[cur--] = nums2[j--]; } while (j &amp;gt;= 0) nums1[cur--] = nums2[j--]; } }; </description>
+    </item>
+    
+    <item>
+      <title>83. Remove Duplicates from Sorted List</title>
+      <link>http://changcui.cc/posts/leetcode-83/</link>
+      <pubDate>Sun, 01 Dec 2019 00:01:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-83/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* deleteDuplicates(ListNode* head) { if (!head || !head -&amp;gt; next) return head; while (head -&amp;gt; next &amp;amp;&amp;amp; head -&amp;gt; val == head -&amp;gt; next -&amp;gt; val) head = head -&amp;gt; next; head -&amp;gt; next = deleteDuplicates(head -&amp;gt; next); return head; } }; </description>
+    </item>
+    
+    <item>
+      <title>82. Remove Duplicates from Sorted List II</title>
+      <link>http://changcui.cc/posts/leetcode-82/</link>
+      <pubDate>Sat, 30 Nov 2019 23:55:16 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-82/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* deleteDuplicates(ListNode* head) { if (!head || !head -&amp;gt; next) return NULL; if (head -&amp;gt; val != head -&amp;gt; next -&amp;gt; val) { head-&amp;gt;next = deleteDuplicates(head-&amp;gt;next); return head; } auto v = head -&amp;gt; val; auto cur = head -&amp;gt; next; while (cur !</description>
+    </item>
+    
+    <item>
+      <title>79. Word Search</title>
+      <link>http://changcui.cc/posts/leetcode-79/</link>
+      <pubDate>Sat, 30 Nov 2019 23:41:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-79/</guid>
+      <description>class Solution { public: bool exist(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board, string word) { if (word.empty()) return true; if (board.empty() || board[0].empty()) return false; int cur = 0, m = board.size(), n = board[0].size(); for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (DFS(i, j, board, word, 0)) return true; } } return false; } bool DFS(int i, int j, vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; board, string word, int cur) { if (cur == word.</description>
+    </item>
+    
+    <item>
+      <title>78. Subsets</title>
+      <link>http://changcui.cc/posts/leetcode-78/</link>
+      <pubDate>Sat, 30 Nov 2019 23:21:08 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-78/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; subsets(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; vector&amp;lt;int&amp;gt; out; DFS(0, out, result, nums); return result; } void DFS(int cur, vector&amp;lt;int&amp;gt; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result, vector&amp;lt;int&amp;gt;&amp;amp; nums) { result.push_back(out); for (int i = cur; i &amp;lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, result, nums); out.pop_back(); } } }; </description>
+    </item>
+    
+    <item>
+      <title>77. Combinations</title>
+      <link>http://changcui.cc/posts/leetcode-77/</link>
+      <pubDate>Sat, 30 Nov 2019 23:10:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-77/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combine(int n, int k) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; vector&amp;lt;int&amp;gt; out; DFS(1, out, result, n, k); return result; } void DFS(int cur, vector&amp;lt;int&amp;gt; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result, int n, int k) { if (out.size() == k) {result.push_back(out); return;} for (int i = cur; i &amp;lt;= n; i++) { out.push_back(i); DFS(i+1, out, result, n, k); out.pop_back(); } } }; </description>
+    </item>
+    
+    <item>
+      <title>49. Group Anagrams</title>
+      <link>http://changcui.cc/posts/leetcode-49/</link>
+      <pubDate>Sat, 30 Nov 2019 22:44:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-49/</guid>
+      <description>class Solution { public: vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; groupAnagrams(vector&amp;lt;string&amp;gt;&amp;amp; strs) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; result; unordered_map&amp;lt;string, vector&amp;lt;string&amp;gt;&amp;gt; m; for (auto s : strs) { auto t = s; sort(t.begin(), t.end()); if (m.count(t)) m[t].push_back(s); else m[t] = {s}; } for (auto i : m) result.push_back(i.second); return result; } }; </description>
+    </item>
     
     <item>
       <title>40. Combination Sum II</title>

@@ -6,10 +6,28 @@
     <description>Recent content in leetcode on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Dec 2019 16:20:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 16:44:01 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>389. Find the Difference</title>
+      <link>http://changcui.cc/posts/leetcode-389/</link>
+      <pubDate>Mon, 02 Dec 2019 16:44:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-389/</guid>
+      <description>class Solution { public: char findTheDifference(string s, string t) { unordered_map&amp;lt;char, int&amp;gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &amp;#39;A&amp;#39;; } }; </description>
+    </item>
+    
+    <item>
+      <title>392. Is Subsequence</title>
+      <link>http://changcui.cc/posts/leetcode-392/</link>
+      <pubDate>Mon, 02 Dec 2019 16:34:27 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-392/</guid>
+      <description>class Solution { public: bool isSubsequence(string s, string t) { unordered_map&amp;lt;char, vector&amp;lt;int&amp;gt;&amp;gt; m; for (int i = 0; i &amp;lt; t.size(); i++) m[t[i]].push_back(i); int left = -1; for (auto c : s) { if (!m.count(c)) return false; auto flag = false; for (auto l : m[c]) { if (l &amp;gt; left) { left = l; flag = true; break; } } if (!flag) return false; } return true; } }; </description>
+    </item>
     
     <item>
       <title>63. Unique Paths II</title>

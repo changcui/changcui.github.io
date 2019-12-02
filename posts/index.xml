@@ -6,10 +6,64 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Dec 2019 03:21:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 16:20:17 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>63. Unique Paths II</title>
+      <link>http://changcui.cc/posts/leetcode-63/</link>
+      <pubDate>Mon, 02 Dec 2019 16:20:17 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-63/</guid>
+      <description>class Solution { public: int uniquePathsWithObstacles(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacleGrid) { int m = obstacleGrid.size(), n = obstacleGrid[0].size(); vector&amp;lt;vector&amp;lt;unsigned int&amp;gt;&amp;gt; dp(m, vector&amp;lt;unsigned int&amp;gt;(n, 0)); if (obstacleGrid[0][0]) return 0; dp[0][0] = 1; for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (obstacleGrid[i][j]) continue; if (i &amp;gt; 0 &amp;amp;&amp;amp; !obstacleGrid[i-1][j]) dp[i][j] += dp[i-1][j]; if (j &amp;gt; 0 &amp;amp;&amp;amp; !obstacleGrid[i][j-1]) dp[i][j] += dp[i][j-1]; } } return dp[m-1][n-1]; } }; </description>
+    </item>
+    
+    <item>
+      <title>62. Unique Paths</title>
+      <link>http://changcui.cc/posts/leetcode-62/</link>
+      <pubDate>Mon, 02 Dec 2019 16:12:41 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-62/</guid>
+      <description>class Solution { public: int uniquePaths(int m, int n) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp(m, vector&amp;lt;int&amp;gt;(n, 0)); dp[0][0] = 1; for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { dp[i][j] += i &amp;gt; 0 ? dp[i-1][j] : 0; dp[i][j] += j &amp;gt; 0 ? dp[i][j-1] : 0; } } return dp[m-1][n-1]; } }; </description>
+    </item>
+    
+    <item>
+      <title>174. Dungeon Game</title>
+      <link>http://changcui.cc/posts/leetcode-174/</link>
+      <pubDate>Mon, 02 Dec 2019 16:03:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-174/</guid>
+      <description>class Solution { public: int calculateMinimumHP(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; dungeon) { int m = dungeon.size(), n = dungeon[0].size(); vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp(m+1, vector&amp;lt;int&amp;gt;(n+1, INT_MAX)); dp[m][n-1] = 1; dp[m-1][n] = 1; for (int i = m - 1; i &amp;gt;= 0; i--) { for (int j = n - 1; j &amp;gt;= 0; j--) { dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j]); } } return dp[0][0]; } }; </description>
+    </item>
+    
+    <item>
+      <title>64. Minimum Path Sum</title>
+      <link>http://changcui.cc/posts/leetcode-64/</link>
+      <pubDate>Mon, 02 Dec 2019 15:37:02 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-64/</guid>
+      <description>class Solution { public: int minPathSum(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; grid) { int rtn = -1; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; cost(grid.size(), vector&amp;lt;int&amp;gt;(grid[0].size(), 0)); cost[0][0] = grid[0][0]; for (int i = 0; i &amp;lt; grid.size(); i++) { for (int j = 0; j &amp;lt; grid[0].size(); j++) { if (i - 1 &amp;gt;= 0 &amp;amp;&amp;amp; j - 1 &amp;gt;= 0) cost[i][j] = min(cost[i-1][j], cost[i][j-1]) + grid[i][j]; else if (i - 1 &amp;gt;= 0) cost[i][j] = cost[i-1][j] + grid[i][j]; else if (j - 1 &amp;gt;= 0) cost[i][j] = cost[i][j-1] + grid[i][j]; else cost[i][j] = grid[i][j]; } } return cost.</description>
+    </item>
+    
+    <item>
+      <title>179. Largest Number</title>
+      <link>http://changcui.cc/posts/leetcode-179/</link>
+      <pubDate>Mon, 02 Dec 2019 11:01:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-179/</guid>
+      <description>class Solution { public: string largestNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) { string result = &amp;#34;&amp;#34;; sort(nums.begin(), nums.end(), [](auto a, auto b){ return to_string(a) + to_string(b) &amp;gt; to_string(b) + to_string(a);}); for (auto num : nums) result += to_string(num); return result[0] == &amp;#39;0&amp;#39; ? &amp;#34;0&amp;#34; : result; } }; </description>
+    </item>
+    
+    <item>
+      <title>152. Maximum Product Subarray</title>
+      <link>http://changcui.cc/posts/leetcode-152/</link>
+      <pubDate>Mon, 02 Dec 2019 10:51:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-152/</guid>
+      <description>class Solution { public: int maxProduct(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;int&amp;gt; dp(nums.size() * 2, 0); dp[0] = nums[0]; dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &amp;lt; nums.size(); i++) { dp[2*i] = max(max(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); dp[2*i+1] = min(min(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); max_ = max(max_, dp[2*i]); } return max_; } }; </description>
+    </item>
     
     <item>
       <title>216. Combination Sum III</title>

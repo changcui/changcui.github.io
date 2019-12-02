@@ -6,10 +6,37 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Dec 2019 16:44:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 01:25:30 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>122. Best Time to Buy and Sell Stock II</title>
+      <link>http://changcui.cc/posts/leetcode-122/</link>
+      <pubDate>Tue, 03 Dec 2019 01:25:30 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-122/</guid>
+      <description>class Solution { public: int maxProfit(vector&amp;lt;int&amp;gt;&amp;amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &amp;lt; n - 1; i++) { if (prices[i] &amp;lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>307. Range Sum Query - Mutable</title>
+      <link>http://changcui.cc/posts/leetcode-307/</link>
+      <pubDate>Tue, 03 Dec 2019 01:08:33 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-307/</guid>
+      <description>class NumArray { public: NumArray(vector&amp;lt;int&amp;gt;&amp;amp; nums) { sum.push_back(0); for (auto n : nums) { sum.push_back(sum.back()+n); num.push_back(n); } } void update(int i, int val) { auto t = val - num[i]; num[i] = val; for (int j = i + 1; j &amp;lt; sum.size(); j++) sum[j] += t; } int sumRange(int i, int j) { return sum[j+1] - sum[i]; } private: vector&amp;lt;int&amp;gt; sum; vector&amp;lt;int&amp;gt; num; }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&amp;gt;update(i,val); * int param_2 = obj-&amp;gt;sumRange(i,j); */ </description>
+    </item>
+    
+    <item>
+      <title>383. Ransom Note</title>
+      <link>http://changcui.cc/posts/leetcode-383/</link>
+      <pubDate>Mon, 02 Dec 2019 16:49:57 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-383/</guid>
+      <description>class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&amp;lt;char, int&amp;gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; </description>
+    </item>
     
     <item>
       <title>389. Find the Difference</title>

@@ -6,10 +6,19 @@
     <description>Recent content in dp on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Dec 2019 01:25:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Dec 2019 23:54:07 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>343.Integer Break</title>
+      <link>http://changcui.cc/posts/leetcode-343/</link>
+      <pubDate>Mon, 09 Dec 2019 23:54:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-343/</guid>
+      <description>class Solution { public: int integerBreak(int n) { vector&amp;lt;int&amp;gt; dp(n+1, 1); for (int i = 3; i &amp;lt;= n; i++) { for (int j = 1; j &amp;lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; </description>
+    </item>
     
     <item>
       <title>122. Best Time to Buy and Sell Stock II</title>

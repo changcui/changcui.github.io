@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>list on changcui</title>
+    <link>http://changcui.cc/tags/list/</link>
+    <description>Recent content in list on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 01:52:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/list/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>334.Increasing Triplet Subsequence</title>
+      <link>http://changcui.cc/posts/leetcode-334/</link>
+      <pubDate>Tue, 10 Dec 2019 01:52:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-334/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

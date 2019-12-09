@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bit on changcui</title>
+    <link>http://changcui.cc/tags/bit/</link>
+    <description>Recent content in bit on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 00:39:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/bit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>338.Counting Bits</title>
+      <link>http://changcui.cc/posts/leetcode-338/</link>
+      <pubDate>Tue, 10 Dec 2019 00:39:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-338/</guid>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; countBits(int num) { vector&amp;lt;int&amp;gt; res(num+1, 0); for (int i = 1; i &amp;lt;= num; i++) { res[i] = res[i &amp;amp; (i-1)] + 1; } return res; } }; </description>
+    </item>
+    
+  </channel>
+</rss>

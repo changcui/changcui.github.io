@@ -6,7 +6,7 @@
     <description>Recent content in Categories on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Dec 2019 01:25:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 01:52:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>成长</title>
       <link>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</link>
-      <pubDate>Tue, 03 Dec 2019 01:25:30 +0800</pubDate>
+      <pubDate>Tue, 10 Dec 2019 01:52:56 +0800</pubDate>
       
       <guid>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>caad s</title>
+      <link>http://changcui.cc/categories/caad-s/</link>
+      <pubDate>Sun, 01 Dec 2019 03:20:24 +0800</pubDate>
+      
+      <guid>http://changcui.cc/categories/caad-s/</guid>
       <description></description>
     </item>
     

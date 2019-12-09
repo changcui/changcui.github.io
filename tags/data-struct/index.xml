@@ -6,10 +6,19 @@
     <description>Recent content in data struct on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Dec 2019 01:08:33 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 00:24:48 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/data-struct/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>341.Flatten Nested List Iterator</title>
+      <link>http://changcui.cc/posts/leetcode-341/</link>
+      <pubDate>Tue, 10 Dec 2019 00:24:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-341/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>307. Range Sum Query - Mutable</title>

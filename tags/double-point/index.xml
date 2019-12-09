@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>double point on changcui</title>
+    <link>http://changcui.cc/tags/double-point/</link>
+    <description>Recent content in double point on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 00:31:50 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/double-point/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>345.Reverse Vowels of a String</title>
+      <link>http://changcui.cc/posts/leetcode-345/</link>
+      <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-345/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

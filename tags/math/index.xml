@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on changcui</title>
+    <link>http://changcui.cc/tags/math/</link>
+    <description>Recent content in math on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 00:08:18 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>342.Power of Four</title>
+      <link>http://changcui.cc/posts/leetcode-342/</link>
+      <pubDate>Tue, 10 Dec 2019 00:08:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-342/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>231.Power of Two</title>
+      <link>http://changcui.cc/posts/leetcode-231/</link>
+      <pubDate>Tue, 10 Dec 2019 00:03:02 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-231/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

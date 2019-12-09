@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS on changcui</title>
+    <link>http://changcui.cc/tags/dfs/</link>
+    <description>Recent content in DFS on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 01:35:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>332.Reconstruct Itinerary</title>
+      <link>http://changcui.cc/posts/leetcode-332/</link>
+      <pubDate>Tue, 10 Dec 2019 01:35:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-332/</guid>
+      <description>class Solution { public: vector&amp;lt;string&amp;gt; findItinerary(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; tickets) { unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&amp;lt;string&amp;gt; result; DFS(m, &amp;#34;JFK&amp;#34;, result); return vector&amp;lt;string&amp;gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt;&amp;amp; m, string s, vector&amp;lt;string&amp;gt;&amp;amp; result){ while (m[s].size() &amp;gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; </description>
+    </item>
+    
+  </channel>
+</rss>

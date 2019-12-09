@@ -6,10 +6,91 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Dec 2019 01:25:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 01:52:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>334.Increasing Triplet Subsequence</title>
+      <link>http://changcui.cc/posts/leetcode-334/</link>
+      <pubDate>Tue, 10 Dec 2019 01:52:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-334/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>332.Reconstruct Itinerary</title>
+      <link>http://changcui.cc/posts/leetcode-332/</link>
+      <pubDate>Tue, 10 Dec 2019 01:35:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-332/</guid>
+      <description>class Solution { public: vector&amp;lt;string&amp;gt; findItinerary(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; tickets) { unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&amp;lt;string&amp;gt; result; DFS(m, &amp;#34;JFK&amp;#34;, result); return vector&amp;lt;string&amp;gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt;&amp;amp; m, string s, vector&amp;lt;string&amp;gt;&amp;amp; result){ while (m[s].size() &amp;gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; </description>
+    </item>
+    
+    <item>
+      <title>338.Counting Bits</title>
+      <link>http://changcui.cc/posts/leetcode-338/</link>
+      <pubDate>Tue, 10 Dec 2019 00:39:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-338/</guid>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; countBits(int num) { vector&amp;lt;int&amp;gt; res(num+1, 0); for (int i = 1; i &amp;lt;= num; i++) { res[i] = res[i &amp;amp; (i-1)] + 1; } return res; } }; </description>
+    </item>
+    
+    <item>
+      <title>345.Reverse Vowels of a String</title>
+      <link>http://changcui.cc/posts/leetcode-345/</link>
+      <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-345/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>341.Flatten Nested List Iterator</title>
+      <link>http://changcui.cc/posts/leetcode-341/</link>
+      <pubDate>Tue, 10 Dec 2019 00:24:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-341/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>342.Power of Four</title>
+      <link>http://changcui.cc/posts/leetcode-342/</link>
+      <pubDate>Tue, 10 Dec 2019 00:08:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-342/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>231.Power of Two</title>
+      <link>http://changcui.cc/posts/leetcode-231/</link>
+      <pubDate>Tue, 10 Dec 2019 00:03:02 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-231/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>343.Integer Break</title>
+      <link>http://changcui.cc/posts/leetcode-343/</link>
+      <pubDate>Mon, 09 Dec 2019 23:54:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-343/</guid>
+      <description>class Solution { public: int integerBreak(int n) { vector&amp;lt;int&amp;gt; dp(n+1, 1); for (int i = 3; i &amp;lt;= n; i++) { for (int j = 1; j &amp;lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; </description>
+    </item>
+    
+    <item>
+      <title>58. Length of Last Word</title>
+      <link>http://changcui.cc/posts/leetcode-58/</link>
+      <pubDate>Tue, 03 Dec 2019 14:10:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-58/</guid>
+      <description>class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &amp;gt;= 0 &amp;amp;&amp;amp; s[i] == &amp;#39; &amp;#39;) i--; while (i &amp;gt;= 0 &amp;amp;&amp;amp; s[i] != &amp;#39; &amp;#39;) { res++; i--; } return res; } }; </description>
+    </item>
     
     <item>
       <title>122. Best Time to Buy and Sell Stock II</title>
@@ -117,15 +198,6 @@
       
       <guid>http://changcui.cc/posts/leetcode-216/</guid>
       <description>class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum3(int k, int n) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; result; vector&amp;lt;int&amp;gt; out; DFS(0, 1, k, n, out, result); return result; } void DFS(int nums, int cur, int k, int n, vector&amp;lt;int&amp;gt;&amp;amp; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; result) { if (nums == k &amp;amp;&amp;amp; n == 0) {result.push_back(out); return;} if (nums &amp;gt; k || n &amp;lt; 0) return; for (int i = cur; i &amp;lt;= 9; i++) { out.push_back(i); DFS(nums+1, i+1, k, n-i, out, result); out.</description>
-    </item>
-    
-    <item>
-      <title>377. Combination Sum IV</title>
-      <link>http://changcui.cc/posts/leetcode-377/</link>
-      <pubDate>Sun, 01 Dec 2019 03:20:24 +0800</pubDate>
-      
-      <guid>http://changcui.cc/posts/leetcode-377/</guid>
-      <description>class Solution { public: int combinationSum4(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { vector&amp;lt;unsigned int&amp;gt; dp(target + 1, 0); dp[0] = 1; for (int i = 1; i &amp;lt;= target; i++) { for (auto num : nums) { if (i - num &amp;gt;= 0) dp[i] += dp[i - num]; } } return dp.back(); } }; </description>
     </item>
     
     <item>

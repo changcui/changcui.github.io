@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>caad s on changcui</title>
+    <link>http://changcui.cc/categories/caad-s/</link>
+    <description>Recent content in caad s on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Dec 2019 03:20:24 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/categories/caad-s/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>377. Combination Sum IV</title>
+      <link>http://changcui.cc/posts/leetcode-377/</link>
+      <pubDate>Sun, 01 Dec 2019 03:20:24 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-377/</guid>
+      <description>class Solution { public: int combinationSum4(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { vector&amp;lt;unsigned int&amp;gt; dp(target + 1, 0); dp[0] = 1; for (int i = 1; i &amp;lt;= target; i++) { for (auto num : nums) { if (i - num &amp;gt;= 0) dp[i] += dp[i - num]; } } return dp.back(); } }; </description>
+    </item>
+    
+  </channel>
+</rss>

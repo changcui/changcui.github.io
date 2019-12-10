@@ -6,10 +6,19 @@
     <description>Recent content in dp on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Dec 2019 23:54:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 21:16:58 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>322.Coin Change</title>
+      <link>http://changcui.cc/posts/leetcode-322/</link>
+      <pubDate>Tue, 10 Dec 2019 21:16:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-322/</guid>
+      <description>class Solution { public: int coinChange(vector&amp;lt;int&amp;gt;&amp;amp; coins, int amount) { vector&amp;lt;int&amp;gt; dp(amount + 1, amount+1); sort(coins.begin(), coins.end()); dp[0] = 0; for (int i = 1; i &amp;lt;= amount; i++) { for (auto c : coins) { if (c &amp;lt;= i) dp[i] = min(dp[i], dp[i-c]+1); else break; } } return dp[amount] &amp;gt; amount ? -1 : dp[amount]; } }; </description>
+    </item>
     
     <item>
       <title>343.Integer Break</title>

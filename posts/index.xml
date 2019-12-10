@@ -6,10 +6,55 @@
     <description>Recent content in Posts on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Dec 2019 01:52:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Dec 2019 00:24:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>113.Path Sum II</title>
+      <link>http://changcui.cc/posts/leetcode-113/</link>
+      <pubDate>Wed, 11 Dec 2019 00:24:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-113/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; pathSum(TreeNode* root, int sum) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; res; DFS(root, {}, res, sum); return res; } void DFS(TreeNode* root, vector&amp;lt;int&amp;gt; out, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; res, int sum) { if (!root) return; out.push_back(root-&amp;gt;val); if (!root-&amp;gt;left &amp;amp;&amp;amp; !root-&amp;gt;right &amp;amp;&amp;amp; root-&amp;gt;val == sum) { res.</description>
+    </item>
+    
+    <item>
+      <title>112.Path Sum</title>
+      <link>http://changcui.cc/posts/leetcode-112/</link>
+      <pubDate>Wed, 11 Dec 2019 00:15:29 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-112/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>95.Unique Binary Search Trees II</title>
+      <link>http://changcui.cc/posts/leetcode-95/</link>
+      <pubDate>Wed, 11 Dec 2019 00:04:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-95/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;TreeNode*&amp;gt; generateTrees(int n) { if (n == 0) return {}; return helper(1, n); } vector&amp;lt;TreeNode*&amp;gt; helper(int left, int right) { if (left &amp;gt; right) return {nullptr}; vector&amp;lt;TreeNode*&amp;gt; res; for (int i = left; i &amp;lt;= right; i++) { auto ll = helper(left, i-1); auto rr = helper(i+1, right); for (auto l : ll) { for (auto r : rr) { auto t = new TreeNode(i); t -&amp;gt; left = l; t -&amp;gt; right = r; res.</description>
+    </item>
+    
+    <item>
+      <title>93.Restore IP Addresses</title>
+      <link>http://changcui.cc/posts/leetcode-93/</link>
+      <pubDate>Tue, 10 Dec 2019 23:48:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-93/</guid>
+      <description>class Solution { public: vector&amp;lt;string&amp;gt; restoreIpAddresses(string s) { vector&amp;lt;string&amp;gt; result; if (s.size() &amp;gt; 12) return result; DFS(0, 0, &amp;#34;&amp;#34;, result, s); return result; } void DFS(int num, int cur, string out, vector&amp;lt;string&amp;gt;&amp;amp; result, string s) { if (num == 4 &amp;amp;&amp;amp; cur == s.size()) {out.pop_back(); result.push_back(out); return;} for (int i = 1; i &amp;lt;= 3 &amp;amp;&amp;amp; cur + i &amp;lt;= s.size(); i++) { auto tmp = s.substr(cur, i); if (stoi(tmp) &amp;lt; 256 &amp;amp;&amp;amp; !</description>
+    </item>
+    
+    <item>
+      <title>322.Coin Change</title>
+      <link>http://changcui.cc/posts/leetcode-322/</link>
+      <pubDate>Tue, 10 Dec 2019 21:16:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-322/</guid>
+      <description>class Solution { public: int coinChange(vector&amp;lt;int&amp;gt;&amp;amp; coins, int amount) { vector&amp;lt;int&amp;gt; dp(amount + 1, amount+1); sort(coins.begin(), coins.end()); dp[0] = 0; for (int i = 1; i &amp;lt;= amount; i++) { for (auto c : coins) { if (c &amp;lt;= i) dp[i] = min(dp[i], dp[i-c]+1); else break; } } return dp[amount] &amp;gt; amount ? -1 : dp[amount]; } }; </description>
+    </item>
     
     <item>
       <title>334.Increasing Triplet Subsequence</title>

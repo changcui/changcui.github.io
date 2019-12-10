@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>divide conquer on changcui</title>
+    <link>http://changcui.cc/tags/divide-conquer/</link>
+    <description>Recent content in divide conquer on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Dec 2019 00:04:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/divide-conquer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>95.Unique Binary Search Trees II</title>
+      <link>http://changcui.cc/posts/leetcode-95/</link>
+      <pubDate>Wed, 11 Dec 2019 00:04:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-95/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&amp;lt;TreeNode*&amp;gt; generateTrees(int n) { if (n == 0) return {}; return helper(1, n); } vector&amp;lt;TreeNode*&amp;gt; helper(int left, int right) { if (left &amp;gt; right) return {nullptr}; vector&amp;lt;TreeNode*&amp;gt; res; for (int i = left; i &amp;lt;= right; i++) { auto ll = helper(left, i-1); auto rr = helper(i+1, right); for (auto l : ll) { for (auto r : rr) { auto t = new TreeNode(i); t -&amp;gt; left = l; t -&amp;gt; right = r; res.</description>
+    </item>
+    
+  </channel>
+</rss>

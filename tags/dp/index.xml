@@ -6,10 +6,28 @@
     <description>Recent content in dp on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Dec 2019 21:16:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 01:03:42 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>300.Longest Increasing Subsequence</title>
+      <link>http://changcui.cc/posts/leetcode-300/</link>
+      <pubDate>Thu, 12 Dec 2019 01:03:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-300/</guid>
+      <description>class Solution { public: int lengthOfLIS(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; int n = nums.size(), max_ = 1; vector&amp;lt;int&amp;gt; dp(n, 1); for (int i = 1; i &amp;lt; n; i++) { for (int j = 0; j &amp;lt; i; j++) { if (nums[j] &amp;lt; nums[i]) dp[i] = max(dp[i], dp[j] + 1); } max_ = max(max_, dp[i]); } return max_; } }; </description>
+    </item>
+    
+    <item>
+      <title>279.Perfect Squares</title>
+      <link>http://changcui.cc/posts/leetcode-279/</link>
+      <pubDate>Thu, 12 Dec 2019 00:46:36 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-279/</guid>
+      <description>class Solution { public: int numSquares(int n) { vector&amp;lt;int&amp;gt; dp(n+1, n); vector&amp;lt;int&amp;gt; p; dp[0] = 0; for (int i = 1; i &amp;lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &amp;lt;= n; i++) { for (int j = 0; j &amp;lt; p.size(); j++) { if (p[j] &amp;lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; </description>
+    </item>
     
     <item>
       <title>322.Coin Change</title>

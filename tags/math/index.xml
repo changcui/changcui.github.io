@@ -6,10 +6,28 @@
     <description>Recent content in math on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Dec 2019 00:08:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 00:26:58 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>264.Ugly Number II</title>
+      <link>http://changcui.cc/posts/leetcode-264/</link>
+      <pubDate>Thu, 12 Dec 2019 00:26:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-264/</guid>
+      <description>class Solution { public: int nthUglyNumber(int n) { vector&amp;lt;int&amp;gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &amp;lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.</description>
+    </item>
+    
+    <item>
+      <title>263.Ugly Number</title>
+      <link>http://changcui.cc/posts/leetcode-263/</link>
+      <pubDate>Thu, 12 Dec 2019 00:13:33 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-263/</guid>
+      <description>class Solution { public: bool isUgly(int num) { if (num &amp;lt; 1) return false; while (num % 2 == 0) num /= 2; while (num % 3 == 0) num /= 3; while (num % 5 == 0) num /= 5; return num == 1; } }; </description>
+    </item>
     
     <item>
       <title>342.Power of Four</title>

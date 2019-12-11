@@ -17,7 +17,7 @@
       <pubDate>Tue, 10 Dec 2019 00:24:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-341/</guid>
-      <description></description>
+      <description>/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&amp;lt;NestedInteger&amp;gt; &amp;amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&amp;lt;NestedInteger&amp;gt; &amp;amp;n, vector&amp;lt;int&amp;gt;&amp;amp; v) { for (auto i : n) { if (i.</description>
     </item>
     
     <item>

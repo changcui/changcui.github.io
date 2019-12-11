@@ -17,7 +17,7 @@
       <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-345/</guid>
-      <description></description>
+      <description>class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &amp;lt; j) { while (i &amp;lt; j &amp;amp;&amp;amp; s[i] != &amp;#39;a&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;e&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;i&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;o&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;u&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;A&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;E&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;I&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;O&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;U&amp;#39;) i++; while (i &amp;lt; j &amp;amp;&amp;amp; s[j] !</description>
     </item>
     
   </channel>

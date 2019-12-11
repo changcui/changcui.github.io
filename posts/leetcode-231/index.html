@@ -91,7 +91,12 @@
       
     </header>
 
-    <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">
+    <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
   </article>
 

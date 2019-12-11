@@ -17,7 +17,7 @@
       <pubDate>Wed, 11 Dec 2019 00:15:29 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-112/</guid>
-      <description></description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool hasPathSum(TreeNode* root, int sum) { if (!root) return false; if (!root-&amp;gt;left &amp;amp;&amp;amp; !root-&amp;gt;right &amp;amp;&amp;amp; sum == root -&amp;gt; val) return true; return hasPathSum(root-&amp;gt;left, sum-root-&amp;gt;val) || hasPathSum(root-&amp;gt;right, sum-root-&amp;gt;val); } }; </description>
     </item>
     
   </channel>

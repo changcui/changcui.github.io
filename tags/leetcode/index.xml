@@ -26,7 +26,7 @@
       <pubDate>Wed, 11 Dec 2019 00:15:29 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-112/</guid>
-      <description></description>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool hasPathSum(TreeNode* root, int sum) { if (!root) return false; if (!root-&amp;gt;left &amp;amp;&amp;amp; !root-&amp;gt;right &amp;amp;&amp;amp; sum == root -&amp;gt; val) return true; return hasPathSum(root-&amp;gt;left, sum-root-&amp;gt;val) || hasPathSum(root-&amp;gt;right, sum-root-&amp;gt;val); } }; </description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Tue, 10 Dec 2019 01:52:56 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-334/</guid>
-      <description></description>
+      <description>class Solution { public: bool increasingTriplet(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int m1 = INT_MAX, m2 = INT_MAX; for (auto i : nums) { if (m1 &amp;gt;= i) m1 = i; else if (m2 &amp;gt;= i) m2 = i; else return true; } return false; } }; </description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-345/</guid>
-      <description></description>
+      <description>class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &amp;lt; j) { while (i &amp;lt; j &amp;amp;&amp;amp; s[i] != &amp;#39;a&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;e&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;i&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;o&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;u&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;A&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;E&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;I&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;O&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;U&amp;#39;) i++; while (i &amp;lt; j &amp;amp;&amp;amp; s[j] !</description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@
       <pubDate>Tue, 10 Dec 2019 00:24:48 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-341/</guid>
-      <description></description>
+      <description>/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&amp;lt;NestedInteger&amp;gt; &amp;amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&amp;lt;NestedInteger&amp;gt; &amp;amp;n, vector&amp;lt;int&amp;gt;&amp;amp; v) { for (auto i : n) { if (i.</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Tue, 10 Dec 2019 00:08:18 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-342/</guid>
-      <description></description>
+      <description>class Solution { public: bool isPowerOfFour(int num) { return (num &amp;gt; 0) &amp;amp;&amp;amp; !(num &amp;amp; (num - 1)) &amp;amp;&amp;amp; (num &amp;amp; 0x55555555) == num; } }; </description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Tue, 10 Dec 2019 00:03:02 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-231/</guid>
-      <description></description>
+      <description>class Solution { public: bool isPowerOfTwo(int n) { return (n &amp;gt; 0) &amp;amp;&amp;amp; !(n &amp;amp; (n - 1)); } }; </description>
     </item>
     
     <item>

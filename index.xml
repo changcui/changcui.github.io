@@ -6,10 +6,55 @@
     <description>Recent content on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Dec 2019 01:03:42 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 00:50:22 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>114.Flatten Binary Tree to Linked List</title>
+      <link>http://changcui.cc/posts/leetcode-114/</link>
+      <pubDate>Fri, 13 Dec 2019 00:50:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-114/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: void flatten(TreeNode* root) { if (!root) return; if (root-&amp;gt;left) flatten(root-&amp;gt;left); if (root-&amp;gt;right) flatten(root-&amp;gt;right); auto tmp = root -&amp;gt; right; root -&amp;gt; right = root -&amp;gt; left; root -&amp;gt; left = NULL; while (root-&amp;gt;right) root = root -&amp;gt; right; root -&amp;gt; right = tmp; } }; </description>
+    </item>
+    
+    <item>
+      <title>111.Minimum Depth of Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-111/</link>
+      <pubDate>Fri, 13 Dec 2019 00:36:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-111/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int minDepth(TreeNode* root) { if (!root) return 0; if (!root-&amp;gt;left) return 1 + minDepth(root -&amp;gt; right); if (!root-&amp;gt;right) return 1 + minDepth(root -&amp;gt; left); return 1 + min(minDepth(root-&amp;gt;right), minDepth(root-&amp;gt;left)); } }; </description>
+    </item>
+    
+    <item>
+      <title>110.Balanced Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-110/</link>
+      <pubDate>Fri, 13 Dec 2019 00:28:40 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-110/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isBalanced(TreeNode* root) { if (!root) return true; if (abs(getDepth(root-&amp;gt;left) - getDepth(root-&amp;gt;right)) &amp;gt; 1) return false; return isBalanced(root-&amp;gt;left) &amp;amp;&amp;amp; isBalanced(root-&amp;gt;right); } int getDepth(TreeNode* root) { if (!root) return 0; return max(getDepth(root-&amp;gt;left), getDepth(root-&amp;gt;right)) + 1; } }; </description>
+    </item>
+    
+    <item>
+      <title>109.Convert Sorted List to Binary Search Tree</title>
+      <link>http://changcui.cc/posts/leetcode-109/</link>
+      <pubDate>Fri, 13 Dec 2019 00:20:30 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-109/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* sortedListToBST(ListNode* head) { return helper(head, NULL); } TreeNode* helper(ListNode* begin, ListNode* end) { if (begin == end) return NULL; auto fast = begin, slow = begin; while (fast !</description>
+    </item>
+    
+    <item>
+      <title>105.Construct Binary Tree from Preorder and Inorder Traversal</title>
+      <link>http://changcui.cc/posts/leetcode-105/</link>
+      <pubDate>Fri, 13 Dec 2019 00:02:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-105/</guid>
+      <description>/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* buildTree(vector&amp;lt;int&amp;gt;&amp;amp; preorder, vector&amp;lt;int&amp;gt;&amp;amp; inorder) { int n = preorder.size() - 1; return helper(preorder, inorder, 0, n, 0, n); } TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; preorder, vector&amp;lt;int&amp;gt;&amp;amp; inorder, int lp, int rp, int li, int ri) { if (lp &amp;gt; rp || li &amp;gt; ri) return nullptr; if (lp == rp &amp;amp;&amp;amp; li == ri) { auto tmp = new TreeNode(inorder[li]); return tmp; } for (int i = li; i &amp;lt;= ri; i++) { if (inorder[i] == preorder[lp]) { auto tmp = new TreeNode(inorder[i]); auto off = i - li; tmp -&amp;gt; left = helper(preorder, inorder, lp + 1, lp + off, li, i - 1); tmp -&amp;gt; right = helper(preorder, inorder, lp + off + 1, rp, i + 1, ri); return tmp; } } return nullptr; } }; </description>
+    </item>
     
     <item>
       <title>300.Longest Increasing Subsequence</title>

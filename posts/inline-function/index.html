@@ -11,22 +11,22 @@
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  153. Find Minimum in Rotated Sorted Array - changcui
+  c&#43;&#43; inline function - changcui
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/leetcode-153/">
+    <meta property="og:url" content="http://changcui.cc/posts/inline-function/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/leetcode-153/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/inline-function/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/posts/leetcode-153/">
+    <base href="http://changcui.cc/posts/inline-function/">
     <title>
-  153. Find Minimum in Rotated Sorted Array - changcui
+  c&#43;&#43; inline function - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/posts/leetcode-153/">
+    <link rel="canonical" href="http://changcui.cc/posts/inline-function/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -85,25 +85,58 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">153. Find Minimum in Rotated Sorted Array</h1>
-      <h2 class="date">October 10, 2019</h2>
+      <h1 class="title">c&#43;&#43; inline function</h1>
+      <h2 class="date">January 7, 2020</h2>
 
       
     </header>
 
-    <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">findMin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">])</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">];</span>
-    <span class="p">}</span>
+    
+
+<h3 id="前情">前情</h3>
+
+<p>之前看 Linus 的硕士毕业论文的时候，看到他设计 Linux Kernel 的时候，用了几个非标准但是各种编译器都实现了的功能，其中一个就是 inline function，我记得之前在 ICS 课上也用过，可是我忘了为什么要用，重新查了一下，记录一下。</p>
+
+<h3 id="what">What</h3>
+
+<p>inline function 被用于减少程序的运行时间，具体的做法是，编译的时候直接将 inline function 的调用替换为其定义，相当于取消了函数调用这一步，执行函数内部的代码。一般用于代码比较少的函数，代码比较多的函数编译器<strong>可能会</strong>直接忽略掉 inline。</p>
+
+<h3 id="why">Why</h3>
+
+<p>函数调用是有开销的，在运行的时候，一次函数调用需要完成以下几步：</p>
+
+<ol>
+<li><p>预先储存函数调用之后，下一条指令的地址</p></li>
+
+<li><p>把需要调用的函数载入内存</p></li>
+
+<li><p>拷贝参数</p></li>
+
+<li><p>跳转到被执行的函数</p></li>
+
+<li><p>执行函数代码</p></li>
+
+<li><p>储存函数的返回值</p></li>
+
+<li><p>跳转到预先存好的下一条指令地址继续执行</p></li>
+</ol>
+
+<p>当函数加了 inline 的关键字之后，编译器将函数调用语句替换成函数实现的代码，这样就不用执行跳转等步骤了。(是不是感觉和宏有点像，但还是有点不一样的，宏一定会替换</p>
+
+<h3 id="how">How</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kr">inline</span> <span class="kt">int</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">};</span>
 <span class="p">};</span>
 </code></pre></div>
+<h3 id="references">References</h3>
+
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/inline-functions-cpp/">https://www.geeksforgeeks.org/inline-functions-cpp/</a></p></li>
+
+<li><p><a href="http://www.cplusplus.com/articles/2LywvCM9/">http://www.cplusplus.com/articles/2LywvCM9/</a></p></li>
+</ul>
+
   </article>
 
   <br/>

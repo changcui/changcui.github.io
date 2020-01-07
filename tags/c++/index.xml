@@ -6,10 +6,32 @@
     <description>Recent content in c&#43;&#43; on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2019 23:27:06 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2020 15:15:51 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>c&#43;&#43; inline function</title>
+      <link>http://changcui.cc/posts/inline-function/</link>
+      <pubDate>Tue, 07 Jan 2020 15:15:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/inline-function/</guid>
+      <description> 前情 之前看 Linus 的硕士毕业论文的时候，看到他设计 Linux Kernel 的时候，用了几个非标准但是各种编译器都实现了的功能，其中一个就是 inline function，我记得之前在 ICS 课上也用过，可是我忘了为什么要用，重新查了一下，记录一下。
+What inline function 被用于减少程序的运行时间，具体的做法是，编译的时候直接将 inline function 的调用替换为其定义，相当于取消了函数调用这一步，执行函数内部的代码。一般用于代码比较少的函数，代码比较多的函数编译器可能会直接忽略掉 inline。
+Why 函数调用是有开销的，在运行的时候，一次函数调用需要完成以下几步：
+ 预先储存函数调用之后，下一条指令的地址
+ 把需要调用的函数载入内存
+ 拷贝参数
+ 跳转到被执行的函数
+ 执行函数代码
+ 储存函数的返回值
+ 跳转到预先存好的下一条指令地址继续执行
+  当函数加了 inline 的关键字之后，编译器将函数调用语句替换成函数实现的代码，这样就不用执行跳转等步骤了。(是不是感觉和宏有点像，但还是有点不一样的，宏一定会替换
+How class A { public: inline int add(int a, int b) {return a + b}; };  References  https://www.geeksforgeeks.org/inline-functions-cpp/
+ http://www.cplusplus.com/articles/2LywvCM9/
+  </description>
+    </item>
     
     <item>
       <title>c&#43;&#43;</title>

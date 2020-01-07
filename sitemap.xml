@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://changcui.cc/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/inline-function/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/categories/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2020-01-07T15:15:51+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://changcui.cc/posts/leetcode-114/</loc>
     <lastmod>2019-12-13T00:50:22+08:00</lastmod>
   </url>
@@ -13,32 +48,12 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/categories/</loc>
-    <lastmod>2019-12-13T00:50:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/</loc>
-    <lastmod>2019-12-13T00:50:22+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/tags/leetcode/</loc>
     <lastmod>2019-12-13T00:50:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/tags/list/</loc>
-    <lastmod>2019-12-13T00:50:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/posts/</loc>
-    <lastmod>2019-12-13T00:50:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/</loc>
     <lastmod>2019-12-13T00:50:22+08:00</lastmod>
   </url>
   
@@ -424,11 +439,6 @@
   
   <url>
     <loc>http://changcui.cc/posts/python3/</loc>
-    <lastmod>2019-11-02T20:43:51+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2019-11-02T20:43:51+08:00</lastmod>
   </url>
   
@@ -955,11 +965,6 @@
   <url>
     <loc>http://changcui.cc/posts/leetcode-1051/</loc>
     <lastmod>2019-08-26T23:42:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/c&#43;&#43;/</loc>
-    <lastmod>2019-08-26T23:27:06+08:00</lastmod>
   </url>
   
   <url>

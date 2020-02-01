@@ -6,10 +6,19 @@
     <description>Recent content in string on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Dec 2019 00:31:50 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 14:51:33 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>替换空格</title>
+      <link>http://changcui.cc/posts/offer-2/</link>
+      <pubDate>Sat, 01 Feb 2020 14:51:33 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-2/</guid>
+      <description>// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &amp;lt; oldL; i++) if (str[i] == &amp;#39; &amp;#39;) newL += 2; if (newL &amp;gt;= length) return; int idx = newL; for (int i = oldL; i &amp;gt;= 0; i--) { if (str[i] == &amp;#39; &amp;#39;) { str[idx--] = &amp;#39;0&amp;#39;; str[idx--] = &amp;#39;2&amp;#39;; str[idx--] = &amp;#39;%&amp;#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k </description>
+    </item>
     
     <item>
       <title>345.Reverse Vowels of a String</title>

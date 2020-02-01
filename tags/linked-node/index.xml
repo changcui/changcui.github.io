@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linked node on changcui</title>
+    <link>http://changcui.cc/tags/linked-node/</link>
+    <description>Recent content in linked node on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Feb 2020 15:19:45 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/linked-node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从尾到头打印链表</title>
+      <link>http://changcui.cc/posts/offer-3/</link>
+      <pubDate>Sat, 01 Feb 2020 15:19:45 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-3/</guid>
+      <description>// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&amp;lt;int&amp;gt; printListFromTailToHead(ListNode* head) { vector&amp;lt;int&amp;gt; result; while (head) {result.push_back(head-&amp;gt;val); head = head -&amp;gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&amp;lt;int&amp;gt; printListFromTailToHead(ListNode* head) { vector&amp;lt;int&amp;gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&amp;lt;int&amp;gt;&amp;amp; result) { if (!head) return; helper(head-&amp;gt;next, result); result.push_back(head-&amp;gt;val); } }; // 运行时间：2ms // 占用内存：460k </description>
+    </item>
+    
+  </channel>
+</rss>

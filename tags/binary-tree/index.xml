@@ -6,10 +6,19 @@
     <description>Recent content in binary tree on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Dec 2019 00:50:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 15:29:08 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>重建二叉树</title>
+      <link>http://changcui.cc/posts/offer-4/</link>
+      <pubDate>Sat, 01 Feb 2020 15:29:08 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-4/</guid>
+      <description>// 思路一：使用递归重建，每次重建一个节点，将两组数在根结点处划分成两段递归调用 // 注意细节处理，第一次调用右节点为 pre.size()-1，调用体的 for loop 使用 // i &amp;lt;= rv - lv，以及出口为 lv &amp;gt; rv class Solution { public: TreeNode* reConstructBinaryTree(vector&amp;lt;int&amp;gt; pre,vector&amp;lt;int&amp;gt; vin) { return helper(pre, vin, 0, pre.size()-1, 0, vin.size()-1); } TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; pre, vector&amp;lt;int&amp;gt;&amp;amp; vin, int lp, int rp, int lv, int rv) { if (lp &amp;gt; rp || lv &amp;gt; rv) return NULL; TreeNode* rtn = new TreeNode(pre[lp]); if (lp == rp &amp;amp;&amp;amp; lv == rv) return rtn; for (int i = 0; i &amp;lt;= rv - lv; i++) { if (vin[i+lv] == pre[lp]) { rtn -&amp;gt; left = helper(pre, vin, lp+1, lp+i, lv, lv+i-1); rtn -&amp;gt; right = helper(pre, vin, lp+i+1, rp, lv+i+1, rv); break; } } return rtn; } }; // 运行时间：3ms // 占用内存：480k </description>
+    </item>
     
     <item>
       <title>114.Flatten Binary Tree to Linked List</title>

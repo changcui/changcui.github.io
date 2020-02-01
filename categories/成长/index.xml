@@ -6,10 +6,19 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Dec 2019 00:50:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 14:30:55 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二维数组中的查找</title>
+      <link>http://changcui.cc/posts/offer-1/</link>
+      <pubDate>Sat, 01 Feb 2020 14:30:55 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-1/</guid>
+      <description>// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &amp;gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; array) { if (array.</description>
+    </item>
     
     <item>
       <title>114.Flatten Binary Tree to Linked List</title>

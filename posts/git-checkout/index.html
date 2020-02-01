@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  Tags - changcui
+  git checkout - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/tags/">
+    <meta property="og:url" content="http://changcui.cc/posts/git-checkout/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/tags/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/git-checkout/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/tags/">
+    <base href="http://changcui.cc/posts/git-checkout/">
     <title>
-  Tags - changcui
+  git checkout - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/tags/">
+    <link rel="canonical" href="http://changcui.cc/posts/git-checkout/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,92 +82,58 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Tags</h1>
-  <ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">git checkout</h1>
+      <h2 class="date">January 8, 2020</h2>
+
+      
+    </header>
+
     
-    <li>
-      <span>February 1, 2020</span><a href="http://changcui.cc/tags/%E5%89%91%E6%8C%87offer/">剑指offer</a>
-    </li>
-    
-    <li>
-      <span>January 8, 2020</span><a href="http://changcui.cc/tags/git/">git</a>
-    </li>
-    
-    <li>
-      <span>January 7, 2020</span><a href="http://changcui.cc/tags/c&#43;&#43;/">c&#43;&#43;</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/tags/binary-tree/">binary tree</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/tags/leetcode/">leetcode</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/tags/list/">list</a>
-    </li>
-    
-    <li>
-      <span>December 12, 2019</span><a href="http://changcui.cc/tags/dp/">dp</a>
-    </li>
-    
-    <li>
-      <span>December 12, 2019</span><a href="http://changcui.cc/tags/math/">math</a>
-    </li>
-    
-    <li>
-      <span>December 12, 2019</span><a href="http://changcui.cc/tags/dfs/">dfs</a>
-    </li>
-    
-    <li>
-      <span>December 11, 2019</span><a href="http://changcui.cc/tags/tree/">tree</a>
-    </li>
-    
-    <li>
-      <span>December 11, 2019</span><a href="http://changcui.cc/tags/divide-conquer/">divide conquer</a>
-    </li>
-    
-    <li>
-      <span>December 10, 2019</span><a href="http://changcui.cc/tags/bit/">bit</a>
-    </li>
-    
-    <li>
-      <span>December 10, 2019</span><a href="http://changcui.cc/tags/double-point/">double point</a>
-    </li>
-    
-    <li>
-      <span>December 10, 2019</span><a href="http://changcui.cc/tags/string/">string</a>
-    </li>
-    
-    <li>
-      <span>December 10, 2019</span><a href="http://changcui.cc/tags/data-struct/">data struct</a>
-    </li>
-    
-    <li>
-      <span>November 2, 2019</span><a href="http://changcui.cc/tags/python3/">python3</a>
-    </li>
-    
-    <li>
-      <span>October 15, 2019</span><a href="http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-    </li>
-    
-    <li>
-      <span>August 18, 2019</span><a href="http://changcui.cc/tags/linux/">Linux</a>
-    </li>
-    
-  </ul>
+
+<h3 id="前情">前情</h3>
+
+<p>之前 git 只会一些比较基本的用法，对 git 的原理以及一些常用的场景都不太了解，现在准备重新学习一些，我发现一些命令用的很多，以及一些场景可以使用多种命令的组合来完成，一个一个来吧，先来学习一个 checkout 的多种功能。</p>
+
+<h3 id="切换分支">切换分支</h3>
+
+<p><code>git checkout [&lt;branch&gt;]</code></p>
+
+<p>这个用的很多了，在分支之间切换。</p>
+
+<h3 id="创建并切换分支">创建并切换分支</h3>
+
+<p><code>git checkout -b &lt;new branch&gt; [&lt;start point&gt;]</code></p>
+
+<p>这个也用的比较多，加上 -b 来创建一个新的分支，本质上和 git branch 创建分支，再 git checkout 过去的功能是一样的。</p>
+
+<h3 id="detach-head">detach HEAD</h3>
+
+<p><code>git checkout --detach [&lt;branch&gt;], git checkout &lt;commit&gt;</code></p>
+
+<p>如果想 detach head 对于某个 branch 而言的话，需要加上 &ndash;detach，不加是切换 branch 的意思，如果对于某个 commit 而言的话，则不需要加。</p>
+
+<p>简单解释一下，详见<a href="https://git-scm.com/docs/git-checkout">这里</a>，HEAD 原本是指向一个 branch 的，通过指向 branch 来<em>间接</em></p>
+
+<p>的指向 commit，detach HEAD 操作可以让 HEAD 直接某个 commit，这么做之后，也可以进行 add，commit 等常用的操作，跟之前有一些不一样是当你 checkout 到别的分支之后，你的 commit 没有标记，会只剩下一个 SHA，被 git 的垃圾回收机制回收，相当于走了就回不来了。如果想要再回来，当然就是加上标记，有三种方法，第一种是 <code>git checkout -b foo</code>，这么做是创建一个新的分支，并且将 HEAD 指向这个分支，这时候的 HEAD 不是 detached 的状态了，第二种是 <code>git branch foo</code>，给 commit 加一个 branch 的标记，但是 HEAD 依然指向当前的 commit，还处于 detached 状态，需要 checkout 一下解除 detached 状态，第三种是 <code>git tag foo</code>，给这个 commit 打一个标记，HEAD 依然处于 detached 状态。</p>
+
+<p>其实我并不知道，这么做有什么作用，以后再说吧。</p>
+
+<h3 id="references">References</h3>
+
+<ul>
+<li><a href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></li>
+</ul>
+
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+  
 </section>
-
 
       </div>
       

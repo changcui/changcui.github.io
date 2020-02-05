@@ -6,10 +6,19 @@
     <description>Recent content in array on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 16:05:13 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 12:15:32 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/array/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>调整数组顺序使奇数位于偶数前面</title>
+      <link>http://changcui.cc/posts/offer-13/</link>
+      <pubDate>Wed, 05 Feb 2020 12:15:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-13/</guid>
+      <description>// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&amp;lt;int&amp;gt; &amp;amp;array) { vector&amp;lt;int&amp;gt; tmp; for (auto i : array) if (i &amp;amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp;amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&amp;lt;int&amp;gt; &amp;amp;array) { for (int i = 0; i &amp;lt; array.size(); i++) { for (int j = array.size() - 1; j &amp;gt; i; j--) { if (!</description>
+    </item>
     
     <item>
       <title>旋转数组的最小数字</title>

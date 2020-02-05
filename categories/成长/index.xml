@@ -6,10 +6,73 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 18:52:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 15:34:09 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>合并两个排序的链表</title>
+      <link>http://changcui.cc/posts/offer-16/</link>
+      <pubDate>Wed, 05 Feb 2020 15:34:09 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-16/</guid>
+      <description>// 思路一：递归，每次比两个节点的值 class Solution { public: ListNode* Merge(ListNode* pHead1, ListNode* pHead2) { if (!pHead1) return pHead2; if (!pHead2) return pHead1; ListNode* head = NULL; if (pHead1 -&amp;gt; val &amp;lt;= pHead2 -&amp;gt; val) { head = pHead1; head -&amp;gt; next = Merge(pHead1-&amp;gt;next, pHead2); } else { head = pHead2; head -&amp;gt; next = Merge(pHead1, pHead2-&amp;gt;next); } return head; } }; // 运行时间：3ms // 占用内存：460k </description>
+    </item>
+    
+    <item>
+      <title>反转链表</title>
+      <link>http://changcui.cc/posts/offer-15/</link>
+      <pubDate>Wed, 05 Feb 2020 14:54:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-15/</guid>
+      <description>// 思路一：递归，首先找到递归的出口，也就是返回值，然后每次递归出口从后往前依次反 // 转一个节点 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&amp;gt; next) return pHead; auto reverseHead = ReverseList(pHead -&amp;gt; next); pHead -&amp;gt; next -&amp;gt; next = pHead; pHead -&amp;gt; next = NULL; return reverseHead; } }; // 运行时间：4ms // 占用内存：480k // 思路二：非递归，每次反转一个，设立一个 pre 指针变量 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&amp;gt; next) return pHead; ListNode* rtn = NULL, *pre = NULL; while (pHead) { auto tmp = pHead -&amp;gt; next; if (!</description>
+    </item>
+    
+    <item>
+      <title>链表中倒数第k个结点</title>
+      <link>http://changcui.cc/posts/offer-14/</link>
+      <pubDate>Wed, 05 Feb 2020 12:57:27 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-14/</guid>
+      <description>// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&amp;lt;ListNode*&amp;gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&amp;gt; next;} if (tmp.size() &amp;lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &amp;lt; 1) q = q -&amp;gt; next; p = p -&amp;gt; next; } if (cnt &amp;lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k </description>
+    </item>
+    
+    <item>
+      <title>调整数组顺序使奇数位于偶数前面</title>
+      <link>http://changcui.cc/posts/offer-13/</link>
+      <pubDate>Wed, 05 Feb 2020 12:15:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-13/</guid>
+      <description>// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&amp;lt;int&amp;gt; &amp;amp;array) { vector&amp;lt;int&amp;gt; tmp; for (auto i : array) if (i &amp;amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp;amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&amp;lt;int&amp;gt; &amp;amp;array) { for (int i = 0; i &amp;lt; array.size(); i++) { for (int j = array.size() - 1; j &amp;gt; i; j--) { if (!</description>
+    </item>
+    
+    <item>
+      <title>数值的整数次方</title>
+      <link>http://changcui.cc/posts/offer-12/</link>
+      <pubDate>Wed, 05 Feb 2020 11:28:43 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-12/</guid>
+      <description>// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &amp;gt; 0 ? true : false; exponent = exponent &amp;gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &amp;gt; 0 ?</description>
+    </item>
+    
+    <item>
+      <title>二进制中1的个数</title>
+      <link>http://changcui.cc/posts/offer-11/</link>
+      <pubDate>Mon, 03 Feb 2020 14:04:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-11/</guid>
+      <description>// 思路一：n = n&amp;amp;(n-1) 总会把最右边的1变为0 class Solution { public: int NumberOf1(int n) { int cnt = 0; while (n) {cnt++; n = n&amp;amp;(n-1);} return cnt; } }; // 运行时间：3ms // 占用内存：472k // 思路二：一位一位的判断是否为1 class Solution { public: int NumberOf1(int n) { int cnt = 0; for (int i = 0; i &amp;lt; 32; i++) { cnt += (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return cnt; } }; // 运行时间：5ms // 占用内存：512k </description>
+    </item>
+    
+    <item>
+      <title>矩形覆盖</title>
+      <link>http://changcui.cc/posts/offer-10/</link>
+      <pubDate>Mon, 03 Feb 2020 13:50:14 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-10/</guid>
+      <description>// 思路一：和斐波那契一样，递归会超时 class Solution { public: int rectCover(int number) { if (number == 0) return 0; int a = 1, b = 2; while (--number) { int tmp = b; b = a + b; a = tmp; } return a; } }; // 运行时间：4ms // 占用内存：464k </description>
+    </item>
     
     <item>
       <title>变态跳台阶</title>

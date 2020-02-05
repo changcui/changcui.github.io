@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bit operation on changcui</title>
+    <link>http://changcui.cc/tags/bit-operation/</link>
+    <description>Recent content in bit operation on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Feb 2020 14:04:03 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/bit-operation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>二进制中1的个数</title>
+      <link>http://changcui.cc/posts/offer-11/</link>
+      <pubDate>Mon, 03 Feb 2020 14:04:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-11/</guid>
+      <description>// 思路一：n = n&amp;amp;(n-1) 总会把最右边的1变为0 class Solution { public: int NumberOf1(int n) { int cnt = 0; while (n) {cnt++; n = n&amp;amp;(n-1);} return cnt; } }; // 运行时间：3ms // 占用内存：472k // 思路二：一位一位的判断是否为1 class Solution { public: int NumberOf1(int n) { int cnt = 0; for (int i = 0; i &amp;lt; 32; i++) { cnt += (n &amp;gt;&amp;gt; i) &amp;amp; 1; } return cnt; } }; // 运行时间：5ms // 占用内存：512k </description>
+    </item>
+    
+  </channel>
+</rss>

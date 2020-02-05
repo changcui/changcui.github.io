@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  array - changcui
+  矩形覆盖 - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/tags/array/">
+    <meta property="og:url" content="http://changcui.cc/posts/offer-10/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/tags/array/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/offer-10/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/tags/array/">
+    <base href="http://changcui.cc/posts/offer-10/">
     <title>
-  array - changcui
+  矩形覆盖 - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/tags/array/">
+    <link rel="canonical" href="http://changcui.cc/posts/offer-10/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,32 +82,39 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">array</h1>
-  <ul>
-    
-    <li>
-      <span>February 5, 2020</span><a href="http://changcui.cc/posts/offer-13/">调整数组顺序使奇数位于偶数前面</a>
-    </li>
-    
-    <li>
-      <span>February 1, 2020</span><a href="http://changcui.cc/posts/offer-6/">旋转数组的最小数字</a>
-    </li>
-    
-    <li>
-      <span>February 1, 2020</span><a href="http://changcui.cc/posts/offer-1/">二维数组中的查找</a>
-    </li>
-    
-  </ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">矩形覆盖</h1>
+      <h2 class="date">February 3, 2020</h2>
+
+      
+    </header>
+
+    <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：和斐波那契一样，递归会超时
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">rectCover</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// 运行时间：4ms
+</span><span class="c1">// 占用内存：464k
+</span></code></pre></div>
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+  
 </section>
-
 
       </div>
       

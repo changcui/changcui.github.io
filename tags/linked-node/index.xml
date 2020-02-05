@@ -6,10 +6,37 @@
     <description>Recent content in linked node on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 15:19:45 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 15:34:09 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/linked-node/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>合并两个排序的链表</title>
+      <link>http://changcui.cc/posts/offer-16/</link>
+      <pubDate>Wed, 05 Feb 2020 15:34:09 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-16/</guid>
+      <description>// 思路一：递归，每次比两个节点的值 class Solution { public: ListNode* Merge(ListNode* pHead1, ListNode* pHead2) { if (!pHead1) return pHead2; if (!pHead2) return pHead1; ListNode* head = NULL; if (pHead1 -&amp;gt; val &amp;lt;= pHead2 -&amp;gt; val) { head = pHead1; head -&amp;gt; next = Merge(pHead1-&amp;gt;next, pHead2); } else { head = pHead2; head -&amp;gt; next = Merge(pHead1, pHead2-&amp;gt;next); } return head; } }; // 运行时间：3ms // 占用内存：460k </description>
+    </item>
+    
+    <item>
+      <title>反转链表</title>
+      <link>http://changcui.cc/posts/offer-15/</link>
+      <pubDate>Wed, 05 Feb 2020 14:54:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-15/</guid>
+      <description>// 思路一：递归，首先找到递归的出口，也就是返回值，然后每次递归出口从后往前依次反 // 转一个节点 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&amp;gt; next) return pHead; auto reverseHead = ReverseList(pHead -&amp;gt; next); pHead -&amp;gt; next -&amp;gt; next = pHead; pHead -&amp;gt; next = NULL; return reverseHead; } }; // 运行时间：4ms // 占用内存：480k // 思路二：非递归，每次反转一个，设立一个 pre 指针变量 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&amp;gt; next) return pHead; ListNode* rtn = NULL, *pre = NULL; while (pHead) { auto tmp = pHead -&amp;gt; next; if (!</description>
+    </item>
+    
+    <item>
+      <title>链表中倒数第k个结点</title>
+      <link>http://changcui.cc/posts/offer-14/</link>
+      <pubDate>Wed, 05 Feb 2020 12:57:27 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-14/</guid>
+      <description>// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&amp;lt;ListNode*&amp;gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&amp;gt; next;} if (tmp.size() &amp;lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &amp;lt; 1) q = q -&amp;gt; next; p = p -&amp;gt; next; } if (cnt &amp;lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k </description>
+    </item>
     
     <item>
       <title>从尾到头打印链表</title>

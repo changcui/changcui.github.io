@@ -6,10 +6,28 @@
     <description>Recent content in tree on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Dec 2019 00:15:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 22:04:29 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二叉树的镜像</title>
+      <link>http://changcui.cc/posts/offer-18/</link>
+      <pubDate>Wed, 26 Feb 2020 22:04:29 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-18/</guid>
+      <description>// 思路一：还是考虑递归，交换左右子树即可 class Solution { public: void Mirror(TreeNode *pRoot) { if (!pRoot) return; auto tmp = pRoot-&amp;gt;left; pRoot-&amp;gt;left = pRoot-&amp;gt;right; pRoot-&amp;gt;right = tmp; Mirror(pRoot-&amp;gt;left); Mirror(pRoot-&amp;gt;right); return; } }; // 运行时间：3ms // 占用内存：480k </description>
+    </item>
+    
+    <item>
+      <title>树的子结构</title>
+      <link>http://changcui.cc/posts/offer-17/</link>
+      <pubDate>Wed, 26 Feb 2020 21:57:33 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-17/</guid>
+      <description>// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构 class Solution { public: bool IsSubtree(TreeNode* a, TreeNode* b) { if (!b) return true; if (!a) return false; return a-&amp;gt;val == b-&amp;gt;val &amp;amp;&amp;amp; IsSubtree(a-&amp;gt;left, b-&amp;gt;left) &amp;amp;&amp;amp; IsSubtree(a-&amp;gt;right, b-&amp;gt;right); } bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) { if (!pRoot2 || !pRoot1) return false; return (pRoot1-&amp;gt;val == pRoot2-&amp;gt;val &amp;amp;&amp;amp; IsSubtree(pRoot1, pRoot2)) || HasSubtree(pRoot1-&amp;gt;left, pRoot2) || HasSubtree(pRoot1-&amp;gt;right, pRoot2); } }; // 运行时间：3ms // 占用内存：376k </description>
+    </item>
     
     <item>
       <title>112.Path Sum</title>

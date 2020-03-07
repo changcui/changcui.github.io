@@ -6,10 +6,37 @@
     <description>Recent content in binary tree on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 15:29:08 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 22:11:26 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二叉树中和为某一值的路径</title>
+      <link>http://changcui.cc/posts/offer-24/</link>
+      <pubDate>Sat, 07 Mar 2020 22:11:26 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-24/</guid>
+      <description>// 思路一：dfs，出口是叶子节点且 target 为根结点的值 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; FindPath(TreeNode* root,int expectNumber) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; if (!root) return result; dfs(root, expectNumber, {}, result); sort(result.begin(), result.end(), [](auto a, auto b) { return a.size() &amp;gt; b.size();}); return result; } void dfs(TreeNode* root, int target, vector&amp;lt;int&amp;gt; out, vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;&amp;amp; result) { out.push_back(root-&amp;gt;val); if (target == root-&amp;gt;val &amp;amp;&amp;amp; !root-&amp;gt;left &amp;amp;&amp;amp; !root-&amp;gt;right) { result.push_back(out); return; } if (root-&amp;gt;left) dfs(root-&amp;gt;left, target-root-&amp;gt;val, out, result); if (root-&amp;gt;right) dfs(root-&amp;gt;right, target-root-&amp;gt;val, out, result); } }; // 运行时间：3ms // 占用内存：480k </description>
+    </item>
+    
+    <item>
+      <title>二叉搜索树的后序遍历序列</title>
+      <link>http://changcui.cc/posts/offer-23/</link>
+      <pubDate>Sat, 07 Mar 2020 21:53:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-23/</guid>
+      <description>// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它 class Solution { public: bool VerifySquenceOfBST(vector&amp;lt;int&amp;gt; sequence) { if (sequence.empty()) return false; return helper(sequence, 0, sequence.size() - 1); } bool helper(vector&amp;lt;int&amp;gt;&amp;amp; seq, int l, int r) { if (r - l &amp;lt;= 1) return true; int pivot = seq[r]; int li = l, ri = r - 1; while(seq[li] &amp;lt; pivot) li++; while(seq[ri] &amp;gt; pivot) ri--; if (li - ri == 1) return helper(seq, l, ri) &amp;amp;&amp;amp; helper(seq, li, r-1); return false; } }; // 运行时间：2ms // 占用内存：608k </description>
+    </item>
+    
+    <item>
+      <title>从上往下打印二叉树</title>
+      <link>http://changcui.cc/posts/offer-22/</link>
+      <pubDate>Sat, 07 Mar 2020 21:29:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-22/</guid>
+      <description>// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层 class Solution { public: vector&amp;lt;int&amp;gt; PrintFromTopToBottom(TreeNode* root) { vector&amp;lt;int&amp;gt; result; if (!root) return result; queue&amp;lt;TreeNode*&amp;gt; q; q.push(root); while (!q.empty()) { int c = q.size(); while (c--) { auto t = q.front(); q.pop(); result.push_back(t-&amp;gt;val); if (t-&amp;gt;left) q.push(t-&amp;gt;left); if (t-&amp;gt;right) q.push(t-&amp;gt;right); } } return result; } }; // 运行时间：3ms // 占用内存：604k // 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致 class Solution { public: vector&amp;lt;int&amp;gt; PrintFromTopToBottom(TreeNode* root) { vector&amp;lt;int&amp;gt; result; if (!root) return result; queue&amp;lt;TreeNode*&amp;gt; q; q.</description>
+    </item>
     
     <item>
       <title>重建二叉树</title>

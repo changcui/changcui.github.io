@@ -3,23 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://changcui.cc/posts/2020-03-07/</loc>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://changcui.cc/categories/</loc>
-    <lastmod>2020-02-26T22:04:29+08:00</lastmod>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/</loc>
-    <lastmod>2020-02-26T22:04:29+08:00</lastmod>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/posts/</loc>
-    <lastmod>2020-02-26T22:04:29+08:00</lastmod>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://changcui.cc/tags/</loc>
-    <lastmod>2020-02-26T22:04:29+08:00</lastmod>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2020-03-07T13:54:35+08:00</lastmod>
   </url>
   
   <url>
@@ -634,16 +649,6 @@
   
   <url>
     <loc>http://changcui.cc/posts/2019-10-15/</loc>
-    <lastmod>2019-10-15T22:46:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
-    <lastmod>2019-10-15T22:46:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2019-10-15T22:46:18+08:00</lastmod>
   </url>
   

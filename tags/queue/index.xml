@@ -6,10 +6,19 @@
     <description>Recent content in queue on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 15:52:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 20:21:03 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/queue/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>最小的K个数</title>
+      <link>http://changcui.cc/posts/offer-29/</link>
+      <pubDate>Sun, 08 Mar 2020 20:21:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-29/</guid>
+      <description>// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&amp;lt;int&amp;gt; GetLeastNumbers_Solution(vector&amp;lt;int&amp;gt; input, int k) { vector&amp;lt;int&amp;gt; result; if (k &amp;gt; input.size()) return result; priority_queue&amp;lt;int&amp;gt; q; for (auto i : input) { q.push(i); if (q.size() &amp;gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
     
     <item>
       <title>用两个栈实现队列</title>

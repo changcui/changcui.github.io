@@ -6,10 +6,64 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Mar 2020 22:11:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 20:37:05 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>连续子数组的最大和</title>
+      <link>http://changcui.cc/posts/offer-30/</link>
+      <pubDate>Sun, 08 Mar 2020 20:37:05 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-30/</guid>
+      <description>// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&amp;lt;int&amp;gt; array) { int max_ = INT_MIN; vector&amp;lt;int&amp;gt; dp(array.begin(), array.end()); for (int i = 1; i &amp;lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&amp;lt;int&amp;gt; array) { int max_ = INT_MIN; for (int i = 1; i &amp;lt; array.</description>
+    </item>
+    
+    <item>
+      <title>最小的K个数</title>
+      <link>http://changcui.cc/posts/offer-29/</link>
+      <pubDate>Sun, 08 Mar 2020 20:21:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-29/</guid>
+      <description>// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&amp;lt;int&amp;gt; GetLeastNumbers_Solution(vector&amp;lt;int&amp;gt; input, int k) { vector&amp;lt;int&amp;gt; result; if (k &amp;gt; input.size()) return result; priority_queue&amp;lt;int&amp;gt; q; for (auto i : input) { q.push(i); if (q.size() &amp;gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
+    
+    <item>
+      <title>数组中出现次数超过一半的数字</title>
+      <link>http://changcui.cc/posts/offer-28/</link>
+      <pubDate>Sun, 08 Mar 2020 20:19:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-28/</guid>
+      <description>// 思路一：使用 map 保存出现的次数，大于一半就返回 class Solution { public: int MoreThanHalfNum_Solution(vector&amp;lt;int&amp;gt; numbers) { int n = numbers.size() / 2 + 1; unordered_map&amp;lt;int, int&amp;gt; m; for (auto i : numbers) { m[i] += 1; if (m[i] &amp;gt;= n) return i; } return 0; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
+    
+    <item>
+      <title>字符串的排列</title>
+      <link>http://changcui.cc/posts/offer-27/</link>
+      <pubDate>Sun, 08 Mar 2020 16:03:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-27/</guid>
+      <description>// 思路一：列出所有结果，考虑 DFS，出口是 size 一致，注意重复的剪枝 class Solution { public: vector&amp;lt;string&amp;gt; Permutation(string str) { vector&amp;lt;string&amp;gt; result; if (str.size() == 0) return result; vector&amp;lt;bool&amp;gt; used(str.size(), false); sort(str.begin(), str.end()); dfs(str, &amp;#34;&amp;#34;, used, result); return result; } void dfs(string&amp;amp; str, string out, vector&amp;lt;bool&amp;gt;&amp;amp; used, vector&amp;lt;string&amp;gt;&amp;amp; result) { if (str.size() == out.size()) {result.push_back(out); return;} for (int i = 0; i &amp;lt; str.size(); i++) { if (i &amp;gt; 0 &amp;amp;&amp;amp; str[i] == str[i-1] &amp;amp;&amp;amp; !used[i-1]) continue; if (!</description>
+    </item>
+    
+    <item>
+      <title>二叉搜索树与双向链表</title>
+      <link>http://changcui.cc/posts/offer-26/</link>
+      <pubDate>Sun, 08 Mar 2020 14:52:12 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-26/</guid>
+      <description>// 思路一：因为是排序的双向链表，所以考虑中序遍历加递归，在没有连接之间的节点建立连接即可 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!pRootOfTree) return NULL; auto l = Convert(pRootOfTree-&amp;gt;left); auto t = l; while (t &amp;amp;&amp;amp; t-&amp;gt;right) t = t-&amp;gt;right; if (t) t-&amp;gt;right = pRootOfTree; pRootOfTree-&amp;gt;left = t; auto r = Convert(pRootOfTree-&amp;gt;right); if (r) r-&amp;gt;left = pRootOfTree; pRootOfTree-&amp;gt;right = r; return l ? l : pRootOfTree; } }; // 运行时间：3ms // 占用内存：616k // 思路二：维护一个前驱指针，使用中序遍历 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!</description>
+    </item>
+    
+    <item>
+      <title>复杂链表的复制</title>
+      <link>http://changcui.cc/posts/offer-25/</link>
+      <pubDate>Sun, 08 Mar 2020 13:51:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-25/</guid>
+      <description>// 思路一：可以分三步完成，复制节点，复制指针，拆分节点，注意第三步必须要拆分，要保证原本的链表不变 class Solution { public: RandomListNode* Clone(RandomListNode* pHead) { auto p = pHead; if (!p) return NULL; while (p) { auto t = new RandomListNode(p-&amp;gt;label); auto n = p-&amp;gt;next; p-&amp;gt;next = t; t-&amp;gt;next = n; p = n; } p = pHead; while (p &amp;amp;&amp;amp; p-&amp;gt;next) { p-&amp;gt;next-&amp;gt;random = p-&amp;gt;random ? p-&amp;gt;random-&amp;gt;next : NULL; p = p-&amp;gt;next-&amp;gt;next; } auto rtn = pHead-&amp;gt;next; p = pHead; while (p-&amp;gt;next) { auto tmp = p-&amp;gt;next; p-&amp;gt;next = tmp-&amp;gt;next; p = tmp; } return rtn; } }; // 运行时间：3ms // 占用内存：488k </description>
+    </item>
     
     <item>
       <title>二叉树中和为某一值的路径</title>

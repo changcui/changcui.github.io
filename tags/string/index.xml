@@ -6,10 +6,19 @@
     <description>Recent content in string on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 14:51:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 16:03:50 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>字符串的排列</title>
+      <link>http://changcui.cc/posts/offer-27/</link>
+      <pubDate>Sun, 08 Mar 2020 16:03:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-27/</guid>
+      <description>// 思路一：列出所有结果，考虑 DFS，出口是 size 一致，注意重复的剪枝 class Solution { public: vector&amp;lt;string&amp;gt; Permutation(string str) { vector&amp;lt;string&amp;gt; result; if (str.size() == 0) return result; vector&amp;lt;bool&amp;gt; used(str.size(), false); sort(str.begin(), str.end()); dfs(str, &amp;#34;&amp;#34;, used, result); return result; } void dfs(string&amp;amp; str, string out, vector&amp;lt;bool&amp;gt;&amp;amp; used, vector&amp;lt;string&amp;gt;&amp;amp; result) { if (str.size() == out.size()) {result.push_back(out); return;} for (int i = 0; i &amp;lt; str.size(); i++) { if (i &amp;gt; 0 &amp;amp;&amp;amp; str[i] == str[i-1] &amp;amp;&amp;amp; !used[i-1]) continue; if (!</description>
+    </item>
     
     <item>
       <title>替换空格</title>

@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="changcui">
-    <meta name="description" content="changcui&#39;s personal website">
+    <meta name="description" content="http://changcui.cc">
     <meta name="keywords" content="blog, personal">
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  binary tree - changcui
+  数组中出现次数超过一半的数字 - changcui
 ">
-    <meta property="og:description" content="changcui&#39;s personal website">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/tags/binary-tree/">
+    <meta property="og:url" content="http://changcui.cc/posts/offer-28/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/tags/binary-tree/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/offer-28/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/tags/binary-tree/">
+    <base href="http://changcui.cc/posts/offer-28/">
     <title>
-  binary tree - changcui
+  数组中出现次数超过一半的数字 - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/tags/binary-tree/">
+    <link rel="canonical" href="http://changcui.cc/posts/offer-28/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -82,64 +82,38 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">binary tree</h1>
-  <ul>
-    
-    <li>
-      <span>March 8, 2020</span><a href="http://changcui.cc/posts/offer-26/">二叉搜索树与双向链表</a>
-    </li>
-    
-    <li>
-      <span>March 7, 2020</span><a href="http://changcui.cc/posts/offer-24/">二叉树中和为某一值的路径</a>
-    </li>
-    
-    <li>
-      <span>March 7, 2020</span><a href="http://changcui.cc/posts/offer-23/">二叉搜索树的后序遍历序列</a>
-    </li>
-    
-    <li>
-      <span>March 7, 2020</span><a href="http://changcui.cc/posts/offer-22/">从上往下打印二叉树</a>
-    </li>
-    
-    <li>
-      <span>February 1, 2020</span><a href="http://changcui.cc/posts/offer-4/">重建二叉树</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/posts/leetcode-114/">114.Flatten Binary Tree to Linked List</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/posts/leetcode-111/">111.Minimum Depth of Binary Tree</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/posts/leetcode-110/">110.Balanced Binary Tree</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/posts/leetcode-109/">109.Convert Sorted List to Binary Search Tree</a>
-    </li>
-    
-    <li>
-      <span>December 13, 2019</span><a href="http://changcui.cc/posts/leetcode-105/">105.Construct Binary Tree from Preorder and Inorder Traversal</a>
-    </li>
-    
-    <li>
-      <span>December 12, 2019</span><a href="http://changcui.cc/posts/leetcode-257/">257.Binary Tree Paths</a>
-    </li>
-    
-  </ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">数组中出现次数超过一半的数字</h1>
+      <h2 class="date">March 8, 2020</h2>
+
+      
+    </header>
+
+    <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：使用 map 保存出现的次数，大于一半就返回
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">MoreThanHalfNum_Solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">)</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// 运行时间：3ms
+</span><span class="c1">// 占用内存：484k
+</span></code></pre></div>
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+  
 </section>
-
 
       </div>
       

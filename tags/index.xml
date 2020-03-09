@@ -6,10 +6,19 @@
     <description>Recent content in Tags on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Mar 2020 20:43:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 21:07:16 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>生活</title>
+      <link>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Mon, 09 Mar 2020 21:07:16 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>array</title>
@@ -80,15 +89,6 @@
       <pubDate>Sun, 08 Mar 2020 14:52:12 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/binary-tree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Sun, 08 Mar 2020 13:40:11 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     

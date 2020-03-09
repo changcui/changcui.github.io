@@ -6,10 +6,64 @@
     <description>Recent content in 剑指offer on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Mar 2020 20:37:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 20:43:24 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数组中的逆序对</title>
+      <link>http://changcui.cc/posts/offer-35/</link>
+      <pubDate>Mon, 09 Mar 2020 20:43:24 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-35/</guid>
+      <description>// 思路一：归并排序求逆序对 class Solution { public: long long sort(vector&amp;lt;int&amp;gt;&amp;amp; data, int l, int r) { if (l &amp;gt;= r) return 0; int mid = l + (r - l) / 2; long long lc = sort(data, l, mid); long long rc = sort(data, mid+1, r); long long rtn = lc + rc; vector&amp;lt;int&amp;gt; tmp(r-l+1, 0); int i = l, j = mid + 1, k = 0; while (i &amp;lt;= mid &amp;amp;&amp;amp; j &amp;lt;= r) { if (data[i] &amp;gt; data[j]) { tmp[k++] = data[j++]; rtn += mid - i + 1; } else tmp[k++] = data[i++]; } while (i &amp;lt;= mid) tmp[k++] = data[i++]; while (j &amp;lt;= r) tmp[k++] = data[j++]; for (int m = l; m &amp;lt;= r; m++) data[m] = tmp[m-l]; return rtn; } int InversePairs(vector&amp;lt;int&amp;gt; data) { long long result = sort(data, 0, data.</description>
+    </item>
+    
+    <item>
+      <title>第一个只出现一次的字符</title>
+      <link>http://changcui.cc/posts/offer-34/</link>
+      <pubDate>Mon, 09 Mar 2020 20:08:57 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-34/</guid>
+      <description>// 思路一：两次遍历，第一次统计出现的个数，第二次寻找次数为1的字符 class Solution { public: int FirstNotRepeatingChar(string str) { unordered_map&amp;lt;char, int&amp;gt; m; for (int i = 0; i &amp;lt; str.size(); i++) m[str[i]] += 1; for (int i = 0; i &amp;lt; str.size(); i++) { if (m[str[i]] == 1) return i; } return -1; } }; // 运行时间：3ms // 占用内存：456k // 思路二：用数组代替 map class Solution { public: int FirstNotRepeatingChar(string str) { vector&amp;lt;int&amp;gt; m(100, 0); for (int i = 0; i &amp;lt; str.</description>
+    </item>
+    
+    <item>
+      <title>丑数</title>
+      <link>http://changcui.cc/posts/offer-33/</link>
+      <pubDate>Mon, 09 Mar 2020 19:57:41 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-33/</guid>
+      <description>// 思路一：分三组累乘，取最小的，并更新下标 class Solution { public: int GetUglyNumber_Solution(int index) { if (index == 0) return 0; vector&amp;lt;int&amp;gt; nums{1}; int i1 = 0, i2 = 0, i3 = 0; while (--index) { int n1 = nums[i1] * 2; int n2 = nums[i2] * 3; int n3 = nums[i3] * 5; int min_ = min(n1, min(n2, n3)); if (min_ == n1) i1++; if (min_ == n2) i2++; if (min_ == n3) i3++; nums.</description>
+    </item>
+    
+    <item>
+      <title>两个链表的第一个公共结点</title>
+      <link>http://changcui.cc/posts/offer-36/</link>
+      <pubDate>Mon, 09 Mar 2020 19:45:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-36/</guid>
+      <description>class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&amp;gt;next; else if (!q) q = pHead1, p = p-&amp;gt;next; else p = p-&amp;gt;next, q = q-&amp;gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
+    
+    <item>
+      <title>把数组排成最小的数</title>
+      <link>http://changcui.cc/posts/offer-32/</link>
+      <pubDate>Mon, 09 Mar 2020 18:31:43 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-32/</guid>
+      <description>// 思路一：对数进行排序，拼接效果差的排在前面 class Solution { public: string PrintMinNumber(vector&amp;lt;int&amp;gt; numbers) { sort(numbers.begin(), numbers.end(), [](auto a, auto b){return to_string(a) + to_string(b) &amp;lt; to_string(b) + to_string(a);}); string result = &amp;#34;&amp;#34;; for (auto i : numbers) result += to_string(i); return result; } }; // 运行时间：4ms // 占用内存：380k </description>
+    </item>
+    
+    <item>
+      <title>整数中1出现的次数（从1到n整数中1出现的次数）</title>
+      <link>http://changcui.cc/posts/offer-31/</link>
+      <pubDate>Mon, 09 Mar 2020 10:25:31 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-31/</guid>
+      <description>// 思路一：简单粗暴，一个一个数的统计 class Solution { public: int NumberOf1Between1AndN_Solution(int n) { int cnt = 0; for (int i = 0; i &amp;lt;= n; i++) { string tmp = to_string(i); for (int j = 0; j &amp;lt; tmp.length(); j++) cnt += tmp[j] == &amp;#39;1&amp;#39; ? 1 : 0; } return cnt; } }; // 运行时间：6ms // 占用内存：488k // 思路二：找规律，比较麻烦，挖个坑 </description>
+    </item>
     
     <item>
       <title>连续子数组的最大和</title>

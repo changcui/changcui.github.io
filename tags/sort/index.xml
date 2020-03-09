@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sort on changcui</title>
+    <link>http://changcui.cc/tags/sort/</link>
+    <description>Recent content in sort on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 20:43:24 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数组中的逆序对</title>
+      <link>http://changcui.cc/posts/offer-35/</link>
+      <pubDate>Mon, 09 Mar 2020 20:43:24 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-35/</guid>
+      <description>// 思路一：归并排序求逆序对 class Solution { public: long long sort(vector&amp;lt;int&amp;gt;&amp;amp; data, int l, int r) { if (l &amp;gt;= r) return 0; int mid = l + (r - l) / 2; long long lc = sort(data, l, mid); long long rc = sort(data, mid+1, r); long long rtn = lc + rc; vector&amp;lt;int&amp;gt; tmp(r-l+1, 0); int i = l, j = mid + 1, k = 0; while (i &amp;lt;= mid &amp;amp;&amp;amp; j &amp;lt;= r) { if (data[i] &amp;gt; data[j]) { tmp[k++] = data[j++]; rtn += mid - i + 1; } else tmp[k++] = data[i++]; } while (i &amp;lt;= mid) tmp[k++] = data[i++]; while (j &amp;lt;= r) tmp[k++] = data[j++]; for (int m = l; m &amp;lt;= r; m++) data[m] = tmp[m-l]; return rtn; } int InversePairs(vector&amp;lt;int&amp;gt; data) { long long result = sort(data, 0, data.</description>
+    </item>
+    
+  </channel>
+</rss>

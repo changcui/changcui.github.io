@@ -6,10 +6,19 @@
     <description>Recent content in string on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Mar 2020 16:03:50 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 20:08:57 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第一个只出现一次的字符</title>
+      <link>http://changcui.cc/posts/offer-34/</link>
+      <pubDate>Mon, 09 Mar 2020 20:08:57 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-34/</guid>
+      <description>// 思路一：两次遍历，第一次统计出现的个数，第二次寻找次数为1的字符 class Solution { public: int FirstNotRepeatingChar(string str) { unordered_map&amp;lt;char, int&amp;gt; m; for (int i = 0; i &amp;lt; str.size(); i++) m[str[i]] += 1; for (int i = 0; i &amp;lt; str.size(); i++) { if (m[str[i]] == 1) return i; } return -1; } }; // 运行时间：3ms // 占用内存：456k // 思路二：用数组代替 map class Solution { public: int FirstNotRepeatingChar(string str) { vector&amp;lt;int&amp;gt; m(100, 0); for (int i = 0; i &amp;lt; str.</description>
+    </item>
     
     <item>
       <title>字符串的排列</title>

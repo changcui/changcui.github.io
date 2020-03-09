@@ -6,10 +6,19 @@
     <description>Recent content in linked node on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Mar 2020 14:52:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 19:45:39 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/linked-node/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>两个链表的第一个公共结点</title>
+      <link>http://changcui.cc/posts/offer-36/</link>
+      <pubDate>Mon, 09 Mar 2020 19:45:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-36/</guid>
+      <description>class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&amp;gt;next; else if (!q) q = pHead1, p = p-&amp;gt;next; else p = p-&amp;gt;next, q = q-&amp;gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
     
     <item>
       <title>二叉搜索树与双向链表</title>

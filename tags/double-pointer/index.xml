@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>double pointer on changcui</title>
+    <link>http://changcui.cc/tags/double-pointer/</link>
+    <description>Recent content in double pointer on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Mar 2020 11:08:22 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/double-pointer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>和为S的两个数字</title>
+      <link>http://changcui.cc/posts/offer-42/</link>
+      <pubDate>Tue, 10 Mar 2020 11:08:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-42/</guid>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; FindNumbersWithSum(vector&amp;lt;int&amp;gt; array,int sum) { int i = 0, j = array.size() - 1; while (i &amp;lt; j) { int s = array[i] + array[j]; if (s == sum) return {array[i], array[j]}; else if (s &amp;lt; sum) i++; else j--; } return {}; } }; // 运行时间：6ms // 占用内存：504k </description>
+    </item>
+    
+    <item>
+      <title>和为S的连续正数序列</title>
+      <link>http://changcui.cc/posts/offer-41/</link>
+      <pubDate>Tue, 10 Mar 2020 11:08:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-41/</guid>
+      <description>// 思路一：数学法，找规律，分成奇偶两种情况，判断边界条件 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; FindContinuousSequence(int sum) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; for (int i = sqrt(sum * 2); i &amp;gt;= 2; i--) { if (i &amp;amp; 1 &amp;amp;&amp;amp; sum % i == 0 &amp;amp;&amp;amp; (sum / i - (i - 1)/2) &amp;gt; 0) { vector&amp;lt;int&amp;gt; output; int begin = sum / i - (i - 1) / 2; while (begin &amp;lt;= sum / i + (i - 1)/2) output.</description>
+    </item>
+    
+  </channel>
+</rss>

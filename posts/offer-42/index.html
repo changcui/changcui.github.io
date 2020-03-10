@@ -11,22 +11,22 @@
     
     <meta property="og:site_name" content="changcui">
     <meta property="og:title" content="
-  c&#43;&#43; - changcui
+  和为S的两个数字 - changcui
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/c&#43;&#43;/">
+    <meta property="og:url" content="http://changcui.cc/posts/offer-42/">
     <meta property="og:image" content="http://changcui.cc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/c&#43;&#43;/">
+    <meta name="twitter:site" content="http://changcui.cc/posts/offer-42/">
     <meta name="twitter:image" content="http://changcui.cc">
 
-    <base href="http://changcui.cc/posts/c&#43;&#43;/">
+    <base href="http://changcui.cc/posts/offer-42/">
     <title>
-  c&#43;&#43; - changcui
+  和为S的两个数字 - changcui
 </title>
 
-    <link rel="canonical" href="http://changcui.cc/posts/c&#43;&#43;/">
+    <link rel="canonical" href="http://changcui.cc/posts/offer-42/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -85,53 +85,28 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">c&#43;&#43;</h1>
-      <h2 class="date">August 26, 2019</h2>
+      <h1 class="title">和为S的两个数字</h1>
+      <h2 class="date">March 10, 2020</h2>
 
       
     </header>
 
-    <ul>
-<li>string 也用容器实现的， 可以用 empty(), push_back, pop_back() 等方法。</li>
-<li>std::reverse 定义在 algorithm，可以将容器中的元素反向，传入参数是迭代器。</li>
-<li>std::sort 定义在 algorithm，可以将容器中的元素排序，默认是从小到大，传入参数是迭代器和排序函数指针或重载操作符()后的对象，函数或者重载函数返回值为 true 表示需要交换。</li>
-<li>std::stoi 可以将 string 转换成 int</li>
-<li>string::substr 的两个参数，第一个参数是 index，第二个是长度，两个参数都是 size_t 类型，不是迭代器类型。</li>
-<li>std::tolower 转为小写</li>
-<li>stack pop top 之前先判断 empty</li>
-<li>isalnum 判断字母数字</li>
-</ul>
-
-<blockquote>
-<p>2020 03 08 update</p>
-</blockquote>
-
-<ul>
-<li><p>priority_queue 默认是从小到大排列，top() 返回最大元素</p></li>
-
-<li><p>initialize vector 的五种方式</p>
-
-<ul>
-<li><p><code>vector&lt;int&gt; a</code></p></li>
-
-<li><p><code>vector&lt;int&gt; a(n, 1)</code></p></li>
-
-<li><p><code>vector&lt;int&gt; a{0, 1 2}</code></p></li>
-
-<li><p><code>vector&lt;int&gt; a(arr, arr+n)</code></p></li>
-
-<li><p><code>vector&lt;int&gt; a(vec.begin(), vec.end())</code></p></li>
-</ul></li>
-</ul>
-
-<blockquote>
-<p>2020 03 10 update</p>
-</blockquote>
-
-<ul>
-<li>equal_range(vec.begin(), vec.end(), k) 寻找 vec 里面值为 k 的区间</li>
-</ul>
-
+    <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">FindNumbersWithSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">,</span><span class="kt">int</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]};</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="n">sum</span><span class="p">)</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">else</span> <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{};</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// 运行时间：6ms
+</span><span class="c1">// 占用内存：504k
+</span></code></pre></div>
   </article>
 
   <br/>

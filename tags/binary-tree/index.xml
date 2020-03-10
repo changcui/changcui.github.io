@@ -6,10 +6,28 @@
     <description>Recent content in binary tree on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Mar 2020 14:52:12 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 10:46:54 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>平衡二叉树</title>
+      <link>http://changcui.cc/posts/offer-39/</link>
+      <pubDate>Tue, 10 Mar 2020 10:46:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-39/</guid>
+      <description>// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&amp;gt;left), depth(root-&amp;gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&amp;gt;left) &amp;amp;&amp;amp; IsBalanced_Solution(pRoot-&amp;gt;right) &amp;amp;&amp;amp; abs(depth(pRoot-&amp;gt;left) - depth(pRoot-&amp;gt;right)) &amp;lt;= 1; } }; // 运行时间：3ms // 占用内存：480k </description>
+    </item>
+    
+    <item>
+      <title>二叉树的深度</title>
+      <link>http://changcui.cc/posts/offer-38/</link>
+      <pubDate>Tue, 10 Mar 2020 10:42:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-38/</guid>
+      <description>class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&amp;gt;left), TreeDepth(pRoot-&amp;gt;right)); } }; // 运行时间：4ms // 占用内存：464k </description>
+    </item>
     
     <item>
       <title>二叉搜索树与双向链表</title>

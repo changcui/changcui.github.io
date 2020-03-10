@@ -6,10 +6,64 @@
     <description>Recent content in 成长 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Mar 2020 20:43:24 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 11:08:22 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>和为S的两个数字</title>
+      <link>http://changcui.cc/posts/offer-42/</link>
+      <pubDate>Tue, 10 Mar 2020 11:08:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-42/</guid>
+      <description>class Solution { public: vector&amp;lt;int&amp;gt; FindNumbersWithSum(vector&amp;lt;int&amp;gt; array,int sum) { int i = 0, j = array.size() - 1; while (i &amp;lt; j) { int s = array[i] + array[j]; if (s == sum) return {array[i], array[j]}; else if (s &amp;lt; sum) i++; else j--; } return {}; } }; // 运行时间：6ms // 占用内存：504k </description>
+    </item>
+    
+    <item>
+      <title>和为S的连续正数序列</title>
+      <link>http://changcui.cc/posts/offer-41/</link>
+      <pubDate>Tue, 10 Mar 2020 11:08:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-41/</guid>
+      <description>// 思路一：数学法，找规律，分成奇偶两种情况，判断边界条件 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; FindContinuousSequence(int sum) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; for (int i = sqrt(sum * 2); i &amp;gt;= 2; i--) { if (i &amp;amp; 1 &amp;amp;&amp;amp; sum % i == 0 &amp;amp;&amp;amp; (sum / i - (i - 1)/2) &amp;gt; 0) { vector&amp;lt;int&amp;gt; output; int begin = sum / i - (i - 1) / 2; while (begin &amp;lt;= sum / i + (i - 1)/2) output.</description>
+    </item>
+    
+    <item>
+      <title>数组中只出现一次的数字</title>
+      <link>http://changcui.cc/posts/offer-40/</link>
+      <pubDate>Tue, 10 Mar 2020 10:57:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-40/</guid>
+      <description>// 思路一：使用 map 保存数字，移除数字 class Solution { public: void FindNumsAppearOnce(vector&amp;lt;int&amp;gt; data,int* num1,int *num2) { unordered_map&amp;lt;int, int&amp;gt; m; for (auto i : data) { if (m.count(i)) m.erase(i); else m[i] = 1; } auto p = m.begin(); *num1 = p++-&amp;gt;first; *num2 = p-&amp;gt;first; } }; // 运行时间：3ms // 占用内存：484k // 思路二：全部异或得到两个数的异或，再按照最右的1把所有数分为两部分异或，分别得到两个数 class Solution { public: void FindNumsAppearOnce(vector&amp;lt;int&amp;gt; data,int* num1,int *num2) { int xorr = 0, flag = 1; for (auto i : data) xorr ^= i; while (!</description>
+    </item>
+    
+    <item>
+      <title>平衡二叉树</title>
+      <link>http://changcui.cc/posts/offer-39/</link>
+      <pubDate>Tue, 10 Mar 2020 10:46:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-39/</guid>
+      <description>// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&amp;gt;left), depth(root-&amp;gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&amp;gt;left) &amp;amp;&amp;amp; IsBalanced_Solution(pRoot-&amp;gt;right) &amp;amp;&amp;amp; abs(depth(pRoot-&amp;gt;left) - depth(pRoot-&amp;gt;right)) &amp;lt;= 1; } }; // 运行时间：3ms // 占用内存：480k </description>
+    </item>
+    
+    <item>
+      <title>二叉树的深度</title>
+      <link>http://changcui.cc/posts/offer-38/</link>
+      <pubDate>Tue, 10 Mar 2020 10:42:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-38/</guid>
+      <description>class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&amp;gt;left), TreeDepth(pRoot-&amp;gt;right)); } }; // 运行时间：4ms // 占用内存：464k </description>
+    </item>
+    
+    <item>
+      <title>数字在排序数组中出现的次数</title>
+      <link>http://changcui.cc/posts/offer-37/</link>
+      <pubDate>Tue, 10 Mar 2020 10:31:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-37/</guid>
+      <description>// 思路一：直接遍历查找 class Solution { public: int GetNumberOfK(vector&amp;lt;int&amp;gt; data ,int k) { int cnt = 0; for (auto i : data) cnt += k == i; return cnt; } }; // 运行时间：3ms // 占用内存：484k // 思路二：二分查找 class Solution { public: int GetNumberOfK(vector&amp;lt;int&amp;gt; data ,int k) { int cnt = 0; int l = 0, r = data.size() - 1; while (l &amp;lt;= r) { int mid = l + (r - l) / 2; if (k == data[mid]) { int i = mid; while (data[i++] == k) cnt++; i = mid - 1; while (data[i--] == k) cnt++; return cnt; } else if (k &amp;gt; data[mid]) l = mid + 1; else r = mid - 1; } return cnt; } }; // 运行时间：3ms // 占用内存：492k // 思路三：STL 大法 class Solution { public: int GetNumberOfK(vector&amp;lt;int&amp;gt; data ,int k) { auto range = equal_range(data.</description>
+    </item>
     
     <item>
       <title>数组中的逆序对</title>

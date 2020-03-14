@@ -1,97 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 08 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 08 08" />
+<meta property="og:description" content="今日 今天是8月8号，是我侄女的生日，祝她生日快乐。我还记得奥运宝宝的她，08年才刚出生，现在就已经开始搞奥数了，我还帮她做了一道简单的题。How time flies！
+划水 今天问了一下 mentor，确认我的算子基本上已经写完了，估计剩下一些修修补补的工作了吧。所以今天大部分时间都在划水，但 feedly 似乎也没什么好看的，看了几篇讲硬件的文，也没太大的耐心看下去。中午吃完饭和一个隔壁公司的同学聊了一会，同样感到来自内心的焦虑，焦虑开学怎么在组里生存，怎么给老板汇报工作，怎么毕业，这种焦虑一直伴随着我，so does she。。
+北大退档 这个事好像成为了一个热议的话题，值得怀疑的是当事人好像根本没有站出来说话，反而大众讨论的热火朝天，当然大部分人都是站考生啦。北大要退档不是不可以，程序上经过考试院的允许也算过得去，但是给的理由未免太伤人了，“成绩不好容易退学”，来贵校的人成绩不好的真的多了去了，留学生暂且不说，一些体特、艺特成绩能好到哪里去，被退档的同学至少也是一个一本上线的学生，去一个不那么硬核的院绝不至于被退学吧。就算真的被退学，也不能以如此的假设来拒绝人家吧，这和“长林之罪，罪在将来”，“可能扰乱南京治安”有什么区别？
+明日方舟夏活 明日方舟这个游戏火得程度超过了我的想象，以其微博的关注，点赞来看，早就超过了碧蓝航线，今天应该是开服100天，很多人在微博上催官方开夏活，nga 论坛里大家都十分焦急，甚至有“列文虎克”们随时盯着微博的数目，看鹰角有没有发定时微博。
+Git 我又开始学 git 了，不知道这是第几遍了，git 的命令实在是太多了，今天看了大概三章，可能因为划水没有活干吧，学一些自己觉得一定有用的东西一定没错，这次就没必要从最基础的总结了，总结一下自己觉得比较有用的吧。
+ git 直接记录数据的快照，而不是记录其差异 git 有三种状态，已提交，已修改，已暂存 git config --global user.name &quot;John Doe&quot; git config --global user.email johndoe@example.com git config --global core.editor emacs 检查配置信息：git config --list 获取帮助：git help &lt;verb&gt; 状态简览：git status --short 比较已修改文件和原文件的差异：git diff 比较暂存文件和原文件的差异：git diff --staged 从 git 中删除，而不删除原文件（取消追踪）：git rm --cached foo git log -p git log -2 git log --pretty=oneline --graph 提交信息写错，文件忘记添加：git commit --amend 取消暂存：git reset HEAD &lt;file&gt; 撤销修改（不可恢复）:git checkout -- &lt;file&gt; 添加远程仓库：git remote add &lt;shortname&gt; &lt;url&gt; 拉取信息（拉群所有信息，但不会创建分支）:git fetch &lt;remote-name&gt; 远程仓库重命名、删除:git remote rename, rm 添加别名：git config --global alias." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-08-08/" />
+<meta property="article:published_time" content="2019-08-08T22:13:37+08:00" />
+<meta property="article:modified_time" content="2019-08-08T22:13:37+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 08 08"/>
+<meta name="twitter:description" content="今日 今天是8月8号，是我侄女的生日，祝她生日快乐。我还记得奥运宝宝的她，08年才刚出生，现在就已经开始搞奥数了，我还帮她做了一道简单的题。How time flies！
+划水 今天问了一下 mentor，确认我的算子基本上已经写完了，估计剩下一些修修补补的工作了吧。所以今天大部分时间都在划水，但 feedly 似乎也没什么好看的，看了几篇讲硬件的文，也没太大的耐心看下去。中午吃完饭和一个隔壁公司的同学聊了一会，同样感到来自内心的焦虑，焦虑开学怎么在组里生存，怎么给老板汇报工作，怎么毕业，这种焦虑一直伴随着我，so does she。。
+北大退档 这个事好像成为了一个热议的话题，值得怀疑的是当事人好像根本没有站出来说话，反而大众讨论的热火朝天，当然大部分人都是站考生啦。北大要退档不是不可以，程序上经过考试院的允许也算过得去，但是给的理由未免太伤人了，“成绩不好容易退学”，来贵校的人成绩不好的真的多了去了，留学生暂且不说，一些体特、艺特成绩能好到哪里去，被退档的同学至少也是一个一本上线的学生，去一个不那么硬核的院绝不至于被退学吧。就算真的被退学，也不能以如此的假设来拒绝人家吧，这和“长林之罪，罪在将来”，“可能扰乱南京治安”有什么区别？
+明日方舟夏活 明日方舟这个游戏火得程度超过了我的想象，以其微博的关注，点赞来看，早就超过了碧蓝航线，今天应该是开服100天，很多人在微博上催官方开夏活，nga 论坛里大家都十分焦急，甚至有“列文虎克”们随时盯着微博的数目，看鹰角有没有发定时微博。
+Git 我又开始学 git 了，不知道这是第几遍了，git 的命令实在是太多了，今天看了大概三章，可能因为划水没有活干吧，学一些自己觉得一定有用的东西一定没错，这次就没必要从最基础的总结了，总结一下自己觉得比较有用的吧。
+ git 直接记录数据的快照，而不是记录其差异 git 有三种状态，已提交，已修改，已暂存 git config --global user.name &quot;John Doe&quot; git config --global user.email johndoe@example.com git config --global core.editor emacs 检查配置信息：git config --list 获取帮助：git help &lt;verb&gt; 状态简览：git status --short 比较已修改文件和原文件的差异：git diff 比较暂存文件和原文件的差异：git diff --staged 从 git 中删除，而不删除原文件（取消追踪）：git rm --cached foo git log -p git log -2 git log --pretty=oneline --graph 提交信息写错，文件忘记添加：git commit --amend 取消暂存：git reset HEAD &lt;file&gt; 撤销修改（不可恢复）:git checkout -- &lt;file&gt; 添加远程仓库：git remote add &lt;shortname&gt; &lt;url&gt; 拉取信息（拉群所有信息，但不会创建分支）:git fetch &lt;remote-name&gt; 远程仓库重命名、删除:git remote rename, rm 添加别名：git config --global alias."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 08 08 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-08-08/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-08/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-08-08/">
-    <title>
-  2019 08 08 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-08-08/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 08 08</h1>
-      <h2 class="date">August 8, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 08 08</h1>
+			<div class="meta">Posted at &mdash; Aug 8, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="今日">今日</h3>
 
@@ -176,39 +159,47 @@
 
 <p>打印 log 的时候，可以加 -f 这个参数来持续打印，但不会每秒都有回执，默认应该是两秒一次。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

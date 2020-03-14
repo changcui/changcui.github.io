@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.59.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - changcui&#39;s personal website </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
+	<meta property="og:title" content="changcui" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://changcui.cc/" />
+
+<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="changcui"/>
+<meta name="twitter:description" content=""/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="recent-posts section">
+			<h2 class="section-header">
+				Recent posts
+			</h2>
+			<div class="posts">
+				
+				
+				
+				<div class="post">
+					<div class="meta">Dec 12, 2019</div>
+					<a class="title" href="/posts/leetcode-263/">263.Ugly Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isUgly(int num) { if (num &lt; 1) return false; while (num % 2 == 0) num /= 2; while (num % 3 == 0) num /= 3; while (num % 5 == 0) num /= 5; return num == 1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 12, 2019</div>
+					<a class="title" href="/posts/leetcode-257/">257.Binary Tree Paths</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) { vector&lt;string&gt; res; DFS(&#34;&#34;, res, root); return res; } void DFS(string out, vector&lt;string&gt;&amp; res, TreeNode* root) { if (!root) return; if (!root-&gt;left &amp;&amp; !root-&gt;right) {out += to_string(root-&gt;val); res.push_back(out); return;} if (root-&gt;left) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;left); if (root-&gt;right) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;right); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-113/">113.Path Sum II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int sum) { vector&lt;vector&lt;int&gt;&gt; res; DFS(root, {}, res, sum); return res; } void DFS(TreeNode* root, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; res, int sum) { if (!root) return; out.push_back(root-&gt;val); if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; root-&gt;val == sum) { res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-112/">112.Path Sum</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool hasPathSum(TreeNode* root, int sum) { if (!root) return false; if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; sum == root -&gt; val) return true; return hasPathSum(root-&gt;left, sum-root-&gt;val) || hasPathSum(root-&gt;right, sum-root-&gt;val); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-95/">95.Unique Binary Search Trees II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;TreeNode*&gt; generateTrees(int n) { if (n == 0) return {}; return helper(1, n); } vector&lt;TreeNode*&gt; helper(int left, int right) { if (left &gt; right) return {nullptr}; vector&lt;TreeNode*&gt; res; for (int i = left; i &lt;= right; i++) { auto ll = helper(left, i-1); auto rr = helper(i+1, right); for (auto l : ll) { for (auto r : rr) { auto t = new TreeNode(i); t -&gt; left = l; t -&gt; right = r; res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-93/">93.Restore IP Addresses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; restoreIpAddresses(string s) { vector&lt;string&gt; result; if (s.size() &gt; 12) return result; DFS(0, 0, &#34;&#34;, result, s); return result; } void DFS(int num, int cur, string out, vector&lt;string&gt;&amp; result, string s) { if (num == 4 &amp;&amp; cur == s.size()) {out.pop_back(); result.push_back(out); return;} for (int i = 1; i &lt;= 3 &amp;&amp; cur + i &lt;= s.size(); i++) { auto tmp = s.substr(cur, i); if (stoi(tmp) &lt; 256 &amp;&amp; !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-322/">322.Coin Change</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int coinChange(vector&lt;int&gt;&amp; coins, int amount) { vector&lt;int&gt; dp(amount + 1, amount+1); sort(coins.begin(), coins.end()); dp[0] = 0; for (int i = 1; i &lt;= amount; i++) { for (auto c : coins) { if (c &lt;= i) dp[i] = min(dp[i], dp[i-c]+1); else break; } } return dp[amount] &gt; amount ? -1 : dp[amount]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-334/">334.Increasing Triplet Subsequence</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool increasingTriplet(vector&lt;int&gt;&amp; nums) { int m1 = INT_MAX, m2 = INT_MAX; for (auto i : nums) { if (m1 &gt;= i) m1 = i; else if (m2 &gt;= i) m2 = i; else return true; } return false; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-332/">332.Reconstruct Itinerary</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-338/">338.Counting Bits</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; countBits(int num) { vector&lt;int&gt; res(num+1, 0); for (int i = 1; i &lt;= num; i++) { res[i] = res[i &amp; (i-1)] + 1; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/7/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/9/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

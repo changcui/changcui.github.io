@@ -1,97 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 07 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 08 07" />
+<meta property="og:description" content="七夕 今天的日子还不错，是七夕，可惜又是一个没有人一起过的七夕。我还记得我只和女票过过一次七夕，是大二开学前的军训。
+Pooling 今天在公司的任务依然是写算子，之前写的以后再补吧，今天的是 pooling，具体来说是两个 maxpooling 和 averagepooling。
+这两个算子的历史挺有意思，前者在初期的一些神经网络架构中大红大紫，现在却不常见了，很多架构更愿意使用 stride=2 的卷积来代替它 downsample 的功能。后者刚开始没什么人用，后来在分类网络中被认为可以对 channel 的重要性进行打分，基本上成了分类网络的标配。
+pooling 操作说来很简单，就是对一个 window 里面的数字取一个值，max 就是取最大值，average 就是取平均值，但为什么 min 就没有人用呢，因为对于 weight 而言，min 是很 common，没什么价值。
+从数学上来看，这个算子非常好写，我也是这么认为的，可是遇到细节的时候就没这么好处理了，这里的难点在于对一些参数的处理。参数主要有 kernel_size, stride, padding, ceil_mode，处理的方式其实和 conv 很相近。conv 里面 im2col 帮忙完成了这个步骤，我直接抄了 caffe 里面的实现，没仔细研究 im2col 是怎么写的。
+在 pooling 里面就有问题了，我发现自己对向下取整，向上取整这样的操作理解的非常不好，很难判断它准确的位置应该是在哪，尤其是对于一些是否 &#43;1 的地方不知道如何去处理。
+我先研究了一下 darknet 是如何实现的，其实各种实现的步骤都是一样的，主要是一些细节问题。比如 darknet 的 padding 似乎和 pytorch 的不一样，在计算 out_h 的大小的时候，它用的是 &#43;padding，而不是 &#43;2*padding，这就是说 padding 是在一个方向加的，而不是在两边都加。于是从 input 的 index 向 output 的 index 对应的时候就要 -padding/2。更奇怪的是，darknet 的 conv 采用了和 pytorch 相同的设计。比较之下，我放弃了 darknet 的实现。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-08-07/" />
+<meta property="article:published_time" content="2019-08-07T22:37:47+08:00" />
+<meta property="article:modified_time" content="2019-08-07T22:37:47+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 08 07"/>
+<meta name="twitter:description" content="七夕 今天的日子还不错，是七夕，可惜又是一个没有人一起过的七夕。我还记得我只和女票过过一次七夕，是大二开学前的军训。
+Pooling 今天在公司的任务依然是写算子，之前写的以后再补吧，今天的是 pooling，具体来说是两个 maxpooling 和 averagepooling。
+这两个算子的历史挺有意思，前者在初期的一些神经网络架构中大红大紫，现在却不常见了，很多架构更愿意使用 stride=2 的卷积来代替它 downsample 的功能。后者刚开始没什么人用，后来在分类网络中被认为可以对 channel 的重要性进行打分，基本上成了分类网络的标配。
+pooling 操作说来很简单，就是对一个 window 里面的数字取一个值，max 就是取最大值，average 就是取平均值，但为什么 min 就没有人用呢，因为对于 weight 而言，min 是很 common，没什么价值。
+从数学上来看，这个算子非常好写，我也是这么认为的，可是遇到细节的时候就没这么好处理了，这里的难点在于对一些参数的处理。参数主要有 kernel_size, stride, padding, ceil_mode，处理的方式其实和 conv 很相近。conv 里面 im2col 帮忙完成了这个步骤，我直接抄了 caffe 里面的实现，没仔细研究 im2col 是怎么写的。
+在 pooling 里面就有问题了，我发现自己对向下取整，向上取整这样的操作理解的非常不好，很难判断它准确的位置应该是在哪，尤其是对于一些是否 &#43;1 的地方不知道如何去处理。
+我先研究了一下 darknet 是如何实现的，其实各种实现的步骤都是一样的，主要是一些细节问题。比如 darknet 的 padding 似乎和 pytorch 的不一样，在计算 out_h 的大小的时候，它用的是 &#43;padding，而不是 &#43;2*padding，这就是说 padding 是在一个方向加的，而不是在两边都加。于是从 input 的 index 向 output 的 index 对应的时候就要 -padding/2。更奇怪的是，darknet 的 conv 采用了和 pytorch 相同的设计。比较之下，我放弃了 darknet 的实现。"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 08 07 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-08-07/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-07/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-08-07/">
-    <title>
-  2019 08 07 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-08-07/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 08 07</h1>
-      <h2 class="date">August 7, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 08 07</h1>
+			<div class="meta">Posted at &mdash; Aug 7, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="七夕">七夕</h3>
 
@@ -139,39 +124,47 @@
 
 <p>具体的细节我没仔细看，这种是监督学习，又不那么需要数据的学习可以看作是介于监督与非监督之间，所以才感觉和 knn 有一点相似。他需要监督信息，完成一个神经网络，但是又不需要神经网路做出比较难的操作，比如分类，回归，只需要把它放在和同类比较近的地方就可以了。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

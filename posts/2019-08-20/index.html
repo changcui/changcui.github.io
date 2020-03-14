@@ -1,97 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 20 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 08 20" />
+<meta property="og:description" content="房间 工作 抱歉，今天依旧没有工作。运维组一直到我下班了，才说搞定了集群的事情。不过，明天倒是有一个会，讨论一下量化的问题，这么看来的话，明天也许能写点东西吧。
+睡眠 今天睡得太晚了，导致上午没有去上班。其实这几天都是如此，之前一直都是11点左右就睡觉了，这几天变成了两点，也没什么可以玩的，大概是室友不在，没有一个外在的力约束自己，变得更放纵了一些。
+肉蟹煲 临近下班的时候，女票带着好消息和好吃的来公司找我啦。女票的 proposal 顺利地通过了，而且还获得一些职业上的建议，可以说是双喜临门了，顺便去隔壁的小吃街给我买了我心仪已久的肉蟹煲，虽然是肉鸡煲吧，但还是很好吃的，今天下了一天雨，让她提着肉蟹煲一路子真的是难为她啦。
+Socks5 上次说到我想把 v2ray 部署到后台，完成了一部分任务。今天在上班的时候继续研究了这个东西，不过依旧没有搞定。我的想法是设置一个 PPTP 的 VPN，原理是新建一个虚拟网卡，通过 tun2socks 走 v2ray 监听的端口。但是，没有什么命令可以新建一个 PPTP 的 VPN，需要调用 android 的 SDK 提供的接口，这个对于我来说学习成本就太高了，希望明天能够继续研究一下现有的软件，能不能解决这个问题。
+BiforstV 我手机上用的 v2ray 的 client 是 BiforstV，已经设置了比较完善的路由规则，和电脑上的是差不多的，但运行的时候总是效果不理想。一个明显的例子，我设置了大陆的域名和 IP 走 direct，从 record 来看确实如此，可是页面就是刷新不出来，我理解不了为什么会出现这种情况，或许能搞定这个的话，我也没必要使用 termux 让 v2ray 运行在后台，虽然后者看起来更酷一些。
+史矛革之战 听了这么多天的霍比特人评书，今天看了霍比特人2，下了个加长版，接近三个小时。从剧情来说，看起来是不如魔戒2的，画面还是很不错的。不知道为何，看这个地图的分布，还有城市的名字，我总是想到上古卷轴5，如果魔戒有一个受众更广的游戏就好了。
+暗黑破坏神 今天听了机核讲暗黑的电台，不得不说暗黑的历史还是非常有意思的。恶魔和天使大战数千上万年，一个恶魔和一个天使受不了了，偷走了世界之石，并创造了新的世界名为庇护之地，他们的后代是奈非天。还有什么三神教，乌迪西安等等，感觉很有意思，如果有机会的话，可以买一本书读读。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-08-20/" />
+<meta property="article:published_time" content="2019-08-20T23:47:25+08:00" />
+<meta property="article:modified_time" content="2019-08-20T23:47:25+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 08 20"/>
+<meta name="twitter:description" content="房间 工作 抱歉，今天依旧没有工作。运维组一直到我下班了，才说搞定了集群的事情。不过，明天倒是有一个会，讨论一下量化的问题，这么看来的话，明天也许能写点东西吧。
+睡眠 今天睡得太晚了，导致上午没有去上班。其实这几天都是如此，之前一直都是11点左右就睡觉了，这几天变成了两点，也没什么可以玩的，大概是室友不在，没有一个外在的力约束自己，变得更放纵了一些。
+肉蟹煲 临近下班的时候，女票带着好消息和好吃的来公司找我啦。女票的 proposal 顺利地通过了，而且还获得一些职业上的建议，可以说是双喜临门了，顺便去隔壁的小吃街给我买了我心仪已久的肉蟹煲，虽然是肉鸡煲吧，但还是很好吃的，今天下了一天雨，让她提着肉蟹煲一路子真的是难为她啦。
+Socks5 上次说到我想把 v2ray 部署到后台，完成了一部分任务。今天在上班的时候继续研究了这个东西，不过依旧没有搞定。我的想法是设置一个 PPTP 的 VPN，原理是新建一个虚拟网卡，通过 tun2socks 走 v2ray 监听的端口。但是，没有什么命令可以新建一个 PPTP 的 VPN，需要调用 android 的 SDK 提供的接口，这个对于我来说学习成本就太高了，希望明天能够继续研究一下现有的软件，能不能解决这个问题。
+BiforstV 我手机上用的 v2ray 的 client 是 BiforstV，已经设置了比较完善的路由规则，和电脑上的是差不多的，但运行的时候总是效果不理想。一个明显的例子，我设置了大陆的域名和 IP 走 direct，从 record 来看确实如此，可是页面就是刷新不出来，我理解不了为什么会出现这种情况，或许能搞定这个的话，我也没必要使用 termux 让 v2ray 运行在后台，虽然后者看起来更酷一些。
+史矛革之战 听了这么多天的霍比特人评书，今天看了霍比特人2，下了个加长版，接近三个小时。从剧情来说，看起来是不如魔戒2的，画面还是很不错的。不知道为何，看这个地图的分布，还有城市的名字，我总是想到上古卷轴5，如果魔戒有一个受众更广的游戏就好了。
+暗黑破坏神 今天听了机核讲暗黑的电台，不得不说暗黑的历史还是非常有意思的。恶魔和天使大战数千上万年，一个恶魔和一个天使受不了了，偷走了世界之石，并创造了新的世界名为庇护之地，他们的后代是奈非天。还有什么三神教，乌迪西安等等，感觉很有意思，如果有机会的话，可以买一本书读读。"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 08 20 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-08-20/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-20/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-08-20/">
-    <title>
-  2019 08 20 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-08-20/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 08 20</h1>
-      <h2 class="date">August 20, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 08 20</h1>
+			<div class="meta">Posted at &mdash; Aug 20, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="房间">房间</h3>
 
@@ -125,39 +110,47 @@
 
 <p>今天听了机核讲暗黑的电台，不得不说暗黑的历史还是非常有意思的。恶魔和天使大战数千上万年，一个恶魔和一个天使受不了了，偷走了世界之石，并创造了新的世界名为庇护之地，他们的后代是奈非天。还有什么三神教，乌迪西安等等，感觉很有意思，如果有机会的话，可以买一本书读读。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

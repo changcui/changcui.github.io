@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.59.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - changcui&#39;s personal website </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
+	<meta property="og:title" content="changcui" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://changcui.cc/" />
+
+<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="changcui"/>
+<meta name="twitter:description" content=""/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="recent-posts section">
+			<h2 class="section-header">
+				Recent posts
+			</h2>
+			<div class="posts">
+				
+				
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/2019-08-30/">2019 08 30</a> &mdash;
+					<span class="description">
+						
+						工资 等了一个月终于发工资了，这次的工资算是正常了。上个月因为没有满10天，结果没有绩效工资，导致我的工资大缩水。
+不知道我 mentor 是出于上个月没有绩效的同情，还是我这个月表现得确实不错，他好像给我打了一个蛮高的绩效，我感到十分的开心，我恢复了对公司的喜爱，下决心更努力的干活了。
+工作 说到工作，今天干得活其实并不到，充其量是给 mentor 找了个处理 imagenet 数据的脚本，然后他处理完了之后，我在服务器上测试了一下自己写的 resnet 跑起来是不是正确的。
+令人意外的是，今天跑得格外的顺利，代码一次就跑起来了，也没有报错。validation 的 accuracy 也和官方文档上写的一样。但是我依旧只能随便试试，并开始不了工作，还是多卡的问题解决不了，只能等到下周啦。
+临近下班的时候，我和 mentor 讨论了一下下周的工作内容，基本上确定了有五个任务要做，但当我问到 ddl 的时候，他又说没有 ddl，其实我的岗压力并不是很大，虽然我们组已经没什么人了。聊完工作，又聊了点别的， mentor 作为长者给我传授了点人生的经验，希望对我有所帮助。
+cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明显就是显卡驱动的原因。呼叫 IT 一顿操作帮我搞定了，然后我发现了一件很奇怪的事。
+就是 nvcc -V 输出的 cuda 版本是 9.0，而 nvidia-smi 输出的 cuda 版本是 10.0，我一台电脑竟然能有两个 cuda 版本。
+经过查询后发现，cuda 有两种存在形式，一个是 runtime 形式，一个是 driver 形式，分别是 cuda-toolkit 和 driver 安装的。彼此不冲突，所以才会出现这种情况。我写的扩展应该是用 nvcc 的编译的，所以我认为应该是 runtime 更为重要一些，起码对我来说是这样。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-1137/">1137. N-th Tribonacci Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 29, 2019</div>
+					<a class="title" href="/posts/leetcode-1128/">1128. Number of Equivalent Domino Pairs</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int numEquivDominoPairs(vector&lt;vector&lt;int&gt;&gt;&amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] += 1; } int rtn = 0; for (int i = 1; i &lt;= 9; i++) { for (int j = i; j &lt;= 9; j++) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &gt;= 2) { rtn += tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] + cnt[j][i]); if (tmp &gt;= 2) { rtn += tmp * (tmp - 1) /2; } } } } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 29, 2019</div>
+					<a class="title" href="/posts/leetcode-1122/">1122. Relative Sort Array</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; relativeSortArray(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) { vector&lt;bool&gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() + i); len -= 1; } else { i += 1; } } sort(arr1.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 29, 2019</div>
+					<a class="title" href="/posts/leetcode-1114/">1114. Print in Order</a> &mdash;
+					<span class="description">
+						
+						class Foo { public: bool mutex1, mutex2; Foo() { mutex1 = true; mutex2 = true; } void first(function&lt;void()&gt; printFirst) { // printFirst() outputs &#34;first&#34;. Do not change or remove this line.  printFirst(); this-&gt;mutex1 = false; } void second(function&lt;void()&gt; printSecond) { while (this-&gt;mutex1) {} // printSecond() outputs &#34;second&#34;. Do not change or remove this line.  printSecond(); this-&gt;mutex2 = false; } void third(function&lt;void()&gt; printThird) { while (this-&gt;mutex1 | this-&gt;mutex2) {} // printThird() outputs &#34;third&#34;.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 28, 2019</div>
+					<a class="title" href="/posts/leetcode-1108/">1108. Defanging an IP Address</a> &mdash;
+					<span class="description">
+						
+						 insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i++) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() + i, &#39;[&#39;); address.insert(address.begin() + i + 2, &#39;]&#39;); i += 2; } } return address; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 28, 2019</div>
+					<a class="title" href="/posts/2019-08-28/">2019 08 28</a> &mdash;
+					<span class="description">
+						
+						聚餐 今天有次七个人的聚餐，其实聚餐的人员还是蛮奇怪的，有马上回美帝的，有正在申请美帝的，有要去大英的，有在做科研的，有在实习的，有在玩的，我们七个一起吃饭，我印象中应该是第一次。
+大部分时间大家都在聊聊过去，聊聊现在，聊聊未来，聊聊同学，聊聊自己，可能因为人比较多，偶尔也会出现尴尬大家都没话的时候，但总体的氛围还是不错吧。
+我对一个小哥的一句话比较印象深刻，他说看见大家开心的笑容自己也很开心。我是说不出这种话的，不知道为何就觉得很难为情，小哥要去辞职去读“创意写作”了，大概“创意写作”需要你想大家想不到的事，或者至少说大家觉得难为情的话吧，要更 real 一点。
+工作 今天工作的任务相当重，主要是三个问题需要解决，第一个是多卡训练的问题，第二个是分类网络训练的问题，第三个是卷积算子的接口问题。
+首先是第一个问题，多卡训练错误的点在于公司的框架在执行 dataparallel 的时候，没有把所有的 tensor 都分发到各个 GPU，导致 forward 之前的一些运算会产生不在同一个 GPU 的错误，解决方案就是要实现一个新的 dataparallel 的 module，在 forward 里面把剩余的 tensor 也分发到各个 GPU。我虽然想到了怎么修改，但是并没有解决这个问题，主要原因是我本地没有多卡环境，使用集群进行调试过于麻烦，这个问题是两方面解决的，第一，我申请了一张新的卡，和我本机的卡组一个多卡环境，审批已经完成了，不知道什么时候才能拿到，第二，我申请了服务器的账号，希望使用服务器来调试，但是服务器由于权限问题，我不能修改一些环境，比如我只能用 CUDA 8，至于会不会出现问题，明天试一试才会知道。
+第二个问题，上次经过讨论之后，确定还是用分类网络重训，放弃了之前的 pose estimation 网络，我选择了比较简单的 resnet18 作为分类网络，在写的时候遇到了一些困难，比如我要想办法把量化框架集成进去，要想办法把训练，重训练等参数的确定下来，由于使用 imagenet 数据集，我本地并没有这个数据集，我无法进行调试，只能检查一下是否有语法的错误。
+当我检查好，打包好，想放到 k8s 上跑的时候，才发现我们换了集群环境，之前的 imagenet 的数据集没有了，于是又联系运维组的人要数据集，我才第一次知道原来 imagenet 完整的数据集有 500G 之大。即使我代码写对了，怎么训练对我来说挑战也是很大。
+第三个问题，我跟 mentor 讨论了一下，确定了卷积算子的接口，但这个问题好像不是很着急，我其实每次讨论的时候，脑子都挺懵的，不记得之前讨论的结果，mentor 还要重新给我讲一遍，不过 mentor 给我讲的时候似乎自己也有收获，他原本也有一些地方没有想清楚，今天讨论的时候得到了我们相同的答案。
+我们组的人最近走的走，有事的不来，做算法的人好少，上次开会的时候，对面团队的人还说我们部这么多人，做这个关键工作的怎么没人，我今天收到了会议纪要，才发现我们做的工作还挺重要的，我发现自己的活变得多了起来，前几天明明闲得很，我给 mentor 建议再招一些人，不过 mentor 说招不到人，校招也还没开始。
+curl 今天上午摸鱼的时候顺便学习了一下 curl，看的是这个链接，简单总结一下用法吧。
+在我的理解下， curl 不是一个专门的下载工具，我之前一直以为 curl 和 wget 差不多，都是个下载工具，不过现在看来 curl 更像 python3 里面的 requests module 可以用来构建请求，下载本身也是发送一个请求嘛，所以也可以作为下载工具来用。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 28, 2019</div>
+					<a class="title" href="/posts/leetcode-1103/">1103. Distribute Candies to People</a> &mdash;
+					<span class="description">
+						
+						 math class Solution { public: vector&lt;int&gt; distributeCandies(int candies, int num_people) { int epoch = 0; for (; ; epoch++) { int needed = (epoch + 1) * num_people * ((epoch + 1) * num_people + 1) / 2; if (candies &lt;= needed) break; } vector&lt;int&gt; result(num_people, 0); for (int i = 1; i &lt;= num_people; i++) { result[i - 1] += epoch * i + num_people * epoch * (epoch - 1) / 2; } candies -= epoch * num_people * (epoch * num_people + 1) / 2; for (int i = 1; i &lt;= num_people; i++) { int needed = i + epoch * num_people; if (candies &lt;= needed) { result[i - 1] += candies; break; } else { result[i - 1] += needed; candies -= needed; } } return result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 28, 2019</div>
+					<a class="title" href="/posts/leetcode-1089/">1089. Duplicate Zeros</a> &mdash;
+					<span class="description">
+						
+						if (i + 1 &lt; len) class Solution { public: void duplicateZeros(vector&lt;int&gt;&amp; arr) { auto len = arr.size(); for (int i = 0; i &lt; len; i++) { if (arr[i] == 0) { for (int j = len - 2; j &gt;= i + 1; j--) { arr[j + 1] = arr[j]; } if (i + 1 &lt; len) arr[i + 1] = 0; i += 1; } } } };  vector class Solution { public: void duplicateZeros(vector&lt;int&gt;&amp; arr) { auto len = arr.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 27, 2019</div>
+					<a class="title" href="/posts/2019-08-27/">2019 08 27</a> &mdash;
+					<span class="description">
+						
+						Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace  新室友 马上就要开学了，意味着我的独居生活开始倒计时了，我还是挺喜欢一个人住的，毕竟很安静，将来租了房子我大概会很喜欢吧。
+新的室友还没见到，竟然在论坛发帖想和我们提前认识一下，想必是个不难相处的人吧，接下来还有两年，我们宿舍终于变成了四人寝。
+研究生的宿舍的重要性和本科时相比弱了很多，白天基本上很少在宿舍了，对我来说，宿舍只是一个睡觉的地方，想起来本科的时候，整个学院的同学住在一栋楼里，互相串门还是非常方便的，女票也经常跑到我宿舍来玩，我们宿舍有一段时间经常性保持三男三女的六人寝，好怀念。
+明日方舟 明日方舟终于更新夏活了，等了快一个世纪了，不过看起来没这么好玩，我的练度已经远远超过了副本的要求了，新六星也没能抽到，但好在搞到了五星，ios 的大佬们也把方舟氪到了第一名，顺利地拿到了十连券，攒着抽老爷子吧。
+工作 今天还是要训网络呗，但是 maxwell 架构的显卡不支持 int8，我也无能为力啊。
+于是我的任务变成了显卡采购建议收集，我收集了各个显卡的数据，给出显卡采购的方案，虽然我们组比较菜，只能用别人用剩下的显卡，可总比我本机的 1060 要强一些吧。
+昨天遇到的 hang 的问题，今天看了个 pytorch 的 issue，起码有点感性的认识了。这个问题的原因是 pytorch 的 dataloader 当 num_workers 不为0的时候，会调用 multiprocessing 来生成多个进程并行地处理数据，之所以需要多个进程而不是多个进程，是因为 python 的 interpreter 不允许多线程并行，有一个叫 GIL (global interpreter lock) 的机制在，该机制的目的是保护线程安全，比如引用计数等，multiprocessing 产生多个进程默认是调用的 fork 方法，fork 是在当前进程的基础上复制出一个相同的进程，当与一些第三方库，比如 numpy，opencv 混用的时候，第三方库会使用多线程来处理数据，fork 的时候会将多线程的信息也复制一遍，导致死锁。
+解决方案一，让 num_workers = 0，不使用多进程，自然会比较慢，但不会死锁。
+解决方案二，让 multiprocessing 的默认产生进程的方法是 spawn，和 fork 的差别在于， spawn 是从头产生一个新的进程，比 fork 效率要低。&hellip;
+						
+					</span>
+				</div>
+				
+				
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/22/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/24/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

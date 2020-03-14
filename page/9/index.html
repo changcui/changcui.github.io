@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.59.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - changcui&#39;s personal website </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
+	<meta property="og:title" content="changcui" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://changcui.cc/" />
+
+<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="changcui"/>
+<meta name="twitter:description" content=""/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="recent-posts section">
+			<h2 class="section-header">
+				Recent posts
+			</h2>
+			<div class="posts">
+				
+				
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-345/">345.Reverse Vowels of a String</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &lt; j) { while (i &lt; j &amp;&amp; s[i] != &#39;a&#39; &amp;&amp; s[i] != &#39;e&#39; &amp;&amp; s[i] != &#39;i&#39; &amp;&amp; s[i] != &#39;o&#39; &amp;&amp; s[i] != &#39;u&#39; &amp;&amp; s[i] != &#39;A&#39; &amp;&amp; s[i] != &#39;E&#39; &amp;&amp; s[i] != &#39;I&#39; &amp;&amp; s[i] != &#39;O&#39; &amp;&amp; s[i] != &#39;U&#39;) i++; while (i &lt; j &amp;&amp; s[j] !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-341/">341.Flatten Nested List Iterator</a> &mdash;
+					<span class="description">
+						
+						/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&lt;NestedInteger&gt; &amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&lt;NestedInteger&gt; &amp;n, vector&lt;int&gt;&amp; v) { for (auto i : n) { if (i.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-342/">342.Power of Four</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfFour(int num) { return (num &gt; 0) &amp;&amp; !(num &amp; (num - 1)) &amp;&amp; (num &amp; 0x55555555) == num; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-231/">231.Power of Two</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfTwo(int n) { return (n &gt; 0) &amp;&amp; !(n &amp; (n - 1)); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 9, 2019</div>
+					<a class="title" href="/posts/leetcode-343/">343.Integer Break</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int integerBreak(int n) { vector&lt;int&gt; dp(n+1, 1); for (int i = 3; i &lt;= n; i++) { for (int j = 1; j &lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 3, 2019</div>
+					<a class="title" href="/posts/leetcode-58/">58. Length of Last Word</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--; while (i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;) { res++; i--; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 3, 2019</div>
+					<a class="title" href="/posts/leetcode-122/">122. Best Time to Buy and Sell Stock II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int maxProfit(vector&lt;int&gt;&amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &lt; n - 1; i++) { if (prices[i] &lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 3, 2019</div>
+					<a class="title" href="/posts/leetcode-307/">307. Range Sum Query - Mutable</a> &mdash;
+					<span class="description">
+						
+						class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { sum.push_back(0); for (auto n : nums) { sum.push_back(sum.back()+n); num.push_back(n); } } void update(int i, int val) { auto t = val - num[i]; num[i] = val; for (int j = i + 1; j &lt; sum.size(); j++) sum[j] += t; } int sumRange(int i, int j) { return sum[j+1] - sum[i]; } private: vector&lt;int&gt; sum; vector&lt;int&gt; num; }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(i,val); * int param_2 = obj-&gt;sumRange(i,j); */ &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-389/">389. Find the Difference</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: char findTheDifference(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &#39;A&#39;; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/8/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/10/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

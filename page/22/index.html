@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.59.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - changcui&#39;s personal website </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
+	<meta property="og:title" content="changcui" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://changcui.cc/" />
+
+<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="changcui"/>
+<meta name="twitter:description" content=""/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="recent-posts section">
+			<h2 class="section-header">
+				Recent posts
+			</h2>
+			<div class="posts">
+				
+				
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-326/">326. Power of Three</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfThree(int n) { return n &gt; 0 ? !(1162261467 % n) : 0; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-268/">268. Missing Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int missingNumber(vector&lt;int&gt;&amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-237/">237. Delete Node in a Linked List</a> &mdash;
+					<span class="description">
+						
+						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-234/">234. Palindrome Linked List</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&gt;next !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-206/">206. Reverse Linked List</a> &mdash;
+					<span class="description">
+						
+						 iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively class Solution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&gt; next == NULL) return head; auto tmp = reverseList(head-&gt;next); head-&gt;next-&gt;next = head; head-&gt;next = NULL; return tmp; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-1078/">1078. Occurrences After Bigram</a> &mdash;
+					<span class="description">
+						
+						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-1170/">1170. Compare Strings by Frequency of the Smallest Character</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &lt; s.size(); i++) { if (s[i] &lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) { vector&lt;int&gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&lt;int&gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &lt;= 10; i++) tmp += wa[i]; rtn.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
+					<span class="description">
+						
+						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-1154/">1154. Day of the Year</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/21/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/23/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

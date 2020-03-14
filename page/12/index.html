@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.59.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - changcui&#39;s personal website </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
+	<meta property="og:title" content="changcui" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://changcui.cc/" />
+
+<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="changcui"/>
+<meta name="twitter:description" content=""/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="recent-posts section">
+			<h2 class="section-header">
+				Recent posts
+			</h2>
+			<div class="posts">
+				
+				
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-24/">24. Swap Nodes in Pairs</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { if (!head || !head -&gt; next) return head; auto nxt = head -&gt; next -&gt; next; auto h = head; head = head -&gt; next; head -&gt; next = h; h -&gt; next = swapPairs(nxt); return head; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-856/">856. Score of Parentheses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int scoreOfParentheses(string S) { int score = 0, n = S.size(); for (int i = 0; i &lt; n; i++) { if (S[i] == &#39;(&#39;) { int cnt = 1, j = i; while (cnt) { if (S[++j] == &#39;(&#39;) cnt += 1; else cnt -= 1; } if (j == i + 1) score += 1; else score += 2 * scoreOfParentheses(S.substr(i + 1, j - i - 1)); i = j; } } return score; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-22/">22. Generate Parentheses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; DFS(left, right, &#34;&#34;, result); return result; } void DFS(int left, int right, string out, vector&lt;string&gt;&amp; result) { if (left &gt; right) return; if (left == 0 &amp;&amp; right == 0) result.push_back(out); else { if (left &gt; 0) DFS(left - 1, right, out + &#34;(&#34;, result); if (right &gt; 0) DFS(left, right - 1, out + &#34;)&#34;, result); } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-347/">347. Top K Frequent Elements</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: using ii = pair&lt;int, int&gt;; vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) { auto cmp = [](auto i, auto j) {return i.second &gt; j.second;}; unordered_map&lt;int, int&gt; m; priority_queue&lt;ii, vector&lt;ii&gt;, decltype(cmp)&gt; q(cmp); for (auto num : nums) m[num] += 1; for (auto i : m) { q.push(i); if (q.size() &gt; k) q.pop(); } vector&lt;int&gt; res; while (!q.empty()) { res.push_back(q.top().first); q.pop(); } reverse(res.begin(), res.end()); return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-692/">692. Top K Frequent Words</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: using mp = pair&lt;string, int&gt;; vector&lt;string&gt; topKFrequent(vector&lt;string&gt;&amp; words, int k) { auto cmp = [](auto i, auto j) {return i.second &gt; j.second || (i.second == j.second &amp;&amp; i.first &lt; j.first);}; priority_queue&lt;mp, vector&lt;mp&gt;, decltype(cmp)&gt; q(cmp); unordered_map&lt;string, int&gt; m; for (auto w : words) m[w] += 1; for (auto i : m) { q.push(i); if (q.size() &gt; k) q.pop(); } vector&lt;string&gt; result; while (!q.empty()) { result.push_back(q.top().first); q.pop(); } reverse(result.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-55/">55. Jump Game</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool canJump(vector&lt;int&gt;&amp; nums) { int n = nums.size(), reach = 0; for (int i = 0; i &lt; n; i++) { if (i &gt; reach || reach &gt;= n - 1) break; reach = max(nums[i] + i, reach); } return reach &gt;= n - 1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-414/">414. Third Maximum Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int thirdMax(vector&lt;int&gt;&amp; nums) { long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN; for (auto num : nums) { if (num &gt; first) { third = second; second = first; first = num; } else if (num &lt; first &amp;&amp; num &gt; second) { third = second; second = num; } else if (num &lt; second &amp;&amp; num &gt; third) { third = num; } } return (third == LONG_MIN || third == second) ?&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-21/">21. Merge Two Sorted Lists</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) { if (!l1) return l2; if (!l2) return l1; if (l1 -&gt; val &lt; l2 -&gt; val) { l1 -&gt; next = mergeTwoLists(l1 -&gt; next, l2); return l1; } else { l2 -&gt; next = mergeTwoLists(l1, l2 -&gt; next); return l2; } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-19/">19. Remove Nth Node From End of List</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { auto cur = head, pre = head; for (int i = 0; i &lt; n; i++) cur = cur -&gt; next; if (!cur) return head -&gt; next; while (cur -&gt; next) { cur = cur -&gt; next; pre = pre -&gt; next; } pre -&gt; next = pre -&gt; next -&gt; next; return head; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-16/">16. 3Sum Closest</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/11/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/13/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

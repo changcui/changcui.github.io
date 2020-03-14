@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://changcui.cc/categories/</loc>
-    <lastmod>2020-03-14T15:31:56+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/</loc>
     <lastmod>2020-03-14T15:31:56+08:00</lastmod>
   </url>
@@ -38,11 +33,6 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-03-14T15:31:56+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/tags/fish/</loc>
     <lastmod>2020-03-14T15:31:50+08:00</lastmod>
   </url>
@@ -63,11 +53,6 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</loc>
-    <lastmod>2020-03-13T20:07:17+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/tags/string/</loc>
     <lastmod>2020-03-12T21:23:03+08:00</lastmod>
   </url>
@@ -79,11 +64,6 @@
   
   <url>
     <loc>http://changcui.cc/posts/offer-54/</loc>
-    <lastmod>2020-03-12T21:23:03+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2020-03-12T21:23:03+08:00</lastmod>
   </url>
   
@@ -669,11 +649,6 @@
   
   <url>
     <loc>http://changcui.cc/posts/leetcode-377/</loc>
-    <lastmod>2019-12-01T03:20:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/categories/caad-s/</loc>
     <lastmod>2019-12-01T03:20:24+08:00</lastmod>
   </url>
   

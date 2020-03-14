@@ -1,97 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 09 06 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 09 06" />
+<meta property="og:description" content="工作 昨天晚上惯例没有睡着，大概三点多才去睡觉，早上自然起不来，早饭就不用想了。挣扎着九点起来去上班了，到了公司就赶紧开始手工改数据，不得不说这个过程其实挺傻的，不过是在做验证，这个过程大概也不会有第二次了，如果这一次验证可以通过的话，我一定会写一个脚本来完成它的。
+结果跑出来了，两个框架跑出的结果大部分都一样，个别结果差1，说明运算的流程是没有错的，首先我怀疑的是输出的时候某个地方 dump 错了，我验证了一下 feature map，也是个别结果差1，这就让我很疑惑了。
+如果是中间过程错了的话，错误并没有累计，说明在流程中计算的应该是正确的结果。我怀疑是量化框架出了问题，又仔细读了一下量化框架的源码，咨询了一下研究院的同事，发现并没有问题。
+我开始加入 embed，逐步测试结果是不是一样，发现了一个很令人诧异的现象，用 pytorch 跑出的结果，和用 c&#43;&#43; 跑出的结果也差1，明明使用的是相同的算子，前者可以看作是一个过程，后者则是分成两部分在跑，我以为是中间的转换出了问题，试了多种方案，还是解决不了，其实这个时候，我的心态已经有点崩了，我被这个 bug 卡了一天，我印象中还没有这么难解决的 bug。
+到了接近要走的时候，我突然又想起来，weight 和 bias 其实也是不一样的，因为经历了两次转换的过程，我把 pytorch 用的 weight 和 bias 拿给 c&#43;&#43; 用，成功重现了这个现象，这就意味着不是算子的问题，而是 weight 和 bias 的问题，之后要想办法解决这个问题。
+今天的工作实在是太累了， debug 耗尽了我的心力，中午干到了一点半，下午又一直忙到了七点，女票从公司回到学校后，我就急急忙忙地离开了公司，希望以后这样的日子少一些。
+feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的总产值已经远超过音乐和电影之和，以及程序员不应该把心思都放在编程技巧上面，而是要去做需要的东西等等。
+我还看到了公司 ceo 的发言，他说公司正在做训练芯片，我仔细想了想，那不就是我在做吗，为啥只有我自己在做算法层面的东西，明明这个东西这么重要，我突然觉得自己做的东西还是 valuable 的，也许能影响公司的发展，而整个项目都是我和 mentor 在推进，这种不是一颗螺丝钉的感觉大概很不错吧。
+鱼仔饭 经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-09-06/" />
+<meta property="article:published_time" content="2019-09-06T21:28:23+08:00" />
+<meta property="article:modified_time" content="2019-09-06T21:28:23+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 09 06"/>
+<meta name="twitter:description" content="工作 昨天晚上惯例没有睡着，大概三点多才去睡觉，早上自然起不来，早饭就不用想了。挣扎着九点起来去上班了，到了公司就赶紧开始手工改数据，不得不说这个过程其实挺傻的，不过是在做验证，这个过程大概也不会有第二次了，如果这一次验证可以通过的话，我一定会写一个脚本来完成它的。
+结果跑出来了，两个框架跑出的结果大部分都一样，个别结果差1，说明运算的流程是没有错的，首先我怀疑的是输出的时候某个地方 dump 错了，我验证了一下 feature map，也是个别结果差1，这就让我很疑惑了。
+如果是中间过程错了的话，错误并没有累计，说明在流程中计算的应该是正确的结果。我怀疑是量化框架出了问题，又仔细读了一下量化框架的源码，咨询了一下研究院的同事，发现并没有问题。
+我开始加入 embed，逐步测试结果是不是一样，发现了一个很令人诧异的现象，用 pytorch 跑出的结果，和用 c&#43;&#43; 跑出的结果也差1，明明使用的是相同的算子，前者可以看作是一个过程，后者则是分成两部分在跑，我以为是中间的转换出了问题，试了多种方案，还是解决不了，其实这个时候，我的心态已经有点崩了，我被这个 bug 卡了一天，我印象中还没有这么难解决的 bug。
+到了接近要走的时候，我突然又想起来，weight 和 bias 其实也是不一样的，因为经历了两次转换的过程，我把 pytorch 用的 weight 和 bias 拿给 c&#43;&#43; 用，成功重现了这个现象，这就意味着不是算子的问题，而是 weight 和 bias 的问题，之后要想办法解决这个问题。
+今天的工作实在是太累了， debug 耗尽了我的心力，中午干到了一点半，下午又一直忙到了七点，女票从公司回到学校后，我就急急忙忙地离开了公司，希望以后这样的日子少一些。
+feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的总产值已经远超过音乐和电影之和，以及程序员不应该把心思都放在编程技巧上面，而是要去做需要的东西等等。
+我还看到了公司 ceo 的发言，他说公司正在做训练芯片，我仔细想了想，那不就是我在做吗，为啥只有我自己在做算法层面的东西，明明这个东西这么重要，我突然觉得自己做的东西还是 valuable 的，也许能影响公司的发展，而整个项目都是我和 mentor 在推进，这种不是一颗螺丝钉的感觉大概很不错吧。
+鱼仔饭 经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 09 06 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-09-06/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-09-06/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-09-06/">
-    <title>
-  2019 09 06 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-09-06/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 09 06</h1>
-      <h2 class="date">September 6, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 09 06</h1>
+			<div class="meta">Posted at &mdash; Sep 6, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="工作">工作</h3>
 
@@ -117,39 +106,47 @@
 
 <p>经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

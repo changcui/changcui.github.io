@@ -1,97 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>DFS 生成所有结果 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="DFS 生成所有结果" />
+<meta property="og:description" content="生成所有结果的题，第一时间要想到使用 DFS 和递归来解决。
+主要分为以下几步，
+ 确定 DFS 的跳出条件，对应树结构的子节点。 确定剪枝条件，这个是最麻烦的，需要对题目进行分析 确定继续搜索的方向  Leetcode 上的例题有，22，39，40
+22. Generate Parentheses 这一题是给出一个数 n，生成所有的括号组合。
+因为是所有的括号组合，想到用 DFS 和递归来解决。
+首先确定 DFS 的跳出条件，我们可以设置两个变量 left，right 分别维护左右括号的剩余数量， 当两者都为0的时候跳出。
+接着确定剪枝条件，其实跳出条件也可以用整个字符串的长度来维护，但是体现不出括号的特殊性，所以设置两个变量 left，right，因为字符串是从左往右增长的，当 right &lt; left 的时候，意味着有右括号先于左括号出来，需要进行剪枝。
+最后确定继续搜索的方向，其实就两种选择，要么加左括号，要么加右括号，注意要回溯，如果 out 的值被更改的话。
+class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; string out = &#34;&#34;; DFS(left, right, out, result); return result; } void DFS(int left, int right, string&amp; out, vector&lt;string&gt;&amp; result) { if (left == 0 &amp;&amp; right == 0) {result." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/dfs/" />
+<meta property="article:published_time" content="2019-12-01T01:39:47+08:00" />
+<meta property="article:modified_time" content="2019-12-01T01:39:47+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DFS 生成所有结果"/>
+<meta name="twitter:description" content="生成所有结果的题，第一时间要想到使用 DFS 和递归来解决。
+主要分为以下几步，
+ 确定 DFS 的跳出条件，对应树结构的子节点。 确定剪枝条件，这个是最麻烦的，需要对题目进行分析 确定继续搜索的方向  Leetcode 上的例题有，22，39，40
+22. Generate Parentheses 这一题是给出一个数 n，生成所有的括号组合。
+因为是所有的括号组合，想到用 DFS 和递归来解决。
+首先确定 DFS 的跳出条件，我们可以设置两个变量 left，right 分别维护左右括号的剩余数量， 当两者都为0的时候跳出。
+接着确定剪枝条件，其实跳出条件也可以用整个字符串的长度来维护，但是体现不出括号的特殊性，所以设置两个变量 left，right，因为字符串是从左往右增长的，当 right &lt; left 的时候，意味着有右括号先于左括号出来，需要进行剪枝。
+最后确定继续搜索的方向，其实就两种选择，要么加左括号，要么加右括号，注意要回溯，如果 out 的值被更改的话。
+class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; string out = &#34;&#34;; DFS(left, right, out, result); return result; } void DFS(int left, int right, string&amp; out, vector&lt;string&gt;&amp; result) { if (left == 0 &amp;&amp; right == 0) {result."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  DFS 生成所有结果 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/dfs/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/dfs/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/dfs/">
-    <title>
-  DFS 生成所有结果 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/dfs/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">DFS 生成所有结果</h1>
-      <h2 class="date">December 1, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">DFS 生成所有结果</h1>
+			<div class="meta">Posted at &mdash; Dec 1, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <p>生成所有结果的题，第一时间要想到使用 DFS 和递归来解决。</p>
 
@@ -202,39 +191,47 @@
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/leetcode">leetcode</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

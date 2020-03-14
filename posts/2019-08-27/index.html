@@ -1,97 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 27 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 08 27" />
+<meta property="og:description" content="Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace  新室友 马上就要开学了，意味着我的独居生活开始倒计时了，我还是挺喜欢一个人住的，毕竟很安静，将来租了房子我大概会很喜欢吧。
+新的室友还没见到，竟然在论坛发帖想和我们提前认识一下，想必是个不难相处的人吧，接下来还有两年，我们宿舍终于变成了四人寝。
+研究生的宿舍的重要性和本科时相比弱了很多，白天基本上很少在宿舍了，对我来说，宿舍只是一个睡觉的地方，想起来本科的时候，整个学院的同学住在一栋楼里，互相串门还是非常方便的，女票也经常跑到我宿舍来玩，我们宿舍有一段时间经常性保持三男三女的六人寝，好怀念。
+明日方舟 明日方舟终于更新夏活了，等了快一个世纪了，不过看起来没这么好玩，我的练度已经远远超过了副本的要求了，新六星也没能抽到，但好在搞到了五星，ios 的大佬们也把方舟氪到了第一名，顺利地拿到了十连券，攒着抽老爷子吧。
+工作 今天还是要训网络呗，但是 maxwell 架构的显卡不支持 int8，我也无能为力啊。
+于是我的任务变成了显卡采购建议收集，我收集了各个显卡的数据，给出显卡采购的方案，虽然我们组比较菜，只能用别人用剩下的显卡，可总比我本机的 1060 要强一些吧。
+昨天遇到的 hang 的问题，今天看了个 pytorch 的 issue，起码有点感性的认识了。这个问题的原因是 pytorch 的 dataloader 当 num_workers 不为0的时候，会调用 multiprocessing 来生成多个进程并行地处理数据，之所以需要多个进程而不是多个进程，是因为 python 的 interpreter 不允许多线程并行，有一个叫 GIL (global interpreter lock) 的机制在，该机制的目的是保护线程安全，比如引用计数等，multiprocessing 产生多个进程默认是调用的 fork 方法，fork 是在当前进程的基础上复制出一个相同的进程，当与一些第三方库，比如 numpy，opencv 混用的时候，第三方库会使用多线程来处理数据，fork 的时候会将多线程的信息也复制一遍，导致死锁。
+解决方案一，让 num_workers = 0，不使用多进程，自然会比较慢，但不会死锁。
+解决方案二，让 multiprocessing 的默认产生进程的方法是 spawn，和 fork 的差别在于， spawn 是从头产生一个新的进程，比 fork 效率要低。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-08-27/" />
+<meta property="article:published_time" content="2019-08-27T22:33:36+08:00" />
+<meta property="article:modified_time" content="2019-08-27T22:33:36+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 08 27"/>
+<meta name="twitter:description" content="Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace  新室友 马上就要开学了，意味着我的独居生活开始倒计时了，我还是挺喜欢一个人住的，毕竟很安静，将来租了房子我大概会很喜欢吧。
+新的室友还没见到，竟然在论坛发帖想和我们提前认识一下，想必是个不难相处的人吧，接下来还有两年，我们宿舍终于变成了四人寝。
+研究生的宿舍的重要性和本科时相比弱了很多，白天基本上很少在宿舍了，对我来说，宿舍只是一个睡觉的地方，想起来本科的时候，整个学院的同学住在一栋楼里，互相串门还是非常方便的，女票也经常跑到我宿舍来玩，我们宿舍有一段时间经常性保持三男三女的六人寝，好怀念。
+明日方舟 明日方舟终于更新夏活了，等了快一个世纪了，不过看起来没这么好玩，我的练度已经远远超过了副本的要求了，新六星也没能抽到，但好在搞到了五星，ios 的大佬们也把方舟氪到了第一名，顺利地拿到了十连券，攒着抽老爷子吧。
+工作 今天还是要训网络呗，但是 maxwell 架构的显卡不支持 int8，我也无能为力啊。
+于是我的任务变成了显卡采购建议收集，我收集了各个显卡的数据，给出显卡采购的方案，虽然我们组比较菜，只能用别人用剩下的显卡，可总比我本机的 1060 要强一些吧。
+昨天遇到的 hang 的问题，今天看了个 pytorch 的 issue，起码有点感性的认识了。这个问题的原因是 pytorch 的 dataloader 当 num_workers 不为0的时候，会调用 multiprocessing 来生成多个进程并行地处理数据，之所以需要多个进程而不是多个进程，是因为 python 的 interpreter 不允许多线程并行，有一个叫 GIL (global interpreter lock) 的机制在，该机制的目的是保护线程安全，比如引用计数等，multiprocessing 产生多个进程默认是调用的 fork 方法，fork 是在当前进程的基础上复制出一个相同的进程，当与一些第三方库，比如 numpy，opencv 混用的时候，第三方库会使用多线程来处理数据，fork 的时候会将多线程的信息也复制一遍，导致死锁。
+解决方案一，让 num_workers = 0，不使用多进程，自然会比较慢，但不会死锁。
+解决方案二，让 multiprocessing 的默认产生进程的方法是 spawn，和 fork 的差别在于， spawn 是从头产生一个新的进程，比 fork 效率要低。"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 08 27 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-08-27/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-27/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-08-27/">
-    <title>
-  2019 08 27 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-08-27/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 08 27</h1>
-      <h2 class="date">August 27, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 08 27</h1>
+			<div class="meta">Posted at &mdash; Aug 27, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="violin-sonata-no-2-in-a-major-op-12-no-2-i-allegro-vivace">Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace</h3>
 
@@ -141,39 +130,47 @@
 
 <p>我想着是因为手机的 cpu 太菜了，我给手机开了热点，用 scp 传到了电脑上转码，电脑风扇转的太厉害了，我有点心疼，而且似乎和手机的速度差不多，这下我不明白了，不知道瓶颈在哪，也许我 ffmpeg 用得不太熟，没有开多线程之类的东西吧。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

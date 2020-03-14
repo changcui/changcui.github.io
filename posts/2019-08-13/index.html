@@ -1,97 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 13 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019 08 13" />
+<meta property="og:description" content="天气 今天的天气非常的好，用我一个同学的话说就是风卷云舒。有同学约一起出来玩，但是今天显然还是上班的一天，并没有时间出来玩。
+生病 自从找了实习，放了暑假，慢垒队也停止训练了，我一周一个下午的运动时间也取消了，身体好像渐渐吃不消啦。表现的最明显的就是抵抗力不太行了，各种小毛病都慢慢出现，比如感冒，拉肚子，腰疼等。我还是决定多跑跑步吧，毕竟指望着一周一次的训练第一是要占用周五下午的时间，第二是还要再等一个月吧。在公司的健身房和操场之间选的话，还是操场方便一些，毕竟我是不希望把一双鞋和一条毛巾拿到公司去的。
+今天去校医院看背上长的一个包，大概有好几个月了吧，昨天捏了一下，今天就开始疼了，其实我已经预料到要做一个小手术切除了。虽然说做好了心理准备，但是去看病的路上还是有点害怕，我让女票陪我一起去了。我说话还是很镇静的，我仔细观察了一下我自己的内心反应，看病之前吃不下饭，莫名的紧张需要刻意的控制。结果和我想的一样，是一个小囊肿，医生不建议我现在做手术，理由是一二十天不能洗澡，好吧很充分。给我开了点消炎的药，等到寒假回家之前搞定这个事吧。
+知乎 我是不玩知乎的，北大退档的这个事，有个非常出色的学弟发表了极为精准的评论在知乎上。我个人的观点是完全认同他的，但我组织语言的能力显然和他差远了。女票这种写小说的大佬也表示学弟的回答非常的棒，甚至想点个赞，虽然她并没有注册，点赞失败了。
+NLP 今天刷 feedly 的时候看到了一个老哥的 blog，讲得非常的不错，顺便看了一篇他讲 transformer 的博文，但是我的 nlp 基础实在有限，再加上公司的空调吹得我鼻涕直流，实在没能看下去，希望之后能补一补 nlp 的知识，有没有用暂且不说，至少还是蛮有意思的。
+我一个同学也是研究 nlp 的，最近的状态好像不太好，和我一样，面临着公司和组里的双重压力，不过 Ta 压力应该比我更大一些吧，希望 Ta 能从这段压力中走出来。
+保险 女票是学保险的，最近好像要搞毕业论文了，今天趁吃饭的时候和我交流了一下她自己思考的一些研究方向，我听女票讲保险已久，竟然能提供一些建议。但是，提供建议的过程不是很愉快，两个人甚至要吵起来，不过最后结果还是不错的，达成了一致，不知道旁边的几波一起吃饭的人是不是觉得我们俩要闹分手。
+Pose mentor 终于给我们安排了一些微小的工作，大概就是看看几个网络的结构，然后选一个跑一跑，最终我选定的是比较简单的 Pose Estimation，大概就是关键点检测吧。我看了一下网络结构，需要再写的算子就是 transConv2d，就是转置卷积，其实可以用之前写好的 interp 替代，但是权重自然是无法替代的啦。这个代码是在 modelzoo 里面下载的，给我的印象就是写的很模块化，各个环节都分的很开，用了很多包。我自己写的话，肯定不会写这么复杂，到时候估计要自己再复现一份吧。不过还没有最终敲定用哪个网路，等明天再开始吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/2019-08-13/" />
+<meta property="article:published_time" content="2019-08-13T22:45:18+08:00" />
+<meta property="article:modified_time" content="2019-08-13T22:45:18+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019 08 13"/>
+<meta name="twitter:description" content="天气 今天的天气非常的好，用我一个同学的话说就是风卷云舒。有同学约一起出来玩，但是今天显然还是上班的一天，并没有时间出来玩。
+生病 自从找了实习，放了暑假，慢垒队也停止训练了，我一周一个下午的运动时间也取消了，身体好像渐渐吃不消啦。表现的最明显的就是抵抗力不太行了，各种小毛病都慢慢出现，比如感冒，拉肚子，腰疼等。我还是决定多跑跑步吧，毕竟指望着一周一次的训练第一是要占用周五下午的时间，第二是还要再等一个月吧。在公司的健身房和操场之间选的话，还是操场方便一些，毕竟我是不希望把一双鞋和一条毛巾拿到公司去的。
+今天去校医院看背上长的一个包，大概有好几个月了吧，昨天捏了一下，今天就开始疼了，其实我已经预料到要做一个小手术切除了。虽然说做好了心理准备，但是去看病的路上还是有点害怕，我让女票陪我一起去了。我说话还是很镇静的，我仔细观察了一下我自己的内心反应，看病之前吃不下饭，莫名的紧张需要刻意的控制。结果和我想的一样，是一个小囊肿，医生不建议我现在做手术，理由是一二十天不能洗澡，好吧很充分。给我开了点消炎的药，等到寒假回家之前搞定这个事吧。
+知乎 我是不玩知乎的，北大退档的这个事，有个非常出色的学弟发表了极为精准的评论在知乎上。我个人的观点是完全认同他的，但我组织语言的能力显然和他差远了。女票这种写小说的大佬也表示学弟的回答非常的棒，甚至想点个赞，虽然她并没有注册，点赞失败了。
+NLP 今天刷 feedly 的时候看到了一个老哥的 blog，讲得非常的不错，顺便看了一篇他讲 transformer 的博文，但是我的 nlp 基础实在有限，再加上公司的空调吹得我鼻涕直流，实在没能看下去，希望之后能补一补 nlp 的知识，有没有用暂且不说，至少还是蛮有意思的。
+我一个同学也是研究 nlp 的，最近的状态好像不太好，和我一样，面临着公司和组里的双重压力，不过 Ta 压力应该比我更大一些吧，希望 Ta 能从这段压力中走出来。
+保险 女票是学保险的，最近好像要搞毕业论文了，今天趁吃饭的时候和我交流了一下她自己思考的一些研究方向，我听女票讲保险已久，竟然能提供一些建议。但是，提供建议的过程不是很愉快，两个人甚至要吵起来，不过最后结果还是不错的，达成了一致，不知道旁边的几波一起吃饭的人是不是觉得我们俩要闹分手。
+Pose mentor 终于给我们安排了一些微小的工作，大概就是看看几个网络的结构，然后选一个跑一跑，最终我选定的是比较简单的 Pose Estimation，大概就是关键点检测吧。我看了一下网络结构，需要再写的算子就是 transConv2d，就是转置卷积，其实可以用之前写好的 interp 替代，但是权重自然是无法替代的啦。这个代码是在 modelzoo 里面下载的，给我的印象就是写的很模块化，各个环节都分的很开，用了很多包。我自己写的话，肯定不会写这么复杂，到时候估计要自己再复现一份吧。不过还没有最终敲定用哪个网路，等明天再开始吧。"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
 
-    <meta name="author" content="changcui">
-    <meta name="description" content="http://changcui.cc">
-    <meta name="keywords" content="blog, personal">
-    
-    <meta property="og:site_name" content="changcui">
-    <meta property="og:title" content="
-  2019 08 13 - changcui
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://changcui.cc/posts/2019-08-13/">
-    <meta property="og:image" content="http://changcui.cc">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="http://changcui.cc/posts/2019-08-13/">
-    <meta name="twitter:image" content="http://changcui.cc">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.ccjs/main.js"></script>
+</head>
 
-    <base href="http://changcui.cc/posts/2019-08-13/">
-    <title>
-  2019 08 13 - changcui
-</title>
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+		</nav>
+	</div>
 
-    <link rel="canonical" href="http://changcui.cc/posts/2019-08-13/">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
-    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
-      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
-    
-
-    <meta name="generator" content="Hugo 0.59.1" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">changcui</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">2019 08 13</h1>
-      <h2 class="date">August 13, 2019</h2>
+		<div class="post-header">
+			<h1 class="title">2019 08 13</h1>
+			<div class="meta">Posted at &mdash; Aug 13, 2019</div>
+		</div>
 
-      
-    </header>
-
-    
+		<div class="markdown">
+			
 
 <h3 id="天气">天气</h3>
 
@@ -121,39 +108,47 @@
 
 <p>mentor 终于给我们安排了一些微小的工作，大概就是看看几个网络的结构，然后选一个跑一跑，最终我选定的是比较简单的 Pose Estimation，大概就是关键点检测吧。我看了一下网络结构，需要再写的算子就是 transConv2d，就是转置卷积，其实可以用之前写好的 interp 替代，但是权重自然是无法替代的啦。这个代码是在 modelzoo 里面下载的，给我的印象就是写的很模块化，各个环节都分的很开，用了很多包。我自己写的话，肯定不会写这么复杂，到时候估计要自己再复现一份吧。不过还没有最终敲定用哪个网路，等明天再开始吧。</p>
 
-  </article>
+		</div>
 
-  <br/>
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/%E7%94%9F%E6%B4%BB">生活</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
 
-  
-  
-</section>
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cobee';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
-    
-      <div class="sns-shares sp-sns-shares">
-        
-        
-        
-        
-      </div>
-    
-    
-      <p>Softball, Science, Xian</p>
-    
-     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-  </section>
-</footer>
 
-      
-    </main>
 
-    
-
-  <script src="http://changcui.cc/js/app.js"></script>
-  
-  </body>
+<script>feather.replace()</script>
+</body>
 </html>

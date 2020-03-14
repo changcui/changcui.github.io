@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ? true : false; exponent = exponent &gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ?"/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

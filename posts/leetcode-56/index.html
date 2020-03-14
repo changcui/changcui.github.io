@@ -14,17 +14,17 @@
 <meta name="twitter:description" content=" greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i&#43;&#43;) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; "/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

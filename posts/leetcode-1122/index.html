@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="class Solution { public: vector&lt;int&gt; relativeSortArray(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) { vector&lt;bool&gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() &#43; i); len -= 1; } else { i &#43;= 1; } } sort(arr1."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

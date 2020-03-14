@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：按照 pattern 下一位是不是 * 来分情况考虑，如果是 * 的话，可以使用，也可以不使用，分两种情况返回。 class Solution { public: int sl, pl; bool match(char* str, char* pattern) { sl = strlen(str), pl = strlen(pattern); return helper(str, pattern, 0, 0); } bool helper(char* str, char* pattern, int i, int j) { if (i == sl &amp;&amp; j == pl) return true; if (j == pl) return false; if (j &#43; 1 &lt; pl &amp;&amp; pattern[j&#43;1] == &#39;*&#39;) { if (i &lt; sl &amp;&amp; (str[i] == pattern[j] || pattern[j] == &#39;."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

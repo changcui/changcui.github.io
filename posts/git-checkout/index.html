@@ -30,17 +30,17 @@ detach HEAD git checkout --detach [&lt;branch&gt;], git checkout &lt;commit&gt;
 的指向 commit，detach HEAD 操作可以让 HEAD 直接某个 commit，这么做之后，也可以进行 add，commit 等常用的操作，跟之前有一些不一样是当你 checkout 到别的分支之后，你的 commit 没有标记，会只剩下一个 SHA，被 git 的垃圾回收机制回收，相当于走了就回不来了。如果想要再回来，当然就是加上标记，有三种方法，第一种是 git checkout -b foo，这么做是创建一个新的分支，并且将 HEAD 指向这个分支，这时候的 HEAD 不是 detached 的状态了，第二种是 git branch foo，给 commit 加一个 branch 的标记，但是 HEAD 依然指向当前的 commit，还处于 detached 状态，需要 checkout 一下解除 detached 状态，第三种是 git tag foo，给这个 commit 打一个标记，HEAD 依然处于 detached 状态。"/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

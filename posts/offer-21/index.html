@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：模拟栈的行为，如果压入元素与popV的前列元素相等，则证明 push 之后随即 pop, 然后判断剩下的元素是否后近先出 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { if (i == popV[l]) l&#43;&#43;; else test.push(i); } while (!test.empty()) { if (test.top() != popV[l&#43;&#43;]) return false; test.pop(); } return true; } }; // 运行时间：4ms // 占用内存：480k // 思路二：也是模拟栈的行为，每次 push 的时候，都可以一直 pop，直到栈顶元素与 popV 的前列元素不相等或者栈为空为止 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { test."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

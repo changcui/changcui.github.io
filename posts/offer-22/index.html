@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.push(root); while (!q.empty()) { int c = q.size(); while (c--) { auto t = q.front(); q.pop(); result.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } } return result; } }; // 运行时间：3ms // 占用内存：604k // 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

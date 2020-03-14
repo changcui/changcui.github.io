@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：确定四个角的位置，然后按照右，下，左，上的顺序，需要注意的是左和上的时候，需要判断是否有新的一行或一列，不然会输出相同的元素 class Solution { public: vector&lt;int&gt; printMatrix(vector&lt;vector&lt;int&gt; &gt; matrix) { vector&lt;int&gt; result; if (matrix.empty() || matrix[0].empty()) return result; int m = matrix.size(), n = matrix[0].size(); int l = 0, r = n - 1, t = 0, d = m - 1; while (l &lt;= r &amp;&amp; t &lt;= d) { for (int i = l; i &lt;= r; i&#43;&#43;) result.push_back(matrix[t][i]); for (int i = t &#43; 1; i &lt;= d; i&#43;&#43;) result."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

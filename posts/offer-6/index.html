@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值 // 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在 // 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l&#43;&#43;，不能为 r-- class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.empty()) return 0; int l = 0, r = rotateArray.size() - 1; while (l &lt; r) { if (rotateArray[l] &lt; rotateArray[r]) return rotateArray[l]; int mid = l &#43; (r - l) / 2; if (rotateArray[mid] &gt; rotateArray[l]) l = mid &#43; 1; else if (rotateArray[mid] &lt; rotateArray[r]) r = mid; else l&#43;&#43;; } return rotateArray[l]; } }; // 运行时间：27ms // 占用内存：612k // 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 // 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法 // 判断，让 r--。 class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

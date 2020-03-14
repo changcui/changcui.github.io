@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：因为是排序的双向链表，所以考虑中序遍历加递归，在没有连接之间的节点建立连接即可 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!pRootOfTree) return NULL; auto l = Convert(pRootOfTree-&gt;left); auto t = l; while (t &amp;&amp; t-&gt;right) t = t-&gt;right; if (t) t-&gt;right = pRootOfTree; pRootOfTree-&gt;left = t; auto r = Convert(pRootOfTree-&gt;right); if (r) r-&gt;left = pRootOfTree; pRootOfTree-&gt;right = r; return l ? l : pRootOfTree; } }; // 运行时间：3ms // 占用内存：616k // 思路二：维护一个前驱指针，使用中序遍历 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!"/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

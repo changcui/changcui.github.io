@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="class Solution { public: using mp = pair&lt;string, int&gt;; vector&lt;string&gt; topKFrequent(vector&lt;string&gt;&amp; words, int k) { auto cmp = [](auto i, auto j) {return i.second &gt; j.second || (i.second == j.second &amp;&amp; i.first &lt; j.first);}; priority_queue&lt;mp, vector&lt;mp&gt;, decltype(cmp)&gt; q(cmp); unordered_map&lt;string, int&gt; m; for (auto w : words) m[w] &#43;= 1; for (auto i : m) { q.push(i); if (q.size() &gt; k) q.pop(); } vector&lt;string&gt; result; while (!q.empty()) { result.push_back(q.top().first); q.pop(); } reverse(result."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

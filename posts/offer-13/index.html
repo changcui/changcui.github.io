@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { vector&lt;int&gt; tmp; for (auto i : array) if (i &amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { for (int i = 0; i &lt; array.size(); i&#43;&#43;) { for (int j = array.size() - 1; j &gt; i; j--) { if (!"/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

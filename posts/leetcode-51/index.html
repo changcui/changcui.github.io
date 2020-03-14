@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="class Solution { public: vector&lt;vector&lt;string&gt;&gt; solveNQueens(int n) { vector&lt;vector&lt;string&gt;&gt; res; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(res, out, 0); return res; } void helper(vector&lt;vector&lt;string&gt;&gt;&amp; res, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &lt; out.size(); i&#43;&#43;) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(res, out, row&#43;1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row&#43;i &gt;= 0 &amp;&amp; out[i][col-row&#43;i] == &#39;Q&#39;) return false; if (col&#43;row-i &lt; out."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

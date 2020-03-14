@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="class Solution { public: int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int rtn = -1; vector&lt;vector&lt;int&gt;&gt; cost(grid.size(), vector&lt;int&gt;(grid[0].size(), 0)); cost[0][0] = grid[0][0]; for (int i = 0; i &lt; grid.size(); i&#43;&#43;) { for (int j = 0; j &lt; grid[0].size(); j&#43;&#43;) { if (i - 1 &gt;= 0 &amp;&amp; j - 1 &gt;= 0) cost[i][j] = min(cost[i-1][j], cost[i][j-1]) &#43; grid[i][j]; else if (i - 1 &gt;= 0) cost[i][j] = cost[i-1][j] &#43; grid[i][j]; else if (j - 1 &gt;= 0) cost[i][j] = cost[i][j-1] &#43; grid[i][j]; else cost[i][j] = grid[i][j]; } } return cost."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

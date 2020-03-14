@@ -14,17 +14,17 @@
 <meta name="twitter:description" content="class Solution { public: int calculateMinimumHP(vector&lt;vector&lt;int&gt;&gt;&amp; dungeon) { int m = dungeon.size(), n = dungeon[0].size(); vector&lt;vector&lt;int&gt;&gt; dp(m&#43;1, vector&lt;int&gt;(n&#43;1, INT_MAX)); dp[m][n-1] = 1; dp[m-1][n] = 1; for (int i = m - 1; i &gt;= 0; i--) { for (int j = n - 1; j &gt;= 0; j--) { dp[i][j] = max(1, min(dp[i&#43;1][j], dp[i][j&#43;1]) - dungeon[i][j]); } } return dp[0][0]; } }; "/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cccss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="http://changcui.ccjs/main.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>

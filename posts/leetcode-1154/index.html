@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1154. Day of the Year - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1154. Day of the Year - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1154. Day of the Year" />
 <meta property="og:description" content="class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i&#43;&#43;) rtn &#43;= days[i - 1]; rtn &#43;= day; return rtn; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,28 +64,28 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">isLeap</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="nf">dayOfYear</span><span class="p">(</span><span class="n">string</span> <span class="n">date</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">year</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
-        <span class="k">auto</span> <span class="n">month</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
-        <span class="k">auto</span> <span class="n">day</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">8</span><span class="p">));</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">days</span><span class="p">{</span><span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">};</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isLeap</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
-            <span class="n">days</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">29</span><span class="p">;</span>
-        <span class="k">auto</span> <span class="n">rtn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">month</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">rtn</span> <span class="o">+=</span> <span class="n">days</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">rtn</span> <span class="o">+=</span> <span class="n">day</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">isLeap</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">year</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+            <span style="color:#00a8c8">return</span> <span style="color:#111">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">else</span>
+            <span style="color:#00a8c8">return</span> <span style="color:#111">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">dayOfYear</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">date</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">year</span> <span style="color:#f92672">=</span> <span style="color:#111">stoi</span><span style="color:#111">(</span><span style="color:#111">date</span><span style="color:#111">.</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">));</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">month</span> <span style="color:#f92672">=</span> <span style="color:#111">stoi</span><span style="color:#111">(</span><span style="color:#111">date</span><span style="color:#111">.</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">));</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">day</span> <span style="color:#f92672">=</span> <span style="color:#111">stoi</span><span style="color:#111">(</span><span style="color:#111">date</span><span style="color:#111">.</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#ae81ff">8</span><span style="color:#111">));</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">days</span><span style="color:#111">{</span><span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">28</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">30</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">30</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">30</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">,</span> <span style="color:#ae81ff">30</span><span style="color:#111">,</span> <span style="color:#ae81ff">31</span><span style="color:#111">};</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">isLeap</span><span style="color:#111">(</span><span style="color:#111">year</span><span style="color:#111">))</span>
+            <span style="color:#111">days</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">month</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span>
+            <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">days</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">];</span>
+        <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">day</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

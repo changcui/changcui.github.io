@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>347. Top K Frequent Elements - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>347. Top K Frequent Elements - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="347. Top K Frequent Elements" />
 <meta property="og:description" content="class Solution { public: using ii = pair&lt;int, int&gt;; vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) { auto cmp = [](auto i, auto j) {return i.second &gt; j.second;}; unordered_map&lt;int, int&gt; m; priority_queue&lt;ii, vector&lt;ii&gt;, decltype(cmp)&gt; q(cmp); for (auto num : nums) m[num] &#43;= 1; for (auto i : m) { q.push(i); if (q.size() &gt; k) q.pop(); } vector&lt;int&gt; res; while (!q.empty()) { res.push_back(q.top().first); q.pop(); } reverse(res.begin(), res.end()); return res; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,27 +64,27 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">using</span> <span class="n">ii</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">topKFrequent</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">cmp</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">i</span><span class="p">,</span> <span class="k">auto</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">i</span><span class="p">.</span><span class="n">second</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">.</span><span class="n">second</span><span class="p">;};</span>
-        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
-        <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">ii</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ii</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">decltype</span><span class="p">(</span><span class="n">cmp</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">(</span><span class="n">cmp</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="n">m</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">);</span>
-            <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="n">reverse</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">res</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">using</span> <span style="color:#111">ii</span> <span style="color:#f92672">=</span> <span style="color:#111">pair</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span><span style="color:#111">;</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">topKFrequent</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">nums</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">cmp</span> <span style="color:#f92672">=</span> <span style="color:#111">[](</span><span style="color:#00a8c8">auto</span> <span style="color:#111">i</span><span style="color:#111">,</span> <span style="color:#00a8c8">auto</span> <span style="color:#111">j</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#00a8c8">return</span> <span style="color:#111">i</span><span style="color:#111">.</span><span style="color:#111">second</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">j</span><span style="color:#111">.</span><span style="color:#111">second</span><span style="color:#111">;};</span>
+        <span style="color:#111">unordered_map</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">m</span><span style="color:#111">;</span>
+        <span style="color:#111">priority_queue</span><span style="color:#f92672">&lt;</span><span style="color:#111">ii</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">ii</span><span style="color:#f92672">&gt;</span><span style="color:#111">,</span> <span style="color:#00a8c8">decltype</span><span style="color:#111">(</span><span style="color:#111">cmp</span><span style="color:#111">)</span><span style="color:#f92672">&gt;</span> <span style="color:#111">q</span><span style="color:#111">(</span><span style="color:#111">cmp</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">num</span> <span style="color:#111">:</span> <span style="color:#111">nums</span><span style="color:#111">)</span> <span style="color:#111">m</span><span style="color:#111">[</span><span style="color:#111">num</span><span style="color:#111">]</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">i</span> <span style="color:#111">:</span> <span style="color:#111">m</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">i</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">res</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#111">res</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">().</span><span style="color:#111">first</span><span style="color:#111">);</span>
+            <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+        <span style="color:#111">reverse</span><span style="color:#111">(</span><span style="color:#111">res</span><span style="color:#111">.</span><span style="color:#111">begin</span><span style="color:#111">(),</span> <span style="color:#111">res</span><span style="color:#111">.</span><span style="color:#111">end</span><span style="color:#111">());</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">res</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

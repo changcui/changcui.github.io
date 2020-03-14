@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>14. Longest Common Prefix - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>14. Longest Common Prefix - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="14. Longest Common Prefix" />
 <meta property="og:description" content="class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if (strs.size() == 0) return &#34;&#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &lt;&lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &lt; strs.size(); i&#43;&#43;) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,30 +64,30 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">string</span> <span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">strs</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-        <span class="k">auto</span> <span class="n">min_</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">str</span> <span class="p">:</span> <span class="n">strs</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">min_</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">min_</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="n">min_</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-            <span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">!=</span> <span class="n">tmp</span><span class="p">)</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
-                <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">string</span> <span style="color:#111">longestCommonPrefix</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">string</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">strs</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">strs</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+            <span style="color:#00a8c8">return</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">strs</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+            <span style="color:#00a8c8">return</span> <span style="color:#111">strs</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">];</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">min_</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">30</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">str</span> <span style="color:#111">:</span> <span style="color:#111">strs</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">min_</span> <span style="color:#f92672">=</span> <span style="color:#111">min</span><span style="color:#111">(</span><span style="color:#111">min_</span><span style="color:#111">,</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#111">)</span><span style="color:#111">str</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">());</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">j</span> <span style="color:#f92672">=</span> <span style="color:#111">min_</span><span style="color:#111">;</span> <span style="color:#111">j</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">j</span><span style="color:#f92672">--</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">strs</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">].</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">j</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">(;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">strs</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">strs</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">].</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">j</span><span style="color:#111">)</span> <span style="color:#f92672">!=</span> <span style="color:#111">tmp</span><span style="color:#111">)</span>
+                    <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">==</span> <span style="color:#111">strs</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">())</span>
+                <span style="color:#00a8c8">return</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

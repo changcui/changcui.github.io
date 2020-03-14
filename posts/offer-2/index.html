@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>替换空格 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>替换空格 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="替换空格" />
 <meta property="og:description" content="// 思路一：c&#43;&#43; 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i&#43;&#43;) if (str[i] == &#39; &#39;) newL &#43;= 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,26 +64,26 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后
-</span><span class="c1">// 的长度然后从后往前替换
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">replaceSpace</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">newL</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="n">oldL</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">oldL</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="n">newL</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">newL</span> <span class="o">&gt;=</span> <span class="n">length</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">newL</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">oldL</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">str</span><span class="p">[</span><span class="n">idx</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
-                <span class="n">str</span><span class="p">[</span><span class="n">idx</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;2&#39;</span><span class="p">;</span>
-                <span class="n">str</span><span class="p">[</span><span class="n">idx</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;%&#39;</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="n">str</span><span class="p">[</span><span class="n">idx</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：476k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后
+</span><span style="color:#75715e">// 的长度然后从后往前替换
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#111">replaceSpace</span><span style="color:#111">(</span><span style="color:#00a8c8">char</span> <span style="color:#f92672">*</span><span style="color:#111">str</span><span style="color:#111">,</span><span style="color:#00a8c8">int</span> <span style="color:#111">length</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">newL</span> <span style="color:#f92672">=</span> <span style="color:#111">strlen</span><span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">),</span> <span style="color:#111">oldL</span> <span style="color:#f92672">=</span> <span style="color:#111">strlen</span><span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">oldL</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39; &#39;</span><span style="color:#111">)</span> <span style="color:#111">newL</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">newL</span> <span style="color:#f92672">&gt;=</span> <span style="color:#111">length</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">idx</span> <span style="color:#f92672">=</span> <span style="color:#111">newL</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">oldL</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">--</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39; &#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">idx</span><span style="color:#f92672">--</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;0&#39;</span><span style="color:#111">;</span>
+                <span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">idx</span><span style="color:#f92672">--</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;2&#39;</span><span style="color:#111">;</span>
+                <span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">idx</span><span style="color:#f92672">--</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;%&#39;</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">idx</span><span style="color:#f92672">--</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">str</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+        <span style="color:#111">}</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：476k
 </span></code></pre></div>
 		</div>
 

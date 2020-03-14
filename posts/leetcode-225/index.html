@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>225. Implement Stack using Queues - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>225. Implement Stack using Queues - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="225. Implement Stack using Queues" />
 <meta property="og:description" content="class MyStack { public: /** Initialize your data structure here. */ MyStack() { } /** Push element x onto stack. */ void push(int x) { q.push(x); for (int i = 0; i &lt; (int)q.size() - 1; i&#43;&#43;) q.push(q.front()), q.pop(); } /** Removes the element on top of the stack and returns that element. */ int pop() { auto rtn = q.front(); q.pop(); return rtn; } /** Get the top element. */ int top() { auto rtn = q." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,49 +64,49 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">MyStack</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="cm">/** Initialize your data structure here. */</span>
-    <span class="n">MyStack</span><span class="p">()</span> <span class="p">{</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">MyStack</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">/** Initialize your data structure here. */</span>
+    <span style="color:#111">MyStack</span><span style="color:#111">()</span> <span style="color:#111">{</span>
         
-    <span class="p">}</span>
+    <span style="color:#111">}</span>
     
-    <span class="cm">/** Push element x onto stack. */</span>
-    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
-            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()),</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span style="color:#75715e">/** Push element x onto stack. */</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">push</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#111">)</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> 
+            <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">()),</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
     
-    <span class="cm">/** Removes the element on top of the stack and returns that element. */</span>
-    <span class="kt">int</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">rtn</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color:#75715e">/** Removes the element on top of the stack and returns that element. */</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">pop</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span>
+        <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
     
-    <span class="cm">/** Get the top element. */</span>
-    <span class="kt">int</span> <span class="nf">top</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">rtn</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color:#75715e">/** Get the top element. */</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">top</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
     
-    <span class="cm">/** Returns whether the stack is empty. */</span>
-    <span class="kt">bool</span> <span class="nf">empty</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
-<span class="p">};</span>
+    <span style="color:#75715e">/** Returns whether the stack is empty. */</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#75af00">empty</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
+<span style="color:#00a8c8">private</span><span style="color:#f92672">:</span>
+    <span style="color:#111">queue</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+<span style="color:#111">};</span>
 
-<span class="cm">/**
-</span><span class="cm"> * Your MyStack object will be instantiated and called as such:
-</span><span class="cm"> * MyStack* obj = new MyStack();
-</span><span class="cm"> * obj-&gt;push(x);
-</span><span class="cm"> * int param_2 = obj-&gt;pop();
-</span><span class="cm"> * int param_3 = obj-&gt;top();
-</span><span class="cm"> * bool param_4 = obj-&gt;empty();
-</span><span class="cm"> */</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Your MyStack object will be instantiated and called as such:
+</span><span style="color:#75715e"> * MyStack* obj = new MyStack();
+</span><span style="color:#75715e"> * obj-&gt;push(x);
+</span><span style="color:#75715e"> * int param_2 = obj-&gt;pop();
+</span><span style="color:#75715e"> * int param_3 = obj-&gt;top();
+</span><span style="color:#75715e"> * bool param_4 = obj-&gt;empty();
+</span><span style="color:#75715e"> */</span>
 </code></pre></div>
 		</div>
 

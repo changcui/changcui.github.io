@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 15 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 15 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="2019 08 15" />
 <meta property="og:description" content="工作 今天的工作紧接昨天，昨天网络已经可以正常跑起来了，但是没有量化去跑，之前写的一些算子，都只测试了 forward 的代码，没有测试 function，module，backward 的代码，今天跑了量化发现，bug 非常之多。于是，整天都在 debug，而算法层面没有什么问题，所以 debug 的过程无非是一些手滑写错的代码，接口对不上等小问题。
 具体来说的话，之前没有意识到的一个问题是，backward 要求的返回值也必须是 variable 的，不然会报接口错误，意识到这一点后，其实当时很多算子都没有考虑到，所以把这次用到的都改了一遍。另一个问题是，conv 算子没有考虑 bias 为 none 的情况，因为 kernel 里面默认 bias 是存在的，所以在 bias 为 none 的时候，把它直接赋值为0解决了这个问题。
@@ -34,7 +34,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 

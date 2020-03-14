@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>二叉搜索树的后序遍历序列 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>二叉搜索树的后序遍历序列 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="二叉搜索树的后序遍历序列" />
 <meta property="og:description" content="// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它 class Solution { public: bool VerifySquenceOfBST(vector&lt;int&gt; sequence) { if (sequence.empty()) return false; return helper(sequence, 0, sequence.size() - 1); } bool helper(vector&lt;int&gt;&amp; seq, int l, int r) { if (r - l &lt;= 1) return true; int pivot = seq[r]; int li = l, ri = r - 1; while(seq[li] &lt; pivot) li&#43;&#43;; while(seq[ri] &gt; pivot) ri--; if (li - ri == 1) return helper(seq, l, ri) &amp;&amp; helper(seq, li, r-1); return false; } }; // 运行时间：2ms // 占用内存：608k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,25 +64,25 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">VerifySquenceOfBST</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sequence</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sequence</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nf">helper</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sequence</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="kt">bool</span> <span class="nf">helper</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">seq</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">r</span><span class="p">];</span>
-        <span class="kt">int</span> <span class="n">li</span> <span class="o">=</span> <span class="n">l</span><span class="p">,</span> <span class="n">ri</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">li</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">)</span> <span class="n">li</span><span class="o">++</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">ri</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">)</span> <span class="n">ri</span><span class="o">--</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">li</span> <span class="o">-</span> <span class="n">ri</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">ri</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">helper</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">li</span><span class="p">,</span> <span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：2ms
-</span><span class="c1">// 占用内存：608k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">VerifySquenceOfBST</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">sequence</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">sequence</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#00a8c8">return</span> <span style="color:#111">false</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#75af00">helper</span><span style="color:#111">(</span><span style="color:#111">sequence</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">sequence</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#75af00">helper</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">seq</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">r</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">r</span> <span style="color:#f92672">-</span> <span style="color:#111">l</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">pivot</span> <span style="color:#f92672">=</span> <span style="color:#111">seq</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">];</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">li</span> <span style="color:#f92672">=</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#111">ri</span> <span style="color:#f92672">=</span> <span style="color:#111">r</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span><span style="color:#111">(</span><span style="color:#111">seq</span><span style="color:#111">[</span><span style="color:#111">li</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">pivot</span><span style="color:#111">)</span> <span style="color:#111">li</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span><span style="color:#111">(</span><span style="color:#111">seq</span><span style="color:#111">[</span><span style="color:#111">ri</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">pivot</span><span style="color:#111">)</span> <span style="color:#111">ri</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">li</span> <span style="color:#f92672">-</span> <span style="color:#111">ri</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">seq</span><span style="color:#111">,</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#111">ri</span><span style="color:#111">)</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">seq</span><span style="color:#111">,</span> <span style="color:#111">li</span><span style="color:#111">,</span> <span style="color:#111">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">false</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：2ms
+</span><span style="color:#75715e">// 占用内存：608k
 </span></code></pre></div>
 		</div>
 

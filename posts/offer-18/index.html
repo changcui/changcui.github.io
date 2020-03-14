@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>二叉树的镜像 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>二叉树的镜像 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="二叉树的镜像" />
 <meta property="og:description" content="// 思路一：还是考虑递归，交换左右子树即可 class Solution { public: void Mirror(TreeNode *pRoot) { if (!pRoot) return; auto tmp = pRoot-&gt;left; pRoot-&gt;left = pRoot-&gt;right; pRoot-&gt;right = tmp; Mirror(pRoot-&gt;left); Mirror(pRoot-&gt;right); return; } }; // 运行时间：3ms // 占用内存：480k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,21 +64,21 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：还是考虑递归，交换左右子树即可
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">Mirror</span><span class="p">(</span><span class="n">TreeNode</span> <span class="o">*</span><span class="n">pRoot</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pRoot</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-        <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
-        <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
-        <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="n">Mirror</span><span class="p">(</span><span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
-        <span class="n">Mirror</span><span class="p">(</span><span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：480k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：还是考虑递归，交换左右子树即可
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#111">Mirror</span><span style="color:#111">(</span><span style="color:#111">TreeNode</span> <span style="color:#f92672">*</span><span style="color:#111">pRoot</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">pRoot</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">;</span>
+        <span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">;</span>
+        <span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#111">Mirror</span><span style="color:#111">(</span><span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">);</span>
+        <span style="color:#111">Mirror</span><span style="color:#111">(</span><span style="color:#111">pRoot</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：480k
 </span></code></pre></div>
 		</div>
 

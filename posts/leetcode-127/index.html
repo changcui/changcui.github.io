@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>127. Word Ladder - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>127. Word Ladder - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="127. Word Ladder" />
 <meta property="og:description" content="class Solution { public: int ladderLength(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) { unordered_set&lt;string&gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&lt;string&gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res&#43;1; for (int i = 0; i &lt; word.size(); i&#43;&#43;) { string newword = word; for (char j = &#39;a&#39;; j &lt;= &#39;z&#39;; j&#43;&#43;) { newword[i] = j; if (s." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,34 +64,34 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">ladderLength</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">(</span><span class="n">wordList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">wordList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="n">queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">beginWord</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">m</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">string</span> <span class="n">word</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">word</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">)</span> <span class="k">return</span> <span class="n">res</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">string</span> <span class="n">newword</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
-                    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">j</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">newword</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
-                        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">newword</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">newword</span> <span class="o">!=</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">newword</span><span class="p">);</span>
-                            <span class="n">s</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">newword</span><span class="p">);</span>
-                        <span class="p">}</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="n">res</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">ladderLength</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">beginWord</span><span style="color:#111">,</span> <span style="color:#111">string</span> <span style="color:#111">endWord</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">string</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">wordList</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">unordered_set</span><span style="color:#f92672">&lt;</span><span style="color:#111">string</span><span style="color:#f92672">&gt;</span> <span style="color:#111">s</span><span style="color:#111">(</span><span style="color:#111">wordList</span><span style="color:#111">.</span><span style="color:#111">begin</span><span style="color:#111">(),</span> <span style="color:#111">wordList</span><span style="color:#111">.</span><span style="color:#111">end</span><span style="color:#111">());</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">count</span><span style="color:#111">(</span><span style="color:#111">endWord</span><span style="color:#111">))</span> <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#111">queue</span><span style="color:#f92672">&lt;</span><span style="color:#111">string</span><span style="color:#f92672">&gt;</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+        <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">beginWord</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">res</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span> <span style="color:#111">m</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">m</span><span style="color:#f92672">--</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">string</span> <span style="color:#111">word</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">word</span> <span style="color:#f92672">==</span> <span style="color:#111">endWord</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">res</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">word</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">string</span> <span style="color:#111">newword</span> <span style="color:#f92672">=</span> <span style="color:#111">word</span><span style="color:#111">;</span>
+                    <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">char</span> <span style="color:#111">j</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;a&#39;</span><span style="color:#111">;</span> <span style="color:#111">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#d88200">&#39;z&#39;</span><span style="color:#111">;</span> <span style="color:#111">j</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                        <span style="color:#111">newword</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">j</span><span style="color:#111">;</span>
+                        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">count</span><span style="color:#111">(</span><span style="color:#111">newword</span><span style="color:#111">)</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">newword</span> <span style="color:#f92672">!=</span> <span style="color:#111">word</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                            <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">newword</span><span style="color:#111">);</span>
+                            <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">erase</span><span style="color:#111">(</span><span style="color:#111">newword</span><span style="color:#111">);</span>
+                        <span style="color:#111">}</span>
+                    <span style="color:#111">}</span>
+                <span style="color:#111">}</span>
+            <span style="color:#111">}</span>
+            <span style="color:#111">res</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

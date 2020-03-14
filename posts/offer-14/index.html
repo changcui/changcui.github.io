@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>链表中倒数第k个结点 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>链表中倒数第k个结点 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="链表中倒数第k个结点" />
 <meta property="og:description" content="// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&lt;ListNode*&gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&gt; next;} if (tmp.size() &lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt&#43;&#43;; if (nowk-- &lt; 1) q = q -&gt; next; p = p -&gt; next; } if (cnt &lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,36 +64,36 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n)
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ListNode</span><span class="o">*</span> <span class="n">FindKthToTail</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">pListHead</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*&gt;</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pListHead</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span><span class="n">tmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">tmp</span><span class="p">[</span><span class="n">tmp</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="n">k</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：4ms
-</span><span class="c1">// 占用内存：532k
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ListNode</span><span class="o">*</span> <span class="n">FindKthToTail</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">pListHead</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pListHead</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">pListHead</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nowk</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">nowk</span><span class="o">--</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
-            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">q</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：5ms
-</span><span class="c1">// 占用内存：504k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n)
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">FindKthToTail</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">pListHead</span><span style="color:#111">,</span> <span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">ListNode</span><span style="color:#f92672">*&gt;</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">pListHead</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">tmp</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">);</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;}</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">tmp</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#111">k</span><span style="color:#111">];</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：4ms
+</span><span style="color:#75715e">// 占用内存：532k
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">FindKthToTail</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">pListHead</span><span style="color:#111">,</span> <span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">pListHead</span><span style="color:#111">,</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">pListHead</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">cnt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">nowk</span> <span style="color:#f92672">=</span> <span style="color:#111">k</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">cnt</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">nowk</span><span style="color:#f92672">--</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;</span>
+            <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">cnt</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：5ms
+</span><span style="color:#75715e">// 占用内存：504k
 </span></code></pre></div>
 		</div>
 

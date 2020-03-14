@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>34. Find First and Last Position of Element in Sorted Array - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>34. Find First and Last Position of Element in Sorted Array - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="34. Find First and Last Position of Element in Sorted Array" />
 <meta property="og:description" content="class Solution { public: vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left &#43; (right - left) / 2; if (nums[mid] &lt; target) left = mid &#43; 1; else right = mid; } if (right == nums.size() || nums[right] != target) return {-1, -1}; int l = right; left = 0, right = nums.size(); while (left &lt; right) { int mid = left &#43; (right - left) / 2; if (nums[mid] &lt;= target) left = mid &#43; 1; else right = mid; } return {l, right - 1}; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,26 +64,26 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">searchRange</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">)</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">right</span> <span class="o">==</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">||</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">!=</span> <span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
-        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">target</span><span class="p">)</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">l</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="mi">1</span><span class="p">};</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">searchRange</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">nums</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">target</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">nums</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">left</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">right</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">mid</span> <span style="color:#f92672">=</span> <span style="color:#111">left</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#111">right</span> <span style="color:#f92672">-</span> <span style="color:#111">left</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">nums</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">target</span><span style="color:#111">)</span> <span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">right</span> <span style="color:#f92672">==</span> <span style="color:#111">nums</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">||</span> <span style="color:#111">nums</span><span style="color:#111">[</span><span style="color:#111">right</span><span style="color:#111">]</span> <span style="color:#f92672">!=</span> <span style="color:#111">target</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">{</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">};</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">right</span><span style="color:#111">;</span>
+        <span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">nums</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">left</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">right</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">mid</span> <span style="color:#f92672">=</span> <span style="color:#111">left</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#111">right</span> <span style="color:#f92672">-</span> <span style="color:#111">left</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">nums</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">target</span><span style="color:#111">)</span> <span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">{</span><span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#111">right</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">};</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

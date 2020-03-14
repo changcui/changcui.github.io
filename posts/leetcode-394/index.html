@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>394. Decode String - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>394. Decode String - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="394. Decode String" />
 <meta property="og:description" content="class Solution { public: string decodeString(string s) { string rtn = &#34;&#34;; for (int i = 0; i &lt; s.size();) { if (isdigit(s[i])) { auto start = i; auto end = i; while (isdigit(s[&#43;&#43;end])); auto n = stoi(s.substr(start, end-start&#43;1)); start = end &#43; 1; auto cnt = 1; while (cnt != 0) { end &#43;= 1; if (s[end] == &#39;[&#39;) &#43;&#43;cnt; else if (s[end] == &#39;]&#39;) --cnt; } auto con = decodeString(s." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,34 +64,34 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">string</span> <span class="n">decodeString</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">string</span> <span class="n">rtn</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
-                <span class="k">auto</span> <span class="n">start</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-                <span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-                <span class="k">while</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">++</span><span class="n">end</span><span class="p">]));</span>
-                <span class="k">auto</span> <span class="n">n</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
-                <span class="n">start</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="k">auto</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="k">while</span> <span class="p">(</span><span class="n">cnt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">end</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;[&#39;</span><span class="p">)</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
-                    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;]&#39;</span><span class="p">)</span> <span class="o">--</span><span class="n">cnt</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="k">auto</span> <span class="n">con</span> <span class="o">=</span> <span class="n">decodeString</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">));</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="n">rtn</span> <span class="o">+=</span> <span class="n">con</span><span class="p">;</span>
-                <span class="n">i</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">rtn</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">string</span> <span style="color:#111">decodeString</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">s</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">string</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">isdigit</span><span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]))</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">end</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">isdigit</span><span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#f92672">++</span><span style="color:#111">end</span><span style="color:#111">]));</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#111">stoi</span><span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#111">start</span><span style="color:#111">,</span> <span style="color:#111">end</span><span style="color:#f92672">-</span><span style="color:#111">start</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">));</span>
+                <span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">end</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">cnt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">cnt</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">end</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                    <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">end</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;[&#39;</span><span style="color:#111">)</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+                    <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">end</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;]&#39;</span><span style="color:#111">)</span> <span style="color:#f92672">--</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">con</span> <span style="color:#f92672">=</span> <span style="color:#111">decodeString</span><span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">substr</span><span style="color:#111">(</span><span style="color:#111">start</span><span style="color:#111">,</span> <span style="color:#111">end</span><span style="color:#f92672">-</span><span style="color:#111">start</span><span style="color:#111">));</span>
+                <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">j</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">con</span><span style="color:#111">;</span>
+                <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">end</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+                <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

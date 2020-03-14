@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>414. Third Maximum Number - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>414. Third Maximum Number - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="414. Third Maximum Number" />
 <meta property="og:description" content="class Solution { public: int thirdMax(vector&lt;int&gt;&amp; nums) { long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN; for (auto num : nums) { if (num &gt; first) { third = second; second = first; first = num; } else if (num &lt; first &amp;&amp; num &gt; second) { third = second; second = num; } else if (num &lt; second &amp;&amp; num &gt; third) { third = num; } } return (third == LONG_MIN || third == second) ?" />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,25 +64,25 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">thirdMax</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">long</span> <span class="n">first</span> <span class="o">=</span> <span class="n">LONG_MIN</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">LONG_MIN</span><span class="p">,</span> <span class="n">third</span> <span class="o">=</span> <span class="n">LONG_MIN</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">first</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">third</span> <span class="o">=</span> <span class="n">second</span><span class="p">;</span>
-                <span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="p">;</span>
-                <span class="n">first</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">first</span> <span class="o">&amp;&amp;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">second</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">third</span> <span class="o">=</span> <span class="n">second</span><span class="p">;</span>
-                <span class="n">second</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">second</span> <span class="o">&amp;&amp;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">third</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">third</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">third</span> <span class="o">==</span> <span class="n">LONG_MIN</span> <span class="o">||</span> <span class="n">third</span> <span class="o">==</span> <span class="n">second</span><span class="p">)</span> <span class="o">?</span> <span class="nl">first</span> <span class="p">:</span> <span class="n">third</span><span class="p">;</span>
-    <span class="p">}</span>  
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">thirdMax</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">nums</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">long</span> <span style="color:#111">first</span> <span style="color:#f92672">=</span> <span style="color:#111">LONG_MIN</span><span style="color:#111">,</span> <span style="color:#111">second</span> <span style="color:#f92672">=</span> <span style="color:#111">LONG_MIN</span><span style="color:#111">,</span> <span style="color:#111">third</span> <span style="color:#f92672">=</span> <span style="color:#111">LONG_MIN</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">num</span> <span style="color:#111">:</span> <span style="color:#111">nums</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">num</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">first</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">third</span> <span style="color:#f92672">=</span> <span style="color:#111">second</span><span style="color:#111">;</span>
+                <span style="color:#111">second</span> <span style="color:#f92672">=</span> <span style="color:#111">first</span><span style="color:#111">;</span>
+                <span style="color:#111">first</span> <span style="color:#f92672">=</span> <span style="color:#111">num</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">num</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">first</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">num</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">second</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">third</span> <span style="color:#f92672">=</span> <span style="color:#111">second</span><span style="color:#111">;</span>
+                <span style="color:#111">second</span> <span style="color:#f92672">=</span> <span style="color:#111">num</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">num</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">second</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">num</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">third</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">third</span> <span style="color:#f92672">=</span> <span style="color:#111">num</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">(</span><span style="color:#111">third</span> <span style="color:#f92672">==</span> <span style="color:#111">LONG_MIN</span> <span style="color:#f92672">||</span> <span style="color:#111">third</span> <span style="color:#f92672">==</span> <span style="color:#111">second</span><span style="color:#111">)</span> <span style="color:#f92672">?</span> <span style="color:#111">first</span> <span style="color:#111">:</span> <span style="color:#111">third</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>  
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

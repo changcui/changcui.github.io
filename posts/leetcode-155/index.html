@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>155. Min Stack - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>155. Min Stack - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="155. Min Stack" />
 <meta property="og:description" content="priority_queue, stack class MinStack { public: /** initialize your data structure here. */ stack&lt;int&gt; s; priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; MinStack() { } void push(int x) { s.push(x); p.push(x); } void pop() { auto e = s.top(); s.pop(); vector&lt;int&gt; tmp; while (!p.empty()) { auto t = p.top(); p.pop(); if (t == e) break; tmp.push_back(t); } for (auto i : tmp) { p.push(i); } } int top() { return s.top(); } int getMin() { return p." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -67,93 +67,93 @@
 			
 
 <h3 id="priority-queue-stack">priority_queue, stack</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">MinStack</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="cm">/** initialize your data structure here. */</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">p</span><span class="p">;</span>
-    <span class="n">MinStack</span><span class="p">()</span> <span class="p">{</span>   
-    <span class="p">}</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">MinStack</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">/** initialize your data structure here. */</span>
+    <span style="color:#111">stack</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">s</span><span style="color:#111">;</span>
+    <span style="color:#111">priority_queue</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span><span style="color:#111">,</span> <span style="color:#111">greater</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">p</span><span style="color:#111">;</span>
+    <span style="color:#111">MinStack</span><span style="color:#111">()</span> <span style="color:#111">{</span>   
+    <span style="color:#111">}</span>
     
-    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="n">p</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">push</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">);</span>
+        <span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">void</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">e</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="n">e</span><span class="p">)</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="n">tmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">pop</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">e</span> <span style="color:#f92672">=</span> <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+        <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+            <span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">t</span> <span style="color:#f92672">==</span> <span style="color:#111">e</span><span style="color:#111">)</span>
+                <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+            <span style="color:#111">tmp</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">i</span> <span style="color:#111">:</span> <span style="color:#111">tmp</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">i</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">int</span> <span class="nf">top</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">top</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">int</span> <span class="nf">getMin</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">getMin</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">p</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 
-<span class="cm">/**
-</span><span class="cm"> * Your MinStack object will be instantiated and called as such:
-</span><span class="cm"> * MinStack* obj = new MinStack();
-</span><span class="cm"> * obj-&gt;push(x);
-</span><span class="cm"> * obj-&gt;pop();
-</span><span class="cm"> * int param_3 = obj-&gt;top();
-</span><span class="cm"> * int param_4 = obj-&gt;getMin();
-</span><span class="cm"> */</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Your MinStack object will be instantiated and called as such:
+</span><span style="color:#75715e"> * MinStack* obj = new MinStack();
+</span><span style="color:#75715e"> * obj-&gt;push(x);
+</span><span style="color:#75715e"> * obj-&gt;pop();
+</span><span style="color:#75715e"> * int param_3 = obj-&gt;top();
+</span><span style="color:#75715e"> * int param_4 = obj-&gt;getMin();
+</span><span style="color:#75715e"> */</span>
 </code></pre></div>
 <h3 id="two-stack">two stack</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">MinStack</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="cm">/** initialize your data structure here. */</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">min_</span><span class="p">;</span>
-    <span class="n">MinStack</span><span class="p">()</span> <span class="p">{</span>   
-    <span class="p">}</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">MinStack</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">/** initialize your data structure here. */</span>
+    <span style="color:#111">stack</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">data</span><span style="color:#111">;</span>
+    <span style="color:#111">stack</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">min_</span><span style="color:#111">;</span>
+    <span style="color:#111">MinStack</span><span style="color:#111">()</span> <span style="color:#111">{</span>   
+    <span style="color:#111">}</span>
     
-    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">data</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">min_</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">min_</span><span class="p">.</span><span class="n">top</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">min_</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">push</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">data</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">()</span> <span style="color:#f92672">||</span> <span style="color:#111">x</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">void</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="n">min_</span><span class="p">.</span><span class="n">top</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">min_</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="n">data</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">pop</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">data</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+        <span style="color:#111">data</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">int</span> <span class="nf">top</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">data</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">top</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">data</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
     
-    <span class="kt">int</span> <span class="nf">getMin</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">min_</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#75af00">getMin</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">min_</span><span style="color:#111">.</span><span style="color:#111">top</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 
-<span class="cm">/**
-</span><span class="cm"> * Your MinStack object will be instantiated and called as such:
-</span><span class="cm"> * MinStack* obj = new MinStack();
-</span><span class="cm"> * obj-&gt;push(x);
-</span><span class="cm"> * obj-&gt;pop();
-</span><span class="cm"> * int param_3 = obj-&gt;top();
-</span><span class="cm"> * int param_4 = obj-&gt;getMin();
-</span><span class="cm"> */</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Your MinStack object will be instantiated and called as such:
+</span><span style="color:#75715e"> * MinStack* obj = new MinStack();
+</span><span style="color:#75715e"> * obj-&gt;push(x);
+</span><span style="color:#75715e"> * obj-&gt;pop();
+</span><span style="color:#75715e"> * int param_3 = obj-&gt;top();
+</span><span style="color:#75715e"> * int param_4 = obj-&gt;getMin();
+</span><span style="color:#75715e"> */</span>
 </code></pre></div>
 		</div>
 

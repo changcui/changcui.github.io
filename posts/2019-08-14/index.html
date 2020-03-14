@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 14 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 14 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="2019 08 14" />
 <meta property="og:description" content="工作 今天算是有点活吧，不过很轻松的就做完啦。就是把 model zoo 里面的 post estimation 的代码 copy 过来，然后精简一下，让它在 pytorch-0.4.1 上可以跑，修复一些小的 bug 而已。代码的逻辑我也懒得改了，数据集就用 mpii 吧，用公司的网下载只有 10 KB/s 简直是慢出天际，后来我用了自己的 linode 服务器下载，又 scp 传了过来，总共 13 GB 的数据集，大概花了两个多小时搞定啦吧。
 这段时间内我当然也没闲着，改好了代码，加上了量化，顺手改了一下网络的结构，写好了 config，顺便写了个 relu 的 wrapper，修了 batchnorm2d 的 bug，顺便修改了一个打印到标准输出的格式，加了 tqdm，明天可以着重设计一下 tqdm 的样式，感觉以后也会有机会用到。
@@ -46,7 +46,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 

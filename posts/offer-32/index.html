@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>把数组排成最小的数 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>把数组排成最小的数 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="把数组排成最小的数" />
 <meta property="og:description" content="// 思路一：对数进行排序，拼接效果差的排在前面 class Solution { public: string PrintMinNumber(vector&lt;int&gt; numbers) { sort(numbers.begin(), numbers.end(), [](auto a, auto b){return to_string(a) &#43; to_string(b) &lt; to_string(b) &#43; to_string(a);}); string result = &#34;&#34;; for (auto i : numbers) result &#43;= to_string(i); return result; } }; // 运行时间：4ms // 占用内存：380k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,19 +64,19 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：对数进行排序，拼接效果差的排在前面
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">string</span> <span class="n">PrintMinNumber</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">numbers</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> 
-            <span class="nf">to_string</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">to_string</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">to_string</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">to_string</span><span class="p">(</span><span class="n">a</span><span class="p">);});</span>
-        <span class="n">string</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span> <span class="n">result</span> <span class="o">+=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：4ms
-</span><span class="c1">// 占用内存：380k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：对数进行排序，拼接效果差的排在前面
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">string</span> <span style="color:#111">PrintMinNumber</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">numbers</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">sort</span><span style="color:#111">(</span><span style="color:#111">numbers</span><span style="color:#111">.</span><span style="color:#111">begin</span><span style="color:#111">(),</span> <span style="color:#111">numbers</span><span style="color:#111">.</span><span style="color:#111">end</span><span style="color:#111">(),</span> <span style="color:#111">[](</span><span style="color:#00a8c8">auto</span> <span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#00a8c8">auto</span> <span style="color:#111">b</span><span style="color:#111">){</span><span style="color:#00a8c8">return</span> 
+            <span style="color:#75af00">to_string</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#111">to_string</span><span style="color:#111">(</span><span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">to_string</span><span style="color:#111">(</span><span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#111">to_string</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">);});</span>
+        <span style="color:#111">string</span> <span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">i</span> <span style="color:#111">:</span> <span style="color:#111">numbers</span><span style="color:#111">)</span> <span style="color:#111">result</span> <span style="color:#f92672">+=</span> <span style="color:#111">to_string</span><span style="color:#111">(</span><span style="color:#111">i</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：4ms
+</span><span style="color:#75715e">// 占用内存：380k
 </span></code></pre></div>
 		</div>
 

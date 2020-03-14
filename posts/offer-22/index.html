@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>从上往下打印二叉树 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>从上往下打印二叉树 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="从上往下打印二叉树" />
 <meta property="og:description" content="// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.push(root); while (!q.empty()) { int c = q.size(); while (c--) { auto t = q.front(); q.pop(); result.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } } return result; } }; // 运行时间：3ms // 占用内存：604k // 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,47 +64,47 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">PrintFromTopToBottom</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-        <span class="n">queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">q</span><span class="p">;</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">c</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-                <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：604k
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">PrintFromTopToBottom</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-        <span class="n">queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">q</span><span class="p">;</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-            <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：4ms
-</span><span class="c1">// 占用内存：484k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">PrintFromTopToBottom</span><span style="color:#111">(</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">root</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">root</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#111">queue</span><span style="color:#f92672">&lt;</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*&gt;</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+        <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">root</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">c</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span>
+            <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">c</span><span style="color:#f92672">--</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+                <span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span><span style="color:#111">);</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">);</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">);</span>
+            <span style="color:#111">}</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：604k
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">PrintFromTopToBottom</span><span style="color:#111">(</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">root</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">root</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#111">queue</span><span style="color:#f92672">&lt;</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*&gt;</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+        <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">root</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+            <span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：4ms
+</span><span style="color:#75715e">// 占用内存：484k
 </span></code></pre></div>
 		</div>
 

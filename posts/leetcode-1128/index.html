@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1128. Number of Equivalent Domino Pairs - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1128. Number of Equivalent Domino Pairs - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1128. Number of Equivalent Domino Pairs" />
 <meta property="og:description" content="class Solution { public: int numEquivDominoPairs(vector&lt;vector&lt;int&gt;&gt;&amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] &#43;= 1; } int rtn = 0; for (int i = 1; i &lt;= 9; i&#43;&#43;) { for (int j = i; j &lt;= 9; j&#43;&#43;) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &gt;= 2) { rtn &#43;= tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] &#43; cnt[j][i]); if (tmp &gt;= 2) { rtn &#43;= tmp * (tmp - 1) /2; } } } } return rtn; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,32 +64,32 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">numEquivDominoPairs</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">dominoes</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">cnt</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">dom</span> <span class="p">:</span> <span class="n">dominoes</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">cnt</span><span class="p">[</span><span class="n">dom</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">dom</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">rtn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">rtn</span> <span class="o">+=</span> <span class="n">tmp</span> <span class="o">*</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-                    <span class="p">}</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">cnt</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">rtn</span> <span class="o">+=</span> <span class="n">tmp</span> <span class="o">*</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">numEquivDominoPairs</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> <span style="color:#111">dominoes</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">cnt</span><span style="color:#111">[</span><span style="color:#ae81ff">10</span><span style="color:#111">][</span><span style="color:#ae81ff">10</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span><span style="color:#ae81ff">0</span><span style="color:#111">};</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">dom</span> <span style="color:#111">:</span> <span style="color:#111">dominoes</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">cnt</span><span style="color:#111">[</span><span style="color:#111">dom</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]][</span><span style="color:#111">dom</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]]</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">j</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#111">;</span> <span style="color:#111">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span><span style="color:#111">;</span> <span style="color:#111">j</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">==</span> <span style="color:#111">j</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">cnt</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">][</span><span style="color:#111">j</span><span style="color:#111">];</span>
+                    <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">tmp</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                        <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">tmp</span> <span style="color:#f92672">*</span> <span style="color:#111">(</span><span style="color:#111">tmp</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+                    <span style="color:#111">}</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                    <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">cnt</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">][</span><span style="color:#111">j</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">cnt</span><span style="color:#111">[</span><span style="color:#111">j</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]);</span>
+                    <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">tmp</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                        <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#111">tmp</span> <span style="color:#f92672">*</span> <span style="color:#111">(</span><span style="color:#111">tmp</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+                    <span style="color:#111">}</span>
+                <span style="color:#111">}</span>
+            <span style="color:#111">}</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

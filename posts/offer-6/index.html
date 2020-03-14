@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>旋转数组的最小数字 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>旋转数组的最小数字 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="旋转数组的最小数字" />
 <meta property="og:description" content="// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值 // 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在 // 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l&#43;&#43;，不能为 r-- class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.empty()) return 0; int l = 0, r = rotateArray.size() - 1; while (l &lt; r) { if (rotateArray[l] &lt; rotateArray[r]) return rotateArray[l]; int mid = l &#43; (r - l) / 2; if (rotateArray[mid] &gt; rotateArray[l]) l = mid &#43; 1; else if (rotateArray[mid] &lt; rotateArray[r]) r = mid; else l&#43;&#43;; } return rotateArray[l]; } }; // 运行时间：27ms // 占用内存：612k // 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 // 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法 // 判断，让 r--。 class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,46 +64,46 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值
-</span><span class="c1">// 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在
-</span><span class="c1">// 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l++，不能为 r--
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">minNumberInRotateArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rotateArray</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">rotateArray</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="k">return</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">l</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：27ms
-</span><span class="c1">// 占用内存：612k
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 
-</span><span class="c1">// 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法
-</span><span class="c1">// 判断，让 r--。
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">minNumberInRotateArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rotateArray</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">rotateArray</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="k">return</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">rotateArray</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">r</span><span class="o">--</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rotateArray</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：32ms
-</span><span class="c1">// 占用内存：616k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值
+</span><span style="color:#75715e">// 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在
+</span><span style="color:#75715e">// 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l++，不能为 r--
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">minNumberInRotateArray</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">r</span> <span style="color:#f92672">=</span> <span style="color:#111">rotateArray</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">l</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">r</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">])</span> <span style="color:#00a8c8">return</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">];</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">mid</span> <span style="color:#f92672">=</span> <span style="color:#111">l</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#111">r</span> <span style="color:#f92672">-</span> <span style="color:#111">l</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">])</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">])</span> <span style="color:#111">r</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">l</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">];</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：27ms
+</span><span style="color:#75715e">// 占用内存：612k
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 
+</span><span style="color:#75715e">// 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法
+</span><span style="color:#75715e">// 判断，让 r--。
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">minNumberInRotateArray</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">r</span> <span style="color:#f92672">=</span> <span style="color:#111">rotateArray</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">l</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">r</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">])</span> <span style="color:#00a8c8">return</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">];</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">mid</span> <span style="color:#f92672">=</span> <span style="color:#111">l</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#111">r</span> <span style="color:#f92672">-</span> <span style="color:#111">l</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">])</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">mid</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">])</span> <span style="color:#111">r</span> <span style="color:#f92672">=</span> <span style="color:#111">mid</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">r</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rotateArray</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">];</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：32ms
+</span><span style="color:#75715e">// 占用内存：616k
 </span></code></pre></div>
 		</div>
 

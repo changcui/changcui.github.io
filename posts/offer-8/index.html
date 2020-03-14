@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>跳台阶 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>跳台阶 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="跳台阶" />
 <meta property="og:description" content="// 思路一： 使用递归非常简单，时间较长，因为有大量的重复计算 class Solution { public: int jumpFloor(int number) { if (number == 1 || number == 0) return 1; return jumpFloor(number - 1) &#43; jumpFloor(number - 2); } }; // 运行时间：576ms // 占用内存：488k // 思路二： 使用循环，和斐波那契数列基本上一样 class Solution { public: int jumpFloor(int number) { int a = 1, b = 1; while (number--) { int tmp = a &#43; b; a = b; b = tmp; } return a; } }; // 运行时间：3ms // 占用内存：460k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,31 +64,31 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一： 使用递归非常简单，时间较长，因为有大量的重复计算
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">jumpFloor</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nf">jumpFloor</span><span class="p">(</span><span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">jumpFloor</span><span class="p">(</span><span class="n">number</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：576ms
-</span><span class="c1">// 占用内存：488k
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路二： 使用循环，和斐波那契数列基本上一样
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">jumpFloor</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">number</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：460k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一： 使用递归非常简单，时间较长，因为有大量的重复计算
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">jumpFloor</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">number</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">number</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#111">number</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#75af00">jumpFloor</span><span style="color:#111">(</span><span style="color:#111">number</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#111">jumpFloor</span><span style="color:#111">(</span><span style="color:#111">number</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：576ms
+</span><span style="color:#75715e">// 占用内存：488k
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路二： 使用循环，和斐波那契数列基本上一样
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">jumpFloor</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">number</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">number</span><span style="color:#f92672">--</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">+</span> <span style="color:#111">b</span><span style="color:#111">;</span>
+            <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">b</span><span style="color:#111">;</span>
+            <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">a</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：460k
 </span></code></pre></div>
 		</div>
 

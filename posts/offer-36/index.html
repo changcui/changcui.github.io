@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>两个链表的第一个公共结点 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>两个链表的第一个公共结点 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="两个链表的第一个公共结点" />
 <meta property="og:description" content="class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&gt;next; else if (!q) q = pHead1, p = p-&gt;next; else p = p-&gt;next, q = q-&gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,21 +64,21 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ListNode</span><span class="o">*</span> <span class="n">FindFirstCommonNode</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">pHead1</span><span class="p">,</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">pHead2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pHead1</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">pHead2</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">p</span> <span class="o">||</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">)</span> <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pHead2</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">)</span> <span class="n">q</span> <span class="o">=</span> <span class="n">pHead1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-            <span class="k">else</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：484k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">FindFirstCommonNode</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">pHead1</span><span style="color:#111">,</span> <span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">pHead2</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">pHead1</span><span style="color:#111">,</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">pHead2</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">p</span> <span style="color:#f92672">||</span> <span style="color:#111">q</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">p</span> <span style="color:#f92672">==</span> <span style="color:#111">q</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">p</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">p</span><span style="color:#111">)</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">pHead2</span><span style="color:#111">,</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">)</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">pHead1</span><span style="color:#111">,</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span><span style="color:#111">,</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：484k
 </span></code></pre></div>
 		</div>
 

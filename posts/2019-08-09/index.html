@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 09 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 09 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="2019 08 09" />
 <meta property="og:description" content="寄生虫 这个片子拿下了韩国第一座金棕榈，总体质量还是可以的，毕竟有宋康昊坐镇，印象比较深的镜头是女儿坐在马桶上抽烟，非常打动人。美中不足的是全片显得太刻意了，其实导演不必表达的如此刻意，相信大部分观众是能 get 到点的。
 献给阿尔吉侬的花束 美国作家的一个科幻小说，讲述了一个智力障碍的人变成天才之后的故事，我还没读完，简介里说有一幕是变聪明了之后也想要戏弄一个同样有智力障碍的人，这一幕与寄生虫不谋而合。
@@ -50,7 +50,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4."/>
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -124,7 +124,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4."/>
 
 <ul>
 <li><p>pytorch 的 cpp_extension 在 build 的时候会有 ABI 问题，我查了一下，ABI 类似于 API，是代码转二进制时的接口，不同的编译器会有不同的接口，应该类似于 nvcc 在编译的时候要指定 sm_35 or sm_40 等吧。关于这个问题，解决办法是切换 gcc 的版本，我先把它降级到 4.9，不过发现和 cuda 的 driver 不兼容，当我把 cuda 的 driver 重新装好之后，它又默认帮我装上了 5.4，后来发现系统是可以同时兼容多个版本的 gcc 的，只需要制定一下哪个版本优先就可以了。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 <span class="m">100</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 <span style="color:#ae81ff">100</span></code></pre></div></li>
 
 <li><p>pytorch 的 cpp_extension 在 JIT 执行的时候，会调<code>os.environ['CXX']</code>的环境变量来判断编译器的版本，但是它代码里写的似乎有点问题，如果没有手动指定环境变量的话，会返回一个 <code>c++</code> 的值，但 <code>c++</code> 不是一个编译器，这样就会出错。有三种解决方案，第一种是修改 pytorch 的源码，但是对于 docker image 而言不太现实，第二种是设置环境变量，要改程序的代码，不太方面，最后使用的是第三种方案，在 dockerfile 里面加一行 <code>RUN alias c++='g++'</code> 让 c++ 当 g++ 的别名，就解决了这个问题。</p></li>
 

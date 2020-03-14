@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>13. Roman to Integer - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>13. Roman to Integer - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="13. Roman to Integer" />
 <meta property="og:description" content="class Solution { public: int romanToInt(string s) { auto rtn = 0; auto l = s.size(); for (int i = 0; i &lt; l;) { if (s[i] == &#39;I&#39;) { if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;V&#39;) { rtn &#43;= 4; i &#43;= 1; } else if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;X&#39;) { rtn &#43;= 9; i &#43;= 1; } else { rtn &#43;= 1; } } else if (s[i] == &#39;X&#39;) { if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;L&#39;) { rtn &#43;= 40; i &#43;= 1; } else if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;C&#39;) { rtn &#43;= 90; i &#43;= 1; } else { rtn &#43;= 10; } } else if (s[i] == &#39;C&#39;) { if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;D&#39;) { rtn &#43;= 400; i &#43;= 1; } else if (i &#43; 1 &lt; l &amp;&amp; s[i &#43; 1] == &#39;M&#39;) { rtn &#43;= 900; i &#43;= 1; } else { rtn &#43;= 100; } } else if (s[i] == &#39;V&#39;) { rtn &#43;= 5; } else if (s[i] == &#39;L&#39;) { rtn &#43;= 50; } else if (s[i] == &#39;D&#39;) { rtn &#43;= 500; } else { rtn &#43;= 1000; } i &#43;= 1; } return rtn; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,62 +64,62 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">romanToInt</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">rtn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">auto</span> <span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;I&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;V&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">9</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;L&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">40</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">90</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;D&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">400</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;M&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">900</span><span class="p">;</span>
-                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">100</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;V&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;L&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">50</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;D&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">500</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="p">{</span>
-                <span class="n">rtn</span> <span class="o">+=</span> <span class="mi">1000</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rtn</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">romanToInt</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">s</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">s</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span><span style="color:#111">;)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;I&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;V&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;X&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">9</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;X&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;L&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">40</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;C&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">90</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;C&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;D&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">400</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;M&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">900</span><span style="color:#111">;</span>
+                    <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                    <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">100</span><span style="color:#111">;</span>
+                <span style="color:#111">}</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;V&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;L&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">50</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;D&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">500</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                <span style="color:#111">rtn</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1000</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#111">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

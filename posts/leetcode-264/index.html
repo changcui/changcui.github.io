@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>264.Ugly Number II - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>264.Ugly Number II - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="264.Ugly Number II" />
 <meta property="og:description" content="class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i&#43;&#43;) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2&#43;&#43;; if (mm == m3) i3&#43;&#43;; if (mm == m5) i5&#43;&#43;; res.push_back(mm); } return res." />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,22 +64,22 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">nthUglyNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">({</span><span class="mi">1</span><span class="p">});</span>
-        <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m3</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">i3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">m5</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">i5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
-            <span class="kt">int</span> <span class="n">mm</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">min</span><span class="p">(</span><span class="n">m3</span><span class="p">,</span> <span class="n">m5</span><span class="p">));</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">mm</span> <span class="o">==</span> <span class="n">m2</span><span class="p">)</span> <span class="n">i2</span><span class="o">++</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">mm</span> <span class="o">==</span> <span class="n">m3</span><span class="p">)</span> <span class="n">i3</span><span class="o">++</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">mm</span> <span class="o">==</span> <span class="n">m5</span><span class="p">)</span> <span class="n">i5</span><span class="o">++</span><span class="p">;</span>
-            <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">mm</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">nthUglyNumber</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">n</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">res</span><span style="color:#111">({</span><span style="color:#ae81ff">1</span><span style="color:#111">});</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">i2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">i3</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">i5</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">m2</span> <span style="color:#f92672">=</span> <span style="color:#111">res</span><span style="color:#111">[</span><span style="color:#111">i2</span><span style="color:#111">]</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">m3</span> <span style="color:#f92672">=</span> <span style="color:#111">res</span><span style="color:#111">[</span><span style="color:#111">i3</span><span style="color:#111">]</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#111">m5</span> <span style="color:#f92672">=</span> <span style="color:#111">res</span><span style="color:#111">[</span><span style="color:#111">i5</span><span style="color:#111">]</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">5</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">int</span> <span style="color:#111">mm</span> <span style="color:#f92672">=</span> <span style="color:#111">min</span><span style="color:#111">(</span><span style="color:#111">m2</span><span style="color:#111">,</span> <span style="color:#111">min</span><span style="color:#111">(</span><span style="color:#111">m3</span><span style="color:#111">,</span> <span style="color:#111">m5</span><span style="color:#111">));</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">mm</span> <span style="color:#f92672">==</span> <span style="color:#111">m2</span><span style="color:#111">)</span> <span style="color:#111">i2</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">mm</span> <span style="color:#f92672">==</span> <span style="color:#111">m3</span><span style="color:#111">)</span> <span style="color:#111">i3</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">mm</span> <span style="color:#f92672">==</span> <span style="color:#111">m5</span><span style="color:#111">)</span> <span style="color:#111">i5</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#111">res</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">mm</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">res</span><span style="color:#111">.</span><span style="color:#111">back</span><span style="color:#111">();</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

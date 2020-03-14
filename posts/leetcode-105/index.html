@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>105.Construct Binary Tree from Preorder and Inorder Traversal - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>105.Construct Binary Tree from Preorder and Inorder Traversal - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="105.Construct Binary Tree from Preorder and Inorder Traversal" />
 <meta property="og:description" content="/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) { int n = preorder.size() - 1; return helper(preorder, inorder, 0, n, 0, n); } TreeNode* helper(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder, int lp, int rp, int li, int ri) { if (lp &gt; rp || li &gt; ri) return nullptr; if (lp == rp &amp;&amp; li == ri) { auto tmp = new TreeNode(inorder[li]); return tmp; } for (int i = li; i &lt;= ri; i&#43;&#43;) { if (inorder[i] == preorder[lp]) { auto tmp = new TreeNode(inorder[i]); auto off = i - li; tmp -&gt; left = helper(preorder, inorder, lp &#43; 1, lp &#43; off, li, i - 1); tmp -&gt; right = helper(preorder, inorder, lp &#43; off &#43; 1, rp, i &#43; 1, ri); return tmp; } } return nullptr; } }; " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,40 +64,40 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cm">/**
-</span><span class="cm"> * Definition for a binary tree node.
-</span><span class="cm"> * struct TreeNode {
-</span><span class="cm"> *     int val;
-</span><span class="cm"> *     TreeNode *left;
-</span><span class="cm"> *     TreeNode *right;
-</span><span class="cm"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-</span><span class="cm"> * };
-</span><span class="cm"> */</span>
-<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">buildTree</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">preorder</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">inorder</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">preorder</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nf">helper</span><span class="p">(</span><span class="n">preorder</span><span class="p">,</span> <span class="n">inorder</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">TreeNode</span><span class="o">*</span> <span class="nf">helper</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">preorder</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">inorder</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rp</span><span class="p">,</span>
-                     <span class="kt">int</span> <span class="n">li</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ri</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">lp</span> <span class="o">&gt;</span> <span class="n">rp</span> <span class="o">||</span> <span class="n">li</span> <span class="o">&gt;</span> <span class="n">ri</span><span class="p">)</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">lp</span> <span class="o">==</span> <span class="n">rp</span> <span class="o">&amp;&amp;</span> <span class="n">li</span> <span class="o">==</span> <span class="n">ri</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">inorder</span><span class="p">[</span><span class="n">li</span><span class="p">]);</span>
-            <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">li</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">ri</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">inorder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">preorder</span><span class="p">[</span><span class="n">lp</span><span class="p">])</span> <span class="p">{</span>
-                <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">inorder</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-                <span class="k">auto</span> <span class="n">off</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">li</span><span class="p">;</span>
-                <span class="n">tmp</span> <span class="o">-&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">preorder</span><span class="p">,</span> <span class="n">inorder</span><span class="p">,</span> <span class="n">lp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lp</span> <span class="o">+</span> <span class="n">off</span><span class="p">,</span> <span class="n">li</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-                <span class="n">tmp</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">preorder</span><span class="p">,</span> <span class="n">inorder</span><span class="p">,</span> <span class="n">lp</span> <span class="o">+</span> <span class="n">off</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ri</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for a binary tree node.
+</span><span style="color:#75715e"> * struct TreeNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     TreeNode *left;
+</span><span style="color:#75715e"> *     TreeNode *right;
+</span><span style="color:#75715e"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">buildTree</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">preorder</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">inorder</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#111">preorder</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#75af00">helper</span><span style="color:#111">(</span><span style="color:#111">preorder</span><span style="color:#111">,</span> <span style="color:#111">inorder</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">n</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">n</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+    <span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#75af00">helper</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">preorder</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">inorder</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">lp</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">rp</span><span style="color:#111">,</span>
+                     <span style="color:#00a8c8">int</span> <span style="color:#111">li</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">ri</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">lp</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">rp</span> <span style="color:#f92672">||</span> <span style="color:#111">li</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">ri</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">nullptr</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">lp</span> <span style="color:#f92672">==</span> <span style="color:#111">rp</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">li</span> <span style="color:#f92672">==</span> <span style="color:#111">ri</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">TreeNode</span><span style="color:#111">(</span><span style="color:#111">inorder</span><span style="color:#111">[</span><span style="color:#111">li</span><span style="color:#111">]);</span>
+            <span style="color:#00a8c8">return</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">li</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">ri</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">inorder</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">preorder</span><span style="color:#111">[</span><span style="color:#111">lp</span><span style="color:#111">])</span> <span style="color:#111">{</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">TreeNode</span><span style="color:#111">(</span><span style="color:#111">inorder</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]);</span>
+                <span style="color:#00a8c8">auto</span> <span style="color:#111">off</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#111">li</span><span style="color:#111">;</span>
+                <span style="color:#111">tmp</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">left</span> <span style="color:#f92672">=</span> <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">preorder</span><span style="color:#111">,</span> <span style="color:#111">inorder</span><span style="color:#111">,</span> <span style="color:#111">lp</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">lp</span> <span style="color:#f92672">+</span> <span style="color:#111">off</span><span style="color:#111">,</span> <span style="color:#111">li</span><span style="color:#111">,</span> <span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+                <span style="color:#111">tmp</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">right</span> <span style="color:#f92672">=</span> <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">preorder</span><span style="color:#111">,</span> <span style="color:#111">inorder</span><span style="color:#111">,</span> <span style="color:#111">lp</span> <span style="color:#f92672">+</span> <span style="color:#111">off</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">rp</span><span style="color:#111">,</span> <span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">ri</span><span style="color:#111">);</span>
+                <span style="color:#00a8c8">return</span> <span style="color:#111">tmp</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">nullptr</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
 </code></pre></div>
 		</div>
 

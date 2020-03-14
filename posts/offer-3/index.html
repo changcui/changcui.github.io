@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>从尾到头打印链表 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>从尾到头打印链表 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="从尾到头打印链表" />
 <meta property="og:description" content="// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; while (head) {result.push_back(head-&gt;val); head = head -&gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&lt;int&gt;&amp; result) { if (!head) return; helper(head-&gt;next, result); result.push_back(head-&gt;val); } }; // 运行时间：2ms // 占用内存：460k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,34 +64,34 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：从头到尾储存，然后使用 reverse 反向
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">printListFromTailToHead</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span><span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span> <span class="n">head</span> <span class="o">=</span> <span class="n">head</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;}</span>
-        <span class="n">reverse</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">result</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：608k
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">printListFromTailToHead</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
-        <span class="n">helper</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">helper</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">head</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-        <span class="n">helper</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span> 
-        <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：2ms
-</span><span class="c1">// 占用内存：460k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：从头到尾储存，然后使用 reverse 反向
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">printListFromTailToHead</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">head</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">head</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">head</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span><span style="color:#111">);</span> <span style="color:#111">head</span> <span style="color:#f92672">=</span> <span style="color:#111">head</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;}</span>
+        <span style="color:#111">reverse</span><span style="color:#111">(</span><span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">begin</span><span style="color:#111">(),</span> <span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">end</span><span style="color:#111">());</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：608k
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">printListFromTailToHead</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">head</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+        <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">head</span><span style="color:#111">,</span> <span style="color:#111">result</span><span style="color:#111">);</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">helper</span><span style="color:#111">(</span><span style="color:#111">ListNode</span><span style="color:#f92672">*</span> <span style="color:#111">head</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">result</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">head</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+        <span style="color:#111">helper</span><span style="color:#111">(</span><span style="color:#111">head</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span><span style="color:#111">,</span> <span style="color:#111">result</span><span style="color:#111">);</span> 
+        <span style="color:#111">result</span><span style="color:#111">.</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">head</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：2ms
+</span><span style="color:#75715e">// 占用内存：460k
 </span></code></pre></div>
 		</div>
 

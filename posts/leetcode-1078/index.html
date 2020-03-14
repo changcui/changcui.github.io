@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1078. Occurrences After Bigram - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1078. Occurrences After Bigram - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1078. Occurrences After Bigram" />
 <meta property="og:description" content=" c&#43;&#43; does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i&#43;3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -67,21 +67,21 @@
 			
 
 <h3 id="c-does-not-have-split">c++ does not have split</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">findOcurrences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
-        <span class="s2">&#34;&#34;&#34;
-</span><span class="s2">        :type text: str
-</span><span class="s2">        :type first: str
-</span><span class="s2">        :type second: str
-</span><span class="s2">        :rtype: List[str]
-</span><span class="s2">        &#34;&#34;&#34;</span>
-        <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-            <span class="n">tmp</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">second</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">rtn</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span><span style="color:#111">(</span><span style="color:#111">object</span><span style="color:#111">):</span>
+    <span style="color:#00a8c8">def</span> <span style="color:#75af00">findOcurrences</span><span style="color:#111">(</span><span style="color:#111">self</span><span style="color:#111">,</span> <span style="color:#111">text</span><span style="color:#111">,</span> <span style="color:#111">first</span><span style="color:#111">,</span> <span style="color:#111">second</span><span style="color:#111">):</span>
+        <span style="color:#d88200">&#34;&#34;&#34;
+</span><span style="color:#d88200">        :type text: str
+</span><span style="color:#d88200">        :type first: str
+</span><span style="color:#d88200">        :type second: str
+</span><span style="color:#d88200">        :rtype: List[str]
+</span><span style="color:#d88200">        &#34;&#34;&#34;</span>
+        <span style="color:#111">words</span> <span style="color:#f92672">=</span> <span style="color:#111">text</span><span style="color:#f92672">.</span><span style="color:#111">split</span><span style="color:#111">(</span><span style="color:#d88200">&#39; &#39;</span><span style="color:#111">)</span>
+        <span style="color:#111">rtn</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">i</span> <span style="color:#f92672">in</span> <span style="color:#111">range</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">words</span><span style="color:#111">)</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">):</span>
+            <span style="color:#111">tmp</span> <span style="color:#f92672">=</span> <span style="color:#111">words</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">:</span><span style="color:#111">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">first</span> <span style="color:#f92672">==</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">and</span> <span style="color:#111">second</span> <span style="color:#f92672">==</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]:</span>
+                <span style="color:#111">rtn</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">rtn</span>
             
         </code></pre></div>
 		</div>

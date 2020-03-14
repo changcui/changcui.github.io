@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>理解 Linux 的硬链接与软链接 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>理解 Linux 的硬链接与软链接 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="理解 Linux 的硬链接与软链接" />
 <meta property="og:description" content="Linux 的文件与目录 UNIX 系统除进程以外的一切都是文件。Linux 保持了这个特性，并引入了目录来方便管理。
 Linux 与其他类 UNIX 系统一样并不区分文件与目录：目录是记录了其他文件名的文件。
@@ -46,7 +46,7 @@ link oldfile newfile ln oldfile newfile 由于硬链接是有着相同 inode 号
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -111,7 +111,7 @@ link oldfile newfile ln oldfile newfile 由于硬链接是有着相同 inode 号
 <h4 id="硬链接">硬链接</h4>
 
 <p>若一个 inode 号对应多个文件名，则称这些文件为硬链接。硬链接可由命令 link 或 ln 创建。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">link oldfile newfile 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">link oldfile newfile 
 ln oldfile newfile</code></pre></div>
 <p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
 

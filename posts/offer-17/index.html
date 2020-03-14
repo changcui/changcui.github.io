@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>树的子结构 - changcui</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>树的子结构 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="树的子结构" />
 <meta property="og:description" content="// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构 class Solution { public: bool IsSubtree(TreeNode* a, TreeNode* b) { if (!b) return true; if (!a) return false; return a-&gt;val == b-&gt;val &amp;&amp; IsSubtree(a-&gt;left, b-&gt;left) &amp;&amp; IsSubtree(a-&gt;right, b-&gt;right); } bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) { if (!pRoot2 || !pRoot1) return false; return (pRoot1-&gt;val == pRoot2-&gt;val &amp;&amp; IsSubtree(pRoot1, pRoot2)) || HasSubtree(pRoot1-&gt;left, pRoot2) || HasSubtree(pRoot1-&gt;right, pRoot2); } }; // 运行时间：3ms // 占用内存：376k " />
 <meta property="og:type" content="article" />
@@ -26,7 +26,7 @@
 		<div class="header">
 	<h1 class="site-title"><a href="http://changcui.cc">changcui</a></h1>
 	<div class="site-description"><h2>changcui&rsquo;s personal website</h2><nav class="nav social">
-			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="https://social.simcu.com/@changcui" title="Mastodon"><i data-feather="mastodon"></i></a></ul>
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
 		</nav>
 	</div>
 
@@ -64,24 +64,24 @@
 		</div>
 
 		<div class="markdown">
-			<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">IsSubtree</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">IsSubtree</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
-            <span class="n">IsSubtree</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="kt">bool</span> <span class="nf">HasSubtree</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">pRoot1</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">pRoot2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pRoot2</span> <span class="o">||</span> <span class="o">!</span><span class="n">pRoot1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">pRoot1</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">pRoot2</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">IsSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">))</span> <span class="o">||</span> 
-            <span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">)</span> <span class="o">||</span> 
-            <span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="c1">// 运行时间：3ms
-</span><span class="c1">// 占用内存：376k
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">IsSubtree</span><span style="color:#111">(</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">a</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">false</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">a</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span> <span style="color:#f92672">==</span> <span style="color:#111">b</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">IsSubtree</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">)</span> <span style="color:#f92672">&amp;&amp;</span>
+            <span style="color:#111">IsSubtree</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#75af00">HasSubtree</span><span style="color:#111">(</span><span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">pRoot1</span><span style="color:#111">,</span> <span style="color:#111">TreeNode</span><span style="color:#f92672">*</span> <span style="color:#111">pRoot2</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">pRoot2</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#111">pRoot1</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">false</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">(</span><span style="color:#111">pRoot1</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span> <span style="color:#f92672">==</span> <span style="color:#111">pRoot2</span><span style="color:#f92672">-&gt;</span><span style="color:#111">val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">IsSubtree</span><span style="color:#111">(</span><span style="color:#111">pRoot1</span><span style="color:#111">,</span> <span style="color:#111">pRoot2</span><span style="color:#111">))</span> <span style="color:#f92672">||</span> 
+            <span style="color:#111">HasSubtree</span><span style="color:#111">(</span><span style="color:#111">pRoot1</span><span style="color:#f92672">-&gt;</span><span style="color:#111">left</span><span style="color:#111">,</span> <span style="color:#111">pRoot2</span><span style="color:#111">)</span> <span style="color:#f92672">||</span> 
+            <span style="color:#111">HasSubtree</span><span style="color:#111">(</span><span style="color:#111">pRoot1</span><span style="color:#f92672">-&gt;</span><span style="color:#111">right</span><span style="color:#111">,</span> <span style="color:#111">pRoot2</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// 运行时间：3ms
+</span><span style="color:#75715e">// 占用内存：376k
 </span></code></pre></div>
 		</div>
 

@@ -6,10 +6,28 @@
     <description>Recent content in linux on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Mar 2020 20:07:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 15:31:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>systemd 使用日记</title>
+      <link>http://changcui.cc/posts/systemd/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/systemd/</guid>
+      <description>挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！</description>
+    </item>
+    
+    <item>
+      <title>fish 使用日记</title>
+      <link>http://changcui.cc/posts/fish/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/fish/</guid>
+      <description>挖个坑先，以后在 arch 上使用 fish，记录一些使用心得，配置文件等等。</description>
+    </item>
     
     <item>
       <title>Arch 踩坑日记</title>
@@ -17,12 +35,11 @@
       <pubDate>Fri, 13 Mar 2020 20:07:17 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/arch/</guid>
-      <description>2020 03 12 update
- 完成 iso 下载，开始准备安装，参考教程
+      <description>2020 03 12 update 完成 iso 下载，开始准备安装，参考教程
 https://wiki.archlinux.org/index.php/Installation_guide_(简体中文)
 https://github.com/mytbk/Linux_Notes/tree/master/install
 这次先用 virtualbox 做实验把，下次争取能装双系统！
-出师不利 刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。
+出师不利啊，刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。
 果然可以初始化了。
 第一次安装失败，按照教程一步步走下来了，但是 reboot 的时候不太对劲，我觉得是 UEFI 或者 BIOS 的问题。
  如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择*System*，再从右侧选择*Motherboard*标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。

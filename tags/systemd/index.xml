@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>systemd on changcui</title>
+    <link>http://changcui.cc/tags/systemd/</link>
+    <description>Recent content in systemd on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Mar 2020 15:31:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>systemd 使用日记</title>
+      <link>http://changcui.cc/posts/systemd/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/systemd/</guid>
+      <description>挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！</description>
+    </item>
+    
+  </channel>
+</rss>

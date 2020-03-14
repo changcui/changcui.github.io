@@ -6,7 +6,7 @@
     <description>Recent content in Tags on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Mar 2020 20:07:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 15:31:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>linux</title>
       <link>http://changcui.cc/tags/linux/</link>
-      <pubDate>Fri, 13 Mar 2020 20:07:17 +0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>systemd</title>
+      <link>http://changcui.cc/tags/systemd/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/systemd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fish</title>
+      <link>http://changcui.cc/tags/fish/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/fish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>http://changcui.cc/tags/shell/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/shell/</guid>
       <description></description>
     </item>
     

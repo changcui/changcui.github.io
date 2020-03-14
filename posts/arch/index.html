@@ -93,9 +93,7 @@
 
     
 
-<blockquote>
-<p>2020 03 12 update</p>
-</blockquote>
+<h3 id="2020-03-12-update">2020 03 12 update</h3>
 
 <p>完成 iso 下载，开始准备安装，参考教程</p>
 
@@ -105,9 +103,7 @@
 
 <p>这次先用 virtualbox 做实验把，下次争取能装双系统！</p>
 
-<h4 id="出师不利">出师不利</h4>
-
-<p>刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。</p>
+<p>出师不利啊，刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。</p>
 
 <p>果然可以初始化了。</p>
 
@@ -130,6 +126,42 @@
 <p>找到原因了，是因为我没有移除 archlinux.iso 作为 attachment，然后它找 EFI 文件的路径发生了变化，没有从 <code>/boot/EFI/BOOT/</code> 开始找，把 iso 文件移除之后，现在能正常启动啦！</p>
 
 <p>不能上网似乎是少装了 linux-firmware，然后我搞不定 virtualbox 的 shared folder，也没办法用 ssh 来传文件，明天再装一遍把。</p>
+
+<h3 id="2020-03-13-update">2020 03 13 update</h3>
+
+<p>今天试着重装一遍总结一下步骤。</p>
+
+<p>安装前准备，virtualbox，archlinux.iso 文件，然后新建虚拟机，去 setting -&gt; system -&gt; motherboard 启动 UEFI，调整 display 为二倍显示，不然看起来会很毁眼。。</p>
+
+<ol>
+<li><p>启动安装，修改 <code>/etc/pacman.d/mirrors.txt</code>，最好改成大陆的源，比如 <code>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$*arch*.</code></p></li>
+
+<li><p>然后<code>gdisk</code>来硬盘分区，<code>o</code>初始化分区，<code>n</code>创建分区，至少创建一个 EFI 的引导分区，和一个 linux file system 的装软件的分区，也可以创建 swap 分区</p></li>
+
+<li><p>设立分区文件系统，使用<code>mkfs.xx</code>来创建文件系统，EFI 使用 FAT32 文件系统</p></li>
+
+<li><p>挂载，先挂载根目录，再依次挂载<code>mount $分区名 $挂载点</code></p></li>
+
+<li><p>生成挂载信息保存，开机自动挂载<code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p></li>
+
+<li><p>安装内核，固件等，<code>pacmanstrap /mnt base linux linux-firmware networkmanager base-devel</code></p></li>
+
+<li><p>chroot，<code>arch-chroot /mnt</code></p></li>
+
+<li><p>安装编辑器，dhcp 服务等，<code>pacman -S vim dhcpcd</code></p></li>
+
+<li><p>修改 root 的密码，<code>passwd</code></p></li>
+
+<li><p>安装 bootloader，<code>pacman -S grub efibootmgr</code></p></li>
+
+<li><p>配置 bootloader，首先初始化，<code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable</code> ，最后的整个 removable 的参数是 virtualbox 里面需要使用的，然后生成配置，<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p></li>
+
+<li><p>退出 chroot 模式，reboot</p></li>
+
+<li><p>unattach iso 文件，就可以成功进入了</p></li>
+</ol>
+
+<p>关于网络的问题，需要安装 dhcpcd，然后 <code>systemctl enable dhcpcd@enp0s3.service</code>，就是给你的网卡启用 dhcp 服务的意思，然后就可以正常使用了。</p>
 
   </article>
 

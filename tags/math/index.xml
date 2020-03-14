@@ -6,10 +6,19 @@
     <description>Recent content in math on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 18:41:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 14:27:47 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>孩子们的游戏(圆圈中最后剩下的数)</title>
+      <link>http://changcui.cc/posts/offer-46/</link>
+      <pubDate>Wed, 11 Mar 2020 14:27:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-46/</guid>
+      <description>// 思路一：直接模拟 class Solution { public: int LastRemaining_Solution(int n, int m) { vector&amp;lt;int&amp;gt; c(n, 0); int i = -1, j = 0, cnt = n; while (cnt) { i++; if (i == n) i = 0; if (c[i]) continue; if (j == m - 1) { c[i] = 1; cnt--; j = 0; } else j++; } return i - 1; } }; // 运行时间：107ms // 占用内存：500k // 思路二：寻找数学规律 // http://zhedahht.</description>
+    </item>
     
     <item>
       <title>斐波那契数列</title>

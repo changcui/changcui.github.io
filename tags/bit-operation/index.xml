@@ -6,10 +6,19 @@
     <description>Recent content in bit operation on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Feb 2020 14:04:03 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 14:27:53 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/bit-operation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>不用加减乘除做加法</title>
+      <link>http://changcui.cc/posts/offer-48/</link>
+      <pubDate>Wed, 11 Mar 2020 14:27:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-48/</guid>
+      <description>// 思路一：位运算，保证两者和不变，num1 作为各位相加的结果，num2 作为进位的结果，当 num2 为0时，num1 就可返回 class Solution { public: int Add(int num1, int num2) { while (num2) { auto t = num1 ^ num2; num2 = (num1 &amp;amp; num2) &amp;lt;&amp;lt; 1; num1 = t; } return num1; } }; // 运行时间：3ms // 占用内存：488k </description>
+    </item>
     
     <item>
       <title>二进制中1的个数</title>

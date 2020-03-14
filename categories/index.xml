@@ -6,24 +6,15 @@
     <description>Recent content in Categories on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Mar 2020 11:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 20:07:17 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>成长</title>
-      <link>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</link>
-      <pubDate>Tue, 10 Mar 2020 11:08:22 +0800</pubDate>
-      
-      <guid>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>杂感</title>
       <link>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</link>
-      <pubDate>Mon, 09 Mar 2020 21:07:16 +0800</pubDate>
+      <pubDate>Fri, 13 Mar 2020 20:07:17 +0800</pubDate>
       
       <guid>http://changcui.cc/categories/%E6%9D%82%E6%84%9F/</guid>
       <description></description>
@@ -32,9 +23,18 @@
     <item>
       <title>知识</title>
       <link>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Wed, 08 Jan 2020 11:07:40 +0800</pubDate>
+      <pubDate>Fri, 13 Mar 2020 20:07:17 +0800</pubDate>
       
       <guid>http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>成长</title>
+      <link>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</link>
+      <pubDate>Thu, 12 Mar 2020 21:23:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/categories/%E6%88%90%E9%95%BF/</guid>
       <description></description>
     </item>
     

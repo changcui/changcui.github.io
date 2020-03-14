@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="changcui">
+    <meta name="description" content="http://changcui.cc">
+    <meta name="keywords" content="blog, personal">
+    
+    <meta property="og:site_name" content="changcui">
+    <meta property="og:title" content="
+  Arch 踩坑日记 - changcui
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://changcui.cc/posts/arch/">
+    <meta property="og:image" content="http://changcui.cc">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://changcui.cc/posts/arch/">
+    <meta name="twitter:image" content="http://changcui.cc">
+
+    <base href="http://changcui.cc/posts/arch/">
+    <title>
+  Arch 踩坑日记 - changcui
+</title>
+
+    <link rel="canonical" href="http://changcui.cc/posts/arch/">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="http://changcui.cc/css/normalize.min.css">
+    <link rel="stylesheet" href="http://changcui.cc/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://changcui.cc/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="http://changcui.cc/index.xml" type="application/rss+xml" title="changcui">
+      <link href="http://changcui.cc/index.xml" rel="feed" type="application/rss+xml" title="changcui" />
+    
+
+    <meta name="generator" content="Hugo 0.59.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">changcui</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/posts">Blog</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/about">About</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://changcui.cc/resume.pdf">Resume</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">Arch 踩坑日记</h1>
+      <h2 class="date">March 13, 2020</h2>
+
+      
+    </header>
+
+    
+
+<blockquote>
+<p>2020 03 12 update</p>
+</blockquote>
+
+<p>完成 iso 下载，开始准备安装，参考教程</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Installation_guide_(简体中文">https://wiki.archlinux.org/index.php/Installation_guide_(简体中文</a>)</p>
+
+<p><a href="https://github.com/mytbk/Linux_Notes/tree/master/install">https://github.com/mytbk/Linux_Notes/tree/master/install</a></p>
+
+<p>这次先用 virtualbox 做实验把，下次争取能装双系统！</p>
+
+<h4 id="出师不利">出师不利</h4>
+
+<p>刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。</p>
+
+<p>果然可以初始化了。</p>
+
+<p>第一次安装失败，按照教程一步步走下来了，但是 reboot 的时候不太对劲，我觉得是 UEFI 或者 BIOS 的问题。</p>
+
+<blockquote>
+<p>如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择*System*，再从右侧选择*Motherboard*标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。</p>
+</blockquote>
+
+<p>果然，我没开启这个设置，只能再来一遍啦。</p>
+
+<p>第二次安装失败，这次可以 UEFI 启动，但是只有一个启动选项是 firmware interface，不知道原因在哪。</p>
+
+<p>按照 wiki 里面的说法，要手动选择 UEFI，可是我手动选择了也不对，感觉是有地方搞错了，再来一遍把。</p>
+
+<p>第三次失败，和第二次的情况一样，暂时不知道原因，查了一下似乎是 gummiboot 的问题，把 bootloader 切换成 grub 再试一次把！</p>
+
+<p>第四次，成功进去了，不过是自己找 EFI 文件引导的，后面还得调整一下，怎么能自动引导，然后就是不能上网，好像是没有安装 networkmanager</p>
+
+<p>找到原因了，是因为我没有移除 archlinux.iso 作为 attachment，然后它找 EFI 文件的路径发生了变化，没有从 <code>/boot/EFI/BOOT/</code> 开始找，把 iso 文件移除之后，现在能正常启动啦！</p>
+
+<p>不能上网似乎是少装了 linux-firmware，然后我搞不定 virtualbox 的 shared folder，也没办法用 ssh 来传文件，明天再装一遍把。</p>
+
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+      
+        <footer class="footer">
+  <section class="container">
+    
+      <div class="sns-shares sp-sns-shares">
+        
+        
+        
+        
+      </div>
+    
+    
+      <p>Softball, Science, Xian</p>
+    
+     © 2020    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
+  </section>
+</footer>
+
+      
+    </main>
+
+    
+
+  <script src="http://changcui.cc/js/app.js"></script>
+  
+  </body>
+</html>

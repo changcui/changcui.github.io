@@ -6,10 +6,33 @@
     <description>Recent content in 知识 on changcui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jan 2020 11:07:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 20:07:17 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/categories/%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arch 踩坑日记</title>
+      <link>http://changcui.cc/posts/arch/</link>
+      <pubDate>Fri, 13 Mar 2020 20:07:17 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/arch/</guid>
+      <description>2020 03 12 update
+ 完成 iso 下载，开始准备安装，参考教程
+https://wiki.archlinux.org/index.php/Installation_guide_(简体中文)
+https://github.com/mytbk/Linux_Notes/tree/master/install
+这次先用 virtualbox 做实验把，下次争取能装双系统！
+出师不利 刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。
+果然可以初始化了。
+第一次安装失败，按照教程一步步走下来了，但是 reboot 的时候不太对劲，我觉得是 UEFI 或者 BIOS 的问题。
+ 如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择*System*，再从右侧选择*Motherboard*标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。
+ 果然，我没开启这个设置，只能再来一遍啦。
+第二次安装失败，这次可以 UEFI 启动，但是只有一个启动选项是 firmware interface，不知道原因在哪。
+按照 wiki 里面的说法，要手动选择 UEFI，可是我手动选择了也不对，感觉是有地方搞错了，再来一遍把。
+第三次失败，和第二次的情况一样，暂时不知道原因，查了一下似乎是 gummiboot 的问题，把 bootloader 切换成 grub 再试一次把！
+第四次，成功进去了，不过是自己找 EFI 文件引导的，后面还得调整一下，怎么能自动引导，然后就是不能上网，好像是没有安装 networkmanager
+找到原因了，是因为我没有移除 archlinux.iso 作为 attachment，然后它找 EFI 文件的路径发生了变化，没有从 /boot/EFI/BOOT/ 开始找，把 iso 文件移除之后，现在能正常启动啦！</description>
+    </item>
     
     <item>
       <title>git checkout</title>

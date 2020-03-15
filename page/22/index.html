@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,66 @@
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/2019-08-31/">2019 08 31</a> &mdash;
+					<span class="description">
+						
+						 打牌 &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-387/">387. First Unique Character in a String</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-1025/">1025. Divisor Game</a> &mdash;
+					<span class="description">
+						
+						dp class Solution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&lt;bool&gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &lt;= N; i++) { bool res = false; for (int j = 1; j * j &lt; i; j++) { if (i % j == 0 &amp;&amp; !saved[i - j - 1]) { res = true; break; } } saved.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-100/">100. Same Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;&amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&gt;val == q-&gt;val) &amp;&amp; isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-455/">455. Assign Cookies</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-350/">350. Intersection of Two Arrays II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { map&lt;int, int&gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&lt;int&gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&gt; second == 0) continue; rtn.push_back(num); it -&gt; second -= 1; } return rtn; } }; class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { multiset&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
 					<a class="title" href="/posts/leetcode-326/">326. Power of Three</a> &mdash;
 					<span class="description">
 						
@@ -104,66 +164,6 @@
 					<span class="description">
 						
 						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-234/">234. Palindrome Linked List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&gt;next !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-206/">206. Reverse Linked List</a> &mdash;
-					<span class="description">
-						
-						 iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively class Solution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&gt; next == NULL) return head; auto tmp = reverseList(head-&gt;next); head-&gt;next-&gt;next = head; head-&gt;next = NULL; return tmp; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1078/">1078. Occurrences After Bigram</a> &mdash;
-					<span class="description">
-						
-						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1170/">1170. Compare Strings by Frequency of the Smallest Character</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &lt; s.size(); i++) { if (s[i] &lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) { vector&lt;int&gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&lt;int&gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &lt;= 10; i++) tmp += wa[i]; rtn.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
-					<span class="description">
-						
-						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1154/">1154. Day of the Year</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; &hellip;
 						
 					</span>
 				</div>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,74 @@
 				
 				
 				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-64/">64. Minimum Path Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int rtn = -1; vector&lt;vector&lt;int&gt;&gt; cost(grid.size(), vector&lt;int&gt;(grid[0].size(), 0)); cost[0][0] = grid[0][0]; for (int i = 0; i &lt; grid.size(); i++) { for (int j = 0; j &lt; grid[0].size(); j++) { if (i - 1 &gt;= 0 &amp;&amp; j - 1 &gt;= 0) cost[i][j] = min(cost[i-1][j], cost[i][j-1]) + grid[i][j]; else if (i - 1 &gt;= 0) cost[i][j] = cost[i-1][j] + grid[i][j]; else if (j - 1 &gt;= 0) cost[i][j] = cost[i][j-1] + grid[i][j]; else cost[i][j] = grid[i][j]; } } return cost.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-179/">179. Largest Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string largestNumber(vector&lt;int&gt;&amp; nums) { string result = &#34;&#34;; sort(nums.begin(), nums.end(), [](auto a, auto b){ return to_string(a) + to_string(b) &gt; to_string(b) + to_string(a);}); for (auto num : nums) result += to_string(num); return result[0] == &#39;0&#39; ? &#34;0&#34; : result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-152/">152. Maximum Product Subarray</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int maxProduct(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; dp(nums.size() * 2, 0); dp[0] = nums[0]; dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &lt; nums.size(); i++) { dp[2*i] = max(max(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); dp[2*i+1] = min(min(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); max_ = max(max_, dp[2*i]); } return max_; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 1, 2019</div>
+					<a class="title" href="/posts/leetcode-216/">216. Combination Sum III</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum3(int k, int n) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, 1, k, n, out, result); return result; } void DFS(int nums, int cur, int k, int n, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result) { if (nums == k &amp;&amp; n == 0) {result.push_back(out); return;} if (nums &gt; k || n &lt; 0) return; for (int i = cur; i &lt;= 9; i++) { out.push_back(i); DFS(nums+1, i+1, k, n-i, out, result); out.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 1, 2019</div>
+					<a class="title" href="/posts/leetcode-377/">377. Combination Sum IV</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int combinationSum4(vector&lt;int&gt;&amp; nums, int target) { vector&lt;unsigned int&gt; dp(target + 1, 0); dp[0] = 1; for (int i = 1; i &lt;= target; i++) { for (auto num : nums) { if (i - num &gt;= 0) dp[i] += dp[i - num]; } } return dp.back(); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 1, 2019</div>
+					<a class="title" href="/posts/dfs/">DFS 生成所有结果</a> &mdash;
+					<span class="description">
+						
+						生成所有结果的题，第一时间要想到使用 DFS 和递归来解决。
+主要分为以下几步，
+ 确定 DFS 的跳出条件，对应树结构的子节点。 确定剪枝条件，这个是最麻烦的，需要对题目进行分析 确定继续搜索的方向  Leetcode 上的例题有，22，39，40
+22. Generate Parentheses 这一题是给出一个数 n，生成所有的括号组合。
+因为是所有的括号组合，想到用 DFS 和递归来解决。
+首先确定 DFS 的跳出条件，我们可以设置两个变量 left，right 分别维护左右括号的剩余数量， 当两者都为0的时候跳出。
+接着确定剪枝条件，其实跳出条件也可以用整个字符串的长度来维护，但是体现不出括号的特殊性，所以设置两个变量 left，right，因为字符串是从左往右增长的，当 right &lt; left 的时候，意味着有右括号先于左括号出来，需要进行剪枝。
+最后确定继续搜索的方向，其实就两种选择，要么加左括号，要么加右括号，注意要回溯，如果 out 的值被更改的话。
+class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; string out = &#34;&#34;; DFS(left, right, out, result); return result; } void DFS(int left, int right, string&amp; out, vector&lt;string&gt;&amp; result) { if (left == 0 &amp;&amp; right == 0) {result.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Dec 1, 2019</div>
 					<a class="title" href="/posts/leetcode-90/">90. Subsets II</a> &mdash;
 					<span class="description">
@@ -104,66 +172,6 @@
 					<span class="description">
 						
 						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* deleteDuplicates(ListNode* head) { if (!head || !head -&gt; next) return NULL; if (head -&gt; val != head -&gt; next -&gt; val) { head-&gt;next = deleteDuplicates(head-&gt;next); return head; } auto v = head -&gt; val; auto cur = head -&gt; next; while (cur !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-79/">79. Word Search</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool exist(vector&lt;vector&lt;char&gt;&gt;&amp; board, string word) { if (word.empty()) return true; if (board.empty() || board[0].empty()) return false; int cur = 0, m = board.size(), n = board[0].size(); for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (DFS(i, j, board, word, 0)) return true; } } return false; } bool DFS(int i, int j, vector&lt;vector&lt;char&gt;&gt;&amp; board, string word, int cur) { if (cur == word.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-78/">78. Subsets</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, out, result, nums); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, vector&lt;int&gt;&amp; nums) { result.push_back(out); for (int i = cur; i &lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, result, nums); out.pop_back(); } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-77/">77. Combinations</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combine(int n, int k) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(1, out, result, n, k); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int n, int k) { if (out.size() == k) {result.push_back(out); return;} for (int i = cur; i &lt;= n; i++) { out.push_back(i); DFS(i+1, out, result, n, k); out.pop_back(); } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-49/">49. Group Anagrams</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) { vector&lt;vector&lt;string&gt;&gt; result; unordered_map&lt;string, vector&lt;string&gt;&gt; m; for (auto s : strs) { auto t = s; sort(t.begin(), t.end()); if (m.count(t)) m[t].push_back(s); else m[t] = {s}; } for (auto i : m) result.push_back(i.second); return result; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 28, 2019</div>
-					<a class="title" href="/posts/leetcode-40/">40. Combination Sum II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum2(vector&lt;int&gt;&amp; candidates, int target) { vector&lt;int&gt; out; vector&lt;vector&lt;int&gt;&gt; result; sort(candidates.begin(), candidates.end()); DFS(candidates, out, result, 0, target); return result; } void DFS(vector&lt;int&gt;&amp; candidates, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int start, int target) { if (target &lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &lt; candidates.size(); i++) { if (i &gt; start &amp;&amp; candidates[i] == candidates[i-1]) continue; out.push_back(candidates[i]); DFS(candidates, out, result, i+1, target - candidates[i]); out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 28, 2019</div>
-					<a class="title" href="/posts/leetcode-39/">39. Combination Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) { vector&lt;int&gt; out; vector&lt;vector&lt;int&gt;&gt; result; DFS(candidates, out, result, 0, target); return result; } void DFS(vector&lt;int&gt;&amp; candidates, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int start, int target) { if (target &lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &lt; candidates.size(); i++) { out.push_back(candidates[i]); DFS(candidates, out, result, i, target - candidates[i]); out.pop_back(); } } }; &hellip;
 						
 					</span>
 				</div>

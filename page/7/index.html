@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,66 @@
 				
 				
 				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-6/">旋转数组的最小数字</a> &mdash;
+					<span class="description">
+						
+						// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值 // 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在 // 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l++，不能为 r-- class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.empty()) return 0; int l = 0, r = rotateArray.size() - 1; while (l &lt; r) { if (rotateArray[l] &lt; rotateArray[r]) return rotateArray[l]; int mid = l + (r - l) / 2; if (rotateArray[mid] &gt; rotateArray[l]) l = mid + 1; else if (rotateArray[mid] &lt; rotateArray[r]) r = mid; else l++; } return rotateArray[l]; } }; // 运行时间：27ms // 占用内存：612k // 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 // 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法 // 判断，让 r--。 class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-5/">用两个栈实现队列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：数据储存在栈一，pop 的时候倒入栈二，再倒回来 class Solution { public: void push(int node) { stack1.push(node); } int pop() { while (!stack1.empty()) {stack2.push(stack1.top()); stack1.pop();} int rtn = stack2.top(); stack2.pop(); while (!stack2.empty()) {stack1.push(stack2.top()); stack2.pop();} return rtn; } private: stack&lt;int&gt; stack1; stack&lt;int&gt; stack2; }; // 运行时间：3ms // 占用内存：456k // 思路二：小优化，只有当栈二空了才压入栈一的元素，因为先压入的总会先出。 class Solution { public: void push(int node) { stack1.push(node); } int pop() { if (stack2.empty()) { while (!stack1.empty()) { stack2.push(stack1.top()); stack1.pop(); } } int rtn = stack2.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-4/">重建二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用递归重建，每次重建一个节点，将两组数在根结点处划分成两段递归调用 // 注意细节处理，第一次调用右节点为 pre.size()-1，调用体的 for loop 使用 // i &lt;= rv - lv，以及出口为 lv &gt; rv class Solution { public: TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) { return helper(pre, vin, 0, pre.size()-1, 0, vin.size()-1); } TreeNode* helper(vector&lt;int&gt;&amp; pre, vector&lt;int&gt;&amp; vin, int lp, int rp, int lv, int rv) { if (lp &gt; rp || lv &gt; rv) return NULL; TreeNode* rtn = new TreeNode(pre[lp]); if (lp == rp &amp;&amp; lv == rv) return rtn; for (int i = 0; i &lt;= rv - lv; i++) { if (vin[i+lv] == pre[lp]) { rtn -&gt; left = helper(pre, vin, lp+1, lp+i, lv, lv+i-1); rtn -&gt; right = helper(pre, vin, lp+i+1, rp, lv+i+1, rv); break; } } return rtn; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-3/">从尾到头打印链表</a> &mdash;
+					<span class="description">
+						
+						// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; while (head) {result.push_back(head-&gt;val); head = head -&gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&lt;int&gt;&amp; result) { if (!head) return; helper(head-&gt;next, result); result.push_back(head-&gt;val); } }; // 运行时间：2ms // 占用内存：460k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-2/">替换空格</a> &mdash;
+					<span class="description">
+						
+						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-1/">二维数组中的查找</a> &mdash;
+					<span class="description">
+						
+						// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Jan 8, 2020</div>
 					<a class="title" href="/posts/git-checkout/">git checkout</a> &mdash;
 					<span class="description">
@@ -125,66 +185,6 @@ How class A { public: inline int add(int a, int b) {return a + b}; };  Reference
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int minDepth(TreeNode* root) { if (!root) return 0; if (!root-&gt;left) return 1 + minDepth(root -&gt; right); if (!root-&gt;right) return 1 + minDepth(root -&gt; left); return 1 + min(minDepth(root-&gt;right), minDepth(root-&gt;left)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-110/">110.Balanced Binary Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isBalanced(TreeNode* root) { if (!root) return true; if (abs(getDepth(root-&gt;left) - getDepth(root-&gt;right)) &gt; 1) return false; return isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right); } int getDepth(TreeNode* root) { if (!root) return 0; return max(getDepth(root-&gt;left), getDepth(root-&gt;right)) + 1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-109/">109.Convert Sorted List to Binary Search Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* sortedListToBST(ListNode* head) { return helper(head, NULL); } TreeNode* helper(ListNode* begin, ListNode* end) { if (begin == end) return NULL; auto fast = begin, slow = begin; while (fast !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-105/">105.Construct Binary Tree from Preorder and Inorder Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) { int n = preorder.size() - 1; return helper(preorder, inorder, 0, n, 0, n); } TreeNode* helper(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder, int lp, int rp, int li, int ri) { if (lp &gt; rp || li &gt; ri) return nullptr; if (lp == rp &amp;&amp; li == ri) { auto tmp = new TreeNode(inorder[li]); return tmp; } for (int i = li; i &lt;= ri; i++) { if (inorder[i] == preorder[lp]) { auto tmp = new TreeNode(inorder[i]); auto off = i - li; tmp -&gt; left = helper(preorder, inorder, lp + 1, lp + off, li, i - 1); tmp -&gt; right = helper(preorder, inorder, lp + off + 1, rp, i + 1, ri); return tmp; } } return nullptr; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-300/">300.Longest Increasing Subsequence</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int lengthOfLIS(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; int n = nums.size(), max_ = 1; vector&lt;int&gt; dp(n, 1); for (int i = 1; i &lt; n; i++) { for (int j = 0; j &lt; i; j++) { if (nums[j] &lt; nums[i]) dp[i] = max(dp[i], dp[j] + 1); } max_ = max(max_, dp[i]); } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-279/">279.Perfect Squares</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int numSquares(int n) { vector&lt;int&gt; dp(n+1, n); vector&lt;int&gt; p; dp[0] = 0; for (int i = 1; i &lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &lt;= n; i++) { for (int j = 0; j &lt; p.size(); j++) { if (p[j] &lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-264/">264.Ugly Number II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.&hellip;
 						
 					</span>
 				</div>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,66 @@
 				
 				
 				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-95/">95.Unique Binary Search Trees II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;TreeNode*&gt; generateTrees(int n) { if (n == 0) return {}; return helper(1, n); } vector&lt;TreeNode*&gt; helper(int left, int right) { if (left &gt; right) return {nullptr}; vector&lt;TreeNode*&gt; res; for (int i = left; i &lt;= right; i++) { auto ll = helper(left, i-1); auto rr = helper(i+1, right); for (auto l : ll) { for (auto r : rr) { auto t = new TreeNode(i); t -&gt; left = l; t -&gt; right = r; res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-93/">93.Restore IP Addresses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; restoreIpAddresses(string s) { vector&lt;string&gt; result; if (s.size() &gt; 12) return result; DFS(0, 0, &#34;&#34;, result, s); return result; } void DFS(int num, int cur, string out, vector&lt;string&gt;&amp; result, string s) { if (num == 4 &amp;&amp; cur == s.size()) {out.pop_back(); result.push_back(out); return;} for (int i = 1; i &lt;= 3 &amp;&amp; cur + i &lt;= s.size(); i++) { auto tmp = s.substr(cur, i); if (stoi(tmp) &lt; 256 &amp;&amp; !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-322/">322.Coin Change</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int coinChange(vector&lt;int&gt;&amp; coins, int amount) { vector&lt;int&gt; dp(amount + 1, amount+1); sort(coins.begin(), coins.end()); dp[0] = 0; for (int i = 1; i &lt;= amount; i++) { for (auto c : coins) { if (c &lt;= i) dp[i] = min(dp[i], dp[i-c]+1); else break; } } return dp[amount] &gt; amount ? -1 : dp[amount]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-334/">334.Increasing Triplet Subsequence</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool increasingTriplet(vector&lt;int&gt;&amp; nums) { int m1 = INT_MAX, m2 = INT_MAX; for (auto i : nums) { if (m1 &gt;= i) m1 = i; else if (m2 &gt;= i) m2 = i; else return true; } return false; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-332/">332.Reconstruct Itinerary</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-338/">338.Counting Bits</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; countBits(int num) { vector&lt;int&gt; res(num+1, 0); for (int i = 1; i &lt;= num; i++) { res[i] = res[i &amp; (i-1)] + 1; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Dec 10, 2019</div>
 					<a class="title" href="/posts/leetcode-345/">345.Reverse Vowels of a String</a> &mdash;
 					<span class="description">
@@ -104,66 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: bool isPowerOfTwo(int n) { return (n &gt; 0) &amp;&amp; !(n &amp; (n - 1)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 9, 2019</div>
-					<a class="title" href="/posts/leetcode-343/">343.Integer Break</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int integerBreak(int n) { vector&lt;int&gt; dp(n+1, 1); for (int i = 3; i &lt;= n; i++) { for (int j = 1; j &lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-58/">58. Length of Last Word</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--; while (i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;) { res++; i--; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-122/">122. Best Time to Buy and Sell Stock II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int maxProfit(vector&lt;int&gt;&amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &lt; n - 1; i++) { if (prices[i] &lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-307/">307. Range Sum Query - Mutable</a> &mdash;
-					<span class="description">
-						
-						class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { sum.push_back(0); for (auto n : nums) { sum.push_back(sum.back()+n); num.push_back(n); } } void update(int i, int val) { auto t = val - num[i]; num[i] = val; for (int j = i + 1; j &lt; sum.size(); j++) sum[j] += t; } int sumRange(int i, int j) { return sum[j+1] - sum[i]; } private: vector&lt;int&gt; sum; vector&lt;int&gt; num; }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(i,val); * int param_2 = obj-&gt;sumRange(i,j); */ &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-389/">389. Find the Difference</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: char findTheDifference(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &#39;A&#39;; } }; &hellip;
 						
 					</span>
 				</div>

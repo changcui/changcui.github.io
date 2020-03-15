@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 10 Mar 2020 10:46:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 22:09:18 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>把二叉树打印成多行</title>
+      <link>http://changcui.cc/posts/offer-60/</link>
+      <pubDate>Sun, 15 Mar 2020 22:09:18 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-60/</guid>
+      <description>// 思路一：与上一题相同，层次遍历的非递归写法 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; Print(TreeNode* pRoot) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; if (!pRoot) return result; queue&amp;lt;TreeNode*&amp;gt; q; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&amp;lt;int&amp;gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&amp;gt;val); if (t-&amp;gt;left) q.push(t-&amp;gt;left); if (t-&amp;gt;right) q.push(t-&amp;gt;right); } result.push_back(out); } return result; } }; // 运行时间：3ms // 占用内存：464k </description>
+    </item>
+    
+    <item>
+      <title>按之字形顺序打印二叉树</title>
+      <link>http://changcui.cc/posts/offer-59/</link>
+      <pubDate>Sun, 15 Mar 2020 22:07:24 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-59/</guid>
+      <description>// 思路一：层次遍历的非递归写法 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; Print(TreeNode* pRoot) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; if (!pRoot) return result; queue&amp;lt;TreeNode*&amp;gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&amp;lt;int&amp;gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&amp;gt;val); if (t-&amp;gt;left) q.push(t-&amp;gt;left); if (t-&amp;gt;right) q.push(t-&amp;gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k </description>
+    </item>
+    
+    <item>
+      <title>二叉树的下一个结点</title>
+      <link>http://changcui.cc/posts/offer-57/</link>
+      <pubDate>Sun, 15 Mar 2020 21:48:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-57/</guid>
+      <description>// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&amp;gt;right) { pNode = pNode-&amp;gt;right; while (pNode &amp;amp;&amp;amp; pNode-&amp;gt;left) pNode = pNode-&amp;gt;left; return pNode; } if (!pNode-&amp;gt;next) return NULL; while (pNode-&amp;gt;next) { if (pNode == pNode-&amp;gt;next-&amp;gt;left) return pNode-&amp;gt;next; pNode = pNode-&amp;gt;next; } if (!pNode-&amp;gt;next) return NULL; return pNode-&amp;gt;next; } }; // 运行时间：3ms // 占用内存：500k </description>
+    </item>
     
     <item>
       <title>平衡二叉树</title>

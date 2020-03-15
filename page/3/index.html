@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,66 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-43/">左旋转字符串</a> &mdash;
+					<span class="description">
+						
+						// 思路一：左删除右添加 class Solution { public: string LeftRotateString(string str, int n) { if (str.size() == 0) return str; n = n % str.size(); while (n--) { char a = str[0]; str.erase(str.begin()); str += a; } return str; } }; // 运行时间：3ms // 占用内存：480k // 思路二：先反转字符串，然后反转前半部分，再反转后半部分，(AB)T = BTAT class Solution { public: string LeftRotateString(string str, int n) { if (str.size() == 0) return str; n = n % str.size(); reverse(str.begin(), str.end()); reverse(str.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-42/">和为S的两个数字</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; FindNumbersWithSum(vector&lt;int&gt; array,int sum) { int i = 0, j = array.size() - 1; while (i &lt; j) { int s = array[i] + array[j]; if (s == sum) return {array[i], array[j]}; else if (s &lt; sum) i++; else j--; } return {}; } }; // 运行时间：6ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-41/">和为S的连续正数序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：数学法，找规律，分成奇偶两种情况，判断边界条件 class Solution { public: vector&lt;vector&lt;int&gt; &gt; FindContinuousSequence(int sum) { vector&lt;vector&lt;int&gt; &gt; result; for (int i = sqrt(sum * 2); i &gt;= 2; i--) { if (i &amp; 1 &amp;&amp; sum % i == 0 &amp;&amp; (sum / i - (i - 1)/2) &gt; 0) { vector&lt;int&gt; output; int begin = sum / i - (i - 1) / 2; while (begin &lt;= sum / i + (i - 1)/2) output.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-40/">数组中只出现一次的数字</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 map 保存数字，移除数字 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { unordered_map&lt;int, int&gt; m; for (auto i : data) { if (m.count(i)) m.erase(i); else m[i] = 1; } auto p = m.begin(); *num1 = p++-&gt;first; *num2 = p-&gt;first; } }; // 运行时间：3ms // 占用内存：484k // 思路二：全部异或得到两个数的异或，再按照最右的1把所有数分为两部分异或，分别得到两个数 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { int xorr = 0, flag = 1; for (auto i : data) xorr ^= i; while (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-39/">平衡二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&gt;left), depth(root-&gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&gt;left) &amp;&amp; IsBalanced_Solution(pRoot-&gt;right) &amp;&amp; abs(depth(pRoot-&gt;left) - depth(pRoot-&gt;right)) &lt;= 1; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-38/">二叉树的深度</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&gt;left), TreeDepth(pRoot-&gt;right)); } }; // 运行时间：4ms // 占用内存：464k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Mar 10, 2020</div>
 					<a class="title" href="/posts/offer-37/">数字在排序数组中出现的次数</a> &mdash;
 					<span class="description">
@@ -108,66 +168,6 @@
 					<span class="description">
 						
 						// 思路一：两次遍历，第一次统计出现的个数，第二次寻找次数为1的字符 class Solution { public: int FirstNotRepeatingChar(string str) { unordered_map&lt;char, int&gt; m; for (int i = 0; i &lt; str.size(); i++) m[str[i]] += 1; for (int i = 0; i &lt; str.size(); i++) { if (m[str[i]] == 1) return i; } return -1; } }; // 运行时间：3ms // 占用内存：456k // 思路二：用数组代替 map class Solution { public: int FirstNotRepeatingChar(string str) { vector&lt;int&gt; m(100, 0); for (int i = 0; i &lt; str.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-33/">丑数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：分三组累乘，取最小的，并更新下标 class Solution { public: int GetUglyNumber_Solution(int index) { if (index == 0) return 0; vector&lt;int&gt; nums{1}; int i1 = 0, i2 = 0, i3 = 0; while (--index) { int n1 = nums[i1] * 2; int n2 = nums[i2] * 3; int n3 = nums[i3] * 5; int min_ = min(n1, min(n2, n3)); if (min_ == n1) i1++; if (min_ == n2) i2++; if (min_ == n3) i3++; nums.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-36/">两个链表的第一个公共结点</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&gt;next; else if (!q) q = pHead1, p = p-&gt;next; else p = p-&gt;next, q = q-&gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-32/">把数组排成最小的数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：对数进行排序，拼接效果差的排在前面 class Solution { public: string PrintMinNumber(vector&lt;int&gt; numbers) { sort(numbers.begin(), numbers.end(), [](auto a, auto b){return to_string(a) + to_string(b) &lt; to_string(b) + to_string(a);}); string result = &#34;&#34;; for (auto i : numbers) result += to_string(i); return result; } }; // 运行时间：4ms // 占用内存：380k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-31/">整数中1出现的次数（从1到n整数中1出现的次数）</a> &mdash;
-					<span class="description">
-						
-						// 思路一：简单粗暴，一个一个数的统计 class Solution { public: int NumberOf1Between1AndN_Solution(int n) { int cnt = 0; for (int i = 0; i &lt;= n; i++) { string tmp = to_string(i); for (int j = 0; j &lt; tmp.length(); j++) cnt += tmp[j] == &#39;1&#39; ? 1 : 0; } return cnt; } }; // 运行时间：6ms // 占用内存：488k // 思路二：找规律，比较麻烦，挖个坑 &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-30/">连续子数组的最大和</a> &mdash;
-					<span class="description">
-						
-						// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; vector&lt;int&gt; dp(array.begin(), array.end()); for (int i = 1; i &lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; for (int i = 1; i &lt; array.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-29/">最小的K个数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&lt;int&gt; GetLeastNumbers_Solution(vector&lt;int&gt; input, int k) { vector&lt;int&gt; result; if (k &gt; input.size()) return result; priority_queue&lt;int&gt; q; for (auto i : input) { q.push(i); if (q.size() &gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

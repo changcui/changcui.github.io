@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,66 @@
 				
 				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-81/">81. Search in Rotated Sorted Array II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool search(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &lt;= right) { int mid = left + (right - left) / 2; if (target == nums[mid]) return true; if (nums[mid] &lt; nums[right]) { if (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right]) left = mid + 1; else right = mid - 1; } else if (nums[mid] &gt; nums[right]) { if (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid]) right = mid - 1; else left = mid + 1; } else right -= 1; } return false; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-33/">33. Search in Rotated Sorted Array</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &lt;= right) { int mid = left + (right - left) / 2; if (nums[mid] == target) return mid; else if (nums[mid] &lt; nums[right]) { if (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right]) left = mid + 1; else right = mid - 1; } else { if (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid]) right = mid - 1; else left = mid + 1; } } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-35/">35. Search Insert Position</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int searchInsert(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; target) left = mid + 1; else right = mid; } return right; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-107/">107. Binary Tree Level Order Traversal II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-103/">103. Binary Tree Zigzag Level Order Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp; 1) res[level].insert(res[level].begin(), root-&gt;val); else res[level].&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-102/">102. Binary Tree Level Order Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
 					<a class="title" href="/posts/leetcode-145/">145. Binary Tree Postorder Traversal</a> &mdash;
 					<span class="description">
 						
@@ -104,71 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;int&gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } bool equationsPossible(vector&lt;string&gt;&amp; equations) { fa.resize(255); for (int i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++) fa[i] = i; for (auto e : equations) { auto f = e[0]; auto l = e[3]; if (e[1] == &#39;=&#39;) fa[find(f)] = find(l); } for (auto e : equations) { if (e[1] == &#39;!&#39; &amp;&amp; find(e[0]) == find(e[3])) return false; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 21, 2019</div>
-					<a class="title" href="/posts/leetcode-684/">684. Redundant Connection</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; fa; int find(int a) { return a == fa[a] ? a : a = find(fa[a]); } vector&lt;int&gt; findRedundantConnection(vector&lt;vector&lt;int&gt;&gt;&amp; edges) { auto N = edges.size(); fa.resize(N + 1); for (auto i = 1; i &lt; N + 1; i++) { fa[i] = i; } int l, r; for (auto e : edges) { auto i_f = find(e[0]); auto j_f = find(e[1]); if (i_f != j_f) { fa[i_f] = j_f; } else { l = e[0]; r = e[1]; } } return vector&lt;int&gt;{l, r}; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 21, 2019</div>
-					<a class="title" href="/posts/leetcode-547/">547. Friend Circles</a> &mdash;
-					<span class="description">
-						
-						union-find class Solution { public: vector&lt;int&gt; fa; int find(int x) { return x == fa[x] ? x : x = find(fa[x]); } int findCircleNum(vector&lt;vector&lt;int&gt;&gt;&amp; M) { if (M.size() == 1) return 1; auto n = M.size(); auto ncircle = n; fa.resize(n); for (int i = 0; i &lt; n; i++) { fa[i] = i; } for (int i = 0; i &lt; n; i++) for (int j = i; j &lt; n; j++) { if (M[i][j] == 1) { auto i_f = find(i); auto j_f = find(j); if (i_f !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 21, 2019</div>
-					<a class="title" href="/posts/leetcode-435/">435. Non-overlapping Intervals</a> &mdash;
-					<span class="description">
-						
-						 greedy class Solution { public: int eraseOverlapIntervals(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&lt; intervals.size(); i++) { if (r &gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 21, 2019</div>
-					<a class="title" href="/posts/leetcode-56/">56. Merge Intervals</a> &mdash;
-					<span class="description">
-						
-						 greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i++) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 21, 2019</div>
-					<a class="title" href="/posts/leetcode-452/">452. Minimum Number of Arrows to Burst Balloons</a> &mdash;
-					<span class="description">
-						
-						 greedy class Solution { public: int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &lt; len; i++) { if (points[i][0] &lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 20, 2019</div>
-					<a class="title" href="/posts/2019-09-20/">2019 09 20</a> &mdash;
-					<span class="description">
-						
-						组会 今天开了组会，竟然是周五，这是我没有想到的，终于见到了传说中的新同学，我拥有了一个学弟，我们组也壮大到了五个人。
-上周组会的内容仿佛已经不太重要了，我按照老师的说法，实现了想要的功能，做了 slides 准备讲一讲，可老师很兴奋地给我讲了一个新的 idea，让我可以考虑考虑，我现在不知道要做什么了。
-慢垒 开完组会，我去操场打球啦，虽然我没有热身，也没有练习，不过打得还不错，被 K 了一次，也打了一个很远的高飞球，对自己的状态还算满意吧，但是我的身体素质确实差了好多啊，挥了几下棒，随便跑了几步，就累的不行。
-工作 今天没有去工作，因为五点要开会，我只回去开了个会，甚至电脑都没有打开，开会的效率还行，30分钟基本上讲完了，然后就开始聊一些有的没的，大部分时间都在聊薪资吧，不得不说，薪资还是大家最在意的东西，至于对做的东西有没有兴趣，应该是有的，但大家总喜欢钱又多，做的东西也有趣的地方吧。
-焦虑 如果不是这波新的焦虑开始，我估计还会更晚开始更新吧，现在想想，上次开始继续写博客也许就是比较焦虑，觉得自己太菜了。然后现在这种感觉又回来了，我开始觉得自己 coding 不行，英语不行，也没 paper，什么优势都没有。
-还需要继续努力啊，每变得牛逼一些，焦虑就会少一些，也许有一天我再也不用更新了。&hellip;
 						
 					</span>
 				</div>

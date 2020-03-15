@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-14T15:31:56+08:00" />
+<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,66 @@
 				
 				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-13/">13. Roman to Integer</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int romanToInt(string s) { auto rtn = 0; auto l = s.size(); for (int i = 0; i &lt; l;) { if (s[i] == &#39;I&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;V&#39;) { rtn += 4; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;X&#39;) { rtn += 9; i += 1; } else { rtn += 1; } } else if (s[i] == &#39;X&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;L&#39;) { rtn += 40; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;C&#39;) { rtn += 90; i += 1; } else { rtn += 10; } } else if (s[i] == &#39;C&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;D&#39;) { rtn += 400; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;M&#39;) { rtn += 900; i += 1; } else { rtn += 100; } } else if (s[i] == &#39;V&#39;) { rtn += 5; } else if (s[i] == &#39;L&#39;) { rtn += 50; } else if (s[i] == &#39;D&#39;) { rtn += 500; } else { rtn += 1000; } i += 1; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-69/">69. Sqrt(x)</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-125/">125. Valid Palindrome</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPalindrome(string s) { string x = &#34;&#34;; for (auto i : s) { if (isalnum(i)) { x.push_back(tolower(i)); } } auto l = x.size(); if (l == 0) return true; for (int i = 0; i &lt; l/2; i++) { if (x[i] != x[x.size() - 1 - i]) { return false; } } return true; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-20/">20. Valid Parentheses</a> &mdash;
+					<span class="description">
+						
+						stack.empty() class Solution { public: bool isValid(string s) { if (s.size() == 0) return true; stack&lt;char&gt; brs; brs.push(s[0]); for (int i = 1; i &lt; s.size(); i++) { switch(s[i]) { case &#39;)&#39;: if (brs.empty() || brs.top() != &#39;(&#39;) { return false; } brs.pop(); break; case &#39;}&#39;: if (brs.empty() || brs.top() != &#39;{&#39;) { return false; } brs.pop(); break; case &#39;]&#39;: if (brs.empty() || brs.top() != &#39;[&#39;) { return false; } brs.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-66/">66. Plus One</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) { auto carry = 1; for (int i = digits.size() - 1; i &gt;= 0; i--) { digits[i] += carry; carry = digits[i] == 10 ? 1 : 0; digits[i] %= 10; } if (carry) digits.insert(digits.begin(), carry); return digits; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-160/">160. Intersection of Two Linked Lists</a> &mdash;
+					<span class="description">
+						
+						 nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&gt; next; q = q -&gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
 					<a class="title" href="/posts/2019-09-06/">2019 09 06</a> &mdash;
 					<span class="description">
 						
@@ -114,66 +174,6 @@ airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的�
 					<span class="description">
 						
 						class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if (strs.size() == 0) return &#34;&#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &lt;&lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-28/">28. Implement strStr()</a> &mdash;
-					<span class="description">
-						
-						 KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-169/">169. Majority Element</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int majorityElement(vector&lt;int&gt;&amp; nums) { map&lt;int, int&gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &gt; nums.size() / 2) { return num; } } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-202/">202. Happy Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&lt;int&gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-217/">217. Contains Duplicate</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool containsDuplicate(vector&lt;int&gt;&amp; nums) { map&lt;int, bool&gt; n; for (auto num: nums) { if (n[num]) { return true; } n[num] = true; } return false; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-204/">204. Count Primes</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int countPrimes(int n) { if (n &lt;= 2) { return 0; } vector&lt;bool&gt; nums(n, true); auto rtn = 1; for (int i = 2;;) { for (int j = 2 * i; j &lt; n; j += i) { nums[j] = false; } while (!nums[++i] &amp;&amp; i &lt; n) { } if (i &gt;= n) break; rtn += 1; } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-189/">189. Rotate Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void rotate(vector&lt;int&gt;&amp; nums, int k) { for (int i = 0; i &lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; &hellip;
 						
 					</span>
 				</div>

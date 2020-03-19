@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,86 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-32/">把数组排成最小的数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：对数进行排序，拼接效果差的排在前面 class Solution { public: string PrintMinNumber(vector&lt;int&gt; numbers) { sort(numbers.begin(), numbers.end(), [](auto a, auto b){return to_string(a) + to_string(b) &lt; to_string(b) + to_string(a);}); string result = &#34;&#34;; for (auto i : numbers) result += to_string(i); return result; } }; // 运行时间：4ms // 占用内存：380k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-31/">整数中1出现的次数（从1到n整数中1出现的次数）</a> &mdash;
+					<span class="description">
+						
+						// 思路一：简单粗暴，一个一个数的统计 class Solution { public: int NumberOf1Between1AndN_Solution(int n) { int cnt = 0; for (int i = 0; i &lt;= n; i++) { string tmp = to_string(i); for (int j = 0; j &lt; tmp.length(); j++) cnt += tmp[j] == &#39;1&#39; ? 1 : 0; } return cnt; } }; // 运行时间：6ms // 占用内存：488k // 思路二：找规律，比较麻烦，挖个坑 &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-30/">连续子数组的最大和</a> &mdash;
+					<span class="description">
+						
+						// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; vector&lt;int&gt; dp(array.begin(), array.end()); for (int i = 1; i &lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; for (int i = 1; i &lt; array.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-29/">最小的K个数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&lt;int&gt; GetLeastNumbers_Solution(vector&lt;int&gt; input, int k) { vector&lt;int&gt; result; if (k &gt; input.size()) return result; priority_queue&lt;int&gt; q; for (auto i : input) { q.push(i); if (q.size() &gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-28/">数组中出现次数超过一半的数字</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 map 保存出现的次数，大于一半就返回 class Solution { public: int MoreThanHalfNum_Solution(vector&lt;int&gt; numbers) { int n = numbers.size() / 2 + 1; unordered_map&lt;int, int&gt; m; for (auto i : numbers) { m[i] += 1; if (m[i] &gt;= n) return i; } return 0; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-27/">字符串的排列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：列出所有结果，考虑 DFS，出口是 size 一致，注意重复的剪枝 class Solution { public: vector&lt;string&gt; Permutation(string str) { vector&lt;string&gt; result; if (str.size() == 0) return result; vector&lt;bool&gt; used(str.size(), false); sort(str.begin(), str.end()); dfs(str, &#34;&#34;, used, result); return result; } void dfs(string&amp; str, string out, vector&lt;bool&gt;&amp; used, vector&lt;string&gt;&amp; result) { if (str.size() == out.size()) {result.push_back(out); return;} for (int i = 0; i &lt; str.size(); i++) { if (i &gt; 0 &amp;&amp; str[i] == str[i-1] &amp;&amp; !used[i-1]) continue; if (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-26/">二叉搜索树与双向链表</a> &mdash;
+					<span class="description">
+						
+						// 思路一：因为是排序的双向链表，所以考虑中序遍历加递归，在没有连接之间的节点建立连接即可 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!pRootOfTree) return NULL; auto l = Convert(pRootOfTree-&gt;left); auto t = l; while (t &amp;&amp; t-&gt;right) t = t-&gt;right; if (t) t-&gt;right = pRootOfTree; pRootOfTree-&gt;left = t; auto r = Convert(pRootOfTree-&gt;right); if (r) r-&gt;left = pRootOfTree; pRootOfTree-&gt;right = r; return l ? l : pRootOfTree; } }; // 运行时间：3ms // 占用内存：616k // 思路二：维护一个前驱指针，使用中序遍历 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-25/">复杂链表的复制</a> &mdash;
+					<span class="description">
+						
+						// 思路一：可以分三步完成，复制节点，复制指针，拆分节点，注意第三步必须要拆分，要保证原本的链表不变 class Solution { public: RandomListNode* Clone(RandomListNode* pHead) { auto p = pHead; if (!p) return NULL; while (p) { auto t = new RandomListNode(p-&gt;label); auto n = p-&gt;next; p-&gt;next = t; t-&gt;next = n; p = n; } p = pHead; while (p &amp;&amp; p-&gt;next) { p-&gt;next-&gt;random = p-&gt;random ? p-&gt;random-&gt;next : NULL; p = p-&gt;next-&gt;next; } auto rtn = pHead-&gt;next; p = pHead; while (p-&gt;next) { auto tmp = p-&gt;next; p-&gt;next = tmp-&gt;next; p = tmp; } return rtn; } }; // 运行时间：3ms // 占用内存：488k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Mar 8, 2020</div>
 					<a class="title" href="/posts/2020-03-08/">2020 03 08</a> &mdash;
 					<span class="description">
@@ -86,89 +166,6 @@
 					<span class="description">
 						
 						// 思路一：dfs，出口是叶子节点且 target 为根结点的值 class Solution { public: vector&lt;vector&lt;int&gt; &gt; FindPath(TreeNode* root,int expectNumber) { vector&lt;vector&lt;int&gt; &gt; result; if (!root) return result; dfs(root, expectNumber, {}, result); sort(result.begin(), result.end(), [](auto a, auto b) { return a.size() &gt; b.size();}); return result; } void dfs(TreeNode* root, int target, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt; &gt;&amp; result) { out.push_back(root-&gt;val); if (target == root-&gt;val &amp;&amp; !root-&gt;left &amp;&amp; !root-&gt;right) { result.push_back(out); return; } if (root-&gt;left) dfs(root-&gt;left, target-root-&gt;val, out, result); if (root-&gt;right) dfs(root-&gt;right, target-root-&gt;val, out, result); } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-23/">二叉搜索树的后序遍历序列</a> &mdash;
-					<span class="description">
-						
-						// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它 class Solution { public: bool VerifySquenceOfBST(vector&lt;int&gt; sequence) { if (sequence.empty()) return false; return helper(sequence, 0, sequence.size() - 1); } bool helper(vector&lt;int&gt;&amp; seq, int l, int r) { if (r - l &lt;= 1) return true; int pivot = seq[r]; int li = l, ri = r - 1; while(seq[li] &lt; pivot) li++; while(seq[ri] &gt; pivot) ri--; if (li - ri == 1) return helper(seq, l, ri) &amp;&amp; helper(seq, li, r-1); return false; } }; // 运行时间：2ms // 占用内存：608k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-22/">从上往下打印二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.push(root); while (!q.empty()) { int c = q.size(); while (c--) { auto t = q.front(); q.pop(); result.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } } return result; } }; // 运行时间：3ms // 占用内存：604k // 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-21/">栈的压入、弹出序列</a> &mdash;
-					<span class="description">
-						
-						// 思路一：模拟栈的行为，如果压入元素与popV的前列元素相等，则证明 push 之后随即 pop, 然后判断剩下的元素是否后近先出 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { if (i == popV[l]) l++; else test.push(i); } while (!test.empty()) { if (test.top() != popV[l++]) return false; test.pop(); } return true; } }; // 运行时间：4ms // 占用内存：480k // 思路二：也是模拟栈的行为，每次 push 的时候，都可以一直 pop，直到栈顶元素与 popV 的前列元素不相等或者栈为空为止 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { test.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-20/">包含min函数的栈</a> &mdash;
-					<span class="description">
-						
-						// 思路一：添加辅助栈，只压入不大于栈顶元素的项，pop 的时候 s1.top() 一定大于等于 s2.top(), 只有当相等的时候, s2 才执行pop() class Solution { public: void push(int value) { s1.push(value); if (s2.empty() || s2.top() &gt;= value) s2.push(value); } void pop() { if (s2.top() == s1.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int min() { return s2.top(); } private: stack&lt;int&gt; s1; stack&lt;int&gt; s2; }; // 运行时间：2ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-19/">顺时针打印矩阵</a> &mdash;
-					<span class="description">
-						
-						// 思路一：确定四个角的位置，然后按照右，下，左，上的顺序，需要注意的是左和上的时候，需要判断是否有新的一行或一列，不然会输出相同的元素 class Solution { public: vector&lt;int&gt; printMatrix(vector&lt;vector&lt;int&gt; &gt; matrix) { vector&lt;int&gt; result; if (matrix.empty() || matrix[0].empty()) return result; int m = matrix.size(), n = matrix[0].size(); int l = 0, r = n - 1, t = 0, d = m - 1; while (l &lt;= r &amp;&amp; t &lt;= d) { for (int i = l; i &lt;= r; i++) result.push_back(matrix[t][i]); for (int i = t + 1; i &lt;= d; i++) result.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/2020-03-07/">2020 03 07</a> &mdash;
-					<span class="description">
-						
-						重新 重新写日记，不知道是不是再一次心血来潮，但我会想一下自己的经历，建立一个习惯，往往不是一次就能成功的。以关闭朋友圈为例，我大概尝试过三次，第三次之后，终于能关闭朋友圈，再也不想着去打开它了（或许我找到了替代品 mastodon，这次写日记不知道能持续多久，但作为一个习惯培养的话，至少比不开始要强吧。
-契机 契机大概是三月六号是比较重要的一天，我来到了一个新的实习公司，然后帮师兄转发校招的消息才发现，以为距自己还有几个月距离的校招已经开始了，我顿时开始有点紧张，题刷够了，工程能力有提高吗，当时说掌握的基础知识掌握了吗？这一切都让我觉得，我的时间并不是很多了，尤其是这个学期，我需要一边上课，一边实习，一边帮实验室打工，一边找工作，我真的忙的过来吗？
-四个月 大概有四个月没有更新过日记了，我发现我更擅长去描述自己的生活，而不是去写技术教程之类的，我更喜欢分享自己的感悟，自己的理解，而不是教别人去干一些什么事情，我也不准备去强迫自己像一些科普博客一样，由浅入深地讲解什么原理，我没有这个层次的表达能力，写这种东西让我觉得浪费时间且难受，还是尽量 follow my heart 吧。
-TODO 争取多做一些有意义的事情，以不让衰老的自己后悔为目标努力吧。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 26, 2020</div>
-					<a class="title" href="/posts/offer-18/">二叉树的镜像</a> &mdash;
-					<span class="description">
-						
-						// 思路一：还是考虑递归，交换左右子树即可 class Solution { public: void Mirror(TreeNode *pRoot) { if (!pRoot) return; auto tmp = pRoot-&gt;left; pRoot-&gt;left = pRoot-&gt;right; pRoot-&gt;right = tmp; Mirror(pRoot-&gt;left); Mirror(pRoot-&gt;right); return; } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 26, 2020</div>
-					<a class="title" href="/posts/offer-17/">树的子结构</a> &mdash;
-					<span class="description">
-						
-						// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构 class Solution { public: bool IsSubtree(TreeNode* a, TreeNode* b) { if (!b) return true; if (!a) return false; return a-&gt;val == b-&gt;val &amp;&amp; IsSubtree(a-&gt;left, b-&gt;left) &amp;&amp; IsSubtree(a-&gt;right, b-&gt;right); } bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) { if (!pRoot2 || !pRoot1) return false; return (pRoot1-&gt;val == pRoot2-&gt;val &amp;&amp; IsSubtree(pRoot1, pRoot2)) || HasSubtree(pRoot1-&gt;left, pRoot2) || HasSubtree(pRoot1-&gt;right, pRoot2); } }; // 运行时间：3ms // 占用内存：376k &hellip;
 						
 					</span>
 				</div>

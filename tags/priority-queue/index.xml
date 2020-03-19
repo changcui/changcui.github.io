@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>priority queue on changcui</title>
+    <link>http://changcui.cc/tags/priority-queue/</link>
+    <description>Recent content in priority queue on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 19 Mar 2020 21:22:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/priority-queue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据流中的中位数</title>
+      <link>http://changcui.cc/posts/offer-63/</link>
+      <pubDate>Thu, 19 Mar 2020 21:22:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-63/</guid>
+      <description>// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp;amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp;amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; priority_queue&amp;lt;int&amp;gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k </description>
+    </item>
+    
+  </channel>
+</rss>

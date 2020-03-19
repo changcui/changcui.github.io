@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deque on changcui</title>
+    <link>http://changcui.cc/tags/deque/</link>
+    <description>Recent content in deque on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 19 Mar 2020 21:43:46 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/deque/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>滑动窗口的最大值</title>
+      <link>http://changcui.cc/posts/offer-64/</link>
+      <pubDate>Thu, 19 Mar 2020 21:43:46 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-64/</guid>
+      <description>// 思路一：单调双向队列，保存下标 class Solution { public: vector&amp;lt;int&amp;gt; maxInWindows(const vector&amp;lt;int&amp;gt;&amp;amp; num, unsigned int size) { vector&amp;lt;int&amp;gt; res; if (size == 0) return res; deque&amp;lt;int&amp;gt; q; for (int i = 0; i &amp;lt; num.size(); i++) { while (!q.empty() &amp;amp;&amp;amp; num[i] &amp;gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;amp;&amp;amp; i - q.front() + 1 &amp;gt; size) q.pop_front(); q.push_back(i); if (i + 1 &amp;gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
+    
+  </channel>
+</rss>

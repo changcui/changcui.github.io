@@ -7,10 +7,82 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 22:09:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 22:00:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>剪绳子</title>
+      <link>http://changcui.cc/posts/offer-67/</link>
+      <pubDate>Thu, 19 Mar 2020 22:00:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-67/</guid>
+      <description>// 思路一：贪心，优先剪3 class Solution { public: int cutRope(int number) { if (number == 2 || number == 3) return number - 1; if (number % 3 == 0) return pow(3, number/3); if (number % 3 == 1) return pow(3, number/3-1) * 4; if (number % 3 == 2) return pow(3, number/3) * 2; } }; // 运行时间：5ms // 占用内存：504k </description>
+    </item>
+    
+    <item>
+      <title>机器人的运动范围</title>
+      <link>http://changcui.cc/posts/offer-66/</link>
+      <pubDate>Thu, 19 Mar 2020 21:58:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-66/</guid>
+      <description>// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt; &amp;gt; visited(rows, vector&amp;lt;bool&amp;gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp;amp; rtn, int threshold, int i, int j, vector&amp;lt;vector&amp;lt;bool&amp;gt; &amp;gt;&amp;amp; visited, int rows, int cols) { if (i &amp;lt; 0 || j &amp;lt; 0 || i &amp;gt;= rows || j &amp;gt;= cols || visited[i][j] || sum_(i, j) &amp;gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k </description>
+    </item>
+    
+    <item>
+      <title>矩阵中的路径</title>
+      <link>http://changcui.cc/posts/offer-65/</link>
+      <pubDate>Thu, 19 Mar 2020 21:43:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-65/</guid>
+      <description>// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &amp;lt; rows; i++) { for (int j = 0; j &amp;lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &amp;lt; 0 || j &amp;lt; 0 || i &amp;gt;= rows || j &amp;gt;= cols || matrix[i*cols+j] !</description>
+    </item>
+    
+    <item>
+      <title>滑动窗口的最大值</title>
+      <link>http://changcui.cc/posts/offer-64/</link>
+      <pubDate>Thu, 19 Mar 2020 21:43:46 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-64/</guid>
+      <description>// 思路一：单调双向队列，保存下标 class Solution { public: vector&amp;lt;int&amp;gt; maxInWindows(const vector&amp;lt;int&amp;gt;&amp;amp; num, unsigned int size) { vector&amp;lt;int&amp;gt; res; if (size == 0) return res; deque&amp;lt;int&amp;gt; q; for (int i = 0; i &amp;lt; num.size(); i++) { while (!q.empty() &amp;amp;&amp;amp; num[i] &amp;gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;amp;&amp;amp; i - q.front() + 1 &amp;gt; size) q.pop_front(); q.push_back(i); if (i + 1 &amp;gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k </description>
+    </item>
+    
+    <item>
+      <title>数据流中的中位数</title>
+      <link>http://changcui.cc/posts/offer-63/</link>
+      <pubDate>Thu, 19 Mar 2020 21:22:47 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-63/</guid>
+      <description>// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp;amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp;amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; priority_queue&amp;lt;int&amp;gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k </description>
+    </item>
+    
+    <item>
+      <title>二叉搜索树的第k个结点</title>
+      <link>http://changcui.cc/posts/offer-62/</link>
+      <pubDate>Thu, 19 Mar 2020 20:30:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-62/</guid>
+      <description>// 思路一：检查子树的大小，二分查找 class Solution { public: int tSize(TreeNode* root) { if (!root) return 0; return 1 + tSize(root-&amp;gt;left) + tSize(root-&amp;gt;right); } TreeNode* KthNode(TreeNode* pRoot, int k) { if (!pRoot) return NULL; auto lSize = tSize(pRoot-&amp;gt;left); if (k &amp;lt;= lSize) return KthNode(pRoot-&amp;gt;left, k); else if (k == lSize + 1) return pRoot; return KthNode(pRoot-&amp;gt;right, k-lSize-1); } }; // 运行时间：3ms // 占用内存：604k // 思路二：递归中序遍历，记录访问节点的数量 class Solution { public: int index = 0; TreeNode* KthNode(TreeNode* pRoot, int k) { if (!</description>
+    </item>
+    
+    <item>
+      <title>序列化二叉树</title>
+      <link>http://changcui.cc/posts/offer-61/</link>
+      <pubDate>Thu, 19 Mar 2020 20:18:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-61/</guid>
+      <description>// 思路一：前序遍历，注意申请堆内存保存序列化数据 class Solution { public: char* Serialize(TreeNode *root) { string result = &amp;#34;&amp;#34;; preOrderSe(root, result); char* rtn = new char[result.size()+1]; strcpy(rtn, result.c_str()); return rtn; } void preOrderSe(TreeNode* root, string&amp;amp; result) { if (!root) { result += &amp;#34;#!&amp;#34;; return; } result += to_string(root-&amp;gt;val) + &amp;#34;!&amp;#34;; preOrderSe(root-&amp;gt;left, result); preOrderSe(root-&amp;gt;right, result); } TreeNode* Deserialize(char *str) { string result(str); return preOrderDese(result); } TreeNode* preOrderDese(string&amp;amp; result) { if (result[0] == &amp;#39;#&amp;#39;) {result = result.substr(2); return NULL;} int end = 0; while (result[end] !</description>
+    </item>
+    
+    <item>
+      <title>git 使用日记</title>
+      <link>http://changcui.cc/posts/git/</link>
+      <pubDate>Tue, 17 Mar 2020 09:29:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/git/</guid>
+      <description>git 常见使用场景总结，挖个坑。</description>
+    </item>
     
     <item>
       <title>把二叉树打印成多行</title>

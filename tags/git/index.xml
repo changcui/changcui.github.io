@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Wed, 08 Jan 2020 11:07:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 09:29:32 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git 使用日记</title>
+      <link>http://changcui.cc/posts/git/</link>
+      <pubDate>Tue, 17 Mar 2020 09:29:32 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/git/</guid>
+      <description>git 常见使用场景总结，挖个坑。</description>
+    </item>
     
     <item>
       <title>git checkout</title>

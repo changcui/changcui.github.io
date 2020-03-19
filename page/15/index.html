@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,86 @@
 				
 				
 				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-3/">3. Longest Substring Without Repeating Characters</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int lengthOfLongestSubstring(string s) { int left = -1, res = 0, n = s.size(); unordered_map&lt;int, int&gt; visited; for (int i = 0; i &lt; n; i++) { if (visited.count(s[i]) &amp;&amp; visited[s[i]] &gt; left) { left = visited[s[i]]; } visited[s[i]] = i; res = max(res, i - left); } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 2, 2019</div>
+					<a class="title" href="/posts/python3/">python3</a> &mdash;
+					<span class="description">
+						
+						 在交互模式下，上一次打印出来的表达式被赋值给变量 _   &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-41/">41. First Missing Positive</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int firstMissingPositive(vector&lt;int&gt;&amp; nums) { for (int i = 0; i &lt; nums.size(); i++) while (nums[i] &gt; 0 &amp;&amp; nums[i] &lt;= nums.size() &amp;&amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-80/">80. Remove Duplicates from Sorted Array II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.size() &lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &lt; nums.size(); i++) { if (nums[i] &gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-26/">26. Remove Duplicates from Sorted Array</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-27/">27. Remove Element</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int res = 0; for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-127/">127. Word Ladder</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int ladderLength(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) { unordered_set&lt;string&gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&lt;string&gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res+1; for (int i = 0; i &lt; word.size(); i++) { string newword = word; for (char j = &#39;a&#39;; j &lt;= &#39;z&#39;; j++) { newword[i] = j; if (s.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-130/">130. Surrounded Regions</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: void solve(vector&lt;vector&lt;char&gt;&gt;&amp; board) { if (board.empty() || board[0].empty()) return; int m = board.size(), n = board[0].size(); for (int j = 0; j &lt; n; j++) { if (board[0][j] == &#39;O&#39;) dfs(board, 0, j); if (board[m-1][j] == &#39;O&#39;) dfs(board, m-1, j); } for (int i = 1; i &lt; m-1; i++) { if (board[i][0] == &#39;O&#39;) dfs(board, i, 0); if ( board[i][n-1] == &#39;O&#39;) dfs(board, i, n-1); } for (int i = 0; i &lt; m; i++) for (int j = 0; j &lt; n; j++) { if (board[i][j] == &#39;O&#39;) board[i][j] = &#39;X&#39;; if (board[i][j] == &#39;$&#39;) board[i][j] = &#39;O&#39;; } } void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; board, int i, int j) { int m = board.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Oct 18, 2019</div>
 					<a class="title" href="/posts/leetcode-200/">200. Number of Islands</a> &mdash;
 					<span class="description">
@@ -84,92 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int totalNQueens(int n) { int cnt = 0; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp; cnt, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(cnt, out, row+1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row+i &gt;= 0 &amp;&amp; out[i][col-row+i] == &#39;Q&#39;) return false; if (col+row-i &lt; out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 17, 2019</div>
-					<a class="title" href="/posts/leetcode-51/">51. N-Queens</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;string&gt;&gt; solveNQueens(int n) { vector&lt;vector&lt;string&gt;&gt; res; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(res, out, 0); return res; } void helper(vector&lt;vector&lt;string&gt;&gt;&amp; res, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(res, out, row+1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row+i &gt;= 0 &amp;&amp; out[i][col-row+i] == &#39;Q&#39;) return false; if (col+row-i &lt; out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 17, 2019</div>
-					<a class="title" href="/posts/leetcode-47/">47. Permutations II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; permuteUnique(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; out, visited(nums.size(), 0); sort(nums.begin(), nums.end()); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; out, vector&lt;int&gt;&amp; visited, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &lt; nums.size(); i++) { if (visited[i] == 1) continue; if (i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &amp;&amp; visited[i-1] == 0) continue; visited[i] = 1; out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 17, 2019</div>
-					<a class="title" href="/posts/leetcode-46/">46. Permutations</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; permute(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; out, visited(nums.size(), 0); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; out, vector&lt;int&gt;&amp; visited, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res){ if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &lt; nums.size(); i++) { if (visited[i] == 0) { visited[i] = 1; out.push_back(nums[i]); dfs(nums, out, visited, level + 1, res); out.pop_back(); visited[i] = 0; } } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 15, 2019</div>
-					<a class="title" href="/posts/2019-10-15/">2019 10 15</a> &mdash;
-					<span class="description">
-						
-						聚餐 今天开组会的时候，一个毕业的师兄回来了，参加了我们的组会，和我们老师相谈甚欢，看着颇有一分衣锦还乡的感觉。
-开完组会师兄请我们吃了饭，聊了聊师兄现在的境遇，组内大家的情况，感觉我们组虽然人比较少，大家的平均学术水平也不是很高，可是相处起来还是不错的，一次久违的聚餐竟然有一些温馨的感觉。
-Dorefa 最近公司的事情处理完了，日常在公司并没有什么事情可以做，mentor 就让我读一些 paper 拓展一下思路，今天读的是 face++ 的大作 dorefa-net，说实话我是不明白这个网络的名字为啥这么起？
-这片文章的结构非常鲜明，行文也非常流畅，读起来可谓毫不费力。
-我认为主要的贡献在于对梯度的量化，之前的一些量化模型并没有量化梯度，因为没有这个必要，在推理的时候不需要梯度，何必要量化呢？
-本文量化梯度的目标就是让神经网络可以在类似于 FPGA 的硬件上参与训练，但是我不认为这种场景有任何实际的意义，如果训练追求的目标是 accuracy，量化训练显然不合适，更低的 bit width 意味着收敛得更慢，以及上限更低，如果目标是推理的话，本文似乎也没有提出一些新的想法。所以，我觉得这篇 paper 有一种四不像的感觉，提出了一个无人提出的领域，但却没有实际应用的场景。
-冷 最近帝都真的好冷啊，冷空气像是一瞬间就席卷了整个北京城，让我根本不想从被窝里面起来，洗漱，然后骑车，步行去公司上班，虽然这整个过程也就15分钟左右。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 12, 2019</div>
-					<a class="title" href="/posts/leetcode-84/">84. Largest Rectangle in Histogram</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int largestRectangleArea(vector&lt;int&gt;&amp; heights) { int max_ = 0; for (int i = 0; i &lt; heights.size(); i++) { if (i + 1 &lt; heights.size() &amp;&amp; heights[i] &lt;= heights[i + 1]) continue; for (int j = i, h = heights[i]; j &gt;= 0; j--) { h = min(h, heights[j]); auto area = h * (i - j + 1); max_ = max(max_, area); } } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 12, 2019</div>
-					<a class="title" href="/posts/leetcode-224/">224. Basic Calculator</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int calculate(string s) { int rtn = 0; queue&lt;char&gt; op; queue&lt;int&gt; num; for (int i = 0; i &lt; s.size();) { if (s[i] == &#39;(&#39;) { int cnt = 1, start = i; while (cnt != 0) { i += 1; if (s[i] == &#39;(&#39;) cnt += 1; else if (s[i] == &#39;)&#39;) cnt -= 1; } num.push(calculate(s.substr(start + 1, i - start))); } else if (isdigit(s[i])) { int tmp = s[i] - &#39;0&#39;; while (isdigit(s[++i])) { tmp *= 10; tmp += s[i] - &#39;0&#39;; } num.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 12, 2019</div>
-					<a class="title" href="/posts/leetcode-394/">394. Decode String</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: string decodeString(string s) { string rtn = &#34;&#34;; for (int i = 0; i &lt; s.size();) { if (isdigit(s[i])) { auto start = i; auto end = i; while (isdigit(s[++end])); auto n = stoi(s.substr(start, end-start+1)); start = end + 1; auto cnt = 1; while (cnt != 0) { end += 1; if (s[end] == &#39;[&#39;) ++cnt; else if (s[end] == &#39;]&#39;) --cnt; } auto con = decodeString(s.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 12, 2019</div>
-					<a class="title" href="/posts/leetcode-150/">150. Evaluate Reverse Polish Notation</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int evalRPN(vector&lt;string&gt;&amp; tokens) { stack&lt;int&gt; t; for (auto s : tokens) { if (isdigit(s[s.size()-1])) { t.push(stoi(s)); } else { auto num1 = t.top(); t.pop(); auto num2 = t.top(); t.pop(); if (s == &#34;+&#34;) t.push(num2 + num1); else if (s == &#34;*&#34;) t.push(num2 * num1); else if (s == &#34;-&#34;) t.push(num2 - num1); else if (s == &#34;/&#34;) t.push(num2 / num1); } } return t.top(); } }; &hellip;
 						
 					</span>
 				</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>greedy on changcui</title>
+    <link>http://changcui.cc/tags/greedy/</link>
+    <description>Recent content in greedy on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 19 Mar 2020 22:00:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>剪绳子</title>
+      <link>http://changcui.cc/posts/offer-67/</link>
+      <pubDate>Thu, 19 Mar 2020 22:00:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-67/</guid>
+      <description>// 思路一：贪心，优先剪3 class Solution { public: int cutRope(int number) { if (number == 2 || number == 3) return number - 1; if (number % 3 == 0) return pow(3, number/3); if (number % 3 == 1) return pow(3, number/3-1) * 4; if (number % 3 == 2) return pow(3, number/3) * 2; } }; // 运行时间：5ms // 占用内存：504k </description>
+    </item>
+    
+  </channel>
+</rss>

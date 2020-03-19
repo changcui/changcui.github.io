@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 12 Dec 2019 00:04:57 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 21:58:56 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>机器人的运动范围</title>
+      <link>http://changcui.cc/posts/offer-66/</link>
+      <pubDate>Thu, 19 Mar 2020 21:58:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-66/</guid>
+      <description>// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt; &amp;gt; visited(rows, vector&amp;lt;bool&amp;gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp;amp; rtn, int threshold, int i, int j, vector&amp;lt;vector&amp;lt;bool&amp;gt; &amp;gt;&amp;amp; visited, int rows, int cols) { if (i &amp;lt; 0 || j &amp;lt; 0 || i &amp;gt;= rows || j &amp;gt;= cols || visited[i][j] || sum_(i, j) &amp;gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k </description>
+    </item>
+    
+    <item>
+      <title>矩阵中的路径</title>
+      <link>http://changcui.cc/posts/offer-65/</link>
+      <pubDate>Thu, 19 Mar 2020 21:43:48 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-65/</guid>
+      <description>// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &amp;lt; rows; i++) { for (int j = 0; j &amp;lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &amp;lt; 0 || j &amp;lt; 0 || i &amp;gt;= rows || j &amp;gt;= cols || matrix[i*cols+j] !</description>
+    </item>
     
     <item>
       <title>257.Binary Tree Paths</title>

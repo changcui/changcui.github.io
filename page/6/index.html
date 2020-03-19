@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,89 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-23/">二叉搜索树的后序遍历序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它 class Solution { public: bool VerifySquenceOfBST(vector&lt;int&gt; sequence) { if (sequence.empty()) return false; return helper(sequence, 0, sequence.size() - 1); } bool helper(vector&lt;int&gt;&amp; seq, int l, int r) { if (r - l &lt;= 1) return true; int pivot = seq[r]; int li = l, ri = r - 1; while(seq[li] &lt; pivot) li++; while(seq[ri] &gt; pivot) ri--; if (li - ri == 1) return helper(seq, l, ri) &amp;&amp; helper(seq, li, r-1); return false; } }; // 运行时间：2ms // 占用内存：608k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-22/">从上往下打印二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：层序遍历，用 queue 保存当前层，遍历当前层，加入下一层 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.push(root); while (!q.empty()) { int c = q.size(); while (c--) { auto t = q.front(); q.pop(); result.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } } return result; } }; // 运行时间：3ms // 占用内存：604k // 思路二：因为结果不需要区分层一层，可以再优化一下，去掉内层循环，但复杂度一致 class Solution { public: vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) { vector&lt;int&gt; result; if (!root) return result; queue&lt;TreeNode*&gt; q; q.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-21/">栈的压入、弹出序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：模拟栈的行为，如果压入元素与popV的前列元素相等，则证明 push 之后随即 pop, 然后判断剩下的元素是否后近先出 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { if (i == popV[l]) l++; else test.push(i); } while (!test.empty()) { if (test.top() != popV[l++]) return false; test.pop(); } return true; } }; // 运行时间：4ms // 占用内存：480k // 思路二：也是模拟栈的行为，每次 push 的时候，都可以一直 pop，直到栈顶元素与 popV 的前列元素不相等或者栈为空为止 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { test.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-20/">包含min函数的栈</a> &mdash;
+					<span class="description">
+						
+						// 思路一：添加辅助栈，只压入不大于栈顶元素的项，pop 的时候 s1.top() 一定大于等于 s2.top(), 只有当相等的时候, s2 才执行pop() class Solution { public: void push(int value) { s1.push(value); if (s2.empty() || s2.top() &gt;= value) s2.push(value); } void pop() { if (s2.top() == s1.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int min() { return s2.top(); } private: stack&lt;int&gt; s1; stack&lt;int&gt; s2; }; // 运行时间：2ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-19/">顺时针打印矩阵</a> &mdash;
+					<span class="description">
+						
+						// 思路一：确定四个角的位置，然后按照右，下，左，上的顺序，需要注意的是左和上的时候，需要判断是否有新的一行或一列，不然会输出相同的元素 class Solution { public: vector&lt;int&gt; printMatrix(vector&lt;vector&lt;int&gt; &gt; matrix) { vector&lt;int&gt; result; if (matrix.empty() || matrix[0].empty()) return result; int m = matrix.size(), n = matrix[0].size(); int l = 0, r = n - 1, t = 0, d = m - 1; while (l &lt;= r &amp;&amp; t &lt;= d) { for (int i = l; i &lt;= r; i++) result.push_back(matrix[t][i]); for (int i = t + 1; i &lt;= d; i++) result.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/2020-03-07/">2020 03 07</a> &mdash;
+					<span class="description">
+						
+						重新 重新写日记，不知道是不是再一次心血来潮，但我会想一下自己的经历，建立一个习惯，往往不是一次就能成功的。以关闭朋友圈为例，我大概尝试过三次，第三次之后，终于能关闭朋友圈，再也不想着去打开它了（或许我找到了替代品 mastodon，这次写日记不知道能持续多久，但作为一个习惯培养的话，至少比不开始要强吧。
+契机 契机大概是三月六号是比较重要的一天，我来到了一个新的实习公司，然后帮师兄转发校招的消息才发现，以为距自己还有几个月距离的校招已经开始了，我顿时开始有点紧张，题刷够了，工程能力有提高吗，当时说掌握的基础知识掌握了吗？这一切都让我觉得，我的时间并不是很多了，尤其是这个学期，我需要一边上课，一边实习，一边帮实验室打工，一边找工作，我真的忙的过来吗？
+四个月 大概有四个月没有更新过日记了，我发现我更擅长去描述自己的生活，而不是去写技术教程之类的，我更喜欢分享自己的感悟，自己的理解，而不是教别人去干一些什么事情，我也不准备去强迫自己像一些科普博客一样，由浅入深地讲解什么原理，我没有这个层次的表达能力，写这种东西让我觉得浪费时间且难受，还是尽量 follow my heart 吧。
+TODO 争取多做一些有意义的事情，以不让衰老的自己后悔为目标努力吧。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 26, 2020</div>
+					<a class="title" href="/posts/offer-18/">二叉树的镜像</a> &mdash;
+					<span class="description">
+						
+						// 思路一：还是考虑递归，交换左右子树即可 class Solution { public: void Mirror(TreeNode *pRoot) { if (!pRoot) return; auto tmp = pRoot-&gt;left; pRoot-&gt;left = pRoot-&gt;right; pRoot-&gt;right = tmp; Mirror(pRoot-&gt;left); Mirror(pRoot-&gt;right); return; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 26, 2020</div>
+					<a class="title" href="/posts/offer-17/">树的子结构</a> &mdash;
+					<span class="description">
+						
+						// 思路一：树的问题大多要用递归，当根结点值相等时，需要判断是否是找的子结构 class Solution { public: bool IsSubtree(TreeNode* a, TreeNode* b) { if (!b) return true; if (!a) return false; return a-&gt;val == b-&gt;val &amp;&amp; IsSubtree(a-&gt;left, b-&gt;left) &amp;&amp; IsSubtree(a-&gt;right, b-&gt;right); } bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) { if (!pRoot2 || !pRoot1) return false; return (pRoot1-&gt;val == pRoot2-&gt;val &amp;&amp; IsSubtree(pRoot1, pRoot2)) || HasSubtree(pRoot1-&gt;left, pRoot2) || HasSubtree(pRoot1-&gt;right, pRoot2); } }; // 运行时间：3ms // 占用内存：376k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Feb 5, 2020</div>
 					<a class="title" href="/posts/offer-16/">合并两个排序的链表</a> &mdash;
 					<span class="description">
@@ -84,86 +167,6 @@
 					<span class="description">
 						
 						// 思路一：递归，首先找到递归的出口，也就是返回值，然后每次递归出口从后往前依次反 // 转一个节点 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&gt; next) return pHead; auto reverseHead = ReverseList(pHead -&gt; next); pHead -&gt; next -&gt; next = pHead; pHead -&gt; next = NULL; return reverseHead; } }; // 运行时间：4ms // 占用内存：480k // 思路二：非递归，每次反转一个，设立一个 pre 指针变量 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&gt; next) return pHead; ListNode* rtn = NULL, *pre = NULL; while (pHead) { auto tmp = pHead -&gt; next; if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 5, 2020</div>
-					<a class="title" href="/posts/offer-14/">链表中倒数第k个结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&lt;ListNode*&gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&gt; next;} if (tmp.size() &lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &lt; 1) q = q -&gt; next; p = p -&gt; next; } if (cnt &lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 5, 2020</div>
-					<a class="title" href="/posts/offer-13/">调整数组顺序使奇数位于偶数前面</a> &mdash;
-					<span class="description">
-						
-						// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { vector&lt;int&gt; tmp; for (auto i : array) if (i &amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { for (int i = 0; i &lt; array.size(); i++) { for (int j = array.size() - 1; j &gt; i; j--) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 5, 2020</div>
-					<a class="title" href="/posts/offer-12/">数值的整数次方</a> &mdash;
-					<span class="description">
-						
-						// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ? true : false; exponent = exponent &gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 3, 2020</div>
-					<a class="title" href="/posts/offer-11/">二进制中1的个数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：n = n&amp;(n-1) 总会把最右边的1变为0 class Solution { public: int NumberOf1(int n) { int cnt = 0; while (n) {cnt++; n = n&amp;(n-1);} return cnt; } }; // 运行时间：3ms // 占用内存：472k // 思路二：一位一位的判断是否为1 class Solution { public: int NumberOf1(int n) { int cnt = 0; for (int i = 0; i &lt; 32; i++) { cnt += (n &gt;&gt; i) &amp; 1; } return cnt; } }; // 运行时间：5ms // 占用内存：512k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 3, 2020</div>
-					<a class="title" href="/posts/offer-10/">矩形覆盖</a> &mdash;
-					<span class="description">
-						
-						// 思路一：和斐波那契一样，递归会超时 class Solution { public: int rectCover(int number) { if (number == 0) return 0; int a = 1, b = 2; while (--number) { int tmp = b; b = a + b; a = tmp; } return a; } }; // 运行时间：4ms // 占用内存：464k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-9/">变态跳台阶</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用递推，每次可以跳1～i步，累加即可 class Solution { public: int jumpFloorII(int number) { vector&lt;int&gt; rtn({1, 1}); for (int i = 2; i &lt;= number; i++) { int tmp = 0; for (int j = 1; j &lt;= i; j++) tmp += rtn[i-j]; rtn.push_back(tmp); } return rtn.back(); } }; // 运行时间：4ms // 占用内存：460k // 思路二：数学可以推导出，f(n) = 2f(n-1)，使用左移来实现 class Solution { public: int jumpFloorII(int number) { return 1 &lt;&lt; (number - 1); } }; // 运行时间：4ms // 占用内存：472k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-8/">跳台阶</a> &mdash;
-					<span class="description">
-						
-						// 思路一： 使用递归非常简单，时间较长，因为有大量的重复计算 class Solution { public: int jumpFloor(int number) { if (number == 1 || number == 0) return 1; return jumpFloor(number - 1) + jumpFloor(number - 2); } }; // 运行时间：576ms // 占用内存：488k // 思路二： 使用循环，和斐波那契数列基本上一样 class Solution { public: int jumpFloor(int number) { int a = 1, b = 1; while (number--) { int tmp = a + b; a = b; b = tmp; } return a; } }; // 运行时间：3ms // 占用内存：460k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-7/">斐波那契数列</a> &mdash;
-					<span class="description">
-						
-						// 思路一：递归如果不储存的话会超时，使用循环 class Solution { public: int Fibonacci(int n) { int a = 0, b = 1; while (n--) { int tmp = a + b; a = b; b = tmp; } return a; } }; // 运行时间：4ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 22:09:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 20:30:20 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二叉搜索树的第k个结点</title>
+      <link>http://changcui.cc/posts/offer-62/</link>
+      <pubDate>Thu, 19 Mar 2020 20:30:20 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-62/</guid>
+      <description>// 思路一：检查子树的大小，二分查找 class Solution { public: int tSize(TreeNode* root) { if (!root) return 0; return 1 + tSize(root-&amp;gt;left) + tSize(root-&amp;gt;right); } TreeNode* KthNode(TreeNode* pRoot, int k) { if (!pRoot) return NULL; auto lSize = tSize(pRoot-&amp;gt;left); if (k &amp;lt;= lSize) return KthNode(pRoot-&amp;gt;left, k); else if (k == lSize + 1) return pRoot; return KthNode(pRoot-&amp;gt;right, k-lSize-1); } }; // 运行时间：3ms // 占用内存：604k // 思路二：递归中序遍历，记录访问节点的数量 class Solution { public: int index = 0; TreeNode* KthNode(TreeNode* pRoot, int k) { if (!</description>
+    </item>
+    
+    <item>
+      <title>序列化二叉树</title>
+      <link>http://changcui.cc/posts/offer-61/</link>
+      <pubDate>Thu, 19 Mar 2020 20:18:19 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/offer-61/</guid>
+      <description>// 思路一：前序遍历，注意申请堆内存保存序列化数据 class Solution { public: char* Serialize(TreeNode *root) { string result = &amp;#34;&amp;#34;; preOrderSe(root, result); char* rtn = new char[result.size()+1]; strcpy(rtn, result.c_str()); return rtn; } void preOrderSe(TreeNode* root, string&amp;amp; result) { if (!root) { result += &amp;#34;#!&amp;#34;; return; } result += to_string(root-&amp;gt;val) + &amp;#34;!&amp;#34;; preOrderSe(root-&amp;gt;left, result); preOrderSe(root-&amp;gt;right, result); } TreeNode* Deserialize(char *str) { string result(str); return preOrderDese(result); } TreeNode* preOrderDese(string&amp;amp; result) { if (result[0] == &amp;#39;#&amp;#39;) {result = result.substr(2); return NULL;} int end = 0; while (result[end] !</description>
+    </item>
     
     <item>
       <title>把二叉树打印成多行</title>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,96 @@
 				
 				
 				<div class="post">
+					<div class="meta">Sep 21, 2019</div>
+					<a class="title" href="/posts/leetcode-435/">435. Non-overlapping Intervals</a> &mdash;
+					<span class="description">
+						
+						 greedy class Solution { public: int eraseOverlapIntervals(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&lt; intervals.size(); i++) { if (r &gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 21, 2019</div>
+					<a class="title" href="/posts/leetcode-56/">56. Merge Intervals</a> &mdash;
+					<span class="description">
+						
+						 greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i++) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 21, 2019</div>
+					<a class="title" href="/posts/leetcode-452/">452. Minimum Number of Arrows to Burst Balloons</a> &mdash;
+					<span class="description">
+						
+						 greedy class Solution { public: int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &lt; len; i++) { if (points[i][0] &lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 20, 2019</div>
+					<a class="title" href="/posts/2019-09-20/">2019 09 20</a> &mdash;
+					<span class="description">
+						
+						组会 今天开了组会，竟然是周五，这是我没有想到的，终于见到了传说中的新同学，我拥有了一个学弟，我们组也壮大到了五个人。
+上周组会的内容仿佛已经不太重要了，我按照老师的说法，实现了想要的功能，做了 slides 准备讲一讲，可老师很兴奋地给我讲了一个新的 idea，让我可以考虑考虑，我现在不知道要做什么了。
+慢垒 开完组会，我去操场打球啦，虽然我没有热身，也没有练习，不过打得还不错，被 K 了一次，也打了一个很远的高飞球，对自己的状态还算满意吧，但是我的身体素质确实差了好多啊，挥了几下棒，随便跑了几步，就累的不行。
+工作 今天没有去工作，因为五点要开会，我只回去开了个会，甚至电脑都没有打开，开会的效率还行，30分钟基本上讲完了，然后就开始聊一些有的没的，大部分时间都在聊薪资吧，不得不说，薪资还是大家最在意的东西，至于对做的东西有没有兴趣，应该是有的，但大家总喜欢钱又多，做的东西也有趣的地方吧。
+焦虑 如果不是这波新的焦虑开始，我估计还会更晚开始更新吧，现在想想，上次开始继续写博客也许就是比较焦虑，觉得自己太菜了。然后现在这种感觉又回来了，我开始觉得自己 coding 不行，英语不行，也没 paper，什么优势都没有。
+还需要继续努力啊，每变得牛逼一些，焦虑就会少一些，也许有一天我再也不用更新了。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 9, 2019</div>
+					<a class="title" href="/posts/2019-09-09/">2019 09 09</a> &mdash;
+					<span class="description">
+						
+						工作 今天睡得不是很好，但是还是强忍着去公司了，早上划水了一会，然后和 mentor 讨论一下本周的工作内容，分析了一下发现内容并不是特别多，然后明天教师节还要开组会，于是我就在公司写组里的东西。
+投资 今天刷 bbs 的时候，看到有人说基金定投的事，推荐投 300 etf之类的，虽然我不懂他们说的是什么东西，我就跟着买了这个，然后把之前的定投都取消了。
+聊天 今天走之前和 mentor 聊了一会天，比如组里的事，公司的事，还有一些程序员中年危机的事，还是有一些收获吧，希望以后也能多学习一些别的东西吧，在所谓的中年危机来之前好好的提升自己。
+通过和 mentor 的交谈，我发现小孩带来的压力竟然是如此的大，我之前都没考虑过这个问题。
+面试 今天一个朋友去百度面试，他说感觉运气已经站在了自己这边，问的算法题和基础知识都回答的不错，但是二面的时候却被说缺乏项目经验，觉得是自己不够努力，在运气到来的时候，没能抓住机会。
+我想了一下，其实是同意他的，今天 mentor 也说，有时候选择很重要，但是当你不知道如何选择的时候，这种选择能不能归结于运气呢，但当运气比较好的时候，也要有一些硬实力保驾护航吧。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 8, 2019</div>
+					<a class="title" href="/posts/leetcode-75/">75. Sort Colors</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: void sortColors(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &lt; len &amp;&amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-155/">155. Min Stack</a> &mdash;
+					<span class="description">
+						
+						priority_queue, stack class MinStack { public: /** initialize your data structure here. */ stack&lt;int&gt; s; priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; MinStack() { } void push(int x) { s.push(x); p.push(x); } void pop() { auto e = s.top(); s.pop(); vector&lt;int&gt; tmp; while (!p.empty()) { auto t = p.top(); p.pop(); if (t == e) break; tmp.push_back(t); } for (auto i : tmp) { p.push(i); } } int top() { return s.top(); } int getMin() { return p.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-171/">171. Excel Sheet Column Number</a> &mdash;
+					<span class="description">
+						
+						 long long class Solution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &#39;A&#39; + 1; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
 					<a class="title" href="/posts/leetcode-13/">13. Roman to Integer</a> &mdash;
 					<span class="description">
@@ -84,96 +174,6 @@
 					<span class="description">
 						
 						class Solution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-125/">125. Valid Palindrome</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isPalindrome(string s) { string x = &#34;&#34;; for (auto i : s) { if (isalnum(i)) { x.push_back(tolower(i)); } } auto l = x.size(); if (l == 0) return true; for (int i = 0; i &lt; l/2; i++) { if (x[i] != x[x.size() - 1 - i]) { return false; } } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-20/">20. Valid Parentheses</a> &mdash;
-					<span class="description">
-						
-						stack.empty() class Solution { public: bool isValid(string s) { if (s.size() == 0) return true; stack&lt;char&gt; brs; brs.push(s[0]); for (int i = 1; i &lt; s.size(); i++) { switch(s[i]) { case &#39;)&#39;: if (brs.empty() || brs.top() != &#39;(&#39;) { return false; } brs.pop(); break; case &#39;}&#39;: if (brs.empty() || brs.top() != &#39;{&#39;) { return false; } brs.pop(); break; case &#39;]&#39;: if (brs.empty() || brs.top() != &#39;[&#39;) { return false; } brs.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-66/">66. Plus One</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) { auto carry = 1; for (int i = digits.size() - 1; i &gt;= 0; i--) { digits[i] += carry; carry = digits[i] == 10 ? 1 : 0; digits[i] %= 10; } if (carry) digits.insert(digits.begin(), carry); return digits; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-160/">160. Intersection of Two Linked Lists</a> &mdash;
-					<span class="description">
-						
-						 nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&gt; next; q = q -&gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/2019-09-06/">2019 09 06</a> &mdash;
-					<span class="description">
-						
-						工作 昨天晚上惯例没有睡着，大概三点多才去睡觉，早上自然起不来，早饭就不用想了。挣扎着九点起来去上班了，到了公司就赶紧开始手工改数据，不得不说这个过程其实挺傻的，不过是在做验证，这个过程大概也不会有第二次了，如果这一次验证可以通过的话，我一定会写一个脚本来完成它的。
-结果跑出来了，两个框架跑出的结果大部分都一样，个别结果差1，说明运算的流程是没有错的，首先我怀疑的是输出的时候某个地方 dump 错了，我验证了一下 feature map，也是个别结果差1，这就让我很疑惑了。
-如果是中间过程错了的话，错误并没有累计，说明在流程中计算的应该是正确的结果。我怀疑是量化框架出了问题，又仔细读了一下量化框架的源码，咨询了一下研究院的同事，发现并没有问题。
-我开始加入 embed，逐步测试结果是不是一样，发现了一个很令人诧异的现象，用 pytorch 跑出的结果，和用 c++ 跑出的结果也差1，明明使用的是相同的算子，前者可以看作是一个过程，后者则是分成两部分在跑，我以为是中间的转换出了问题，试了多种方案，还是解决不了，其实这个时候，我的心态已经有点崩了，我被这个 bug 卡了一天，我印象中还没有这么难解决的 bug。
-到了接近要走的时候，我突然又想起来，weight 和 bias 其实也是不一样的，因为经历了两次转换的过程，我把 pytorch 用的 weight 和 bias 拿给 c++ 用，成功重现了这个现象，这就意味着不是算子的问题，而是 weight 和 bias 的问题，之后要想办法解决这个问题。
-今天的工作实在是太累了， debug 耗尽了我的心力，中午干到了一点半，下午又一直忙到了七点，女票从公司回到学校后，我就急急忙忙地离开了公司，希望以后这样的日子少一些。
-feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的总产值已经远超过音乐和电影之和，以及程序员不应该把心思都放在编程技巧上面，而是要去做需要的东西等等。
-我还看到了公司 ceo 的发言，他说公司正在做训练芯片，我仔细想了想，那不就是我在做吗，为啥只有我自己在做算法层面的东西，明明这个东西这么重要，我突然觉得自己做的东西还是 valuable 的，也许能影响公司的发展，而整个项目都是我和 mentor 在推进，这种不是一颗螺丝钉的感觉大概很不错吧。
-鱼仔饭 经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/2019-09-05/">2019 09 05</a> &mdash;
-					<span class="description">
-						
-						工作 早上差点没起来，忍了忍还是起来去上班了。今天的工作还是承接昨天，上午按照惯例玩了一会，然后就开始愉快地工作了。我这几天第一次感觉到组里是有多么的缺人，之前总觉得自己没事情做，分配的活很快就做完了，然而这几天的活基本上处于一个源源不断的状态。今天的工作其实没有什么技术含量，基本上就是带上耳机，然后听听歌，就可以完成的东西。比较有收获的是，我给 hpc 组的同事打了电话，向他咨询了一些关于 cuda 优化的问题，他给我指出了问题所在，我按照他的方法，把速度提升了十多倍。真的速度提升是一方面，另一方面是我发现自己对做的东西足够了解，我可以单独与别的组的同事沟通，获得他们的帮助。最终敲定的方案终于写完了，我把模型和数据都 dump 出来，但是 mentor 似乎太忙了，没有时间弄这个事情，于是这个事又落在了我的身上。mentor 教了我框架的基本用法，我便开始修改数据来适应这个框架，这部分工作估计要等明天才能完成了，希望结果是好的，不然所有的工作又要从来一遍。
-疲惫 和昨天一样，今日疲惫的点也是在刚下班的时候，仿佛上班时大的鸡血都失效了，猛得一放松，整个人变得非常无力，给我找个床我就能躺下睡着的感觉。不知道是不是和我中午喝咖啡有关系，也许咖啡的作用只能持续到晚饭？然后会带来更加强烈的疲惫，相当于预支了晚上的精力。
-airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的，之前她问我耳机还用不用，再加上之前用的她信用卡海淘，一直都没机会还她钱，好像也很久没有给她买过生日礼物了，今年趁着姐夫送了一个 mbp，我干脆也送给 airpods 吧，凑齐苹果一套，大概她会比较开心吧，毕竟她最近也太累了，嗓子一直处于哑的状态。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-53/">53. Maximum Subarray</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int maxSubArray(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&lt;int&gt; sum; sum.push_back(nums[0]); for (int i = 1; i &lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-14/">14. Longest Common Prefix</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if (strs.size() == 0) return &#34;&#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &lt;&lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.&hellip;
 						
 					</span>
 				</div>

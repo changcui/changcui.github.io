@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,86 @@
 				
 				
 				<div class="post">
+					<div class="meta">Feb 5, 2020</div>
+					<a class="title" href="/posts/offer-14/">链表中倒数第k个结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&lt;ListNode*&gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&gt; next;} if (tmp.size() &lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &lt; 1) q = q -&gt; next; p = p -&gt; next; } if (cnt &lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 5, 2020</div>
+					<a class="title" href="/posts/offer-13/">调整数组顺序使奇数位于偶数前面</a> &mdash;
+					<span class="description">
+						
+						// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { vector&lt;int&gt; tmp; for (auto i : array) if (i &amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { for (int i = 0; i &lt; array.size(); i++) { for (int j = array.size() - 1; j &gt; i; j--) { if (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 5, 2020</div>
+					<a class="title" href="/posts/offer-12/">数值的整数次方</a> &mdash;
+					<span class="description">
+						
+						// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ? true : false; exponent = exponent &gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ?&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 3, 2020</div>
+					<a class="title" href="/posts/offer-11/">二进制中1的个数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：n = n&amp;(n-1) 总会把最右边的1变为0 class Solution { public: int NumberOf1(int n) { int cnt = 0; while (n) {cnt++; n = n&amp;(n-1);} return cnt; } }; // 运行时间：3ms // 占用内存：472k // 思路二：一位一位的判断是否为1 class Solution { public: int NumberOf1(int n) { int cnt = 0; for (int i = 0; i &lt; 32; i++) { cnt += (n &gt;&gt; i) &amp; 1; } return cnt; } }; // 运行时间：5ms // 占用内存：512k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 3, 2020</div>
+					<a class="title" href="/posts/offer-10/">矩形覆盖</a> &mdash;
+					<span class="description">
+						
+						// 思路一：和斐波那契一样，递归会超时 class Solution { public: int rectCover(int number) { if (number == 0) return 0; int a = 1, b = 2; while (--number) { int tmp = b; b = a + b; a = tmp; } return a; } }; // 运行时间：4ms // 占用内存：464k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-9/">变态跳台阶</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用递推，每次可以跳1～i步，累加即可 class Solution { public: int jumpFloorII(int number) { vector&lt;int&gt; rtn({1, 1}); for (int i = 2; i &lt;= number; i++) { int tmp = 0; for (int j = 1; j &lt;= i; j++) tmp += rtn[i-j]; rtn.push_back(tmp); } return rtn.back(); } }; // 运行时间：4ms // 占用内存：460k // 思路二：数学可以推导出，f(n) = 2f(n-1)，使用左移来实现 class Solution { public: int jumpFloorII(int number) { return 1 &lt;&lt; (number - 1); } }; // 运行时间：4ms // 占用内存：472k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-8/">跳台阶</a> &mdash;
+					<span class="description">
+						
+						// 思路一： 使用递归非常简单，时间较长，因为有大量的重复计算 class Solution { public: int jumpFloor(int number) { if (number == 1 || number == 0) return 1; return jumpFloor(number - 1) + jumpFloor(number - 2); } }; // 运行时间：576ms // 占用内存：488k // 思路二： 使用循环，和斐波那契数列基本上一样 class Solution { public: int jumpFloor(int number) { int a = 1, b = 1; while (number--) { int tmp = a + b; a = b; b = tmp; } return a; } }; // 运行时间：3ms // 占用内存：460k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-7/">斐波那契数列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：递归如果不储存的话会超时，使用循环 class Solution { public: int Fibonacci(int n) { int a = 0, b = 1; while (n--) { int tmp = a + b; a = b; b = tmp; } return a; } }; // 运行时间：4ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Feb 1, 2020</div>
 					<a class="title" href="/posts/offer-6/">旋转数组的最小数字</a> &mdash;
 					<span class="description">
@@ -84,107 +164,6 @@
 					<span class="description">
 						
 						// 思路一：数据储存在栈一，pop 的时候倒入栈二，再倒回来 class Solution { public: void push(int node) { stack1.push(node); } int pop() { while (!stack1.empty()) {stack2.push(stack1.top()); stack1.pop();} int rtn = stack2.top(); stack2.pop(); while (!stack2.empty()) {stack1.push(stack2.top()); stack2.pop();} return rtn; } private: stack&lt;int&gt; stack1; stack&lt;int&gt; stack2; }; // 运行时间：3ms // 占用内存：456k // 思路二：小优化，只有当栈二空了才压入栈一的元素，因为先压入的总会先出。 class Solution { public: void push(int node) { stack1.push(node); } int pop() { if (stack2.empty()) { while (!stack1.empty()) { stack2.push(stack1.top()); stack1.pop(); } } int rtn = stack2.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-4/">重建二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用递归重建，每次重建一个节点，将两组数在根结点处划分成两段递归调用 // 注意细节处理，第一次调用右节点为 pre.size()-1，调用体的 for loop 使用 // i &lt;= rv - lv，以及出口为 lv &gt; rv class Solution { public: TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) { return helper(pre, vin, 0, pre.size()-1, 0, vin.size()-1); } TreeNode* helper(vector&lt;int&gt;&amp; pre, vector&lt;int&gt;&amp; vin, int lp, int rp, int lv, int rv) { if (lp &gt; rp || lv &gt; rv) return NULL; TreeNode* rtn = new TreeNode(pre[lp]); if (lp == rp &amp;&amp; lv == rv) return rtn; for (int i = 0; i &lt;= rv - lv; i++) { if (vin[i+lv] == pre[lp]) { rtn -&gt; left = helper(pre, vin, lp+1, lp+i, lv, lv+i-1); rtn -&gt; right = helper(pre, vin, lp+i+1, rp, lv+i+1, rv); break; } } return rtn; } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-3/">从尾到头打印链表</a> &mdash;
-					<span class="description">
-						
-						// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; while (head) {result.push_back(head-&gt;val); head = head -&gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&lt;int&gt;&amp; result) { if (!head) return; helper(head-&gt;next, result); result.push_back(head-&gt;val); } }; // 运行时间：2ms // 占用内存：460k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-2/">替换空格</a> &mdash;
-					<span class="description">
-						
-						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-1/">二维数组中的查找</a> &mdash;
-					<span class="description">
-						
-						// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Jan 8, 2020</div>
-					<a class="title" href="/posts/git-checkout/">git checkout</a> &mdash;
-					<span class="description">
-						
-						前情 之前 git 只会一些比较基本的用法，对 git 的原理以及一些常用的场景都不太了解，现在准备重新学习一些，我发现一些命令用的很多，以及一些场景可以使用多种命令的组合来完成，一个一个来吧，先来学习一个 checkout 的多种功能。
-切换分支 git checkout [&lt;branch&gt;]
-这个用的很多了，在分支之间切换。
-创建并切换分支 git checkout -b &lt;new branch&gt; [&lt;start point&gt;]
-这个也用的比较多，加上 -b 来创建一个新的分支，本质上和 git branch 创建分支，再 git checkout 过去的功能是一样的。
-detach HEAD git checkout --detach [&lt;branch&gt;], git checkout &lt;commit&gt;
-如果想 detach head 对于某个 branch 而言的话，需要加上 &ndash;detach，不加是切换 branch 的意思，如果对于某个 commit 而言的话，则不需要加。
-简单解释一下，详见这里，HEAD 原本是指向一个 branch 的，通过指向 branch 来间接
-的指向 commit，detach HEAD 操作可以让 HEAD 直接某个 commit，这么做之后，也可以进行 add，commit 等常用的操作，跟之前有一些不一样是当你 checkout 到别的分支之后，你的 commit 没有标记，会只剩下一个 SHA，被 git 的垃圾回收机制回收，相当于走了就回不来了。如果想要再回来，当然就是加上标记，有三种方法，第一种是 git checkout -b foo，这么做是创建一个新的分支，并且将 HEAD 指向这个分支，这时候的 HEAD 不是 detached 的状态了，第二种是 git branch foo，给 commit 加一个 branch 的标记，但是 HEAD 依然指向当前的 commit，还处于 detached 状态，需要 checkout 一下解除 detached 状态，第三种是 git tag foo，给这个 commit 打一个标记，HEAD 依然处于 detached 状态。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Jan 7, 2020</div>
-					<a class="title" href="/posts/inline-function/">c&#43;&#43; inline function</a> &mdash;
-					<span class="description">
-						
-						 前情 之前看 Linus 的硕士毕业论文的时候，看到他设计 Linux Kernel 的时候，用了几个非标准但是各种编译器都实现了的功能，其中一个就是 inline function，我记得之前在 ICS 课上也用过，可是我忘了为什么要用，重新查了一下，记录一下。
-What inline function 被用于减少程序的运行时间，具体的做法是，编译的时候直接将 inline function 的调用替换为其定义，相当于取消了函数调用这一步，执行函数内部的代码。一般用于代码比较少的函数，代码比较多的函数编译器可能会直接忽略掉 inline。
-Why 函数调用是有开销的，在运行的时候，一次函数调用需要完成以下几步：
- 预先储存函数调用之后，下一条指令的地址
- 把需要调用的函数载入内存
- 拷贝参数
- 跳转到被执行的函数
- 执行函数代码
- 储存函数的返回值
- 跳转到预先存好的下一条指令地址继续执行
-  当函数加了 inline 的关键字之后，编译器将函数调用语句替换成函数实现的代码，这样就不用执行跳转等步骤了。(是不是感觉和宏有点像，但还是有点不一样的，宏一定会替换
-How class A { public: inline int add(int a, int b) {return a + b}; };  References  https://www.geeksforgeeks.org/inline-functions-cpp/
- http://www.cplusplus.com/articles/2LywvCM9/
-  &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-114/">114.Flatten Binary Tree to Linked List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: void flatten(TreeNode* root) { if (!root) return; if (root-&gt;left) flatten(root-&gt;left); if (root-&gt;right) flatten(root-&gt;right); auto tmp = root -&gt; right; root -&gt; right = root -&gt; left; root -&gt; left = NULL; while (root-&gt;right) root = root -&gt; right; root -&gt; right = tmp; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-111/">111.Minimum Depth of Binary Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int minDepth(TreeNode* root) { if (!root) return 0; if (!root-&gt;left) return 1 + minDepth(root -&gt; right); if (!root-&gt;right) return 1 + minDepth(root -&gt; left); return 1 + min(minDepth(root-&gt;right), minDepth(root-&gt;left)); } }; &hellip;
 						
 					</span>
 				</div>

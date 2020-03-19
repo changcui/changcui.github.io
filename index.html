@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-15T22:09:18+08:00" />
+<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,86 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-67/">剪绳子</a> &mdash;
+					<span class="description">
+						
+						// 思路一：贪心，优先剪3 class Solution { public: int cutRope(int number) { if (number == 2 || number == 3) return number - 1; if (number % 3 == 0) return pow(3, number/3); if (number % 3 == 1) return pow(3, number/3-1) * 4; if (number % 3 == 2) return pow(3, number/3) * 2; } }; // 运行时间：5ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-66/">机器人的运动范围</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&lt;vector&lt;bool&gt; &gt; visited(rows, vector&lt;bool&gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp; rtn, int threshold, int i, int j, vector&lt;vector&lt;bool&gt; &gt;&amp; visited, int rows, int cols) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || visited[i][j] || sum_(i, j) &gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-65/">矩阵中的路径</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &lt; rows; i++) { for (int j = 0; j &lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || matrix[i*cols+j] !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-64/">滑动窗口的最大值</a> &mdash;
+					<span class="description">
+						
+						// 思路一：单调双向队列，保存下标 class Solution { public: vector&lt;int&gt; maxInWindows(const vector&lt;int&gt;&amp; num, unsigned int size) { vector&lt;int&gt; res; if (size == 0) return res; deque&lt;int&gt; q; for (int i = 0; i &lt; num.size(); i++) { while (!q.empty() &amp;&amp; num[i] &gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() + 1 &gt; size) q.pop_front(); q.push_back(i); if (i + 1 &gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-63/">数据流中的中位数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; priority_queue&lt;int&gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-62/">二叉搜索树的第k个结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：检查子树的大小，二分查找 class Solution { public: int tSize(TreeNode* root) { if (!root) return 0; return 1 + tSize(root-&gt;left) + tSize(root-&gt;right); } TreeNode* KthNode(TreeNode* pRoot, int k) { if (!pRoot) return NULL; auto lSize = tSize(pRoot-&gt;left); if (k &lt;= lSize) return KthNode(pRoot-&gt;left, k); else if (k == lSize + 1) return pRoot; return KthNode(pRoot-&gt;right, k-lSize-1); } }; // 运行时间：3ms // 占用内存：604k // 思路二：递归中序遍历，记录访问节点的数量 class Solution { public: int index = 0; TreeNode* KthNode(TreeNode* pRoot, int k) { if (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-61/">序列化二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：前序遍历，注意申请堆内存保存序列化数据 class Solution { public: char* Serialize(TreeNode *root) { string result = &#34;&#34;; preOrderSe(root, result); char* rtn = new char[result.size()+1]; strcpy(rtn, result.c_str()); return rtn; } void preOrderSe(TreeNode* root, string&amp; result) { if (!root) { result += &#34;#!&#34;; return; } result += to_string(root-&gt;val) + &#34;!&#34;; preOrderSe(root-&gt;left, result); preOrderSe(root-&gt;right, result); } TreeNode* Deserialize(char *str) { string result(str); return preOrderDese(result); } TreeNode* preOrderDese(string&amp; result) { if (result[0] == &#39;#&#39;) {result = result.substr(2); return NULL;} int end = 0; while (result[end] !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 17, 2020</div>
+					<a class="title" href="/posts/git/">git 使用日记</a> &mdash;
+					<span class="description">
+						
+						git 常见使用场景总结，挖个坑。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Mar 15, 2020</div>
 					<a class="title" href="/posts/offer-60/">把二叉树打印成多行</a> &mdash;
 					<span class="description">
@@ -84,99 +164,6 @@
 					<span class="description">
 						
 						// 思路一：层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-58/">对称的二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：递归检查 class Solution { public: bool helper(TreeNode* p, TreeNode* q) { if (!p &amp;&amp; !q) return true; if (!p) return false; if (!q) return false; return p-&gt;val==q-&gt;val &amp;&amp; helper(p-&gt;left, q-&gt;right) &amp;&amp; helper(p-&gt;right, q-&gt;left); } bool isSymmetrical(TreeNode* pRoot) { if (!pRoot) return true; return helper(pRoot-&gt;left, pRoot-&gt;right); } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-57/">二叉树的下一个结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&gt;right) { pNode = pNode-&gt;right; while (pNode &amp;&amp; pNode-&gt;left) pNode = pNode-&gt;left; return pNode; } if (!pNode-&gt;next) return NULL; while (pNode-&gt;next) { if (pNode == pNode-&gt;next-&gt;left) return pNode-&gt;next; pNode = pNode-&gt;next; } if (!pNode-&gt;next) return NULL; return pNode-&gt;next; } }; // 运行时间：3ms // 占用内存：500k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-56/">删除链表中重复的结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-55/">链表中环的入口结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：快慢指针判断是否有环，从相遇处和头节点出发，必定相遇于入口 class Solution { public: ListNode* EntryNodeOfLoop(ListNode* pHead) { if (!pHead || !pHead-&gt;next) return NULL; auto fast = pHead-&gt;next-&gt;next, slow = pHead-&gt;next; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; slow = slow-&gt;next; } if (!fast) return NULL; fast = pHead; while (fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 14, 2020</div>
-					<a class="title" href="/posts/systemd/">systemd 使用日记</a> &mdash;
-					<span class="description">
-						
-						挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 14, 2020</div>
-					<a class="title" href="/posts/fish/">fish 使用日记</a> &mdash;
-					<span class="description">
-						
-						挖个坑先，以后在 arch 上使用 fish，记录一些使用心得，配置文件等等。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 13, 2020</div>
-					<a class="title" href="/posts/arch/">Arch 踩坑日记</a> &mdash;
-					<span class="description">
-						
-						2020 03 12 update 完成 iso 下载，开始准备安装，参考教程
-https://wiki.archlinux.org/index.php/Installation_guide_(简体中文)
-https://github.com/mytbk/Linux_Notes/tree/master/install
-这次先用 virtualbox 做实验把，下次争取能装双系统！
-出师不利啊，刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。
-果然可以初始化了。
-第一次安装失败，按照教程一步步走下来了，但是 reboot 的时候不太对劲，我觉得是 UEFI 或者 BIOS 的问题。
- 如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择*System*，再从右侧选择*Motherboard*标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。
- 果然，我没开启这个设置，只能再来一遍啦。
-第二次安装失败，这次可以 UEFI 启动，但是只有一个启动选项是 firmware interface，不知道原因在哪。
-按照 wiki 里面的说法，要手动选择 UEFI，可是我手动选择了也不对，感觉是有地方搞错了，再来一遍把。
-第三次失败，和第二次的情况一样，暂时不知道原因，查了一下似乎是 gummiboot 的问题，把 bootloader 切换成 grub 再试一次把！
-第四次，成功进去了，不过是自己找 EFI 文件引导的，后面还得调整一下，怎么能自动引导，然后就是不能上网，好像是没有安装 networkmanager
-找到原因了，是因为我没有移除 archlinux.iso 作为 attachment，然后它找 EFI 文件的路径发生了变化，没有从 /boot/EFI/BOOT/ 开始找，把 iso 文件移除之后，现在能正常启动啦！&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-54/">字符流中第一个不重复的字符</a> &mdash;
-					<span class="description">
-						
-						// 思路一：储存初次出现的下标，遍历整个数组，寻找最小下标，空间复杂度O(k)，时间复杂度O(k) class Solution { public: vector&lt;int&gt; c; int cnt; void Insert(char ch) { if (c.empty()) c.resize(256, INT_MAX), cnt = 0; c[ch] = c[ch] == INT_MAX ? cnt : -1; cnt++; } //return the first appearence once char in current stringstream  char FirstAppearingOnce() { char rtn = &#39;#&#39;; int idx = INT_MAX; for (int i = 0; i &lt; 256; i++) { if (c[i] != -1 &amp;&amp; c[i] &lt; idx) rtn = i, idx = c[i]; } return rtn; } }; // 运行时间：3ms // 占用内存：488k &hellip;
 						
 					</span>
 				</div>

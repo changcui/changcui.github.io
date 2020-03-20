@@ -2,16 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>160. Intersection of Two Linked Lists - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:title" content="160. Intersection of Two Linked Lists" />
-<meta property="og:description" content=" nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&gt; next; q = q -&gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; " />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Intersection of Two Linked Lists - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Intersection of Two Linked Lists" />
+<meta property="og:description" content="// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&gt;next : headB; q = q ? q-&gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C&#43;&#43; online submissions for Intersection of Two Linked Lists. // Memory Usage: 14." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-160/" />
 <meta property="article:published_time" content="2019-09-06T22:08:03+08:00" />
 <meta property="article:modified_time" content="2019-09-06T22:08:03+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="160. Intersection of Two Linked Lists"/>
-<meta name="twitter:description" content=" nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&gt; next; q = q -&gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; "/>
+<meta name="twitter:title" content="Intersection of Two Linked Lists"/>
+<meta name="twitter:description" content="// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&gt;next : headB; q = q ? q-&gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C&#43;&#43; online submissions for Intersection of Two Linked Lists. // Memory Usage: 14."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -59,46 +59,27 @@
 
 
 		<div class="post-header">
-			<h1 class="title">160. Intersection of Two Linked Lists</h1>
+			<h1 class="title">Intersection of Two Linked Lists</h1>
 			<div class="meta">Posted at &mdash; Sep 6, 2019</div>
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="nice-trick">nice trick</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Definition for singly-linked list.
-</span><span style="color:#75715e"> * struct ListNode {
-</span><span style="color:#75715e"> *     int val;
-</span><span style="color:#75715e"> *     ListNode *next;
-</span><span style="color:#75715e"> *     ListNode(int x) : val(x), next(NULL) {}
-</span><span style="color:#75715e"> * };
-</span><span style="color:#75715e"> */</span>
-<span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 思路一：同剑指 offer
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#111">ListNode</span> <span style="color:#f92672">*</span><span style="color:#111">getIntersectionNode</span><span style="color:#111">(</span><span style="color:#111">ListNode</span> <span style="color:#f92672">*</span><span style="color:#111">headA</span><span style="color:#111">,</span> <span style="color:#111">ListNode</span> <span style="color:#f92672">*</span><span style="color:#111">headB</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">headA</span> <span style="color:#f92672">==</span> <span style="color:#111">NULL</span> <span style="color:#f92672">||</span> <span style="color:#111">headB</span> <span style="color:#f92672">==</span> <span style="color:#111">NULL</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-            <span style="color:#00a8c8">return</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
-        <span style="color:#111">}</span>
-        <span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">headA</span><span style="color:#111">;</span>
-        <span style="color:#00a8c8">auto</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">headB</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">headA</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#111">headB</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">headA</span><span style="color:#111">,</span> <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">headB</span><span style="color:#111">;</span>
         <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">p</span> <span style="color:#f92672">!=</span> <span style="color:#111">q</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-            <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;</span>
-            <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span> <span style="color:#f92672">-&gt;</span> <span style="color:#111">next</span><span style="color:#111">;</span>
-            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">p</span> <span style="color:#f92672">==</span> <span style="color:#111">q</span><span style="color:#111">)</span>
-                <span style="color:#00a8c8">return</span> <span style="color:#111">p</span><span style="color:#111">;</span>
-            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">p</span> <span style="color:#f92672">==</span> <span style="color:#111">NULL</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-                <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">headB</span><span style="color:#111">;</span>
-            <span style="color:#111">}</span>
-            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">q</span> <span style="color:#f92672">==</span> <span style="color:#111">NULL</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-                <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">headA</span><span style="color:#111">;</span>
-            <span style="color:#111">}</span>
+            <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span> <span style="color:#f92672">?</span> <span style="color:#111">p</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span> <span style="color:#111">:</span> <span style="color:#111">headB</span><span style="color:#111">;</span>
+            <span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span> <span style="color:#f92672">?</span> <span style="color:#111">q</span><span style="color:#f92672">-&gt;</span><span style="color:#111">next</span> <span style="color:#111">:</span> <span style="color:#111">headA</span><span style="color:#111">;</span>
         <span style="color:#111">}</span>
         <span style="color:#00a8c8">return</span> <span style="color:#111">p</span><span style="color:#111">;</span>
     <span style="color:#111">}</span>
 <span style="color:#111">};</span>
-</code></pre></div>
+<span style="color:#75715e">// Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists.
+</span><span style="color:#75715e">// Memory Usage: 14.8 MB, less than 100.00% of C++ online submissions for Intersection of Two Linked Lists.
+</span></code></pre></div>
 		</div>
 
 		<div class="post-tags">
@@ -108,6 +89,8 @@
 							<ul class="flat">
 								
 								<li><a href="/tags/leetcode">leetcode</a></li>
+								
+								<li><a href="/tags/linked-node">linked node</a></li>
 								
 							</ul>
 					</nav>

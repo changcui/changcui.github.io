@@ -39,5 +39,14 @@
       <description>// 思路一：数据储存在栈一，pop 的时候倒入栈二，再倒回来 class Solution { public: void push(int node) { stack1.push(node); } int pop() { while (!stack1.empty()) {stack2.push(stack1.top()); stack1.pop();} int rtn = stack2.top(); stack2.pop(); while (!stack2.empty()) {stack1.push(stack2.top()); stack2.pop();} return rtn; } private: stack&amp;lt;int&amp;gt; stack1; stack&amp;lt;int&amp;gt; stack2; }; // 运行时间：3ms // 占用内存：456k // 思路二：小优化，只有当栈二空了才压入栈一的元素，因为先压入的总会先出。 class Solution { public: void push(int node) { stack1.push(node); } int pop() { if (stack2.empty()) { while (!stack1.empty()) { stack2.push(stack1.top()); stack1.pop(); } } int rtn = stack2.</description>
     </item>
     
+    <item>
+      <title>Min Stack</title>
+      <link>http://changcui.cc/posts/leetcode-155/</link>
+      <pubDate>Fri, 06 Sep 2019 23:50:28 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-155/</guid>
+      <description>// 思路一：同剑指offer class MinStack { public: MinStack() {} void push(int x) { s1.push(x); if (s2.empty() || x &amp;lt;= s2.top()) s2.push(x); } void pop() { if (s1.top() == s2.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int getMin() { return s2.top(); } private: stack&amp;lt;int&amp;gt; s1; stack&amp;lt;int&amp;gt; s2; }; // Runtime: 40 ms, faster than 18.45% of C++ online submissions for Min Stack. // Memory Usage: 14.3 MB, less than 100.</description>
+    </item>
+    
   </channel>
 </rss>

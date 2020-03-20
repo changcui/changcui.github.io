@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 10 Dec 2019 00:24:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 14:43:52 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/data-struct/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LRU Cache</title>
+      <link>http://changcui.cc/posts/leetcode-146/</link>
+      <pubDate>Fri, 20 Mar 2020 14:43:52 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-146/</guid>
+      <description>// 思路一：将 value 分为两部分，value 和时间戳，然后用遍历 map 寻找时间戳最小的取出 class LRUCache { public: LRUCache(int capacity) { cnt = 0; cap = capacity; } int get(int key) { cnt++; if (m.count(key)) { m[key].second = cnt; return m[key].first; } return -1; } void put(int key, int value) { cnt++; if (m.count(key) || m.size() &amp;lt; cap) m[key] = make_pair(value, cnt); else { auto t = INT_MAX; auto k = -1; for (auto i : m) { if (i.</description>
+    </item>
     
     <item>
       <title>341.Flatten Nested List Iterator</title>

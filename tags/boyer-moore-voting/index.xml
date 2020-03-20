@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Boyer-Moore Voting on changcui</title>
+    <link>http://changcui.cc/tags/boyer-moore-voting/</link>
+    <description>Recent content in Boyer-Moore Voting on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 05 Sep 2019 21:14:38 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/boyer-moore-voting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Majority Element</title>
+      <link>http://changcui.cc/posts/leetcode-169/</link>
+      <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-169/</guid>
+      <description>// 思路一：hashmap 储存出现的次数 class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { unordered_map&amp;lt;int, int&amp;gt; m; int threshold = nums.size() / 2; for (auto i : nums) { m[i] += 1; if (m[i] &amp;gt; threshold) return i; } return -1; } }; // Runtime: 28 ms, faster than 27.88% of C++ online submissions for Majority Element. // Memory Usage: 9.1 MB, less than 100.00% of C++ online submissions for Majority Element. // 思路二：Boyer-Moore Voting 赞同或反对，cnt 为0，更换候选人，要求必须有众数 class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int cnt = 1, rtn = nums[0]; for (int i = 1; i &amp;lt; nums.</description>
+    </item>
+    
+  </channel>
+</rss>

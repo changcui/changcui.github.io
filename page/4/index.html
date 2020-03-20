@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,46 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-45/">扑克牌顺子</a> &mdash;
+					<span class="description">
+						
+						// 思路一：失败的条件是有非零重复值，或者最大值减去非零最小值大于4 class Solution { public: bool IsContinuous(vector&lt;int&gt; numbers) { if (numbers.size() == 0) return false; int min_ = 14, max_ = -1; unordered_set&lt;int&gt; s; for (auto i : numbers) { if (i &amp;&amp; s.count(i)) return false; s.insert(i); if (i) min_ = min(min_, i); max_ = max(max_, i); } return max_ - min_ &lt; 5; } }; // 运行时间：2ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-44/">翻转单词顺序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：先翻转字符串，再按照 word 翻转 class Solution { public: string ReverseSentence(string str) { if (str.size() == 0) return str; reverse(str.begin(), str.end()); for (int i = 0; i &lt; str.size();) { int end = i; while (end &lt; str.size() &amp;&amp; str[end] != &#39; &#39;) end++; reverse(str.begin()+i, str.begin()+end); while (end &lt; str.size() &amp;&amp; str[end] == &#39; &#39;) end++; if (end &lt; str.size()) i = end; else break； } return str; } }; // 运行时间：4ms // 占用内存：592k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-43/">左旋转字符串</a> &mdash;
+					<span class="description">
+						
+						// 思路一：左删除右添加 class Solution { public: string LeftRotateString(string str, int n) { if (str.size() == 0) return str; n = n % str.size(); while (n--) { char a = str[0]; str.erase(str.begin()); str += a; } return str; } }; // 运行时间：3ms // 占用内存：480k // 思路二：先反转字符串，然后反转前半部分，再反转后半部分，(AB)T = BTAT class Solution { public: string LeftRotateString(string str, int n) { if (str.size() == 0) return str; n = n % str.size(); reverse(str.begin(), str.end()); reverse(str.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-42/">和为S的两个数字</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; FindNumbersWithSum(vector&lt;int&gt; array,int sum) { int i = 0, j = array.size() - 1; while (i &lt; j) { int s = array[i] + array[j]; if (s == sum) return {array[i], array[j]}; else if (s &lt; sum) i++; else j--; } return {}; } }; // 运行时间：6ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 10, 2020</div>
@@ -128,46 +168,6 @@
 算法题 最近每天都做六道算法题，如果能保持下去的话，到秋招应该可以做好几百道了，感觉算法应该问题不大了。在做题的过程中，能感觉得出来自己的实力确实有所提升（之前太弱了，一些不知道能不能写出来的算法题，努力沉下心去写，有时候一遍就 ac 了，相比于以前不敢写，或者需要思考很久，小错误不断，可以说很大的提高了，师兄说做算法题就是越写越快，希望我能越写越快，思路更加清晰敏捷一些吧。
 股市 随着疫情加剧，全球的股票市场都在暴跌，今天原油跌了30%（不知道原因，以及意味着什么，A 股也实在是跌得有点惨，我有点不舍得平仓，继续放着又不知道何年何月才能够本，更别说盈利了。
 英语 最近的英语课在教连贯语流，就是连读、弱读，不完全爆破，这些加起来极大地改变了单词应有的读音，我觉得这就是我听力一直不行的原因（还有口语，我完全想象不到，应该念 x 的单词，放在语境中可以念 y，也可以念 z，可能还是听的比较少吧，已经听的时候，大脑的注意力都在句子上面，没时间去分析上下文，导致听着忘着，完全不知道全文在表达什么含义。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-35/">数组中的逆序对</a> &mdash;
-					<span class="description">
-						
-						// 思路一：归并排序求逆序对 class Solution { public: long long sort(vector&lt;int&gt;&amp; data, int l, int r) { if (l &gt;= r) return 0; int mid = l + (r - l) / 2; long long lc = sort(data, l, mid); long long rc = sort(data, mid+1, r); long long rtn = lc + rc; vector&lt;int&gt; tmp(r-l+1, 0); int i = l, j = mid + 1, k = 0; while (i &lt;= mid &amp;&amp; j &lt;= r) { if (data[i] &gt; data[j]) { tmp[k++] = data[j++]; rtn += mid - i + 1; } else tmp[k++] = data[i++]; } while (i &lt;= mid) tmp[k++] = data[i++]; while (j &lt;= r) tmp[k++] = data[j++]; for (int m = l; m &lt;= r; m++) data[m] = tmp[m-l]; return rtn; } int InversePairs(vector&lt;int&gt; data) { long long result = sort(data, 0, data.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-34/">第一个只出现一次的字符</a> &mdash;
-					<span class="description">
-						
-						// 思路一：两次遍历，第一次统计出现的个数，第二次寻找次数为1的字符 class Solution { public: int FirstNotRepeatingChar(string str) { unordered_map&lt;char, int&gt; m; for (int i = 0; i &lt; str.size(); i++) m[str[i]] += 1; for (int i = 0; i &lt; str.size(); i++) { if (m[str[i]] == 1) return i; } return -1; } }; // 运行时间：3ms // 占用内存：456k // 思路二：用数组代替 map class Solution { public: int FirstNotRepeatingChar(string str) { vector&lt;int&gt; m(100, 0); for (int i = 0; i &lt; str.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-33/">丑数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：分三组累乘，取最小的，并更新下标 class Solution { public: int GetUglyNumber_Solution(int index) { if (index == 0) return 0; vector&lt;int&gt; nums{1}; int i1 = 0, i2 = 0, i3 = 0; while (--index) { int n1 = nums[i1] * 2; int n2 = nums[i2] * 3; int n3 = nums[i3] * 5; int min_ = min(n1, min(n2, n3)); if (min_ == n1) i1++; if (min_ == n2) i2++; if (min_ == n3) i3++; nums.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-36/">两个链表的第一个公共结点</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&gt;next; else if (!q) q = pHead1, p = p-&gt;next; else p = p-&gt;next, q = q-&gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

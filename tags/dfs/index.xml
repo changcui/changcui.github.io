@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 21:58:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 13:58:38 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Word Break</title>
+      <link>http://changcui.cc/posts/leetcode-139/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-139/</guid>
+      <description>// 思路一：DFS，记忆数组，set 保存 class Solution { public: bool wordBreak(string s, vector&amp;lt;string&amp;gt;&amp;amp; wordDict) { unordered_set&amp;lt;string&amp;gt; se(wordDict.begin(), wordDict.end()); vector&amp;lt;int&amp;gt; memo(s.size(), -1); return helper(s, 0, memo, se); } bool helper(string&amp;amp; s, int start, vector&amp;lt;int&amp;gt;&amp;amp; memo, unordered_set&amp;lt;string&amp;gt; se) { if (start == s.size()) return true; if (memo[start] != -1) return memo[start]; for (int i = start + 1; i &amp;lt;= s.size(); i++) { if (se.count(s.substr(start, i - start)) &amp;amp;&amp;amp; helper(s, i, memo, se)) { return memo[start] = 1; } } return memo[start] = 0; } }; // Runtime: 48 ms, faster than 6.</description>
+    </item>
     
     <item>
       <title>机器人的运动范围</title>
@@ -64,6 +73,15 @@
       
       <guid>http://changcui.cc/posts/leetcode-332/</guid>
       <description>class Solution { public: vector&amp;lt;string&amp;gt; findItinerary(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; tickets) { unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&amp;lt;string&amp;gt; result; DFS(m, &amp;#34;JFK&amp;#34;, result); return vector&amp;lt;string&amp;gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&amp;lt;string, multiset&amp;lt;string&amp;gt;&amp;gt;&amp;amp; m, string s, vector&amp;lt;string&amp;gt;&amp;amp; result){ while (m[s].size() &amp;gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; </description>
+    </item>
+    
+    <item>
+      <title>Number of Islands</title>
+      <link>http://changcui.cc/posts/leetcode-200/</link>
+      <pubDate>Fri, 18 Oct 2019 00:35:09 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-200/</guid>
+      <description>// 思路一：遇到1，就把临近的1变为0，并计数 class Solution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.size() == 0) return 0; int cnt = 0, m = grid.size(), n = grid[0].size(); for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (grid[i][j] == &amp;#39;1&amp;#39;) { helper(grid, i, j); cnt++; } } } return cnt; } void helper(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, int i, int j) { int m = grid.</description>
     </item>
     
   </channel>

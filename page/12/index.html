@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,10 +70,50 @@
 				
 				<div class="post">
 					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-152/">152. Maximum Product Subarray</a> &mdash;
+					<a class="title" href="/posts/leetcode-62/">62. Unique Paths</a> &mdash;
 					<span class="description">
 						
-						class Solution { public: int maxProduct(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; dp(nums.size() * 2, 0); dp[0] = nums[0]; dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &lt; nums.size(); i++) { dp[2*i] = max(max(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); dp[2*i+1] = min(min(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); max_ = max(max_, dp[2*i]); } return max_; } }; &hellip;
+						class Solution { public: int uniquePaths(int m, int n) { vector&lt;vector&lt;int&gt;&gt; dp(m, vector&lt;int&gt;(n, 0)); dp[0][0] = 1; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { dp[i][j] += i &gt; 0 ? dp[i-1][j] : 0; dp[i][j] += j &gt; 0 ? dp[i][j-1] : 0; } } return dp[m-1][n-1]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-174/">174. Dungeon Game</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int calculateMinimumHP(vector&lt;vector&lt;int&gt;&gt;&amp; dungeon) { int m = dungeon.size(), n = dungeon[0].size(); vector&lt;vector&lt;int&gt;&gt; dp(m+1, vector&lt;int&gt;(n+1, INT_MAX)); dp[m][n-1] = 1; dp[m-1][n] = 1; for (int i = m - 1; i &gt;= 0; i--) { for (int j = n - 1; j &gt;= 0; j--) { dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j]); } } return dp[0][0]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-64/">64. Minimum Path Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int rtn = -1; vector&lt;vector&lt;int&gt;&gt; cost(grid.size(), vector&lt;int&gt;(grid[0].size(), 0)); cost[0][0] = grid[0][0]; for (int i = 0; i &lt; grid.size(); i++) { for (int j = 0; j &lt; grid[0].size(); j++) { if (i - 1 &gt;= 0 &amp;&amp; j - 1 &gt;= 0) cost[i][j] = min(cost[i-1][j], cost[i][j-1]) + grid[i][j]; else if (i - 1 &gt;= 0) cost[i][j] = cost[i-1][j] + grid[i][j]; else if (j - 1 &gt;= 0) cost[i][j] = cost[i][j-1] + grid[i][j]; else cost[i][j] = grid[i][j]; } } return cost.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-179/">179. Largest Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string largestNumber(vector&lt;int&gt;&amp; nums) { string result = &#34;&#34;; sort(nums.begin(), nums.end(), [](auto a, auto b){ return to_string(a) + to_string(b) &gt; to_string(b) + to_string(a);}); for (auto num : nums) result += to_string(num); return result[0] == &#39;0&#39; ? &#34;0&#34; : result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-152/">Maximum Product Subarray</a> &mdash;
+					<span class="description">
+						
+						// 思路一：dp，保存最大正值和最小负值 class Solution { public: int maxProduct(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; dp(nums.size()*2, 0); dp[0] = nums[0], dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &lt; nums.size(); i++) { dp[2*i] = max(nums[i], max(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); dp[2*i+1] = min(nums[i], min(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); max_ = max(dp[2*i], max_); } return max_; } }; // Runtime: 4 ms, faster than 86.95% of C++ online submissions for Maximum Product Subarray.&hellip;
 						
 					</span>
 				</div>
@@ -132,46 +172,6 @@ class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int l
 					<span class="description">
 						
 						class Solution { public: void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) { int cur = m + n - 1, i = m - 1, j = n - 1; while (i &gt;= 0 &amp;&amp; j &gt;= 0) { if (nums1[i] &gt;= nums2[j]) nums1[cur--] = nums1[i--]; else nums1[cur--] = nums2[j--]; } while (j &gt;= 0) nums1[cur--] = nums2[j--]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 1, 2019</div>
-					<a class="title" href="/posts/leetcode-83/">83. Remove Duplicates from Sorted List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* deleteDuplicates(ListNode* head) { if (!head || !head -&gt; next) return head; while (head -&gt; next &amp;&amp; head -&gt; val == head -&gt; next -&gt; val) head = head -&gt; next; head -&gt; next = deleteDuplicates(head -&gt; next); return head; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-82/">82. Remove Duplicates from Sorted List II</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* deleteDuplicates(ListNode* head) { if (!head || !head -&gt; next) return NULL; if (head -&gt; val != head -&gt; next -&gt; val) { head-&gt;next = deleteDuplicates(head-&gt;next); return head; } auto v = head -&gt; val; auto cur = head -&gt; next; while (cur !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-79/">79. Word Search</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool exist(vector&lt;vector&lt;char&gt;&gt;&amp; board, string word) { if (word.empty()) return true; if (board.empty() || board[0].empty()) return false; int cur = 0, m = board.size(), n = board[0].size(); for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (DFS(i, j, board, word, 0)) return true; } } return false; } bool DFS(int i, int j, vector&lt;vector&lt;char&gt;&gt;&amp; board, string word, int cur) { if (cur == word.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-78/">78. Subsets</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, out, result, nums); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, vector&lt;int&gt;&amp; nums) { result.push_back(out); for (int i = cur; i &lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, result, nums); out.pop_back(); } } }; &hellip;
 						
 					</span>
 				</div>

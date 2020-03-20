@@ -7,10 +7,91 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 22:00:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 16:17:01 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>leetcode</title>
+      <link>http://changcui.cc/tags/leetcode/</link>
+      <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linked node</title>
+      <link>http://changcui.cc/tags/linked-node/</link>
+      <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/linked-node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data struct</title>
+      <link>http://changcui.cc/tags/data-struct/</link>
+      <pubDate>Fri, 20 Mar 2020 14:43:52 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/data-struct/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>http://changcui.cc/tags/map/</link>
+      <pubDate>Fri, 20 Mar 2020 14:43:52 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/map/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>double point</title>
+      <link>http://changcui.cc/tags/double-point/</link>
+      <pubDate>Fri, 20 Mar 2020 14:39:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/double-point/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bfs</title>
+      <link>http://changcui.cc/tags/bfs/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/bfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dfs</title>
+      <link>http://changcui.cc/tags/dfs/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/dfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dp</title>
+      <link>http://changcui.cc/tags/dp/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/dp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>string</title>
+      <link>http://changcui.cc/tags/string/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/string/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>greedy</title>
@@ -27,15 +108,6 @@
       <pubDate>Thu, 19 Mar 2020 22:00:56 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/%E5%89%91%E6%8C%87offer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dfs</title>
-      <link>http://changcui.cc/tags/dfs/</link>
-      <pubDate>Thu, 19 Mar 2020 21:58:56 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/dfs/</guid>
       <description></description>
     </item>
     
@@ -76,15 +148,6 @@
     </item>
     
     <item>
-      <title>linked node</title>
-      <link>http://changcui.cc/tags/linked-node/</link>
-      <pubDate>Sun, 15 Mar 2020 22:00:55 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/linked-node/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>linux</title>
       <link>http://changcui.cc/tags/linux/</link>
       <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
@@ -117,15 +180,6 @@
       <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>string</title>
-      <link>http://changcui.cc/tags/string/</link>
-      <pubDate>Thu, 12 Mar 2020 21:23:03 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/string/</guid>
       <description></description>
     </item>
     
@@ -184,15 +238,6 @@
     </item>
     
     <item>
-      <title>dp</title>
-      <link>http://changcui.cc/tags/dp/</link>
-      <pubDate>Sun, 08 Mar 2020 20:37:05 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/dp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>queue</title>
       <link>http://changcui.cc/tags/queue/</link>
       <pubDate>Sun, 08 Mar 2020 20:21:03 +0800</pubDate>
@@ -238,15 +283,6 @@
     </item>
     
     <item>
-      <title>leetcode</title>
-      <link>http://changcui.cc/tags/leetcode/</link>
-      <pubDate>Fri, 13 Dec 2019 00:50:22 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>list</title>
       <link>http://changcui.cc/tags/list/</link>
       <pubDate>Fri, 13 Dec 2019 00:50:22 +0800</pubDate>
@@ -274,29 +310,20 @@
     </item>
     
     <item>
-      <title>double point</title>
-      <link>http://changcui.cc/tags/double-point/</link>
-      <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/double-point/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data struct</title>
-      <link>http://changcui.cc/tags/data-struct/</link>
-      <pubDate>Tue, 10 Dec 2019 00:24:48 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/data-struct/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>python3</title>
       <link>http://changcui.cc/tags/python3/</link>
       <pubDate>Sat, 02 Nov 2019 20:43:51 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boyer-Moore Voting</title>
+      <link>http://changcui.cc/tags/boyer-moore-voting/</link>
+      <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/boyer-moore-voting/</guid>
       <description></description>
     </item>
     

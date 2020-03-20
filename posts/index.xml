@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 22:00:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 16:17:01 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sort List</title>
+      <link>http://changcui.cc/posts/leetcode-148/</link>
+      <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-148/</guid>
+      <description>// 思路一：先从中间分离链表，再递归调用，merge class Solution { public: ListNode* sortList(ListNode* head) { if (!head || !head-&amp;gt;next) return head; auto slow = head, fast = head, pre = head; while (fast &amp;amp;&amp;amp; fast-&amp;gt;next) { pre = slow; slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; } pre-&amp;gt;next = NULL; return merge(sortList(head), sortList(slow)); } ListNode* merge(ListNode* r, ListNode* l) { auto dummy = new ListNode(-1); auto cur = dummy; while (l &amp;amp;&amp;amp; r) { if (r-&amp;gt;val &amp;lt;= l-&amp;gt;val) { cur-&amp;gt;next = r; r = r-&amp;gt;next; } else { cur-&amp;gt;next = l; l = l-&amp;gt;next; } cur = cur-&amp;gt;next; } if (l) cur-&amp;gt;next = l; if (r) cur-&amp;gt;next = r; return dummy-&amp;gt;next; } }; // Runtime: 76 ms, faster than 23.</description>
+    </item>
+    
+    <item>
+      <title>LRU Cache</title>
+      <link>http://changcui.cc/posts/leetcode-146/</link>
+      <pubDate>Fri, 20 Mar 2020 14:43:52 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-146/</guid>
+      <description>// 思路一：将 value 分为两部分，value 和时间戳，然后用遍历 map 寻找时间戳最小的取出 class LRUCache { public: LRUCache(int capacity) { cnt = 0; cap = capacity; } int get(int key) { cnt++; if (m.count(key)) { m[key].second = cnt; return m[key].first; } return -1; } void put(int key, int value) { cnt++; if (m.count(key) || m.size() &amp;lt; cap) m[key] = make_pair(value, cnt); else { auto t = INT_MAX; auto k = -1; for (auto i : m) { if (i.</description>
+    </item>
+    
+    <item>
+      <title>Linked List Cycle II</title>
+      <link>http://changcui.cc/posts/leetcode-142/</link>
+      <pubDate>Fri, 20 Mar 2020 14:39:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-142/</guid>
+      <description>// 思路一：先判断是否有环，然后一个从相遇处出发，一个从头节点出发，必然相遇到入口 class Solution { public: ListNode *detectCycle(ListNode *head) { if (!head || !head-&amp;gt;next) return NULL; auto slow = head-&amp;gt;next, fast = head-&amp;gt;next-&amp;gt;next; while (fast &amp;amp;&amp;amp; fast != slow) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next ? fast-&amp;gt;next-&amp;gt;next : NULL; } if (fast) fast = head; while (fast &amp;amp;&amp;amp; fast != slow) { fast = fast-&amp;gt;next; slow = slow-&amp;gt;next; } return fast; } }; // Runtime: 12 ms, faster than 77.</description>
+    </item>
+    
+    <item>
+      <title>Word Break</title>
+      <link>http://changcui.cc/posts/leetcode-139/</link>
+      <pubDate>Fri, 20 Mar 2020 13:58:38 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-139/</guid>
+      <description>// 思路一：DFS，记忆数组，set 保存 class Solution { public: bool wordBreak(string s, vector&amp;lt;string&amp;gt;&amp;amp; wordDict) { unordered_set&amp;lt;string&amp;gt; se(wordDict.begin(), wordDict.end()); vector&amp;lt;int&amp;gt; memo(s.size(), -1); return helper(s, 0, memo, se); } bool helper(string&amp;amp; s, int start, vector&amp;lt;int&amp;gt;&amp;amp; memo, unordered_set&amp;lt;string&amp;gt; se) { if (start == s.size()) return true; if (memo[start] != -1) return memo[start]; for (int i = start + 1; i &amp;lt;= s.size(); i++) { if (se.count(s.substr(start, i - start)) &amp;amp;&amp;amp; helper(s, i, memo, se)) { return memo[start] = 1; } } return memo[start] = 0; } }; // Runtime: 48 ms, faster than 6.</description>
+    </item>
     
     <item>
       <title>剪绳子</title>
@@ -1046,12 +1082,12 @@ How class A { public: inline int add(int a, int b) {return a + b}; };  Reference
     </item>
     
     <item>
-      <title>152. Maximum Product Subarray</title>
+      <title>Maximum Product Subarray</title>
       <link>http://changcui.cc/posts/leetcode-152/</link>
       <pubDate>Mon, 02 Dec 2019 10:51:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-152/</guid>
-      <description>class Solution { public: int maxProduct(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;int&amp;gt; dp(nums.size() * 2, 0); dp[0] = nums[0]; dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &amp;lt; nums.size(); i++) { dp[2*i] = max(max(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); dp[2*i+1] = min(min(nums[i]*dp[2*i-1], nums[i]*dp[2*i-2]), nums[i]); max_ = max(max_, dp[2*i]); } return max_; } }; </description>
+      <description>// 思路一：dp，保存最大正值和最小负值 class Solution { public: int maxProduct(vector&amp;lt;int&amp;gt;&amp;amp; nums) { vector&amp;lt;int&amp;gt; dp(nums.size()*2, 0); dp[0] = nums[0], dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &amp;lt; nums.size(); i++) { dp[2*i] = max(nums[i], max(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); dp[2*i+1] = min(nums[i], min(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); max_ = max(dp[2*i], max_); } return max_; } }; // Runtime: 4 ms, faster than 86.95% of C++ online submissions for Maximum Product Subarray.</description>
     </item>
     
     <item>
@@ -1396,12 +1432,12 @@ class Solution { public: vector&amp;lt;string&amp;gt; generateParenthesis(int n)
     </item>
     
     <item>
-      <title>200. Number of Islands</title>
+      <title>Number of Islands</title>
       <link>http://changcui.cc/posts/leetcode-200/</link>
       <pubDate>Fri, 18 Oct 2019 00:35:09 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-200/</guid>
-      <description>class Solution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.empty() || grid[0].empty()) return 0; int m = grid.size(), n = grid[0].size(); int cnt = 0; vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt; visited(m, vector&amp;lt;bool&amp;gt;(n, false)); for (int i = 0; i &amp;lt; m; i++) for (int j = 0; j &amp;lt; n; j++) { if (visited[i][j] || grid[i][j] == &amp;#39;0&amp;#39;) continue; dfs(grid, visited, i, j); cnt += 1; } return cnt; } void dfs(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, vector&amp;lt;vector&amp;lt;bool&amp;gt;&amp;gt;&amp;amp; visited, int i, int j) { if (i &amp;lt; 0 || i &amp;gt;= grid.</description>
+      <description>// 思路一：遇到1，就把临近的1变为0，并计数 class Solution { public: int numIslands(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid) { if (grid.size() == 0) return 0; int cnt = 0, m = grid.size(), n = grid[0].size(); for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (grid[i][j] == &amp;#39;1&amp;#39;) { helper(grid, i, j); cnt++; } } } return cnt; } void helper(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; grid, int i, int j) { int m = grid.</description>
     </item>
     
     <item>
@@ -1754,12 +1790,12 @@ Dorefa 最近公司的事情处理完了，日常在公司并没有什么事情�
     </item>
     
     <item>
-      <title>155. Min Stack</title>
+      <title>Min Stack</title>
       <link>http://changcui.cc/posts/leetcode-155/</link>
       <pubDate>Fri, 06 Sep 2019 23:50:28 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-155/</guid>
-      <description>priority_queue, stack class MinStack { public: /** initialize your data structure here. */ stack&amp;lt;int&amp;gt; s; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; MinStack() { } void push(int x) { s.push(x); p.push(x); } void pop() { auto e = s.top(); s.pop(); vector&amp;lt;int&amp;gt; tmp; while (!p.empty()) { auto t = p.top(); p.pop(); if (t == e) break; tmp.push_back(t); } for (auto i : tmp) { p.push(i); } } int top() { return s.top(); } int getMin() { return p.</description>
+      <description>// 思路一：同剑指offer class MinStack { public: MinStack() {} void push(int x) { s1.push(x); if (s2.empty() || x &amp;lt;= s2.top()) s2.push(x); } void pop() { if (s1.top() == s2.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int getMin() { return s2.top(); } private: stack&amp;lt;int&amp;gt; s1; stack&amp;lt;int&amp;gt; s2; }; // Runtime: 40 ms, faster than 18.45% of C++ online submissions for Min Stack. // Memory Usage: 14.3 MB, less than 100.</description>
     </item>
     
     <item>
@@ -1817,12 +1853,12 @@ Dorefa 最近公司的事情处理完了，日常在公司并没有什么事情�
     </item>
     
     <item>
-      <title>160. Intersection of Two Linked Lists</title>
+      <title>Intersection of Two Linked Lists</title>
       <link>http://changcui.cc/posts/leetcode-160/</link>
       <pubDate>Fri, 06 Sep 2019 22:08:03 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-160/</guid>
-      <description> nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&amp;gt; next; q = q -&amp;gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; </description>
+      <description>// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&amp;gt;next : headB; q = q ? q-&amp;gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists. // Memory Usage: 14.</description>
     </item>
     
     <item>
@@ -1881,12 +1917,12 @@ airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的�
     </item>
     
     <item>
-      <title>169. Majority Element</title>
+      <title>Majority Element</title>
       <link>http://changcui.cc/posts/leetcode-169/</link>
       <pubDate>Thu, 05 Sep 2019 21:14:38 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-169/</guid>
-      <description>class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { map&amp;lt;int, int&amp;gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &amp;gt; nums.size() / 2) { return num; } } return -1; } }; </description>
+      <description>// 思路一：hashmap 储存出现的次数 class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { unordered_map&amp;lt;int, int&amp;gt; m; int threshold = nums.size() / 2; for (auto i : nums) { m[i] += 1; if (m[i] &amp;gt; threshold) return i; } return -1; } }; // Runtime: 28 ms, faster than 27.88% of C++ online submissions for Majority Element. // Memory Usage: 9.1 MB, less than 100.00% of C++ online submissions for Majority Element. // 思路二：Boyer-Moore Voting 赞同或反对，cnt 为0，更换候选人，要求必须有众数 class Solution { public: int majorityElement(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int cnt = 1, rtn = nums[0]; for (int i = 1; i &amp;lt; nums.</description>
     </item>
     
     <item>
@@ -1944,21 +1980,21 @@ airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的�
     </item>
     
     <item>
-      <title>198. House Robber</title>
+      <title>House Robber</title>
       <link>http://changcui.cc/posts/leetcode-198/</link>
       <pubDate>Wed, 04 Sep 2019 21:19:32 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-198/</guid>
-      <description> dp class Solution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } vector&amp;lt;int&amp;gt; rob(nums.size() + 1, 0); rob[0] = 0, rob[1] = nums[0]; for (int i = 2; i &amp;lt;= nums.size(); i++) { rob[i] = max(rob[i - 2] + nums[i - 1], rob[i - 1]); } return rob[nums.size()]; } }; </description>
+      <description>class Solution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; vector&amp;lt;int&amp;gt; dp(nums.size(), 0); dp[0] = nums[0]; dp[1] = max(nums[0], nums[1]); int rtn = dp[1]; for (int i = 2; i &amp;lt; nums.size(); i++) { dp[i] = max(dp[i-1], dp[i-2] + nums[i]); rtn = max(rtn, dp[i]); } return rtn; } }; // Runtime: 0 ms, faster than 100.00% of C++ online submissions for House Robber.</description>
     </item>
     
     <item>
-      <title>141. Linked List Cycle</title>
+      <title>Linked List Cycle</title>
       <link>http://changcui.cc/posts/leetcode-141/</link>
       <pubDate>Wed, 04 Sep 2019 20:54:51 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-141/</guid>
-      <description> fast slow ptr /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: bool hasCycle(ListNode *head) { if (head == NULL) { return false; } auto slow = head; auto fast = head; while (fast -&amp;gt; next != NULL &amp;amp;&amp;amp; fast -&amp;gt; next -&amp;gt; next != NULL) { slow = slow -&amp;gt; next; fast = fast -&amp;gt; next -&amp;gt; next; if (slow == fast) { return true; } } return false; } }; </description>
+      <description>// 思路一：双指针，一快一慢 class Solution { public: bool hasCycle(ListNode *head) { auto slow = head, fast = head; while (fast &amp;amp;&amp;amp; fast-&amp;gt;next) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if (fast == slow) return true; } return false; } }; // Runtime: 8 ms, faster than 97.13% of C++ online submissions for Linked List Cycle. // Memory Usage: 7.7 MB, less than 100.00% of C++ online submissions for Linked List Cycle. </description>
     </item>
     
     <item>
@@ -2187,12 +2223,12 @@ Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，
     </item>
     
     <item>
-      <title>206. Reverse Linked List</title>
+      <title>Reverse Linked List</title>
       <link>http://changcui.cc/posts/leetcode-206/</link>
       <pubDate>Fri, 30 Aug 2019 23:48:42 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-206/</guid>
-      <description> iteratively /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = tmp; } return pre; } };  recursively class Solution { public: ListNode* reverseList(ListNode* head) { if (head == NULL || head -&amp;gt; next == NULL) return head; auto tmp = reverseList(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return tmp; } }; </description>
+      <description>// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&amp;gt;next; cur-&amp;gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!</description>
     </item>
     
     <item>

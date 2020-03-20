@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,46 @@
 				
 				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-155/">Min Stack</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指offer class MinStack { public: MinStack() {} void push(int x) { s1.push(x); if (s2.empty() || x &lt;= s2.top()) s2.push(x); } void pop() { if (s1.top() == s2.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int getMin() { return s2.top(); } private: stack&lt;int&gt; s1; stack&lt;int&gt; s2; }; // Runtime: 40 ms, faster than 18.45% of C++ online submissions for Min Stack. // Memory Usage: 14.3 MB, less than 100.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-171/">171. Excel Sheet Column Number</a> &mdash;
+					<span class="description">
+						
+						 long long class Solution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &#39;A&#39; + 1; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-13/">13. Roman to Integer</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int romanToInt(string s) { auto rtn = 0; auto l = s.size(); for (int i = 0; i &lt; l;) { if (s[i] == &#39;I&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;V&#39;) { rtn += 4; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;X&#39;) { rtn += 9; i += 1; } else { rtn += 1; } } else if (s[i] == &#39;X&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;L&#39;) { rtn += 40; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;C&#39;) { rtn += 90; i += 1; } else { rtn += 10; } } else if (s[i] == &#39;C&#39;) { if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;D&#39;) { rtn += 400; i += 1; } else if (i + 1 &lt; l &amp;&amp; s[i + 1] == &#39;M&#39;) { rtn += 900; i += 1; } else { rtn += 100; } } else if (s[i] == &#39;V&#39;) { rtn += 5; } else if (s[i] == &#39;L&#39;) { rtn += 50; } else if (s[i] == &#39;D&#39;) { rtn += 500; } else { rtn += 1000; } i += 1; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
+					<a class="title" href="/posts/leetcode-69/">69. Sqrt(x)</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 6, 2019</div>
 					<a class="title" href="/posts/leetcode-125/">125. Valid Palindrome</a> &mdash;
 					<span class="description">
 						
@@ -100,10 +140,10 @@
 				
 				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-160/">160. Intersection of Two Linked Lists</a> &mdash;
+					<a class="title" href="/posts/leetcode-160/">Intersection of Two Linked Lists</a> &mdash;
 					<span class="description">
 						
-						 nice trick /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (headA == NULL || headB == NULL) { return NULL; } auto p = headA; auto q = headB; while (p != q) { p = p -&gt; next; q = q -&gt; next; if (p == q) return p; if (p == NULL) { p = headB; } if (q == NULL) { q = headA; } } return p; } }; &hellip;
+						// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&gt;next : headB; q = q ? q-&gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists. // Memory Usage: 14.&hellip;
 						
 					</span>
 				</div>
@@ -134,46 +174,6 @@ feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的�
 						工作 早上差点没起来，忍了忍还是起来去上班了。今天的工作还是承接昨天，上午按照惯例玩了一会，然后就开始愉快地工作了。我这几天第一次感觉到组里是有多么的缺人，之前总觉得自己没事情做，分配的活很快就做完了，然而这几天的活基本上处于一个源源不断的状态。今天的工作其实没有什么技术含量，基本上就是带上耳机，然后听听歌，就可以完成的东西。比较有收获的是，我给 hpc 组的同事打了电话，向他咨询了一些关于 cuda 优化的问题，他给我指出了问题所在，我按照他的方法，把速度提升了十多倍。真的速度提升是一方面，另一方面是我发现自己对做的东西足够了解，我可以单独与别的组的同事沟通，获得他们的帮助。最终敲定的方案终于写完了，我把模型和数据都 dump 出来，但是 mentor 似乎太忙了，没有时间弄这个事情，于是这个事又落在了我的身上。mentor 教了我框架的基本用法，我便开始修改数据来适应这个框架，这部分工作估计要等明天才能完成了，希望结果是好的，不然所有的工作又要从来一遍。
 疲惫 和昨天一样，今日疲惫的点也是在刚下班的时候，仿佛上班时大的鸡血都失效了，猛得一放松，整个人变得非常无力，给我找个床我就能躺下睡着的感觉。不知道是不是和我中午喝咖啡有关系，也许咖啡的作用只能持续到晚饭？然后会带来更加强烈的疲惫，相当于预支了晚上的精力。
 airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的，之前她问我耳机还用不用，再加上之前用的她信用卡海淘，一直都没机会还她钱，好像也很久没有给她买过生日礼物了，今年趁着姐夫送了一个 mbp，我干脆也送给 airpods 吧，凑齐苹果一套，大概她会比较开心吧，毕竟她最近也太累了，嗓子一直处于哑的状态。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-53/">53. Maximum Subarray</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int maxSubArray(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&lt;int&gt; sum; sum.push_back(nums[0]); for (int i = 1; i &lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-14/">14. Longest Common Prefix</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if (strs.size() == 0) return &#34;&#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &lt;&lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-28/">28. Implement strStr()</a> &mdash;
-					<span class="description">
-						
-						 KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/leetcode-169/">169. Majority Element</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int majorityElement(vector&lt;int&gt;&amp; nums) { map&lt;int, int&gt; cnt; for (auto num : nums) { cnt[num] += 1; if (cnt[num] &gt; nums.size() / 2) { return num; } } return -1; } }; &hellip;
 						
 					</span>
 				</div>

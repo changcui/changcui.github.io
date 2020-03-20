@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,46 @@
 				
 				<div class="post">
 					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-11/">11. Container With Most Water</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int maxArea(vector&lt;int&gt;&amp; height) { int res = 0, i = 0, j = height.size() - 1; while (i &lt; j) { res = max(res, (j - i) * min(height[i], height[j])); height[i] &lt; height[j] ? i++ : j--; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-9/">9. Palindrome Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPalindrome(int x) { if (x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0)) return false; return x == reverse(x); } int reverse(int x) { int res = 0; while (x != 0) { if (res &gt; INT_MAX / 10) return -1; res = res * 10 + x % 10; x = x / 10; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-7/">7. Reverse Integer</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int reverse(int x) { int res = 0; while (x != 0) { if (abs(res) &gt; INT_MAX / 10) return 0; res = res * 10 + x % 10; x = x / 10; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-5/">5. Longest Palindromic Substring</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string longestPalindrome(string s) { if (s.size() &lt; 2) return s; int left = 0, right = 0, start = 0, maxlen = 0, n = s.size(); for (int i = 0; i &lt; n - 1; i++) { helper(i, i, start, maxlen, s); helper(i, i + 1, start, maxlen, s); } return s.substr(start, maxlen); } void helper(int left, int right, int&amp; start, int&amp; maxlen, const string&amp; s) { while (left &gt;= 0 &amp;&amp; right &lt; s.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
 					<a class="title" href="/posts/leetcode-3/">3. Longest Substring Without Repeating Characters</a> &mdash;
 					<span class="description">
 						
@@ -124,46 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int res = 0; for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-127/">127. Word Ladder</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int ladderLength(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) { unordered_set&lt;string&gt; s(wordList.begin(), wordList.end()); if (!s.count(endWord)) return 0; queue&lt;string&gt; q; q.push(beginWord); int res = 0; while (!q.empty()) { for (int m = q.size(); m &gt; 0; m--) { string word = q.front(); q.pop(); if (word == endWord) return res+1; for (int i = 0; i &lt; word.size(); i++) { string newword = word; for (char j = &#39;a&#39;; j &lt;= &#39;z&#39;; j++) { newword[i] = j; if (s.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-130/">130. Surrounded Regions</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void solve(vector&lt;vector&lt;char&gt;&gt;&amp; board) { if (board.empty() || board[0].empty()) return; int m = board.size(), n = board[0].size(); for (int j = 0; j &lt; n; j++) { if (board[0][j] == &#39;O&#39;) dfs(board, 0, j); if (board[m-1][j] == &#39;O&#39;) dfs(board, m-1, j); } for (int i = 1; i &lt; m-1; i++) { if (board[i][0] == &#39;O&#39;) dfs(board, i, 0); if ( board[i][n-1] == &#39;O&#39;) dfs(board, i, n-1); } for (int i = 0; i &lt; m; i++) for (int j = 0; j &lt; n; j++) { if (board[i][j] == &#39;O&#39;) board[i][j] = &#39;X&#39;; if (board[i][j] == &#39;$&#39;) board[i][j] = &#39;O&#39;; } } void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; board, int i, int j) { int m = board.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-200/">200. Number of Islands</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) { if (grid.empty() || grid[0].empty()) return 0; int m = grid.size(), n = grid[0].size(); int cnt = 0; vector&lt;vector&lt;bool&gt;&gt; visited(m, vector&lt;bool&gt;(n, false)); for (int i = 0; i &lt; m; i++) for (int j = 0; j &lt; n; j++) { if (visited[i][j] || grid[i][j] == &#39;0&#39;) continue; dfs(grid, visited, i, j); cnt += 1; } return cnt; } void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; grid, vector&lt;vector&lt;bool&gt;&gt;&amp; visited, int i, int j) { if (i &lt; 0 || i &gt;= grid.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-52/">52. N-Queens II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int totalNQueens(int n) { int cnt = 0; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp; cnt, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(cnt, out, row+1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row+i &gt;= 0 &amp;&amp; out[i][col-row+i] == &#39;Q&#39;) return false; if (col+row-i &lt; out.&hellip;
 						
 					</span>
 				</div>

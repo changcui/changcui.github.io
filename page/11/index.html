@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,46 @@
 				
 				
 				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-342/">342.Power of Four</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfFour(int num) { return (num &gt; 0) &amp;&amp; !(num &amp; (num - 1)) &amp;&amp; (num &amp; 0x55555555) == num; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-231/">231.Power of Two</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfTwo(int n) { return (n &gt; 0) &amp;&amp; !(n &amp; (n - 1)); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 9, 2019</div>
+					<a class="title" href="/posts/leetcode-343/">343.Integer Break</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int integerBreak(int n) { vector&lt;int&gt; dp(n+1, 1); for (int i = 3; i &lt;= n; i++) { for (int j = 1; j &lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 3, 2019</div>
+					<a class="title" href="/posts/leetcode-58/">58. Length of Last Word</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--; while (i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;) { res++; i--; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Dec 3, 2019</div>
 					<a class="title" href="/posts/leetcode-122/">122. Best Time to Buy and Sell Stock II</a> &mdash;
 					<span class="description">
@@ -124,46 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int uniquePathsWithObstacles(vector&lt;vector&lt;int&gt;&gt;&amp; obstacleGrid) { int m = obstacleGrid.size(), n = obstacleGrid[0].size(); vector&lt;vector&lt;unsigned int&gt;&gt; dp(m, vector&lt;unsigned int&gt;(n, 0)); if (obstacleGrid[0][0]) return 0; dp[0][0] = 1; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (obstacleGrid[i][j]) continue; if (i &gt; 0 &amp;&amp; !obstacleGrid[i-1][j]) dp[i][j] += dp[i-1][j]; if (j &gt; 0 &amp;&amp; !obstacleGrid[i][j-1]) dp[i][j] += dp[i][j-1]; } } return dp[m-1][n-1]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-62/">62. Unique Paths</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int uniquePaths(int m, int n) { vector&lt;vector&lt;int&gt;&gt; dp(m, vector&lt;int&gt;(n, 0)); dp[0][0] = 1; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { dp[i][j] += i &gt; 0 ? dp[i-1][j] : 0; dp[i][j] += j &gt; 0 ? dp[i][j-1] : 0; } } return dp[m-1][n-1]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-174/">174. Dungeon Game</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int calculateMinimumHP(vector&lt;vector&lt;int&gt;&gt;&amp; dungeon) { int m = dungeon.size(), n = dungeon[0].size(); vector&lt;vector&lt;int&gt;&gt; dp(m+1, vector&lt;int&gt;(n+1, INT_MAX)); dp[m][n-1] = 1; dp[m-1][n] = 1; for (int i = m - 1; i &gt;= 0; i--) { for (int j = n - 1; j &gt;= 0; j--) { dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j]); } } return dp[0][0]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-64/">64. Minimum Path Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int rtn = -1; vector&lt;vector&lt;int&gt;&gt; cost(grid.size(), vector&lt;int&gt;(grid[0].size(), 0)); cost[0][0] = grid[0][0]; for (int i = 0; i &lt; grid.size(); i++) { for (int j = 0; j &lt; grid[0].size(); j++) { if (i - 1 &gt;= 0 &amp;&amp; j - 1 &gt;= 0) cost[i][j] = min(cost[i-1][j], cost[i][j-1]) + grid[i][j]; else if (i - 1 &gt;= 0) cost[i][j] = cost[i-1][j] + grid[i][j]; else if (j - 1 &gt;= 0) cost[i][j] = cost[i][j-1] + grid[i][j]; else cost[i][j] = grid[i][j]; } } return cost.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-179/">179. Largest Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: string largestNumber(vector&lt;int&gt;&amp; nums) { string result = &#34;&#34;; sort(nums.begin(), nums.end(), [](auto a, auto b){ return to_string(a) + to_string(b) &gt; to_string(b) + to_string(a);}); for (auto num : nums) result += to_string(num); return result[0] == &#39;0&#39; ? &#34;0&#34; : result; } }; &hellip;
 						
 					</span>
 				</div>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-19T22:00:56+08:00" />
+<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,46 @@
 				
 				<div class="post">
 					<div class="meta">Sep 5, 2019</div>
+					<a class="title" href="/posts/leetcode-53/">53. Maximum Subarray</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int maxSubArray(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; int max_ = nums[0]; vector&lt;int&gt; sum; sum.push_back(nums[0]); for (int i = 1; i &lt; nums.size(); i++) { auto tmp = nums[i] + (sum[i - 1] &gt; 0 ? sum[i - 1] : 0); sum.push_back(tmp); max_ = max(max_, tmp); } return max_; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 5, 2019</div>
+					<a class="title" href="/posts/leetcode-14/">14. Longest Common Prefix</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if (strs.size() == 0) return &#34;&#34;; if (strs.size() == 1) return strs[0]; auto min_ = 1 &lt;&lt; 30; for (auto str : strs) { min_ = min(min_, (int)str.size()); } for (auto j = min_; j &gt; 0; j--) { auto tmp = strs[0].substr(0, j); auto i = 1; for (; i &lt; strs.size(); i++) { if (strs[i].substr(0, j) != tmp) break; } if (i == strs.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 5, 2019</div>
+					<a class="title" href="/posts/leetcode-28/">28. Implement strStr()</a> &mdash;
+					<span class="description">
+						
+						 KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() + 1; i++) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j++) { if (haystack[i + j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 5, 2019</div>
+					<a class="title" href="/posts/leetcode-169/">Majority Element</a> &mdash;
+					<span class="description">
+						
+						// 思路一：hashmap 储存出现的次数 class Solution { public: int majorityElement(vector&lt;int&gt;&amp; nums) { unordered_map&lt;int, int&gt; m; int threshold = nums.size() / 2; for (auto i : nums) { m[i] += 1; if (m[i] &gt; threshold) return i; } return -1; } }; // Runtime: 28 ms, faster than 27.88% of C++ online submissions for Majority Element. // Memory Usage: 9.1 MB, less than 100.00% of C++ online submissions for Majority Element. // 思路二：Boyer-Moore Voting 赞同或反对，cnt 为0，更换候选人，要求必须有众数 class Solution { public: int majorityElement(vector&lt;int&gt;&amp; nums) { int cnt = 1, rtn = nums[0]; for (int i = 1; i &lt; nums.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 5, 2019</div>
 					<a class="title" href="/posts/leetcode-202/">202. Happy Number</a> &mdash;
 					<span class="description">
 						
@@ -124,65 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int hammingWeight(uint32_t n) { int rtn = 0; for (int i = 0; i &lt;= 31; i++) { rtn += (n &gt;&gt; i) &amp; 1; } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-198/">198. House Robber</a> &mdash;
-					<span class="description">
-						
-						 dp class Solution { public: int rob(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) { return 0; } vector&lt;int&gt; rob(nums.size() + 1, 0); rob[0] = 0, rob[1] = nums[0]; for (int i = 2; i &lt;= nums.size(); i++) { rob[i] = max(rob[i - 2] + nums[i - 1], rob[i - 1]); } return rob[nums.size()]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-141/">141. Linked List Cycle</a> &mdash;
-					<span class="description">
-						
-						 fast slow ptr /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: bool hasCycle(ListNode *head) { if (head == NULL) { return false; } auto slow = head; auto fast = head; while (fast -&gt; next != NULL &amp;&amp; fast -&gt; next -&gt; next != NULL) { slow = slow -&gt; next; fast = fast -&gt; next -&gt; next; if (slow == fast) { return true; } } return false; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/2019-09-04/">2019 09 04</a> &mdash;
-					<span class="description">
-						
-						工作 今天的作息比较正常，八点二十就醒了，可能因为室友都回来了，两个新生室友起的比较早，再加上也比较热。
-吃了万年不变的早餐，我就开始工作了。还是紧接着昨天的工作，今天是要实现昨天想的方案。实现的过程不能说难，但还是有一些坑需要踩，慢慢写，找 mentor 讨论讨论，找研究院的人问一问，磕磕绊绊也写下来了。
-我发现自己已经快维护不了自己写的代码了，之前写的代码，现在看来很多都没有用了，我也留着没删，导致代码的逻辑看起来还是比较混乱的，希望有机会能够整理一下。
-这次写的主要内容是一个新的 param，要自定义一个新的量化函数放在里面，这一步并不难完成，只要逻辑想清楚了，其他的对一下接口就可以完成。写完了之后，做正确性检验的时候发现，之前写的 conv 代码是不对的，究其原因，还是 float 与 double 的问题，这次我选择了 cuda 内置的 round 函数，解决了这个问题。
-之后，我找了一个简单的网络训练，想让我写的代码和 mentor 写的代码跑出一样的结果，但是发现我的代码中要多一个参数，关于这个参数的处理，我和 mentor 展开了长时间的讨论，我提出了几个方案，mentor 都给我指出了问题所在，我回头仔细想了一下，提出了一个新的方案，mentor 觉得是正确的，我准备明天实现一下，如果能搞定这个，我们就前进了一大步，后面的很多事情都知道改如何解决了。
-劳累 今天结结实实地 coding 了一整天，大概七点下班的时候，我觉得自己的脑子有点晕，浑身都觉得很乏力，用女票的话来说就是脑子不转了，其实我也是，今天 mentor 给我讲一个东西的时候，我都听不下去了，我请求休息了一会，女票似乎比我还严重，她今天已经两次坐过站了，可能是前几天到处赶场，确实也太累了，然后突然开始工作，没有个缓冲的时间，老师那边也开始 push，上下班通勤也要很长时间，希望她早点好起来吧。
-热 或许因为不是一个人在宿舍了，我体会到了女票说的不能随便看空调的难受，看着室友穿着裤衩在宿舍，就是不准备开空调，我的内心是绝望的，希望今晚不要被热醒吧。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 3, 2019</div>
-					<a class="title" href="/posts/2019-09-03/">2019 09 03</a> &mdash;
-					<span class="description">
-						
-						生日 今天是我23岁的生日，感觉上还不算老，但是和朋友聊天时变得喜欢怀念过去，饮食还是一样的肚子却慢慢大了起来，虽然我的头发还没有开始秃，但时间好像真的在我身上流逝，不知不觉地触及皮肤，触及躯干，触及灵魂。
-我是能感到思想的改变的，我的价值观也在不停地变，将来还会不会变呢，是不是形成固定的价值观，人就是变成熟了，也变固执了？
-我是能感到自己的成长的，至少这一个暑假，这一份实习，我觉得自己提高了很多，最明显地就是面对困难的态度，以前总想着太麻烦，不想动手，现在就是要把它做出来，get your hand dirty，就是这个含义吧，一步一步地走下去，路总会越来越简单。
-我是能感到自己的喜好的，很长时间我是不知道自己喜欢什么的，我认为很多事情都很 valuable，但是实际上并没有很多时间去做，优先去做的事情大概就是喜好吧，我不喜欢无聊的人际交往，我只希望和小部分人一起玩，我喜欢科技产品，喜欢柯基，喜欢单机游戏，喜欢女票。
-如果能许个心愿的话，希望一切都好吧。
-工作 今天一早就起来去工作了，喝了久违的皮蛋粥，感觉比蔬菜粥好喝一些。并没有刷很长时间的社交媒体，就开始干活了。mentor 说我一天干一个小的任务还真不错，昨天搞完了第一个 subtask，今天从第二个入手。
-先去找 mentor 讨论了一下困境，然后我就开始努力地 coding，很快就写完了，因为就是把之前做的两个东西融合到一起，但是总是差一点点，我本来以为无所谓，但是 mentor 说应该是完全一样的，检查了好久发现是因为 python 和 c 在 float 的处理上是不一样的，python 的 float 默认的是64位小数，对应的是 c 里面的 double，在 python 和 c 交互的时候，会自动作截断，导致比原本的整数小一些，然后转 int 的时候会取 floor，产生 1 的差异，做了卷积运算后，差距就变大了。
-察觉到这一点 bug 后，我讲输入加了个 0.5 再转 int，成功解决了这个问题。顺便解决了第三个 subtask，其实很简单，就是把 scheduler 的状态 save 一下就可以了。
-下午开会之前，我仔细地重新捋了一遍算法的流程，找 mentor 讨论了一下关键点，讨论的过程中想出了一个更好地解决方案，mentor 说这个方案非常不错，于是我往 subtask 里面又多加了几条。
-下午开会我说了不少话，基本上占了1/3的会议篇幅吧，讨论了一下我的困惑以及需要的帮助，总的来说这次会议还是比较顺利的，进行地很快，很有效率，我喜欢这个节奏。
-晚餐 晚餐是常规的生日标配四人组，这次有点不一样，不是在家里吃的，是在外边的饭店吃的。我觉得吃的还可以，但是应该没有下一次了，因为没有太突出的地方， 环境也一般般，特别是馕，像压缩饼干一样，配合酸奶效果奇佳。若干年后，我想不起23岁生日的内容，但是应该还是能记起吃过的馕吧。
-去向 和女票讨论了一下去向的问题，马上就要毕业了，将来应该去哪里呢，留在帝都的话，没有户口，但是工作的发展不错，朋友也都在，去上海有户口，钱挣够了就可以买房，也许结婚能早一点？工作的发展应该还可以，但不如北京稳妥吧，朋友自然是没有了，去小城市生活压力应该不到，但是职业的发展会遇到瓶颈吧，一系列的问题摆在面前，仿佛没有一个最优的决策。
-其实当然没有最优决策，我是觉得无所谓的，我去哪都可以，北京或者上海，我找个工作应该都没有什么问题，女票仿佛容易受到外界的干扰，一些小的信息就可能让她的决定改变，我想了想，大概是因为我一直都没有很坚定的选项，当然也没有给她足够的支持。
-长久以来，对于去向的问题，女票似乎总是主导的一方，但是又常常改变，我不知道面临这种情况我应该怎么处理，也许我应该确定自己想要去的地方，才能更好地帮她做决定？&hellip;
 						
 					</span>
 				</div>

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 22:00:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 16:17:01 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/linked-node/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sort List</title>
+      <link>http://changcui.cc/posts/leetcode-148/</link>
+      <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-148/</guid>
+      <description>// 思路一：先从中间分离链表，再递归调用，merge class Solution { public: ListNode* sortList(ListNode* head) { if (!head || !head-&amp;gt;next) return head; auto slow = head, fast = head, pre = head; while (fast &amp;amp;&amp;amp; fast-&amp;gt;next) { pre = slow; slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; } pre-&amp;gt;next = NULL; return merge(sortList(head), sortList(slow)); } ListNode* merge(ListNode* r, ListNode* l) { auto dummy = new ListNode(-1); auto cur = dummy; while (l &amp;amp;&amp;amp; r) { if (r-&amp;gt;val &amp;lt;= l-&amp;gt;val) { cur-&amp;gt;next = r; r = r-&amp;gt;next; } else { cur-&amp;gt;next = l; l = l-&amp;gt;next; } cur = cur-&amp;gt;next; } if (l) cur-&amp;gt;next = l; if (r) cur-&amp;gt;next = r; return dummy-&amp;gt;next; } }; // Runtime: 76 ms, faster than 23.</description>
+    </item>
+    
+    <item>
+      <title>Linked List Cycle II</title>
+      <link>http://changcui.cc/posts/leetcode-142/</link>
+      <pubDate>Fri, 20 Mar 2020 14:39:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-142/</guid>
+      <description>// 思路一：先判断是否有环，然后一个从相遇处出发，一个从头节点出发，必然相遇到入口 class Solution { public: ListNode *detectCycle(ListNode *head) { if (!head || !head-&amp;gt;next) return NULL; auto slow = head-&amp;gt;next, fast = head-&amp;gt;next-&amp;gt;next; while (fast &amp;amp;&amp;amp; fast != slow) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next ? fast-&amp;gt;next-&amp;gt;next : NULL; } if (fast) fast = head; while (fast &amp;amp;&amp;amp; fast != slow) { fast = fast-&amp;gt;next; slow = slow-&amp;gt;next; } return fast; } }; // Runtime: 12 ms, faster than 77.</description>
+    </item>
     
     <item>
       <title>对称的二叉树</title>
@@ -109,6 +127,33 @@
       
       <guid>http://changcui.cc/posts/offer-3/</guid>
       <description>// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&amp;lt;int&amp;gt; printListFromTailToHead(ListNode* head) { vector&amp;lt;int&amp;gt; result; while (head) {result.push_back(head-&amp;gt;val); head = head -&amp;gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&amp;lt;int&amp;gt; printListFromTailToHead(ListNode* head) { vector&amp;lt;int&amp;gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&amp;lt;int&amp;gt;&amp;amp; result) { if (!head) return; helper(head-&amp;gt;next, result); result.push_back(head-&amp;gt;val); } }; // 运行时间：2ms // 占用内存：460k </description>
+    </item>
+    
+    <item>
+      <title>Intersection of Two Linked Lists</title>
+      <link>http://changcui.cc/posts/leetcode-160/</link>
+      <pubDate>Fri, 06 Sep 2019 22:08:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-160/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&amp;gt;next : headB; q = q ? q-&amp;gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists. // Memory Usage: 14.</description>
+    </item>
+    
+    <item>
+      <title>Linked List Cycle</title>
+      <link>http://changcui.cc/posts/leetcode-141/</link>
+      <pubDate>Wed, 04 Sep 2019 20:54:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-141/</guid>
+      <description>// 思路一：双指针，一快一慢 class Solution { public: bool hasCycle(ListNode *head) { auto slow = head, fast = head; while (fast &amp;amp;&amp;amp; fast-&amp;gt;next) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if (fast == slow) return true; } return false; } }; // Runtime: 8 ms, faster than 97.13% of C++ online submissions for Linked List Cycle. // Memory Usage: 7.7 MB, less than 100.00% of C++ online submissions for Linked List Cycle. </description>
+    </item>
+    
+    <item>
+      <title>Reverse Linked List</title>
+      <link>http://changcui.cc/posts/leetcode-206/</link>
+      <pubDate>Fri, 30 Aug 2019 23:48:42 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-206/</guid>
+      <description>// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&amp;gt;next; cur-&amp;gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!</description>
     </item>
     
   </channel>

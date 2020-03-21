@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
+<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,108 +69,109 @@
 				
 				
 				<div class="post">
+					<div class="meta">Sep 1, 2019</div>
+					<a class="title" href="/posts/2019-09-01/">2019 09 01</a> &mdash;
+					<span class="description">
+						
+						算法题 突然心血来潮，连着写了12道算法题，不说有多少收获，但起码发现了算法题其实也是会了不难，难了不会，有一些题基本上看一眼就知道该怎么写了，有一些题需要想很久，想明白了也很快就写出来啦。
+看了一个 youtube 的视频说，有一些算法题属于 utils，工具题，大概意思就是基本功，原子题，无法再细分了，如果这种题不会做，就比较麻烦了，还是先把基本的题都学会吧，基本的题组合一下，就变成了比较难的题，题海战术肯定是没错的。
+量化 马上要开学了，不得不做一些实验室的事了，周日我的小伙伴们都去打牌了，而我在宿舍写代码，其实代码不是很难写，就是要把一个量化的框架搭出来而已。
+我需要准备好 benchmark，dataset，多种 architect，量化方案等，对我来说这些东西应该不是太难吧，我觉得暑假的实习还是有提升的，我从心里不太害怕这些代码啦，之前会觉得需要做的事情很多，就不做了，现在我愿意一个一个坑慢慢踩，直到写出来为止，我有这份坚持。
+Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，我给它贴了一个谷歌的贴画，女票总喜欢叫它 Google 小龙，可是几天前它丢了，我还是挺伤心的，尤其是女票说我总不给它洗澡，把它弄脏了，我觉得是自己没有照顾好它。
+今天女票给我拿来了一个新的 Google 小龙，她去商店重新买了一个，还去网店特意买了 Google 的贴画，帮我贴上，真的是辛苦她啦，她说我有了 Google 小龙就可以去 Google 了，我去的了吗？
+学费 前天拿到了这个月的工资，我终于凑够了学费，还是比较励志的吧，自己给自己挣学费。一周前，我妈给我打电话，说要给我打学费，被我拒绝了，我想自己给自己挣学费，虽然并不是家里掏不起这笔钱，至少证明我可以经济独立地活着，做我想做的事情，我为此感到很开心。
+退款 在 Apple 买的电脑学生认证没有通过，我打电话给了客服，客服非常的专业，耐心地给我解释了原因，是我太天真了，我忽略了 Apple 并不知道我的 Apple ID 的真名是什么，他只核对了收款人和证件的姓名是不是一致的，我犯了一个愚蠢错误，估计要用女票的号再买一个了，为了确保能顺利。
+女票 女票这几天心情不太好，我其实很理解，最大的原因大概就是突然到来的实习，打乱了她原本的计划，她一直都是一个不喜欢计划被打乱的人，实力提前了一个月，她觉得自己还没有准备好，身体和心理还没转换成要工作的状态，但这份实习太重要了又不能拒绝，情绪逐渐就外显出来了。集中表现为对小事非常地在意，平常不怎么重要的小事会觉得很烦，有点烦的小事会觉得更烦，身体更加容易劳累，倾诉的欲望变得很强，需要外界的支持等。希望她早些好起来吧，我猜大概是适应了工作的状态，如鱼得水了之后。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/2019-08-31/">2019 08 31</a> &mdash;
+					<span class="description">
+						
+						 打牌 &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-387/">387. First Unique Character in a String</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-1025/">1025. Divisor Game</a> &mdash;
+					<span class="description">
+						
+						dp class Solution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&lt;bool&gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &lt;= N; i++) { bool res = false; for (int j = 1; j * j &lt; i; j++) { if (i % j == 0 &amp;&amp; !saved[i - j - 1]) { res = true; break; } } saved.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-100/">100. Same Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;&amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&gt;val == q-&gt;val) &amp;&amp; isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-455/">455. Assign Cookies</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-350/">350. Intersection of Two Arrays II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { map&lt;int, int&gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&lt;int&gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&gt; second == 0) continue; rtn.push_back(num); it -&gt; second -= 1; } return rtn; } }; class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { multiset&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-326/">326. Power of Three</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfThree(int n) { return n &gt; 0 ? !(1162261467 % n) : 0; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-268/">268. Missing Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int missingNumber(vector&lt;int&gt;&amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
 					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
 					<span class="description">
 						
 						class Solution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-237/">237. Delete Node in a Linked List</a> &mdash;
-					<span class="description">
-						
-						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-234/">234. Palindrome Linked List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&gt;next !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-206/">Reverse Linked List</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&gt;next; cur-&gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1078/">1078. Occurrences After Bigram</a> &mdash;
-					<span class="description">
-						
-						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1170/">1170. Compare Strings by Frequency of the Smallest Character</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &lt; s.size(); i++) { if (s[i] &lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) { vector&lt;int&gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&lt;int&gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &lt;= 10; i++) tmp += wa[i]; rtn.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
-					<span class="description">
-						
-						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1154/">1154. Day of the Year</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/2019-08-30/">2019 08 30</a> &mdash;
-					<span class="description">
-						
-						工资 等了一个月终于发工资了，这次的工资算是正常了。上个月因为没有满10天，结果没有绩效工资，导致我的工资大缩水。
-不知道我 mentor 是出于上个月没有绩效的同情，还是我这个月表现得确实不错，他好像给我打了一个蛮高的绩效，我感到十分的开心，我恢复了对公司的喜爱，下决心更努力的干活了。
-工作 说到工作，今天干得活其实并不到，充其量是给 mentor 找了个处理 imagenet 数据的脚本，然后他处理完了之后，我在服务器上测试了一下自己写的 resnet 跑起来是不是正确的。
-令人意外的是，今天跑得格外的顺利，代码一次就跑起来了，也没有报错。validation 的 accuracy 也和官方文档上写的一样。但是我依旧只能随便试试，并开始不了工作，还是多卡的问题解决不了，只能等到下周啦。
-临近下班的时候，我和 mentor 讨论了一下下周的工作内容，基本上确定了有五个任务要做，但当我问到 ddl 的时候，他又说没有 ddl，其实我的岗压力并不是很大，虽然我们组已经没什么人了。聊完工作，又聊了点别的， mentor 作为长者给我传授了点人生的经验，希望对我有所帮助。
-cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明显就是显卡驱动的原因。呼叫 IT 一顿操作帮我搞定了，然后我发现了一件很奇怪的事。
-就是 nvcc -V 输出的 cuda 版本是 9.0，而 nvidia-smi 输出的 cuda 版本是 10.0，我一台电脑竟然能有两个 cuda 版本。
-经过查询后发现，cuda 有两种存在形式，一个是 runtime 形式，一个是 driver 形式，分别是 cuda-toolkit 和 driver 安装的。彼此不冲突，所以才会出现这种情况。我写的扩展应该是用 nvcc 的编译的，所以我认为应该是 runtime 更为重要一些，起码对我来说是这样。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1137/">1137. N-th Tribonacci Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; &hellip;
 						
 					</span>
 				</div>

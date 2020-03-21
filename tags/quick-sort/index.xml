@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>quick sort on changcui</title>
+    <link>http://changcui.cc/tags/quick-sort/</link>
+    <description>Recent content in quick sort on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sat, 21 Mar 2020 16:03:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/quick-sort/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kth Largest Element in an Array</title>
+      <link>http://changcui.cc/posts/leetcode-215/</link>
+      <pubDate>Sat, 21 Mar 2020 16:03:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-215/</guid>
+      <description>// 思路一：使用 priority_queue 保存最大的 k 的元素 class Solution { public: int findKthLargest(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; q; for (auto i : nums) { if (q.size() &amp;lt; k) q.push(i); else if (i &amp;gt; q.top()) { q.push(i); q.pop(); } } return q.top(); } }; // Runtime: 16 ms, faster than 43.19% of C++ online submissions for Kth Largest Element in an Array. // Memory Usage: 7 MB, less than 100.</description>
+    </item>
+    
+  </channel>
+</rss>

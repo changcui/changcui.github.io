@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 21:22:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:35:10 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/priority-queue/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Find Median from Data Stream</title>
+      <link>http://changcui.cc/posts/leetcode-295/</link>
+      <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-295/</guid>
+      <description>// 思路一：同剑指 offer class MedianFinder { public: MedianFinder() { cnt = 0; } void addNum(int num) { cnt++; if (cnt &amp;amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double findMedian() { if (cnt &amp;amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;&amp;gt; q; int cnt; }; // Runtime: 264 ms, faster than 17.59% of C++ online submissions for Find Median from Data Stream.</description>
+    </item>
+    
+    <item>
+      <title>Kth Largest Element in an Array</title>
+      <link>http://changcui.cc/posts/leetcode-215/</link>
+      <pubDate>Sat, 21 Mar 2020 16:03:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-215/</guid>
+      <description>// 思路一：使用 priority_queue 保存最大的 k 的元素 class Solution { public: int findKthLargest(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; q; for (auto i : nums) { if (q.size() &amp;lt; k) q.push(i); else if (i &amp;gt; q.top()) { q.push(i); q.pop(); } } return q.top(); } }; // Runtime: 16 ms, faster than 43.19% of C++ online submissions for Kth Largest Element in an Array. // Memory Usage: 7 MB, less than 100.</description>
+    </item>
     
     <item>
       <title>数据流中的中位数</title>

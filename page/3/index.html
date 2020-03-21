@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
+<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,96 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 17, 2020</div>
+					<a class="title" href="/posts/git/">git 使用日记</a> &mdash;
+					<span class="description">
+						
+						git 常见使用场景总结，挖个坑。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-60/">把二叉树打印成多行</a> &mdash;
+					<span class="description">
+						
+						// 思路一：与上一题相同，层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } result.push_back(out); } return result; } }; // 运行时间：3ms // 占用内存：464k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-59/">按之字形顺序打印二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-58/">对称的二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：递归检查 class Solution { public: bool helper(TreeNode* p, TreeNode* q) { if (!p &amp;&amp; !q) return true; if (!p) return false; if (!q) return false; return p-&gt;val==q-&gt;val &amp;&amp; helper(p-&gt;left, q-&gt;right) &amp;&amp; helper(p-&gt;right, q-&gt;left); } bool isSymmetrical(TreeNode* pRoot) { if (!pRoot) return true; return helper(pRoot-&gt;left, pRoot-&gt;right); } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-57/">二叉树的下一个结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&gt;right) { pNode = pNode-&gt;right; while (pNode &amp;&amp; pNode-&gt;left) pNode = pNode-&gt;left; return pNode; } if (!pNode-&gt;next) return NULL; while (pNode-&gt;next) { if (pNode == pNode-&gt;next-&gt;left) return pNode-&gt;next; pNode = pNode-&gt;next; } if (!pNode-&gt;next) return NULL; return pNode-&gt;next; } }; // 运行时间：3ms // 占用内存：500k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-56/">删除链表中重复的结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-55/">链表中环的入口结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：快慢指针判断是否有环，从相遇处和头节点出发，必定相遇于入口 class Solution { public: ListNode* EntryNodeOfLoop(ListNode* pHead) { if (!pHead || !pHead-&gt;next) return NULL; auto fast = pHead-&gt;next-&gt;next, slow = pHead-&gt;next; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; slow = slow-&gt;next; } if (!fast) return NULL; fast = pHead; while (fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 14, 2020</div>
+					<a class="title" href="/posts/systemd/">systemd 使用日记</a> &mdash;
+					<span class="description">
+						
+						挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 14, 2020</div>
+					<a class="title" href="/posts/fish/">fish 使用日记</a> &mdash;
+					<span class="description">
+						
+						挖个坑先，以后在 arch 上使用 fish，记录一些使用心得，配置文件等等。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Mar 13, 2020</div>
 					<a class="title" href="/posts/arch/">Arch 踩坑日记</a> &mdash;
 					<span class="description">
@@ -87,96 +177,6 @@ https://github.com/mytbk/Linux_Notes/tree/master/install
 第三次失败，和第二次的情况一样，暂时不知道原因，查了一下似乎是 gummiboot 的问题，把 bootloader 切换成 grub 再试一次把！
 第四次，成功进去了，不过是自己找 EFI 文件引导的，后面还得调整一下，怎么能自动引导，然后就是不能上网，好像是没有安装 networkmanager
 找到原因了，是因为我没有移除 archlinux.iso 作为 attachment，然后它找 EFI 文件的路径发生了变化，没有从 /boot/EFI/BOOT/ 开始找，把 iso 文件移除之后，现在能正常启动啦！&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-54/">字符流中第一个不重复的字符</a> &mdash;
-					<span class="description">
-						
-						// 思路一：储存初次出现的下标，遍历整个数组，寻找最小下标，空间复杂度O(k)，时间复杂度O(k) class Solution { public: vector&lt;int&gt; c; int cnt; void Insert(char ch) { if (c.empty()) c.resize(256, INT_MAX), cnt = 0; c[ch] = c[ch] == INT_MAX ? cnt : -1; cnt++; } //return the first appearence once char in current stringstream  char FirstAppearingOnce() { char rtn = &#39;#&#39;; int idx = INT_MAX; for (int i = 0; i &lt; 256; i++) { if (c[i] != -1 &amp;&amp; c[i] &lt; idx) rtn = i, idx = c[i]; } return rtn; } }; // 运行时间：3ms // 占用内存：488k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-53/">表示数值的字符串</a> &mdash;
-					<span class="description">
-						
-						// 思路一：拆分成三部分去 check class Solution { public: bool isInt(string s) { if (s.empty()) return false; if (s.size() == 1 &amp;&amp; (s[0] == &#39;+&#39; || s[0] == &#39;-&#39;)) return true; if (!isdigit(s[0]) &amp;&amp; s[0] != &#39;+&#39; &amp;&amp; s[0] != &#39;-&#39;) return false; for (auto i = 1; i &lt; s.size(); i++) { if (!isdigit(s[i])) return false; } return true; } bool isFloat(string s) { auto p = s.find(&#39;.&#39;); if (p != std::string::npos) { return isInt(s.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-52/">正则表达式匹配</a> &mdash;
-					<span class="description">
-						
-						// 思路一：按照 pattern 下一位是不是 * 来分情况考虑，如果是 * 的话，可以使用，也可以不使用，分两种情况返回。 class Solution { public: int sl, pl; bool match(char* str, char* pattern) { sl = strlen(str), pl = strlen(pattern); return helper(str, pattern, 0, 0); } bool helper(char* str, char* pattern, int i, int j) { if (i == sl &amp;&amp; j == pl) return true; if (j == pl) return false; if (j + 1 &lt; pl &amp;&amp; pattern[j+1] == &#39;*&#39;) { if (i &lt; sl &amp;&amp; (str[i] == pattern[j] || pattern[j] == &#39;.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-51/">构建乘积数组</a> &mdash;
-					<span class="description">
-						
-						// 思路一：将数组 B 分为两段递推求解 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { vector&lt;int&gt; b, c{1}, d{1}; int n = A.size(); if (n == 0) return b; for (int i = 0; i &lt; n - 1; i++) { c.push_back(c.back() * A[i]); d.push_back(d.back() * A[n - 1 - i]); } for (int i = 0; i &lt; n; i++) { b.push_back(c[i] * d[n - 1 - i]); } return b; } }; // 运行时间：4ms // 占用内存：480k // 思路二：优化空间 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { int n = A.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-50/">数组中重复的数字</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用 set 保存数字 class Solution { public: bool duplicate(int numbers[], int length, int* duplication) { unordered_set&lt;int&gt; s; for (int i = 0; i &lt; length; i++) { if (s.count(numbers[i])) { *duplication = numbers[i]; return true; } s.insert(numbers[i]); } return false; } }; // 运行时间：4ms // 占用内存：492k // 思路二：每个元素都应该在它下标的位置 class Solution { public: bool duplicate(int numbers[], int length, int* duplication) { for (int i = 0; i &lt; length; i++) { while (numbers[i] !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-49/">把字符串转换成整数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用 long long 处理范围问题 class Solution { public: int StrToInt(string str) { if (str.size() == 0) return 0; int mul = str[0] == &#39;-&#39; ? -1 : 1; long long rtn = isdigit(str[0]) ? str[0] - &#39;0&#39; : 0; for (int i = 1; i &lt; str.size(); i++) { if (!isdigit(str[i])) return 0; rtn = 10 * rtn + str[i] - &#39;0&#39;; } rtn *= mul; return rtn &gt;= INT_MIN &amp;&amp; rtn &lt;= INT_MAX ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 11, 2020</div>
-					<a class="title" href="/posts/offer-48/">不用加减乘除做加法</a> &mdash;
-					<span class="description">
-						
-						// 思路一：位运算，保证两者和不变，num1 作为各位相加的结果，num2 作为进位的结果，当 num2 为0时，num1 就可返回 class Solution { public: int Add(int num1, int num2) { while (num2) { auto t = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = t; } return num1; } }; // 运行时间：3ms // 占用内存：488k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 11, 2020</div>
-					<a class="title" href="/posts/offer-47/">求1&#43;2&#43;3&#43;...&#43;n</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用递归代替循环，使用短路代替 if class Solution { public: int Sum_Solution(int n) { int rtn = n; rtn &amp;&amp; (rtn += Sum_Solution(n - 1)); return rtn; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 11, 2020</div>
-					<a class="title" href="/posts/offer-46/">孩子们的游戏(圆圈中最后剩下的数)</a> &mdash;
-					<span class="description">
-						
-						// 思路一：直接模拟 class Solution { public: int LastRemaining_Solution(int n, int m) { vector&lt;int&gt; c(n, 0); int i = -1, j = 0, cnt = n; while (cnt) { i++; if (i == n) i = 0; if (c[i]) continue; if (j == m - 1) { c[i] = 1; cnt--; j = 0; } else j++; } return i - 1; } }; // 运行时间：107ms // 占用内存：500k // 思路二：寻找数学规律 // http://zhedahht.&hellip;
 						
 					</span>
 				</div>

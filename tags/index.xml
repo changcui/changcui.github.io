@@ -7,17 +7,80 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 16:17:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:38:07 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>binary tree</title>
+      <link>http://changcui.cc/tags/binary-tree/</link>
+      <pubDate>Sat, 21 Mar 2020 17:38:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/binary-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>leetcode</title>
       <link>http://changcui.cc/tags/leetcode/</link>
-      <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
+      <pubDate>Sat, 21 Mar 2020 17:38:07 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data struct</title>
+      <link>http://changcui.cc/tags/data-struct/</link>
+      <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/data-struct/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>priority queue</title>
+      <link>http://changcui.cc/tags/priority-queue/</link>
+      <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/priority-queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>array</title>
+      <link>http://changcui.cc/tags/array/</link>
+      <pubDate>Sat, 21 Mar 2020 17:24:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/array/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>double pointer</title>
+      <link>http://changcui.cc/tags/double-pointer/</link>
+      <pubDate>Sat, 21 Mar 2020 17:24:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/double-pointer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deque</title>
+      <link>http://changcui.cc/tags/deque/</link>
+      <pubDate>Sat, 21 Mar 2020 17:05:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/deque/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quick sort</title>
+      <link>http://changcui.cc/tags/quick-sort/</link>
+      <pubDate>Sat, 21 Mar 2020 16:03:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/quick-sort/</guid>
       <description></description>
     </item>
     
@@ -27,15 +90,6 @@
       <pubDate>Fri, 20 Mar 2020 16:17:01 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/linked-node/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data struct</title>
-      <link>http://changcui.cc/tags/data-struct/</link>
-      <pubDate>Fri, 20 Mar 2020 14:43:52 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/data-struct/</guid>
       <description></description>
     </item>
     
@@ -112,33 +166,6 @@
     </item>
     
     <item>
-      <title>deque</title>
-      <link>http://changcui.cc/tags/deque/</link>
-      <pubDate>Thu, 19 Mar 2020 21:43:46 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/deque/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>priority queue</title>
-      <link>http://changcui.cc/tags/priority-queue/</link>
-      <pubDate>Thu, 19 Mar 2020 21:22:47 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/priority-queue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>binary tree</title>
-      <link>http://changcui.cc/tags/binary-tree/</link>
-      <pubDate>Thu, 19 Mar 2020 20:30:20 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/binary-tree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>http://changcui.cc/tags/git/</link>
       <pubDate>Tue, 17 Mar 2020 09:29:32 +0800</pubDate>
@@ -184,15 +211,6 @@
     </item>
     
     <item>
-      <title>array</title>
-      <link>http://changcui.cc/tags/array/</link>
-      <pubDate>Thu, 12 Mar 2020 21:22:56 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/array/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bit operation</title>
       <link>http://changcui.cc/tags/bit-operation/</link>
       <pubDate>Wed, 11 Mar 2020 14:27:53 +0800</pubDate>
@@ -207,15 +225,6 @@
       <pubDate>Wed, 11 Mar 2020 14:27:47 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>double pointer</title>
-      <link>http://changcui.cc/tags/double-pointer/</link>
-      <pubDate>Tue, 10 Mar 2020 11:08:22 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/double-pointer/</guid>
       <description></description>
     </item>
     

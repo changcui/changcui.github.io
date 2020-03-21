@@ -7,10 +7,91 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 16:17:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:38:07 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Serialize and Deserialize Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-297/</link>
+      <pubDate>Sat, 21 Mar 2020 17:38:07 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-297/</guid>
+      <description>// 思路一：同剑指 offer class Codec { public: // Encodes a tree to a single string.  string serialize(TreeNode* root) { string result = &amp;#34;&amp;#34;; sePre(root, result); return result; } void sePre(TreeNode* root, string&amp;amp; result) { if (!root) {result += &amp;#34;#!&amp;#34;; return;} result += to_string(root-&amp;gt;val) + &amp;#34;!&amp;#34;; sePre(root-&amp;gt;left, result); sePre(root-&amp;gt;right, result); } // Decodes your encoded data to tree.  TreeNode* deserialize(string data) { return desePre(data); } TreeNode* desePre(string&amp;amp; data) { if (data.</description>
+    </item>
+    
+    <item>
+      <title>Find Median from Data Stream</title>
+      <link>http://changcui.cc/posts/leetcode-295/</link>
+      <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-295/</guid>
+      <description>// 思路一：同剑指 offer class MedianFinder { public: MedianFinder() { cnt = 0; } void addNum(int num) { cnt++; if (cnt &amp;amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double findMedian() { if (cnt &amp;amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;&amp;gt; q; int cnt; }; // Runtime: 264 ms, faster than 17.59% of C++ online submissions for Find Median from Data Stream.</description>
+    </item>
+    
+    <item>
+      <title>Find the Duplicate Number</title>
+      <link>http://changcui.cc/posts/leetcode-287/</link>
+      <pubDate>Sat, 21 Mar 2020 17:24:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-287/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: int findDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { for (int i = 0; i &amp;lt; nums.size(); i++) { while (nums[i] != i + 1) { if (nums[nums[i]-1] == nums[i]) return nums[i]; swap(nums[i], nums[nums[i]-1]); } } return -1; } }; // Runtime: 12 ms, faster than 67.11% of C++ online submissions for Find the Duplicate Number. // Memory Usage: 7.6 MB, less than 100.00% of C++ online submissions for Find the Duplicate Number.</description>
+    </item>
+    
+    <item>
+      <title>Search a 2D Matrix II</title>
+      <link>http://changcui.cc/posts/leetcode-240/</link>
+      <pubDate>Sat, 21 Mar 2020 17:07:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-240/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: bool searchMatrix(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; matrix, int target) { if (matrix.size() == 0) return false; int m = matrix.size(), n = matrix[0].size(); int i = m - 1, j = 0; while (i &amp;gt;= 0 &amp;amp;&amp;amp; j &amp;lt; n) { if (matrix[i][j] == target) return true; if (matrix[i][j] &amp;gt; target) i--; else j++; } return false; } }; // Runtime: 108 ms, faster than 34.41% of C++ online submissions for Search a 2D Matrix II.</description>
+    </item>
+    
+    <item>
+      <title>Sliding Window Maximum</title>
+      <link>http://changcui.cc/posts/leetcode-239/</link>
+      <pubDate>Sat, 21 Mar 2020 17:05:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-239/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: vector&amp;lt;int&amp;gt; maxSlidingWindow(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { int len = nums.size(); deque&amp;lt;int&amp;gt; q; vector&amp;lt;int&amp;gt; result; for (int i = 0; i &amp;lt; len; i++) { while (!q.empty() &amp;amp;&amp;amp; nums[i] &amp;gt; nums[q.back()]) q.pop_back(); while (!q.empty() &amp;amp;&amp;amp; i - q.front() &amp;gt;= k) q.pop_front(); q.push_back(i); if (i + 1 &amp;gt;= k) result.push_back(nums[q.front()]); } return result; } }; // Runtime: 60 ms, faster than 52.43% of C++ online submissions for Sliding Window Maximum.</description>
+    </item>
+    
+    <item>
+      <title>Product of Array Except Self</title>
+      <link>http://changcui.cc/posts/leetcode-238/</link>
+      <pubDate>Sat, 21 Mar 2020 16:53:39 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-238/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: vector&amp;lt;int&amp;gt; productExceptSelf(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int n = nums.size(); vector&amp;lt;int&amp;gt; result(n, 1); for (int i = 1; i &amp;lt; n; i++) result[i] = nums[i-1] * result[i-1]; for (int i = n - 1, tmp = 1; i &amp;gt;= 0; tmp *= nums[i--]) result[i] *= tmp; return result; } }; // Runtime: 40 ms, faster than 75.41% of C++ online submissions for Product of Array Except Self.</description>
+    </item>
+    
+    <item>
+      <title>Lowest Common Ancestor of a Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-236/</link>
+      <pubDate>Sat, 21 Mar 2020 16:38:03 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-236/</guid>
+      <description>// 思路一：依然是递归，分情况讨论，分别在左右，在左，在右 class Solution { public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) { if (!root || root == p || root == q) return root; auto l = lowestCommonAncestor(root-&amp;gt;left, p, q); auto r = lowestCommonAncestor(root-&amp;gt;right, p, q); if (l &amp;amp;&amp;amp; r) return root; return l ? l : r; } }; // Runtime: 24 ms, faster than 35.87% of C++ online submissions for Lowest Common Ancestor of a Binary Tree.</description>
+    </item>
+    
+    <item>
+      <title>Invert Binary Tree</title>
+      <link>http://changcui.cc/posts/leetcode-226/</link>
+      <pubDate>Sat, 21 Mar 2020 16:20:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-226/</guid>
+      <description>// 思路一：二叉树传统艺能，递归 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!root) return NULL; auto tmp = root-&amp;gt;right; root-&amp;gt;right = root-&amp;gt;left; root-&amp;gt;left = tmp; invertTree(root-&amp;gt;left); invertTree(root-&amp;gt;right); return root; } }; // Runtime: 4 ms, faster than 59.41% of C++ online submissions for Invert Binary Tree. // Memory Usage: 7.9 MB, less than 100.00% of C++ online submissions for Invert Binary Tree. // 思路二：非递归写法 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!</description>
+    </item>
+    
+    <item>
+      <title>Kth Largest Element in an Array</title>
+      <link>http://changcui.cc/posts/leetcode-215/</link>
+      <pubDate>Sat, 21 Mar 2020 16:03:54 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-215/</guid>
+      <description>// 思路一：使用 priority_queue 保存最大的 k 的元素 class Solution { public: int findKthLargest(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; q; for (auto i : nums) { if (q.size() &amp;lt; k) q.push(i); else if (i &amp;gt; q.top()) { q.push(i); q.pop(); } } return q.top(); } }; // Runtime: 16 ms, faster than 43.19% of C++ online submissions for Kth Largest Element in an Array. // Memory Usage: 7 MB, less than 100.</description>
+    </item>
     
     <item>
       <title>Sort List</title>

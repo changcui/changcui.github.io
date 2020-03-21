@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 14:43:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:35:10 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/data-struct/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Find Median from Data Stream</title>
+      <link>http://changcui.cc/posts/leetcode-295/</link>
+      <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-295/</guid>
+      <description>// 思路一：同剑指 offer class MedianFinder { public: MedianFinder() { cnt = 0; } void addNum(int num) { cnt++; if (cnt &amp;amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double findMedian() { if (cnt &amp;amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; p; priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;&amp;gt; q; int cnt; }; // Runtime: 264 ms, faster than 17.59% of C++ online submissions for Find Median from Data Stream.</description>
+    </item>
     
     <item>
       <title>LRU Cache</title>

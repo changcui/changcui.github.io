@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
+<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,101 +69,101 @@
 				
 				
 				<div class="post">
+					<div class="meta">Oct 12, 2019</div>
+					<a class="title" href="/posts/leetcode-150/">150. Evaluate Reverse Polish Notation</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int evalRPN(vector&lt;string&gt;&amp; tokens) { stack&lt;int&gt; t; for (auto s : tokens) { if (isdigit(s[s.size()-1])) { t.push(stoi(s)); } else { auto num1 = t.top(); t.pop(); auto num2 = t.top(); t.pop(); if (s == &#34;+&#34;) t.push(num2 + num1); else if (s == &#34;*&#34;) t.push(num2 * num1); else if (s == &#34;-&#34;) t.push(num2 - num1); else if (s == &#34;/&#34;) t.push(num2 / num1); } } return t.top(); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 12, 2019</div>
+					<a class="title" href="/posts/leetcode-225/">225. Implement Stack using Queues</a> &mdash;
+					<span class="description">
+						
+						class MyStack { public: /** Initialize your data structure here. */ MyStack() { } /** Push element x onto stack. */ void push(int x) { q.push(x); for (int i = 0; i &lt; (int)q.size() - 1; i++) q.push(q.front()), q.pop(); } /** Removes the element on top of the stack and returns that element. */ int pop() { auto rtn = q.front(); q.pop(); return rtn; } /** Get the top element. */ int top() { auto rtn = q.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 12, 2019</div>
+					<a class="title" href="/posts/leetcode-232/">232. Implement Queue using Stacks</a> &mdash;
+					<span class="description">
+						
+						class MyQueue { public: /** Initialize your data structure here. */ MyQueue() { } /** Push element x to the back of queue. */ void push(int x) { s1.push(x); } /** Removes the element from in front of queue and returns that element. */ int pop() { if (s2.empty()) { while (!s1.empty()) s2.push(s1.top()), s1.pop(); } auto rtn = s2.top(); s2.pop(); return rtn; } /** Get the front element. */ int peek() { if (s2.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 11, 2019</div>
+					<a class="title" href="/posts/leetcode-315/">315. Count of Smaller Numbers After Self</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; t, res(nums.size()); for (int i = nums.size() - 1; i &gt;= 0; i--) { int left = 0, right = t.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (t[mid] &lt; nums[i]) left = mid + 1; else right = mid; } res[i] = right; t.insert(t.begin() + right, nums[i]); } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-349/">349. Intersection of Two Arrays</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; intersection(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { unordered_set&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) if (n1.count(n)) res.insert(n); return vector&lt;int&gt;(res.begin(), res.end()); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-374/">374. Guess Number Higher or Lower</a> &mdash;
+					<span class="description">
+						
+						// Forward declaration of guess API. // @param num, your guess // @return -1 if my number is lower, 1 if my number is higher, otherwise return 0 int guess(int num); class Solution { public: int guessNumber(int n) { int left = 1, right = n; while (left &lt;= right) { int mid = left + (right - left) / 2; auto g = guess(mid); if (g == 0) return mid; else if (g == 1) left = mid + 1; else right = mid; } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-278/">278. First Bad Version</a> &mdash;
+					<span class="description">
+						
+						// Forward declaration of isBadVersion API. bool isBadVersion(int version); class Solution { public: int firstBadVersion(int n) { int left = 1, right = n; while (left &lt; right) { int mid = left + (right - left) / 2; if (isBadVersion(mid)) right = mid; else left = mid + 1; } return right; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-34/">34. Find First and Last Position of Element in Sorted Array</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; target) left = mid + 1; else right = mid; } if (right == nums.size() || nums[right] != target) return {-1, -1}; int l = right; left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt;= target) left = mid + 1; else right = mid; } return {l, right - 1}; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-162/">162. Find Peak Element</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findPeakElement(vector&lt;int&gt;&amp; nums) { int left = 0, right = nums.size() - 1; while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; nums[mid + 1]) left = mid + 1; else right = mid; } return right; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
 					<a class="title" href="/posts/leetcode-154/">154. Find Minimum in Rotated Sorted Array II</a> &mdash;
 					<span class="description">
 						
 						class Solution { public: int findMin(vector&lt;int&gt;&amp; nums) { int left = 0, right = nums.size() - 1; while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &gt; nums[right]) left = mid + 1; else if (nums[mid] &lt; nums[right]) right = mid; else right -= 1; } return nums[right]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-153/">153. Find Minimum in Rotated Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int findMin(vector&lt;int&gt;&amp; nums) { int left = 0, right = nums.size() - 1; while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &gt; nums[right]) left = mid + 1; else right = mid; } return nums[right]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-81/">81. Search in Rotated Sorted Array II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool search(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &lt;= right) { int mid = left + (right - left) / 2; if (target == nums[mid]) return true; if (nums[mid] &lt; nums[right]) { if (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right]) left = mid + 1; else right = mid - 1; } else if (nums[mid] &gt; nums[right]) { if (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid]) right = mid - 1; else left = mid + 1; } else right -= 1; } return false; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-33/">33. Search in Rotated Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &lt;= right) { int mid = left + (right - left) / 2; if (nums[mid] == target) return mid; else if (nums[mid] &lt; nums[right]) { if (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right]) left = mid + 1; else right = mid - 1; } else { if (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid]) right = mid - 1; else left = mid + 1; } } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-35/">35. Search Insert Position</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int searchInsert(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; target) left = mid + 1; else right = mid; } return right; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-107/">107. Binary Tree Level Order Traversal II</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-103/">103. Binary Tree Zigzag Level Order Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp; 1) res[level].insert(res[level].begin(), root-&gt;val); else res[level].&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-102/">102. Binary Tree Level Order Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-145/">145. Binary Tree Postorder Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; postorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&gt;val); s.push(p); p = p-&gt;right; } else { p = s.top(); s.pop(); p = p-&gt;left; } } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 9, 2019</div>
-					<a class="title" href="/posts/leetcode-144/">144. Binary Tree Preorder Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; preorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&gt;val); s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); p = p-&gt;right; } } return res; } }; &hellip;
 						
 					</span>
 				</div>

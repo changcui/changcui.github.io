@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 21:43:46 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:05:01 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/deque/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sliding Window Maximum</title>
+      <link>http://changcui.cc/posts/leetcode-239/</link>
+      <pubDate>Sat, 21 Mar 2020 17:05:01 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-239/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: vector&amp;lt;int&amp;gt; maxSlidingWindow(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) { int len = nums.size(); deque&amp;lt;int&amp;gt; q; vector&amp;lt;int&amp;gt; result; for (int i = 0; i &amp;lt; len; i++) { while (!q.empty() &amp;amp;&amp;amp; nums[i] &amp;gt; nums[q.back()]) q.pop_back(); while (!q.empty() &amp;amp;&amp;amp; i - q.front() &amp;gt;= k) q.pop_front(); q.push_back(i); if (i + 1 &amp;gt;= k) result.push_back(nums[q.front()]); } return result; } }; // Runtime: 60 ms, faster than 52.43% of C++ online submissions for Sliding Window Maximum.</description>
+    </item>
     
     <item>
       <title>滑动窗口的最大值</title>

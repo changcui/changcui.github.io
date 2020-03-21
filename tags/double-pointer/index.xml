@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 10 Mar 2020 11:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:24:44 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/double-pointer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Find the Duplicate Number</title>
+      <link>http://changcui.cc/posts/leetcode-287/</link>
+      <pubDate>Sat, 21 Mar 2020 17:24:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-287/</guid>
+      <description>// 思路一：同剑指 offer class Solution { public: int findDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { for (int i = 0; i &amp;lt; nums.size(); i++) { while (nums[i] != i + 1) { if (nums[nums[i]-1] == nums[i]) return nums[i]; swap(nums[i], nums[nums[i]-1]); } } return -1; } }; // Runtime: 12 ms, faster than 67.11% of C++ online submissions for Find the Duplicate Number. // Memory Usage: 7.6 MB, less than 100.00% of C++ online submissions for Find the Duplicate Number.</description>
+    </item>
     
     <item>
       <title>和为S的两个数字</title>

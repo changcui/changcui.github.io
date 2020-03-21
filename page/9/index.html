@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-20T16:17:01+08:00" />
+<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,101 +69,122 @@
 				
 				
 				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-7/">斐波那契数列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：递归如果不储存的话会超时，使用循环 class Solution { public: int Fibonacci(int n) { int a = 0, b = 1; while (n--) { int tmp = a + b; a = b; b = tmp; } return a; } }; // 运行时间：4ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-6/">旋转数组的最小数字</a> &mdash;
+					<span class="description">
+						
+						// 思路一：二分查找，如果左值小于右值，必定是递增，返回左值；如果中间值大于左值 // 则必在右边，若在左边则左值大于右值大于中间值，同理，如果中间值小于右值，必在 // 左边，若在右边则中间值大于左值大于右值，else 的情况只能为 l++，不能为 r-- class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.empty()) return 0; int l = 0, r = rotateArray.size() - 1; while (l &lt; r) { if (rotateArray[l] &lt; rotateArray[r]) return rotateArray[l]; int mid = l + (r - l) / 2; if (rotateArray[mid] &gt; rotateArray[l]) l = mid + 1; else if (rotateArray[mid] &lt; rotateArray[r]) r = mid; else l++; } return rotateArray[l]; } }; // 运行时间：27ms // 占用内存：612k // 思路二：也是二分，判断条件变化了一些，更容易理解，只与右边的比较，如果大的话，肯定 // 在右边，因为有一个减少过程，如果小的话，肯定在左边，与上文相同，如果相等的话，无法 // 判断，让 r--。 class Solution { public: int minNumberInRotateArray(vector&lt;int&gt; rotateArray) { if (rotateArray.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-5/">用两个栈实现队列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：数据储存在栈一，pop 的时候倒入栈二，再倒回来 class Solution { public: void push(int node) { stack1.push(node); } int pop() { while (!stack1.empty()) {stack2.push(stack1.top()); stack1.pop();} int rtn = stack2.top(); stack2.pop(); while (!stack2.empty()) {stack1.push(stack2.top()); stack2.pop();} return rtn; } private: stack&lt;int&gt; stack1; stack&lt;int&gt; stack2; }; // 运行时间：3ms // 占用内存：456k // 思路二：小优化，只有当栈二空了才压入栈一的元素，因为先压入的总会先出。 class Solution { public: void push(int node) { stack1.push(node); } int pop() { if (stack2.empty()) { while (!stack1.empty()) { stack2.push(stack1.top()); stack1.pop(); } } int rtn = stack2.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-4/">重建二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用递归重建，每次重建一个节点，将两组数在根结点处划分成两段递归调用 // 注意细节处理，第一次调用右节点为 pre.size()-1，调用体的 for loop 使用 // i &lt;= rv - lv，以及出口为 lv &gt; rv class Solution { public: TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) { return helper(pre, vin, 0, pre.size()-1, 0, vin.size()-1); } TreeNode* helper(vector&lt;int&gt;&amp; pre, vector&lt;int&gt;&amp; vin, int lp, int rp, int lv, int rv) { if (lp &gt; rp || lv &gt; rv) return NULL; TreeNode* rtn = new TreeNode(pre[lp]); if (lp == rp &amp;&amp; lv == rv) return rtn; for (int i = 0; i &lt;= rv - lv; i++) { if (vin[i+lv] == pre[lp]) { rtn -&gt; left = helper(pre, vin, lp+1, lp+i, lv, lv+i-1); rtn -&gt; right = helper(pre, vin, lp+i+1, rp, lv+i+1, rv); break; } } return rtn; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-3/">从尾到头打印链表</a> &mdash;
+					<span class="description">
+						
+						// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; while (head) {result.push_back(head-&gt;val); head = head -&gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&lt;int&gt;&amp; result) { if (!head) return; helper(head-&gt;next, result); result.push_back(head-&gt;val); } }; // 运行时间：2ms // 占用内存：460k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-2/">替换空格</a> &mdash;
+					<span class="description">
+						
+						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-1/">二维数组中的查找</a> &mdash;
+					<span class="description">
+						
+						// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Jan 8, 2020</div>
+					<a class="title" href="/posts/git-checkout/">git checkout</a> &mdash;
+					<span class="description">
+						
+						前情 之前 git 只会一些比较基本的用法，对 git 的原理以及一些常用的场景都不太了解，现在准备重新学习一些，我发现一些命令用的很多，以及一些场景可以使用多种命令的组合来完成，一个一个来吧，先来学习一个 checkout 的多种功能。
+切换分支 git checkout [&lt;branch&gt;]
+这个用的很多了，在分支之间切换。
+创建并切换分支 git checkout -b &lt;new branch&gt; [&lt;start point&gt;]
+这个也用的比较多，加上 -b 来创建一个新的分支，本质上和 git branch 创建分支，再 git checkout 过去的功能是一样的。
+detach HEAD git checkout --detach [&lt;branch&gt;], git checkout &lt;commit&gt;
+如果想 detach head 对于某个 branch 而言的话，需要加上 &ndash;detach，不加是切换 branch 的意思，如果对于某个 commit 而言的话，则不需要加。
+简单解释一下，详见这里，HEAD 原本是指向一个 branch 的，通过指向 branch 来间接
+的指向 commit，detach HEAD 操作可以让 HEAD 直接某个 commit，这么做之后，也可以进行 add，commit 等常用的操作，跟之前有一些不一样是当你 checkout 到别的分支之后，你的 commit 没有标记，会只剩下一个 SHA，被 git 的垃圾回收机制回收，相当于走了就回不来了。如果想要再回来，当然就是加上标记，有三种方法，第一种是 git checkout -b foo，这么做是创建一个新的分支，并且将 HEAD 指向这个分支，这时候的 HEAD 不是 detached 的状态了，第二种是 git branch foo，给 commit 加一个 branch 的标记，但是 HEAD 依然指向当前的 commit，还处于 detached 状态，需要 checkout 一下解除 detached 状态，第三种是 git tag foo，给这个 commit 打一个标记，HEAD 依然处于 detached 状态。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Jan 7, 2020</div>
+					<a class="title" href="/posts/inline-function/">c&#43;&#43; inline function</a> &mdash;
+					<span class="description">
+						
+						 前情 之前看 Linus 的硕士毕业论文的时候，看到他设计 Linux Kernel 的时候，用了几个非标准但是各种编译器都实现了的功能，其中一个就是 inline function，我记得之前在 ICS 课上也用过，可是我忘了为什么要用，重新查了一下，记录一下。
+What inline function 被用于减少程序的运行时间，具体的做法是，编译的时候直接将 inline function 的调用替换为其定义，相当于取消了函数调用这一步，执行函数内部的代码。一般用于代码比较少的函数，代码比较多的函数编译器可能会直接忽略掉 inline。
+Why 函数调用是有开销的，在运行的时候，一次函数调用需要完成以下几步：
+ 预先储存函数调用之后，下一条指令的地址
+ 把需要调用的函数载入内存
+ 拷贝参数
+ 跳转到被执行的函数
+ 执行函数代码
+ 储存函数的返回值
+ 跳转到预先存好的下一条指令地址继续执行
+  当函数加了 inline 的关键字之后，编译器将函数调用语句替换成函数实现的代码，这样就不用执行跳转等步骤了。(是不是感觉和宏有点像，但还是有点不一样的，宏一定会替换
+How class A { public: inline int add(int a, int b) {return a + b}; };  References  https://www.geeksforgeeks.org/inline-functions-cpp/
+ http://www.cplusplus.com/articles/2LywvCM9/
+  &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Dec 13, 2019</div>
 					<a class="title" href="/posts/leetcode-114/">114.Flatten Binary Tree to Linked List</a> &mdash;
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: void flatten(TreeNode* root) { if (!root) return; if (root-&gt;left) flatten(root-&gt;left); if (root-&gt;right) flatten(root-&gt;right); auto tmp = root -&gt; right; root -&gt; right = root -&gt; left; root -&gt; left = NULL; while (root-&gt;right) root = root -&gt; right; root -&gt; right = tmp; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-111/">111.Minimum Depth of Binary Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int minDepth(TreeNode* root) { if (!root) return 0; if (!root-&gt;left) return 1 + minDepth(root -&gt; right); if (!root-&gt;right) return 1 + minDepth(root -&gt; left); return 1 + min(minDepth(root-&gt;right), minDepth(root-&gt;left)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-110/">110.Balanced Binary Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isBalanced(TreeNode* root) { if (!root) return true; if (abs(getDepth(root-&gt;left) - getDepth(root-&gt;right)) &gt; 1) return false; return isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right); } int getDepth(TreeNode* root) { if (!root) return 0; return max(getDepth(root-&gt;left), getDepth(root-&gt;right)) + 1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-109/">109.Convert Sorted List to Binary Search Tree</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* sortedListToBST(ListNode* head) { return helper(head, NULL); } TreeNode* helper(ListNode* begin, ListNode* end) { if (begin == end) return NULL; auto fast = begin, slow = begin; while (fast !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 13, 2019</div>
-					<a class="title" href="/posts/leetcode-105/">105.Construct Binary Tree from Preorder and Inorder Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) { int n = preorder.size() - 1; return helper(preorder, inorder, 0, n, 0, n); } TreeNode* helper(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder, int lp, int rp, int li, int ri) { if (lp &gt; rp || li &gt; ri) return nullptr; if (lp == rp &amp;&amp; li == ri) { auto tmp = new TreeNode(inorder[li]); return tmp; } for (int i = li; i &lt;= ri; i++) { if (inorder[i] == preorder[lp]) { auto tmp = new TreeNode(inorder[i]); auto off = i - li; tmp -&gt; left = helper(preorder, inorder, lp + 1, lp + off, li, i - 1); tmp -&gt; right = helper(preorder, inorder, lp + off + 1, rp, i + 1, ri); return tmp; } } return nullptr; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-300/">300.Longest Increasing Subsequence</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int lengthOfLIS(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; int n = nums.size(), max_ = 1; vector&lt;int&gt; dp(n, 1); for (int i = 1; i &lt; n; i++) { for (int j = 0; j &lt; i; j++) { if (nums[j] &lt; nums[i]) dp[i] = max(dp[i], dp[j] + 1); } max_ = max(max_, dp[i]); } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-279/">279.Perfect Squares</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int numSquares(int n) { vector&lt;int&gt; dp(n+1, n); vector&lt;int&gt; p; dp[0] = 0; for (int i = 1; i &lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &lt;= n; i++) { for (int j = 0; j &lt; p.size(); j++) { if (p[j] &lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-264/">264.Ugly Number II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-263/">263.Ugly Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isUgly(int num) { if (num &lt; 1) return false; while (num % 2 == 0) num /= 2; while (num % 3 == 0) num /= 3; while (num % 5 == 0) num /= 5; return num == 1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-257/">257.Binary Tree Paths</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) { vector&lt;string&gt; res; DFS(&#34;&#34;, res, root); return res; } void DFS(string out, vector&lt;string&gt;&amp; res, TreeNode* root) { if (!root) return; if (!root-&gt;left &amp;&amp; !root-&gt;right) {out += to_string(root-&gt;val); res.push_back(out); return;} if (root-&gt;left) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;left); if (root-&gt;right) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;right); } }; &hellip;
 						
 					</span>
 				</div>

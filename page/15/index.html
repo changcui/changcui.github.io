@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
+<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,36 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-24/">24. Swap Nodes in Pairs</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { if (!head || !head -&gt; next) return head; auto nxt = head -&gt; next -&gt; next; auto h = head; head = head -&gt; next; head -&gt; next = h; h -&gt; next = swapPairs(nxt); return head; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-856/">856. Score of Parentheses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int scoreOfParentheses(string S) { int score = 0, n = S.size(); for (int i = 0; i &lt; n; i++) { if (S[i] == &#39;(&#39;) { int cnt = 1, j = i; while (cnt) { if (S[++j] == &#39;(&#39;) cnt += 1; else cnt -= 1; } if (j == i + 1) score += 1; else score += 2 * scoreOfParentheses(S.substr(i + 1, j - i - 1)); i = j; } } return score; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-22/">22. Generate Parentheses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; DFS(left, right, &#34;&#34;, result); return result; } void DFS(int left, int right, string out, vector&lt;string&gt;&amp; result) { if (left &gt; right) return; if (left == 0 &amp;&amp; right == 0) result.push_back(out); else { if (left &gt; 0) DFS(left - 1, right, out + &#34;(&#34;, result); if (right &gt; 0) DFS(left, right - 1, out + &#34;)&#34;, result); } } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Nov 27, 2019</div>
@@ -134,36 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-15/">15. 3Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; sort(nums.begin(), nums.end()); if (nums.size() &lt; 3 || nums.back() &lt; 0 || nums.front() &gt; 0) return {}; for (int k = 0; k &lt; (int)nums.size() - 2; k++) { if (nums[k] &gt; 0) break; if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &lt; j) { if (nums[i] + nums[j] == target) { res.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-1/">1. Two Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int, int&gt; cnt; int n = nums.size(); for (int i = 0; i &lt; n; i++) { if (cnt.count(target - nums[i])) return {cnt[target - nums[i]], i}; cnt[nums[i]] = i; } return {}; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 12, 2019</div>
-					<a class="title" href="/posts/leetcode-11/">11. Container With Most Water</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int maxArea(vector&lt;int&gt;&amp; height) { int res = 0, i = 0, j = height.size() - 1; while (i &lt; j) { res = max(res, (j - i) * min(height[i], height[j])); height[i] &lt; height[j] ? i++ : j--; } return res; } }; &hellip;
 						
 					</span>
 				</div>

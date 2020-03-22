@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on changcui</title>
+    <link>http://changcui.cc/tags/vim/</link>
+    <description>Recent content in vim on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 22 Mar 2020 21:27:22 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vim(nvim) 常用插件及配置</title>
+      <link>http://changcui.cc/posts/vim/</link>
+      <pubDate>Sun, 22 Mar 2020 21:27:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/vim/</guid>
+      <description>挖个坑先，总结一下 vim(nvim) 的常用的插件及配置，方便多平台复用。</description>
+    </item>
+    
+  </channel>
+</rss>

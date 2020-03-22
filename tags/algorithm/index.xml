@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on changcui</title>
+    <link>http://changcui.cc/tags/algorithm/</link>
+    <description>Recent content in algorithm on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 22 Mar 2020 21:22:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>常用算法使用思路及写法总结</title>
+      <link>http://changcui.cc/posts/algorithms/</link>
+      <pubDate>Sun, 22 Mar 2020 21:22:35 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/algorithms/</guid>
+      <description>挖个坑先，总结一下 util algorithms，感觉做题就是两步，第一步是抽象并分解问题，第二步是使用 util algorithms 来解决子问题，拼接一下，就解决了问题。</description>
+    </item>
+    
+  </channel>
+</rss>

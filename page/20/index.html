@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-21T17:38:07+08:00" />
+<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,36 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-145/">145. Binary Tree Postorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; postorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&gt;val); s.push(p); p = p-&gt;right; } else { p = s.top(); s.pop(); p = p-&gt;left; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 9, 2019</div>
+					<a class="title" href="/posts/leetcode-144/">144. Binary Tree Preorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; preorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&gt;val); s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); p = p-&gt;right; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 9, 2019</div>
+					<a class="title" href="/posts/leetcode-94/">94. Binary Tree Inorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; inorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); res.push_back(p-&gt;val); p = p-&gt;right; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 21, 2019</div>
@@ -139,41 +169,6 @@
 工作 今天没有去工作，因为五点要开会，我只回去开了个会，甚至电脑都没有打开，开会的效率还行，30分钟基本上讲完了，然后就开始聊一些有的没的，大部分时间都在聊薪资吧，不得不说，薪资还是大家最在意的东西，至于对做的东西有没有兴趣，应该是有的，但大家总喜欢钱又多，做的东西也有趣的地方吧。
 焦虑 如果不是这波新的焦虑开始，我估计还会更晚开始更新吧，现在想想，上次开始继续写博客也许就是比较焦虑，觉得自己太菜了。然后现在这种感觉又回来了，我开始觉得自己 coding 不行，英语不行，也没 paper，什么优势都没有。
 还需要继续努力啊，每变得牛逼一些，焦虑就会少一些，也许有一天我再也不用更新了。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 9, 2019</div>
-					<a class="title" href="/posts/2019-09-09/">2019 09 09</a> &mdash;
-					<span class="description">
-						
-						工作 今天睡得不是很好，但是还是强忍着去公司了，早上划水了一会，然后和 mentor 讨论一下本周的工作内容，分析了一下发现内容并不是特别多，然后明天教师节还要开组会，于是我就在公司写组里的东西。
-投资 今天刷 bbs 的时候，看到有人说基金定投的事，推荐投 300 etf之类的，虽然我不懂他们说的是什么东西，我就跟着买了这个，然后把之前的定投都取消了。
-聊天 今天走之前和 mentor 聊了一会天，比如组里的事，公司的事，还有一些程序员中年危机的事，还是有一些收获吧，希望以后也能多学习一些别的东西吧，在所谓的中年危机来之前好好的提升自己。
-通过和 mentor 的交谈，我发现小孩带来的压力竟然是如此的大，我之前都没考虑过这个问题。
-面试 今天一个朋友去百度面试，他说感觉运气已经站在了自己这边，问的算法题和基础知识都回答的不错，但是二面的时候却被说缺乏项目经验，觉得是自己不够努力，在运气到来的时候，没能抓住机会。
-我想了一下，其实是同意他的，今天 mentor 也说，有时候选择很重要，但是当你不知道如何选择的时候，这种选择能不能归结于运气呢，但当运气比较好的时候，也要有一些硬实力保驾护航吧。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 8, 2019</div>
-					<a class="title" href="/posts/leetcode-75/">75. Sort Colors</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void sortColors(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &lt; len &amp;&amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-155/">Min Stack</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指offer class MinStack { public: MinStack() {} void push(int x) { s1.push(x); if (s2.empty() || x &lt;= s2.top()) s2.push(x); } void pop() { if (s1.top() == s2.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int getMin() { return s2.top(); } private: stack&lt;int&gt; s1; stack&lt;int&gt; s2; }; // Runtime: 40 ms, faster than 18.45% of C++ online submissions for Min Stack. // Memory Usage: 14.3 MB, less than 100.&hellip;
 						
 					</span>
 				</div>

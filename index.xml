@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 17:38:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 21:27:22 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vim(nvim) 常用插件及配置</title>
+      <link>http://changcui.cc/posts/vim/</link>
+      <pubDate>Sun, 22 Mar 2020 21:27:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/vim/</guid>
+      <description>挖个坑先，总结一下 vim(nvim) 的常用的插件及配置，方便多平台复用。</description>
+    </item>
+    
+    <item>
+      <title>Linux 常用配置</title>
+      <link>http://changcui.cc/posts/linux-configs/</link>
+      <pubDate>Sun, 22 Mar 2020 21:25:30 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/linux-configs/</guid>
+      <description>挖个坑先，在配置 linux 的时候，有很多配置是可以记录下来重复使用的，比如修改 conda, pip 的源等操作，记录在这里，方便以后查找。</description>
+    </item>
+    
+    <item>
+      <title>常用算法使用思路及写法总结</title>
+      <link>http://changcui.cc/posts/algorithms/</link>
+      <pubDate>Sun, 22 Mar 2020 21:22:35 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/algorithms/</guid>
+      <description>挖个坑先，总结一下 util algorithms，感觉做题就是两步，第一步是抽象并分解问题，第二步是使用 util algorithms 来解决子问题，拼接一下，就解决了问题。</description>
+    </item>
     
     <item>
       <title>Serialize and Deserialize Binary Tree</title>

@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://changcui.cc/tags/binary-tree/</loc>
-    <lastmod>2020-03-21T17:38:07+08:00</lastmod>
+    <loc>http://changcui.cc/</loc>
+    <lastmod>2020-03-22T21:27:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://changcui.cc/</loc>
+    <loc>http://changcui.cc/posts/</loc>
+    <lastmod>2020-03-22T21:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/</loc>
+    <lastmod>2020-03-22T21:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/vim/</loc>
+    <lastmod>2020-03-22T21:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/vim/</loc>
+    <lastmod>2020-03-22T21:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/linux/</loc>
+    <lastmod>2020-03-22T21:25:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/linux-configs/</loc>
+    <lastmod>2020-03-22T21:25:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/algorithm/</loc>
+    <lastmod>2020-03-22T21:22:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/algorithms/</loc>
+    <lastmod>2020-03-22T21:22:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/binary-tree/</loc>
     <lastmod>2020-03-21T17:38:07+08:00</lastmod>
   </url>
   
@@ -18,17 +58,7 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/posts/</loc>
-    <lastmod>2020-03-21T17:38:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/posts/leetcode-297/</loc>
-    <lastmod>2020-03-21T17:38:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/</loc>
     <lastmod>2020-03-21T17:38:07+08:00</lastmod>
   </url>
   
@@ -240,11 +270,6 @@
   <url>
     <loc>http://changcui.cc/posts/offer-55/</loc>
     <lastmod>2020-03-15T20:40:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/linux/</loc>
-    <lastmod>2020-03-14T15:31:56+08:00</lastmod>
   </url>
   
   <url>

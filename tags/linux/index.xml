@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 14 Mar 2020 15:31:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 21:25:30 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux 常用配置</title>
+      <link>http://changcui.cc/posts/linux-configs/</link>
+      <pubDate>Sun, 22 Mar 2020 21:25:30 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/linux-configs/</guid>
+      <description>挖个坑先，在配置 linux 的时候，有很多配置是可以记录下来重复使用的，比如修改 conda, pip 的源等操作，记录在这里，方便以后查找。</description>
+    </item>
     
     <item>
       <title>systemd 使用日记</title>

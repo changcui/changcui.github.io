@@ -70,26 +70,6 @@
 				
 				<div class="post">
 					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-190/">190. Reverse Bits</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: uint32_t reverseBits(uint32_t n) { uint32_t rtn = 0; for (int i = 0; i &lt; 32; i++) { rtn &lt;&lt;= 1; rtn |= (n &gt;&gt; i) &amp; 1; } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-191/">191. Number of 1 Bits</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int hammingWeight(uint32_t n) { int rtn = 0; for (int i = 0; i &lt;= 31; i++) { rtn += (n &gt;&gt; i) &amp; 1; } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
 					<a class="title" href="/posts/leetcode-198/">House Robber</a> &mdash;
 					<span class="description">
 						
@@ -183,6 +163,26 @@
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* helper(vector&lt;int&gt;&amp; nums, int left, int right) { if (left &gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&gt;left = helper(nums, left, mid - 1); root-&gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&lt;int&gt;&amp; nums) { return helper(nums, 0, nums.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 2, 2019</div>
+					<a class="title" href="/posts/leetcode-104/">104. Maximum Depth of Binary Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: int helper(TreeNode* root, int depth) { if (root == NULL) { return depth; } return max(helper(root-&gt;left, depth+1), helper(root-&gt;right, depth+1)); } int maxDepth(TreeNode* root) { return helper(root, 0); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 2, 2019</div>
+					<a class="title" href="/posts/leetcode-101/">101. Symmetric Tree</a> &mdash;
+					<span class="description">
+						
+						 recursively /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool helper(TreeNode* left, TreeNode* right) { if (left == NULL &amp;&amp; right == NULL) { return true; } else if (left == NULL || right == NULL) { return false; } return left-&gt;val == right-&gt;val &amp;&amp; helper(left-&gt;left, right-&gt;right) &amp;&amp; helper(left-&gt;right, right-&gt;left); } bool isSymmetric(TreeNode* root) { if (root == NULL) { return true; } else return helper(root-&gt;left, root-&gt;right); } }; &hellip;
 						
 					</span>
 				</div>

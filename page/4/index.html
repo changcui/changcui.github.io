@@ -69,26 +69,6 @@
 				
 				
 				<div class="post">
-					<div class="meta">Mar 14, 2020</div>
-					<a class="title" href="/posts/systemd/">systemd 使用日记</a> &mdash;
-					<span class="description">
-						
-						挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 14, 2020</div>
-					<a class="title" href="/posts/fish/">fish 使用日记</a> &mdash;
-					<span class="description">
-						
-						挖个坑先，以后在 arch 上使用 fish，记录一些使用心得，配置文件等等。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
 					<div class="meta">Mar 13, 2020</div>
 					<a class="title" href="/posts/arch/">Arch 踩坑日记</a> &mdash;
 					<span class="description">
@@ -177,6 +157,26 @@ https://github.com/mytbk/Linux_Notes/tree/master/install
 					<span class="description">
 						
 						// 思路一：位运算，保证两者和不变，num1 作为各位相加的结果，num2 作为进位的结果，当 num2 为0时，num1 就可返回 class Solution { public: int Add(int num1, int num2) { while (num2) { auto t = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = t; } return num1; } }; // 运行时间：3ms // 占用内存：488k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-47/">求1&#43;2&#43;3&#43;...&#43;n</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用递归代替循环，使用短路代替 if class Solution { public: int Sum_Solution(int n) { int rtn = n; rtn &amp;&amp; (rtn += Sum_Solution(n - 1)); return rtn; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-46/">孩子们的游戏(圆圈中最后剩下的数)</a> &mdash;
+					<span class="description">
+						
+						// 思路一：直接模拟 class Solution { public: int LastRemaining_Solution(int n, int m) { vector&lt;int&gt; c(n, 0); int i = -1, j = 0, cnt = n; while (cnt) { i++; if (i == n) i = 0; if (c[i]) continue; if (j == m - 1) { c[i] = 1; cnt--; j = 0; } else j++; } return i - 1; } }; // 运行时间：107ms // 占用内存：500k // 思路二：寻找数学规律 // http://zhedahht.&hellip;
 						
 					</span>
 				</div>

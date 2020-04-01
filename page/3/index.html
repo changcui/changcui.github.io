@@ -70,16 +70,6 @@
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
-					<a class="title" href="/posts/offer-63/">数据流中的中位数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; priority_queue&lt;int&gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 19, 2020</div>
 					<a class="title" href="/posts/offer-62/">二叉搜索树的第k个结点</a> &mdash;
 					<span class="description">
 						
@@ -164,6 +154,16 @@
 					<span class="description">
 						
 						// 思路一：快慢指针判断是否有环，从相遇处和头节点出发，必定相遇于入口 class Solution { public: ListNode* EntryNodeOfLoop(ListNode* pHead) { if (!pHead || !pHead-&gt;next) return NULL; auto fast = pHead-&gt;next-&gt;next, slow = pHead-&gt;next; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; slow = slow-&gt;next; } if (!fast) return NULL; fast = pHead; while (fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 14, 2020</div>
+					<a class="title" href="/posts/systemd/">systemd 使用日记</a> &mdash;
+					<span class="description">
+						
+						挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！&hellip;
 						
 					</span>
 				</div>

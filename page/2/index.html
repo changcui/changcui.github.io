@@ -70,16 +70,6 @@
 				
 				<div class="post">
 					<div class="meta">Mar 21, 2020</div>
-					<a class="title" href="/posts/leetcode-226/">Invert Binary Tree</a> &mdash;
-					<span class="description">
-						
-						// 思路一：二叉树传统艺能，递归 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!root) return NULL; auto tmp = root-&gt;right; root-&gt;right = root-&gt;left; root-&gt;left = tmp; invertTree(root-&gt;left); invertTree(root-&gt;right); return root; } }; // Runtime: 4 ms, faster than 59.41% of C++ online submissions for Invert Binary Tree. // Memory Usage: 7.9 MB, less than 100.00% of C++ online submissions for Invert Binary Tree. // 思路二：非递归写法 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 21, 2020</div>
 					<a class="title" href="/posts/leetcode-215/">Kth Largest Element in an Array</a> &mdash;
 					<span class="description">
 						
@@ -164,6 +154,16 @@
 					<span class="description">
 						
 						// 思路一：单调双向队列，保存下标 class Solution { public: vector&lt;int&gt; maxInWindows(const vector&lt;int&gt;&amp; num, unsigned int size) { vector&lt;int&gt; res; if (size == 0) return res; deque&lt;int&gt; q; for (int i = 0; i &lt; num.size(); i++) { while (!q.empty() &amp;&amp; num[i] &gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() + 1 &gt; size) q.pop_front(); q.push_back(i); if (i + 1 &gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-63/">数据流中的中位数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; priority_queue&lt;int&gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k &hellip;
 						
 					</span>
 				</div>

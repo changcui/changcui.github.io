@@ -70,26 +70,6 @@
 				
 				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-34/">34. Find First and Last Position of Element in Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; target) left = mid + 1; else right = mid; } if (right == nums.size() || nums[right] != target) return {-1, -1}; int l = right; left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt;= target) left = mid + 1; else right = mid; } return {l, right - 1}; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-162/">162. Find Peak Element</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int findPeakElement(vector&lt;int&gt;&amp; nums) { int left = 0, right = nums.size() - 1; while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; nums[mid + 1]) left = mid + 1; else right = mid; } return right; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
 					<a class="title" href="/posts/leetcode-154/">154. Find Minimum in Rotated Sorted Array II</a> &mdash;
 					<span class="description">
 						
@@ -164,6 +144,26 @@
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-145/">145. Binary Tree Postorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; postorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&gt;val); s.push(p); p = p-&gt;right; } else { p = s.top(); s.pop(); p = p-&gt;left; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 9, 2019</div>
+					<a class="title" href="/posts/leetcode-144/">144. Binary Tree Preorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; preorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&gt;val); s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); p = p-&gt;right; } } return res; } }; &hellip;
 						
 					</span>
 				</div>

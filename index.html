@@ -80,16 +80,6 @@
 				
 				<div class="post">
 					<div class="meta">Mar 22, 2020</div>
-					<a class="title" href="/posts/linux-configs/">Linux 常用配置</a> &mdash;
-					<span class="description">
-						
-						挖个坑先，在配置 linux 的时候，有很多配置是可以记录下来重复使用的，比如修改 conda, pip 的源等操作，记录在这里，方便以后查找。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 22, 2020</div>
 					<a class="title" href="/posts/algorithms/">常用算法使用思路及写法总结</a> &mdash;
 					<span class="description">
 						
@@ -164,6 +154,16 @@
 					<span class="description">
 						
 						// 思路一：依然是递归，分情况讨论，分别在左右，在左，在右 class Solution { public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) { if (!root || root == p || root == q) return root; auto l = lowestCommonAncestor(root-&gt;left, p, q); auto r = lowestCommonAncestor(root-&gt;right, p, q); if (l &amp;&amp; r) return root; return l ? l : r; } }; // Runtime: 24 ms, faster than 35.87% of C++ online submissions for Lowest Common Ancestor of a Binary Tree.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-226/">Invert Binary Tree</a> &mdash;
+					<span class="description">
+						
+						// 思路一：二叉树传统艺能，递归 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!root) return NULL; auto tmp = root-&gt;right; root-&gt;right = root-&gt;left; root-&gt;left = tmp; invertTree(root-&gt;left); invertTree(root-&gt;right); return root; } }; // Runtime: 4 ms, faster than 59.41% of C++ online submissions for Invert Binary Tree. // Memory Usage: 7.9 MB, less than 100.00% of C++ online submissions for Invert Binary Tree. // 思路二：非递归写法 class Solution { public: TreeNode* invertTree(TreeNode* root) { if (!&hellip;
 						
 					</span>
 				</div>

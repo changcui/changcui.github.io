@@ -69,26 +69,6 @@
 				
 				
 				<div class="post">
-					<div class="meta">Nov 28, 2019</div>
-					<a class="title" href="/posts/leetcode-24/">24. Swap Nodes in Pairs</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { if (!head || !head -&gt; next) return head; auto nxt = head -&gt; next -&gt; next; auto h = head; head = head -&gt; next; head -&gt; next = h; h -&gt; next = swapPairs(nxt); return head; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 27, 2019</div>
-					<a class="title" href="/posts/leetcode-856/">856. Score of Parentheses</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int scoreOfParentheses(string S) { int score = 0, n = S.size(); for (int i = 0; i &lt; n; i++) { if (S[i] == &#39;(&#39;) { int cnt = 1, j = i; while (cnt) { if (S[++j] == &#39;(&#39;) cnt += 1; else cnt -= 1; } if (j == i + 1) score += 1; else score += 2 * scoreOfParentheses(S.substr(i + 1, j - i - 1)); i = j; } } return score; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
 					<div class="meta">Nov 27, 2019</div>
 					<a class="title" href="/posts/leetcode-22/">22. Generate Parentheses</a> &mdash;
 					<span class="description">
@@ -164,6 +144,26 @@
 					<span class="description">
 						
 						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-15/">15. 3Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; sort(nums.begin(), nums.end()); if (nums.size() &lt; 3 || nums.back() &lt; 0 || nums.front() &gt; 0) return {}; for (int k = 0; k &lt; (int)nums.size() - 2; k++) { if (nums[k] &gt; 0) break; if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &lt; j) { if (nums[i] + nums[j] == target) { res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-1/">1. Two Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int, int&gt; cnt; int n = nums.size(); for (int i = 0; i &lt; n; i++) { if (cnt.count(target - nums[i])) return {cnt[target - nums[i]], i}; cnt[nums[i]] = i; } return {}; } }; &hellip;
 						
 					</span>
 				</div>

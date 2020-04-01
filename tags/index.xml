@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>http://changcui.cc/tags/linux/</link>
-      <pubDate>Sun, 22 Mar 2020 21:25:30 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>algorithm</title>
       <link>http://changcui.cc/tags/algorithm/</link>
       <pubDate>Sun, 22 Mar 2020 21:22:35 +0800</pubDate>
@@ -202,29 +193,20 @@
     </item>
     
     <item>
+      <title>linux</title>
+      <link>http://changcui.cc/tags/linux/</link>
+      <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
+      
+      <guid>http://changcui.cc/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>systemd</title>
       <link>http://changcui.cc/tags/systemd/</link>
       <pubDate>Sat, 14 Mar 2020 15:31:56 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/systemd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fish</title>
-      <link>http://changcui.cc/tags/fish/</link>
-      <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/fish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>http://changcui.cc/tags/shell/</link>
-      <pubDate>Sat, 14 Mar 2020 15:31:50 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/shell/</guid>
       <description></description>
     </item>
     

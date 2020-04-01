@@ -147,7 +147,27 @@
 <li>加在函数前，为静态函数，无法被其他文件使用</li>
 <li>加在类成员变量前，为静态成员变量，属于类而不是某个对象，好处是专属某类，不与全局变量重名，可以信息隐藏。</li>
 <li>加在类成员函数前，为静态成员函数，属于类而不是某个对象，只能访问静态成员函数和静态成员变量。</li>
-<li></li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>2020 04 01 update</p>
+</blockquote>
+
+<ul>
+<li>c++ 生成随机数
+
+<ul>
+<li>头文件在 <code>#include &lt;random&gt;</code></li>
+<li>需要先生成 randomdevice，比如 <code>random_device rd</code></li>
+<li>然后生成一个 generate，比如 <code>mt19937 g(rd())</code></li>
+<li>然后选择需要的分布，如果是整型的话可以选择 <code>uniform_int_distribution&lt;int&gt; dist(a, b)</code>，如果是浮点可以选择，<code>uniform_real_distribution or normal_distribution</code></li>
+<li>然后就可以生成随机数了，<code>dist(g)</code></li>
+</ul></li>
+<li>c++ shuffle 数组
+
+<ul>
+<li>需要先生成一个 generate 然后<code>shuffle(v.begin(), v.end(), g)</code></li>
 </ul></li>
 </ul>
 

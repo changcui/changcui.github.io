@@ -18,7 +18,7 @@
       <pubDate>Tue, 30 Jun 2020 00:25:16 +0800</pubDate>
       
       <guid>http://changcui.cc/posts/leetcode-124/</guid>
-      <description>// 思路一：maxPathDown 从 input node 开始最大的 path 值（左右节点只能选一个），Sum 则为左右节点都选，选左，选右，不选四种情况的最大值 class Solution { public: int maxPathSum(TreeNode* root) { int max_ = INT_MIN; maxPathDown(root, max_); return max_; } int maxPathDown(TreeNode* root, int&amp;amp; max_) { if (!root) return 0; auto l = max(0, maxPathDown(root-&amp;gt;left, max_)); auto r = max(0, maxPathDown(root-&amp;gt;right, max_)); max_ = max(max_, root-&amp;gt;val + l + r); return max(l, r) + root-&amp;gt;val; } }; </description>
+      <description>// 思路一：maxPathDown 从 input node 开始最大的 path 值（左右节点只能选一个），Sum 则为左右节点都选，选左，选右，不选四种情况的最大值 class Solution { public: int maxPathSum(TreeNode* root) { int max_ = INT_MIN; maxPathDown(root, max_); return max_; } int maxPathDown(TreeNode* root, int&amp;amp; max_) { if (!root) return 0; auto l = max(0, maxPathDown(root-&amp;gt;left, max_)); auto r = max(0, maxPathDown(root-&amp;gt;right, max_)); max_ = max(max_, root-&amp;gt;val + l + r); return max(l, r) + root-&amp;gt;val; } }; // Runtime: 40 ms, faster than 63.01% of C++ online submissions for Binary Tree Maximum Path Sum.</description>
     </item>
     
     <item>

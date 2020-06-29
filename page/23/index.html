@@ -130,7 +130,7 @@
 				
 				<div class="post">
 					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-141/">Linked List Cycle</a> &mdash;
+					<a class="title" href="/posts/leetcode-141/">141. Linked List Cycle</a> &mdash;
 					<span class="description">
 						
 						// 思路一：双指针，一快一慢 class Solution { public: bool hasCycle(ListNode *head) { auto slow = head, fast = head; while (fast &amp;&amp; fast-&gt;next) { slow = slow-&gt;next; fast = fast-&gt;next-&gt;next; if (fast == slow) return true; } return false; } }; // Runtime: 8 ms, faster than 97.13% of C++ online submissions for Linked List Cycle. // Memory Usage: 7.7 MB, less than 100.00% of C++ online submissions for Linked List Cycle. &hellip;

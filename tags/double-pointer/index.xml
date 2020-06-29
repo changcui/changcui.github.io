@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>142. Linked List Cycle II</title>
+      <link>http://changcui.cc/posts/leetcode-142/</link>
+      <pubDate>Fri, 20 Mar 2020 14:39:58 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-142/</guid>
+      <description>// 思路一：先判断是否有环，然后一个从相遇处出发，一个从头节点出发，必然相遇到入口 class Solution { public: ListNode *detectCycle(ListNode *head) { if (!head || !head-&amp;gt;next) return NULL; auto slow = head-&amp;gt;next, fast = head-&amp;gt;next-&amp;gt;next; while (fast &amp;amp;&amp;amp; fast != slow) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next ? fast-&amp;gt;next-&amp;gt;next : NULL; } if (fast) fast = head; while (fast &amp;amp;&amp;amp; fast != slow) { fast = fast-&amp;gt;next; slow = slow-&amp;gt;next; } return fast; } }; // Runtime: 12 ms, faster than 77.</description>
+    </item>
+    
+    <item>
       <title>和为S的两个数字</title>
       <link>http://changcui.cc/posts/offer-42/</link>
       <pubDate>Tue, 10 Mar 2020 11:08:22 +0800</pubDate>
@@ -37,6 +46,24 @@
       
       <guid>http://changcui.cc/posts/offer-41/</guid>
       <description>// 思路一：数学法，找规律，分成奇偶两种情况，判断边界条件 class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; FindContinuousSequence(int sum) { vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; result; for (int i = sqrt(sum * 2); i &amp;gt;= 2; i--) { if (i &amp;amp; 1 &amp;amp;&amp;amp; sum % i == 0 &amp;amp;&amp;amp; (sum / i - (i - 1)/2) &amp;gt; 0) { vector&amp;lt;int&amp;gt; output; int begin = sum / i - (i - 1) / 2; while (begin &amp;lt;= sum / i + (i - 1)/2) output.</description>
+    </item>
+    
+    <item>
+      <title>345.Reverse Vowels of a String</title>
+      <link>http://changcui.cc/posts/leetcode-345/</link>
+      <pubDate>Tue, 10 Dec 2019 00:31:50 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-345/</guid>
+      <description>class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &amp;lt; j) { while (i &amp;lt; j &amp;amp;&amp;amp; s[i] != &amp;#39;a&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;e&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;i&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;o&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;u&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;A&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;E&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;I&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;O&amp;#39; &amp;amp;&amp;amp; s[i] != &amp;#39;U&amp;#39;) i++; while (i &amp;lt; j &amp;amp;&amp;amp; s[j] !</description>
+    </item>
+    
+    <item>
+      <title>141. Linked List Cycle</title>
+      <link>http://changcui.cc/posts/leetcode-141/</link>
+      <pubDate>Wed, 04 Sep 2019 20:54:51 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-141/</guid>
+      <description>// 思路一：双指针，一快一慢 class Solution { public: bool hasCycle(ListNode *head) { auto slow = head, fast = head; while (fast &amp;amp;&amp;amp; fast-&amp;gt;next) { slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if (fast == slow) return true; } return false; } }; // Runtime: 8 ms, faster than 97.13% of C++ online submissions for Linked List Cycle. // Memory Usage: 7.7 MB, less than 100.00% of C++ online submissions for Linked List Cycle. </description>
     </item>
     
   </channel>

@@ -150,7 +150,7 @@
 				
 				<div class="post">
 					<div class="meta">Mar 20, 2020</div>
-					<a class="title" href="/posts/leetcode-142/">Linked List Cycle II</a> &mdash;
+					<a class="title" href="/posts/leetcode-142/">142. Linked List Cycle II</a> &mdash;
 					<span class="description">
 						
 						// 思路一：先判断是否有环，然后一个从相遇处出发，一个从头节点出发，必然相遇到入口 class Solution { public: ListNode *detectCycle(ListNode *head) { if (!head || !head-&gt;next) return NULL; auto slow = head-&gt;next, fast = head-&gt;next-&gt;next; while (fast &amp;&amp; fast != slow) { slow = slow-&gt;next; fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; } if (fast) fast = head; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // Runtime: 12 ms, faster than 77.&hellip;

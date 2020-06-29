@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-322/">322.Coin Change</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int coinChange(vector&lt;int&gt;&amp; coins, int amount) { vector&lt;int&gt; dp(amount + 1, amount+1); sort(coins.begin(), coins.end()); dp[0] = 0; for (int i = 1; i &lt;= amount; i++) { for (auto c : coins) { if (c &lt;= i) dp[i] = min(dp[i], dp[i-c]+1); else break; } } return dp[amount] &gt; amount ? -1 : dp[amount]; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 10, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--; while (i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;) { res++; i--; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-122/">122. Best Time to Buy and Sell Stock II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int maxProfit(vector&lt;int&gt;&amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &lt; n - 1; i++) { if (prices[i] &lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; &hellip;
 						
 					</span>
 				</div>

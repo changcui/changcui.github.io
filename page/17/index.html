@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Nov 12, 2019</div>
+					<a class="title" href="/posts/leetcode-3/">3. Longest Substring Without Repeating Characters</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int lengthOfLongestSubstring(string s) { int left = -1, res = 0, n = s.size(); unordered_map&lt;int, int&gt; visited; for (int i = 0; i &lt; n; i++) { if (visited.count(s[i]) &amp;&amp; visited[s[i]] &gt; left) { left = visited[s[i]]; } visited[s[i]] = i; res = max(res, i - left); } return res; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Nov 2, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int totalNQueens(int n) { int cnt = 0; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(cnt, out, 0); return cnt; } void helper(int&amp; cnt, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {cnt += 1; return;} for (int i = 0; i &lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(cnt, out, row+1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row+i &gt;= 0 &amp;&amp; out[i][col-row+i] == &#39;Q&#39;) return false; if (col+row-i &lt; out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 17, 2019</div>
-					<a class="title" href="/posts/leetcode-51/">51. N-Queens</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;string&gt;&gt; solveNQueens(int n) { vector&lt;vector&lt;string&gt;&gt; res; vector&lt;string&gt; out(n, string(n, &#39;.&#39;)); helper(res, out, 0); return res; } void helper(vector&lt;vector&lt;string&gt;&gt;&amp; res, vector&lt;string&gt;&amp; out, int row) { if (row == out.size()) {res.push_back(out); return;} for (int i = 0; i &lt; out.size(); i++) { if (isValid(out, row, i)) { out[row][i] = &#39;Q&#39;; helper(res, out, row+1); out[row][i] = &#39;.&#39;; } } } bool isValid(const vector&lt;string&gt;&amp; out, int row, int col) { for (int i = row - 1; i &gt;= 0; i--) { if (out[i][col] == &#39;Q&#39;) return false; if (col-row+i &gt;= 0 &amp;&amp; out[i][col-row+i] == &#39;Q&#39;) return false; if (col+row-i &lt; out.&hellip;
 						
 					</span>
 				</div>

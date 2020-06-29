@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-59/">按之字形顺序打印二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 15, 2020</div>
@@ -167,16 +177,6 @@ https://github.com/mytbk/Linux_Notes/tree/master/install
 					<span class="description">
 						
 						// 思路一：按照 pattern 下一位是不是 * 来分情况考虑，如果是 * 的话，可以使用，也可以不使用，分两种情况返回。 class Solution { public: int sl, pl; bool match(char* str, char* pattern) { sl = strlen(str), pl = strlen(pattern); return helper(str, pattern, 0, 0); } bool helper(char* str, char* pattern, int i, int j) { if (i == sl &amp;&amp; j == pl) return true; if (j == pl) return false; if (j + 1 &lt; pl &amp;&amp; pattern[j+1] == &#39;*&#39;) { if (i &lt; sl &amp;&amp; (str[i] == pattern[j] || pattern[j] == &#39;.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 12, 2020</div>
-					<a class="title" href="/posts/offer-51/">构建乘积数组</a> &mdash;
-					<span class="description">
-						
-						// 思路一：将数组 B 分为两段递推求解 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { vector&lt;int&gt; b, c{1}, d{1}; int n = A.size(); if (n == 0) return b; for (int i = 0; i &lt; n - 1; i++) { c.push_back(c.back() * A[i]); d.push_back(d.back() * A[n - 1 - i]); } for (int i = 0; i &lt; n; i++) { b.push_back(c[i] * d[n - 1 - i]); } return b; } }; // 运行时间：4ms // 占用内存：480k // 思路二：优化空间 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { int n = A.&hellip;
 						
 					</span>
 				</div>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 3, 2019</div>
+					<a class="title" href="/posts/leetcode-136/">136. Single Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int singleNumber(vector&lt;int&gt;&amp; nums) { int rtn = 0; for (auto num : nums) { rtn ^= num; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 3, 2019</div>
@@ -171,16 +181,6 @@ Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，
 					<span class="description">
 						
 						class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-1025/">1025. Divisor Game</a> &mdash;
-					<span class="description">
-						
-						dp class Solution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&lt;bool&gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &lt;= N; i++) { bool res = false; for (int j = 1; j * j &lt; i; j++) { if (i % j == 0 &amp;&amp; !saved[i - j - 1]) { res = true; break; } } saved.&hellip;
 						
 					</span>
 				</div>

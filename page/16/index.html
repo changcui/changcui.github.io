@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-414/">414. Third Maximum Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int thirdMax(vector&lt;int&gt;&amp; nums) { long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN; for (auto num : nums) { if (num &gt; first) { third = second; second = first; first = num; } else if (num &lt; first &amp;&amp; num &gt; second) { third = second; second = num; } else if (num &lt; second &amp;&amp; num &gt; third) { third = num; } } return (third == LONG_MIN || third == second) ?&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Nov 25, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: string longestPalindrome(string s) { if (s.size() &lt; 2) return s; int left = 0, right = 0, start = 0, maxlen = 0, n = s.size(); for (int i = 0; i &lt; n - 1; i++) { helper(i, i, start, maxlen, s); helper(i, i + 1, start, maxlen, s); } return s.substr(start, maxlen); } void helper(int left, int right, int&amp; start, int&amp; maxlen, const string&amp; s) { while (left &gt;= 0 &amp;&amp; right &lt; s.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 12, 2019</div>
-					<a class="title" href="/posts/leetcode-3/">3. Longest Substring Without Repeating Characters</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int lengthOfLongestSubstring(string s) { int left = -1, res = 0, n = s.size(); unordered_map&lt;int, int&gt; visited; for (int i = 0; i &lt; n; i++) { if (visited.count(s[i]) &amp;&amp; visited[s[i]] &gt; left) { left = visited[s[i]]; } visited[s[i]] = i; res = max(res, i - left); } return res; } }; &hellip;
 						
 					</span>
 				</div>

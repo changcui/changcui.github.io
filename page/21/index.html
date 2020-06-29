@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 21, 2019</div>
+					<a class="title" href="/posts/leetcode-435/">435. Non-overlapping Intervals</a> &mdash;
+					<span class="description">
+						
+						 greedy class Solution { public: int eraseOverlapIntervals(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&lt; intervals.size(); i++) { if (r &gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 21, 2019</div>
@@ -164,16 +174,6 @@
 					<span class="description">
 						
 						class Solution { public: int mySqrt(int x) { return floor(sqrt(x)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-125/">125. Valid Palindrome</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isPalindrome(string s) { string x = &#34;&#34;; for (auto i : s) { if (isalnum(i)) { x.push_back(tolower(i)); } } auto l = x.size(); if (l == 0) return true; for (int i = 0; i &lt; l/2; i++) { if (x[i] != x[x.size() - 1 - i]) { return false; } } return true; } }; &hellip;
 						
 					</span>
 				</div>

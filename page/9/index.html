@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 5, 2020</div>
+					<a class="title" href="/posts/offer-14/">链表中倒数第k个结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&lt;ListNode*&gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&gt; next;} if (tmp.size() &lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &lt; 1) q = q -&gt; next; p = p -&gt; next; } if (cnt &lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Feb 5, 2020</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						// 思路一：数据储存在栈一，pop 的时候倒入栈二，再倒回来 class Solution { public: void push(int node) { stack1.push(node); } int pop() { while (!stack1.empty()) {stack2.push(stack1.top()); stack1.pop();} int rtn = stack2.top(); stack2.pop(); while (!stack2.empty()) {stack1.push(stack2.top()); stack2.pop();} return rtn; } private: stack&lt;int&gt; stack1; stack&lt;int&gt; stack2; }; // 运行时间：3ms // 占用内存：456k // 思路二：小优化，只有当栈二空了才压入栈一的元素，因为先压入的总会先出。 class Solution { public: void push(int node) { stack1.push(node); } int pop() { if (stack2.empty()) { while (!stack1.empty()) { stack2.push(stack1.top()); stack1.pop(); } } int rtn = stack2.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-4/">重建二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用递归重建，每次重建一个节点，将两组数在根结点处划分成两段递归调用 // 注意细节处理，第一次调用右节点为 pre.size()-1，调用体的 for loop 使用 // i &lt;= rv - lv，以及出口为 lv &gt; rv class Solution { public: TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) { return helper(pre, vin, 0, pre.size()-1, 0, vin.size()-1); } TreeNode* helper(vector&lt;int&gt;&amp; pre, vector&lt;int&gt;&amp; vin, int lp, int rp, int lv, int rv) { if (lp &gt; rp || lv &gt; rv) return NULL; TreeNode* rtn = new TreeNode(pre[lp]); if (lp == rp &amp;&amp; lv == rv) return rtn; for (int i = 0; i &lt;= rv - lv; i++) { if (vin[i+lv] == pre[lp]) { rtn -&gt; left = helper(pre, vin, lp+1, lp+i, lv, lv+i-1); rtn -&gt; right = helper(pre, vin, lp+i+1, rp, lv+i+1, rv); break; } } return rtn; } }; // 运行时间：3ms // 占用内存：480k &hellip;
 						
 					</span>
 				</div>

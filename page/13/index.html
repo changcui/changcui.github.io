@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 3, 2019</div>
+					<a class="title" href="/posts/leetcode-122/">122. Best Time to Buy and Sell Stock II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int maxProfit(vector&lt;int&gt;&amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &lt; n - 1; i++) { if (prices[i] &lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 3, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: string largestNumber(vector&lt;int&gt;&amp; nums) { string result = &#34;&#34;; sort(nums.begin(), nums.end(), [](auto a, auto b){ return to_string(a) + to_string(b) &gt; to_string(b) + to_string(a);}); for (auto num : nums) result += to_string(num); return result[0] == &#39;0&#39; ? &#34;0&#34; : result; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-152/">Maximum Product Subarray</a> &mdash;
-					<span class="description">
-						
-						// 思路一：dp，保存最大正值和最小负值 class Solution { public: int maxProduct(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; dp(nums.size()*2, 0); dp[0] = nums[0], dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &lt; nums.size(); i++) { dp[2*i] = max(nums[i], max(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); dp[2*i+1] = min(nums[i], min(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); max_ = max(dp[2*i], max_); } return max_; } }; // Runtime: 4 ms, faster than 86.95% of C++ online submissions for Maximum Product Subarray.&hellip;
 						
 					</span>
 				</div>

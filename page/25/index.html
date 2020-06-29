@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-1025/">1025. Divisor Game</a> &mdash;
+					<span class="description">
+						
+						dp class Solution { public: bool divisorGame(int N) { if (N == 1) return false; if (N == 2) return true; vector&lt;bool&gt; saved; saved.push_back(false); saved.push_back(true); for (int i = 3; i &lt;= N; i++) { bool res = false; for (int j = 1; j * j &lt; i; j++) { if (i % j == 0 &amp;&amp; !saved[i - j - 1]) { res = true; break; } } saved.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&gt;next; cur-&gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1078/">1078. Occurrences After Bigram</a> &mdash;
-					<span class="description">
-						
-						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
 						
 					</span>
 				</div>

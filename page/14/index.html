@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-152/">Maximum Product Subarray</a> &mdash;
+					<span class="description">
+						
+						// 思路一：dp，保存最大正值和最小负值 class Solution { public: int maxProduct(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; dp(nums.size()*2, 0); dp[0] = nums[0], dp[1] = nums[0]; int max_ = dp[0]; for (int i = 1; i &lt; nums.size(); i++) { dp[2*i] = max(nums[i], max(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); dp[2*i+1] = min(nums[i], min(dp[2*i-2] * nums[i], dp[2*i-1] * nums[i])); max_ = max(dp[2*i], max_); } return max_; } }; // Runtime: 4 ms, faster than 86.95% of C++ online submissions for Maximum Product Subarray.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 1, 2019</div>
@@ -162,16 +172,6 @@ class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int l
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, out, result, nums); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, vector&lt;int&gt;&amp; nums) { result.push_back(out); for (int i = cur; i &lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, result, nums); out.pop_back(); } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 30, 2019</div>
-					<a class="title" href="/posts/leetcode-77/">77. Combinations</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combine(int n, int k) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(1, out, result, n, k); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int n, int k) { if (out.size() == k) {result.push_back(out); return;} for (int i = cur; i &lt;= n; i++) { out.push_back(i); DFS(i+1, out, result, n, k); out.pop_back(); } } }; &hellip;
 						
 					</span>
 				</div>

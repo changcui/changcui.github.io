@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://changcui.cc/</loc>
+    <lastmod>2020-06-30T01:01:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/operating-system/</loc>
+    <lastmod>2020-06-30T01:01:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/</loc>
+    <lastmod>2020-06-30T01:01:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/tags/</loc>
+    <lastmod>2020-06-30T01:01:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://changcui.cc/posts/virtual-memory/</loc>
+    <lastmod>2020-06-30T01:01:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://changcui.cc/posts/leetcode-124/</loc>
     <lastmod>2020-06-30T00:25:16+08:00</lastmod>
   </url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/</loc>
-    <lastmod>2020-06-30T00:25:16+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://changcui.cc/tags/leetcode/</loc>
-    <lastmod>2020-06-30T00:25:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/posts/</loc>
-    <lastmod>2020-06-30T00:25:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/</loc>
     <lastmod>2020-06-30T00:25:16+08:00</lastmod>
   </url>
   

@@ -7,10 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 00:25:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 01:01:22 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>virtual memory</title>
+      <link>http://changcui.cc/posts/virtual-memory/</link>
+      <pubDate>Tue, 30 Jun 2020 01:01:22 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/virtual-memory/</guid>
+      <description>虚拟内存  为什么需要内存？
+ 因为计算与存储之间的不平衡，CPU 从硬盘读取数据太慢，所以先把数据载入到主存（内存，RAM）里，从主存读入、计算、储存数据。  内存什么样子？
+ 内存可以看作是一长条格子，每个格子以0，1的方式储存数据，每个格子的数据是一个 Bytes，或者说 8bit。
+ 格子的个数与内存多少位有关，32 位的内存有 2^32 个格子，总共能存储的数据就是 4GB，64 位的内存有 2^64 个格子。
+ 每个格子以一个数字作为标记，这个数字被称为内存地址。
+ 程序能访问的内存总是这个长条的一部分，被成为内存空间。
+  为什么需要虚拟内存（直接使用主存有什么问题）？
+ 因为每个任务都占据内存的一部分，所以在读写内存的时候，并不是从 0 开始，而是每个任务都有一个相对于 0 的 offset，这给程序开发造成了困难。
+ 解决：每个程序都有自己的虚拟内存空间，从 0 开始，仿佛自己可以使用整块内存（经常比物理主存要大，因为程序运行往往用不了这么多），这给程序开发带来的方便。
+ 直接读写主存，造成主存的碎片化，后期很难找到一块完整够用的主存来运行新的任务。
+ 解决：虚拟内存是连续的，尽管物理的内存空间并不连续，操作系统组合碎片的主存来构造出整块的虚拟内存。
+ 多任务读写相互透明带来安全性问题，程序 A 可以去读写程序 B 的内存空间。
+ 解决：每个任务只能读写自己的虚拟内存空间，各个任务之间的虚拟内存空间是没有 overlap 的，所以不存在读写的问题。
+  虚拟内存是如何实现的？
+ 首先需要一个文件来储存虚拟内存和物理内存之间的映射关系，以便于给一个虚拟内存 X，能够找到相应的物理内存 Y。这个映射关系一定不是 1:1 的，不然储存整个物理内存空间需要同样大小的文件，这个文件无法被载入内存。
+ 解决方案是把虚拟内存和物理内存分块（chunk），即设立一个最小调度单元，虚拟内存被分为 pages，物理内存则被分为 frames，现在只需建立 pages 与 frames 之间的对应关系即可。</description>
+    </item>
     
     <item>
       <title>124.Binary Tree Maximum Path Sum</title>

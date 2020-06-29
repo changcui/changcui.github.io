@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-23/">二叉搜索树的后序遍历序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：后序遍历的条件是，末尾元素可以将数组分为两端，前一段都小于它，后一段都大于它 class Solution { public: bool VerifySquenceOfBST(vector&lt;int&gt; sequence) { if (sequence.empty()) return false; return helper(sequence, 0, sequence.size() - 1); } bool helper(vector&lt;int&gt;&amp; seq, int l, int r) { if (r - l &lt;= 1) return true; int pivot = seq[r]; int li = l, ri = r - 1; while(seq[li] &lt; pivot) li++; while(seq[ri] &gt; pivot) ri--; if (li - ri == 1) return helper(seq, l, ri) &amp;&amp; helper(seq, li, r-1); return false; } }; // 运行时间：2ms // 占用内存：608k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 7, 2020</div>
@@ -157,16 +167,6 @@ TODO 争取多做一些有意义的事情，以不让衰老的自己后悔为目
 					<span class="description">
 						
 						// 思路一：递归，首先找到递归的出口，也就是返回值，然后每次递归出口从后往前依次反 // 转一个节点 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&gt; next) return pHead; auto reverseHead = ReverseList(pHead -&gt; next); pHead -&gt; next -&gt; next = pHead; pHead -&gt; next = NULL; return reverseHead; } }; // 运行时间：4ms // 占用内存：480k // 思路二：非递归，每次反转一个，设立一个 pre 指针变量 class Solution { public: ListNode* ReverseList(ListNode* pHead) { if (!pHead || !pHead -&gt; next) return pHead; ListNode* rtn = NULL, *pre = NULL; while (pHead) { auto tmp = pHead -&gt; next; if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 5, 2020</div>
-					<a class="title" href="/posts/offer-14/">链表中倒数第k个结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：用数组直接存起来，空间开销O(n)，时间开销O(n) class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { vector&lt;ListNode*&gt; tmp; auto p = pListHead; while (p) {tmp.push_back(p); p = p -&gt; next;} if (tmp.size() &lt; k) return NULL; return tmp[tmp.size() - k]; } }; // 运行时间：4ms // 占用内存：532k // 思路二：双指针，指针一快指针二 k-1 步，当指针二为空时，指针一为倒数第K个 class Solution { public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) { auto p = pListHead, q = pListHead; int cnt = 0, nowk = k; while (p) { cnt++; if (nowk-- &lt; 1) q = q -&gt; next; p = p -&gt; next; } if (cnt &lt; k) return NULL; return q; } }; // 运行时间：5ms // 占用内存：504k &hellip;
 						
 					</span>
 				</div>

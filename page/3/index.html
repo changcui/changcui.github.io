@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 20, 2020</div>
+					<a class="title" href="/posts/leetcode-139/">Word Break</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS，记忆数组，set 保存 class Solution { public: bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) { unordered_set&lt;string&gt; se(wordDict.begin(), wordDict.end()); vector&lt;int&gt; memo(s.size(), -1); return helper(s, 0, memo, se); } bool helper(string&amp; s, int start, vector&lt;int&gt;&amp; memo, unordered_set&lt;string&gt; se) { if (start == s.size()) return true; if (memo[start] != -1) return memo[start]; for (int i = start + 1; i &lt;= s.size(); i++) { if (se.count(s.substr(start, i - start)) &amp;&amp; helper(s, i, memo, se)) { return memo[start] = 1; } } return memo[start] = 0; } }; // Runtime: 48 ms, faster than 6.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						// 思路一：与上一题相同，层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } result.push_back(out); } return result; } }; // 运行时间：3ms // 占用内存：464k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-59/">按之字形顺序打印二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k &hellip;
 						
 					</span>
 				</div>

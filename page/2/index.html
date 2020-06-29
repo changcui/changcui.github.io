@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-287/">Find the Duplicate Number</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指 offer class Solution { public: int findDuplicate(vector&lt;int&gt;&amp; nums) { for (int i = 0; i &lt; nums.size(); i++) { while (nums[i] != i + 1) { if (nums[nums[i]-1] == nums[i]) return nums[i]; swap(nums[i], nums[nums[i]-1]); } } return -1; } }; // Runtime: 12 ms, faster than 67.11% of C++ online submissions for Find the Duplicate Number. // Memory Usage: 7.6 MB, less than 100.00% of C++ online submissions for Find the Duplicate Number.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 21, 2020</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						// 思路一：先判断是否有环，然后一个从相遇处出发，一个从头节点出发，必然相遇到入口 class Solution { public: ListNode *detectCycle(ListNode *head) { if (!head || !head-&gt;next) return NULL; auto slow = head-&gt;next, fast = head-&gt;next-&gt;next; while (fast &amp;&amp; fast != slow) { slow = slow-&gt;next; fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; } if (fast) fast = head; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // Runtime: 12 ms, faster than 77.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 20, 2020</div>
-					<a class="title" href="/posts/leetcode-139/">Word Break</a> &mdash;
-					<span class="description">
-						
-						// 思路一：DFS，记忆数组，set 保存 class Solution { public: bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) { unordered_set&lt;string&gt; se(wordDict.begin(), wordDict.end()); vector&lt;int&gt; memo(s.size(), -1); return helper(s, 0, memo, se); } bool helper(string&amp; s, int start, vector&lt;int&gt;&amp; memo, unordered_set&lt;string&gt; se) { if (start == s.size()) return true; if (memo[start] != -1) return memo[start]; for (int i = start + 1; i &lt;= s.size(); i++) { if (se.count(s.substr(start, i - start)) &amp;&amp; helper(s, i, memo, se)) { return memo[start] = 1; } } return memo[start] = 0; } }; // Runtime: 48 ms, faster than 6.&hellip;
 						
 					</span>
 				</div>

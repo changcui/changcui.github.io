@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Oct 11, 2019</div>
+					<a class="title" href="/posts/leetcode-315/">315. Count of Smaller Numbers After Self</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) { vector&lt;int&gt; t, res(nums.size()); for (int i = nums.size() - 1; i &gt;= 0; i--) { int left = 0, right = t.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (t[mid] &lt; nums[i]) left = mid + 1; else right = mid; } res[i] = right; t.insert(t.begin() + right, nums[i]); } return res; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size() - 1; while (left &lt;= right) { int mid = left + (right - left) / 2; if (nums[mid] == target) return mid; else if (nums[mid] &lt; nums[right]) { if (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right]) left = mid + 1; else right = mid - 1; } else { if (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid]) right = mid - 1; else left = mid + 1; } } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-35/">35. Search Insert Position</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int searchInsert(vector&lt;int&gt;&amp; nums, int target) { int left = 0, right = nums.size(); while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; target) left = mid + 1; else right = mid; } return right; } }; &hellip;
 						
 					</span>
 				</div>

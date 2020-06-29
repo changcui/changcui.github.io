@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 12, 2020</div>
+					<a class="title" href="/posts/offer-51/">构建乘积数组</a> &mdash;
+					<span class="description">
+						
+						// 思路一：将数组 B 分为两段递推求解 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { vector&lt;int&gt; b, c{1}, d{1}; int n = A.size(); if (n == 0) return b; for (int i = 0; i &lt; n - 1; i++) { c.push_back(c.back() * A[i]); d.push_back(d.back() * A[n - 1 - i]); } for (int i = 0; i &lt; n; i++) { b.push_back(c[i] * d[n - 1 - i]); } return b; } }; // 运行时间：4ms // 占用内存：480k // 思路二：优化空间 class Solution { public: vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) { int n = A.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 12, 2020</div>
@@ -154,16 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;int&gt; FindNumbersWithSum(vector&lt;int&gt; array,int sum) { int i = 0, j = array.size() - 1; while (i &lt; j) { int s = array[i] + array[j]; if (s == sum) return {array[i], array[j]}; else if (s &lt; sum) i++; else j--; } return {}; } }; // 运行时间：6ms // 占用内存：504k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 10, 2020</div>
-					<a class="title" href="/posts/offer-41/">和为S的连续正数序列</a> &mdash;
-					<span class="description">
-						
-						// 思路一：数学法，找规律，分成奇偶两种情况，判断边界条件 class Solution { public: vector&lt;vector&lt;int&gt; &gt; FindContinuousSequence(int sum) { vector&lt;vector&lt;int&gt; &gt; result; for (int i = sqrt(sum * 2); i &gt;= 2; i--) { if (i &amp; 1 &amp;&amp; sum % i == 0 &amp;&amp; (sum / i - (i - 1)/2) &gt; 0) { vector&lt;int&gt; output; int begin = sum / i - (i - 1) / 2; while (begin &lt;= sum / i + (i - 1)/2) output.&hellip;
 						
 					</span>
 				</div>

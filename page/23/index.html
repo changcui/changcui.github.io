@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
+<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 5, 2019</div>
+					<a class="title" href="/posts/leetcode-202/">202. Happy Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int helper(int n) { int rtn = 0; while (n) { auto tmp = n % 10; rtn += tmp * tmp; n = (n - tmp) / 10; } return rtn; } bool isHappy(int n) { auto tmp = helper(n); set&lt;int&gt; nums; nums.insert(n); while (1) { if (tmp == 1) return true; if (nums.find(tmp) != nums.end()) return false; nums.insert(tmp); tmp = helper(tmp); } return false; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 5, 2019</div>
@@ -173,16 +183,6 @@
 去向 和女票讨论了一下去向的问题，马上就要毕业了，将来应该去哪里呢，留在帝都的话，没有户口，但是工作的发展不错，朋友也都在，去上海有户口，钱挣够了就可以买房，也许结婚能早一点？工作的发展应该还可以，但不如北京稳妥吧，朋友自然是没有了，去小城市生活压力应该不到，但是职业的发展会遇到瓶颈吧，一系列的问题摆在面前，仿佛没有一个最优的决策。
 其实当然没有最优决策，我是觉得无所谓的，我去哪都可以，北京或者上海，我找个工作应该都没有什么问题，女票仿佛容易受到外界的干扰，一些小的信息就可能让她的决定改变，我想了想，大概是因为我一直都没有很坚定的选项，当然也没有给她足够的支持。
 长久以来，对于去向的问题，女票似乎总是主导的一方，但是又常常改变，我不知道面临这种情况我应该怎么处理，也许我应该确定自己想要去的地方，才能更好地帮她做决定？&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 3, 2019</div>
-					<a class="title" href="/posts/leetcode-136/">136. Single Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int singleNumber(vector&lt;int&gt;&amp; nums) { int rtn = 0; for (auto num : nums) { rtn ^= num; } return rtn; } }; &hellip;
 						
 					</span>
 				</div>

@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sun, 22 Mar 2020 21:27:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:25:16 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>124.Binary Tree Maximum Path Sum</title>
+      <link>http://changcui.cc/posts/leetcode-124/</link>
+      <pubDate>Tue, 30 Jun 2020 00:25:16 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-124/</guid>
+      <description>// 思路一：maxPathDown 从 input node 开始最大的 path 值（左右节点只能选一个），Sum 则为左右节点都选，选左，选右，不选四种情况的最大值 class Solution { public: int maxPathSum(TreeNode* root) { int max_ = INT_MIN; maxPathDown(root, max_); return max_; } int maxPathDown(TreeNode* root, int&amp;amp; max_) { if (!root) return 0; auto l = max(0, maxPathDown(root-&amp;gt;left, max_)); auto r = max(0, maxPathDown(root-&amp;gt;right, max_)); max_ = max(max_, root-&amp;gt;val + l + r); return max(l, r) + root-&amp;gt;val; } }; </description>
+    </item>
+    
+    <item>
+      <title>128.Longest Consecutive Sequence</title>
+      <link>http://changcui.cc/posts/leetcode-128/</link>
+      <pubDate>Tue, 30 Jun 2020 00:13:06 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-128/</guid>
+      <description>// 思路一：O（n）考虑使用 set 来排除重复的元素，但 set 是排序容器，所以真正的 O（n）应该使用 unordered_set class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; set&amp;lt;int&amp;gt; s(nums.begin(), nums.end()); int rtn = 1, prev = INT_MIN; for (auto i = s.begin(); i != s.end();) { if (*i == prev + 1) { int length = 1; while (i != s.end() &amp;amp;&amp;amp; *i == prev + 1) { prev = *i; i++, length++; } rtn = max(rtn, length); } else { prev = *i; i++; } } return rtn; } }; // 思路二：使用 unordered_set 然后删除 set 中连续的数字 class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { unordered_set s(nums.</description>
+    </item>
+    
+    <item>
+      <title>131.Palindrome Partitioning</title>
+      <link>http://changcui.cc/posts/leetcode-131/</link>
+      <pubDate>Tue, 30 Jun 2020 00:09:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-131/</guid>
+      <description>// 思路一：找出所有的结果，DFS，出口是所有的字符都被分块，需要辅助函数来判断回文 class Solution { public: bool isPalindrome(const string s) { int l = 0, r = s.size() - 1; while (l &amp;lt; r) { if (s[l] != s[r]) return false; l++, r--; } return true; } vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; partition(string s) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; rtn; vector&amp;lt;string&amp;gt; output; dfs(output, s, rtn, 0); return rtn; } void dfs(vector&amp;lt;string&amp;gt;&amp;amp; output, string&amp;amp; s, vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; rtn, int idx) { if (idx == s.size()) { rtn.push_back(output); return; } for (int i = idx; i &amp;lt; s.</description>
+    </item>
+    
+    <item>
+      <title>76.Minimum Window Substring</title>
+      <link>http://changcui.cc/posts/leetcode-76/</link>
+      <pubDate>Tue, 30 Jun 2020 00:07:05 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-76/</guid>
+      <description>// 思路一：因为要 O(n)，考虑使用 hashmap 来快速查找，先扩大右边界来确保找到 string，然后缩小左边界来剪短 string class Solution { public: string minWindow(string s, string t) { unordered_map&amp;lt;char, int&amp;gt; m; for (auto i : t) m[i]++; int left = 0, cnt = 0, minLen = INT_MAX; string rtn = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; s.size(); i++) { if (--m[s[i]] &amp;gt;= 0) cnt++; while (cnt == t.size()) { if (minLen &amp;gt; i - left + 1) { rtn = s.</description>
+    </item>
+    
+    <item>
+      <title>73.Set Matrix Zeroes</title>
+      <link>http://changcui.cc/posts/leetcode-73/</link>
+      <pubDate>Tue, 30 Jun 2020 00:02:44 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-73/</guid>
+      <description>// 思路一：因为要 inplace，考虑使用第一行第一列（如果是临时变量需要 O(m+n)）作为其他位置的标记，而第一行第一列的标记使用两个变量(O(1))来记录 class Solution { public: void setZeroes(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; matrix) { bool rowZero = false, colZero = false; int m = matrix.size(), n = matrix[0].size(); for (int i = 0; i &amp;lt; n; i++) { if (matrix[0][i] == 0) rowZero = true; } for (int i = 0; i &amp;lt; m; i++) { if (matrix[i][0] == 0) colZero = true; } for (int i = 1; i &amp;lt; m; i++) { for (int j = 1; j &amp;lt; n; j++) { if (matrix[i][j] == 0) { matrix[i][0] = 0; matrix[0][j] = 0; } } } for (int i = 1; i &amp;lt; m; i++) { for (int j = 1; j &amp;lt; n; j++) { if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0; } } if (rowZero) { for (int i = 0; i &amp;lt; n; i++) matrix[0][i] = 0; } if (colZero) { for (int i = 0; i &amp;lt; m; i++) matrix[i][0] = 0; } } }; // Runtime: 24 ms, faster than 93.</description>
+    </item>
     
     <item>
       <title>vim(nvim) 常用插件及配置</title>

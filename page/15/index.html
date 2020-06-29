@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,56 @@
 				
 				
 				<div class="post">
+					<div class="meta">Nov 30, 2019</div>
+					<a class="title" href="/posts/leetcode-49/">49. Group Anagrams</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) { vector&lt;vector&lt;string&gt;&gt; result; unordered_map&lt;string, vector&lt;string&gt;&gt; m; for (auto s : strs) { auto t = s; sort(t.begin(), t.end()); if (m.count(t)) m[t].push_back(s); else m[t] = {s}; } for (auto i : m) result.push_back(i.second); return result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-40/">40. Combination Sum II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum2(vector&lt;int&gt;&amp; candidates, int target) { vector&lt;int&gt; out; vector&lt;vector&lt;int&gt;&gt; result; sort(candidates.begin(), candidates.end()); DFS(candidates, out, result, 0, target); return result; } void DFS(vector&lt;int&gt;&amp; candidates, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int start, int target) { if (target &lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &lt; candidates.size(); i++) { if (i &gt; start &amp;&amp; candidates[i] == candidates[i-1]) continue; out.push_back(candidates[i]); DFS(candidates, out, result, i+1, target - candidates[i]); out.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-39/">39. Combination Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) { vector&lt;int&gt; out; vector&lt;vector&lt;int&gt;&gt; result; DFS(candidates, out, result, 0, target); return result; } void DFS(vector&lt;int&gt;&amp; candidates, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int start, int target) { if (target &lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &lt; candidates.size(); i++) { out.push_back(candidates[i]); DFS(candidates, out, result, i, target - candidates[i]); out.pop_back(); } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-24/">24. Swap Nodes in Pairs</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { if (!head || !head -&gt; next) return head; auto nxt = head -&gt; next -&gt; next; auto h = head; head = head -&gt; next; head -&gt; next = h; h -&gt; next = swapPairs(nxt); return head; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 27, 2019</div>
+					<a class="title" href="/posts/leetcode-856/">856. Score of Parentheses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int scoreOfParentheses(string S) { int score = 0, n = S.size(); for (int i = 0; i &lt; n; i++) { if (S[i] == &#39;(&#39;) { int cnt = 1, j = i; while (cnt) { if (S[++j] == &#39;(&#39;) cnt += 1; else cnt -= 1; } if (j == i + 1) score += 1; else score += 2 * scoreOfParentheses(S.substr(i + 1, j - i - 1)); i = j; } } return score; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Nov 27, 2019</div>
 					<a class="title" href="/posts/leetcode-22/">22. Generate Parentheses</a> &mdash;
 					<span class="description">
@@ -114,56 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int thirdMax(vector&lt;int&gt;&amp; nums) { long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN; for (auto num : nums) { if (num &gt; first) { third = second; second = first; first = num; } else if (num &lt; first &amp;&amp; num &gt; second) { third = second; second = num; } else if (num &lt; second &amp;&amp; num &gt; third) { third = num; } } return (third == LONG_MIN || third == second) ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 25, 2019</div>
-					<a class="title" href="/posts/leetcode-21/">21. Merge Two Sorted Lists</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) { if (!l1) return l2; if (!l2) return l1; if (l1 -&gt; val &lt; l2 -&gt; val) { l1 -&gt; next = mergeTwoLists(l1 -&gt; next, l2); return l1; } else { l2 -&gt; next = mergeTwoLists(l1, l2 -&gt; next); return l2; } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 25, 2019</div>
-					<a class="title" href="/posts/leetcode-19/">19. Remove Nth Node From End of List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { auto cur = head, pre = head; for (int i = 0; i &lt; n; i++) cur = cur -&gt; next; if (!cur) return head -&gt; next; while (cur -&gt; next) { cur = cur -&gt; next; pre = pre -&gt; next; } pre -&gt; next = pre -&gt; next -&gt; next; return head; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-16/">16. 3Sum Closest</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-15/">15. 3Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; sort(nums.begin(), nums.end()); if (nums.size() &lt; 3 || nums.back() &lt; 0 || nums.front() &gt; 0) return {}; for (int k = 0; k &lt; (int)nums.size() - 2; k++) { if (nums[k] &gt; 0) break; if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &lt; j) { if (nums[i] + nums[j] == target) { res.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-1/">1. Two Sum</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int, int&gt; cnt; int n = nums.size(); for (int i = 0; i &lt; n; i++) { if (cnt.count(target - nums[i])) return {cnt[target - nums[i]], i}; cnt[nums[i]] = i; } return {}; } }; &hellip;
 						
 					</span>
 				</div>

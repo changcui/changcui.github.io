@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,56 @@
 				
 				<div class="post">
 					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-334/">334.Increasing Triplet Subsequence</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool increasingTriplet(vector&lt;int&gt;&amp; nums) { int m1 = INT_MAX, m2 = INT_MAX; for (auto i : nums) { if (m1 &gt;= i) m1 = i; else if (m2 &gt;= i) m2 = i; else return true; } return false; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-332/">332.Reconstruct Itinerary</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-338/">338.Counting Bits</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; countBits(int num) { vector&lt;int&gt; res(num+1, 0); for (int i = 1; i &lt;= num; i++) { res[i] = res[i &amp; (i-1)] + 1; } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-345/">345.Reverse Vowels of a String</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &lt; j) { while (i &lt; j &amp;&amp; s[i] != &#39;a&#39; &amp;&amp; s[i] != &#39;e&#39; &amp;&amp; s[i] != &#39;i&#39; &amp;&amp; s[i] != &#39;o&#39; &amp;&amp; s[i] != &#39;u&#39; &amp;&amp; s[i] != &#39;A&#39; &amp;&amp; s[i] != &#39;E&#39; &amp;&amp; s[i] != &#39;I&#39; &amp;&amp; s[i] != &#39;O&#39; &amp;&amp; s[i] != &#39;U&#39;) i++; while (i &lt; j &amp;&amp; s[j] !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-341/">341.Flatten Nested List Iterator</a> &mdash;
+					<span class="description">
+						
+						/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&lt;NestedInteger&gt; &amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&lt;NestedInteger&gt; &amp;n, vector&lt;int&gt;&amp; v) { for (auto i : n) { if (i.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
 					<a class="title" href="/posts/leetcode-342/">342.Power of Four</a> &mdash;
 					<span class="description">
 						
@@ -114,56 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int maxProfit(vector&lt;int&gt;&amp; prices) { int res = 0, n = prices.size(); for (int i = 0; i &lt; n - 1; i++) { if (prices[i] &lt; prices[i+1]) res += prices[i+1] - prices[i]; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-307/">307. Range Sum Query - Mutable</a> &mdash;
-					<span class="description">
-						
-						class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { sum.push_back(0); for (auto n : nums) { sum.push_back(sum.back()+n); num.push_back(n); } } void update(int i, int val) { auto t = val - num[i]; num[i] = val; for (int j = i + 1; j &lt; sum.size(); j++) sum[j] += t; } int sumRange(int i, int j) { return sum[j+1] - sum[i]; } private: vector&lt;int&gt; sum; vector&lt;int&gt; num; }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(i,val); * int param_2 = obj-&gt;sumRange(i,j); */ &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-389/">389. Find the Difference</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: char findTheDifference(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &#39;A&#39;; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-392/">392. Is Subsequence</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isSubsequence(string s, string t) { unordered_map&lt;char, vector&lt;int&gt;&gt; m; for (int i = 0; i &lt; t.size(); i++) m[t[i]].push_back(i); int left = -1; for (auto c : s) { if (!m.count(c)) return false; auto flag = false; for (auto l : m[c]) { if (l &gt; left) { left = l; flag = true; break; } } if (!flag) return false; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-63/">63. Unique Paths II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int uniquePathsWithObstacles(vector&lt;vector&lt;int&gt;&gt;&amp; obstacleGrid) { int m = obstacleGrid.size(), n = obstacleGrid[0].size(); vector&lt;vector&lt;unsigned int&gt;&gt; dp(m, vector&lt;unsigned int&gt;(n, 0)); if (obstacleGrid[0][0]) return 0; dp[0][0] = 1; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (obstacleGrid[i][j]) continue; if (i &gt; 0 &amp;&amp; !obstacleGrid[i-1][j]) dp[i][j] += dp[i-1][j]; if (j &gt; 0 &amp;&amp; !obstacleGrid[i][j-1]) dp[i][j] += dp[i][j-1]; } } return dp[m-1][n-1]; } }; &hellip;
 						
 					</span>
 				</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>set on changcui</title>
+    <link>http://changcui.cc/tags/set/</link>
+    <description>Recent content in set on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Tue, 30 Jun 2020 00:13:06 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/set/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>128.Longest Consecutive Sequence</title>
+      <link>http://changcui.cc/posts/leetcode-128/</link>
+      <pubDate>Tue, 30 Jun 2020 00:13:06 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-128/</guid>
+      <description>// 思路一：O（n）考虑使用 set 来排除重复的元素，但 set 是排序容器，所以真正的 O（n）应该使用 unordered_set class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; set&amp;lt;int&amp;gt; s(nums.begin(), nums.end()); int rtn = 1, prev = INT_MIN; for (auto i = s.begin(); i != s.end();) { if (*i == prev + 1) { int length = 1; while (i != s.end() &amp;amp;&amp;amp; *i == prev + 1) { prev = *i; i++, length++; } rtn = max(rtn, length); } else { prev = *i; i++; } } return rtn; } }; // 思路二：使用 unordered_set 然后删除 set 中连续的数字 class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { unordered_set s(nums.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,56 @@
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-67/">剪绳子</a> &mdash;
+					<span class="description">
+						
+						// 思路一：贪心，优先剪3 class Solution { public: int cutRope(int number) { if (number == 2 || number == 3) return number - 1; if (number % 3 == 0) return pow(3, number/3); if (number % 3 == 1) return pow(3, number/3-1) * 4; if (number % 3 == 2) return pow(3, number/3) * 2; } }; // 运行时间：5ms // 占用内存：504k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-66/">机器人的运动范围</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&lt;vector&lt;bool&gt; &gt; visited(rows, vector&lt;bool&gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp; rtn, int threshold, int i, int j, vector&lt;vector&lt;bool&gt; &gt;&amp; visited, int rows, int cols) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || visited[i][j] || sum_(i, j) &gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-65/">矩阵中的路径</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &lt; rows; i++) { for (int j = 0; j &lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || matrix[i*cols+j] !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-64/">滑动窗口的最大值</a> &mdash;
+					<span class="description">
+						
+						// 思路一：单调双向队列，保存下标 class Solution { public: vector&lt;int&gt; maxInWindows(const vector&lt;int&gt;&amp; num, unsigned int size) { vector&lt;int&gt; res; if (size == 0) return res; deque&lt;int&gt; q; for (int i = 0; i &lt; num.size(); i++) { while (!q.empty() &amp;&amp; num[i] &gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() + 1 &gt; size) q.pop_front(); q.push_back(i); if (i + 1 &gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-63/">数据流中的中位数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：两个 priority_queue，一个存一半大值，一个存一半小值 class Solution { public: void Insert(int num) { cnt++; if (cnt &amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double GetMedian() { if (cnt &amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; priority_queue&lt;int&gt; q; int cnt = 0; }; // 运行时间：3ms // 占用内存：364k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
 					<a class="title" href="/posts/offer-62/">二叉搜索树的第k个结点</a> &mdash;
 					<span class="description">
 						
@@ -114,56 +164,6 @@
 					<span class="description">
 						
 						// 思路一：层次遍历的非递归写法 class Solution { public: vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) { vector&lt;vector&lt;int&gt; &gt; result; if (!pRoot) return result; queue&lt;TreeNode*&gt; q; bool flag = false; q.push(pRoot); while (!q.empty()) { auto k = q.size(); vector&lt;int&gt; out; while (k--) { auto t = q.front(); q.pop(); out.push_back(t-&gt;val); if (t-&gt;left) q.push(t-&gt;left); if (t-&gt;right) q.push(t-&gt;right); } if (flag) reverse(out.begin(), out.end()); result.push_back(out); flag = !flag; } return result; } }; // 运行时间：4ms // 占用内存：604k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-58/">对称的二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：递归检查 class Solution { public: bool helper(TreeNode* p, TreeNode* q) { if (!p &amp;&amp; !q) return true; if (!p) return false; if (!q) return false; return p-&gt;val==q-&gt;val &amp;&amp; helper(p-&gt;left, q-&gt;right) &amp;&amp; helper(p-&gt;right, q-&gt;left); } bool isSymmetrical(TreeNode* pRoot) { if (!pRoot) return true; return helper(pRoot-&gt;left, pRoot-&gt;right); } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-57/">二叉树的下一个结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&gt;right) { pNode = pNode-&gt;right; while (pNode &amp;&amp; pNode-&gt;left) pNode = pNode-&gt;left; return pNode; } if (!pNode-&gt;next) return NULL; while (pNode-&gt;next) { if (pNode == pNode-&gt;next-&gt;left) return pNode-&gt;next; pNode = pNode-&gt;next; } if (!pNode-&gt;next) return NULL; return pNode-&gt;next; } }; // 运行时间：3ms // 占用内存：500k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-56/">删除链表中重复的结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-55/">链表中环的入口结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：快慢指针判断是否有环，从相遇处和头节点出发，必定相遇于入口 class Solution { public: ListNode* EntryNodeOfLoop(ListNode* pHead) { if (!pHead || !pHead-&gt;next) return NULL; auto fast = pHead-&gt;next-&gt;next, slow = pHead-&gt;next; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; slow = slow-&gt;next; } if (!fast) return NULL; fast = pHead; while (fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 14, 2020</div>
-					<a class="title" href="/posts/systemd/">systemd 使用日记</a> &mdash;
-					<span class="description">
-						
-						挖个坑，arch 使用的初始化进程是 systemd，虽然很多人诟病，还是先学习一下，才能找到诟病的原因呀！&hellip;
 						
 					</span>
 				</div>

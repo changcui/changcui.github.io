@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,56 @@
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-100/">100. Same Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool isSameTree(TreeNode* p, TreeNode* q) { if (p == NULL &amp;&amp; q == NULL) return true; else if (p == NULL || q == NULL) return false; return (p-&gt;val == q-&gt;val) &amp;&amp; isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-455/">455. Assign Cookies</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-350/">350. Intersection of Two Arrays II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { map&lt;int, int&gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&lt;int&gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&gt; second == 0) continue; rtn.push_back(num); it -&gt; second -= 1; } return rtn; } }; class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { multiset&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-326/">326. Power of Three</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isPowerOfThree(int n) { return n &gt; 0 ? !(1162261467 % n) : 0; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-268/">268. Missing Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int missingNumber(vector&lt;int&gt;&amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
 					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
 					<span class="description">
 						
@@ -114,63 +164,6 @@
 					<span class="description">
 						
 						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1170/">1170. Compare Strings by Frequency of the Smallest Character</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &lt; s.size(); i++) { if (s[i] &lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) { vector&lt;int&gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&lt;int&gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &lt;= 10; i++) tmp += wa[i]; rtn.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
-					<span class="description">
-						
-						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1154/">1154. Day of the Year</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/2019-08-30/">2019 08 30</a> &mdash;
-					<span class="description">
-						
-						工资 等了一个月终于发工资了，这次的工资算是正常了。上个月因为没有满10天，结果没有绩效工资，导致我的工资大缩水。
-不知道我 mentor 是出于上个月没有绩效的同情，还是我这个月表现得确实不错，他好像给我打了一个蛮高的绩效，我感到十分的开心，我恢复了对公司的喜爱，下决心更努力的干活了。
-工作 说到工作，今天干得活其实并不到，充其量是给 mentor 找了个处理 imagenet 数据的脚本，然后他处理完了之后，我在服务器上测试了一下自己写的 resnet 跑起来是不是正确的。
-令人意外的是，今天跑得格外的顺利，代码一次就跑起来了，也没有报错。validation 的 accuracy 也和官方文档上写的一样。但是我依旧只能随便试试，并开始不了工作，还是多卡的问题解决不了，只能等到下周啦。
-临近下班的时候，我和 mentor 讨论了一下下周的工作内容，基本上确定了有五个任务要做，但当我问到 ddl 的时候，他又说没有 ddl，其实我的岗压力并不是很大，虽然我们组已经没什么人了。聊完工作，又聊了点别的， mentor 作为长者给我传授了点人生的经验，希望对我有所帮助。
-cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明显就是显卡驱动的原因。呼叫 IT 一顿操作帮我搞定了，然后我发现了一件很奇怪的事。
-就是 nvcc -V 输出的 cuda 版本是 9.0，而 nvidia-smi 输出的 cuda 版本是 10.0，我一台电脑竟然能有两个 cuda 版本。
-经过查询后发现，cuda 有两种存在形式，一个是 runtime 形式，一个是 driver 形式，分别是 cuda-toolkit 和 driver 安装的。彼此不冲突，所以才会出现这种情况。我写的扩展应该是用 nvcc 的编译的，所以我认为应该是 runtime 更为重要一些，起码对我来说是这样。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1137/">1137. N-th Tribonacci Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; &hellip;
 						
 					</span>
 				</div>

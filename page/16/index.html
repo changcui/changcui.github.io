@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,56 @@
 				
 				
 				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-21/">21. Merge Two Sorted Lists</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) { if (!l1) return l2; if (!l2) return l1; if (l1 -&gt; val &lt; l2 -&gt; val) { l1 -&gt; next = mergeTwoLists(l1 -&gt; next, l2); return l1; } else { l2 -&gt; next = mergeTwoLists(l1, l2 -&gt; next); return l2; } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 25, 2019</div>
+					<a class="title" href="/posts/leetcode-19/">19. Remove Nth Node From End of List</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { auto cur = head, pre = head; for (int i = 0; i &lt; n; i++) cur = cur -&gt; next; if (!cur) return head -&gt; next; while (cur -&gt; next) { cur = cur -&gt; next; pre = pre -&gt; next; } pre -&gt; next = pre -&gt; next -&gt; next; return head; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-16/">16. 3Sum Closest</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-15/">15. 3Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; sort(nums.begin(), nums.end()); if (nums.size() &lt; 3 || nums.back() &lt; 0 || nums.front() &gt; 0) return {}; for (int k = 0; k &lt; (int)nums.size() - 2; k++) { if (nums[k] &gt; 0) break; if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &lt; j) { if (nums[i] + nums[j] == target) { res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-1/">1. Two Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int, int&gt; cnt; int n = nums.size(); for (int i = 0; i &lt; n; i++) { if (cnt.count(target - nums[i])) return {cnt[target - nums[i]], i}; cnt[nums[i]] = i; } return {}; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Nov 12, 2019</div>
 					<a class="title" href="/posts/leetcode-11/">11. Container With Most Water</a> &mdash;
 					<span class="description">
@@ -114,56 +164,6 @@
 					<span class="description">
 						
 						class Solution { public: int lengthOfLongestSubstring(string s) { int left = -1, res = 0, n = s.size(); unordered_map&lt;int, int&gt; visited; for (int i = 0; i &lt; n; i++) { if (visited.count(s[i]) &amp;&amp; visited[s[i]] &gt; left) { left = visited[s[i]]; } visited[s[i]] = i; res = max(res, i - left); } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 2, 2019</div>
-					<a class="title" href="/posts/python3/">python3</a> &mdash;
-					<span class="description">
-						
-						 在交互模式下，上一次打印出来的表达式被赋值给变量 _   &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-41/">41. First Missing Positive</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int firstMissingPositive(vector&lt;int&gt;&amp; nums) { for (int i = 0; i &lt; nums.size(); i++) while (nums[i] &gt; 0 &amp;&amp; nums[i] &lt;= nums.size() &amp;&amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-80/">80. Remove Duplicates from Sorted Array II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.size() &lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &lt; nums.size(); i++) { if (nums[i] &gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-26/">26. Remove Duplicates from Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-27/">27. Remove Element</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int res = 0; for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; &hellip;
 						
 					</span>
 				</div>

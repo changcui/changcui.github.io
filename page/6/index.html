@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-03-22T21:27:22+08:00" />
+<meta property="og:updated_time" content="2020-06-30T00:25:16+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,60 @@
 				
 				
 				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-40/">数组中只出现一次的数字</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 map 保存数字，移除数字 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { unordered_map&lt;int, int&gt; m; for (auto i : data) { if (m.count(i)) m.erase(i); else m[i] = 1; } auto p = m.begin(); *num1 = p++-&gt;first; *num2 = p-&gt;first; } }; // 运行时间：3ms // 占用内存：484k // 思路二：全部异或得到两个数的异或，再按照最右的1把所有数分为两部分异或，分别得到两个数 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { int xorr = 0, flag = 1; for (auto i : data) xorr ^= i; while (!&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-39/">平衡二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&gt;left), depth(root-&gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&gt;left) &amp;&amp; IsBalanced_Solution(pRoot-&gt;right) &amp;&amp; abs(depth(pRoot-&gt;left) - depth(pRoot-&gt;right)) &lt;= 1; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-38/">二叉树的深度</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&gt;left), TreeDepth(pRoot-&gt;right)); } }; // 运行时间：4ms // 占用内存：464k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-37/">数字在排序数组中出现的次数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：直接遍历查找 class Solution { public: int GetNumberOfK(vector&lt;int&gt; data ,int k) { int cnt = 0; for (auto i : data) cnt += k == i; return cnt; } }; // 运行时间：3ms // 占用内存：484k // 思路二：二分查找 class Solution { public: int GetNumberOfK(vector&lt;int&gt; data ,int k) { int cnt = 0; int l = 0, r = data.size() - 1; while (l &lt;= r) { int mid = l + (r - l) / 2; if (k == data[mid]) { int i = mid; while (data[i++] == k) cnt++; i = mid - 1; while (data[i--] == k) cnt++; return cnt; } else if (k &gt; data[mid]) l = mid + 1; else r = mid - 1; } return cnt; } }; // 运行时间：3ms // 占用内存：492k // 思路三：STL 大法 class Solution { public: int GetNumberOfK(vector&lt;int&gt; data ,int k) { auto range = equal_range(data.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/2020-03-09/">2020 03 09</a> &mdash;
+					<span class="description">
+						
+						工作 可能因为是第一周工作，然后还是远程入职，我跟同事甚至 mentor 的沟通都太少了，我不知道自己具体的工作内容，公司用的一些环境、配置我都不知道该怎么办，把 xx 例子跑通，其实就是个配环境的事情，却也折腾了好久，主要是没有一个 tutorial，我不知道怎么开始 hello, world，后来咨询了管理这个项目的人，不停问问题的我像极了一个白痴。
+不过好在，解决问题的效率大幅度提高了，看了一些项目的文档，我觉得我是写不出这种大型项目的，也可能他们根据需求也多次迭代了吧，看到这种大型的项目，我总是有一种恐慌，为什么别人能写出来，能够把问题抽象到这么高的层次，并且用编程语言表达出来，而我做不到，我只能写一些 toy 的程序，可能还是需要一步步地成长吧，之前读 paper，刷算法题，其实也没有写这种给很多人用的大型项目的机会，在以后的工作中应该会越来越强吧。
+算法题 最近每天都做六道算法题，如果能保持下去的话，到秋招应该可以做好几百道了，感觉算法应该问题不大了。在做题的过程中，能感觉得出来自己的实力确实有所提升（之前太弱了，一些不知道能不能写出来的算法题，努力沉下心去写，有时候一遍就 ac 了，相比于以前不敢写，或者需要思考很久，小错误不断，可以说很大的提高了，师兄说做算法题就是越写越快，希望我能越写越快，思路更加清晰敏捷一些吧。
+股市 随着疫情加剧，全球的股票市场都在暴跌，今天原油跌了30%（不知道原因，以及意味着什么，A 股也实在是跌得有点惨，我有点不舍得平仓，继续放着又不知道何年何月才能够本，更别说盈利了。
+英语 最近的英语课在教连贯语流，就是连读、弱读，不完全爆破，这些加起来极大地改变了单词应有的读音，我觉得这就是我听力一直不行的原因（还有口语，我完全想象不到，应该念 x 的单词，放在语境中可以念 y，也可以念 z，可能还是听的比较少吧，已经听的时候，大脑的注意力都在句子上面，没时间去分析上下文，导致听着忘着，完全不知道全文在表达什么含义。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Mar 9, 2020</div>
 					<a class="title" href="/posts/offer-35/">数组中的逆序对</a> &mdash;
 					<span class="description">
@@ -114,56 +168,6 @@
 					<span class="description">
 						
 						// 思路一：对数进行排序，拼接效果差的排在前面 class Solution { public: string PrintMinNumber(vector&lt;int&gt; numbers) { sort(numbers.begin(), numbers.end(), [](auto a, auto b){return to_string(a) + to_string(b) &lt; to_string(b) + to_string(a);}); string result = &#34;&#34;; for (auto i : numbers) result += to_string(i); return result; } }; // 运行时间：4ms // 占用内存：380k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 9, 2020</div>
-					<a class="title" href="/posts/offer-31/">整数中1出现的次数（从1到n整数中1出现的次数）</a> &mdash;
-					<span class="description">
-						
-						// 思路一：简单粗暴，一个一个数的统计 class Solution { public: int NumberOf1Between1AndN_Solution(int n) { int cnt = 0; for (int i = 0; i &lt;= n; i++) { string tmp = to_string(i); for (int j = 0; j &lt; tmp.length(); j++) cnt += tmp[j] == &#39;1&#39; ? 1 : 0; } return cnt; } }; // 运行时间：6ms // 占用内存：488k // 思路二：找规律，比较麻烦，挖个坑 &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-30/">连续子数组的最大和</a> &mdash;
-					<span class="description">
-						
-						// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; vector&lt;int&gt; dp(array.begin(), array.end()); for (int i = 1; i &lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; for (int i = 1; i &lt; array.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-29/">最小的K个数</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&lt;int&gt; GetLeastNumbers_Solution(vector&lt;int&gt; input, int k) { vector&lt;int&gt; result; if (k &gt; input.size()) return result; priority_queue&lt;int&gt; q; for (auto i : input) { q.push(i); if (q.size() &gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-28/">数组中出现次数超过一半的数字</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用 map 保存出现的次数，大于一半就返回 class Solution { public: int MoreThanHalfNum_Solution(vector&lt;int&gt; numbers) { int n = numbers.size() / 2 + 1; unordered_map&lt;int, int&gt; m; for (auto i : numbers) { m[i] += 1; if (m[i] &gt;= n) return i; } return 0; } }; // 运行时间：3ms // 占用内存：484k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-27/">字符串的排列</a> &mdash;
-					<span class="description">
-						
-						// 思路一：列出所有结果，考虑 DFS，出口是 size 一致，注意重复的剪枝 class Solution { public: vector&lt;string&gt; Permutation(string str) { vector&lt;string&gt; result; if (str.size() == 0) return result; vector&lt;bool&gt; used(str.size(), false); sort(str.begin(), str.end()); dfs(str, &#34;&#34;, used, result); return result; } void dfs(string&amp; str, string out, vector&lt;bool&gt;&amp; used, vector&lt;string&gt;&amp; result) { if (str.size() == out.size()) {result.push_back(out); return;} for (int i = 0; i &lt; str.size(); i++) { if (i &gt; 0 &amp;&amp; str[i] == str[i-1] &amp;&amp; !used[i-1]) continue; if (!&hellip;
 						
 					</span>
 				</div>

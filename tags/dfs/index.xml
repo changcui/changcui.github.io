@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 13:58:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:09:53 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>131.Palindrome Partitioning</title>
+      <link>http://changcui.cc/posts/leetcode-131/</link>
+      <pubDate>Tue, 30 Jun 2020 00:09:53 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-131/</guid>
+      <description>// 思路一：找出所有的结果，DFS，出口是所有的字符都被分块，需要辅助函数来判断回文 class Solution { public: bool isPalindrome(const string s) { int l = 0, r = s.size() - 1; while (l &amp;lt; r) { if (s[l] != s[r]) return false; l++, r--; } return true; } vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; partition(string s) { vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; rtn; vector&amp;lt;string&amp;gt; output; dfs(output, s, rtn, 0); return rtn; } void dfs(vector&amp;lt;string&amp;gt;&amp;amp; output, string&amp;amp; s, vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt;&amp;amp; rtn, int idx) { if (idx == s.size()) { rtn.push_back(output); return; } for (int i = idx; i &amp;lt; s.</description>
+    </item>
     
     <item>
       <title>Word Break</title>

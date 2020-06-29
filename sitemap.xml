@@ -38,12 +38,7 @@
   </url>
   
   <url>
-    <loc>http://changcui.cc/tags/set/</loc>
-    <lastmod>2020-06-30T00:13:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/vector/</loc>
+    <loc>http://changcui.cc/tags/array/</loc>
     <lastmod>2020-06-30T00:13:06+08:00</lastmod>
   </url>
   
@@ -110,11 +105,6 @@
   <url>
     <loc>http://changcui.cc/tags/priority-queue/</loc>
     <lastmod>2020-03-21T17:35:10+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://changcui.cc/tags/array/</loc>
-    <lastmod>2020-03-21T17:24:44+08:00</lastmod>
   </url>
   
   <url>

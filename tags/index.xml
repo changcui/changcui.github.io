@@ -31,20 +31,11 @@
     </item>
     
     <item>
-      <title>set</title>
-      <link>http://changcui.cc/tags/set/</link>
+      <title>array</title>
+      <link>http://changcui.cc/tags/array/</link>
       <pubDate>Tue, 30 Jun 2020 00:13:06 +0800</pubDate>
       
-      <guid>http://changcui.cc/tags/set/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vector</title>
-      <link>http://changcui.cc/tags/vector/</link>
-      <pubDate>Tue, 30 Jun 2020 00:13:06 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/vector/</guid>
+      <guid>http://changcui.cc/tags/array/</guid>
       <description></description>
     </item>
     
@@ -99,15 +90,6 @@
       <pubDate>Sat, 21 Mar 2020 17:35:10 +0800</pubDate>
       
       <guid>http://changcui.cc/tags/priority-queue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>array</title>
-      <link>http://changcui.cc/tags/array/</link>
-      <pubDate>Sat, 21 Mar 2020 17:24:44 +0800</pubDate>
-      
-      <guid>http://changcui.cc/tags/array/</guid>
       <description></description>
     </item>
     

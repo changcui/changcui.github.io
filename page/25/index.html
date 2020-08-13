@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,63 @@
 				
 				
 				<div class="post">
+					<div class="meta">Sep 2, 2019</div>
+					<a class="title" href="/posts/2019-09-02/">2019 09 02</a> &mdash;
+					<span class="description">
+						
+						工作 昨天玩得太晚了，大概是因为自己住的最后一夜，比较兴奋，再加上八点多就睡了一会，一股劲玩到了五点，早上就没去上班，一直到新室友过来。
+下午到了公司，熟练地打开了 feedly，bbs，mastodon，一直刷了一个多小时，中间老大还 cue 了我一下，幸亏问的都比较简单，还夸我的板书不错。
+大概两三点的时候，我正式进入了工作状态。上周列的五点工作，好几点需要 teamwork，并无法协作，我只能做我自己的事。
+框架对齐的事情并不难做，之前很多工作都已经写过了，只是要对后处理重新调用新的方法，从其他项目的代码复制一部分到我写的项目，比较难处理的就是接口问题，我重新封装了一下接口，并写了 benchmark 文件，咨询了 mentor 怎么读入数据，这部分完成的还是比较顺利的。
+编译很快就过了，但是在 import 的时候报错，我发现是 data 的数据类型的问题，我从 char 改成了强制类型转换就过了，确认了是这一部分的问题。仔细地查了一下 pytorch 的数据类型，int8 的内部表示应该是 int8_t，我替换了所有的 char 为 int8_t，但是 tensor 的名字还是叫 Chartensor，这是两套系统，分别指代前端和后端。
+import 没错后，开始跑 forward，发现总是有一些结果直接全为0，是量化 bit width 的问题，更改了 output 的 bit width 后，结果看起来正常了一点。我读入了正确的 output 加以对比，发现还是不对，仔细检查发现是 out_channel 和 out_spatial 参数写反了。
+当我自信认为这次肯定没错的时候，发现还是有很多不一样，我怎么都检查不出，咨询了 mentor，mentor 很抱歉地表示结果是过了 relu 的，把我坑了一波，手动加了 relu 之后，结果完全一样了，我赶紧拎包跑路了。
+生日 今天是同学生日，本命年的生日似乎比平时要隆重一些，凑了五个人已经非常不容易了，大家感慨了一下也许明年就聚不到一起了，确实，天下哪有不散的宴席，我们帝都几人组玩了这么多年，总有一天要面临社会的考验，到时候大家能过的怎么样呢，我很希望大家都很好。
+感情 有个朋友情感受挫，倾诉了大半场，我觉得他的悲伤非常的真实，感情问题其实最难处理，毕竟是两个人的事，不是说一个人做的足够好，就能处理好，有时候要去猜对方的心思，有时候自己要不做那么好。因为是与人交往的事，变数则更多，每个人都是独特的个体，意味着你之前的那一套，别人的那一套很可能都没用，当感情事件到来时，对你是一个临场的考验，可能之前的准备都没有什么用，两个不合适的人瞬间就能产生裂隙，然而怎么找到一个合适的人呢，也许需要点运气？
+租房 闲着没事瞅了瞅租房的价钱，我对租房的要求大概是1室0厅1卫1厨，我发现有很多公寓式的房源符合这种要求，似乎就是为我这种不想和房东打交道的人准备的，帝都租房的租金似乎并不贵，印证了租金和平均工资挂钩的说法，相比而言，二手房的价格简直要上天了，我很难相信一个五环的房子可以卖到好几百万，以我和女票的薪资，在帝都工作几年，攒点钱去二线几乎能全款买一个房子了，我还没想明白留在北京的好处在哪里？也许朋友们都在北京，有人一起玩吧。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 1, 2019</div>
+					<a class="title" href="/posts/2019-09-01/">2019 09 01</a> &mdash;
+					<span class="description">
+						
+						算法题 突然心血来潮，连着写了12道算法题，不说有多少收获，但起码发现了算法题其实也是会了不难，难了不会，有一些题基本上看一眼就知道该怎么写了，有一些题需要想很久，想明白了也很快就写出来啦。
+看了一个 youtube 的视频说，有一些算法题属于 utils，工具题，大概意思就是基本功，原子题，无法再细分了，如果这种题不会做，就比较麻烦了，还是先把基本的题都学会吧，基本的题组合一下，就变成了比较难的题，题海战术肯定是没错的。
+量化 马上要开学了，不得不做一些实验室的事了，周日我的小伙伴们都去打牌了，而我在宿舍写代码，其实代码不是很难写，就是要把一个量化的框架搭出来而已。
+我需要准备好 benchmark，dataset，多种 architect，量化方案等，对我来说这些东西应该不是太难吧，我觉得暑假的实习还是有提升的，我从心里不太害怕这些代码啦，之前会觉得需要做的事情很多，就不做了，现在我愿意一个一个坑慢慢踩，直到写出来为止，我有这份坚持。
+Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，我给它贴了一个谷歌的贴画，女票总喜欢叫它 Google 小龙，可是几天前它丢了，我还是挺伤心的，尤其是女票说我总不给它洗澡，把它弄脏了，我觉得是自己没有照顾好它。
+今天女票给我拿来了一个新的 Google 小龙，她去商店重新买了一个，还去网店特意买了 Google 的贴画，帮我贴上，真的是辛苦她啦，她说我有了 Google 小龙就可以去 Google 了，我去的了吗？
+学费 前天拿到了这个月的工资，我终于凑够了学费，还是比较励志的吧，自己给自己挣学费。一周前，我妈给我打电话，说要给我打学费，被我拒绝了，我想自己给自己挣学费，虽然并不是家里掏不起这笔钱，至少证明我可以经济独立地活着，做我想做的事情，我为此感到很开心。
+退款 在 Apple 买的电脑学生认证没有通过，我打电话给了客服，客服非常的专业，耐心地给我解释了原因，是我太天真了，我忽略了 Apple 并不知道我的 Apple ID 的真名是什么，他只核对了收款人和证件的姓名是不是一致的，我犯了一个愚蠢错误，估计要用女票的号再买一个了，为了确保能顺利。
+女票 女票这几天心情不太好，我其实很理解，最大的原因大概就是突然到来的实习，打乱了她原本的计划，她一直都是一个不喜欢计划被打乱的人，实力提前了一个月，她觉得自己还没有准备好，身体和心理还没转换成要工作的状态，但这份实习太重要了又不能拒绝，情绪逐渐就外显出来了。集中表现为对小事非常地在意，平常不怎么重要的小事会觉得很烦，有点烦的小事会觉得更烦，身体更加容易劳累，倾诉的欲望变得很强，需要外界的支持等。希望她早些好起来吧，我猜大概是适应了工作的状态，如鱼得水了之后。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/2019-08-31/">2019 08 31</a> &mdash;
+					<span class="description">
+						
+						 打牌 &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-387/">387. First Unique Character in a String</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
 					<a class="title" href="/posts/leetcode-1025/">1025. Divisor Game</a> &mdash;
 					<span class="description">
@@ -124,46 +181,6 @@
 					<span class="description">
 						
 						class Solution { public: int missingNumber(vector&lt;int&gt;&amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-237/">237. Delete Node in a Linked List</a> &mdash;
-					<span class="description">
-						
-						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-234/">234. Palindrome Linked List</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&gt;next !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-206/">Reverse Linked List</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&gt;next; cur-&gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!&hellip;
 						
 					</span>
 				</div>

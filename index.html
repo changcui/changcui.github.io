@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,46 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 14, 2020</div>
+					<a class="title" href="/posts/leetcode-221/">221. Maximal Square</a> &mdash;
+					<span class="description">
+						
+						// 思路一：依次判断，模拟行为 class Solution { public: bool isSquare(vector&lt;vector&lt;char&gt;&gt;&amp; matrix, int i, int j, int l) { for (int p = i; p &lt;= i + l; p++) for (int q = j; q &lt;= j + l; q++) if (matrix[p][q] == &#39;0&#39;) return false; return true; } int maximalSquare(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) { int maxS = 0; if (matrix.size() == 0 || matrix[0].size() == 0) return 0; int m = matrix.size(), n = matrix[0].&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 13, 2020</div>
+					<a class="title" href="/posts/leetcode-207/">207. Course Schedule</a> &mdash;
+					<span class="description">
+						
+						// 思路一：拓扑排序 class Solution { public: bool canFinish(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) { vector&lt;int&gt; incoming(numCourses, 0); vector&lt;vector&lt;int&gt;&gt; edges(numCourses, vector&lt;int&gt;{}); int node = numCourses; for (auto p : prerequisites) { incoming[p[0]]++; edges[p[1]].push_back(p[0]); } queue&lt;int&gt; q; for (int i = 0; i &lt; numCourses; i++) { if (incoming[i] == 0) q.push(i); } while (!q.empty()) { auto c = q.front(); q.pop(); node--; for (int i = 0; i &lt; edges[c].size(); i++) { incoming[edges[c][i]]--; if (incoming[edges[c][i]] == 0) q.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 13, 2020</div>
+					<a class="title" href="/posts/leetcode-119/">119. Pascal&#39;s Triangle II</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用一行数字从右往左叠加，进行 rowIndex 轮 class Solution { public: vector&lt;int&gt; getRow(int rowIndex) { vector&lt;int&gt; rtn(rowIndex + 1, 0); rtn[0] = 1; for (int i = 0; i &lt; rowIndex; i++) { for (int j = rowIndex; j &gt; 0; j--) { rtn[j] = rtn[j] + rtn[j - 1]; } } return rtn; } }; // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Pascal&#39;s Triangle II. // Memory Usage: 6.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 13, 2020</div>
+					<a class="title" href="/posts/leetcode-289/">289. Game of Life</a> &mdash;
+					<span class="description">
+						
+						//思路一：设立2，3作为 dead-&gt;live, live-&gt;dead 的临时状态 class Solution { public: void gameOfLife(vector&lt;vector&lt;int&gt;&gt;&amp; board) { vector&lt;vector&lt;int&gt;&gt; dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}}; int m = board.size(), n = board[0].size(); for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { int liveCount = 0; for (auto d : dir) { if (i + d[0] &lt; m &amp;&amp; i + d[0] &gt;= 0 &amp;&amp; j + d[1] &lt; n &amp;&amp; j + d[1] &gt;= 0) { if (board[i+d[0]][j+d[1]] == 1 || board[i+d[0]][j+d[1]] == 3) liveCount++; } } if (board[i][j] == 0 &amp;&amp; liveCount == 3) board[i][j] = 2; else if (board[i][j] == 1 &amp;&amp; (liveCount &gt; 3 || liveCount &lt; 2)) board[i][j] = 3; } } for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (board[i][j] == 2) board[i][j] = 1; else if (board[i][j] == 3) board[i][j] = 0; } } } }; // Runtime: 4 ms, faster than 45.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Jun 30, 2020</div>
@@ -139,46 +179,6 @@
 					<span class="description">
 						
 						// 思路一：因为要 inplace，考虑使用第一行第一列（如果是临时变量需要 O(m+n)）作为其他位置的标记，而第一行第一列的标记使用两个变量(O(1))来记录 class Solution { public: void setZeroes(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { bool rowZero = false, colZero = false; int m = matrix.size(), n = matrix[0].size(); for (int i = 0; i &lt; n; i++) { if (matrix[0][i] == 0) rowZero = true; } for (int i = 0; i &lt; m; i++) { if (matrix[i][0] == 0) colZero = true; } for (int i = 1; i &lt; m; i++) { for (int j = 1; j &lt; n; j++) { if (matrix[i][j] == 0) { matrix[i][0] = 0; matrix[0][j] = 0; } } } for (int i = 1; i &lt; m; i++) { for (int j = 1; j &lt; n; j++) { if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0; } } if (rowZero) { for (int i = 0; i &lt; n; i++) matrix[0][i] = 0; } if (colZero) { for (int i = 0; i &lt; m; i++) matrix[i][0] = 0; } } }; // Runtime: 24 ms, faster than 93.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 22, 2020</div>
-					<a class="title" href="/posts/vim/">vim(nvim) 常用插件及配置</a> &mdash;
-					<span class="description">
-						
-						挖个坑先，总结一下 vim(nvim) 的常用的插件及配置，方便多平台复用。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 22, 2020</div>
-					<a class="title" href="/posts/algorithms/">常用算法使用思路及写法总结</a> &mdash;
-					<span class="description">
-						
-						挖个坑先，总结一下 util algorithms，感觉做题就是两步，第一步是抽象并分解问题，第二步是使用 util algorithms 来解决子问题，拼接一下，就解决了问题。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 21, 2020</div>
-					<a class="title" href="/posts/leetcode-297/">Serialize and Deserialize Binary Tree</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指 offer class Codec { public: // Encodes a tree to a single string.  string serialize(TreeNode* root) { string result = &#34;&#34;; sePre(root, result); return result; } void sePre(TreeNode* root, string&amp; result) { if (!root) {result += &#34;#!&#34;; return;} result += to_string(root-&gt;val) + &#34;!&#34;; sePre(root-&gt;left, result); sePre(root-&gt;right, result); } // Decodes your encoded data to tree.  TreeNode* deserialize(string data) { return desePre(data); } TreeNode* desePre(string&amp; data) { if (data.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 21, 2020</div>
-					<a class="title" href="/posts/leetcode-295/">Find Median from Data Stream</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指 offer class MedianFinder { public: MedianFinder() { cnt = 0; } void addNum(int num) { cnt++; if (cnt &amp; 1) { q.push(num); p.push(q.top()); q.pop(); } else { p.push(num); q.push(p.top()); p.pop(); } } double findMedian() { if (cnt &amp; 1) return p.top(); return (p.top() + q.top()) / 2.0; } private: priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; p; priority_queue&lt;int, vector&lt;int&gt;&gt; q; int cnt; }; // Runtime: 264 ms, faster than 17.59% of C++ online submissions for Find Median from Data Stream.&hellip;
 						
 					</span>
 				</div>

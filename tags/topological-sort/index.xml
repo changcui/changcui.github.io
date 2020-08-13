@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>topological sort on changcui</title>
+    <link>http://changcui.cc/tags/topological-sort/</link>
+    <description>Recent content in topological sort on changcui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 13 Aug 2020 23:53:11 +0800</lastBuildDate>
+    
+	<atom:link href="http://changcui.cc/tags/topological-sort/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>207. Course Schedule</title>
+      <link>http://changcui.cc/posts/leetcode-207/</link>
+      <pubDate>Thu, 13 Aug 2020 23:53:11 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-207/</guid>
+      <description>// 思路一：拓扑排序 class Solution { public: bool canFinish(int numCourses, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; prerequisites) { vector&amp;lt;int&amp;gt; incoming(numCourses, 0); vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; edges(numCourses, vector&amp;lt;int&amp;gt;{}); int node = numCourses; for (auto p : prerequisites) { incoming[p[0]]++; edges[p[1]].push_back(p[0]); } queue&amp;lt;int&amp;gt; q; for (int i = 0; i &amp;lt; numCourses; i++) { if (incoming[i] == 0) q.push(i); } while (!q.empty()) { auto c = q.front(); q.pop(); node--; for (int i = 0; i &amp;lt; edges[c].size(); i++) { incoming[edges[c][i]]--; if (incoming[edges[c][i]] == 0) q.</description>
+    </item>
+    
+  </channel>
+</rss>

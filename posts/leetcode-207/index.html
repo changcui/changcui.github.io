@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>207. Course Schedule - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="207. Course Schedule" />
+<meta property="og:description" content="// 思路一：拓扑排序 class Solution { public: bool canFinish(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) { vector&lt;int&gt; incoming(numCourses, 0); vector&lt;vector&lt;int&gt;&gt; edges(numCourses, vector&lt;int&gt;{}); int node = numCourses; for (auto p : prerequisites) { incoming[p[0]]&#43;&#43;; edges[p[1]].push_back(p[0]); } queue&lt;int&gt; q; for (int i = 0; i &lt; numCourses; i&#43;&#43;) { if (incoming[i] == 0) q.push(i); } while (!q.empty()) { auto c = q.front(); q.pop(); node--; for (int i = 0; i &lt; edges[c].size(); i&#43;&#43;) { incoming[edges[c][i]]--; if (incoming[edges[c][i]] == 0) q." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://changcui.cc/posts/leetcode-207/" />
+<meta property="article:published_time" content="2020-08-13T23:53:11+08:00" />
+<meta property="article:modified_time" content="2020-08-13T23:53:11+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="207. Course Schedule"/>
+<meta name="twitter:description" content="// 思路一：拓扑排序 class Solution { public: bool canFinish(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) { vector&lt;int&gt; incoming(numCourses, 0); vector&lt;vector&lt;int&gt;&gt; edges(numCourses, vector&lt;int&gt;{}); int node = numCourses; for (auto p : prerequisites) { incoming[p[0]]&#43;&#43;; edges[p[1]].push_back(p[0]); } queue&lt;int&gt; q; for (int i = 0; i &lt; numCourses; i&#43;&#43;) { if (incoming[i] == 0) q.push(i); } while (!q.empty()) { auto c = q.front(); q.pop(); node--; for (int i = 0; i &lt; edges[c].size(); i&#43;&#43;) { incoming[edges[c][i]]--; if (incoming[edges[c][i]] == 0) q."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/main.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://changcui.cc/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://changcui.cc/">changcui</a></h1>
+	<div class="site-description"><h2>Science, Softball, Xian</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/changcui/" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">207. Course Schedule</h1>
+			<div class="meta">Posted at &mdash; Aug 13, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 思路一：拓扑排序
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">canFinish</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">numCourses</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> <span style="color:#111">prerequisites</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">incoming</span><span style="color:#111">(</span><span style="color:#111">numCourses</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+        <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">edges</span><span style="color:#111">(</span><span style="color:#111">numCourses</span><span style="color:#111">,</span> <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span><span style="color:#111">{});</span>
+        <span style="color:#00a8c8">int</span> <span style="color:#111">node</span> <span style="color:#f92672">=</span> <span style="color:#111">numCourses</span><span style="color:#111">;</span>
+        
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">auto</span> <span style="color:#111">p</span> <span style="color:#111">:</span> <span style="color:#111">prerequisites</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">incoming</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]]</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+            <span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]].</span><span style="color:#111">push_back</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]);</span>
+        <span style="color:#111">}</span>
+        
+        <span style="color:#111">queue</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">q</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">numCourses</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">incoming</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">i</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+        
+        <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">empty</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+            <span style="color:#00a8c8">auto</span> <span style="color:#111">c</span> <span style="color:#f92672">=</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">front</span><span style="color:#111">();</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">pop</span><span style="color:#111">();</span>
+            <span style="color:#111">node</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">c</span><span style="color:#111">].</span><span style="color:#111">size</span><span style="color:#111">();</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">incoming</span><span style="color:#111">[</span><span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">c</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]]</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">incoming</span><span style="color:#111">[</span><span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">c</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]]</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">q</span><span style="color:#111">.</span><span style="color:#111">push</span><span style="color:#111">(</span><span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">c</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]);</span>
+            <span style="color:#111">}</span>
+            <span style="color:#111">edges</span><span style="color:#111">[</span><span style="color:#111">c</span><span style="color:#111">].</span><span style="color:#111">clear</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">node</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#75715e">// Runtime: 44 ms, faster than 76.16% of C++ online submissions for Course Schedule.
+</span><span style="color:#75715e">// Memory Usage: 13.8 MB, less than 62.57% of C++ online submissions for Course Schedule.
+</span></code></pre></div>
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/leetcode">leetcode</a></li>
+								
+								<li><a href="/tags/topological-sort">topological sort</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+</body>
+</html>

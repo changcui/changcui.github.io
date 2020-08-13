@@ -7,27 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 00:13:06 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:13:59 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/vector/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>128.Longest Consecutive Sequence</title>
-      <link>http://changcui.cc/posts/leetcode-128/</link>
-      <pubDate>Tue, 30 Jun 2020 00:13:06 +0800</pubDate>
+      <title>221. Maximal Square</title>
+      <link>http://changcui.cc/posts/leetcode-221/</link>
+      <pubDate>Fri, 14 Aug 2020 00:13:59 +0800</pubDate>
       
-      <guid>http://changcui.cc/posts/leetcode-128/</guid>
-      <description>// 思路一：O（n）考虑使用 set 来排除重复的元素，但 set 是排序容器，所以真正的 O（n）应该使用 unordered_set class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.empty()) return 0; set&amp;lt;int&amp;gt; s(nums.begin(), nums.end()); int rtn = 1, prev = INT_MIN; for (auto i = s.begin(); i != s.end();) { if (*i == prev + 1) { int length = 1; while (i != s.end() &amp;amp;&amp;amp; *i == prev + 1) { prev = *i; i++, length++; } rtn = max(rtn, length); } else { prev = *i; i++; } } return rtn; } }; // 思路二：使用 unordered_set 然后删除 set 中连续的数字 class Solution { public: int longestConsecutive(vector&amp;lt;int&amp;gt;&amp;amp; nums) { unordered_set s(nums.</description>
+      <guid>http://changcui.cc/posts/leetcode-221/</guid>
+      <description>// 思路一：依次判断，模拟行为 class Solution { public: bool isSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix, int i, int j, int l) { for (int p = i; p &amp;lt;= i + l; p++) for (int q = j; q &amp;lt;= j + l; q++) if (matrix[p][q] == &amp;#39;0&amp;#39;) return false; return true; } int maximalSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix) { int maxS = 0; if (matrix.size() == 0 || matrix[0].size() == 0) return 0; int m = matrix.size(), n = matrix[0].</description>
     </item>
     
     <item>
-      <title>73.Set Matrix Zeroes</title>
-      <link>http://changcui.cc/posts/leetcode-73/</link>
-      <pubDate>Tue, 30 Jun 2020 00:02:44 +0800</pubDate>
+      <title>289. Game of Life</title>
+      <link>http://changcui.cc/posts/leetcode-289/</link>
+      <pubDate>Thu, 13 Aug 2020 23:21:43 +0800</pubDate>
       
-      <guid>http://changcui.cc/posts/leetcode-73/</guid>
-      <description>// 思路一：因为要 inplace，考虑使用第一行第一列（如果是临时变量需要 O(m+n)）作为其他位置的标记，而第一行第一列的标记使用两个变量(O(1))来记录 class Solution { public: void setZeroes(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; matrix) { bool rowZero = false, colZero = false; int m = matrix.size(), n = matrix[0].size(); for (int i = 0; i &amp;lt; n; i++) { if (matrix[0][i] == 0) rowZero = true; } for (int i = 0; i &amp;lt; m; i++) { if (matrix[i][0] == 0) colZero = true; } for (int i = 1; i &amp;lt; m; i++) { for (int j = 1; j &amp;lt; n; j++) { if (matrix[i][j] == 0) { matrix[i][0] = 0; matrix[0][j] = 0; } } } for (int i = 1; i &amp;lt; m; i++) { for (int j = 1; j &amp;lt; n; j++) { if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0; } } if (rowZero) { for (int i = 0; i &amp;lt; n; i++) matrix[0][i] = 0; } if (colZero) { for (int i = 0; i &amp;lt; m; i++) matrix[i][0] = 0; } } }; // Runtime: 24 ms, faster than 93.</description>
+      <guid>http://changcui.cc/posts/leetcode-289/</guid>
+      <description>//思路一：设立2，3作为 dead-&amp;gt;live, live-&amp;gt;dead 的临时状态 class Solution { public: void gameOfLife(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}}; int m = board.size(), n = board[0].size(); for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { int liveCount = 0; for (auto d : dir) { if (i + d[0] &amp;lt; m &amp;amp;&amp;amp; i + d[0] &amp;gt;= 0 &amp;amp;&amp;amp; j + d[1] &amp;lt; n &amp;amp;&amp;amp; j + d[1] &amp;gt;= 0) { if (board[i+d[0]][j+d[1]] == 1 || board[i+d[0]][j+d[1]] == 3) liveCount++; } } if (board[i][j] == 0 &amp;amp;&amp;amp; liveCount == 3) board[i][j] = 2; else if (board[i][j] == 1 &amp;amp;&amp;amp; (liveCount &amp;gt; 3 || liveCount &amp;lt; 2)) board[i][j] = 3; } } for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (board[i][j] == 2) board[i][j] = 1; else if (board[i][j] == 3) board[i][j] = 0; } } } }; // Runtime: 4 ms, faster than 45.</description>
     </item>
     
   </channel>

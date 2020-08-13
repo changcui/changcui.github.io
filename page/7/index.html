@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +70,46 @@
 				
 				<div class="post">
 					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-35/">数组中的逆序对</a> &mdash;
+					<span class="description">
+						
+						// 思路一：归并排序求逆序对 class Solution { public: long long sort(vector&lt;int&gt;&amp; data, int l, int r) { if (l &gt;= r) return 0; int mid = l + (r - l) / 2; long long lc = sort(data, l, mid); long long rc = sort(data, mid+1, r); long long rtn = lc + rc; vector&lt;int&gt; tmp(r-l+1, 0); int i = l, j = mid + 1, k = 0; while (i &lt;= mid &amp;&amp; j &lt;= r) { if (data[i] &gt; data[j]) { tmp[k++] = data[j++]; rtn += mid - i + 1; } else tmp[k++] = data[i++]; } while (i &lt;= mid) tmp[k++] = data[i++]; while (j &lt;= r) tmp[k++] = data[j++]; for (int m = l; m &lt;= r; m++) data[m] = tmp[m-l]; return rtn; } int InversePairs(vector&lt;int&gt; data) { long long result = sort(data, 0, data.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-34/">第一个只出现一次的字符</a> &mdash;
+					<span class="description">
+						
+						// 思路一：两次遍历，第一次统计出现的个数，第二次寻找次数为1的字符 class Solution { public: int FirstNotRepeatingChar(string str) { unordered_map&lt;char, int&gt; m; for (int i = 0; i &lt; str.size(); i++) m[str[i]] += 1; for (int i = 0; i &lt; str.size(); i++) { if (m[str[i]] == 1) return i; } return -1; } }; // 运行时间：3ms // 占用内存：456k // 思路二：用数组代替 map class Solution { public: int FirstNotRepeatingChar(string str) { vector&lt;int&gt; m(100, 0); for (int i = 0; i &lt; str.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-33/">丑数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：分三组累乘，取最小的，并更新下标 class Solution { public: int GetUglyNumber_Solution(int index) { if (index == 0) return 0; vector&lt;int&gt; nums{1}; int i1 = 0, i2 = 0, i3 = 0; while (--index) { int n1 = nums[i1] * 2; int n2 = nums[i2] * 3; int n3 = nums[i3] * 5; int min_ = min(n1, min(n2, n3)); if (min_ == n1) i1++; if (min_ == n2) i2++; if (min_ == n3) i3++; nums.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
+					<a class="title" href="/posts/offer-36/">两个链表的第一个公共结点</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: ListNode* FindFirstCommonNode(ListNode* pHead1, ListNode* pHead2) { auto p = pHead1, q = pHead2; while (p || q) { if (p == q) return p; if (!p) p = pHead2, q = q-&gt;next; else if (!q) q = pHead1, p = p-&gt;next; else p = p-&gt;next, q = q-&gt;next; } return NULL; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 9, 2020</div>
 					<a class="title" href="/posts/offer-32/">把数组排成最小的数</a> &mdash;
 					<span class="description">
 						
@@ -124,48 +164,6 @@
 					<span class="description">
 						
 						// 思路一：列出所有结果，考虑 DFS，出口是 size 一致，注意重复的剪枝 class Solution { public: vector&lt;string&gt; Permutation(string str) { vector&lt;string&gt; result; if (str.size() == 0) return result; vector&lt;bool&gt; used(str.size(), false); sort(str.begin(), str.end()); dfs(str, &#34;&#34;, used, result); return result; } void dfs(string&amp; str, string out, vector&lt;bool&gt;&amp; used, vector&lt;string&gt;&amp; result) { if (str.size() == out.size()) {result.push_back(out); return;} for (int i = 0; i &lt; str.size(); i++) { if (i &gt; 0 &amp;&amp; str[i] == str[i-1] &amp;&amp; !used[i-1]) continue; if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-26/">二叉搜索树与双向链表</a> &mdash;
-					<span class="description">
-						
-						// 思路一：因为是排序的双向链表，所以考虑中序遍历加递归，在没有连接之间的节点建立连接即可 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!pRootOfTree) return NULL; auto l = Convert(pRootOfTree-&gt;left); auto t = l; while (t &amp;&amp; t-&gt;right) t = t-&gt;right; if (t) t-&gt;right = pRootOfTree; pRootOfTree-&gt;left = t; auto r = Convert(pRootOfTree-&gt;right); if (r) r-&gt;left = pRootOfTree; pRootOfTree-&gt;right = r; return l ? l : pRootOfTree; } }; // 运行时间：3ms // 占用内存：616k // 思路二：维护一个前驱指针，使用中序遍历 class Solution { public: TreeNode* Convert(TreeNode* pRootOfTree) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-25/">复杂链表的复制</a> &mdash;
-					<span class="description">
-						
-						// 思路一：可以分三步完成，复制节点，复制指针，拆分节点，注意第三步必须要拆分，要保证原本的链表不变 class Solution { public: RandomListNode* Clone(RandomListNode* pHead) { auto p = pHead; if (!p) return NULL; while (p) { auto t = new RandomListNode(p-&gt;label); auto n = p-&gt;next; p-&gt;next = t; t-&gt;next = n; p = n; } p = pHead; while (p &amp;&amp; p-&gt;next) { p-&gt;next-&gt;random = p-&gt;random ? p-&gt;random-&gt;next : NULL; p = p-&gt;next-&gt;next; } auto rtn = pHead-&gt;next; p = pHead; while (p-&gt;next) { auto tmp = p-&gt;next; p-&gt;next = tmp-&gt;next; p = tmp; } return rtn; } }; // 运行时间：3ms // 占用内存：488k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/2020-03-08/">2020 03 08</a> &mdash;
-					<span class="description">
-						
-						妇女节 据说三月七号是女生节，三月八号是妇女节，但是疫情期间，甚至都忘记了这个节日，如果在学校的话，估计也会有大大小小的活动吧，虽然与我这种老生无关。在家里过三月是一件很奇妙的事情，按现在的情况，恐怕四月也要在家里度过了，再加上一个星期只有一节课，开组会也是通过微信语音，仿佛自己在休学或者被学校劝退了一样，也只有实验室和学校发发善心，给我的银行卡打钱，我才会想起来，哦，原来我还是个学生。
-学习 昨天的学习效率还不错，给自己制定的小目标基本上都完成了，虽然不太难，但也算是一个好的开始吧，我发觉晚上去记录一天干了什么，很容易放弃，或者说很容易被其他事所替代，尤其是在家里，说不定就要出门之类的，在上午记感觉效果是最好的，但上午我虽然头脑清醒，体力充沛，总是想去玩，很难集中注意力，于是今天变成了下午去写。
-截止到目前为止，今天的学习目标还没开始进行，我拒绝了我姐的出行邀请，说要宅起来学习，其实单纯的想宅而已，也没有怎么学习。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-24/">二叉树中和为某一值的路径</a> &mdash;
-					<span class="description">
-						
-						// 思路一：dfs，出口是叶子节点且 target 为根结点的值 class Solution { public: vector&lt;vector&lt;int&gt; &gt; FindPath(TreeNode* root,int expectNumber) { vector&lt;vector&lt;int&gt; &gt; result; if (!root) return result; dfs(root, expectNumber, {}, result); sort(result.begin(), result.end(), [](auto a, auto b) { return a.size() &gt; b.size();}); return result; } void dfs(TreeNode* root, int target, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt; &gt;&amp; result) { out.push_back(root-&gt;val); if (target == root-&gt;val &amp;&amp; !root-&gt;left &amp;&amp; !root-&gt;right) { result.push_back(out); return; } if (root-&gt;left) dfs(root-&gt;left, target-root-&gt;val, out, result); if (root-&gt;right) dfs(root-&gt;right, target-root-&gt;val, out, result); } }; // 运行时间：3ms // 占用内存：480k &hellip;
 						
 					</span>
 				</div>

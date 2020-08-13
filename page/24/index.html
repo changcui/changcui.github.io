@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,65 @@
 				
 				
 				<div class="post">
+					<div class="meta">Sep 4, 2019</div>
+					<a class="title" href="/posts/leetcode-198/">House Robber</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int rob(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; if (nums.size() == 1) return nums[0]; vector&lt;int&gt; dp(nums.size(), 0); dp[0] = nums[0]; dp[1] = max(nums[0], nums[1]); int rtn = dp[1]; for (int i = 2; i &lt; nums.size(); i++) { dp[i] = max(dp[i-1], dp[i-2] + nums[i]); rtn = max(rtn, dp[i]); } return rtn; } }; // Runtime: 0 ms, faster than 100.00% of C++ online submissions for House Robber.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 4, 2019</div>
+					<a class="title" href="/posts/leetcode-141/">141. Linked List Cycle</a> &mdash;
+					<span class="description">
+						
+						// 思路一：双指针，一快一慢 class Solution { public: bool hasCycle(ListNode *head) { auto slow = head, fast = head; while (fast &amp;&amp; fast-&gt;next) { slow = slow-&gt;next; fast = fast-&gt;next-&gt;next; if (fast == slow) return true; } return false; } }; // Runtime: 8 ms, faster than 97.13% of C++ online submissions for Linked List Cycle. // Memory Usage: 7.7 MB, less than 100.00% of C++ online submissions for Linked List Cycle. &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 4, 2019</div>
+					<a class="title" href="/posts/2019-09-04/">2019 09 04</a> &mdash;
+					<span class="description">
+						
+						工作 今天的作息比较正常，八点二十就醒了，可能因为室友都回来了，两个新生室友起的比较早，再加上也比较热。
+吃了万年不变的早餐，我就开始工作了。还是紧接着昨天的工作，今天是要实现昨天想的方案。实现的过程不能说难，但还是有一些坑需要踩，慢慢写，找 mentor 讨论讨论，找研究院的人问一问，磕磕绊绊也写下来了。
+我发现自己已经快维护不了自己写的代码了，之前写的代码，现在看来很多都没有用了，我也留着没删，导致代码的逻辑看起来还是比较混乱的，希望有机会能够整理一下。
+这次写的主要内容是一个新的 param，要自定义一个新的量化函数放在里面，这一步并不难完成，只要逻辑想清楚了，其他的对一下接口就可以完成。写完了之后，做正确性检验的时候发现，之前写的 conv 代码是不对的，究其原因，还是 float 与 double 的问题，这次我选择了 cuda 内置的 round 函数，解决了这个问题。
+之后，我找了一个简单的网络训练，想让我写的代码和 mentor 写的代码跑出一样的结果，但是发现我的代码中要多一个参数，关于这个参数的处理，我和 mentor 展开了长时间的讨论，我提出了几个方案，mentor 都给我指出了问题所在，我回头仔细想了一下，提出了一个新的方案，mentor 觉得是正确的，我准备明天实现一下，如果能搞定这个，我们就前进了一大步，后面的很多事情都知道改如何解决了。
+劳累 今天结结实实地 coding 了一整天，大概七点下班的时候，我觉得自己的脑子有点晕，浑身都觉得很乏力，用女票的话来说就是脑子不转了，其实我也是，今天 mentor 给我讲一个东西的时候，我都听不下去了，我请求休息了一会，女票似乎比我还严重，她今天已经两次坐过站了，可能是前几天到处赶场，确实也太累了，然后突然开始工作，没有个缓冲的时间，老师那边也开始 push，上下班通勤也要很长时间，希望她早点好起来吧。
+热 或许因为不是一个人在宿舍了，我体会到了女票说的不能随便看空调的难受，看着室友穿着裤衩在宿舍，就是不准备开空调，我的内心是绝望的，希望今晚不要被热醒吧。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 3, 2019</div>
+					<a class="title" href="/posts/2019-09-03/">2019 09 03</a> &mdash;
+					<span class="description">
+						
+						生日 今天是我23岁的生日，感觉上还不算老，但是和朋友聊天时变得喜欢怀念过去，饮食还是一样的肚子却慢慢大了起来，虽然我的头发还没有开始秃，但时间好像真的在我身上流逝，不知不觉地触及皮肤，触及躯干，触及灵魂。
+我是能感到思想的改变的，我的价值观也在不停地变，将来还会不会变呢，是不是形成固定的价值观，人就是变成熟了，也变固执了？
+我是能感到自己的成长的，至少这一个暑假，这一份实习，我觉得自己提高了很多，最明显地就是面对困难的态度，以前总想着太麻烦，不想动手，现在就是要把它做出来，get your hand dirty，就是这个含义吧，一步一步地走下去，路总会越来越简单。
+我是能感到自己的喜好的，很长时间我是不知道自己喜欢什么的，我认为很多事情都很 valuable，但是实际上并没有很多时间去做，优先去做的事情大概就是喜好吧，我不喜欢无聊的人际交往，我只希望和小部分人一起玩，我喜欢科技产品，喜欢柯基，喜欢单机游戏，喜欢女票。
+如果能许个心愿的话，希望一切都好吧。
+工作 今天一早就起来去工作了，喝了久违的皮蛋粥，感觉比蔬菜粥好喝一些。并没有刷很长时间的社交媒体，就开始干活了。mentor 说我一天干一个小的任务还真不错，昨天搞完了第一个 subtask，今天从第二个入手。
+先去找 mentor 讨论了一下困境，然后我就开始努力地 coding，很快就写完了，因为就是把之前做的两个东西融合到一起，但是总是差一点点，我本来以为无所谓，但是 mentor 说应该是完全一样的，检查了好久发现是因为 python 和 c 在 float 的处理上是不一样的，python 的 float 默认的是64位小数，对应的是 c 里面的 double，在 python 和 c 交互的时候，会自动作截断，导致比原本的整数小一些，然后转 int 的时候会取 floor，产生 1 的差异，做了卷积运算后，差距就变大了。
+察觉到这一点 bug 后，我讲输入加了个 0.5 再转 int，成功解决了这个问题。顺便解决了第三个 subtask，其实很简单，就是把 scheduler 的状态 save 一下就可以了。
+下午开会之前，我仔细地重新捋了一遍算法的流程，找 mentor 讨论了一下关键点，讨论的过程中想出了一个更好地解决方案，mentor 说这个方案非常不错，于是我往 subtask 里面又多加了几条。
+下午开会我说了不少话，基本上占了1/3的会议篇幅吧，讨论了一下我的困惑以及需要的帮助，总的来说这次会议还是比较顺利的，进行地很快，很有效率，我喜欢这个节奏。
+晚餐 晚餐是常规的生日标配四人组，这次有点不一样，不是在家里吃的，是在外边的饭店吃的。我觉得吃的还可以，但是应该没有下一次了，因为没有太突出的地方， 环境也一般般，特别是馕，像压缩饼干一样，配合酸奶效果奇佳。若干年后，我想不起23岁生日的内容，但是应该还是能记起吃过的馕吧。
+去向 和女票讨论了一下去向的问题，马上就要毕业了，将来应该去哪里呢，留在帝都的话，没有户口，但是工作的发展不错，朋友也都在，去上海有户口，钱挣够了就可以买房，也许结婚能早一点？工作的发展应该还可以，但不如北京稳妥吧，朋友自然是没有了，去小城市生活压力应该不到，但是职业的发展会遇到瓶颈吧，一系列的问题摆在面前，仿佛没有一个最优的决策。
+其实当然没有最优决策，我是觉得无所谓的，我去哪都可以，北京或者上海，我找个工作应该都没有什么问题，女票仿佛容易受到外界的干扰，一些小的信息就可能让她的决定改变，我想了想，大概是因为我一直都没有很坚定的选项，当然也没有给她足够的支持。
+长久以来，对于去向的问题，女票似乎总是主导的一方，但是又常常改变，我不知道面临这种情况我应该怎么处理，也许我应该确定自己想要去的地方，才能更好地帮她做决定？&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Sep 3, 2019</div>
 					<a class="title" href="/posts/leetcode-136/">136. Single Number</a> &mdash;
 					<span class="description">
@@ -124,63 +183,6 @@
 					<span class="description">
 						
 						 recursively /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool helper(TreeNode* left, TreeNode* right) { if (left == NULL &amp;&amp; right == NULL) { return true; } else if (left == NULL || right == NULL) { return false; } return left-&gt;val == right-&gt;val &amp;&amp; helper(left-&gt;left, right-&gt;right) &amp;&amp; helper(left-&gt;right, right-&gt;left); } bool isSymmetric(TreeNode* root) { if (root == NULL) { return true; } else return helper(root-&gt;left, root-&gt;right); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 2, 2019</div>
-					<a class="title" href="/posts/2019-09-02/">2019 09 02</a> &mdash;
-					<span class="description">
-						
-						工作 昨天玩得太晚了，大概是因为自己住的最后一夜，比较兴奋，再加上八点多就睡了一会，一股劲玩到了五点，早上就没去上班，一直到新室友过来。
-下午到了公司，熟练地打开了 feedly，bbs，mastodon，一直刷了一个多小时，中间老大还 cue 了我一下，幸亏问的都比较简单，还夸我的板书不错。
-大概两三点的时候，我正式进入了工作状态。上周列的五点工作，好几点需要 teamwork，并无法协作，我只能做我自己的事。
-框架对齐的事情并不难做，之前很多工作都已经写过了，只是要对后处理重新调用新的方法，从其他项目的代码复制一部分到我写的项目，比较难处理的就是接口问题，我重新封装了一下接口，并写了 benchmark 文件，咨询了 mentor 怎么读入数据，这部分完成的还是比较顺利的。
-编译很快就过了，但是在 import 的时候报错，我发现是 data 的数据类型的问题，我从 char 改成了强制类型转换就过了，确认了是这一部分的问题。仔细地查了一下 pytorch 的数据类型，int8 的内部表示应该是 int8_t，我替换了所有的 char 为 int8_t，但是 tensor 的名字还是叫 Chartensor，这是两套系统，分别指代前端和后端。
-import 没错后，开始跑 forward，发现总是有一些结果直接全为0，是量化 bit width 的问题，更改了 output 的 bit width 后，结果看起来正常了一点。我读入了正确的 output 加以对比，发现还是不对，仔细检查发现是 out_channel 和 out_spatial 参数写反了。
-当我自信认为这次肯定没错的时候，发现还是有很多不一样，我怎么都检查不出，咨询了 mentor，mentor 很抱歉地表示结果是过了 relu 的，把我坑了一波，手动加了 relu 之后，结果完全一样了，我赶紧拎包跑路了。
-生日 今天是同学生日，本命年的生日似乎比平时要隆重一些，凑了五个人已经非常不容易了，大家感慨了一下也许明年就聚不到一起了，确实，天下哪有不散的宴席，我们帝都几人组玩了这么多年，总有一天要面临社会的考验，到时候大家能过的怎么样呢，我很希望大家都很好。
-感情 有个朋友情感受挫，倾诉了大半场，我觉得他的悲伤非常的真实，感情问题其实最难处理，毕竟是两个人的事，不是说一个人做的足够好，就能处理好，有时候要去猜对方的心思，有时候自己要不做那么好。因为是与人交往的事，变数则更多，每个人都是独特的个体，意味着你之前的那一套，别人的那一套很可能都没用，当感情事件到来时，对你是一个临场的考验，可能之前的准备都没有什么用，两个不合适的人瞬间就能产生裂隙，然而怎么找到一个合适的人呢，也许需要点运气？
-租房 闲着没事瞅了瞅租房的价钱，我对租房的要求大概是1室0厅1卫1厨，我发现有很多公寓式的房源符合这种要求，似乎就是为我这种不想和房东打交道的人准备的，帝都租房的租金似乎并不贵，印证了租金和平均工资挂钩的说法，相比而言，二手房的价格简直要上天了，我很难相信一个五环的房子可以卖到好几百万，以我和女票的薪资，在帝都工作几年，攒点钱去二线几乎能全款买一个房子了，我还没想明白留在北京的好处在哪里？也许朋友们都在北京，有人一起玩吧。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 1, 2019</div>
-					<a class="title" href="/posts/2019-09-01/">2019 09 01</a> &mdash;
-					<span class="description">
-						
-						算法题 突然心血来潮，连着写了12道算法题，不说有多少收获，但起码发现了算法题其实也是会了不难，难了不会，有一些题基本上看一眼就知道该怎么写了，有一些题需要想很久，想明白了也很快就写出来啦。
-看了一个 youtube 的视频说，有一些算法题属于 utils，工具题，大概意思就是基本功，原子题，无法再细分了，如果这种题不会做，就比较麻烦了，还是先把基本的题都学会吧，基本的题组合一下，就变成了比较难的题，题海战术肯定是没错的。
-量化 马上要开学了，不得不做一些实验室的事了，周日我的小伙伴们都去打牌了，而我在宿舍写代码，其实代码不是很难写，就是要把一个量化的框架搭出来而已。
-我需要准备好 benchmark，dataset，多种 architect，量化方案等，对我来说这些东西应该不是太难吧，我觉得暑假的实习还是有提升的，我从心里不太害怕这些代码啦，之前会觉得需要做的事情很多，就不做了，现在我愿意一个一个坑慢慢踩，直到写出来为止，我有这份坚持。
-Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，我给它贴了一个谷歌的贴画，女票总喜欢叫它 Google 小龙，可是几天前它丢了，我还是挺伤心的，尤其是女票说我总不给它洗澡，把它弄脏了，我觉得是自己没有照顾好它。
-今天女票给我拿来了一个新的 Google 小龙，她去商店重新买了一个，还去网店特意买了 Google 的贴画，帮我贴上，真的是辛苦她啦，她说我有了 Google 小龙就可以去 Google 了，我去的了吗？
-学费 前天拿到了这个月的工资，我终于凑够了学费，还是比较励志的吧，自己给自己挣学费。一周前，我妈给我打电话，说要给我打学费，被我拒绝了，我想自己给自己挣学费，虽然并不是家里掏不起这笔钱，至少证明我可以经济独立地活着，做我想做的事情，我为此感到很开心。
-退款 在 Apple 买的电脑学生认证没有通过，我打电话给了客服，客服非常的专业，耐心地给我解释了原因，是我太天真了，我忽略了 Apple 并不知道我的 Apple ID 的真名是什么，他只核对了收款人和证件的姓名是不是一致的，我犯了一个愚蠢错误，估计要用女票的号再买一个了，为了确保能顺利。
-女票 女票这几天心情不太好，我其实很理解，最大的原因大概就是突然到来的实习，打乱了她原本的计划，她一直都是一个不喜欢计划被打乱的人，实力提前了一个月，她觉得自己还没有准备好，身体和心理还没转换成要工作的状态，但这份实习太重要了又不能拒绝，情绪逐渐就外显出来了。集中表现为对小事非常地在意，平常不怎么重要的小事会觉得很烦，有点烦的小事会觉得更烦，身体更加容易劳累，倾诉的欲望变得很强，需要外界的支持等。希望她早些好起来吧，我猜大概是适应了工作的状态，如鱼得水了之后。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/2019-08-31/">2019 08 31</a> &mdash;
-					<span class="description">
-						
-						 打牌 &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-387/">387. First Unique Character in a String</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int firstUniqChar(string s) { int rep[256] = {0}; for (int i = 0; i &lt; s.size(); i++) { rep[s[i]] += 1; } for (int i = 0; i &lt; s.size(); i++) { if (rep[s[i]] == 1) return i; } return -1; } }; &hellip;
 						
 					</span>
 				</div>

@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 01:01:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:13:59 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>221. Maximal Square</title>
+      <link>http://changcui.cc/posts/leetcode-221/</link>
+      <pubDate>Fri, 14 Aug 2020 00:13:59 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-221/</guid>
+      <description>// 思路一：依次判断，模拟行为 class Solution { public: bool isSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix, int i, int j, int l) { for (int p = i; p &amp;lt;= i + l; p++) for (int q = j; q &amp;lt;= j + l; q++) if (matrix[p][q] == &amp;#39;0&amp;#39;) return false; return true; } int maximalSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix) { int maxS = 0; if (matrix.size() == 0 || matrix[0].size() == 0) return 0; int m = matrix.size(), n = matrix[0].</description>
+    </item>
+    
+    <item>
+      <title>207. Course Schedule</title>
+      <link>http://changcui.cc/posts/leetcode-207/</link>
+      <pubDate>Thu, 13 Aug 2020 23:53:11 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-207/</guid>
+      <description>// 思路一：拓扑排序 class Solution { public: bool canFinish(int numCourses, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; prerequisites) { vector&amp;lt;int&amp;gt; incoming(numCourses, 0); vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; edges(numCourses, vector&amp;lt;int&amp;gt;{}); int node = numCourses; for (auto p : prerequisites) { incoming[p[0]]++; edges[p[1]].push_back(p[0]); } queue&amp;lt;int&amp;gt; q; for (int i = 0; i &amp;lt; numCourses; i++) { if (incoming[i] == 0) q.push(i); } while (!q.empty()) { auto c = q.front(); q.pop(); node--; for (int i = 0; i &amp;lt; edges[c].size(); i++) { incoming[edges[c][i]]--; if (incoming[edges[c][i]] == 0) q.</description>
+    </item>
+    
+    <item>
+      <title>119. Pascal&#39;s Triangle II</title>
+      <link>http://changcui.cc/posts/leetcode-119/</link>
+      <pubDate>Thu, 13 Aug 2020 23:33:34 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-119/</guid>
+      <description>// 思路一：使用一行数字从右往左叠加，进行 rowIndex 轮 class Solution { public: vector&amp;lt;int&amp;gt; getRow(int rowIndex) { vector&amp;lt;int&amp;gt; rtn(rowIndex + 1, 0); rtn[0] = 1; for (int i = 0; i &amp;lt; rowIndex; i++) { for (int j = rowIndex; j &amp;gt; 0; j--) { rtn[j] = rtn[j] + rtn[j - 1]; } } return rtn; } }; // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Pascal&amp;#39;s Triangle II. // Memory Usage: 6.</description>
+    </item>
+    
+    <item>
+      <title>289. Game of Life</title>
+      <link>http://changcui.cc/posts/leetcode-289/</link>
+      <pubDate>Thu, 13 Aug 2020 23:21:43 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-289/</guid>
+      <description>//思路一：设立2，3作为 dead-&amp;gt;live, live-&amp;gt;dead 的临时状态 class Solution { public: void gameOfLife(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}}; int m = board.size(), n = board[0].size(); for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { int liveCount = 0; for (auto d : dir) { if (i + d[0] &amp;lt; m &amp;amp;&amp;amp; i + d[0] &amp;gt;= 0 &amp;amp;&amp;amp; j + d[1] &amp;lt; n &amp;amp;&amp;amp; j + d[1] &amp;gt;= 0) { if (board[i+d[0]][j+d[1]] == 1 || board[i+d[0]][j+d[1]] == 3) liveCount++; } } if (board[i][j] == 0 &amp;amp;&amp;amp; liveCount == 3) board[i][j] = 2; else if (board[i][j] == 1 &amp;amp;&amp;amp; (liveCount &amp;gt; 3 || liveCount &amp;lt; 2)) board[i][j] = 3; } } for (int i = 0; i &amp;lt; m; i++) { for (int j = 0; j &amp;lt; n; j++) { if (board[i][j] == 2) board[i][j] = 1; else if (board[i][j] == 3) board[i][j] = 0; } } } }; // Runtime: 4 ms, faster than 45.</description>
+    </item>
     
     <item>
       <title>virtual memory</title>

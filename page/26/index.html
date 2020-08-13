@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +67,46 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isAnagram(string s, string t) { int cnts[255] = {0}; int cntt[255] = {0}; for (auto i : s) cnts[i] += 1; for (auto i : t) cntt[i] += 1; for (auto i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++) { if (cnts[i] != cntt[i]) return false; } return true; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-237/">237. Delete Node in a Linked List</a> &mdash;
+					<span class="description">
+						
+						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-234/">234. Palindrome Linked List</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL; while (head != NULL) { auto tmp = head-&gt;next; head-&gt;next = pre; pre = head; head = tmp; } return pre; } bool isPalindrome(ListNode* head) { if (head == NULL || head-&gt;next == NULL) return true; ListNode* fast = head; ListNode* slow = head; while (fast-&gt;next !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 30, 2019</div>
+					<a class="title" href="/posts/leetcode-206/">Reverse Linked List</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指offer class Solution { public: ListNode* reverseList(ListNode* head) { ListNode* pre = NULL, *cur = head; while (cur) { auto tmp = cur-&gt;next; cur-&gt;next = pre; pre = cur; cur = tmp; } return pre; } }; // Runtime: 8 ms, faster than 94.44% of C++ online submissions for Reverse Linked List. // Memory Usage: 7.4 MB, less than 100.00% of C++ online submissions for Reverse Linked List. // 思路二：递归调用，比较难理解。。 class Solution { public: ListNode* reverseList(ListNode* head) { if (!&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 30, 2019</div>
@@ -131,46 +171,6 @@ cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明
 					<span class="description">
 						
 						class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 29, 2019</div>
-					<a class="title" href="/posts/leetcode-1128/">1128. Number of Equivalent Domino Pairs</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int numEquivDominoPairs(vector&lt;vector&lt;int&gt;&gt;&amp; dominoes) { int cnt[10][10] = {0}; for (auto dom : dominoes) { cnt[dom[0]][dom[1]] += 1; } int rtn = 0; for (int i = 1; i &lt;= 9; i++) { for (int j = i; j &lt;= 9; j++) { if (i == j) { auto tmp = cnt[i][j]; if (tmp &gt;= 2) { rtn += tmp * (tmp - 1) / 2; } } else { auto tmp = (cnt[i][j] + cnt[j][i]); if (tmp &gt;= 2) { rtn += tmp * (tmp - 1) /2; } } } } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 29, 2019</div>
-					<a class="title" href="/posts/leetcode-1122/">1122. Relative Sort Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; relativeSortArray(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) { vector&lt;bool&gt; first(1001, false); for (auto i : arr2) { first[i] = true; } auto len = arr1.size(); for (int i = 0; i &lt; len;) { auto rt = find(arr2.begin(), arr2.end(), arr1[i]); if (rt != arr2.end()) { if (first[arr1[i]]) { first[arr1[i]] = false; } else { arr2.insert(rt, arr1[i]); } arr1.erase(arr1.begin() + i); len -= 1; } else { i += 1; } } sort(arr1.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 29, 2019</div>
-					<a class="title" href="/posts/leetcode-1114/">1114. Print in Order</a> &mdash;
-					<span class="description">
-						
-						class Foo { public: bool mutex1, mutex2; Foo() { mutex1 = true; mutex2 = true; } void first(function&lt;void()&gt; printFirst) { // printFirst() outputs &#34;first&#34;. Do not change or remove this line.  printFirst(); this-&gt;mutex1 = false; } void second(function&lt;void()&gt; printSecond) { while (this-&gt;mutex1) {} // printSecond() outputs &#34;second&#34;. Do not change or remove this line.  printSecond(); this-&gt;mutex2 = false; } void third(function&lt;void()&gt; printThird) { while (this-&gt;mutex1 | this-&gt;mutex2) {} // printThird() outputs &#34;third&#34;.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 28, 2019</div>
-					<a class="title" href="/posts/leetcode-1108/">1108. Defanging an IP Address</a> &mdash;
-					<span class="description">
-						
-						 insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i++) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() + i, &#39;[&#39;); address.insert(address.begin() + i + 2, &#39;]&#39;); i += 2; } } return address; } }; &hellip;
 						
 					</span>
 				</div>

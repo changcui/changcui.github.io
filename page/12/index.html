@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
 
-<meta property="og:updated_time" content="2020-06-30T01:01:22+08:00" />
+<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +69,46 @@
 				
 				
 				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-113/">113.Path Sum II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int sum) { vector&lt;vector&lt;int&gt;&gt; res; DFS(root, {}, res, sum); return res; } void DFS(TreeNode* root, vector&lt;int&gt; out, vector&lt;vector&lt;int&gt;&gt;&amp; res, int sum) { if (!root) return; out.push_back(root-&gt;val); if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; root-&gt;val == sum) { res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-112/">112.Path Sum</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: bool hasPathSum(TreeNode* root, int sum) { if (!root) return false; if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; sum == root -&gt; val) return true; return hasPathSum(root-&gt;left, sum-root-&gt;val) || hasPathSum(root-&gt;right, sum-root-&gt;val); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 11, 2019</div>
+					<a class="title" href="/posts/leetcode-95/">95.Unique Binary Search Trees II</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;TreeNode*&gt; generateTrees(int n) { if (n == 0) return {}; return helper(1, n); } vector&lt;TreeNode*&gt; helper(int left, int right) { if (left &gt; right) return {nullptr}; vector&lt;TreeNode*&gt; res; for (int i = left; i &lt;= right; i++) { auto ll = helper(left, i-1); auto rr = helper(i+1, right); for (auto l : ll) { for (auto r : rr) { auto t = new TreeNode(i); t -&gt; left = l; t -&gt; right = r; res.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 10, 2019</div>
+					<a class="title" href="/posts/leetcode-93/">93.Restore IP Addresses</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;string&gt; restoreIpAddresses(string s) { vector&lt;string&gt; result; if (s.size() &gt; 12) return result; DFS(0, 0, &#34;&#34;, result, s); return result; } void DFS(int num, int cur, string out, vector&lt;string&gt;&amp; result, string s) { if (num == 4 &amp;&amp; cur == s.size()) {out.pop_back(); result.push_back(out); return;} for (int i = 1; i &lt;= 3 &amp;&amp; cur + i &lt;= s.size(); i++) { auto tmp = s.substr(cur, i); if (stoi(tmp) &lt; 256 &amp;&amp; !&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Dec 10, 2019</div>
 					<a class="title" href="/posts/leetcode-322/">322.Coin Change</a> &mdash;
 					<span class="description">
@@ -124,46 +164,6 @@
 					<span class="description">
 						
 						/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&lt;NestedInteger&gt; &amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&lt;NestedInteger&gt; &amp;n, vector&lt;int&gt;&amp; v) { for (auto i : n) { if (i.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-342/">342.Power of Four</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isPowerOfFour(int num) { return (num &gt; 0) &amp;&amp; !(num &amp; (num - 1)) &amp;&amp; (num &amp; 0x55555555) == num; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-231/">231.Power of Two</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isPowerOfTwo(int n) { return (n &gt; 0) &amp;&amp; !(n &amp; (n - 1)); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 9, 2019</div>
-					<a class="title" href="/posts/leetcode-343/">343.Integer Break</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int integerBreak(int n) { vector&lt;int&gt; dp(n+1, 1); for (int i = 3; i &lt;= n; i++) { for (int j = 1; j &lt; i; j++) { dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j])); } } return dp[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 3, 2019</div>
-					<a class="title" href="/posts/leetcode-58/">58. Length of Last Word</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int lengthOfLastWord(string s) { int res = 0, n = s.size(); int i = n - 1; while (i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--; while (i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;) { res++; i--; } return res; } }; &hellip;
 						
 					</span>
 				</div>

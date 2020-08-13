@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 13:58:38 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:13:59 +0800</lastBuildDate>
     
 	<atom:link href="http://changcui.cc/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>221. Maximal Square</title>
+      <link>http://changcui.cc/posts/leetcode-221/</link>
+      <pubDate>Fri, 14 Aug 2020 00:13:59 +0800</pubDate>
+      
+      <guid>http://changcui.cc/posts/leetcode-221/</guid>
+      <description>// 思路一：依次判断，模拟行为 class Solution { public: bool isSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix, int i, int j, int l) { for (int p = i; p &amp;lt;= i + l; p++) for (int q = j; q &amp;lt;= j + l; q++) if (matrix[p][q] == &amp;#39;0&amp;#39;) return false; return true; } int maximalSquare(vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;&amp;amp; matrix) { int maxS = 0; if (matrix.size() == 0 || matrix[0].size() == 0) return 0; int m = matrix.size(), n = matrix[0].</description>
+    </item>
     
     <item>
       <title>Word Break</title>

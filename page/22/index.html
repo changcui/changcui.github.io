@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,21 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 9, 2019</div>
+					<a class="title" href="/posts/2019-09-09/">2019 09 09</a> &mdash;
+					<span class="description">
+						
+						工作 今天睡得不是很好，但是还是强忍着去公司了，早上划水了一会，然后和 mentor 讨论一下本周的工作内容，分析了一下发现内容并不是特别多，然后明天教师节还要开组会，于是我就在公司写组里的东西。
+投资 今天刷 bbs 的时候，看到有人说基金定投的事，推荐投 300 etf之类的，虽然我不懂他们说的是什么东西，我就跟着买了这个，然后把之前的定投都取消了。
+聊天 今天走之前和 mentor 聊了一会天，比如组里的事，公司的事，还有一些程序员中年危机的事，还是有一些收获吧，希望以后也能多学习一些别的东西吧，在所谓的中年危机来之前好好的提升自己。
+通过和 mentor 的交谈，我发现小孩带来的压力竟然是如此的大，我之前都没考虑过这个问题。
+面试 今天一个朋友去百度面试，他说感觉运气已经站在了自己这边，问的算法题和基础知识都回答的不错，但是二面的时候却被说缺乏项目经验，觉得是自己不够努力，在运气到来的时候，没能抓住机会。
+我想了一下，其实是同意他的，今天 mentor 也说，有时候选择很重要，但是当你不知道如何选择的时候，这种选择能不能归结于运气呢，但当运气比较好的时候，也要有一些硬实力保驾护航吧。&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 8, 2019</div>
@@ -153,24 +168,6 @@
 					<span class="description">
 						
 						// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&gt;next : headB; q = q ? q-&gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists. // Memory Usage: 14.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/2019-09-06/">2019 09 06</a> &mdash;
-					<span class="description">
-						
-						工作 昨天晚上惯例没有睡着，大概三点多才去睡觉，早上自然起不来，早饭就不用想了。挣扎着九点起来去上班了，到了公司就赶紧开始手工改数据，不得不说这个过程其实挺傻的，不过是在做验证，这个过程大概也不会有第二次了，如果这一次验证可以通过的话，我一定会写一个脚本来完成它的。
-结果跑出来了，两个框架跑出的结果大部分都一样，个别结果差1，说明运算的流程是没有错的，首先我怀疑的是输出的时候某个地方 dump 错了，我验证了一下 feature map，也是个别结果差1，这就让我很疑惑了。
-如果是中间过程错了的话，错误并没有累计，说明在流程中计算的应该是正确的结果。我怀疑是量化框架出了问题，又仔细读了一下量化框架的源码，咨询了一下研究院的同事，发现并没有问题。
-我开始加入 embed，逐步测试结果是不是一样，发现了一个很令人诧异的现象，用 pytorch 跑出的结果，和用 c++ 跑出的结果也差1，明明使用的是相同的算子，前者可以看作是一个过程，后者则是分成两部分在跑，我以为是中间的转换出了问题，试了多种方案，还是解决不了，其实这个时候，我的心态已经有点崩了，我被这个 bug 卡了一天，我印象中还没有这么难解决的 bug。
-到了接近要走的时候，我突然又想起来，weight 和 bias 其实也是不一样的，因为经历了两次转换的过程，我把 pytorch 用的 weight 和 bias 拿给 c++ 用，成功重现了这个现象，这就意味着不是算子的问题，而是 weight 和 bias 的问题，之后要想办法解决这个问题。
-今天的工作实在是太累了， debug 耗尽了我的心力，中午干到了一点半，下午又一直忙到了七点，女票从公司回到学校后，我就急急忙忙地离开了公司，希望以后这样的日子少一些。
-feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的总产值已经远超过音乐和电影之和，以及程序员不应该把心思都放在编程技巧上面，而是要去做需要的东西等等。
-我还看到了公司 ceo 的发言，他说公司正在做训练芯片，我仔细想了想，那不就是我在做吗，为啥只有我自己在做算法层面的东西，明明这个东西这么重要，我突然觉得自己做的东西还是 valuable 的，也许能影响公司的发展，而整个项目都是我和 mentor 在推进，这种不是一颗螺丝钉的感觉大概很不错吧。
-鱼仔饭 经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。&hellip;
 						
 					</span>
 				</div>

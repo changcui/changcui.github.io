@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Nov 13, 2019</div>
+					<a class="title" href="/posts/leetcode-15/">15. 3Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; sort(nums.begin(), nums.end()); if (nums.size() &lt; 3 || nums.back() &lt; 0 || nums.front() &gt; 0) return {}; for (int k = 0; k &lt; (int)nums.size() - 2; k++) { if (nums[k] &gt; 0) break; if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue; int i = k + 1, j = (int)nums.size() - 1, target = 0 - nums[k]; while (i &lt; j) { if (nums[i] + nums[j] == target) { res.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Nov 13, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.size() &lt;= 2) return nums.size(); int res = 2; for (int i = 2; i &lt; nums.size(); i++) { if (nums[i] &gt; nums[res-2]) nums[res++] = nums[i]; } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 18, 2019</div>
-					<a class="title" href="/posts/leetcode-26/">26. Remove Duplicates from Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if (nums.empty()) return 0; int res = 1; for (int i = 1; i &lt; nums.size(); i++) { if (nums[i] != nums[i-1]) nums[res++] = nums[i]; } return res; } }; &hellip;
 						
 					</span>
 				</div>

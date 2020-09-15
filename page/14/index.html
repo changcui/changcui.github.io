@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-392/">392. Is Subsequence</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool isSubsequence(string s, string t) { unordered_map&lt;char, vector&lt;int&gt;&gt; m; for (int i = 0; i &lt; t.size(); i++) m[t[i]].push_back(i); int left = -1; for (auto c : s) { if (!m.count(c)) return false; auto flag = false; for (auto l : m[c]) { if (l &gt; left) { left = l; flag = true; break; } } if (!flag) return false; } return true; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 2, 2019</div>
@@ -161,16 +171,6 @@
 接着确定剪枝条件，其实跳出条件也可以用整个字符串的长度来维护，但是体现不出括号的特殊性，所以设置两个变量 left，right，因为字符串是从左往右增长的，当 right &lt; left 的时候，意味着有右括号先于左括号出来，需要进行剪枝。
 最后确定继续搜索的方向，其实就两种选择，要么加左括号，要么加右括号，注意要回溯，如果 out 的值被更改的话。
 class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; string out = &#34;&#34;; DFS(left, right, out, result); return result; } void DFS(int left, int right, string&amp; out, vector&lt;string&gt;&amp; result) { if (left == 0 &amp;&amp; right == 0) {result.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 1, 2019</div>
-					<a class="title" href="/posts/leetcode-90/">90. Subsets II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; subsetsWithDup(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; sort(nums.begin(), nums.end()); DFS(0, out, nums, result); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;int&gt;&amp; nums, vector&lt;vector&lt;int&gt;&gt;&amp; result) { result.push_back(out); for (int i = cur; i &lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, nums, result); out.pop_back(); while (i + 1 &lt; nums.size() &amp;&amp; nums[i] == nums[i + 1]) i++; } } }; &hellip;
 						
 					</span>
 				</div>

@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-64/">滑动窗口的最大值</a> &mdash;
+					<span class="description">
+						
+						// 思路一：单调双向队列，保存下标 class Solution { public: vector&lt;int&gt; maxInWindows(const vector&lt;int&gt;&amp; num, unsigned int size) { vector&lt;int&gt; res; if (size == 0) return res; deque&lt;int&gt; q; for (int i = 0; i &lt; num.size(); i++) { while (!q.empty() &amp;&amp; num[i] &gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() + 1 &gt; size) q.pop_front(); q.push_back(i); if (i + 1 &gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-55/">链表中环的入口结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：快慢指针判断是否有环，从相遇处和头节点出发，必定相遇于入口 class Solution { public: ListNode* EntryNodeOfLoop(ListNode* pHead) { if (!pHead || !pHead-&gt;next) return NULL; auto fast = pHead-&gt;next-&gt;next, slow = pHead-&gt;next; while (fast &amp;&amp; fast != slow) { fast = fast-&gt;next ? fast-&gt;next-&gt;next : NULL; slow = slow-&gt;next; } if (!fast) return NULL; fast = pHead; while (fast != slow) { fast = fast-&gt;next; slow = slow-&gt;next; } return fast; } }; // 运行时间：3ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

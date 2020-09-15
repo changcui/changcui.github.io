@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,24 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Jan 8, 2020</div>
+					<a class="title" href="/posts/git-checkout/">git checkout</a> &mdash;
+					<span class="description">
+						
+						前情 之前 git 只会一些比较基本的用法，对 git 的原理以及一些常用的场景都不太了解，现在准备重新学习一些，我发现一些命令用的很多，以及一些场景可以使用多种命令的组合来完成，一个一个来吧，先来学习一个 checkout 的多种功能。
+切换分支 git checkout [&lt;branch&gt;]
+这个用的很多了，在分支之间切换。
+创建并切换分支 git checkout -b &lt;new branch&gt; [&lt;start point&gt;]
+这个也用的比较多，加上 -b 来创建一个新的分支，本质上和 git branch 创建分支，再 git checkout 过去的功能是一样的。
+detach HEAD git checkout --detach [&lt;branch&gt;], git checkout &lt;commit&gt;
+如果想 detach head 对于某个 branch 而言的话，需要加上 &ndash;detach，不加是切换 branch 的意思，如果对于某个 commit 而言的话，则不需要加。
+简单解释一下，详见这里，HEAD 原本是指向一个 branch 的，通过指向 branch 来间接
+的指向 commit，detach HEAD 操作可以让 HEAD 直接某个 commit，这么做之后，也可以进行 add，commit 等常用的操作，跟之前有一些不一样是当你 checkout 到别的分支之后，你的 commit 没有标记，会只剩下一个 SHA，被 git 的垃圾回收机制回收，相当于走了就回不来了。如果想要再回来，当然就是加上标记，有三种方法，第一种是 git checkout -b foo，这么做是创建一个新的分支，并且将 HEAD 指向这个分支，这时候的 HEAD 不是 detached 的状态了，第二种是 git branch foo，给 commit 加一个 branch 的标记，但是 HEAD 依然指向当前的 commit，还处于 detached 状态，需要 checkout 一下解除 detached 状态，第三种是 git tag foo，给这个 commit 打一个标记，HEAD 依然处于 detached 状态。&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Jan 7, 2020</div>
@@ -165,16 +183,6 @@ How class A { public: inline int add(int a, int b) {return a + b}; };  Reference
 					<span class="description">
 						
 						class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-263/">263.Ugly Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isUgly(int num) { if (num &lt; 1) return false; while (num % 2 == 0) num /= 2; while (num % 3 == 0) num /= 3; while (num % 5 == 0) num /= 5; return num == 1; } }; &hellip;
 						
 					</span>
 				</div>

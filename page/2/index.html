@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Jun 30, 2020</div>
+					<a class="title" href="/posts/leetcode-76/">76.Minimum Window Substring</a> &mdash;
+					<span class="description">
+						
+						// 思路一：因为要 O(n)，考虑使用 hashmap 来快速查找，先扩大右边界来确保找到 string，然后缩小左边界来剪短 string class Solution { public: string minWindow(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto i : t) m[i]++; int left = 0, cnt = 0, minLen = INT_MAX; string rtn = &#34;&#34;; for (int i = 0; i &lt; s.size(); i++) { if (--m[s[i]] &gt;= 0) cnt++; while (cnt == t.size()) { if (minLen &gt; i - left + 1) { rtn = s.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Jun 30, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：同剑指 offer class Solution { public: vector&lt;int&gt; productExceptSelf(vector&lt;int&gt;&amp; nums) { int n = nums.size(); vector&lt;int&gt; result(n, 1); for (int i = 1; i &lt; n; i++) result[i] = nums[i-1] * result[i-1]; for (int i = n - 1, tmp = 1; i &gt;= 0; tmp *= nums[i--]) result[i] *= tmp; return result; } }; // Runtime: 40 ms, faster than 75.41% of C++ online submissions for Product of Array Except Self.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 21, 2020</div>
-					<a class="title" href="/posts/leetcode-236/">Lowest Common Ancestor of a Binary Tree</a> &mdash;
-					<span class="description">
-						
-						// 思路一：依然是递归，分情况讨论，分别在左右，在左，在右 class Solution { public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) { if (!root || root == p || root == q) return root; auto l = lowestCommonAncestor(root-&gt;left, p, q); auto r = lowestCommonAncestor(root-&gt;right, p, q); if (l &amp;&amp; r) return root; return l ? l : r; } }; // Runtime: 24 ms, faster than 35.87% of C++ online submissions for Lowest Common Ancestor of a Binary Tree.&hellip;
 						
 					</span>
 				</div>

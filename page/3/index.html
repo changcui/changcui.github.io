@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-236/">Lowest Common Ancestor of a Binary Tree</a> &mdash;
+					<span class="description">
+						
+						// 思路一：依然是递归，分情况讨论，分别在左右，在左，在右 class Solution { public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) { if (!root || root == p || root == q) return root; auto l = lowestCommonAncestor(root-&gt;left, p, q); auto r = lowestCommonAncestor(root-&gt;right, p, q); if (l &amp;&amp; r) return root; return l ? l : r; } }; // Runtime: 24 ms, faster than 35.87% of C++ online submissions for Lowest Common Ancestor of a Binary Tree.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 21, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &lt; rows; i++) { for (int j = 0; j &lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || matrix[i*cols+j] !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 19, 2020</div>
-					<a class="title" href="/posts/offer-64/">滑动窗口的最大值</a> &mdash;
-					<span class="description">
-						
-						// 思路一：单调双向队列，保存下标 class Solution { public: vector&lt;int&gt; maxInWindows(const vector&lt;int&gt;&amp; num, unsigned int size) { vector&lt;int&gt; res; if (size == 0) return res; deque&lt;int&gt; q; for (int i = 0; i &lt; num.size(); i++) { while (!q.empty() &amp;&amp; num[i] &gt; num[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() + 1 &gt; size) q.pop_front(); q.push_back(i); if (i + 1 &gt;= size) res.push_back(num[q.front()]); } return res; } }; // 运行时间：3ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-63/">63. Unique Paths II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int uniquePathsWithObstacles(vector&lt;vector&lt;int&gt;&gt;&amp; obstacleGrid) { int m = obstacleGrid.size(), n = obstacleGrid[0].size(); vector&lt;vector&lt;unsigned int&gt;&gt; dp(m, vector&lt;unsigned int&gt;(n, 0)); if (obstacleGrid[0][0]) return 0; dp[0][0] = 1; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; n; j++) { if (obstacleGrid[i][j]) continue; if (i &gt; 0 &amp;&amp; !obstacleGrid[i-1][j]) dp[i][j] += dp[i-1][j]; if (j &gt; 0 &amp;&amp; !obstacleGrid[i][j-1]) dp[i][j] += dp[i][j-1]; } } return dp[m-1][n-1]; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 2, 2019</div>
@@ -162,16 +171,6 @@ class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int l
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; subsetsWithDup(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; sort(nums.begin(), nums.end()); DFS(0, out, nums, result); return result; } void DFS(int cur, vector&lt;int&gt; out, vector&lt;int&gt;&amp; nums, vector&lt;vector&lt;int&gt;&gt;&amp; result) { result.push_back(out); for (int i = cur; i &lt; nums.size(); i++) { out.push_back(nums[i]); DFS(i+1, out, nums, result); out.pop_back(); while (i + 1 &lt; nums.size() &amp;&amp; nums[i] == nums[i + 1]) i++; } } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 1, 2019</div>
-					<a class="title" href="/posts/leetcode-88/">88. Merge Sorted Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) { int cur = m + n - 1, i = m - 1, j = n - 1; while (i &gt;= 0 &amp;&amp; j &gt;= 0) { if (nums1[i] &gt;= nums2[j]) nums1[cur--] = nums1[i--]; else nums1[cur--] = nums2[j--]; } while (j &gt;= 0) nums1[cur--] = nums2[j--]; } }; &hellip;
 						
 					</span>
 				</div>

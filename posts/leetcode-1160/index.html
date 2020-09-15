@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1160. Find Words That Can Be Formed by Characters - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1160. Find Words That Can Be Formed by Characters" />
-<meta property="og:description" content="vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] &#43;= 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn &#43;= flag ?" />
+<meta property="og:description" content="vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] &#43;= 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn &#43;= flag ? word." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-1160/" />
 <meta property="article:published_time" content="2019-08-30T22:43:35+08:00" />
 <meta property="article:modified_time" content="2019-08-30T22:43:35+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1160. Find Words That Can Be Formed by Characters"/>
-<meta name="twitter:description" content="vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] &#43;= 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn &#43;= flag ?"/>
+<meta name="twitter:description" content="vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] &#43;= 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn &#43;= flag ? word."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -64,9 +64,7 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="vector-faster-than-map">vector faster than map</h3>
+			<h3 id="vector-faster-than-map">vector faster than map</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#00a8c8">int</span> <span style="color:#111">countCharacters</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">string</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#111">words</span><span style="color:#111">,</span> <span style="color:#111">string</span> <span style="color:#111">chars</span><span style="color:#111">)</span> <span style="color:#111">{</span>

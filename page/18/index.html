@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-27/">27. Remove Element</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int res = 0; for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != val) nums[res++] = nums[i]; return res; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Oct 18, 2019</div>
@@ -160,16 +169,6 @@ Dorefa 最近公司的事情处理完了，日常在公司并没有什么事情�
 					<span class="description">
 						
 						class Solution { public: int largestRectangleArea(vector&lt;int&gt;&amp; heights) { int max_ = 0; for (int i = 0; i &lt; heights.size(); i++) { if (i + 1 &lt; heights.size() &amp;&amp; heights[i] &lt;= heights[i + 1]) continue; for (int j = i, h = heights[i]; j &gt;= 0; j--) { h = min(h, heights[j]); auto area = h * (i - j + 1); max_ = max(max_, area); } } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 12, 2019</div>
-					<a class="title" href="/posts/leetcode-224/">224. Basic Calculator</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int calculate(string s) { int rtn = 0; queue&lt;char&gt; op; queue&lt;int&gt; num; for (int i = 0; i &lt; s.size();) { if (s[i] == &#39;(&#39;) { int cnt = 1, start = i; while (cnt != 0) { i += 1; if (s[i] == &#39;(&#39;) cnt += 1; else if (s[i] == &#39;)&#39;) cnt -= 1; } num.push(calculate(s.substr(start + 1, i - start))); } else if (isdigit(s[i])) { int tmp = s[i] - &#39;0&#39;; while (isdigit(s[++i])) { tmp *= 10; tmp += s[i] - &#39;0&#39;; } num.&hellip;
 						
 					</span>
 				</div>

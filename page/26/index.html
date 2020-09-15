@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +69,16 @@
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-268/">268. Missing Number</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int missingNumber(vector&lt;int&gt;&amp; nums) { auto len = nums.size(); auto sum = 0; for (auto num : nums) { sum += num; } return (len + 1) * len / 2 - sum; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
 					<a class="title" href="/posts/leetcode-242/">242. Valid Anagram</a> &mdash;
 					<span class="description">
 						
@@ -83,7 +92,7 @@
 					<a class="title" href="/posts/leetcode-237/">237. Delete Node in a Linked List</a> &mdash;
 					<span class="description">
 						
-						 stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
+						stupid problem /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: void deleteNode(ListNode* node) { *node = *node -&gt; next; } }; &hellip;
 						
 					</span>
 				</div>
@@ -113,7 +122,7 @@
 					<a class="title" href="/posts/leetcode-1078/">1078. Occurrences After Bigram</a> &mdash;
 					<span class="description">
 						
-						 c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
+						c++ does not have split class Solution(object): def findOcurrences(self, text, first, second): &#34;&#34;&#34; :type text: str :type first: str :type second: str :rtype: List[str] &#34;&#34;&#34; words = text.split(&#39; &#39;) rtn = [] for i in range(len(words)-2): tmp = words[i:i+3] if first == tmp[0] and second == tmp[1]: rtn.append(tmp[2]) return rtn &hellip;
 						
 					</span>
 				</div>
@@ -133,7 +142,7 @@
 					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
 					<span class="description">
 						
-						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ?&hellip;
+						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ? word.&hellip;
 						
 					</span>
 				</div>
@@ -161,16 +170,6 @@
 cuda 今天的工位的电脑突然坏掉了，屏幕的分辨率不对了，明显就是显卡驱动的原因。呼叫 IT 一顿操作帮我搞定了，然后我发现了一件很奇怪的事。
 就是 nvcc -V 输出的 cuda 版本是 9.0，而 nvidia-smi 输出的 cuda 版本是 10.0，我一台电脑竟然能有两个 cuda 版本。
 经过查询后发现，cuda 有两种存在形式，一个是 runtime 形式，一个是 driver 形式，分别是 cuda-toolkit 和 driver 安装的。彼此不冲突，所以才会出现这种情况。我写的扩展应该是用 nvcc 的编译的，所以我认为应该是 runtime 更为重要一些，起码对我来说是这样。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1137/">1137. N-th Tribonacci Number</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int tribonacci(int n) { int tri[38]; tri[0] = 0; tri[1] = 1; tri[2] = 1; for (int i = 3; i &lt;= n; i++) { tri[i] = tri[i - 1] + tri[i - 2] + tri[i - 3]; } return tri[n]; } }; &hellip;
 						
 					</span>
 				</div>

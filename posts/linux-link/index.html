@@ -84,37 +84,22 @@ link oldfile newfile ln oldfile newfile 由于硬链接是有着相同 inode 号
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="linux-的文件与目录">Linux 的文件与目录</h3>
-
+			<h3 id="linux-的文件与目录">Linux 的文件与目录</h3>
 <p>UNIX 系统除进程以外的一切都是文件。Linux 保持了这个特性，并引入了目录来方便管理。</p>
-
 <p>Linux 与其他类 UNIX 系统一样并不区分文件与目录：目录是记录了其他文件名的文件。</p>
-
 <p>Linux 将设备当做文件进行处理。</p>
-
 <h3 id="硬链接与软链接的联系与区别">硬链接与软链接的联系与区别</h3>
-
 <p>文件都有文件名与数据，这在 Linux 上被分成两个部分：用户数据 (user data) 与元数据 (metadata)。</p>
-
 <p>用户数据，即文件数据块 (data block)，数据块是记录文件真实内容的地方；而元数据则是文件的附加属性，如文件大小、创建时间、所有者等信息。</p>
-
 <p>在 Linux 中，元数据中的 inode 号（inode 是文件元数据的一部分但其并不包含文件名，inode 号即索引节点号）才是文件的唯一标识而非文件名。文件名仅是为了方便人们的记忆和使用，系统或程序通过 inode 号寻找正确的文件数据块。</p>
-
 <p>在 Linux 系统中查看 inode 号可使用命令 stat 或 ls -i.</p>
-
 <p>使用命令 mv 移动并重命名文件，其结果不影响文件的用户数据及 inode 号。</p>
-
 <p>为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic link）。</p>
-
 <h4 id="硬链接">硬链接</h4>
-
 <p>若一个 inode 号对应多个文件名，则称这些文件为硬链接。硬链接可由命令 link 或 ln 创建。</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">link oldfile newfile 
-ln oldfile newfile</code></pre></div>
-<p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
-
+ln oldfile newfile
+</code></pre></div><p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
 <ul>
 <li>文件有相同的 inode 及 data block；</li>
 <li>只能对已存在的文件进行创建；</li>
@@ -122,19 +107,12 @@ ln oldfile newfile</code></pre></div>
 <li>不能对目录进行创建，只可对文件创建；</li>
 <li>删除一个硬链接文件并不影响其他有相同 inode 号的文件。</li>
 </ul>
-
 <p>node 号仅在各文件系统下是唯一的，当 Linux 挂载多个文件系统后将出现 inode 号重复的现象，因此硬链接创建时不可跨文件系统。</p>
-
 <p>Linux 系统存在 inode 号被用完但磁盘空间还有剩余的情况。</p>
-
 <p>硬链接不能对目录创建是受限于文件系统的设计。现 Linux 文件系统中的目录均隐藏了两个个特殊的目录：当前目录（.）与父目录（..）。查看这两个特殊目录的 inode 号可知其实这两目录就是两个硬链接。若系统允许对目录创建硬链接，则会产生目录环。</p>
-
 <h4 id="软链接">软链接</h4>
-
 <p>软链接与硬链接不同，若文件用户数据块中存放的内容是另一文件的路径名的指向，则该文件就是软连接。软链接就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块。</p>
-
 <p>因此软链接的创建与使用没有类似硬链接的诸多限制：</p>
-
 <ul>
 <li>软链接有自己的文件属性及权限等；</li>
 <li>可对不存在的文件或目录创建软链接；</li>
@@ -143,19 +121,14 @@ ln oldfile newfile</code></pre></div>
 <li>创建软链接时，链接计数 i_nlink 不会增加；</li>
 <li>删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。</li>
 </ul>
-
 <p>软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接。</p>
-
-<h3 id="linux-vfs-虚拟文件系统">Linux VFS（虚拟文件系统）</h3>
-
+<h3 id="linux-vfs虚拟文件系统">Linux VFS（虚拟文件系统）</h3>
 <p>Linux 有着极其丰富的文件系统，大体上可分如下几类：</p>
-
 <ol>
 <li>网络文件系统，如 nfs、cifs 等；</li>
 <li>磁盘文件系统，如 ext4、ext3 等；</li>
 <li>特殊文件系统，如 proc、sysfs、ramfs、tmpfs 等。</li>
 </ol>
-
 <p>实现以上这些文件系统并在 Linux 下共存的基础就是 Linux VFS（Virtual File System 又称 Virtual Filesystem Switch），即虚拟文件系统。VFS 作为一个通用的文件系统，抽象了文件系统的四个基本概念：文件、目录项 (dentry)、索引节点 (inode) 及挂载点，其在内核中为用户空间层的文件系统提供了相关的接口。VFS 实现了 open()、read() 等系统调并使得 cp 等用户空间程序可跨文件系统。VFS 真正实现了上述内容中：在 Linux 中除进程之外一切皆是文件。</p>
 
 		</div>

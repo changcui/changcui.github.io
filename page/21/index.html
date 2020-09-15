@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -70,6 +69,16 @@
 				
 				<div class="post">
 					<div class="meta">Oct 9, 2019</div>
+					<a class="title" href="/posts/leetcode-144/">144. Binary Tree Preorder Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; preorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&gt;val); s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); p = p-&gt;right; } } return res; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 9, 2019</div>
 					<a class="title" href="/posts/leetcode-94/">94. Binary Tree Inorder Traversal</a> &mdash;
 					<span class="description">
 						
@@ -113,7 +122,7 @@
 					<a class="title" href="/posts/leetcode-435/">435. Non-overlapping Intervals</a> &mdash;
 					<span class="description">
 						
-						 greedy class Solution { public: int eraseOverlapIntervals(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&lt; intervals.size(); i++) { if (r &gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; &hellip;
+						greedy class Solution { public: int eraseOverlapIntervals(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { if (intervals.size() == 0 || intervals.size() == 1) return 0; auto ans = 0; sort(intervals.begin(), intervals.end(), [](auto i, auto j){return i.front() &lt; j.front();}); auto l = intervals[0][0]; auto r = intervals[0][1]; for (int i = 1; i&lt; intervals.size(); i++) { if (r &gt; intervals[i][0]) { ans++; r = min(r, intervals[i][1]); } else { l = intervals[i][0]; r = intervals[i][1]; } } return ans; } }; &hellip;
 						
 					</span>
 				</div>
@@ -123,7 +132,7 @@
 					<a class="title" href="/posts/leetcode-56/">56. Merge Intervals</a> &mdash;
 					<span class="description">
 						
-						 greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i++) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; &hellip;
+						greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i++) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; &hellip;
 						
 					</span>
 				</div>
@@ -133,7 +142,7 @@
 					<a class="title" href="/posts/leetcode-452/">452. Minimum Number of Arrows to Burst Balloons</a> &mdash;
 					<span class="description">
 						
-						 greedy class Solution { public: int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &lt; len; i++) { if (points[i][0] &lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; &hellip;
+						greedy class Solution { public: int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &lt; len; i++) { if (points[i][0] &lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; &hellip;
 						
 					</span>
 				</div>
@@ -164,16 +173,6 @@
 通过和 mentor 的交谈，我发现小孩带来的压力竟然是如此的大，我之前都没考虑过这个问题。
 面试 今天一个朋友去百度面试，他说感觉运气已经站在了自己这边，问的算法题和基础知识都回答的不错，但是二面的时候却被说缺乏项目经验，觉得是自己不够努力，在运气到来的时候，没能抓住机会。
 我想了一下，其实是同意他的，今天 mentor 也说，有时候选择很重要，但是当你不知道如何选择的时候，这种选择能不能归结于运气呢，但当运气比较好的时候，也要有一些硬实力保驾护航吧。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 8, 2019</div>
-					<a class="title" href="/posts/leetcode-75/">75. Sort Colors</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void sortColors(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &lt; len &amp;&amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; &hellip;
 						
 					</span>
 				</div>

@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1047. Remove All Adjacent Duplicates In String - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1047. Remove All Adjacent Duplicates In String" />
-<meta property="og:description" content="stack: class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; stack&lt;char&gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result &#43;= chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } };  string(faster): class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; for (auto c : S) { if (result." />
+<meta property="og:description" content="stack: class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; stack&lt;char&gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result &#43;= chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } }; string(faster): class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; for (auto c : S) { if (result.empty() || result." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-1047/" />
 <meta property="article:published_time" content="2019-08-26T23:22:40+08:00" />
 <meta property="article:modified_time" content="2019-08-26T23:22:40+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1047. Remove All Adjacent Duplicates In String"/>
-<meta name="twitter:description" content="stack: class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; stack&lt;char&gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result &#43;= chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } };  string(faster): class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; for (auto c : S) { if (result."/>
+<meta name="twitter:description" content="stack: class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; stack&lt;char&gt; chars; for (auto c : S) { if (chars.empty() || c != chars.top()) { chars.push(c); } else { chars.pop(); } } while (!chars.empty()) { result &#43;= chars.top(); chars.pop(); } reverse(result.begin(), result.end()); return result; } }; string(faster): class Solution { public: string removeDuplicates(string S) { string result = &#34;&#34;; for (auto c : S) { if (result.empty() || result."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -64,9 +64,7 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="stack">stack:</h3>
+			<h3 id="stack">stack:</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#111">string</span> <span style="color:#111">removeDuplicates</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">S</span><span style="color:#111">)</span> <span style="color:#111">{</span>
@@ -87,8 +85,7 @@
         <span style="color:#00a8c8">return</span> <span style="color:#111">result</span><span style="color:#111">;</span>
     <span style="color:#111">}</span>
 <span style="color:#111">};</span>
-</code></pre></div>
-<h3 id="string-faster">string(faster):</h3>
+</code></pre></div><h3 id="stringfaster">string(faster):</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#111">string</span> <span style="color:#111">removeDuplicates</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">S</span><span style="color:#111">)</span> <span style="color:#111">{</span>

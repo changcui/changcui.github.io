@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>28. Implement strStr() - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="28. Implement strStr()" />
-<meta property="og:description" content=" KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() &#43; 1; i&#43;&#43;) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j&#43;&#43;) { if (haystack[i &#43; j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; " />
+<meta property="og:description" content="KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() &#43; 1; i&#43;&#43;) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j&#43;&#43;) { if (haystack[i &#43; j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-28/" />
 <meta property="article:published_time" content="2019-09-05T21:24:28+08:00" />
 <meta property="article:modified_time" content="2019-09-05T21:24:28+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="28. Implement strStr()"/>
-<meta name="twitter:description" content=" KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() &#43; 1; i&#43;&#43;) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j&#43;&#43;) { if (haystack[i &#43; j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; "/>
+<meta name="twitter:description" content="KMP? class Solution { public: int strStr(string haystack, string needle) { if (needle.size() == 0) return 0; if (haystack.size() &lt; needle.size()) return -1; for (int i = 0; i &lt; haystack.size() - needle.size() &#43; 1; i&#43;&#43;) { if (haystack[i] == needle[0]) { int j = 1; for (; j &lt; needle.size(); j&#43;&#43;) { if (haystack[i &#43; j] != needle[j]) break; } if (j == needle.size()) { return i; } } } return -1; } }; "/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -64,9 +64,7 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="kmp">KMP?</h3>
+			<h3 id="kmp">KMP?</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#00a8c8">int</span> <span style="color:#111">strStr</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">haystack</span><span style="color:#111">,</span> <span style="color:#111">string</span> <span style="color:#111">needle</span><span style="color:#111">)</span> <span style="color:#111">{</span>

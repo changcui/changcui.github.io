@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>1108. Defanging an IP Address - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="1108. Defanging an IP Address" />
-<meta property="og:description" content=" insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i&#43;&#43;) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() &#43; i, &#39;[&#39;); address.insert(address.begin() &#43; i &#43; 2, &#39;]&#39;); i &#43;= 2; } } return address; } }; " />
+<meta property="og:description" content="insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i&#43;&#43;) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() &#43; i, &#39;[&#39;); address.insert(address.begin() &#43; i &#43; 2, &#39;]&#39;); i &#43;= 2; } } return address; } }; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-1108/" />
 <meta property="article:published_time" content="2019-08-28T23:59:25+08:00" />
 <meta property="article:modified_time" content="2019-08-28T23:59:25+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1108. Defanging an IP Address"/>
-<meta name="twitter:description" content=" insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i&#43;&#43;) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() &#43; i, &#39;[&#39;); address.insert(address.begin() &#43; i &#43; 2, &#39;]&#39;); i &#43;= 2; } } return address; } }; "/>
+<meta name="twitter:description" content="insert class Solution { public: string defangIPaddr(string address) { for (int i = 0; i &lt; address.size(); i&#43;&#43;) { if (address[i] == &#39;.&#39;) { address.insert(address.begin() &#43; i, &#39;[&#39;); address.insert(address.begin() &#43; i &#43; 2, &#39;]&#39;); i &#43;= 2; } } return address; } }; "/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -64,9 +64,7 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="insert">insert</h3>
+			<h3 id="insert">insert</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#111">string</span> <span style="color:#111">defangIPaddr</span><span style="color:#111">(</span><span style="color:#111">string</span> <span style="color:#111">address</span><span style="color:#111">)</span> <span style="color:#111">{</span>

@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>56. Merge Intervals - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="56. Merge Intervals" />
-<meta property="og:description" content=" greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i&#43;&#43;) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; " />
+<meta property="og:description" content="greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i&#43;&#43;) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://changcui.cc/posts/leetcode-56/" />
 <meta property="article:published_time" content="2019-09-21T16:04:04+08:00" />
 <meta property="article:modified_time" content="2019-09-21T16:04:04+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="56. Merge Intervals"/>
-<meta name="twitter:description" content=" greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i&#43;&#43;) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; "/>
+<meta name="twitter:description" content="greedy class Solution { public: vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) { vector&lt;vector&lt;int&gt;&gt; result; if (intervals.size() == 0) return result; sort(intervals.begin(), intervals.end(), [](auto i, auto j) {return i.front() &lt; j.front();}); auto left = intervals[0][0]; auto right = intervals[0][1]; for (int i = 1; i &lt; intervals.size(); i&#43;&#43;) { if (intervals[i][0] &lt;= right) { right = max(right, intervals[i][1]); continue; } result.push_back(vector&lt;int&gt;{left, right}); left = intervals[i][0]; right = intervals[i][1]; } result.push_back(vector&lt;int&gt;{left, right}); return result; } }; "/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="http://changcui.cc/css/normalize.css" />
@@ -64,9 +64,7 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="greedy">greedy</h3>
+			<h3 id="greedy">greedy</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Solution</span> <span style="color:#111">{</span>
 <span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
     <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">merge</span><span style="color:#111">(</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> <span style="color:#111">intervals</span><span style="color:#111">)</span> <span style="color:#111">{</span>

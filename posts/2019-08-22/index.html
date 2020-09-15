@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019 08 22 - changcui</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="2019 08 22" />
-<meta property="og:description" content="水星记 工作 今天的工作应该是把网络给训起来，这是个我不擅长的工作，因为我并没有训大型网络的经验，但我 mentor 说，你是我们组最懂的了，没有人可以请教了，说的我责无旁贷，竟然有一些自豪。
+<meta property="og:description" content="水星记 &lt;source src=&rdquo;/audios/水星记.mp3&rdquo; type=&quot;audio/mpeg&quot;工作 今天的工作应该是把网络给训起来，这是个我不擅长的工作，因为我并没有训大型网络的经验，但我 mentor 说，你是我们组最懂的了，没有人可以请教了，说的我责无旁贷，竟然有一些自豪。
 自豪之余，不懂的还是很多啊。我一边踩坑，一边请教运维组和研究组的大佬。遇到的问题有很多，总结一下。
 问题一，集群的使用问题，比如无法保存 pt，可以通过改配置文件的 read only 权限来解决；配置文件的问题，因为不是分布式训练，是一机多U，可以删掉关于 worker 的配置；打印 log 的问题，原来 k8s 的 logs 命令，本质上是调用了 GET 去下载标准输出，怪不得我的 tqdm 用不了，不过后来网络跑起来之后会自动记录日志，就没有管 log 的问题了。
 问题二，多 GPU 训练效率的问题，按理来说，多 GPU 跑得肯定是要比单 GPU 要快的，但是从一加到四，速度并没有提升，甚至有下降。问了研究组的大佬发现，dataloader 也需要搞成多进程的，之前 dataloader 的参数 num_workers 我用的是 0，也就是只有主进程在 load dataset，多 GPU 的优势并体现不出来，我参考了各方的见解，最终用了 4 * #GPU 这种做法，设置了 num_workers=16，然后打开了 pin_memory，速度终于有显著的提升，感觉快了几十倍是有的，因为已经很快了，我没有继续研究，batch_size, dataloader, #GPU 三者之间的关系，没找一个最优值，以后可以试试。
@@ -19,7 +19,7 @@
 <meta property="article:modified_time" content="2019-08-22T23:41:25+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2019 08 22"/>
-<meta name="twitter:description" content="水星记 工作 今天的工作应该是把网络给训起来，这是个我不擅长的工作，因为我并没有训大型网络的经验，但我 mentor 说，你是我们组最懂的了，没有人可以请教了，说的我责无旁贷，竟然有一些自豪。
+<meta name="twitter:description" content="水星记 &lt;source src=&rdquo;/audios/水星记.mp3&rdquo; type=&quot;audio/mpeg&quot;工作 今天的工作应该是把网络给训起来，这是个我不擅长的工作，因为我并没有训大型网络的经验，但我 mentor 说，你是我们组最懂的了，没有人可以请教了，说的我责无旁贷，竟然有一些自豪。
 自豪之余，不懂的还是很多啊。我一边踩坑，一边请教运维组和研究组的大佬。遇到的问题有很多，总结一下。
 问题一，集群的使用问题，比如无法保存 pt，可以通过改配置文件的 read only 权限来解决；配置文件的问题，因为不是分布式训练，是一机多U，可以删掉关于 worker 的配置；打印 log 的问题，原来 k8s 的 logs 命令，本质上是调用了 GET 去下载标准输出，怪不得我的 tqdm 用不了，不过后来网络跑起来之后会自动记录日志，就没有管 log 的问题了。
 问题二，多 GPU 训练效率的问题，按理来说，多 GPU 跑得肯定是要比单 GPU 要快的，但是从一加到四，速度并没有提升，甚至有下降。问了研究组的大佬发现，dataloader 也需要搞成多进程的，之前 dataloader 的参数 num_workers 我用的是 0，也就是只有主进程在 load dataset，多 GPU 的优势并体现不出来，我参考了各方的见解，最终用了 4 * #GPU 这种做法，设置了 num_workers=16，然后打开了 pin_memory，速度终于有显著的提升，感觉快了几十倍是有的，因为已经很快了，我没有继续研究，batch_size, dataloader, #GPU 三者之间的关系，没找一个最优值，以后可以试试。
@@ -80,34 +80,19 @@
 		</div>
 
 		<div class="markdown">
-			
-
-<h3 id="水星记">水星记</h3>
-
-<p><audio controls> <source src="/audios/水星记.mp3" type="audio/mpeg"</audio></p>
-
+			<h3 id="水星记">水星记</h3>
+<p><!-- raw HTML omitted --> &lt;source src=&rdquo;/audios/水星记.mp3&rdquo; type=&quot;audio/mpeg&quot;<!-- raw HTML omitted --></p>
 <h3 id="工作">工作</h3>
-
 <p>今天的工作应该是把网络给训起来，这是个我不擅长的工作，因为我并没有训大型网络的经验，但我 mentor 说，你是我们组最懂的了，没有人可以请教了，说的我责无旁贷，竟然有一些自豪。</p>
-
 <p>自豪之余，不懂的还是很多啊。我一边踩坑，一边请教运维组和研究组的大佬。遇到的问题有很多，总结一下。</p>
-
 <p>问题一，集群的使用问题，比如无法保存 pt，可以通过改配置文件的 read only 权限来解决；配置文件的问题，因为不是分布式训练，是一机多U，可以删掉关于 worker 的配置；打印 log 的问题，原来 k8s 的 logs 命令，本质上是调用了 GET 去下载标准输出，怪不得我的 tqdm 用不了，不过后来网络跑起来之后会自动记录日志，就没有管 log 的问题了。</p>
-
 <p>问题二，多 GPU 训练效率的问题，按理来说，多 GPU 跑得肯定是要比单 GPU 要快的，但是从一加到四，速度并没有提升，甚至有下降。问了研究组的大佬发现，dataloader 也需要搞成多进程的，之前 dataloader 的参数 num_workers 我用的是 0，也就是只有主进程在 load dataset，多 GPU 的优势并体现不出来，我参考了各方的见解，最终用了 4 * #GPU 这种做法，设置了 num_workers=16，然后打开了 pin_memory，速度终于有显著的提升，感觉快了几十倍是有的，因为已经很快了，我没有继续研究，batch_size, dataloader, #GPU 三者之间的关系，没找一个最优值，以后可以试试。</p>
-
 <p>解决了环境和效率的问题，baseline 就可以跑起来了， 看官方的结果应该是能跑到88%，明天可以看一下最终的结果，mentor 说有个60-70就可以用了，其实30个 epoch 就已经跑到70了。</p>
-
 <h3 id="五军之战">五军之战</h3>
-
 <p>回到宿舍后，顺便看完了五军之战。我觉得拍得是要好于第二部的，第二部的剧情实在是太拖了，后来看了知乎的解释，说霍比特人中文版就10w字，本身是一部童话故事，按着史诗的规模拍，跟魔戒比自然不如。</p>
-
 <p>看完的感受是或许每个人都有自己的故事，弗罗多有魔戒的故事，巴金斯也有矮人探险队的故事，甘道夫的故事是不是更多呢。现实生活中，是不是很多人的故事拍成电影也会很精彩呢，而且大多数人只能接触到自己的故事，看不到别人的故事，对别人的人生做出评价，是不是不太妥当呢？</p>
-
 <h3 id="碧蓝航线">碧蓝航线</h3>
-
 <p>碧蓝航线终于更新了底层代码，虽然带来了很多 bug，但也带来了流畅度。我之前不喜欢用手机玩碧蓝航线的原因就是太卡了，我的 845 都卡得不行，我感觉就是内存泄漏，越玩越卡，这个游戏的画面也不算很好，一个 2d 的游戏，进个船坞，换个装备都会开，实在是难以接受。</p>
-
 <p>这次更新之后感觉明显好了很多，尤其是在开了60帧之后，体验上跟原本是两个游戏，希望再接再厉，把发热的问题解决一下。</p>
 
 		</div>

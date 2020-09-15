@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -69,6 +68,16 @@
 				
 				
 				<div class="post">
+					<div class="meta">Sep 8, 2019</div>
+					<a class="title" href="/posts/leetcode-75/">75. Sort Colors</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: void sortColors(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) { return; } auto len = nums.size(); for (int i = 0; i &lt; len;) { if (nums[i] == 0) { nums.insert(nums.begin(), 0); nums.erase(nums.begin() + i + 1); i += 1; } else if (nums[i] == 2) { nums.push_back(2); nums.erase(nums.begin() + i); int j = i; while (j &lt; len &amp;&amp; nums[j] == 2) { j++; } if (j == len) { break; } } else { i += 1; } } } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
 					<a class="title" href="/posts/leetcode-155/">Min Stack</a> &mdash;
 					<span class="description">
@@ -83,7 +92,7 @@
 					<a class="title" href="/posts/leetcode-171/">171. Excel Sheet Column Number</a> &mdash;
 					<span class="description">
 						
-						 long long class Solution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &#39;A&#39; + 1; } return rtn; } }; &hellip;
+						long long class Solution { public: int titleToNumber(string s) { long long rtn = 0; for (auto i : s) { rtn = 26 * rtn + i - &#39;A&#39; + 1; } return rtn; } }; &hellip;
 						
 					</span>
 				</div>
@@ -162,18 +171,6 @@
 feedly 今天在 feedly 看到了不少有趣的东西，比如视频游戏的总产值已经远超过音乐和电影之和，以及程序员不应该把心思都放在编程技巧上面，而是要去做需要的东西等等。
 我还看到了公司 ceo 的发言，他说公司正在做训练芯片，我仔细想了想，那不就是我在做吗，为啥只有我自己在做算法层面的东西，明明这个东西这么重要，我突然觉得自己做的东西还是 valuable 的，也许能影响公司的发展，而整个项目都是我和 mentor 在推进，这种不是一颗螺丝钉的感觉大概很不错吧。
 鱼仔饭 经常吃的鱼仔饭在学校旁边也开了一家，今天和女票去尝尝鲜，因为有优惠，还是比较划算的，我想起来第一次吃鱼仔饭，还是在谷歌，我一个师兄请我吃的，带我一起看 paper，仿佛是好遥远之前的事了，如果有一天，我能像这个师兄这么厉害就好了。&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 5, 2019</div>
-					<a class="title" href="/posts/2019-09-05/">2019 09 05</a> &mdash;
-					<span class="description">
-						
-						工作 早上差点没起来，忍了忍还是起来去上班了。今天的工作还是承接昨天，上午按照惯例玩了一会，然后就开始愉快地工作了。我这几天第一次感觉到组里是有多么的缺人，之前总觉得自己没事情做，分配的活很快就做完了，然而这几天的活基本上处于一个源源不断的状态。今天的工作其实没有什么技术含量，基本上就是带上耳机，然后听听歌，就可以完成的东西。比较有收获的是，我给 hpc 组的同事打了电话，向他咨询了一些关于 cuda 优化的问题，他给我指出了问题所在，我按照他的方法，把速度提升了十多倍。真的速度提升是一方面，另一方面是我发现自己对做的东西足够了解，我可以单独与别的组的同事沟通，获得他们的帮助。最终敲定的方案终于写完了，我把模型和数据都 dump 出来，但是 mentor 似乎太忙了，没有时间弄这个事情，于是这个事又落在了我的身上。mentor 教了我框架的基本用法，我便开始修改数据来适应这个框架，这部分工作估计要等明天才能完成了，希望结果是好的，不然所有的工作又要从来一遍。
-疲惫 和昨天一样，今日疲惫的点也是在刚下班的时候，仿佛上班时大的鸡血都失效了，猛得一放松，整个人变得非常无力，给我找个床我就能躺下睡着的感觉。不知道是不是和我中午喝咖啡有关系，也许咖啡的作用只能持续到晚饭？然后会带来更加强烈的疲惫，相当于预支了晚上的精力。
-airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的，之前她问我耳机还用不用，再加上之前用的她信用卡海淘，一直都没机会还她钱，好像也很久没有给她买过生日礼物了，今年趁着姐夫送了一个 mbp，我干脆也送给 airpods 吧，凑齐苹果一套，大概她会比较开心吧，毕竟她最近也太累了，嗓子一直处于哑的状态。&hellip;
 						
 					</span>
 				</div>

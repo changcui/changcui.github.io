@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,28 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Jan 7, 2020</div>
+					<a class="title" href="/posts/inline-function/">c&#43;&#43; inline function</a> &mdash;
+					<span class="description">
+						
+						前情 之前看 Linus 的硕士毕业论文的时候，看到他设计 Linux Kernel 的时候，用了几个非标准但是各种编译器都实现了的功能，其中一个就是 inline function，我记得之前在 ICS 课上也用过，可是我忘了为什么要用，重新查了一下，记录一下。
+What inline function 被用于减少程序的运行时间，具体的做法是，编译的时候直接将 inline function 的调用替换为其定义，相当于取消了函数调用这一步，执行函数内部的代码。一般用于代码比较少的函数，代码比较多的函数编译器可能会直接忽略掉 inline。
+Why 函数调用是有开销的，在运行的时候，一次函数调用需要完成以下几步：
+  预先储存函数调用之后，下一条指令的地址
+  把需要调用的函数载入内存
+  拷贝参数
+  跳转到被执行的函数
+  执行函数代码
+  储存函数的返回值
+  跳转到预先存好的下一条指令地址继续执行
+  当函数加了 inline 的关键字之后，编译器将函数调用语句替换成函数实现的代码，这样就不用执行跳转等步骤了。(是不是感觉和宏有点像，但还是有点不一样的，宏一定会替换
+How class A { public: inline int add(int a, int b) {return a + b}; };  References   https://www.geeksforgeeks.org/inline-functions-cpp/
+  http://www.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 13, 2019</div>
@@ -154,16 +175,6 @@
 					<span class="description">
 						
 						class Solution { public: bool isUgly(int num) { if (num &lt; 1) return false; while (num % 2 == 0) num /= 2; while (num % 3 == 0) num /= 3; while (num % 5 == 0) num /= 5; return num == 1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-257/">257.Binary Tree Paths</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) { vector&lt;string&gt; res; DFS(&#34;&#34;, res, root); return res; } void DFS(string out, vector&lt;string&gt;&amp; res, TreeNode* root) { if (!root) return; if (!root-&gt;left &amp;&amp; !root-&gt;right) {out += to_string(root-&gt;val); res.push_back(out); return;} if (root-&gt;left) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;left); if (root-&gt;right) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;right); } }; &hellip;
 						
 					</span>
 				</div>

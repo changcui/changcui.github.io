@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,19 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/2020-03-07/">2020 03 07</a> &mdash;
+					<span class="description">
+						
+						重新 重新写日记，不知道是不是再一次心血来潮，但我会想一下自己的经历，建立一个习惯，往往不是一次就能成功的。以关闭朋友圈为例，我大概尝试过三次，第三次之后，终于能关闭朋友圈，再也不想着去打开它了（或许我找到了替代品 mastodon，这次写日记不知道能持续多久，但作为一个习惯培养的话，至少比不开始要强吧。
+契机 契机大概是三月六号是比较重要的一天，我来到了一个新的实习公司，然后帮师兄转发校招的消息才发现，以为距自己还有几个月距离的校招已经开始了，我顿时开始有点紧张，题刷够了，工程能力有提高吗，当时说掌握的基础知识掌握了吗？这一切都让我觉得，我的时间并不是很多了，尤其是这个学期，我需要一边上课，一边实习，一边帮实验室打工，一边找工作，我真的忙的过来吗？
+四个月 大概有四个月没有更新过日记了，我发现我更擅长去描述自己的生活，而不是去写技术教程之类的，我更喜欢分享自己的感悟，自己的理解，而不是教别人去干一些什么事情，我也不准备去强迫自己像一些科普博客一样，由浅入深地讲解什么原理，我没有这个层次的表达能力，写这种东西让我觉得浪费时间且难受，还是尽量 follow my heart 吧。
+TODO 争取多做一些有意义的事情，以不让衰老的自己后悔为目标努力吧。&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Feb 26, 2020</div>
@@ -154,16 +166,6 @@
 					<span class="description">
 						
 						// 思路一：和斐波那契一样，递归会超时 class Solution { public: int rectCover(int number) { if (number == 0) return 0; int a = 1, b = 2; while (--number) { int tmp = b; b = a + b; a = tmp; } return a; } }; // 运行时间：4ms // 占用内存：464k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-9/">变态跳台阶</a> &mdash;
-					<span class="description">
-						
-						// 思路一：使用递推，每次可以跳1～i步，累加即可 class Solution { public: int jumpFloorII(int number) { vector&lt;int&gt; rtn({1, 1}); for (int i = 2; i &lt;= number; i++) { int tmp = 0; for (int j = 1; j &lt;= i; j++) tmp += rtn[i-j]; rtn.push_back(tmp); } return rtn.back(); } }; // 运行时间：4ms // 占用内存：460k // 思路二：数学可以推导出，f(n) = 2f(n-1)，使用左移来实现 class Solution { public: int jumpFloorII(int number) { return 1 &lt;&lt; (number - 1); } }; // 运行时间：4ms // 占用内存：472k &hellip;
 						
 					</span>
 				</div>

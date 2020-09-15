@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,22 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 7, 2019</div>
+					<a class="title" href="/posts/2019-08-07/">2019 08 07</a> &mdash;
+					<span class="description">
+						
+						七夕 今天的日子还不错，是七夕，可惜又是一个没有人一起过的七夕。我还记得我只和女票过过一次七夕，是大二开学前的军训。
+Pooling 今天在公司的任务依然是写算子，之前写的以后再补吧，今天的是 pooling，具体来说是两个 maxpooling 和 averagepooling。
+这两个算子的历史挺有意思，前者在初期的一些神经网络架构中大红大紫，现在却不常见了，很多架构更愿意使用 stride=2 的卷积来代替它 downsample 的功能。后者刚开始没什么人用，后来在分类网络中被认为可以对 channel 的重要性进行打分，基本上成了分类网络的标配。
+pooling 操作说来很简单，就是对一个 window 里面的数字取一个值，max 就是取最大值，average 就是取平均值，但为什么 min 就没有人用呢，因为对于 weight 而言，min 是很 common，没什么价值。
+从数学上来看，这个算子非常好写，我也是这么认为的，可是遇到细节的时候就没这么好处理了，这里的难点在于对一些参数的处理。参数主要有 kernel_size, stride, padding, ceil_mode，处理的方式其实和 conv 很相近。conv 里面 im2col 帮忙完成了这个步骤，我直接抄了 caffe 里面的实现，没仔细研究 im2col 是怎么写的。
+在 pooling 里面就有问题了，我发现自己对向下取整，向上取整这样的操作理解的非常不好，很难判断它准确的位置应该是在哪，尤其是对于一些是否 +1 的地方不知道如何去处理。
+我先研究了一下 darknet 是如何实现的，其实各种实现的步骤都是一样的，主要是一些细节问题。比如 darknet 的 padding 似乎和 pytorch 的不一样，在计算 out_h 的大小的时候，它用的是 +padding，而不是 +2*padding，这就是说 padding 是在一个方向加的，而不是在两边都加。于是从 input 的 index 向 output 的 index 对应的时候就要 -padding/2。更奇怪的是，darknet 的 conv 采用了和 pytorch 相同的设计。比较之下，我放弃了 darknet 的实现。&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 6, 2019</div>

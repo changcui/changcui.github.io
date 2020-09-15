@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-162/">162. Find Peak Element</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findPeakElement(vector&lt;int&gt;&amp; nums) { int left = 0, right = nums.size() - 1; while (left &lt; right) { int mid = left + (right - left) / 2; if (nums[mid] &lt; nums[mid + 1]) left = mid + 1; else right = mid; } return right; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
@@ -154,16 +163,6 @@
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; postorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.insert(res.begin(), p-&gt;val); s.push(p); p = p-&gt;right; } else { p = s.top(); s.pop(); p = p-&gt;left; } } return res; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 9, 2019</div>
-					<a class="title" href="/posts/leetcode-144/">144. Binary Tree Preorder Traversal</a> &mdash;
-					<span class="description">
-						
-						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;int&gt; preorderTraversal(TreeNode* root) { vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; auto p = root; while (!s.empty() || p) { if (p) { res.push_back(p-&gt;val); s.push(p); p = p-&gt;left; } else { p = s.top(); s.pop(); p = p-&gt;right; } } return res; } }; &hellip;
 						
 					</span>
 				</div>

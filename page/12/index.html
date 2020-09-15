@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,8 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-
-<meta property="og:updated_time" content="2020-08-14T00:13:59+08:00" />
+<meta property="og:updated_time" content="2020-08-15T00:02:34+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -67,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 12, 2019</div>
+					<a class="title" href="/posts/leetcode-257/">257.Binary Tree Paths</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) { vector&lt;string&gt; res; DFS(&#34;&#34;, res, root); return res; } void DFS(string out, vector&lt;string&gt;&amp; res, TreeNode* root) { if (!root) return; if (!root-&gt;left &amp;&amp; !root-&gt;right) {out += to_string(root-&gt;val); res.push_back(out); return;} if (root-&gt;left) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;left); if (root-&gt;right) DFS(out+to_string(root-&gt;val)+&#34;-&gt;&#34;, res, root-&gt;right); } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 11, 2019</div>
@@ -154,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: string reverseVowels(string s) { int i = 0, j = s.size() - 1; while (i &lt; j) { while (i &lt; j &amp;&amp; s[i] != &#39;a&#39; &amp;&amp; s[i] != &#39;e&#39; &amp;&amp; s[i] != &#39;i&#39; &amp;&amp; s[i] != &#39;o&#39; &amp;&amp; s[i] != &#39;u&#39; &amp;&amp; s[i] != &#39;A&#39; &amp;&amp; s[i] != &#39;E&#39; &amp;&amp; s[i] != &#39;I&#39; &amp;&amp; s[i] != &#39;O&#39; &amp;&amp; s[i] != &#39;U&#39;) i++; while (i &lt; j &amp;&amp; s[j] !&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-341/">341.Flatten Nested List Iterator</a> &mdash;
-					<span class="description">
-						
-						/** * // This is the interface that allows for creating nested lists. * // You should not implement it, or speculate about its implementation * class NestedInteger { * public: * // Return true if this NestedInteger holds a single integer, rather than a nested list. * bool isInteger() const; * * // Return the single integer that this NestedInteger holds, if it holds a single integer * // The result is undefined if this NestedInteger holds a nested list * int getInteger() const; * * // Return the nested list that this NestedInteger holds, if it holds a nested list * // The result is undefined if this NestedInteger holds a single integer * const vector&lt;NestedInteger&gt; &amp;getList() const; * }; */ class NestedIterator { public: void helper(vector&lt;NestedInteger&gt; &amp;n, vector&lt;int&gt;&amp; v) { for (auto i : n) { if (i.&hellip;
 						
 					</span>
 				</div>

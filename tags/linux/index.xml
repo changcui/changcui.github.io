@@ -34,7 +34,7 @@ https://github.com/mytbk/Linux_Notes/tree/master/install
 出师不利啊，刚开始装 virtualbox 连新建虚拟机都失败了，试着更新一下把，家里的网还巨慢，100 KB/s，大大降低了我折腾的效率，这能借助手机开热点外加翻墙了。。
 果然可以初始化了。
 第一次安装失败，按照教程一步步走下来了，但是 reboot 的时候不太对劲，我觉得是 UEFI 或者 BIOS 的问题。
- 如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择*System*，再从右侧选择*Motherboard*标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。
+ 如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择System，再从右侧选择Motherboard标签页，最后勾选*Enable EFI (special OSes only)*选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。
  果然，我没开启这个设置，只能再来一遍啦。
 第二次安装失败，这次可以 UEFI 启动，但是只有一个启动选项是 firmware interface，不知道原因在哪。
 按照 wiki 里面的说法，要手动选择 UEFI，可是我手动选择了也不对，感觉是有地方搞错了，再来一遍把。

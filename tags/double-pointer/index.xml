@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 17:24:44 +0800</lastBuildDate>
-    
-	<atom:link href="http://changcui.cc/tags/double-pointer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Mar 2020 17:24:44 +0800</lastBuildDate><atom:link href="http://changcui.cc/tags/double-pointer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find the Duplicate Number</title>
       <link>http://changcui.cc/posts/leetcode-287/</link>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 11, 2020</div>
+					<a class="title" href="/posts/offer-48/">不用加减乘除做加法</a> &mdash;
+					<span class="description">
+						
+						// 思路一：位运算，保证两者和不变，num1 作为各位相加的结果，num2 作为进位的结果，当 num2 为0时，num1 就可返回 class Solution { public: int Add(int num1, int num2) { while (num2) { auto t = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = t; } return num1; } }; // 运行时间：3ms // 占用内存：488k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 11, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&gt;left), depth(root-&gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&gt;left) &amp;&amp; IsBalanced_Solution(pRoot-&gt;right) &amp;&amp; abs(depth(pRoot-&gt;left) - depth(pRoot-&gt;right)) &lt;= 1; } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 10, 2020</div>
-					<a class="title" href="/posts/offer-38/">二叉树的深度</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&gt;left), TreeDepth(pRoot-&gt;right)); } }; // 运行时间：4ms // 占用内存：464k &hellip;
 						
 					</span>
 				</div>

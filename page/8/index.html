@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-29/">最小的K个数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&lt;int&gt; GetLeastNumbers_Solution(vector&lt;int&gt; input, int k) { vector&lt;int&gt; result; if (k &gt; input.size()) return result; priority_queue&lt;int&gt; q; for (auto i : input) { q.push(i); if (q.size() &gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 8, 2020</div>
@@ -155,16 +165,6 @@
 					<span class="description">
 						
 						// 思路一：模拟栈的行为，如果压入元素与popV的前列元素相等，则证明 push 之后随即 pop, 然后判断剩下的元素是否后近先出 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { if (i == popV[l]) l++; else test.push(i); } while (!test.empty()) { if (test.top() != popV[l++]) return false; test.pop(); } return true; } }; // 运行时间：4ms // 占用内存：480k // 思路二：也是模拟栈的行为，每次 push 的时候，都可以一直 pop，直到栈顶元素与 popV 的前列元素不相等或者栈为空为止 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { test.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 7, 2020</div>
-					<a class="title" href="/posts/offer-20/">包含min函数的栈</a> &mdash;
-					<span class="description">
-						
-						// 思路一：添加辅助栈，只压入不大于栈顶元素的项，pop 的时候 s1.top() 一定大于等于 s2.top(), 只有当相等的时候, s2 才执行pop() class Solution { public: void push(int value) { s1.push(value); if (s2.empty() || s2.top() &gt;= value) s2.push(value); } void pop() { if (s2.top() == s1.top()) s2.pop(); s1.pop(); } int top() { return s1.top(); } int min() { return s2.top(); } private: stack&lt;int&gt; s1; stack&lt;int&gt; s2; }; // 运行时间：2ms // 占用内存：480k &hellip;
 						
 					</span>
 				</div>

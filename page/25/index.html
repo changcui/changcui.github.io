@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 2, 2019</div>
+					<a class="title" href="/posts/leetcode-108/">108. Convert Sorted Array to Binary Search Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* helper(vector&lt;int&gt;&amp; nums, int left, int right) { if (left &gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&gt;left = helper(nums, left, mid - 1); root-&gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&lt;int&gt;&amp; nums) { return helper(nums, 0, nums.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 2, 2019</div>
@@ -170,16 +180,6 @@ Google 小龙 女票之前给我买了一个小龙挂在包上，我很喜欢，
 					<span class="description">
 						
 						class Solution { public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 31, 2019</div>
-					<a class="title" href="/posts/leetcode-350/">350. Intersection of Two Arrays II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { map&lt;int, int&gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&lt;int&gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&gt; second == 0) continue; rtn.push_back(num); it -&gt; second -= 1; } return rtn; } }; class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { multiset&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.&hellip;
 						
 					</span>
 				</div>

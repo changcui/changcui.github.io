@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-65/">矩阵中的路径</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &lt; rows; i++) { for (int j = 0; j &lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || matrix[i*cols+j] !&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&gt;right) { pNode = pNode-&gt;right; while (pNode &amp;&amp; pNode-&gt;left) pNode = pNode-&gt;left; return pNode; } if (!pNode-&gt;next) return NULL; while (pNode-&gt;next) { if (pNode == pNode-&gt;next-&gt;left) return pNode-&gt;next; pNode = pNode-&gt;next; } if (!pNode-&gt;next) return NULL; return pNode-&gt;next; } }; // 运行时间：3ms // 占用内存：500k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-56/">删除链表中重复的结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
 						
 					</span>
 				</div>

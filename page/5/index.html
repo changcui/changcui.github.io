@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 15, 2020</div>
+					<a class="title" href="/posts/offer-56/">删除链表中重复的结点</a> &mdash;
+					<span class="description">
+						
+						// 思路一：设立新的头节点，方便处理头节点重复，注意是删除重复节点，无保留 class Solution { public: ListNode* deleteDuplication(ListNode* pHead) { if (!pHead) return NULL; auto pre = new ListNode(-1); pre-&gt;next = pHead; auto cur = pre; while (cur) { auto tmp = cur-&gt;next; while (tmp &amp;&amp; tmp-&gt;next &amp;&amp; tmp-&gt;val == tmp-&gt;next-&gt;val) { auto val = tmp-&gt;val; while (tmp &amp;&amp; tmp-&gt;val == val) tmp = tmp-&gt;next; } cur-&gt;next = tmp; cur = tmp; } return pre-&gt;next; } }; // 运行时间：4ms // 占用内存：364k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 15, 2020</div>
@@ -166,16 +176,6 @@ https://github.com/mytbk/Linux_Notes/tree/master/install
 					<span class="description">
 						
 						// 思路一：使用 long long 处理范围问题 class Solution { public: int StrToInt(string str) { if (str.size() == 0) return 0; int mul = str[0] == &#39;-&#39; ? -1 : 1; long long rtn = isdigit(str[0]) ? str[0] - &#39;0&#39; : 0; for (int i = 1; i &lt; str.size(); i++) { if (!isdigit(str[i])) return 0; rtn = 10 * rtn + str[i] - &#39;0&#39;; } rtn *= mul; return rtn &gt;= INT_MIN &amp;&amp; rtn &lt;= INT_MAX ?&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 11, 2020</div>
-					<a class="title" href="/posts/offer-48/">不用加减乘除做加法</a> &mdash;
-					<span class="description">
-						
-						// 思路一：位运算，保证两者和不变，num1 作为各位相加的结果，num2 作为进位的结果，当 num2 为0时，num1 就可返回 class Solution { public: int Add(int num1, int num2) { while (num2) { auto t = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = t; } return num1; } }; // 运行时间：3ms // 占用内存：488k &hellip;
 						
 					</span>
 				</div>

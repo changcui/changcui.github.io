@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.78.2" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>changcui - Science, Softball, Xian </title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="http://changcui.cc/index.xml" title="changcui" />
@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-238/">Product of Array Except Self</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指 offer class Solution { public: vector&lt;int&gt; productExceptSelf(vector&lt;int&gt;&amp; nums) { int n = nums.size(); vector&lt;int&gt; result(n, 1); for (int i = 1; i &lt; n; i++) result[i] = nums[i-1] * result[i-1]; for (int i = n - 1, tmp = 1; i &gt;= 0; tmp *= nums[i--]) result[i] *= tmp; return result; } }; // Runtime: 40 ms, faster than 75.41% of C++ online submissions for Product of Array Except Self.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 21, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&lt;vector&lt;bool&gt; &gt; visited(rows, vector&lt;bool&gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp; rtn, int threshold, int i, int j, vector&lt;vector&lt;bool&gt; &gt;&amp; visited, int rows, int cols) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || visited[i][j] || sum_(i, j) &gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 19, 2020</div>
-					<a class="title" href="/posts/offer-65/">矩阵中的路径</a> &mdash;
-					<span class="description">
-						
-						// 思路一：DFS 回溯 class Solution { public: bool hasPath(char* matrix, int rows, int cols, char* str) { for (int i = 0; i &lt; rows; i++) { for (int j = 0; j &lt; cols; j++) { if (helper(matrix, i, j, 0, rows, cols, str)) return true; } } return false; } bool helper(char* matrix, int i, int j, int len, int rows, int cols, char* str) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || matrix[i*cols+j] !&hellip;
 						
 					</span>
 				</div>

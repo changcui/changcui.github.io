@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,16 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Sep 4, 2019</div>
-					<a class="title" href="/posts/leetcode-189/">189. Rotate Array</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: void rotate(vector&lt;int&gt;&amp; nums, int k) { for (int i = 0; i &lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; &hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 4, 2019</div>
@@ -182,6 +172,16 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; generate(int numRows) { vector&lt;vector&lt;int&gt;&gt; result; for (int i = 1; i &lt;= numRows; i++) { vector&lt;int&gt; cur(i, 1); if (i &gt;= 3) { auto tmp = result.back(); for (int j = 1; j &lt;= i - 2; j++) { cur[j] = tmp[j - 1] + tmp[j]; } } result.push_back(cur); } return result; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 2, 2019</div>
+					<a class="title" href="/posts/leetcode-108/">108. Convert Sorted Array to Binary Search Tree</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: TreeNode* helper(vector&lt;int&gt;&amp; nums, int left, int right) { if (left &gt; right) { return NULL; } else if (left == right) { return new TreeNode(nums[left]); } auto mid = (left + right) / 2; auto root = new TreeNode(nums[mid]); root-&gt;left = helper(nums, left, mid - 1); root-&gt;right = helper(nums, mid + 1, right); return root; } TreeNode* sortedArrayToBST(vector&lt;int&gt;&amp; nums) { return helper(nums, 0, nums.&hellip;
 						
 					</span>
 				</div>

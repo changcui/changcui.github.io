@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,16 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-160/">Intersection of Two Linked Lists</a> &mdash;
-					<span class="description">
-						
-						// 思路一：同剑指 offer class Solution { public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) { if (!headA || !headB) return NULL; auto p = headA, q = headB; while (p != q) { p = p ? p-&gt;next : headB; q = q ? q-&gt;next : headA; } return p; } }; // Runtime: 52 ms, faster than 62.11% of C++ online submissions for Intersection of Two Linked Lists. // Memory Usage: 14.&hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 6, 2019</div>
@@ -173,6 +163,16 @@ airpods 我给我姐买了个 airpods，我想了想给她买了个无线版的�
 					<span class="description">
 						
 						class Solution { public: int countPrimes(int n) { if (n &lt;= 2) { return 0; } vector&lt;bool&gt; nums(n, true); auto rtn = 1; for (int i = 2;;) { for (int j = 2 * i; j &lt; n; j += i) { nums[j] = false; } while (!nums[++i] &amp;&amp; i &lt; n) { } if (i &gt;= n) break; rtn += 1; } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Sep 4, 2019</div>
+					<a class="title" href="/posts/leetcode-189/">189. Rotate Array</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: void rotate(vector&lt;int&gt;&amp; nums, int k) { for (int i = 0; i &lt; k; i++) { auto tmp = nums.back(); nums.pop_back(); nums.insert(nums.begin(), tmp); } } }; &hellip;
 						
 					</span>
 				</div>

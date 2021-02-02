@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,16 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Mar 10, 2020</div>
-					<a class="title" href="/posts/offer-38/">二叉树的深度</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int TreeDepth(TreeNode* pRoot) { if (!pRoot) return 0; return 1 + max(TreeDepth(pRoot-&gt;left), TreeDepth(pRoot-&gt;right)); } }; // 运行时间：4ms // 占用内存：464k &hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 10, 2020</div>
@@ -167,6 +157,16 @@
 					<span class="description">
 						
 						// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; vector&lt;int&gt; dp(array.begin(), array.end()); for (int i = 1; i &lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; for (int i = 1; i &lt; array.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 8, 2020</div>
+					<a class="title" href="/posts/offer-29/">最小的K个数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 priority_queue 保存，再存入 vector 返回 class Solution { public: vector&lt;int&gt; GetLeastNumbers_Solution(vector&lt;int&gt; input, int k) { vector&lt;int&gt; result; if (k &gt; input.size()) return result; priority_queue&lt;int&gt; q; for (auto i : input) { q.push(i); if (q.size() &gt; k) q.pop(); } while (!q.empty()) { result.push_back(q.top()); q.pop(); } return result; } }; // 运行时间：3ms // 占用内存：484k &hellip;
 						
 					</span>
 				</div>

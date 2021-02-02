@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,24 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Aug 27, 2019</div>
-					<a class="title" href="/posts/2019-08-27/">2019 08 27</a> &mdash;
-					<span class="description">
-						
-						Violin Sonata No. 2 in A Major, Op. 12 No. 2: I. Allegro vivace 新室友 马上就要开学了，意味着我的独居生活开始倒计时了，我还是挺喜欢一个人住的，毕竟很安静，将来租了房子我大概会很喜欢吧。
-新的室友还没见到，竟然在论坛发帖想和我们提前认识一下，想必是个不难相处的人吧，接下来还有两年，我们宿舍终于变成了四人寝。
-研究生的宿舍的重要性和本科时相比弱了很多，白天基本上很少在宿舍了，对我来说，宿舍只是一个睡觉的地方，想起来本科的时候，整个学院的同学住在一栋楼里，互相串门还是非常方便的，女票也经常跑到我宿舍来玩，我们宿舍有一段时间经常性保持三男三女的六人寝，好怀念。
-明日方舟 明日方舟终于更新夏活了，等了快一个世纪了，不过看起来没这么好玩，我的练度已经远远超过了副本的要求了，新六星也没能抽到，但好在搞到了五星，ios 的大佬们也把方舟氪到了第一名，顺利地拿到了十连券，攒着抽老爷子吧。
-工作 今天还是要训网络呗，但是 maxwell 架构的显卡不支持 int8，我也无能为力啊。
-于是我的任务变成了显卡采购建议收集，我收集了各个显卡的数据，给出显卡采购的方案，虽然我们组比较菜，只能用别人用剩下的显卡，可总比我本机的 1060 要强一些吧。
-昨天遇到的 hang 的问题，今天看了个 pytorch 的 issue，起码有点感性的认识了。这个问题的原因是 pytorch 的 dataloader 当 num_workers 不为0的时候，会调用 multiprocessing 来生成多个进程并行地处理数据，之所以需要多个进程而不是多个进程，是因为 python 的 interpreter 不允许多线程并行，有一个叫 GIL (global interpreter lock) 的机制在，该机制的目的是保护线程安全，比如引用计数等，multiprocessing 产生多个进程默认是调用的 fork 方法，fork 是在当前进程的基础上复制出一个相同的进程，当与一些第三方库，比如 numpy，opencv 混用的时候，第三方库会使用多线程来处理数据，fork 的时候会将多线程的信息也复制一遍，导致死锁。
-解决方案一，让 num_workers = 0，不使用多进程，自然会比较慢，但不会死锁。
-解决方案二，让 multiprocessing 的默认产生进程的方法是 spawn，和 fork 的差别在于， spawn 是从头产生一个新的进程，比 fork 效率要低。&hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 26, 2019</div>
@@ -223,6 +205,18 @@ Socks5 上次说到我想把 v2ray 部署到后台，完成了一部分任务。
 BiforstV 我手机上用的 v2ray 的 client 是 BiforstV，已经设置了比较完善的路由规则，和电脑上的是差不多的，但运行的时候总是效果不理想。一个明显的例子，我设置了大陆的域名和 IP 走 direct，从 record 来看确实如此，可是页面就是刷新不出来，我理解不了为什么会出现这种情况，或许能搞定这个的话，我也没必要使用 termux 让 v2ray 运行在后台，虽然后者看起来更酷一些。
 史矛革之战 听了这么多天的霍比特人评书，今天看了霍比特人2，下了个加长版，接近三个小时。从剧情来说，看起来是不如魔戒2的，画面还是很不错的。不知道为何，看这个地图的分布，还有城市的名字，我总是想到上古卷轴5，如果魔戒有一个受众更广的游戏就好了。
 暗黑破坏神 今天听了机核讲暗黑的电台，不得不说暗黑的历史还是非常有意思的。恶魔和天使大战数千上万年，一个恶魔和一个天使受不了了，偷走了世界之石，并创造了新的世界名为庇护之地，他们的后代是奈非天。还有什么三神教，乌迪西安等等，感觉很有意思，如果有机会的话，可以买一本书读读。&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Aug 19, 2019</div>
+					<a class="title" href="/posts/2019-08-19/">2019 08 19</a> &mdash;
+					<span class="description">
+						
+						思念是一种病 &lt;source src=&quot;/audios/思念是一种病.mp3&quot; type=&ldquo;audio/mpeg&rdquo;工作 今天的工作基本上就是划水，整天没有和任何一个人说过任何一句话，听了两个评书和四个电台，确实是非常无聊了，运维组那边依旧没有进展，不知道什么时 候才会有活干，仿佛也提不起来兴趣去看 paper，看代码。
+Termux 在划水的时候，我看了少数派的一个文章，讲 termux 的，termux 是安卓机上的一个 termial，之前我下载了，一直不知道怎么用，看了这个文章之后，觉 得还是非常有意思的，于是我一下午基本上都在折腾这个东西。
+ 首先，我先改了一个软件源，改成了清华源的镜像，下载速度果断快了很多，但我用的是4G，不是公司的 WIFI。 然后，我配置了一下 zsh，装了 oh my zsh 的 termux 版本，换了 solarized 的 theme，看起来舒服多了，虽然字很小吧。 然后，配置了 vim，用的是 github 上我用的配置，但是 snippet 好像用不了，我也不打算用它来写代码，直接给卸载啦。 然后，装了 python 和 clang，因为用 python，很多别的软件都可以完美运行了，比如 you-get，可以用来下载视频啦，clang 可以对付一些需要 c 的环境，比如 python 的 numpy。 然后，装了 aria2c，一直非常好用的下载器，可以用来下载百度云盘，虽然我不太用得到，毕竟用手机下载大文件的场合屈指可数，平时用 IDM+ 也够用，多线程下载甚至更快。 最后，其实我最想干的一件事就是把 v2ray 放在后台，因为现在用 bifrostv 总觉得不好用，没法使用电脑上那种配置。我本来想得很简单，把 v2ray 运行到后台，使用 1080 端口来接收 socks5 的包，然后让 app 都走 sock5 去 1080 端口。但是，具体做起来没有我想象中的简单。以 instagram 为例，instagram 的 client 没有 proxy 的设置，所以虽然我架好 v2ray listern to 1080 port，但是我不知道怎么讲 instagram 的流量对应到 1080 端口，这个问题就解决不了。但是一些有 proxy 设置的 client，比如 fire fox 或者 telegram，这种方法确实是可以使用的。在网上查一下，如果想让所有的流量都走相应的端口，需要设置 vpn，但是这个对我来说太麻烦了，不是一两个命令能解决的问题。我看我下载的一些 client，他们采用的也是这样的方式，看了一下他们的代码，应该是用了 android 提供的 vpn 接口，就是不知道怎么讲 vpn 的协议与 socks5 对应上的，可能以后还要再研究研究。  红巷子 好像是叫这个名字，是一家川菜馆，主打的应该是小龙虾吧，看招牌好像和胡大有点关系。我和女票第一次来吃，点了小龙虾和小排，他们家的小龙虾还不错，味道挺足的，服务员还给演示了一下怎么吃，不得不说我依旧没有学会怎么晃来晃去就把虾钳的肉给晃出来。小排就比较辣鸡了，第一是量很少，第二是碎骨头很多，不会再点第二次了。&hellip;
 						
 					</span>
 				</div>

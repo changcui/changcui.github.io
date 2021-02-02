@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,26 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-332/">332.Reconstruct Itinerary</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-338/">338.Counting Bits</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; countBits(int num) { vector&lt;int&gt; res(num+1, 0); for (int i = 1; i &lt;= num; i++) { res[i] = res[i &amp; (i-1)] + 1; } return res; } }; &hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 10, 2019</div>
@@ -163,6 +143,26 @@
 					<span class="description">
 						
 						class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { sum.push_back(0); for (auto n : nums) { sum.push_back(sum.back()+n); num.push_back(n); } } void update(int i, int val) { auto t = val - num[i]; num[i] = val; for (int j = i + 1; j &lt; sum.size(); j++) sum[j] += t; } int sumRange(int i, int j) { return sum[j+1] - sum[i]; } private: vector&lt;int&gt; sum; vector&lt;int&gt; num; }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(i,val); * int param_2 = obj-&gt;sumRange(i,j); */ &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-389/">389. Find the Difference</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: char findTheDifference(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &#39;A&#39;; } }; &hellip;
 						
 					</span>
 				</div>

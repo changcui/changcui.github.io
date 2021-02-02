@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,26 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 2, 2019</div>
-					<a class="title" href="/posts/leetcode-389/">389. Find the Difference</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: char findTheDifference(string s, string t) { unordered_map&lt;char, int&gt; m; for (auto c : s) m[c] += 1; for (auto c : t) { if (!m.count(c) || m[c] == 0) return c; m[c] -= 1; } return &#39;A&#39;; } }; &hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 2, 2019</div>
@@ -163,6 +143,34 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum3(int k, int n) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, 1, k, n, out, result); return result; } void DFS(int nums, int cur, int k, int n, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result) { if (nums == k &amp;&amp; n == 0) {result.push_back(out); return;} if (nums &gt; k || n &lt; 0) return; for (int i = cur; i &lt;= 9; i++) { out.push_back(i); DFS(nums+1, i+1, k, n-i, out, result); out.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 1, 2019</div>
+					<a class="title" href="/posts/leetcode-377/">377. Combination Sum IV</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int combinationSum4(vector&lt;int&gt;&amp; nums, int target) { vector&lt;unsigned int&gt; dp(target + 1, 0); dp[0] = 1; for (int i = 1; i &lt;= target; i++) { for (auto num : nums) { if (i - num &gt;= 0) dp[i] += dp[i - num]; } } return dp.back(); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Dec 1, 2019</div>
+					<a class="title" href="/posts/dfs/">DFS 生成所有结果</a> &mdash;
+					<span class="description">
+						
+						生成所有结果的题，第一时间要想到使用 DFS 和递归来解决。
+主要分为以下几步，
+ 确定 DFS 的跳出条件，对应树结构的子节点。 确定剪枝条件，这个是最麻烦的，需要对题目进行分析 确定继续搜索的方向  Leetcode 上的例题有，22，39，40
+22. Generate Parentheses 这一题是给出一个数 n，生成所有的括号组合。
+因为是所有的括号组合，想到用 DFS 和递归来解决。
+首先确定 DFS 的跳出条件，我们可以设置两个变量 left，right 分别维护左右括号的剩余数量， 当两者都为0的时候跳出。
+接着确定剪枝条件，其实跳出条件也可以用整个字符串的长度来维护，但是体现不出括号的特殊性，所以设置两个变量 left，right，因为字符串是从左往右增长的，当 right &lt; left 的时候，意味着有右括号先于左括号出来，需要进行剪枝。
+最后确定继续搜索的方向，其实就两种选择，要么加左括号，要么加右括号，注意要回溯，如果 out 的值被更改的话。
+class Solution { public: vector&lt;string&gt; generateParenthesis(int n) { int left = n, right = n; vector&lt;string&gt; result; string out = &#34;&#34;; DFS(left, right, out, result); return result; } void DFS(int left, int right, string&amp; out, vector&lt;string&gt;&amp; result) { if (left == 0 &amp;&amp; right == 0) {result.&hellip;
 						
 					</span>
 				</div>

@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,26 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-374/">374. Guess Number Higher or Lower</a> &mdash;
-					<span class="description">
-						
-						// Forward declaration of guess API. // @param num, your guess // @return -1 if my number is lower, 1 if my number is higher, otherwise return 0 int guess(int num); class Solution { public: int guessNumber(int n) { int left = 1, right = n; while (left &lt;= right) { int mid = left + (right - left) / 2; auto g = guess(mid); if (g == 0) return mid; else if (g == 1) left = mid + 1; else right = mid; } return -1; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 10, 2019</div>
-					<a class="title" href="/posts/leetcode-278/">278. First Bad Version</a> &mdash;
-					<span class="description">
-						
-						// Forward declaration of isBadVersion API. bool isBadVersion(int version); class Solution { public: int firstBadVersion(int n) { int left = 1, right = n; while (left &lt; right) { int mid = left + (right - left) / 2; if (isBadVersion(mid)) right = mid; else left = mid + 1; } return right; } }; &hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Oct 10, 2019</div>
@@ -163,6 +143,26 @@
 					<span class="description">
 						
 						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); reverse(res.begin(), res.end()); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-103/">103. Binary Tree Zigzag Level Order Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); if (level &amp; 1) res[level].insert(res[level].begin(), root-&gt;val); else res[level].&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Oct 10, 2019</div>
+					<a class="title" href="/posts/leetcode-102/">102. Binary Tree Level Order Traversal</a> &mdash;
+					<span class="description">
+						
+						/** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */ class Solution { public: vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) { vector&lt;vector&lt;int&gt;&gt; res; helper(root, 0, res); return res; } void helper(TreeNode* root, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (!root) return; if (res.size() == level) res.push_back({}); res[level].push_back(root-&gt;val); if (root-&gt;left) helper(root-&gt;left, level+1, res); if (root-&gt;right) helper(root-&gt;right, level+1, res); } }; &hellip;
 						
 					</span>
 				</div>

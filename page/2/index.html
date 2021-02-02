@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
+<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,26 +66,6 @@
 			<div class="posts">
 				
 				
-				
-				<div class="post">
-					<div class="meta">Jun 30, 2020</div>
-					<a class="title" href="/posts/leetcode-128/">128.Longest Consecutive Sequence</a> &mdash;
-					<span class="description">
-						
-						// 思路一：O（n）考虑使用 set 来排除重复的元素，但 set 是排序容器，所以真正的 O（n）应该使用 unordered_set class Solution { public: int longestConsecutive(vector&lt;int&gt;&amp; nums) { if (nums.empty()) return 0; set&lt;int&gt; s(nums.begin(), nums.end()); int rtn = 1, prev = INT_MIN; for (auto i = s.begin(); i != s.end();) { if (*i == prev + 1) { int length = 1; while (i != s.end() &amp;&amp; *i == prev + 1) { prev = *i; i++, length++; } rtn = max(rtn, length); } else { prev = *i; i++; } } return rtn; } }; // Runtime: 24 ms, faster than 38.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Jun 30, 2020</div>
-					<a class="title" href="/posts/leetcode-131/">131.Palindrome Partitioning</a> &mdash;
-					<span class="description">
-						
-						// 思路一：找出所有的结果，DFS，出口是所有的字符都被分块，需要辅助函数来判断回文 class Solution { public: bool isPalindrome(const string s) { int l = 0, r = s.size() - 1; while (l &lt; r) { if (s[l] != s[r]) return false; l++, r--; } return true; } vector&lt;vector&lt;string&gt;&gt; partition(string s) { vector&lt;vector&lt;string&gt;&gt; rtn; vector&lt;string&gt; output; dfs(output, s, rtn, 0); return rtn; } void dfs(vector&lt;string&gt;&amp; output, string&amp; s, vector&lt;vector&lt;string&gt;&gt;&amp; rtn, int idx) { if (idx == s.size()) { rtn.push_back(output); return; } for (int i = idx; i &lt; s.&hellip;
-						
-					</span>
-				</div>
 				
 				<div class="post">
 					<div class="meta">Jun 30, 2020</div>
@@ -163,6 +143,26 @@
 					<span class="description">
 						
 						// 思路一：同剑指 offer class Solution { public: bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) { if (matrix.size() == 0) return false; int m = matrix.size(), n = matrix[0].size(); int i = m - 1, j = 0; while (i &gt;= 0 &amp;&amp; j &lt; n) { if (matrix[i][j] == target) return true; if (matrix[i][j] &gt; target) i--; else j++; } return false; } }; // Runtime: 108 ms, faster than 34.41% of C++ online submissions for Search a 2D Matrix II.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-239/">Sliding Window Maximum</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指 offer class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) { int len = nums.size(); deque&lt;int&gt; q; vector&lt;int&gt; result; for (int i = 0; i &lt; len; i++) { while (!q.empty() &amp;&amp; nums[i] &gt; nums[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() &gt;= k) q.pop_front(); q.push_back(i); if (i + 1 &gt;= k) result.push_back(nums[q.front()]); } return result; } }; // Runtime: 60 ms, faster than 52.43% of C++ online submissions for Sliding Window Maximum.&hellip;
+						
+					</span>
+				</div>
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-238/">Product of Array Except Self</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指 offer class Solution { public: vector&lt;int&gt; productExceptSelf(vector&lt;int&gt;&amp; nums) { int n = nums.size(); vector&lt;int&gt; result(n, 1); for (int i = 1; i &lt; n; i++) result[i] = nums[i-1] * result[i-1]; for (int i = n - 1, tmp = 1; i &gt;= 0; tmp *= nums[i--]) result[i] *= tmp; return result; } }; // Runtime: 40 ms, faster than 75.41% of C++ online submissions for Product of Array Except Self.&hellip;
 						
 					</span>
 				</div>

@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-2/">替换空格</a> &mdash;
+					<span class="description">
+						
+						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Feb 1, 2020</div>
@@ -173,16 +183,6 @@ How class A { public: inline int add(int a, int b) {return a + b}; };  Reference
 					<span class="description">
 						
 						class Solution { public: int lengthOfLIS(vector&lt;int&gt;&amp; nums) { if (nums.size() == 0) return 0; int n = nums.size(), max_ = 1; vector&lt;int&gt; dp(n, 1); for (int i = 1; i &lt; n; i++) { for (int j = 0; j &lt; i; j++) { if (nums[j] &lt; nums[i]) dp[i] = max(dp[i], dp[j] + 1); } max_ = max(max_, dp[i]); } return max_; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-279/">279.Perfect Squares</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int numSquares(int n) { vector&lt;int&gt; dp(n+1, n); vector&lt;int&gt; p; dp[0] = 0; for (int i = 1; i &lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &lt;= n; i++) { for (int j = 0; j &lt; p.size(); j++) { if (p[j] &lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; &hellip;
 						
 					</span>
 				</div>

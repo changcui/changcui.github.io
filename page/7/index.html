@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 10, 2020</div>
+					<a class="title" href="/posts/offer-39/">平衡二叉树</a> &mdash;
+					<span class="description">
+						
+						// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&gt;left), depth(root-&gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&gt;left) &amp;&amp; IsBalanced_Solution(pRoot-&gt;right) &amp;&amp; abs(depth(pRoot-&gt;left) - depth(pRoot-&gt;right)) &lt;= 1; } }; // 运行时间：3ms // 占用内存：480k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 10, 2020</div>
@@ -157,16 +167,6 @@
 					<span class="description">
 						
 						// 思路一：简单粗暴，一个一个数的统计 class Solution { public: int NumberOf1Between1AndN_Solution(int n) { int cnt = 0; for (int i = 0; i &lt;= n; i++) { string tmp = to_string(i); for (int j = 0; j &lt; tmp.length(); j++) cnt += tmp[j] == &#39;1&#39; ? 1 : 0; } return cnt; } }; // 运行时间：6ms // 占用内存：488k // 思路二：找规律，比较麻烦，挖个坑 &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 8, 2020</div>
-					<a class="title" href="/posts/offer-30/">连续子数组的最大和</a> &mdash;
-					<span class="description">
-						
-						// 思路一：dp, 以第 i 项结尾的最大连续和 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; vector&lt;int&gt; dp(array.begin(), array.end()); for (int i = 1; i &lt; array.size(); i++) { dp[i] = max(dp[i-1], 0) + array[i]; max_ = max(max_, dp[i]); } return max_; } }; // 运行时间：4ms // 占用内存：488k // 思路二：状态转移只和前一项有关，可以原位进行 class Solution { public: int FindGreatestSumOfSubArray(vector&lt;int&gt; array) { int max_ = INT_MIN; for (int i = 1; i &lt; array.&hellip;
 						
 					</span>
 				</div>

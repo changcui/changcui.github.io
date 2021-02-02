@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 21, 2020</div>
+					<a class="title" href="/posts/leetcode-239/">Sliding Window Maximum</a> &mdash;
+					<span class="description">
+						
+						// 思路一：同剑指 offer class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) { int len = nums.size(); deque&lt;int&gt; q; vector&lt;int&gt; result; for (int i = 0; i &lt; len; i++) { while (!q.empty() &amp;&amp; nums[i] &gt; nums[q.back()]) q.pop_back(); while (!q.empty() &amp;&amp; i - q.front() &gt;= k) q.pop_front(); q.push_back(i); if (i + 1 &gt;= k) result.push_back(nums[q.front()]); } return result; } }; // Runtime: 60 ms, faster than 52.43% of C++ online submissions for Sliding Window Maximum.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 21, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：贪心，优先剪3 class Solution { public: int cutRope(int number) { if (number == 2 || number == 3) return number - 1; if (number % 3 == 0) return pow(3, number/3); if (number % 3 == 1) return pow(3, number/3-1) * 4; if (number % 3 == 2) return pow(3, number/3) * 2; } }; // 运行时间：5ms // 占用内存：504k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 19, 2020</div>
-					<a class="title" href="/posts/offer-66/">机器人的运动范围</a> &mdash;
-					<span class="description">
-						
-						// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&lt;vector&lt;bool&gt; &gt; visited(rows, vector&lt;bool&gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp; rtn, int threshold, int i, int j, vector&lt;vector&lt;bool&gt; &gt;&amp; visited, int rows, int cols) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || visited[i][j] || sum_(i, j) &gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k &hellip;
 						
 					</span>
 				</div>

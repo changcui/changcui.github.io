@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Oct 18, 2019</div>
+					<a class="title" href="/posts/leetcode-41/">41. First Missing Positive</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int firstMissingPositive(vector&lt;int&gt;&amp; nums) { for (int i = 0; i &lt; nums.size(); i++) while (nums[i] &gt; 0 &amp;&amp; nums[i] &lt;= nums.size() &amp;&amp; nums[nums[i] - 1] != nums[i]) swap(nums[nums[i]-1], nums[i]); for (int i = 0; i &lt; nums.size(); i++) if (nums[i] != i + 1) return i + 1; return nums.size() + 1; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Oct 18, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; permuteUnique(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; out, visited(nums.size(), 0); sort(nums.begin(), nums.end()); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; out, vector&lt;int&gt;&amp; visited, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res) { if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &lt; nums.size(); i++) { if (visited[i] == 1) continue; if (i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &amp;&amp; visited[i-1] == 0) continue; visited[i] = 1; out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Oct 17, 2019</div>
-					<a class="title" href="/posts/leetcode-46/">46. Permutations</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;vector&lt;int&gt;&gt; permute(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; out, visited(nums.size(), 0); dfs(nums, out, visited, 0, res); return res; } void dfs(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; out, vector&lt;int&gt;&amp; visited, int level, vector&lt;vector&lt;int&gt;&gt;&amp; res){ if (level == nums.size()) {res.push_back(out); return;} for (int i = 0; i &lt; nums.size(); i++) { if (visited[i] == 0) { visited[i] = 1; out.push_back(nums[i]); dfs(nums, out, visited, level + 1, res); out.pop_back(); visited[i] = 0; } } } }; &hellip;
 						
 					</span>
 				</div>

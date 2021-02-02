@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Sep 21, 2019</div>
+					<a class="title" href="/posts/leetcode-452/">452. Minimum Number of Arrows to Burst Balloons</a> &mdash;
+					<span class="description">
+						
+						greedy class Solution { public: int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points) { auto len = points.size(); if (len == 0) { return 0; } sort(points.begin(), points.end(), [](auto p1, auto p2) {return p1.back() &lt; p2.back();}); auto cur = points[0][1]; auto ans = 1; for (int i = 1; i &lt; len; i++) { if (points[i][0] &lt;= cur) { continue; } ans += 1; cur = points[i][1]; } return ans; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Sep 20, 2019</div>
@@ -163,16 +173,6 @@
 					<span class="description">
 						
 						stack.empty() class Solution { public: bool isValid(string s) { if (s.size() == 0) return true; stack&lt;char&gt; brs; brs.push(s[0]); for (int i = 1; i &lt; s.size(); i++) { switch(s[i]) { case &#39;)&#39;: if (brs.empty() || brs.top() != &#39;(&#39;) { return false; } brs.pop(); break; case &#39;}&#39;: if (brs.empty() || brs.top() != &#39;{&#39;) { return false; } brs.pop(); break; case &#39;]&#39;: if (brs.empty() || brs.top() != &#39;[&#39;) { return false; } brs.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Sep 6, 2019</div>
-					<a class="title" href="/posts/leetcode-66/">66. Plus One</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) { auto carry = 1; for (int i = digits.size() - 1; i &gt;= 0; i--) { digits[i] += carry; carry = digits[i] == 10 ? 1 : 0; digits[i] %= 10; } if (carry) digits.insert(digits.begin(), carry); return digits; } }; &hellip;
 						
 					</span>
 				</div>

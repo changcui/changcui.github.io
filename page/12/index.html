@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 12, 2019</div>
+					<a class="title" href="/posts/leetcode-279/">279.Perfect Squares</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int numSquares(int n) { vector&lt;int&gt; dp(n+1, n); vector&lt;int&gt; p; dp[0] = 0; for (int i = 1; i &lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &lt;= n; i++) { for (int j = 0; j &lt; p.size(); j++) { if (p[j] &lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 12, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: bool increasingTriplet(vector&lt;int&gt;&amp; nums) { int m1 = INT_MAX, m2 = INT_MAX; for (auto i : nums) { if (m1 &gt;= i) m1 = i; else if (m2 &gt;= i) m2 = i; else return true; } return false; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-332/">332.Reconstruct Itinerary</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
 						
 					</span>
 				</div>

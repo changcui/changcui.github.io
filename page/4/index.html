@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 19, 2020</div>
+					<a class="title" href="/posts/offer-66/">机器人的运动范围</a> &mdash;
+					<span class="description">
+						
+						// 思路一：DFS class Solution { public: int sum_(int r, int l) { int rtn = 0; while (r || l) { rtn += r % 10 + l % 10; r /= 10; l /= 10; } return rtn; } int movingCount(int threshold, int rows, int cols) { int rtn = 0; vector&lt;vector&lt;bool&gt; &gt; visited(rows, vector&lt;bool&gt;(cols, false)); helper(rtn, threshold, 0, 0, visited, rows, cols); return rtn; } void helper(int&amp; rtn, int threshold, int i, int j, vector&lt;vector&lt;bool&gt; &gt;&amp; visited, int rows, int cols) { if (i &lt; 0 || j &lt; 0 || i &gt;= rows || j &gt;= cols || visited[i][j] || sum_(i, j) &gt; threshold) return; rtn++; visited[i][j] = true; helper(rtn, threshold, i+1, j, visited, rows, cols); helper(rtn, threshold, i-1, j, visited, rows, cols); helper(rtn, threshold, i, j+1, visited, rows, cols); helper(rtn, threshold, i, j-1, visited, rows, cols); } }; // 运行时间：3ms // 占用内存：616k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 19, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：递归检查 class Solution { public: bool helper(TreeNode* p, TreeNode* q) { if (!p &amp;&amp; !q) return true; if (!p) return false; if (!q) return false; return p-&gt;val==q-&gt;val &amp;&amp; helper(p-&gt;left, q-&gt;right) &amp;&amp; helper(p-&gt;right, q-&gt;left); } bool isSymmetrical(TreeNode* pRoot) { if (!pRoot) return true; return helper(pRoot-&gt;left, pRoot-&gt;right); } }; // 运行时间：3ms // 占用内存：480k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 15, 2020</div>
-					<a class="title" href="/posts/offer-57/">二叉树的下一个结点</a> &mdash;
-					<span class="description">
-						
-						// 思路一：分情况考虑，如果有右节点，返回右节点的最左节点，否则往上寻找，如果是父节点的左节点，返回父节点，如果一直寻找到根结点，则证明是最后一个节点 class Solution { public: TreeLinkNode* GetNext(TreeLinkNode* pNode) { if (!pNode) return NULL; if (pNode-&gt;right) { pNode = pNode-&gt;right; while (pNode &amp;&amp; pNode-&gt;left) pNode = pNode-&gt;left; return pNode; } if (!pNode-&gt;next) return NULL; while (pNode-&gt;next) { if (pNode == pNode-&gt;next-&gt;left) return pNode-&gt;next; pNode = pNode-&gt;next; } if (!pNode-&gt;next) return NULL; return pNode-&gt;next; } }; // 运行时间：3ms // 占用内存：500k &hellip;
 						
 					</span>
 				</div>

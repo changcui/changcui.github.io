@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 2, 2019</div>
+					<a class="title" href="/posts/leetcode-383/">383. Ransom Note</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: bool canConstruct(string ransomNote, string magazine) { unordered_map&lt;char, int&gt; m; for (auto c : magazine) m[c] += 1; for (auto c : ransomNote) { if (!m.count(c) || m[c] == 0) return false; m[c] -= 1; } return true; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 2, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum3(int k, int n) { vector&lt;vector&lt;int&gt;&gt; result; vector&lt;int&gt; out; DFS(0, 1, k, n, out, result); return result; } void DFS(int nums, int cur, int k, int n, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result) { if (nums == k &amp;&amp; n == 0) {result.push_back(out); return;} if (nums &gt; k || n &lt; 0) return; for (int i = cur; i &lt;= 9; i++) { out.push_back(i); DFS(nums+1, i+1, k, n-i, out, result); out.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 1, 2019</div>
-					<a class="title" href="/posts/leetcode-377/">377. Combination Sum IV</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int combinationSum4(vector&lt;int&gt;&amp; nums, int target) { vector&lt;unsigned int&gt; dp(target + 1, 0); dp[0] = 1; for (int i = 1; i &lt;= target; i++) { for (auto num : nums) { if (i - num &gt;= 0) dp[i] += dp[i - num]; } } return dp.back(); } }; &hellip;
 						
 					</span>
 				</div>

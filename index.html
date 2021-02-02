@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 2, 2021</div>
+					<a class="title" href="/posts/test/">test</a> &mdash;
+					<span class="description">
+						
+						&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 1, 2020</div>
@@ -174,16 +184,6 @@ Competitive Programing 看了 WilliamLin 推荐的 Competitive Programing 的 ha
 					<span class="description">
 						
 						// 思路一：maxPathDown 从 input node 开始最大的 path 值（左右节点只能选一个），Sum 则为左右节点都选，选左，选右，不选四种情况的最大值 class Solution { public: int maxPathSum(TreeNode* root) { int max_ = INT_MIN; maxPathDown(root, max_); return max_; } int maxPathDown(TreeNode* root, int&amp; max_) { if (!root) return 0; auto l = max(0, maxPathDown(root-&gt;left, max_)); auto r = max(0, maxPathDown(root-&gt;right, max_)); max_ = max(max_, root-&gt;val + l + r); return max(l, r) + root-&gt;val; } }; // Runtime: 40 ms, faster than 63.01% of C++ online submissions for Binary Tree Maximum Path Sum.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Jun 30, 2020</div>
-					<a class="title" href="/posts/leetcode-128/">128.Longest Consecutive Sequence</a> &mdash;
-					<span class="description">
-						
-						// 思路一：O（n）考虑使用 set 来排除重复的元素，但 set 是排序容器，所以真正的 O（n）应该使用 unordered_set class Solution { public: int longestConsecutive(vector&lt;int&gt;&amp; nums) { if (nums.empty()) return 0; set&lt;int&gt; s(nums.begin(), nums.end()); int rtn = 1, prev = INT_MIN; for (auto i = s.begin(); i != s.end();) { if (*i == prev + 1) { int length = 1; while (i != s.end() &amp;&amp; *i == prev + 1) { prev = *i; i++, length++; } rtn = max(rtn, length); } else { prev = *i; i++; } } return rtn; } }; // Runtime: 24 ms, faster than 38.&hellip;
 						
 					</span>
 				</div>

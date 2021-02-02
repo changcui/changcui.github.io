@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 12, 2020</div>
+					<a class="title" href="/posts/offer-49/">把字符串转换成整数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：使用 long long 处理范围问题 class Solution { public: int StrToInt(string str) { if (str.size() == 0) return 0; int mul = str[0] == &#39;-&#39; ? -1 : 1; long long rtn = isdigit(str[0]) ? str[0] - &#39;0&#39; : 0; for (int i = 1; i &lt; str.size(); i++) { if (!isdigit(str[i])) return 0; rtn = 10 * rtn + str[i] - &#39;0&#39;; } rtn *= mul; return rtn &gt;= INT_MIN &amp;&amp; rtn &lt;= INT_MAX ?&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 11, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：使用 map 保存数字，移除数字 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { unordered_map&lt;int, int&gt; m; for (auto i : data) { if (m.count(i)) m.erase(i); else m[i] = 1; } auto p = m.begin(); *num1 = p++-&gt;first; *num2 = p-&gt;first; } }; // 运行时间：3ms // 占用内存：484k // 思路二：全部异或得到两个数的异或，再按照最右的1把所有数分为两部分异或，分别得到两个数 class Solution { public: void FindNumsAppearOnce(vector&lt;int&gt; data,int* num1,int *num2) { int xorr = 0, flag = 1; for (auto i : data) xorr ^= i; while (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Mar 10, 2020</div>
-					<a class="title" href="/posts/offer-39/">平衡二叉树</a> &mdash;
-					<span class="description">
-						
-						// 思路一：平衡二叉树的定义，空树或者左右子树是平衡二叉树且高度差不大于1 class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return 1 + max(depth(root-&gt;left), depth(root-&gt;right)); } bool IsBalanced_Solution(TreeNode* pRoot) { if (!pRoot) return true; return IsBalanced_Solution(pRoot-&gt;left) &amp;&amp; IsBalanced_Solution(pRoot-&gt;right) &amp;&amp; abs(depth(pRoot-&gt;left) - depth(pRoot-&gt;right)) &lt;= 1; } }; // 运行时间：3ms // 占用内存：480k &hellip;
 						
 					</span>
 				</div>

@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Mar 7, 2020</div>
+					<a class="title" href="/posts/offer-21/">栈的压入、弹出序列</a> &mdash;
+					<span class="description">
+						
+						// 思路一：模拟栈的行为，如果压入元素与popV的前列元素相等，则证明 push 之后随即 pop, 然后判断剩下的元素是否后近先出 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { if (i == popV[l]) l++; else test.push(i); } while (!test.empty()) { if (test.top() != popV[l++]) return false; test.pop(); } return true; } }; // 运行时间：4ms // 占用内存：480k // 思路二：也是模拟栈的行为，每次 push 的时候，都可以一直 pop，直到栈顶元素与 popV 的前列元素不相等或者栈为空为止 class Solution { public: bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) { stack&lt;int&gt; test; int l = 0; for (auto i : pushV) { test.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Mar 7, 2020</div>
@@ -156,16 +166,6 @@ TODO 争取多做一些有意义的事情，以不让衰老的自己后悔为目
 					<span class="description">
 						
 						// 思路一：空间换时间，O(n) class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { vector&lt;int&gt; tmp; for (auto i : array) if (i &amp; 1) tmp.push_back(i); for (auto i : array) if (!(i &amp; 1)) tmp.push_back(i); array = tmp; } }; // 运行时间：4ms // 占用内存：504k // 思路二：冒泡排序，但是内循环必须从后往前 class Solution { public: void reOrderArray(vector&lt;int&gt; &amp;array) { for (int i = 0; i &lt; array.size(); i++) { for (int j = array.size() - 1; j &gt; i; j--) { if (!&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 5, 2020</div>
-					<a class="title" href="/posts/offer-12/">数值的整数次方</a> &mdash;
-					<span class="description">
-						
-						// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ? true : false; exponent = exponent &gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ?&hellip;
 						
 					</span>
 				</div>

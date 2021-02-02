@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 5, 2020</div>
+					<a class="title" href="/posts/offer-12/">数值的整数次方</a> &mdash;
+					<span class="description">
+						
+						// 思路一：直接使用内置函数 class Solution { public: double Power(double base, int exponent) { return pow(base, exponent); } }; // 运行时间：5ms // 占用内存：508k // 思路二：一个一个乘，需要判断正负 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ? true : false; exponent = exponent &gt; 0 ? exponent : -exponent; double rtn = 1.0; while (exponent--) rtn *= base; return flag ? rtn : 1 / rtn; } }; // 运行时间：5ms // 占用内存：476k // 思路三：使用二分递归，需要根据递归判断返回值 class Solution { public: double Power(double base, int exponent) { bool flag = exponent &gt; 0 ?&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Feb 3, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：从头到尾储存，然后使用 reverse 反向 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; while (head) {result.push_back(head-&gt;val); head = head -&gt; next;} reverse(result.begin(), result.end()); return result; } }; // 运行时间：3ms // 占用内存：608k // 思路二：递归调用，出口设置在链表尾，和使用栈是一个效果 class Solution { public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) { vector&lt;int&gt; result; helper(head, result); return result; } void helper(ListNode* head, vector&lt;int&gt;&amp; result) { if (!head) return; helper(head-&gt;next, result); result.push_back(head-&gt;val); } }; // 运行时间：2ms // 占用内存：460k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-2/">替换空格</a> &mdash;
-					<span class="description">
-						
-						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
 						
 					</span>
 				</div>

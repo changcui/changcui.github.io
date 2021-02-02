@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-12-01T04:45:06+08:00" />
+<meta property="og:updated_time" content="2021-02-02T13:53:21+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-455/">455. Assign Cookies</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) { if (g.empty() || s.empty()) return 0; sort(g.begin(), g.end()); sort(s.begin(), s.end()); int rtn = 0; for (auto i = s.back();;) { auto j = g.back(); while (i &lt; j) { g.pop_back(); if (g.empty()) break; j = g.back(); } if (!g.empty()) { rtn += 1; s.pop_back(); g.pop_back(); if (s.empty() || g.empty()) break; i = s.back(); } else { break; } } return rtn; } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: int f(string s) { auto rtn = 1; auto cur = s[0]; for (int i = 1; i &lt; s.size(); i++) { if (s[i] &lt; cur) { rtn = 1; cur = s[i]; } else if (s[i] == cur) { rtn += 1; } } return rtn; } vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) { vector&lt;int&gt; wa(11, 0); for (auto w : words) wa[f(w)] += 1; vector&lt;int&gt; rtn; for (auto q : queries) { auto tmp = 0; for (int i = f(q) + 1; i &lt;= 10; i++) tmp += wa[i]; rtn.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1160/">1160. Find Words That Can Be Formed by Characters</a> &mdash;
-					<span class="description">
-						
-						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ? word.&hellip;
 						
 					</span>
 				</div>

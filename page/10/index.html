@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 3, 2020</div>
+					<a class="title" href="/posts/offer-11/">二进制中1的个数</a> &mdash;
+					<span class="description">
+						
+						// 思路一：n = n&amp;(n-1) 总会把最右边的1变为0 class Solution { public: int NumberOf1(int n) { int cnt = 0; while (n) {cnt++; n = n&amp;(n-1);} return cnt; } }; // 运行时间：3ms // 占用内存：472k // 思路二：一位一位的判断是否为1 class Solution { public: int NumberOf1(int n) { int cnt = 0; for (int i = 0; i &lt; 32; i++) { cnt += (n &gt;&gt; i) &amp; 1; } return cnt; } }; // 运行时间：5ms // 占用内存：512k &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Feb 3, 2020</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						// 思路一：c++ 处理这种比较麻烦，python 或者 java 应该很简单，思路是先计算替换后 // 的长度然后从后往前替换 class Solution { public: void replaceSpace(char *str,int length) { int newL = strlen(str), oldL = strlen(str); for (int i = 0; i &lt; oldL; i++) if (str[i] == &#39; &#39;) newL += 2; if (newL &gt;= length) return; int idx = newL; for (int i = oldL; i &gt;= 0; i--) { if (str[i] == &#39; &#39;) { str[idx--] = &#39;0&#39;; str[idx--] = &#39;2&#39;; str[idx--] = &#39;%&#39;; } else str[idx--] = str[i]; } } }; // 运行时间：3ms // 占用内存：476k &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Feb 1, 2020</div>
-					<a class="title" href="/posts/offer-1/">二维数组中的查找</a> &mdash;
-					<span class="description">
-						
-						// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.&hellip;
 						
 					</span>
 				</div>

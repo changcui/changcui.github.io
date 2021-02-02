@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Aug 31, 2019</div>
+					<a class="title" href="/posts/leetcode-350/">350. Intersection of Two Arrays II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { map&lt;int, int&gt; cnt; for (auto num: nums1) { cnt[num] += 1; } vector&lt;int&gt; rtn; for (auto num: nums2) { auto it = cnt.find(num); if (it == cnt.end() || it -&gt; second == 0) continue; rtn.push_back(num); it -&gt; second -= 1; } return rtn; } }; class Solution { public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { multiset&lt;int&gt; n1(nums1.begin(), nums1.end()), res; for (auto n : nums2) { auto it = n1.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Aug 31, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						vector faster than map class Solution { public: int countCharacters(vector&lt;string&gt;&amp; words, string chars) { vector&lt;int&gt; cnt(255, 0); for (auto c : chars) { cnt[c] += 1; } auto rtn = 0; for (auto word : words) { auto tmp = cnt; auto flag = true; for (auto c : word) { if (tmp[c] == 0) { flag = false; break; } else tmp[c] -= 1; } rtn += flag ? word.&hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Aug 30, 2019</div>
-					<a class="title" href="/posts/leetcode-1154/">1154. Day of the Year</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: bool isLeap(int year) { if (year % 100 == 0) return year % 400 == 0; else return year % 4 == 0; } int dayOfYear(string date) { auto year = stoi(date.substr(0, 4)); auto month = stoi(date.substr(5, 2)); auto day = stoi(date.substr(8)); vector&lt;int&gt; days{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; if (isLeap(year)) days[1] = 29; auto rtn = 0; for (int i = 1; i &lt; month; i++) rtn += days[i - 1]; rtn += day; return rtn; } }; &hellip;
 						
 					</span>
 				</div>

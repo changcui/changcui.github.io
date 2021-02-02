@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Dec 12, 2019</div>
+					<a class="title" href="/posts/leetcode-264/">264.Ugly Number II</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Dec 12, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						class Solution { public: vector&lt;string&gt; findItinerary(vector&lt;vector&lt;string&gt;&gt;&amp; tickets) { unordered_map&lt;string, multiset&lt;string&gt;&gt; m; for (auto j : tickets) m[j[0]].insert(j[1]); vector&lt;string&gt; result; DFS(m, &#34;JFK&#34;, result); return vector&lt;string&gt;(result.rbegin(), result.rend()); } void DFS(unordered_map&lt;string, multiset&lt;string&gt;&gt;&amp; m, string s, vector&lt;string&gt;&amp; result){ while (m[s].size() &gt; 0) { string tmp = *m[s].begin(); m[s].erase(m[s].begin()); DFS(m, tmp, result); } result.push_back(s); } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 10, 2019</div>
-					<a class="title" href="/posts/leetcode-338/">338.Counting Bits</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: vector&lt;int&gt; countBits(int num) { vector&lt;int&gt; res(num+1, 0); for (int i = 1; i &lt;= num; i++) { res[i] = res[i &amp; (i-1)] + 1; } return res; } }; &hellip;
 						
 					</span>
 				</div>

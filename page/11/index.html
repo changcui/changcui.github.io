@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Feb 1, 2020</div>
+					<a class="title" href="/posts/offer-1/">二维数组中的查找</a> &mdash;
+					<span class="description">
+						
+						// 思路一：从左上角开始搜索，不停地减少列的搜索数 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.empty() || array[0].empty()) return false; int m = array.size(), n = array[0].size(); int t = n; for (int i = 0; i &lt; m; i++) { for (int j = 0; j &lt; t; j++) { if (array[i][j] == target) return true; if (array[i][j] &gt; target) {t = j; break;} } } return false; } }; // 运行时间：12ms // 占用内存：1400k // 思路二：从左下角开始搜索，如果小就往右，大就往上 class Solution { public: bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) { if (array.&hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Jan 8, 2020</div>
@@ -173,16 +183,6 @@ How class A { public: inline int add(int a, int b) {return a + b}; };  Reference
 					<span class="description">
 						
 						class Solution { public: int numSquares(int n) { vector&lt;int&gt; dp(n+1, n); vector&lt;int&gt; p; dp[0] = 0; for (int i = 1; i &lt;= sqrt(n) + 0.1; i++) p.push_back(i*i); for (int i = 1; i &lt;= n; i++) { for (int j = 0; j &lt; p.size(); j++) { if (p[j] &lt;= i) dp[i] = min(dp[i], 1 + dp[i - p[j]]); else break; } } return dp[n]; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Dec 12, 2019</div>
-					<a class="title" href="/posts/leetcode-264/">264.Ugly Number II</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int nthUglyNumber(int n) { vector&lt;int&gt; res({1}); int i2 = 0, i3 = 0, i5 = 0; for (int i = 1; i &lt; n; i++) { int m2 = res[i2] * 2, m3 = res[i3] * 3, m5 = res[i5] * 5; int mm = min(m2, min(m3, m5)); if (mm == m2) i2++; if (mm == m3) i3++; if (mm == m5) i5++; res.push_back(mm); } return res.&hellip;
 						
 					</span>
 				</div>

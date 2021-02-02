@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://changcui.cc/" />
-<meta property="og:updated_time" content="2020-09-16T05:18:30+08:00" />
+<meta property="og:updated_time" content="2021-02-02T14:14:09+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="changcui"/>
 <meta name="twitter:description" content=""/>
@@ -66,6 +66,16 @@
 			<div class="posts">
 				
 				
+				
+				<div class="post">
+					<div class="meta">Nov 28, 2019</div>
+					<a class="title" href="/posts/leetcode-39/">39. Combination Sum</a> &mdash;
+					<span class="description">
+						
+						class Solution { public: vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) { vector&lt;int&gt; out; vector&lt;vector&lt;int&gt;&gt; result; DFS(candidates, out, result, 0, target); return result; } void DFS(vector&lt;int&gt;&amp; candidates, vector&lt;int&gt;&amp; out, vector&lt;vector&lt;int&gt;&gt;&amp; result, int start, int target) { if (target &lt; 0) return; if (target == 0) {result.push_back(out); return;} for (int i = start; i &lt; candidates.size(); i++) { out.push_back(candidates[i]); DFS(candidates, out, result, i, target - candidates[i]); out.pop_back(); } } }; &hellip;
+						
+					</span>
+				</div>
 				
 				<div class="post">
 					<div class="meta">Nov 28, 2019</div>
@@ -153,16 +163,6 @@
 					<span class="description">
 						
 						/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { auto cur = head, pre = head; for (int i = 0; i &lt; n; i++) cur = cur -&gt; next; if (!cur) return head -&gt; next; while (cur -&gt; next) { cur = cur -&gt; next; pre = pre -&gt; next; } pre -&gt; next = pre -&gt; next -&gt; next; return head; } }; &hellip;
-						
-					</span>
-				</div>
-				
-				<div class="post">
-					<div class="meta">Nov 13, 2019</div>
-					<a class="title" href="/posts/leetcode-16/">16. 3Sum Closest</a> &mdash;
-					<span class="description">
-						
-						class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { int res = nums[0] + nums[1] + nums[2]; int close = abs(res - target); sort(nums.begin(), nums.end()); for (int k = 0; k &lt; (int)nums.size() - 2; k++) { int i = k + 1, j = (int)nums.size() - 1; while (i &lt; j) { int tmp = nums[k] + nums[i] + nums[j]; if (tmp == target) return tmp; if (abs(tmp - target) &lt; close) { res = tmp; close = abs(res - target); } if (tmp &lt; target) i++; else if (tmp &gt; target) j--; } } return res; } }; &hellip;
 						
 					</span>
 				</div>

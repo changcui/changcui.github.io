@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://changcui.cc",
   author: "Chang Cui",
   desc: "Science, Softball, Xian",
-  title: "ChangCui",
+  title: "CC",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,

@@ -1,0 +1,18 @@
+baseURL = "https://changcui.cc/"
+languageCode = "en-US"
+title = "Chang Cui"
+theme = "hugo-bearblog"
+
+author = "Chang Cui"
+copyright = "Chang Cui"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "Chang Cui — Software Engineer, devtech at NVIDIA."
+  title = "Chang Cui"
+  hideMadeWithLine = true
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"

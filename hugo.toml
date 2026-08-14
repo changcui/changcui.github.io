@@ -1,17 +1,17 @@
 baseURL = "https://changcui.cc/"
 languageCode = "en-US"
-title = "Chang Cui"
+title = "Chang Cui（崔唱）"
 theme = "hugo-bearblog"
 
-author = "Chang Cui"
+author = "Chang Cui（崔唱）"
 copyright = "Chang Cui"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "RSS"]
 
 [params]
-  description = "Chang Cui — Software Engineer, DevTech at NVIDIA."
+  description = "Chang Cui（崔唱） — Software Engineer, DevTech at NVIDIA."
   favicon = "favicon.png"
-  title = "Chang Cui"
+  title = "Chang Cui（崔唱）"
   hideMadeWithLine = true
 
 [caches]

@@ -1,0 +1,162 @@
+{{ define "main" }}
+<section class="photo-gallery">
+  <h1>{{ .Title }}</h1>
+  <div class="photo-gallery-intro">{{ .Content }}</div>
+
+  <div class="photo-grid">
+    {{ range $index, $photo := .Params.photos }}
+      {{ $image := $.Resources.GetMatch $photo.src }}
+      {{ with $image }}
+        {{ $thumbnail := .Fit "1200x1200 webp q82" }}
+        <a
+          class="photo-link{{ if eq $index 2 }} photo-link-wide{{ end }}"
+          href="{{ .RelPermalink }}"
+          data-photo-full="{{ .RelPermalink }}"
+          data-photo-alt="{{ $photo.alt }}"
+          aria-label="View photo: {{ $photo.alt }}"
+        >
+          <img
+            src="{{ $thumbnail.RelPermalink }}"
+            width="{{ $thumbnail.Width }}"
+            height="{{ $thumbnail.Height }}"
+            alt="{{ $photo.alt }}"
+            {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+            decoding="async"
+          >
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<dialog class="photo-lightbox" aria-label="Photo viewer">
+  <button class="photo-lightbox-close" type="button" aria-label="Close photo viewer">Close</button>
+  <img src="" alt="">
+</dialog>
+
+<style>
+  .photo-gallery h1 {
+    margin-bottom: 0.35rem;
+  }
+
+  .photo-gallery-intro p {
+    margin-top: 0;
+    color: var(--text-color);
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .photo-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 5px;
+    background: rgba(127, 127, 127, 0.12);
+  }
+
+  .photo-link-wide {
+    grid-column: 1 / -1;
+  }
+
+  .photo-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .photo-link:hover img {
+    transform: scale(1.012);
+    opacity: 0.94;
+  }
+
+  .photo-link:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+  }
+
+  .photo-lightbox {
+    position: fixed;
+    width: min(94vw, 1400px);
+    max-width: none;
+    height: 92vh;
+    max-height: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .photo-lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .photo-lightbox img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .photo-lightbox-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 0.55rem 0.75rem;
+    border: 0;
+    border-radius: 0 0 0 4px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.62);
+    font: inherit;
+  }
+
+  @media (max-width: 520px) {
+    .photo-grid {
+      gap: 0.45rem;
+    }
+
+    .photo-lightbox {
+      width: 96vw;
+      height: 90vh;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .photo-link img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const dialog = document.querySelector('.photo-lightbox');
+    const dialogImage = dialog.querySelector('img');
+    const closeButton = dialog.querySelector('.photo-lightbox-close');
+
+    document.querySelectorAll('[data-photo-full]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (typeof dialog.showModal !== 'function') return;
+        event.preventDefault();
+        dialogImage.src = link.dataset.photoFull;
+        dialogImage.alt = link.dataset.photoAlt;
+        dialog.showModal();
+      });
+    });
+
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      dialogImage.src = '';
+      dialogImage.alt = '';
+    });
+  })();
+</script>
+{{ end }}
